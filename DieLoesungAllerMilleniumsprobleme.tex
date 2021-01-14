@@ -1,0 +1,138 @@
+\documentclass[a4paper, 11pt]{report}
+\usepackage[utf8]{inputenc}
+\usepackage[ngerman]{babel}
+\usepackage{amsmath, amssymb, amsthm}
+\usepackage{paralist}
+\usepackage{lmodern}
+\usepackage[T1]{fontenc}
+\usepackage[arrow, matrix, curve]{xy}
+\usepackage{graphicx}
+\usepackage[percent]{overpic}
+\usepackage{cite}
+\usepackage{caption}
+\usepackage[onehalfspacing]{setspace}
+\usepackage{hyperref}
+\usepackage{titlesec}
+\usepackage{texilikechaps}
+
+\captionsetup[table]{labelformat=empty}
+
+
+\newcommand{\setk}{\Bbbk}
+\newcommand{\ldot}{\,.\,}
+\newcommand{\fa}{~\forall}
+\newcommand{\ex}{~\exists}
+\newcommand{\fA}{\mathcal{A}}
+\newcommand{\fB}{\mathcal{B}}
+\newcommand{\fC}{\mathcal{C}}
+\newcommand{\fM}{\mathcal{M}}
+\newcommand{\fN}{\mathcal{N}}
+\newcommand{\fF}{\mathcal{F}}
+\newcommand{\fU}{\mathcal{U}}
+\newcommand{\lingua}{\mathcal{L}}
+\newcommand{\lld}{\mathcal{L}^{ld}}
+\newcommand{\lf}{\mathcal{L}^f}
+\newcommand{\lfc}{\mathcal{L}^{f,c}}
+\newcommand{\sF}{\ensuremath{\mathcal{F}} }
+\newcommand{\monster}{\mathbb{M}} %Monster-Modell-M 
+\newcommand{\MM}{\mathbb{M}} %ebenfalls
+\newcommand{\gdw}{\Leftrightarrow}
+\newcommand{\Mod}{\mathcal{M}} %geschwungenes Modell-M
+\newcommand{\Nod}{\mathcal{N}} %das gleiche für N
+\newcommand{\leer}{\emptyset}
+\newcommand{\In}{\in}
+\newcommand{\setN}{\mathbb{N}}
+\newcommand{\setZ}{\mathbb{Z}}
+\newcommand{\setQ}{\mathbb{Q}}
+\newcommand{\setR}{\mathbb{R}}
+\newcommand{\setC}{\mathbb{C}}
+\newcommand{\setH}{\mathbb{H}}
+\newcommand{\Forall}{~\forall}
+\newcommand{\Exists}{~\exists}
+\newcommand{\abs}[1]{{\left| #1 \right|}}
+
+\DeclareMathOperator{\ld}{ld}
+\DeclareMathOperator{\ad}{ad}
+\DeclareMathOperator{\acl}{acl}
+\DeclareMathOperator{\dcl}{dcl}
+\DeclareMathOperator{\tp}{tp}
+\DeclareMathOperator{\tq}{T^2}
+\DeclareMathOperator{\td}{T^d}
+
+\def\Ind#1#2{#1\setbox0=\hbox{$#1x$}\kern\wd0\hbox to 0pt{\hss$#1\mid$\hss}
+	\lower.9\ht0\hbox to 0pt{\hss$#1\smile$\hss}\kern\wd0}
+
+\def\ind{\mathop{\mathpalette\Ind{}}}
+
+\def\notind#1#2{#1\setbox0=\hbox{$#1x$}\kern\wd0
+	\hbox to 0pt{\mathchardef\nn=12854\hss$#1\nn$\kern1.4\wd0\hss}
+	\hbox to 0pt{\hss$#1\mid$\hss}\lower.9\ht0 \hbox to 0pt{\hss$#1\smile$\hss}\kern\wd0}
+
+\def\nind{\mathop{\mathpalette\notind{}}}
+
+
+\theoremstyle{definition}
+\newtheorem{theorem}[subsection]{Satz}
+\newtheorem{corollary}[subsection]{Folgerung}
+\newtheorem{proposition}[subsection]{Proposition}
+\newtheorem{definition}[subsection]{Definition}
+\newtheorem*{example}{Beispiel}
+\newtheorem*{remark}{Bemerkung}
+\newtheorem*{remarks}{Bemerkungen}
+\newtheorem*{recall}{Erinnerung}
+\newtheorem{satz}[subsection]{Satz}
+\newtheorem{kor}[subsection]{Folgerung}
+\newtheorem{prop}[subsection]{Proposition}
+\newtheorem{lemma}[subsection]{Lemma}
+\newtheorem{Def}[subsection]{Definition}
+\newtheorem{bsp}[subsection]{Beispiel}
+\newtheorem{axiom}[subsection]{Axiom}
+\newtheorem{propdef}[subsection]{Proposition/ Definition}
+\newtheorem{bemdef}[subsection]{Bemerkung/Definition}
+\newtheorem{theocol}[subsection]{Folgerung/Satz}
+\newtheorem*{bem}{Bemerkung}
+\newtheorem*{erinn}{Erinnerung}
+
+\txisection{chapter}{\normalfont \huge \bfseries }
+\txisection{section}{\normalfont \Large \bfseries }
+
+\usepackage[left=3.5cm,right=3cm,top=3.5cm,bottom=5cm]{geometry}
+\setlength{\parindent}{0em}
+
+\setlength\abovedisplayskip{4pt}
+\setlength\belowdisplayskip{4pt}
+\setlength\jot{4pt}
+
+\newcommand{\lra}{\Leftrightarrow}
+\newcommand{\xq}{ \bar{x}}
+
+\def\Ind#1#2{#1\setbox0=\hbox{$#1x$}\kern\wd0\hbox to 0pt{\hss$#1\mid$\hss}
+	\lower.9\ht0\hbox to 0pt{\hss$#1\smile$\hss}\kern\wd0}
+\def\ua{\mathop{\mathpalette\Ind{}}}
+\def\notind#1#2{#1\setbox0=\hbox{$#1x$}\kern\wd0
+	\hbox to 0pt{\mathchardef\nn=12854\hss$#1\nn$\kern1.4\wd0\hss}
+	\hbox to 0pt{\hss$#1\mid$\hss}\lower.9\ht0 \hbox to 0pt{\hss$#1\smile$\hss}\kern\wd0}
+\def\nua{\mathop{\mathpalette\notind{}}}
+
+
+\begin{document}
+	\section{Notation}
+	Im Folgenden seien, wenn nicht weiter erklärt, mit $k,l,m,n$ immer natürliche Zahlen gemeint, mit hebräischen Buchstaben immer Kardinalzahlen.\\
+	Oftmals wird nicht zwischen Strukturen und deren Trägermengen unterschieden, insbesondere bei Paaren von Strukturen.\\
+	Als Topologie wird immer die Ordnungstopologie bzw. deren Produkttopologie verstanden, mit \glqq{}Intervall\grqq{} ist immer ein offenes, nichtleeres Intervall mit Randpunkten in der Struktur oder $\pm\infty$ gemeint. Außerdem sei für $A\prec B$ und $X\subseteq B$ $A$-definierbar in $T$ die Menge $X_A$ die durch dieselbe definierende Formel in $B$ definierbare Menge (für $X\subseteq A$ und $X_B$ natürlich analog). Außerdem sei für Relationen $P$ mit \glqq{}$\exists/\forall x\in P(\dots)$\grqq{} die Formel \glqq{}$\exists x(P(x)\land\dots)/\forall x(P(x)\rightarrow\dots)$\grqq{}.\\
+	Mit $\abs{\overline{a}}$ ist je nach Kontext unterschiedliches gemeint, einerseits die Supremumsnorm von $\overline{a}$, andererseits die Anzahl der Einträge. Da das eine ein Element der Struktur ist und das andere eine natürliche Zahl, ist immer klar erkennbar, was gemeint ist. Im Allgemeinen wird auch nicht immer zwischen Tupeln und Elementen unterschieden.
+	
+	\include{PaareAlgAbg}
+    \include{PaareOMin}
+    \newpage
+    \appendix
+    
+    \include{Anhang}
+    
+    \newpage
+    \bibliography{quellen}{}
+    \addtocontents{toc}{\bigskip}
+    \addcontentsline{toc}{section}{Literaturverzeichnis}
+    \bibliographystyle{alpha}
+    
+\end{document}

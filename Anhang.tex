@@ -1,0 +1,28 @@
+%!TEX root = DieLoesungAllerMilleniumsprobleme.tex
+\section{Ein Alternativbeweis zur $\omega$-Stabilität von ACP}
+
+\begin{proof}
+	Nach Folgerung \ref{Formel-Vereinfachung} kann man jede Formel modulo $\operatorname{ACP}^{\lfc}$ schreiben als boolesche Kombination aus \glqq{}$l_n(\text{Monome in }\mathbb{P}(X))$\grqq{} und\\
+	\glqq{}(Polynom in $\mathbb{P}(X))(f_{i_1,n_1}(\text{Monome in }\mathbb{P}(X)),\dots,f_{i_m,n_m}(\text{Monome in }\mathbb{P}(X)))=0$\grqq{}.\\
+	Diese beiden Arten von Formeln lassen sich weiterentwickeln zu Formeln der Art ${\exists\overline{e}\in E(f(\overline{e},\overline{x})=0)}$ für  $f(\overline{T},\overline{x})\in\mathbb{P}(\overline{T})[\overline{x}]$ und der Art
+	\begin{align*}
+	&\exists z_{1,2},\dots,z_{1,n_1+1},z_{2,2},\dots,z_{2,n_2+1},\dots\in E(p(z_{1,i_1-1},\dots,z_{k,i_k-1})=0\\
+	&\bigwedge\limits_{i=1}^km_{i,1}=z_{i,2}m_{i,2}(\overline{x})+\dots+z_{i,n_i}m_{i,n_i}(\overline{x}))
+	\end{align*}
+	für Monome $(m_{i,j})\in\mathbb{P}(X)[\overline{x}]$ und ein Polynom $p\in\mathbb{P}(X)[\overline{x}]$. Nenne die Menge aller Formeln der ersten Art $A$ und die aller Formeln der zweiten Art $B$. Insbesondere wurde die Menge der \glqq{}interessanten\grqq{} Formeln nur vergrößert, das heißt, dass ein Typ $p$ eindeutig durch $$(p\cap A)\cup(p\cap B)\cup(p\cap\neg A)\cup(p\cap\neg B)$$ festgelegt wird.\\
+	Das bedeutet, in einem vorgegebenen Modell $\fM$ mit $X\subseteq M$, $\abs{X}\leq\omega$ zerfällt $S_n(X)$ in folgende Teilmengen:\\
+	\begin{enumerate}
+		\item Typen, die eine Formel aus $A$ und eine aus $B$ enthalten.
+		\item Typen, die eine Formel aus $A$ und keine aus $B$ enthalten.
+		\item Typen, die eine Formel aus $B$ und keine aus $A$ enthalten.
+		\item Typen, die keine Formel aus $A\cup B$ enthalten.
+	\end{enumerate}
+	Für einen Typen $p$ ist im Fall 3./4. $p\cap A=\emptyset$, also $p\cap(A\cup\neg A)$ eindeutig gegeben durch die Verneinung aller möglichen Formeln in $A$ mit $n$ freien Variablen. Analog ist in Fall 2./4. $p\cap(B\cup\neg B)$ eindeutig bestimmt.\\
+	Es bleibt nun noch zu zeigen, dass es im Fall 1./2. jeweils nur abzählbar viele Möglichkeiten für Einschränkungen $p\cap(A\cup\neg A)$ geben kann und im Fall 1./3. nur abzählbar viele Möglichkeiten für Einschränkungen $p\cap(B\cup\neg B)$.\\
+	Zunächst zum ersten Teil: Definiere für ein Polynom $g\in E(X)[\overline{x}]$ die Relation
+	\begin{align*}&g\in\in p:\Leftrightarrow\text{ es existiert }f(\overline{T},\overline{x})\in\mathbb{P}(\overline{T})[\overline{x}],\text{ es existieren }a_1,\dots,a_n\in E\text{ mit }\\
+	&f(\overline{a},\overline{x})=g(\overline{x})\text{ und }\exists\overline{e}\in E(f(\overline{e},\overline{x})=0)\in p.
+	\end{align*}
+	$I:=\{g\in E(X)[\overline{x}]\mid g\in\in p\}$ ist offenbar ein Ideal im Noetherschen Ring $E(X)[\overline{x}]$ (es ist nichtleer im Fall 1./2.) und daher endlich erzeugt durch $h_1,\dots,h_m\in I$. Da jedes Element $g\in I$ mit einem Element $\exists\overline{e}\in E(\overline{g}(\overline{e},\overline{x})=0)\in p$ korrespondiert, ist $p\cap(A\cup\neg A)$ isoliert durch die übertragenen Erzeuger $\exists\overline{e}\in E(\overline{h_1}(\overline{e},\overline{x})=0),\dots,\exists\overline{e}\in E(\overline{h_m}(\overline{e},\overline{x})=0)$, also gibt es nur abzählbar viele Möglichkeiten für $p\cap(A\cup\neg A)$.\\
+	Formeln der zweiten Art kann man in Konjunktionen von Formeln der ersten Art umwandeln, indem man $(z_{l,i_l-1})_{l=1\dots k}$ zu freien Variablen macht. Auf diese Weise kann man partielle Typen in $B$ zu partiellen Typen in $A$ in mehr Variablen umformen (am angenehmsten geht es wahrscheinlich, wenn man annimmt, dass $\fM$ schon hinreichend saturiert ist und einen Erfüller $\overline{a}$ von einem $p$ der Art 1./3. betrachtet, eine Belegung $(b_{i,j})$ für die $(z_{i,j})$ in einer der Formeln findet und dann $\operatorname{tp}(\overline{a},(b_{l,i_l-1})_{l=1\dots k}/X)$ betrachtet). Aber wie auch immer man das macht, es können nur mehr Typen werden, dafür landet man wieder in Fall 1./2., wo wir wissen, dass es nur abzählbar viele Möglichkeiten gibt.
+\end{proof}
