@@ -87,8 +87,8 @@ In diesem Kontext wird wieder die $\acl$-Unabhängigkeit in einem Modell von T r
 		\item Wenn $A$ und $B$ unabhängig über $C$ sind, $A\subseteq S\subseteq\acl(A),B\subseteq S'\subseteq\acl(B)$, dann sind $S$ und $S'$ unabhängig über $C$.
 		\item Wenn $A$ und $B$ unabhängig über $C$ sind und $D$ unabhängig über $AB$, dann sind $A\cup D$ und $B$ unabhängig über $C$.
 		\item Wenn $(D,C)\preceq(B,A)\models\tq$, dann sind $A$ und $D$ unabhängig über $C$.
-		\item Wenn $(D,C)\subseteq(B,A)\models\tq,\ S\subseteq A$ und $A$ und $D$ unabhängig über $C$ sind, dann sind $A$ und $DS$ unabhängig über $CS$, $\langle D\cup S\rangle_{\lingua_P}=(DS,CS)$ und daher $(D,C)\subseteq(DS,CS)\subseteq(B,A)$.
-		\item Wenn $(D,C)\subseteq(B,A)\models\tq$ und $S\subseteq B$ unabhängig über $DA$ ist, dann sind $A$ und $DS$ unabhängig über $C$, $\langle D\cup S\rangle_{\lingua_P}=(DS,C)$ und daher $(D,C)\subseteq(DS,C)\subseteq(B,A)$.
+		\item Wenn $(D,C)\subseteq(B,A)\models\tq,\ S\subseteq A$ und $A$ und $D$ unabhängig über $C$ sind, dann sind $A$ und $DS$ unabhängig über $CS$, $\langle D\cup S\rangle_{\lingua_P}=(DS,CS)$ und $(D,C)\subseteq(DS,CS)\subseteq(B,A)$.
+		\item Wenn $(D,C)\subseteq(B,A)\models\tq$ und $S\subseteq B$ unabhängig über $DA$ ist, dann sind $A$ und $DS$ unabhängig über $C$, $\langle D\cup S\rangle_{\lingua_P}=(DS,C)$ und $(D,C)\subseteq(DS,C)\subseteq(B,A)$.
 	\end{enumerate}
 \end{lemma}
 \begin{proof}
@@ -99,6 +99,11 @@ In diesem Kontext wird wieder die $\acl$-Unabhängigkeit in einem Modell von T r
 	\item[7] Es ergibt sich aus 4. und 3. dass $A$ und $DS$ unabhängig über $CS$ sind. Der Rest geht analog zu 6.
 \end{proof}
 
+Zu bemerken ist, dass ein Spezialfall von Unabhängigkeit viele nützliche Eigenschaften hat. Auf diesen wird später noch oft zurückgegriffen werden.
+\begin{definition}
+	Seien $(D,C)\subseteq(B,A)$ zwei Modelle von $\tq$. Dann heiße diese Erweiterung \textbf{frei}, wenn $D$ und $A$ unabhängig über $C$ sind.
+\end{definition}
+
 \begin{lemma}
 	Sei $(B,A)\models\td$. Dann ist $A$ auch kodicht in $B$.
 \end{lemma}
@@ -108,7 +113,7 @@ In diesem Kontext wird wieder die $\acl$-Unabhängigkeit in einem Modell von T r
 
 Für die Konstruktion des gewünschten Back\&Forth-Systems sei $\kappa>\abs{T}$ eine beliebige, aber feste Kardinalzahl und $(B,A),(D,C)\models\td$ zwei $\kappa$-saturierte Modelle.
 \begin{theorem}
-	Sei $S$ die Menge aller partiellen Isomorphismen zwischen Unterstrukturen $(B',A')$ von $(B,A)$ und $(D',C')$ von $(D,C)$ der Mächtigkeit $<\kappa$, sodass $B'$ und $A$ unabhängig über $A'$ sind und $D'$ und $C$ unabhängig über $C'$. Dann bildet $S$ ein nichtleeres B\&F-System und $\td$ ist insbesondere vollständig.
+	Sei $S$ die Menge aller partiellen Isomorphismen zwischen Unterstrukturen $(B',A')$ von $(B,A)$ und $(D',C')$ von $(D,C)$ der Mächtigkeit $<\kappa$, sodass die Erweiterungen frei sind. Dann bildet $S$ ein nichtleeres B\&F-System und $\td$ ist insbesondere vollständig.
 \end{theorem}
 \begin{proof}
 	Das System ist nichtleer, denn es gibt ein Primmodell $\fM$ von $T$, weil $T$ vollständig ist und in jedem Modell $A$ alle Eigenschaften von $\fM_A:=\langle\emptyset\rangle_\lingua$ in $T$ beschrieben werden. Klarerweise ist $\abs{M}=\abs{T}<\kappa$. Der Isomorphismus $(\fM_A,\fM_A)\cong(\fM_C,\fM_C)$ liegt in $S$, denn Unabhängigkeit ist bei zwei gleichen Mengen offensichtlich.\\
@@ -132,7 +137,7 @@ Dieses B\&F-System beweist die Formelreduzierung in $\td$.
 	Es reicht zu zeigen, dass für alle Modelle $(B,A),(D,C)\models\td$ und für alle $b\in B^n,d\in D^n$ gilt: Wenn $b$ und $d$ dieselben guten Formeln erfüllen, sind ihre Typen in $(B,A)$ und $(D,C)$ dieselben.\\
 	Dass dies ausreicht, erkennt man mit dem Ziegler'schen Trennungslemma: Sei $\psi\in\fF_n(\lingua_P)$ nicht äquivalent zu einer guten Formel und nenne die Menge aller guten Formeln in $n$ freien Koordinaten $K$. Dann ist $K$ abgeschlossen unter $\land,\lor$ und enthält $\top,\bot$. Wenn $\psi$ nicht äquivalent zu einer Formel aus $K$ ist, sind $\td\cup\{\psi\}$ und $\td\cup\{\neg\psi\}$ nicht durch $K$ trennbar, also existieren $(B,A),(D,C)\models\td,b\in B^n,d\in D^n$, sodass $(B,A)\models\psi(b)$ und $(D,C)\models\neg\psi(d)$, aber $(B,A)\models\chi(b)$ genau dann, wenn $(D,C)\models\chi(d)$ für alle $\chi\in K$. Dann erfüllen $b$ und $d$ dieselben guten Formeln, aber haben nicht denselben Typ - ein Widerspruch!\\
 	\begin{proof}[Beweis der Hilfsaussage]
-		Seien $b,d$ wie verlangt und $(B,A),(D,C)$ schon \OE\linebreak $\abs{T}^++\aleph_0$-saturiert (das ändert nichts an Typen und dem Erfüllen von guten Formeln). Sei $a\in A^m$ für ein hinreichend großes $m$, mit der Eigenschaft dass $\dim(b/a)\leq\dim(b/A)$ (es folgt dann Gleichheit, da über einer kleineren Menge nicht mehr interdefinierbar werden kann). Für $A':=\dcl(a),B':=\dcl(a,b)$ gilt dann, dass $A$ und $B'$ unabhängig über $A'$ sind. Es sind nämlich per Definition von $a$ die Mengen $A$ und $b$ unabhängig über $a$ (eben wegen $\dim(b/a)=\dim(b/A)$), mit Lemma \ref{Unabhängigkeitsregeln} (2.) sind dann auch $A$ und $b\cup(A')$ unabhängig über $A'$ und mit 3. sind $A$ und $B'=\dcl(b\cup A')$ unabhängig über $A'$. Außerdem sind $A'$ und $B'$ maximal $\abs{T}+\omega$ groß.\\
+		Seien $b,d$ wie verlangt und $(B,A),(D,C)$ schon \OE\linebreak $\abs{T}^+$-saturiert (das ändert nichts an Typen und dem Erfüllen von guten Formeln). Sei $a\in A^m$ für ein hinreichend großes $m$, mit der Eigenschaft dass $\dim(b/a)\leq\dim(b/A)$ (es folgt dann Gleichheit, da über einer kleineren Menge nicht mehr interdefinierbar werden kann). Für $A':=\dcl(a),B':=\dcl(a,b)$ gilt dann, dass $A$ und $B'$ unabhängig über $A'$ sind. Es sind nämlich per Definition von $a$ die Mengen $A$ und $b$ unabhängig über $a$ (eben wegen $\dim(b/a)=\dim(b/A)$), mit Lemma \ref{Unabhängigkeitsregeln} (2.) sind dann auch $A$ und $b\cup(A')$ unabhängig über $A'$ und mit 3. sind $A$ und $B'=\dcl(b\cup A')$ unabhängig über $A'$. Außerdem sind $A'$ und $B'$ maximal $\abs{T}$ groß.\\
 		Wenn man den partiellen $\lingua_P$-Typ $\tp_\lingua(a/b)\cup\{P(\overline{x})\}$ betrachtet, bleibt er konsistent unter der Ersetzung $b\rightarrowtail d$ in den Formeln. Seien nämlich $\psi_1(\overline{x},b),\dots,\psi_n(\overline{x},b)\in\tp_\lingua(a/b)$, dann ist $$\exists\overline{x}\in P(\bigwedge\limits_{i=1}^n\psi_i(\overline{x},\overline{y}))$$ eine gute Formel, die von $b$ und daher auch von $d$ erfüllt wird. Also ist der ersetzte partielle Typ endlich konsistent, wegen Saturation habe er den Erfüller $c\in C$ und es gilt $\tp_\lingua(a,b)=\tp_\lingua(c,d)$. Wegen der Typengleichheit folgt insbesondere $\dim(b/a)=\dim(d/c)$; es bleibt noch zu zeigen, dass $\dim(b/A)=\dim(d/C)$, damit dann gilt $\dim(d/C)=\dim(b/A)=\dim(b/a)=\dim(d/c)$ und wie oben $C$ und $D':=\dcl(c,d)$ frei über $C':=\dcl(c)$ sind. Die Gleichheit $\dim(b/A)=\dim(d/C)$ gilt aber, da für jede $\lingua$-Formel $\psi$ und $j_1,\dots,j_n\in\setN$ die Formel zu $$\glqq{}\text{es existiert }\overline{y}\in P\text{, sodass }\psi(\overline{x},\overline{y})\ x_i\text{ über }x_{j_1},\dots,x_{j_m}\text{ definiert}\grqq{}$$ eine gute Formel ist, die also genau dann von $b$ erfüllt wird, wenn sie von $d$ erfüllt wird.\\
 		Da $(a,b)$ und $(c,d)$ den gleichen $\lingua$-Typ haben, gibt es einen partiellen Isomorphismus $i$ von $B'=\dcl(a,b)$ nach $D'=\dcl(c,d)$ mit $i((a,b))=(c,d)$, die Einschränkung auf $A'=\dcl(a)$ bildet einen Isomorphismus nach $C'=\dcl(c)$. Also ist $i$ partieller Isomorphismus $(B,A)\rightarrow(D,C)$, damit im B\&F-System, also elementare Abbildung, weswegen $b$ und $d$ denselben $\lingua_P$-Typen haben.
 	\end{proof}
@@ -153,9 +158,21 @@ Im Folgenden werden einige Anordnungen von wechselseitigen Inklusionen von Model
 	Für dichte Paare $(B,A),(D,C)$ mit $(D,C)\subseteq(B,A)$ sind folgende Eigenschaften äquivalent:
 	\begin{enumerate}
 		\item $(D,C)\preceq(B,A)$
-		\item $D$ und $A$ sind unabhängig über $C$.
+		\item Die Erweiterung ist frei.
 	\end{enumerate}
 \end{lemma}
 \begin{proof}
 	$\glqq{}1.\Rightarrow2.\grqq{}:$ Diese Richtung ist schon aus Lemma \ref{Unabhängigkeitsregeln} (5.) bekannt.\\
+	$\glqq{}2.\Rightarrow1.\grqq{}:$ Finde $(\abs{B}+\abs{T})^+$-saturierte Strukturen $$(B,A)\preceq(B',A'),(D,C)\preceq(D',C');$$ es ist dann $(D,C)$ eine gemeinsame Unterstruktur und $(D,C)\subseteq(D',C')$ ist frei nach dem Beweis der Gegenrichtung. Außerdem sind nach Voraussetzung $D$ und $A$ unabhängig über $C$, da aber Unabhängigkeit von Tupeln in $D$ über $A$ auch über $A'$ erhalten bleibt (da $(B',A')$ elementare Oberstruktur), ist auch $(D,C)\subseteq(B',A')$ frei. Also ist die Identität auf $(D,C)$ im Back\&Forth-System, daher elementare Abbildung. Daraus folgt für alle $(\lingua_P)_D$-Formeln $\varphi$, dass $$(D,C)\models\phi\Leftrightarrow(D',C')\models\varphi\Leftrightarrow(B',A')\models\varphi\Leftrightarrow(B,A)\models\varphi.$$
 \end{proof}
+
+\begin{lemma}
+	Seien $(B_1,A_1),(B_2,A_2)\models\td$ und $(B,A)$ eine gemeinsame Unterstruktur, sodass die Inklusionen frei sind. Wenn $a\in (A_1)^n$ und $b\in (A_2)^n$ denselben $\lingua$-Typen über $B$ erfüllen, erfüllen sie auch denselben $\lingua_P$-Typen über $B$.
+\end{lemma}
+\begin{proof}
+	\OE\ seien $(B_1,A_1)$ und $(B_2,A_2)$ schon genügend saturiert, das ändert nichts an Typen über $B$ und (nach derselben Argumentation wie im vorigen Lemma) auch nichts an der Unabhängigkeit. Da $a$ und $b$ denselben Typen über $B$ erfüllen, kann man wieder $\lingua_B$-Terme mit eingesetztem $a$ auf $\lingua_B$-Terme mit eingesetztem $b$ abbilden (Wohldefiniertheit und Injektivität wird durch die Typengleichheit ermöglicht) und bekommt einen partiellen Isomorphismus $i:Ba\cong Bb$, dessen Einschränkung auf die $\lingua_A$-Terme einen partiellen Isomorphismus $Aa\cong Ab$ induziert und sodass $i(a)=b$. Also gilt $i:(Ba,Aa)\cong(Bb,Ab)$, da außerdem die Erweiterungen $(Ba,Aa)\subseteq(B_1,A_1)$ und $(Bb,Ab)\subseteq(B_2,A_2)$ frei sind nach Lemma \ref{Unabhängigkeitsregeln} (6.), ist $i$ im Back\&Forth-System, also elementar, also haben $a$ und $b$ denselben $\lingua_P$-Typen über $B$.
+\end{proof}
+
+\begin{corollary}
+	Wenn man sich solch ein Paar $(a,b)$ beliebig wählt (z.B. $a=b=0$), sind in dem Typen auch die parameterfreien $(\lingua_P)_B$-Formeln, die in $(B_1,A_1)$ bzw. $(B_2,A_2)$ gelten. Also gelten dieselben Formeln, was als $(B_1,A_1)\equiv_B(B_2,A_2)$ geschrieben wird.
+\end{corollary}
