@@ -82,10 +82,10 @@ In diesem Kontext wird wieder die $\acl$-Unabhängigkeit in einem Modell von T r
 \begin{lemma}\label{Unabhängigkeitsregeln}
 	Seien $A,B,C,D$ Mengen in irgendeinem Modell von $T$.
 	\begin{enumerate}
-		\item Wenn $A$ und $B$ unabhängig über $C$ sind, sind $B$ und $A$ unabhängig über $C$ und $A\cap B\subseteq C$ (in fast allen Fällen wird sowieso $A,B\supseteq C$ gelten).
+		\item Wenn $A$ und $B$ unabhängig über $C$ sind, sind $B$ und $A$ unabhängig über $C$ und $A\cap B\subseteq C$ (in fast allen betrachteten Fällen wird sowieso $A,B\supseteq C$ gelten).
 		\item Wenn $A$ und $B$ unabhängig über $C$ sind und $S\subseteq B$, dann sind auch $A\cup S$ und $B$ unabhängig über $C\cup S$.
 		\item Wenn $A$ und $B$ unabhängig über $C$ sind, $A\subseteq S\subseteq\acl(A),B\subseteq S'\subseteq\acl(B)$, dann sind $S$ und $S'$ unabhängig über $C$.
-		\item Wenn $A$ und $B$ unabhängig über $C$ sind und $D$ unabhängig über $AB$, dann sind $A\cup D$ und $B$ unabhängig über $C$.
+		\item Wenn $A$ und $B$ unabhängig über $C$ sind und $D$ (algebraisch) unabhängig über $AB$, dann sind $A\cup D$ und $B$ unabhängig über $C$.
 		\item Wenn $(D,C)\preceq(B,A)\models\tq$, dann sind $A$ und $D$ unabhängig über $C$.
 		\item Wenn $(D,C)\subseteq(B,A)\models\tq,\ S\subseteq A$ und $A$ und $D$ unabhängig über $C$ sind, dann sind $A$ und $DS$ unabhängig über $CS$, $\langle D\cup S\rangle_{\lingua_P}=(DS,CS)$ und $(D,C)\subseteq(DS,CS)\subseteq(B,A)$.
 		\item Wenn $(D,C)\subseteq(B,A)\models\tq$ und $S\subseteq B$ unabhängig über $DA$ ist, dann sind $A$ und $DS$ unabhängig über $C$, $\langle D\cup S\rangle_{\lingua_P}=(DS,C)$ und $(D,C)\subseteq(DS,C)\subseteq(B,A)$.
@@ -112,7 +112,7 @@ Zu bemerken ist, dass ein Spezialfall von Unabhängigkeit viele nützliche Eigen
 \end{proof}
 
 Für die Konstruktion des gewünschten Back\&Forth-Systems sei $\kappa>\abs{T}$ eine beliebige, aber feste Kardinalzahl und $(B,A),(D,C)\models\td$ zwei $\kappa$-saturierte Modelle.
-\begin{theorem}
+\begin{theorem}\label{BackForth}
 	Sei $S$ die Menge aller partiellen Isomorphismen zwischen Unterstrukturen $(B',A')$ von $(B,A)$ und $(D',C')$ von $(D,C)$ der Mächtigkeit $<\kappa$, sodass die Erweiterungen frei sind. Dann bildet $S$ ein nichtleeres B\&F-System und $\td$ ist insbesondere vollständig.
 \end{theorem}
 \begin{proof}
@@ -176,3 +176,32 @@ Im Folgenden werden einige Anordnungen von wechselseitigen Inklusionen von Model
 \begin{corollary}
 	Wenn man sich solch ein Paar $(a,b)$ beliebig wählt (z.B. $a=b=0$), sind in dem Typen auch die parameterfreien $(\lingua_P)_B$-Formeln, die in $(B_1,A_1)$ bzw. $(B_2,A_2)$ gelten. Also gelten dieselben Formeln, was als $(B_1,A_1)\equiv_B(B_2,A_2)$ geschrieben wird.
 \end{corollary}
+
+\begin{lemma}
+	Seien $(B_1,A_1),(B_2,A_2)$ zwei dichte Paare und $A\subseteq A_1\cap A_2$ eine gemeinsame Substruktur, sowie $a\in B_1\setminus A_1,\ b\in B_2\setminus A_2$, die den gleichen Ordnungstyp über $A$ haben. Dann haben $a$ und $b$ sogar den gleichen $\lingua_P$-Typ über $A$.
+\end{lemma}
+\begin{proof}
+	Es sind trivialer Weise $A_i$ und $A$ unabhängig über $A$ für $i=1,2$, außerdem ist $a$ transzendent über $A_1$ und $b$ transzendent über $A_2$. Nach Lemma \ref{Unabhängigkeitsregeln} (4.) sind also die Einbettungen $(Aa,A)\subseteq(B_1,A_1)$ und $(Ab,A)\subseteq(B_2,A_2)$ frei. Nach dem Beweis zu Satz \ref{BackForth} gibt es also einen Isomorphismus $Aa\cong Ab$, der $A\cong A$ fortsetzt und für den $i(a)=b$ gilt, also gibt es einen Isomorphismus $i:(Aa,A)\cong(Ab,A)$.\\ Wenn \OE\ die beiden Modelle von $\td$ genügend saturiert sind, ist $i$ im B\&F-System, also erfüllen $a$ und $b$ dieselben Formeln.
+\end{proof}
+
+\section{Definierbare Mengen}
+Wir interessieren uns für die Gestalt von $\lingua_P$-definierbaren Teilmengen von $A^n$. Dafür braucht man zuerst eine Hilfsaussage für definierbare Mengen in o-minimalen Strukturen.
+
+\begin{lemma}
+	Sei $\fM$ eine o-minimale Struktur, die eine angeordnete Gruppenoperation $+$ mit positivem Element 1 hat und $Y\subseteq M^n$ definierbar. Dann ist $Y$ eine endliche Vereinigung von Mengen der Form $\{f(b,\cdot)=0,g(b,\cdot)>0\}$, wobei $b\in M^m$ und $f,g$ stetige, 0-definierbare Abbildungen $M^{m+n}\rightarrow M$ sind.
+\end{lemma}
+\begin{proof}
+	Schreibe $Y=\phi(b,\fM)$ für ein $b\in M^m$ und definiere $Z:=\phi(\fM)$. Wenn man $Z$ in Zellen $(Z_i)_i$ zerlegt, erhält man $Y$ als endliche Vereinigung von $((Z_i)_b)_i$.  Es sei also o.B.d.A. $Z$ schon eine 0-definierbare Zelle.\\
+	Definiere $$f(x):=\left\{\begin{array}{ll}
+	\inf\{\abs{x-d}\mid d\in Z\}&Z\text{ nichtleer}\\
+	1&\text{sonst}
+	\end{array}\right.,$$
+	$$g(x):=\left\{\begin{array}{ll}
+	\inf\{\abs{x-d}\mid d\in \overline{Z}\setminus Z\}&Z\text{ nichtleer}\\
+	1&\text{sonst}
+	\end{array}\right.,$$ das sind lipschitzstetige Funktionen.\\
+	Klar ist, dass $\overline{Z}=\{f=0\}$; da Zellen lokal abgeschlossen sind, ist $\overline{Z}\setminus Z=\overline{\overline{Z}\setminus Z}=\{g=0\}$. Also erhalten wir $$Z=\overline{Z}\setminus(\overline{Z}\setminus Z)=\{f=0\}\setminus\{g=0\}=\{f=0\}\cap\{g>0\}.$$
+\end{proof}
+
+\section{Definierbare Funktionen}
+Um definierbare Funktionen besser zu verstehen, ist es notwendig, sich mit dem definierbaren Abschluss zu beschäftigen.
