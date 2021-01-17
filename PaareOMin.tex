@@ -166,7 +166,7 @@ Im Folgenden werden einige Anordnungen von wechselseitigen Inklusionen von Model
 	$\glqq{}2.\Rightarrow1.\grqq{}:$ Finde $(\abs{B}+\abs{T})^+$-saturierte Strukturen $$(B,A)\preceq(B',A'),(D,C)\preceq(D',C');$$ es ist dann $(D,C)$ eine gemeinsame Unterstruktur und $(D,C)\subseteq(D',C')$ ist frei nach dem Beweis der Gegenrichtung. Außerdem sind nach Voraussetzung $D$ und $A$ unabhängig über $C$, da aber Unabhängigkeit von Tupeln in $D$ über $A$ auch über $A'$ erhalten bleibt (da $(B',A')$ elementare Oberstruktur), ist auch $(D,C)\subseteq(B',A')$ frei. Also ist die Identität auf $(D,C)$ im Back\&Forth-System, daher elementare Abbildung. Daraus folgt für alle $(\lingua_P)_D$-Formeln $\varphi$, dass $$(D,C)\models\phi\Leftrightarrow(D',C')\models\varphi\Leftrightarrow(B',A')\models\varphi\Leftrightarrow(B,A)\models\varphi.$$
 \end{proof}
 
-\begin{lemma}
+\begin{lemma}\label{Gemeinsame Unterstruktur}
 	Seien $(B_1,A_1),(B_2,A_2)\models\td$ und $(B,A)$ eine gemeinsame Unterstruktur, sodass die Inklusionen frei sind. Wenn $a\in (A_1)^n$ und $b\in (A_2)^n$ denselben $\lingua$-Typen über $B$ erfüllen, erfüllen sie auch denselben $\lingua_P$-Typen über $B$.
 \end{lemma}
 \begin{proof}
@@ -200,7 +200,27 @@ Wir interessieren uns für die Gestalt von $\lingua_P$-definierbaren Teilmengen 
 	\inf\{\abs{x-d}\mid d\in \overline{Z}\setminus Z\}&Z\text{ nichtleer}\\
 	1&\text{sonst}
 	\end{array}\right.,$$ das sind lipschitzstetige Funktionen.\\
-	Klar ist, dass $\overline{Z}=\{f=0\}$; da Zellen lokal abgeschlossen sind, ist $\overline{Z}\setminus Z=\overline{\overline{Z}\setminus Z}=\{g=0\}$. Also erhalten wir $$Z=\overline{Z}\setminus(\overline{Z}\setminus Z)=\{f=0\}\setminus\{g=0\}=\{f=0\}\cap\{g>0\}.$$
+	Klar ist, dass $\overline{Z}=\{f=0\}$; da Zellen lokal abgeschlossen sind, ist $\overline{Z}\setminus Z=\overline{\overline{Z}\setminus Z}=\{g=0\}$. Also erhalten wir $$Z=\overline{Z}\setminus(\overline{Z}\setminus Z)=\{f=0\}\setminus\{g=0\}=\{f=0\}\cap\{g>0\}$$ und $$Y=Z_b=\{f(b,\cdot)=0\}\cap\{g(b,\cdot)>0\}.$$
+\end{proof}
+
+\begin{theorem}
+	Für ein dichtes Paar $(B,A)$ und $Y\subseteq A^n$ ist folgendes äquivalent:
+	\begin{enumerate}
+		\item $Y$ ist $\lingua_P$-definierbar.
+		\item Es existiert ein $\lingua$-definierbares $Z\subseteq B^n$, sodass $Y=Z\cap A^n$.
+		\item $Y$ ist definierbar in $(A,(R_b)_{b\in B})$ mit der Interpretation $A\models R_b(a)$ genau dann, wenn $0<a<b$ in $B$.
+	\end{enumerate}
+\end{theorem}
+\begin{proof}
+	$\glqq{}1.\Rightarrow 2.\grqq{}:$ Sei $\varphi$ eine $(\lingua_P)_B$-Formel mit $\varphi(B)=Y$. Zu zeigen ist, dass eine $\lingua_B$-Formel $\psi$ existiert mit $(B,A)\models P(x)\rightarrow(\varphi(x)\leftrightarrow\psi(x))$; das ist genau dann der Fall, wenn $\mathfrak{Th}(B,A)_B\cup\{P(x)\}\cup\{\varphi(x)\}$ und $\mathfrak{Th}(B,A)_B\cup\{P(x)\}\cup\{\neg\varphi(x)\}$ in $\lingua_B$ getrennt werden können. Nach dem Trennungslemma gilt das genau dann, wenn für alle $(B,A)\preceq(D_1,C_1),(D_2,C_2)$ und alle $c_i\in C_i\ (i=1,2)$ mit $(D_1,C_1)\models\varphi(c_1),(D_2,C_2)\models\neg\varphi(c_2)$ eine $\lingua_B$-Formel $\chi$ existiert mit $(D_1,C_1)\models\chi(c_1),(D_2,C_2)\models\neg\chi(c_2)$.\\
+	Seien solche $(D_i,C_i)$ und $c_i$, die die Voraussetzungen von oben erfüllen. Dann ist das die Situation aus Lemma \ref{Gemeinsame Unterstruktur}, denn elementare Erweiterungen sind frei. Also muss ein trennendes $\chi$ wie verlangt existieren, denn ansonsten würden $c_1$ und $c_2$ denselben $\lingua$-Typ erfüllen, aber nicht denselben $\lingua_P$-Typ.\\
+	$\glqq{}2.\Rightarrow 3.\grqq{}:$ Sei $Y=Z\cap A^n$. Nach dem letzten Lemma ist $Z$ eine boolesche Kombination aus Mengen der Form $\{f(b,\cdot)=0\}$ und $\{g(b,\cdot)>0\}$ für stetige 0-$\lingua$-definierbare Funktionen $f,g$ und passende $b\in B^m$. Es reicht also die Aussage für Mengen in diesen Formen zu zeigen. Wegen der Stetigkeit der Funktionen und $A$ dicht in $B$ gilt aber in $B$
+	\begin{align*}
+	f(b,z)=0\Leftrightarrow\ &\text{Für alle }0<\varepsilon\in A\text{ existiert }A^m\ni a<b\text{ (koordinatenweise),}\\&\text{sodass für alle }a'\in A^m\text{ mit }a<a'<b\text{ (koordinatenweise)}\\&\text{gilt, dass }\abs{f(a',z)}<\varepsilon,\\
+	g(b,z)>0\Leftrightarrow\ &\text{Es existiert ein }0<\varepsilon\in A\text{ und ein }A^m\ni a<b\text{ (koordinatenweise),}\\&\text{sodass für alle }a'\in A^m\text{ mit }a<a'<b\text{ (koordinatenweise)}\\&\text{gilt, dass }\abs{f(a',z)}>\varepsilon.
+	\end{align*}
+	Die rechten Bedingungen sind jeweils in $(A,(R_b)_{b\in B})$ definierbar.\\
+	$\glqq{}3.\Rightarrow 1.\grqq{}:$ Da $A$und alle $R_b$ in $(B,A)$ definierbar sind, ist $Y$ auch in $(B,A)$ definierbar.
 \end{proof}
 
 \section{Definierbare Funktionen}
