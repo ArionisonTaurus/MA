@@ -57,7 +57,7 @@ Im folgenden Lemma meint $(\cdot,+)$ nicht unbedingt die Operationen in $\lingua
 	0 &\text{sonst}
 	\end{array}\right.,
 	\end{align*}
-	Dann ist $g$ in $B$ $A$-definierbar und $g(\cdot,b)=f$. Falls $\dim(b/A)>1$, füge genug Komponenten von $b$ zu $A$ hinzu, sodass $\dim(b/A)=1$. Das Hinzufügen ändert nichts, denn $Ab_i$ ist nach den Eingangsbemerkungen Modell von T und $Ab_i$ ist erst recht dicht in $B$.\\
+	Dann ist $g$ in $B$ $A$-definierbar und $g(\cdot,b)=f$. Falls $\dim(b/A)>1$, füge genug Komponenten von $b$ zu $A$ hinzu, sodass $\dim(b/A)=1$. Das Hinzufügen ändert nichts, denn $Ab_i$ ist nach den Eingangsbemerkungen Modell von T und $Ab_i$ ist erst recht dicht in, aber nicht gleich $B$ (sonst hätte man die Dimension mit diesem Schritt schon zu sehr verkleinert).\\
 	Finde also $b_i$, sodass $A$-definierbare $(h_j)$ existieren mit $b_j=h_j(b_i)$ für alle $j$. Wenn jetzt $J\subseteq f(A^n)=g(A^n,b)=g(A^n,h(b_i))$ für ein Intervall $J$, dann widerspricht das der Aussage des letzten Lemmas für die Funktion $(x,y)\mapsto g(x,h(y))$.
 \end{proof}
 
@@ -82,7 +82,7 @@ In diesem Kontext wird wieder die $\acl$-Unabhängigkeit in einem Modell von T r
 \begin{lemma}\label{Unabhängigkeitsregeln}
 	Seien $A,B,C,D$ Mengen in irgendeinem Modell von $T$.
 	\begin{enumerate}
-		\item Wenn $A$ und $B$ unabhängig über $C$ sind, sind $B$ und $A$ unabhängig über $C$ und $A\cap B\subseteq C$ (in fast allen betrachteten Fällen wird sowieso $A,B\supseteq C$ gelten).
+		\item Wenn $A$ und $B$ unabhängig über $C$ sind, sind $B$ und $A$ unabhängig über $C$ und $A\cap B\subseteq\acl(C)$ (in fast allen betrachteten Fällen wird sowieso $A,B\supseteq C$ und $C=\acl(C)$ gelten).
 		\item Wenn $A$ und $B$ unabhängig über $C$ sind und $S\subseteq B$, dann sind auch $A\cup S$ und $B$ unabhängig über $C\cup S$.
 		\item Wenn $A$ und $B$ unabhängig über $C$ sind, $A\subseteq S\subseteq\acl(A),B\subseteq S'\subseteq\acl(B)$, dann sind $S$ und $S'$ unabhängig über $C$.
 		\item Wenn $A$ und $B$ unabhängig über $C$ sind und $D$ (algebraisch) unabhängig über $AB$, dann sind $A\cup D$ und $B$ unabhängig über $C$.
@@ -143,8 +143,8 @@ Dieses B\&F-System beweist die Formelreduzierung in $\td$.
 	\end{proof}
 \end{proof}
 
-\begin{corollary}
-	Für ein dichtes Paar $(B,A)$ und $S\subseteq B^n$ eine $A_0$-definierbare Menge in $\lingua_P$ (wobei $A_0\subseteq A$) ist $S\cap A^n$ eine $A_0$-definierbare Menge in $A$.
+\begin{corollary}\label{Definierbarkeit aus A}
+	Für ein dichtes Paar $(B,A)$ und $S\subseteq B^n$ eine $A_0$-definierbare Menge in $\lingua_P$ (wobei $A_0\subseteq A$) ist $S\cap A^n$ eine $A_0$-definierbare Menge in $\lingua$.
 \end{corollary}
 \begin{proof}
 	Nach der Formelreduzierung sei $S$ \OE\ durch eine gute Formel definiert. Da die Definierbarkeit abgeschlossen unter booleschen Kombinationen ist, reicht es, eine Formel in Reinform zu betrachten.\\
@@ -154,7 +154,7 @@ Dieses B\&F-System beweist die Formelreduzierung in $\td$.
 \section{Folgen der Existenz des B\&F-Systems}
 Im Folgenden werden einige Anordnungen von wechselseitigen Inklusionen von Modellen von T betrachtet, in der Gleichheit von bestimmten Typen folgt.
 
-\begin{lemma}
+\begin{lemma}\label{freie Erweiterungen}
 	Für dichte Paare $(B,A),(D,C)$ mit $(D,C)\subseteq(B,A)$ sind folgende Eigenschaften äquivalent:
 	\begin{enumerate}
 		\item $(D,C)\preceq(B,A)$
@@ -177,7 +177,7 @@ Im Folgenden werden einige Anordnungen von wechselseitigen Inklusionen von Model
 	Wenn man sich solch ein Paar $(a,b)$ beliebig wählt (z.B. $a=b=0$), sind in dem Typen auch die parameterfreien $(\lingua_P)_B$-Formeln, die in $(B_1,A_1)$ bzw. $(B_2,A_2)$ gelten. Also gelten dieselben Formeln, was als $(B_1,A_1)\equiv_B(B_2,A_2)$ geschrieben wird.
 \end{corollary}
 
-\begin{lemma}
+\begin{lemma}\label{selber Schnitt}
 	Seien $(B_1,A_1),(B_2,A_2)$ zwei dichte Paare und $A\subseteq A_1\cap A_2$ eine gemeinsame Substruktur, sowie $a\in B_1\setminus A_1,\ b\in B_2\setminus A_2$, die den gleichen Ordnungstyp über $A$ haben. Dann haben $a$ und $b$ sogar den gleichen $\lingua_P$-Typ über $A$.
 \end{lemma}
 \begin{proof}
@@ -225,3 +225,35 @@ Wir interessieren uns für die Gestalt von $\lingua_P$-definierbaren Teilmengen 
 
 \section{Definierbare Funktionen}
 Um definierbare Funktionen besser zu verstehen, ist es notwendig, sich mit dem definierbaren Abschluss zu beschäftigen.
+
+\begin{lemma}\label{A definierbar abgeschl}
+	In jedem dichten Paar $(B,A)$ ist $A$ definierbar abgeschlossen.
+\end{lemma}
+\begin{proof}
+	Sei $b\in B\setminus A$ und $(B,A)\preceq(D,C)$ eine genügend saturierte Erweiterung. Dann wird der Ordnungstyp von $b$ über $A$ auch von einem Element $D\setminus C\ni d\neq b$ realisiert wegen Dichtheit von $D\setminus C$ in $D$ und Saturation. Nach Lemma \ref{selber Schnitt} haben $b$ und $d$ dann den selben $\lingua_P$-Typen über $A$, weswegen $b$ nicht definierbar über $A$ in $(D,C)$ sein kann, also auch nicht in $(B,A)$.
+\end{proof}
+
+\begin{corollary}
+	Sei $(B,A)$ ein dichtes Paar und $A_0\preceq A$. Dann ist $A_0$ definierbar abgeschlossen.
+\end{corollary}
+\begin{proof}
+	Sei $b$ definierbar über $A_0$. Dann ist $b$ insbesondere definierbar über $A$, also in $A$. Nach Folgerung \ref{Definierbarkeit aus A} ist dann $\{a\}=\{a\}\cap A$ schon $\lingua$-definierbar aus $A_0$, also in $A_0$, da $A_0$ elementare Substruktur ist.
+\end{proof}
+
+\begin{lemma}
+	Sei $(D,C)\subseteq(B,A)$ frei und $(B,A)$ dichtes Paar. Dann ist $D$ definierbar abgeschlossen in $(B,A)$.
+\end{lemma}
+\begin{proof}
+	Wenn $D=C$, ist $D\preceq A$ und die Aussage daher klar nach der vorigen Folgerung. Die Erweiterung $(AD,A)\subseteq(B,A)$ ist trivialerweise frei (zwei gleiche Mengen in der Unabhängigkeit), außerdem ist $A\preceq AD$ dicht (da $A$ dicht in $B\supseteq AD$) und eine echte Inklusion, da für $D=A$ wegen Unabhängigkeit von $D$ und $A$ ansonsten $D=C$ folgen würde. Nach Lemma \ref{freie Erweiterungen} ist also $(AD,A)\preceq(B,A)$ und daher ist $\dcl(D)\subseteq\dcl(AD)=AD$, da $AD$ definierbar abgeschlossen nach Lemma \ref{A definierbar abgeschl}.\\
+	Sei jetzt $d\in AD$ $\lingua_P$-definierbar über $D$ und $a\in A^n$ minimal mit $d\in Da$ (insbesondere ist $a$ unabhängig über $D$). Im Folgenden wird gezeigt, dass dann $a$ schon das leere Tupel, also $d\in D$ ist.\\
+	Nimm an, dass $n>0$ und sei $f:B^n\rightarrow B$ die definierende Funktion von $d$, also ist sie $D$-definierbar und $f(a)=d$. Seien $$S_1:=\{x\in B^n\mid f(x_1,\dots,x_{n-1},\cdot)\text{ ist streng monoton wachsend auf einem Intervall um }x_n\},$$ $$S_3:=\{x\in B^n\mid f(x_1,\dots,x_{n-1},\cdot)\text{ ist streng monoton fallend auf einem Intervall um }x_n\},$$ $$S_3:=\{x\in B^n\mid f(x_1,\dots,x_{n-1},\cdot)\text{ ist konstant auf einem Intervall um }x_n\}.$$
+	$S_1\cup S_2\cup S_3$ ist groß, denn wenn eine offene Menge $U\subseteq B^n\setminus(S_1\cup S_2\cup S_3)$ existiert, wähle $x\in U$ beliebig und ein Intervall $I$ um $x_n$ mit $\{(x_1,\dots,x_{n-1})\}\times I\subset U$. Nach der Charakterisierung o-minimaler definierbarer Funktionen existiert ein Subintervall $J\subseteq I$, sodass $f(x_1,\dots,x_{n-1},\cdot)$ entweder streng monoton wachsend, fallend oder konstant ist auf $J$. Also ist $x\in S_1\cup S_2\cup S_3$ im Widerspruch zu $x\in U$.\\
+	Da $a$ generisch ist, muss es also in der großen Menge liegen.
+	\begin{itemize}
+		\item Wenn $a$ in $S_1$ liegt, nehmen wir an, dass $(B,A)$ schon hinreichend saturiert ist (das ändert nichts, da $(B,A)$ ja nur irgendeine Oberstruktur und Modell von $\td$ sein muss) und finden in $A\setminus Da_1\dots a_{n-1}$ ein $a'\neq a_n$ mit demselben Ordnungstyp über $Da_1\dots a_{n-1}$ (ansonsten wäre $a_n$ definierbar über $a_1,\dots,a_{n-1}$). Insbesondere ist $a_1,\dots,a_{n-1},a'\in S_1$, weil die Menge aller solchen Elemente $a'$ $Da_1\dots a_{n-1}$-definierbar ist und daher eine $Da_1\dots a_{n-1}$-definierbare Umgebung von $a_n$ dort drin liegt, in der $a'$ liegen muss. Da $f$ streng monoton ist, ist $f(a_1,\dots,a_{n-1},a')\neq f(a)=d\in D$.\\
+		Allerdings ist $d$ $\lingua_P$-definierbar über $D$, also ist $$f(a_1,\dots,a_{n-1},x)=d\in\tp_{\lingua_P}(a/Da_1\dots a_{n-1})\setminus\tp_{\lingua_P}(a'/Da_1\dots a_{n-1})$$ (oder zumindest mit der definierenden Formel für $d$ eingesetzt), die Typen sind daher nicht gleich.\\
+		Da $a_n,a'\in A$ aber den gleichen Ordnungstyp über $Da_1\dots a_{n-1}$ haben, haben sie auch den gleichen $\lingua$-Typ über $Da_1\dots a_{n-1}$ nach dem Beweis von Satz \ref{BackForth}. Außerdem ist $(Da_1\dots a_{n-1},Ca_1\dots a_{n-1})\subseteq(B,A)$ nach Lemma \ref{Unabhängigkeitsregeln} (6.) frei, weswegen aus Lemma \ref{Gemeinsame Unterstruktur} folgt, dass $a_n,a'$ denselben $\lingua_P$-Typ über $Da_1\dots a_{n-1}$ haben - Widerspruch!
+		\item Das Fall $a\in S_2$ geht analog, es wurde eben auch nur streng monoton benutzt.
+		\item Im Falle $a\in S_3$ ist $d$ $\lingua$-definierbar über $Da_1\dots a_{n-1}$ durch $\glqq{}d=f(a_1,\dots,a_{n-1},x)\text{ für irgendein }(a_1,\dots,a_{n-1},x)\in S_3$.
+	\end{itemize}
+\end{proof}
