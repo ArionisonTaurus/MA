@@ -13,7 +13,7 @@ Dem Verlauf in \cite{VanDenDries} folgend, wird zunächst die Vollständigkeit u
 	Sei $(B,A)\models\td$, dann ist eine definierbare Menge $S\subseteq B$ \textbf{klein}, wenn eine $B$-definierbare Funktion $f:B^n\rightarrow B$ existiert mit $S\subseteq f(A^n)$.
 \end{definition}
 
-Das Ziel ist jetzt, zu zeigen, dass definierbare Intervalle nicht klein sind.\\
+Das Ziel ist jetzt, zu zeigen, dass definierbare Intervalle nicht klein sind.\newpage
 Im folgenden Lemma meint $(\cdot,+)$ nicht unbedingt die Operationen in $\lingua$, sondern nur irgendwelche definierbaren Verknüpfungen.
 
 \begin{lemma}\label{Hilfsaussage Kleinheit}
@@ -24,6 +24,8 @@ Im folgenden Lemma meint $(\cdot,+)$ nicht unbedingt die Operationen in $\lingua
 	Sei jetzt $a$ nicht mehr fixiert, dann existiert mit Definable Choice eine definierbare Zuordnung $a\mapsto\alpha(a)$, sodass $p(a,\cdot)=f(\alpha(a),\cdot)$ auf einem Intervall gilt. Da jedes $a$ $n+1$ viele Einträge hat und jedes $\alpha(a)$ $n$ viele, müssen unendlich viele $a\in (I_A)^{n+1}$ existieren, die durch $\alpha$ auf das selbe Element abgebildet werden. Denn wenn das nicht so wäre, wäre ein generisches Element aus $(I_A)^{n+1}$ algebraisch über einem Element aus $A^n$, was der Generizität widerspricht. Da es unendlich viele Elemente gibt, sodass $\alpha$ auf ihnen konstant ist, gibt es schon eine Zelle von Dimension $>0$ mit der Eigenschaft und damit insbesondere eine Zelle $E$ von Dimension 1 (Als Teilmenge einer Zelle lässt sich immer eine von kleinerer Dimension finden). Nenne den konstanten Wert dann $\alpha^*$.\\
 	Da also gilt: Für alle $a\in E$ existiert ein Intervall $J$ mit $p(a,\cdot)=f(\alpha^*,\cdot)$ auf $J$; existieren mit Definable Choice $\beta^*,\gamma^*:E\rightarrow I_A$, sodass $p(a,\cdot)=f(\alpha^*,\cdot)$ auf $(\beta^*(a),\gamma^*(a))$ gilt. \OE\ seien $\beta^*$ und $\gamma^*$ jetzt schon stetig auf $E$ und ein $e\in E$ beliebig· Dann existiert für $\varepsilon$ hinreichend klein eine $E$-Umgebung $U$ um $e$, sodass $$\beta^*<\frac{1}{2}(\beta^*(e)+\gamma^*(e))-\varepsilon,\ \frac{1}{2}(\beta^*(e)+\gamma^*(e))+\varepsilon<\gamma^*$$ auf $U$, also $$p(a,x)=f(\alpha^*,x)\text{ für alle }a\in U,x\in(\frac{1}{2}(\beta^*(e)+\gamma^*(e))-\varepsilon,\frac{1}{2}(\beta^*(e)+\gamma^*(e))+\varepsilon)$$ gilt. Es kann aber nicht $p(a-a',x)=p(a,x)-p(a',x)=f(\alpha^*,x)-f(\alpha^*,x)=0$ für $a,a'\in U$ verschieden und unendlich viele $x$ sein, weil ein Nichtnullpolynom nicht unendlich viele Nullstellen haben kann.
 \end{proof}
+
+\newpage
 
 \begin{lemma}
 	Sei $\fA$ eine o-minimale Erweiterung eines angeordneten Vektorraums über einem angeordneten Körper $F$ und $g:A^{p+1}\rightarrow A$ definierbar, außerdem existiere für unendlich viele $\lambda\in F$ ein $a_\lambda\in A^p$ mit $g(a_\lambda,x)=\lambda x$ für unendlich viele $x\in A$. Dann existiert ein Intervall $I$ in $A$, sodass auf $I$ eine $A$-definierbare Körperstruktur existiert, die mit $<$ kompatibel ist (was automatisch einen reell abgeschlossenen Körper impliziert).
@@ -71,6 +73,7 @@ Im folgenden Lemma meint $(\cdot,+)$ nicht unbedingt die Operationen in $\lingua
 \begin{proof}
 	Sei $S$ eine Basis von $B/A$ mit $\abs{S}<\kappa$; zeige nun, dass es kein Erzeugendensystem sein kann. Das folgt aus der Saturation angewandt auf den partiellen Typen $$\{\forall\overline{y}\in P(x\neq t(\overline{y}))\mid t\ \lingua_E\text{-Term}\},$$ der endlich erfüllbar ist, weil die Negation jeder dieser Formeln \glqq{}$x$ ist in einer kleinen Menge\grqq{} impliziert. Wenn der Typ also nicht endlich erfüllbar wäre, würde eine endliche Vereinigung von kleinen Mengen ganz $B$ überdecken. Das kann aber nicht gelten, denn eine endliche Vereinigung von kleinen Mengen ist wieder klein (in der das bezeugenden Abbildung kann man das durch Erhöhen der Dimension des Urbildes und Fallunterscheidung über eine Koordinate beweisen).
 \end{proof}
+\newpage
 \begin{corollary}\label{Finden transz Elte}
 	Der Beweis zeigt sogar, dass in einem $\kappa$-saturiertem Modell $(B,A)\models\td$, gegeben Menge, $S,S',S''\subset B$ mit $\abs{S},\abs{S'},\abs{S''}<\kappa$, ein transzendentes Element $b$ über $SA$ gefunden werden kann mit $a<b$ für alle $a\in S'$ und $b<c$ für alle $c\in S''$, sofern dieser Ordnungstyp von $b$ überhaupt konsistent ist.
 \end{corollary}
@@ -91,6 +94,7 @@ In diesem Kontext wird wieder die $\acl$-Unabhängigkeit in einem Modell von T r
 		\item Wenn $(D,C)\subseteq(B,A)\models\tq$ und $S\subseteq B$ unabhängig über $DA$ ist, dann sind $A$ und $DS$ unabhängig über $C$, $\langle D\cup S\rangle_{\lingua_P}=(DS,C)$ und $(D,C)\subseteq(DS,C)\subseteq(B,A)$.
 	\end{enumerate}
 \end{lemma}
+\newpage
 \begin{proof}
 	1.-4. sind bekannt.
 	\item[5.] Wenn $\overline{d}\in D$ algebraisch unabhängig über $C$ ist, aber nicht über $A$, dann existiert eine $\lingua_A$-Formel $\varphi(\overline{x},\overline{a})$, sodass \OE\ $d_1$ von $\varphi(x_1,d_2,d_3\dots,\overline{a})$ algebraisiert wird (\OE\ wird $d_1$ schon durch $\varphi$ definiert). Also erfüllt $\overline{d}$ die $\lingua_P$-Formel $$\exists \overline{y}\in P(\varphi(\overline{x},\overline{y})\land\forall z_2,z_3,\dots\exists! z_1(\varphi(\overline{z},\overline{y})))$$ in $(B,A)$, also auch in $(D,C)$. Es existiert also $\overline{c}\in C$ mit $$B\models\varphi(\overline{d},\overline{c})\land\forall z_2,z_3,\dots\exists! z_1(\varphi(\overline{z},\overline{c})),$$ was im Widerspruch zur Unabhängigkeit von $\overline{d}$ über $C$ steht.
@@ -111,6 +115,7 @@ Zu bemerken ist, dass ein Spezialfall von Unabhängigkeit viele nützliche Eigen
 	Zu zeigen ist, dass für alle $a,c\in B$ ein $b\in B\setminus A$ existiert mit $a<b<c$. Durch Translation und Inversion kann man annehmen, dass $a=0$. Wähle jetzt ein $d\in B\setminus A$ beliebig und $e\in A$ mit $d-c<e<d$. Dann ist $d-e$ nicht in $A$ (denn sonst wäre es $d$) und $0=e-e<d-e<d-(d-c)=c$.
 \end{proof}
 
+\newpage
 Für die Konstruktion des gewünschten Back\&Forth-Systems sei $\kappa>\abs{T}$ eine beliebige, aber feste Kardinalzahl und $(B,A),(D,C)\models\td$ zwei $\kappa$-saturierte Modelle.
 \begin{theorem}\label{BackForth}
 	Sei $S$ die Menge aller partiellen Isomorphismen zwischen Unterstrukturen $(B',A')$ von $(B,A)$ und $(D',C')$ von $(D,C)$ der Mächtigkeit $<\kappa$, sodass die Erweiterungen frei sind. Dann bildet $S$ ein nichtleeres B\&F-System und $\td$ ist insbesondere vollständig.
@@ -137,7 +142,7 @@ Dieses B\&F-System beweist die Formelreduzierung in $\td$.
 	Es reicht zu zeigen, dass für alle Modelle $(B,A),(D,C)\models\td$ und für alle $b\in B^n,d\in D^n$ gilt: Wenn $b$ und $d$ dieselben guten Formeln erfüllen, sind ihre Typen in $(B,A)$ und $(D,C)$ dieselben.\\
 	Dass dies ausreicht, erkennt man mit dem Ziegler'schen Trennungslemma: Sei $\psi\in\fF_n(\lingua_P)$ nicht äquivalent zu einer guten Formel und nenne die Menge aller guten Formeln in $n$ freien Koordinaten $K$. Dann ist $K$ abgeschlossen unter $\land,\lor$ und enthält $\top,\bot$. Wenn $\psi$ nicht äquivalent zu einer Formel aus $K$ ist, sind $\td\cup\{\psi\}$ und $\td\cup\{\neg\psi\}$ nicht durch $K$ trennbar, also existieren $(B,A),(D,C)\models\td,b\in B^n,d\in D^n$, sodass $(B,A)\models\psi(b)$ und $(D,C)\models\neg\psi(d)$, aber $(B,A)\models\chi(b)$ genau dann, wenn $(D,C)\models\chi(d)$ für alle $\chi\in K$. Dann erfüllen $b$ und $d$ dieselben guten Formeln, aber haben nicht denselben Typ - ein Widerspruch!\\
 	\begin{proof}[Beweis der Hilfsaussage]
-		Seien $b,d$ wie verlangt und $(B,A),(D,C)$ schon \OE\linebreak $\abs{T}^+$-saturiert (das ändert nichts an Typen und dem Erfüllen von guten Formeln). Sei $a\in A^m$ für ein hinreichend großes $m$, mit der Eigenschaft dass $\dim(b/a)\leq\dim(b/A)$ (es folgt dann Gleichheit, da über einer kleineren Menge nicht mehr interdefinierbar werden kann). Für $A':=\dcl(a),B':=\dcl(a,b)$ gilt dann, dass $A$ und $B'$ unabhängig über $A'$ sind. Es sind nämlich per Definition von $a$ die Mengen $A$ und $b$ unabhängig über $a$ (eben wegen $\dim(b/a)=\dim(b/A)$), mit Lemma \ref{Unabhängigkeitsregeln} (2.) sind dann auch $A$ und $b\cup(A')$ unabhängig über $A'$ und mit 3. sind $A$ und $B'=\dcl(b\cup A')$ unabhängig über $A'$. Außerdem sind $A'$ und $B'$ maximal $\abs{T}$ groß.\\
+		Seien $b,d$ wie verlangt und $(B,A),(D,C)$ schon \OE\linebreak $\abs{T}^+$-saturiert (das ändert nichts an Typen und dem Erfüllen von guten Formeln). Sei $a\in A^m$ für ein hinreichend großes $m$, mit der Eigenschaft dass $\dim(b/a)\leq\dim(b/A)$ (es folgt dann Gleichheit, da über einer kleineren Menge nicht mehr interdefinierbar werden kann). Für $A':=\dcl(a),B':=\dcl(a,b)$ gilt dann, dass $A$ und $B'$ unabhängig über $A'$ sind. Es sind nämlich per Definition von $a$ die Mengen $A$ und $b$ unabhängig über $a$ (eben wegen $\dim(b/a)=\dim(b/A)$), mit Lemma \ref{Unabhängigkeitsregeln} (2.) sind dann auch $A$ und $b\cup(A')$ unabhängig über $A'$ und mit 3. sind $A$ und $B'=\dcl(b\cup A')$ unabhängig über $A'$. Außerdem sind $A'$ und $B'$ maximal $\abs{T}$ groß.\newpage
 		Wenn man den partiellen $\lingua_P$-Typ $\tp_\lingua(a/b)\cup\{P(\overline{x})\}$ betrachtet, bleibt er konsistent unter der Ersetzung $b\rightarrowtail d$ in den Formeln. Seien nämlich $\psi_1(\overline{x},b),\dots,\psi_n(\overline{x},b)\in\tp_\lingua(a/b)$, dann ist $$\exists\overline{x}\in P(\bigwedge\limits_{i=1}^n\psi_i(\overline{x},\overline{y}))$$ eine gute Formel, die von $b$ und daher auch von $d$ erfüllt wird. Also ist der ersetzte partielle Typ endlich konsistent, wegen Saturation habe er den Erfüller $c\in C$ und es gilt $\tp_\lingua(a,b)=\tp_\lingua(c,d)$. Wegen der Typengleichheit folgt insbesondere $\dim(b/a)=\dim(d/c)$; es bleibt noch zu zeigen, dass $\dim(b/A)=\dim(d/C)$, damit dann gilt $\dim(d/C)=\dim(b/A)=\dim(b/a)=\dim(d/c)$ und wie oben $C$ und $D':=\dcl(c,d)$ frei über $C':=\dcl(c)$ sind. Die Gleichheit $\dim(b/A)=\dim(d/C)$ gilt aber, da für jede $\lingua$-Formel $\psi$ und $j_1,\dots,j_n\in\setN$ die Formel zu $$\glqq{}\text{es existiert }\overline{y}\in P\text{, sodass }\psi(\overline{x},\overline{y})\ x_i\text{ über }x_{j_1},\dots,x_{j_m}\text{ definiert}\grqq{}$$ eine gute Formel ist, die also genau dann von $b$ erfüllt wird, wenn sie von $d$ erfüllt wird.\\
 		Da $(a,b)$ und $(c,d)$ den gleichen $\lingua$-Typ haben, gibt es einen partiellen Isomorphismus $i$ von $B'=\dcl(a,b)$ nach $D'=\dcl(c,d)$ mit $i((a,b))=(c,d)$, die Einschränkung auf $A'=\dcl(a)$ bildet einen Isomorphismus nach $C'=\dcl(c)$. Also ist $i$ partieller Isomorphismus $(B,A)\rightarrow(D,C)$, damit im B\&F-System, also elementare Abbildung, weswegen $b$ und $d$ denselben $\lingua_P$-Typen haben.
 	\end{proof}
@@ -147,7 +152,7 @@ Dieses B\&F-System beweist die Formelreduzierung in $\td$.
 	Für ein dichtes Paar $(B,A)$ und $S\subseteq B^n$ eine $A_0$-definierbare Menge in $\lingua_P$ (wobei $A_0\subseteq A$) ist $S\cap A^n$ eine $A_0$-definierbare Menge in $\lingua$.
 \end{corollary}
 \begin{proof}
-	Nach der Formelreduzierung sei $S$ \OE\ durch eine gute Formel definiert. Da die Definierbarkeit abgeschlossen unter booleschen Kombinationen ist, reicht es, eine Formel in Reinform zu betrachten.\\
+	Nach der Formelreduzierung sei $S$ \OE\ durch eine gute Formel definiert. Da die Definierbarkeit abgeschlossen unter booleschen Kombinationen ist, reicht es, eine Formel in Reinform zu betrachten.\newpage
 	Da aber für jede $\lingua_{A_0}$-Formel $\varphi(x,y,a')$ und jedes $a\in A^n$ die Aussagen $$\glqq{}\text{Es existiert ein }y\in A^m\text{ mit }(B,A)\models\varphi(a,y,a')\grqq{},$$ $$\glqq{}\text{Es existiert ein }y\in A^m\text{ mit }B\models\varphi(a,y,a')\grqq{},$$ $$\glqq{}\text{Es existiert ein }y\in A^m\text{ mit }A\models\varphi(a,y,a')\grqq{}$$ äquivalent sind wegen $\varphi$ als $\lingua$-Formel und $A\prec B$, folgt, dass $$\exists y\in P(\varphi(x,y,a'))(B)\cap A^n=\exists y(\varphi(x,y,a'))(A).$$
 \end{proof}
 
@@ -184,6 +189,8 @@ Im Folgenden werden einige Anordnungen von wechselseitigen Inklusionen von Model
 	Es sind trivialer Weise $A_i$ und $A$ unabhängig über $A$ für $i=1,2$, außerdem ist $a$ transzendent über $A_1$ und $b$ transzendent über $A_2$. Nach Lemma \ref{Unabhängigkeitsregeln} (4.) sind also die Einbettungen $(Aa,A)\subseteq(B_1,A_1)$ und $(Ab,A)\subseteq(B_2,A_2)$ frei. Nach dem Beweis zu Satz \ref{BackForth} gibt es also einen Isomorphismus $Aa\cong Ab$, der $A\cong A$ fortsetzt und für den $i(a)=b$ gilt, also gibt es einen Isomorphismus $i:(Aa,A)\cong(Ab,A)$.\\ Wenn \OE\ die beiden Modelle von $\td$ genügend saturiert sind, ist $i$ im B\&F-System, also erfüllen $a$ und $b$ dieselben Formeln.
 \end{proof}
 
+\newpage
+
 \section{Definierbare Mengen}
 Wir interessieren uns für die Gestalt von $\lingua_P$-definierbaren Teilmengen von $A^n$. Dafür braucht man zuerst eine Hilfsaussage für definierbare Mengen in o-minimalen Strukturen.
 
@@ -211,6 +218,7 @@ Wir interessieren uns für die Gestalt von $\lingua_P$-definierbaren Teilmengen 
 		\item $Y$ ist definierbar in $(A,(R_b)_{b\in B})$ mit der Interpretation $A\models R_b(a)$ genau dann, wenn $0<a<b$ in $B$.
 	\end{enumerate}
 \end{theorem}
+\newpage
 \begin{proof}
 	$\glqq{}1.\Rightarrow 2.\grqq{}:$ Sei $\varphi$ eine $(\lingua_P)_B$-Formel mit $\varphi(B)=Y$. Zu zeigen ist, dass eine $\lingua_B$-Formel $\psi$ existiert mit $(B,A)\models P(x)\rightarrow(\varphi(x)\leftrightarrow\psi(x))$; das ist genau dann der Fall, wenn $\mathfrak{Th}(B,A)_B\cup\{P(x)\}\cup\{\varphi(x)\}$ und $\mathfrak{Th}(B,A)_B\cup\{P(x)\}\cup\{\neg\varphi(x)\}$ in $\lingua_B$ getrennt werden können. Nach dem Trennungslemma gilt das genau dann, wenn für alle $(B,A)\preceq(D_1,C_1),(D_2,C_2)$ und alle $c_i\in C_i\ (i=1,2)$ mit $(D_1,C_1)\models\varphi(c_1),(D_2,C_2)\models\neg\varphi(c_2)$ eine $\lingua_B$-Formel $\chi$ existiert mit $(D_1,C_1)\models\chi(c_1),(D_2,C_2)\models\neg\chi(c_2)$.\\
 	Seien solche $(D_i,C_i)$ und $c_i$, die die Voraussetzungen von oben erfüllen. Dann ist das die Situation aus Lemma \ref{Gemeinsame Unterstruktur}, denn elementare Erweiterungen sind frei. Also muss ein trennendes $\chi$ wie verlangt existieren, denn ansonsten würden $c_1$ und $c_2$ denselben $\lingua$-Typ erfüllen, aber nicht denselben $\lingua_P$-Typ.\\
@@ -230,7 +238,8 @@ Um definierbare Funktionen besser zu verstehen, ist es notwendig, sich mit dem d
 	In jedem dichten Paar $(B,A)$ ist $A$ definierbar abgeschlossen.
 \end{lemma}
 \begin{proof}
-	Sei $b\in B\setminus A$ und $(B,A)\preceq(D,C)$ eine genügend saturierte Erweiterung. Dann wird der Ordnungstyp von $b$ über $A$ auch von einem Element $D\setminus C\ni d\neq b$ realisiert wegen Dichtheit von $D\setminus C$ in $D$ und Saturation. Nach Lemma \ref{selber Schnitt} haben $b$ und $d$ dann den selben $\lingua_P$-Typen über $A$, weswegen $b$ nicht definierbar über $A$ in $(D,C)$ sein kann, also auch nicht in $(B,A)$.
+	Sei $b\in B\setminus A$ und $(B,A)\preceq(D,C)$ eine genügend saturierte Erweiterung. Dann wird der Ordnungstyp von $b$ über $A$ auch von einem Element $D\setminus C\ni d\neq b$ realisiert wegen Dichtheit von $D\setminus C$ in $D$ und Saturation.\newpage
+	Nach Lemma \ref{selber Schnitt} haben $b$ und $d$ dann den selben $\lingua_P$-Typen über $A$, weswegen $b$ nicht definierbar über $A$ in $(D,C)$ sein kann, also auch nicht in $(B,A)$.
 \end{proof}
 
 \begin{corollary}
@@ -247,13 +256,13 @@ Um definierbare Funktionen besser zu verstehen, ist es notwendig, sich mit dem d
 	Wenn $D=C$, ist $D\preceq A$ und die Aussage daher klar nach der vorigen Folgerung. Die Erweiterung $(AD,A)\subseteq(B,A)$ ist trivialerweise frei (zwei gleiche Mengen in der Unabhängigkeit), außerdem ist $A\preceq AD$ dicht (da $A$ dicht in $B\supseteq AD$) und eine echte Inklusion, da für $D=A$ wegen Unabhängigkeit von $D$ und $A$ ansonsten $D=C$ folgen würde. Nach Lemma \ref{freie Erweiterungen} ist also $(AD,A)\preceq(B,A)$ und daher ist $\dcl(D)\subseteq\dcl(AD)=AD$, da $AD$ definierbar abgeschlossen nach Lemma \ref{A definierbar abgeschl}.\\
 	Sei jetzt $d\in AD$ $\lingua_P$-definierbar über $D$ und $a\in A^n$ minimal mit $d\in Da$ (insbesondere ist $a$ unabhängig über $D$). Im Folgenden wird gezeigt, dass dann $a$ schon das leere Tupel, also $d\in D$ ist.\\
 	Nimm an, dass $n>0$ und sei $f:B^n\rightarrow B$ die definierende Funktion von $d$, also ist sie $D$-definierbar und $f(a)=d$. Seien $$S_1:=\{x\in B^n\mid f(x_1,\dots,x_{n-1},\cdot)\text{ ist streng monoton wachsend auf einem Intervall um }x_n\},$$ $$S_3:=\{x\in B^n\mid f(x_1,\dots,x_{n-1},\cdot)\text{ ist streng monoton fallend auf einem Intervall um }x_n\},$$ $$S_3:=\{x\in B^n\mid f(x_1,\dots,x_{n-1},\cdot)\text{ ist konstant auf einem Intervall um }x_n\}.$$
-	$S_1\cup S_2\cup S_3$ ist groß, denn wenn eine offene Menge $U\subseteq B^n\setminus(S_1\cup S_2\cup S_3)$ existiert, wähle $x\in U$ beliebig und ein Intervall $I$ um $x_n$ mit $\{(x_1,\dots,x_{n-1})\}\times I\subset U$. Nach der Charakterisierung o-minimaler definierbarer Funktionen existiert ein Subintervall $J\subseteq I$, sodass $f(x_1,\dots,x_{n-1},\cdot)$ entweder streng monoton wachsend, fallend oder konstant ist auf $J$. Also ist $x\in S_1\cup S_2\cup S_3$ im Widerspruch zu $x\in U$.\\
+	$S_1\cup S_2\cup S_3$ ist groß, denn wenn eine offene Menge $U\subseteq B^n\setminus(S_1\cup S_2\cup S_3)$ existiert, wähle $x\in U$ beliebig und ein Intervall $I$ um $x_n$ mit $\{(x_1,\dots,x_{n-1})\}\times I\subset U$. Nach der Charakterisierung o-minimaler definierbarer Funktionen existiert ein Subintervall $J\subseteq I$, sodass $f(x_1,\dots,x_{n-1},\cdot)$ entweder streng monoton wachsend, fallend oder konstant ist auf $J$. Also ist $x\in S_1\cup S_2\cup S_3$ im Widerspruch zu $x\in U$.\newpage
 	Da $a$ generisch ist, muss es also in der großen Menge liegen.
 	\begin{itemize}
 		\item Wenn $a$ in $S_1$ liegt, nehmen wir an, dass $(B,A)$ schon hinreichend saturiert ist (das ändert nichts, da $(B,A)$ ja nur irgendeine Oberstruktur und Modell von $\td$ sein muss) und finden in $A\setminus Da_1\dots a_{n-1}$ ein $a'\neq a_n$ mit demselben Ordnungstyp über $Da_1\dots a_{n-1}$ (ansonsten wäre $a_n$ definierbar über $a_1,\dots,a_{n-1}$). Insbesondere ist $a_1,\dots,a_{n-1},a'\in S_1$, weil die Menge aller solchen Elemente $a'$ $Da_1\dots a_{n-1}$-definierbar ist und daher eine $Da_1\dots a_{n-1}$-definierbare Umgebung von $a_n$ dort drin liegt, in der $a'$ liegen muss. Da $f$ streng monoton ist, ist $f(a_1,\dots,a_{n-1},a')\neq f(a)=d\in D$.\\
 		Allerdings ist $d$ $\lingua_P$-definierbar über $D$, also ist $$f(a_1,\dots,a_{n-1},x)=d\in\tp_{\lingua_P}(a/Da_1\dots a_{n-1})\setminus\tp_{\lingua_P}(a'/Da_1\dots a_{n-1})$$ (oder zumindest mit der definierenden Formel für $d$ eingesetzt), die Typen sind daher nicht gleich.\\
 		Da $a_n,a'\in A$ aber den gleichen Ordnungstyp über $Da_1\dots a_{n-1}$ haben, haben sie auch den gleichen $\lingua$-Typ über $Da_1\dots a_{n-1}$ nach dem Beweis von Satz \ref{BackForth}. Außerdem ist $(Da_1\dots a_{n-1},Ca_1\dots a_{n-1})\subseteq(B,A)$ nach Lemma \ref{Unabhängigkeitsregeln} (6.) frei, weswegen aus Lemma \ref{Gemeinsame Unterstruktur} folgt, dass $a_n,a'$ denselben $\lingua_P$-Typ über $Da_1\dots a_{n-1}$ haben - Widerspruch!
 		\item Das Fall $a\in S_2$ geht analog, es wurde eben auch nur streng monoton benutzt.
-		\item Im Falle $a\in S_3$ ist $d$ $\lingua$-definierbar über $Da_1\dots a_{n-1}$ durch $\glqq{}d=f(a_1,\dots,a_{n-1},x)\text{ für irgendein }(a_1,\dots,a_{n-1},x)\in S_3$.
+		\item Im Falle $a\in S_3$ ist $d$ $\lingua$-definierbar über $Da_1\dots a_{n-1}$ durch $$\glqq{}d=f(a_1,\dots,a_{n-1},x)\text{ für irgendein }(a_1,\dots,a_{n-1},x)\in S_3.$$
 	\end{itemize}
 \end{proof}
