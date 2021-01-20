@@ -14,6 +14,7 @@
 \usepackage{hyperref}
 \usepackage{titlesec}
 \usepackage{texilikechaps}
+\usepackage{color}
 
 \captionsetup[table]{labelformat=empty}
 
@@ -121,10 +122,11 @@
 	
 	\addcontentsline{toc}{section}{Notation}
 	\section*{Notation}
-	Im Folgenden seien, wenn nicht weiter erklärt, mit $k,l,m,n$ immer natürliche Zahlen gemeint, mit hebräischen Buchstaben immer unendliche Kardinalzahlen.\\
+	Im Folgenden seien, wenn nicht weiter erklärt, mit $i,j,k,l,m,n$ immer natürliche Zahlen gemeint, mit hebräischen Buchstaben immer unendliche Kardinalzahlen.\\
 	Oftmals wird nicht zwischen Strukturen und deren Trägermengen unterschieden, insbesondere bei Paaren von Strukturen.\\
-	Als Topologie wird immer die Ordnungstopologie bzw. deren Produkttopologie verstanden, mit \glqq{}Intervall\grqq{} ist immer ein offenes, nichtleeres Intervall mit Randpunkten in der Struktur oder $\pm\infty$ gemeint. Außerdem sei für $A\prec B$ und $X\subseteq B$ $A$-definierbar in $T$ die Menge $X_A$ die durch dieselbe definierende Formel in $B$ definierbare Menge (für $X\subseteq A$ und $X_B$ natürlich analog). Außerdem sei für Relationen $P$ mit \glqq{}$\exists/\forall x\in P(\dots)$\grqq{} die Formel \glqq{}$\exists x(P(x)\land\dots)/\forall x(P(x)\rightarrow\dots)$\grqq{}.\\
-	Mit $\abs{\overline{a}}$ ist je nach Kontext unterschiedliches gemeint, einerseits die Supremumsnorm von $\overline{a}$, andererseits die Anzahl der Einträge. Da das eine ein Element der Struktur ist und das andere eine natürliche Zahl, ist immer klar erkennbar, was gemeint ist. Im Allgemeinen wird auch nicht immer zwischen Tupeln und Elementen unterschieden.
+	Als Topologie wird immer die Ordnungstopologie bzw. deren Produkttopologie verstanden, mit \glqq{}Intervall\grqq{} ist immer ein offenes, nichtleeres Intervall mit Randpunkten in der Struktur oder $\pm\infty$ gemeint. Außerdem sei für $A\prec B$ und $X\subseteq B$ $A$-definierbar in $T$ die Menge $X_A$ die durch dieselbe definierende Formel in $B$ definierbare Menge (für $X\subseteq A$ und $X_B$ natürlich analog). Außerdem sei für Relationen $P$ mit \glqq{}$\exists/\forall x\in P(\dots)$\grqq{} die Formel \glqq{}$\exists x(P(x)\land\dots)/\forall x(P(x)\rightarrow\dots)$\grqq{} gemeint.\\
+	Mit $\abs{\overline{a}}$ ist je nach Kontext unterschiedliches gemeint, einerseits die Supremumsnorm von $\overline{a}$, andererseits die Anzahl der Einträge. Da das eine ein Element der Struktur ist und das andere eine natürliche Zahl, ist immer klar erkennbar, was gemeint ist. Im Allgemeinen wird auch nicht immer zwischen Tupeln und Elementen unterschieden.\\
+	Im modelltheoretischen Kontext ungewöhnlich sind Mengen der Form $\{f=a\},\{f>a\}$ und $\{f<a\}$ für eine Abbildung $f:X\rightarrow Y$. Hiermit sind die maßtheoretischen Interpretationen dieser Ausdrucksweise ($\{x\in X\mid f(x)=a\},\{x\in X\mid f(x)>a\}$ und $\{x\in X\mid f(x)<a\}$) gemeint.
 	
 	\include{PaareAlgAbg}
     \include{PaareOMin}

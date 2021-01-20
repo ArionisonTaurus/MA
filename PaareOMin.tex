@@ -10,7 +10,7 @@ Dem Verlauf in \cite{VanDenDries} folgend, wird zunächst die Vollständigkeit u
 
 \section{Kleine Mengen}
 \begin{definition}
-	Sei $(B,A)\models\td$, dann ist eine definierbare Menge $S\subseteq B$ \textbf{klein}, wenn eine $B$-definierbare Funktion $f:B^n\rightarrow B$ existiert mit $S\subseteq f(A^n)$.
+	Sei $(B,A)\models\td$, dann ist eine $\lingua_P$-definierbare Menge $S\subseteq B$ \textbf{klein}, wenn eine $\lingua$-definierbare Funktion $f:B^n\rightarrow B$ existiert mit $S\subseteq f(A^n)$.
 \end{definition}
 
 Das Ziel ist jetzt, zu zeigen, dass definierbare Intervalle nicht klein sind.\newpage
@@ -90,8 +90,8 @@ In diesem Kontext wird wieder die $\acl$-Unabhängigkeit in einem Modell von T r
 		\item Wenn $A$ und $B$ unabhängig über $C$ sind, $A\subseteq S\subseteq\acl(A),B\subseteq S'\subseteq\acl(B)$, dann sind $S$ und $S'$ unabhängig über $C$.
 		\item Wenn $A$ und $B$ unabhängig über $C$ sind und $D$ (algebraisch) unabhängig über $AB$, dann sind $A\cup D$ und $B$ unabhängig über $C$.
 		\item Wenn $(D,C)\preceq(B,A)\models\tq$, dann sind $A$ und $D$ unabhängig über $C$.
-		\item Wenn $(D,C)\subseteq(B,A)\models\tq,\ S\subseteq A$ und $A$ und $D$ unabhängig über $C$ sind, dann sind $A$ und $DS$ unabhängig über $CS$, $\langle D\cup S\rangle_{\lingua_P}=(DS,CS)$ und $(D,C)\subseteq(DS,CS)\subseteq(B,A)$.
-		\item Wenn $(D,C)\subseteq(B,A)\models\tq$ und $S\subseteq B$ unabhängig über $DA$ ist, dann sind $A$ und $DS$ unabhängig über $C$, $\langle D\cup S\rangle_{\lingua_P}=(DS,C)$ und $(D,C)\subseteq(DS,C)\subseteq(B,A)$.
+		\item Wenn $(D,C)\subseteq(B,A)\models\tq,\ S\subseteq A$ und $A$ und $D$ unabhängig über $C$ sind, dann sind $A$ und $DS$ unabhängig über $CS$, $\langle D\cup S\rangle_{\lingua_P}=(DS,CS)$ und $$(D,C)\subseteq(DS,CS)\subseteq(B,A).$$
+		\item Wenn $(D,C)\subseteq(B,A)\models\tq$ und $S\subseteq B$ unabhängig über $DA$ ist, dann sind $A$ und $DS$ unabhängig über $C$, $\langle D\cup S\rangle_{\lingua_P}=(DS,C)$ und $$(D,C)\subseteq(DS,C)\subseteq(B,A).$$
 	\end{enumerate}
 \end{lemma}
 \newpage
@@ -249,7 +249,7 @@ Um definierbare Funktionen besser zu verstehen, ist es notwendig, sich mit dem d
 	Sei $b$ definierbar über $A_0$. Dann ist $b$ insbesondere definierbar über $A$, also in $A$. Nach Folgerung \ref{Definierbarkeit aus A} ist dann $\{a\}=\{a\}\cap A$ schon $\lingua$-definierbar aus $A_0$, also in $A_0$, da $A_0$ elementare Substruktur ist.
 \end{proof}
 
-\begin{lemma}
+\begin{lemma}\label{Freie Definierbarkeit}
 	Sei $(D,C)\subseteq(B,A)$ frei und $(B,A)$ dichtes Paar. Dann ist $D$ definierbar abgeschlossen in $(B,A)$.
 \end{lemma}
 \begin{proof}
@@ -265,4 +265,24 @@ Um definierbare Funktionen besser zu verstehen, ist es notwendig, sich mit dem d
 		\item Das Fall $a\in S_2$ geht analog, es wurde eben auch nur streng monoton benutzt.
 		\item Im Falle $a\in S_3$ ist $d$ $\lingua$-definierbar über $Da_1\dots a_{n-1}$ durch $$\glqq{}d=f(a_1,\dots,a_{n-1},x)\text{ für irgendein }(a_1,\dots,a_{n-1},x)\in S_3.$$
 	\end{itemize}
+\end{proof}
+
+\fcolorbox{red}{red}{Ab hier müsst ihr (Stand 20.1.) nicht mehr korrekturlesen. (TODO: Entfernen, wenn unnötig)}
+
+\begin{theorem}
+	Sei $(B,A)\models\td$ und sei $F:B\rightarrow B$ eine $\lingua_P$-definierbare Funktion. Dann stimmt $F$ auf bis auf eine kleine Menge mit einer $\lingua$-definierbaren Funktion überein.
+\end{theorem}
+\begin{proof}
+	TODO: Muss noch warten
+\end{proof}
+\begin{corollary}
+	Auch jede $\lingua_P$-definierbare Menge $S\subseteq B^n$ stimmt bis auf eine kleine Menge mit einer $\lingua$-definierbaren Menge $S'$ überein. $S'$ kann man zum Beispiel finden, indem man für die $\lingua_P$-definierbare charakteristische Funktion $\mathbb{1}_S$ die $\lingua$-definierbare Annäherung $f$ findet und $S':=\{f=1\}$ setzt.
+\end{corollary}
+
+\begin{lemma}
+	Sei $(B,A)\models\td$ und sei $F:A^n\rightarrow A$ eine $\lingua_P$-definierbare Funktion. Dann gibt es $\lingua_A$-definierbare $f_1,\dots,f_k:A^n\rightarrow A$, sodass für alle $a\in A^n$ ein $f_i$ existiert mit $F(a)=f_i(a)$.
+\end{lemma}
+\begin{proof}
+	Wenn die Aussage nicht gilt, gilt für alle $k\in\setN$ und alle $\lingua_A$-definierbaren $f_1,\dots,f_k:A^n\rightarrow A$, dass ein $a\in A$ existiert mit $f_i(a)\neq F(a)$ für alle $i$. Also ist der partielle Typ $$\{F(x)\neq f(x)\mid f:A^n\rightarrow A\ \lingua_A\text{-definierbar}\}$$ konsistent und es existiert $(B,A)\preceq(B',A')$ und $a'\in A'^n$ mit $F(a')\neq f(a')$ für alle $\lingua_A$-definierbaren $f:A'^n\rightarrow A'$.\\
+	Allerdings ist nach Lemma \ref{Unabhängigkeitsregeln} (6.) wegen $a'\in A'^n$ die Erweiterung $(Ba',Aa')\subseteq(B',A')$ frei, nach Lemma \ref{Freie Definierbarkeit} ist $Ba'$ also $\lingua_P$-definierbar abgeschlossen. Da $F(a')$ $\lingua_P$-definierbar über $Ba'$ ist, ist es in $Ba'$, wegen $F:A'^n\rightarrow A$ ist $F(a')\in A'$. Wegen Unabhängigkeit liegt also $F(a')\in Ba'\cap A'=Aa'$ und es gibt eine $\lingua_A$-definierbare Abbildung $f:A'^n\rightarrow A'$ mit $f(a')=F(a')$ - ein Widerspruch!
 \end{proof}
