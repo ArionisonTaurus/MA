@@ -255,7 +255,7 @@ Um definierbare Funktionen besser zu verstehen, ist es notwendig, sich mit dem d
 \begin{proof}
 	Wenn $D=C$, ist $D\preceq A$ und die Aussage daher klar nach der vorigen Folgerung. Die Erweiterung $(AD,A)\subseteq(B,A)$ ist trivialerweise frei (zwei gleiche Mengen in der Unabhängigkeit), außerdem ist $A\preceq AD$ dicht (da $A$ dicht in $B\supseteq AD$) und eine echte Inklusion, da für $D=A$ wegen Unabhängigkeit von $D$ und $A$ ansonsten $D=C$ folgen würde. Nach Lemma \ref{freie Erweiterungen} ist also $(AD,A)\preceq(B,A)$ und daher ist $\dcl(D)\subseteq\dcl(AD)=AD$, da $AD$ definierbar abgeschlossen nach Lemma \ref{A definierbar abgeschl}.\\
 	Sei jetzt $d\in AD$ $\lingua_P$-definierbar über $D$ und $a\in A^n$ minimal mit $d\in Da$ (insbesondere ist $a$ unabhängig über $D$). Im Folgenden wird gezeigt, dass dann $a$ schon das leere Tupel, also $d\in D$ ist.\\
-	Nimm an, dass $n>0$ und sei $f:B^n\rightarrow B$ die definierende Funktion von $d$, also ist sie $D$-definierbar und $f(a)=d$. Seien $$S_1:=\{x\in B^n\mid f(x_1,\dots,x_{n-1},\cdot)\text{ ist streng monoton wachsend auf einem Intervall um }x_n\},$$ $$S_3:=\{x\in B^n\mid f(x_1,\dots,x_{n-1},\cdot)\text{ ist streng monoton fallend auf einem Intervall um }x_n\},$$ $$S_3:=\{x\in B^n\mid f(x_1,\dots,x_{n-1},\cdot)\text{ ist konstant auf einem Intervall um }x_n\}.$$
+	Nimm an, dass $n>0$ und sei $f:B^n\rightarrow B$ die definierende Funktion von $d$, also ist sie $D$-definierbar und $f(a)=d$. Seien $$S_1:=\{x\in B^n\mid f(x_1,\dots,x_{n-1},\cdot)\text{ ist streng monoton wachsend auf einem Intervall um }x_n\},$$ $$S_2:=\{x\in B^n\mid f(x_1,\dots,x_{n-1},\cdot)\text{ ist streng monoton fallend auf einem Intervall um }x_n\},$$ $$S_3:=\{x\in B^n\mid f(x_1,\dots,x_{n-1},\cdot)\text{ ist konstant auf einem Intervall um }x_n\}.$$
 	$S_1\cup S_2\cup S_3$ ist groß, denn wenn eine offene Menge $U\subseteq B^n\setminus(S_1\cup S_2\cup S_3)$ existiert, wähle $x\in U$ beliebig und ein Intervall $I$ um $x_n$ mit $\{(x_1,\dots,x_{n-1})\}\times I\subset U$. Nach der Charakterisierung o-minimaler definierbarer Funktionen existiert ein Subintervall $J\subseteq I$, sodass $f(x_1,\dots,x_{n-1},\cdot)$ entweder streng monoton wachsend, fallend oder konstant ist auf $J$. Also ist $x\in S_1\cup S_2\cup S_3$ im Widerspruch zu $x\in U$.\newpage
 	Da $a$ generisch ist, muss es also in der großen Menge liegen.
 	\begin{itemize}
@@ -285,4 +285,43 @@ Um definierbare Funktionen besser zu verstehen, ist es notwendig, sich mit dem d
 \begin{proof}
 	Wenn die Aussage nicht gilt, gilt für alle $k\in\setN$ und alle $\lingua_A$-definierbaren $f_1,\dots,f_k:A^n\rightarrow A$, dass ein $a\in A$ existiert mit $f_i(a)\neq F(a)$ für alle $i$. Also ist der partielle Typ $$\{F(x)\neq f(x)\mid f:A^n\rightarrow A\ \lingua_A\text{-definierbar}\}$$ konsistent und es existiert $(B,A)\preceq(B',A')$ und $a'\in A'^n$ mit $F(a')\neq f(a')$ für alle $\lingua_A$-definierbaren $f:A'^n\rightarrow A'$.\\
 	Allerdings ist nach Lemma \ref{Unabhängigkeitsregeln} (6.) wegen $a'\in A'^n$ die Erweiterung $(Ba',Aa')\subseteq(B',A')$ frei, nach Lemma \ref{Freie Definierbarkeit} ist $Ba'$ also $\lingua_P$-definierbar abgeschlossen. Da $F(a')$ $\lingua_P$-definierbar über $Ba'$ ist, ist es in $Ba'$, wegen $F:A'^n\rightarrow A$ ist $F(a')\in A'$. Wegen Unabhängigkeit liegt also $F(a')\in Ba'\cap A'=Aa'$ und es gibt eine $\lingua_A$-definierbare Abbildung $f:A'^n\rightarrow A'$ mit $f(a')=F(a')$ - ein Widerspruch!
+\end{proof}
+
+\section{TODO: Hier noch passende Überschrift finden}
+TODO: Hier noch einleitende Worte finden\\
+In diesem Teil sei $(B,A)$ ein dichtes Paar, als Konvention nehmen wir an, dass $A^0=\{0\}$.
+
+\begin{lemma}
+	Für jede $\lingua$-definierbare Menge $S\subseteq B^m$ und Funktion $g:B^m\rightarrow B^k$ gibt es eine $\lingua$-definierbare Teilmenge $S'\subseteq S$, sodass $$A^m\cap S\cap g^{-1}(A^k)=A^m\cap S'.$$
+\end{lemma}
+\begin{proof}
+	Für $S=\emptyset$, wähle $S'=\emptyset$. Ansonsten führen wir eine Induktion über $(m,k,\dim S)$ mit elementweiser Halbordnung (die ist fundiert):\\
+	Wenn $m=0,k=0$ oder $\dim S=0$, ist $A^m\cap S\cap g^{-1}(A^k)$ endlich und daher $\lingua$-definierbar, also kann man $S'=A^m\cap S\cap g^{-1}(A^k)$ wählen. Sei also $(m,k,\dim S)>(0,0,0)$.
+	\begin{itemize}
+		\item Wenn $k>1$ gilt und $g$ die Koordinatenfunktionen $g_1,\dots,g_k$ hat, so existieren $(S'_i)_{i\leq k}$ mit $S'_i\subseteq S$ und $A^m\cap S\cap g_k^{-1}(A)=A^m\cap S'_i$ für alle $i$ per Induktionsvoraussetzung. Dann gilt
+		\begin{align*}
+		A^m\cap S\cap g^{-1}(A^k)=\bigcap\limits_{i=1}^k A^m\cap S\cap g_i^{-1}(A)=\bigcap\limits_{i=1}^k A^m\cap S'_i=A^m\cap(\bigcap\limits_{i=1}^k S'_i),
+		\end{align*}
+		also erfüllt $S':=\bigcap\limits_{i=1}^k S'_i$ das Gewünschte.
+		\item Wenn $k=1$ gilt, zerlege $S$ in Zellen $(Z_i)$, deren Dimension natürlich $\leq\dim S$ ist. Wenn man da das Problem löst (induktiv bzw. von Hand) und jeweils ein passendes $S'_i$ findet, löst $\bigcup\limits_i S'_i$ das Problem für $S$.\\ Sei also $S$ jetzt schon eine Zelle.
+		\begin{itemize}
+			\item Wenn $n:=\dim S<m$ ist und $\pi$ die entsprechende homöomorphe Projektion auf eine offene Zelle in $B^n$  bzw. eine $\lingua$-definierbare Fortsetzung davon auf ganz $B^m$, sei $\lambda$ eine $\lingua$-definierbare Fortsetzung der Umkehrfunktion dieser Projektion. Löse dann mit einem $\lingua$-definierbaren $S''\subseteq \pi(S)$ das Problem $$A^n\cap\pi(S)\cap\lambda^{-1}(A^m)\cap (g\circ\lambda)^{-1}(A)=A^n\cap S''.$$
+			Das Problem entspricht im Übrigen den Anforderungen, weil man\linebreak $\lambda^{-1}(A^m)\cap (g\circ\lambda)^{-1}(A)$ wie im Fall $k>1$ umschreiben kann. Schneidet man das mit $\lambda^{-1}(A^m)$ und wendet darauf $\lambda$ an, erhält man
+			\begin{align*}
+			\lambda(A^n)\cap S\cap A^m\cap g^{-1}(A)&=\lambda(A^n\cap\pi(S)\cap\lambda^{-1}(A^m)\cap (g\circ\lambda)^{-1}(A))\\
+			&=\lambda(\lambda^{-1}(A^m)\cap A^n\cap S'')\\
+			&=A^m\cap\lambda(A^n)\cap\lambda(S''),
+			\end{align*}
+			wegen $A^m\cap S\subseteq\lambda(A^n)$ aufgrund der Projektionseigenschaft von $\pi$, kann man $\lambda(A^n)$ weglassen und erhält $$A^m\cap S\cap g^{-1}(A)=A^m\cap\lambda(S''),$$
+			also löst $\lambda(S'')$ das Problem für $S$.
+			\newpage
+			\item Wenn $\dim S=m$, finde eine $\lingua_A$-definierbare Funktion $G:B^{m+n}\rightarrow B$ mit $g=G(\cdot,b)$ für ein über $A$ unabhängiges Tupel $b\in B^n$. Wenn $n=0$, dann ist nichts zu tun, weil dann $g$ schon $A$-definierbar ist, also $g^{-1}(A)=A^m$ und man dann $S'=S$ wählen kann. Ansonsten zerlege $S$ wie schon im Beweis von Lemma \ref{Freie Definierbarkeit} in Mengen
+			\begin{align*}
+			S_1:=\{x\in B^{m+n}\mid&G(x_1,\dots,x_{m+n-1},\cdot)\text{ ist streng monoton wachsend }\\&\text{auf einem Intervall um }x_n\},\\S_2:=\{x\in B^{m+n}\mid&G(x_1,\dots,x_{m+n-1},\cdot)\text{ ist streng monoton fallend }\\&\text{auf einem Intervall um }x_n\},\\S_3:=\{x\in B^{m+n}\mid&G(x_1,\dots,x_{m+n-1},\cdot)\text{ ist konstant auf einem Intervall um }x_n\}
+			\end{align*}
+			und den Rest $S_4:=B^{m+n}\setminus(S_1\cup S_2\cup S_3)$, partitioniere diese Mengen dann noch in Zellen $(Z_i)_i$ und definiere $Z'_i:=\{x\in B\mid (x,b)\in Z_i\}$ für alle $i$.\\
+			Löse das Problem jetzt für alle $(Z'_i)_i$, wegen $S:=\bigcup\limits_i Z'_i$ ist es dann auch für $S$ gelöst: Für nicht-offene Zellen geht das per Induktion bzw. genauso wie im vorigen Unterpunkt. Wenn $Z'_i$ nun eine offene Zelle ist, gilt für ein generisches Element $x$, dass $(x,b)$ generisch von $B^{m+n}$ ist, also in $S_1\cup S_2\cup S_3$. Also 
+		\end{itemize}
+		
+	\end{itemize}
 \end{proof}
