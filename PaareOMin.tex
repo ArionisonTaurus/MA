@@ -46,7 +46,7 @@ Im folgenden Lemma meint $(\cdot,+)$ nicht unbedingt die Operationen in $\lingua
 
 \newpage
 
-\begin{theorem}
+\begin{theorem}\label{Kleinheit}
 	Wenn $(B,A)\models\td$, dann ist kein Intervall eine kleine Teilmenge.
 \end{theorem}
 \begin{proof}
@@ -108,7 +108,7 @@ Zu bemerken ist, dass ein Spezialfall von Unabhängigkeit viele nützliche Eigen
 	Seien $(D,C)\subseteq(B,A)$ zwei Modelle von $\tq$. Dann heiße diese Erweiterung \textbf{frei}, wenn $D$ und $A$ unabhängig über $C$ sind.
 \end{definition}
 
-\begin{lemma}
+\begin{lemma}\label{Kodichte von A}
 	Sei $(B,A)\models\td$. Dann ist $A$ auch kodicht in $B$.
 \end{lemma}
 \begin{proof}
@@ -191,7 +191,7 @@ Im Folgenden werden einige Anordnungen von wechselseitigen Inklusionen von Model
 
 \newpage
 
-\section{Definierbare Mengen}
+\section{Definierbare Teilmengen von $A^n$}
 Wir interessieren uns für die Gestalt von $\lingua_P$-definierbaren Teilmengen von $A^n$. Dafür braucht man zuerst eine Hilfsaussage für definierbare Mengen in o-minimalen Strukturen.
 
 \begin{lemma}
@@ -210,7 +210,7 @@ Wir interessieren uns für die Gestalt von $\lingua_P$-definierbaren Teilmengen 
 	Klar ist, dass $\overline{Z}=\{f=0\}$; da Zellen lokal abgeschlossen sind, ist $\overline{Z}\setminus Z=\overline{\overline{Z}\setminus Z}=\{g=0\}$. Also erhalten wir $$Z=\overline{Z}\setminus(\overline{Z}\setminus Z)=\{f=0\}\setminus\{g=0\}=\{f=0\}\cap\{g>0\}$$ und $$Y=Z_b=\{f(b,\cdot)=0\}\cap\{g(b,\cdot)>0\}.$$
 \end{proof}
 
-\begin{theorem}
+\begin{theorem}\label{Definierbare Mengen}
 	Für ein dichtes Paar $(B,A)$ und $Y\subseteq A^n$ ist folgendes äquivalent:
 	\begin{enumerate}
 		\item $Y$ ist $\lingua_P$-definierbar.
@@ -276,7 +276,7 @@ Um definierbare Funktionen besser zu verstehen, ist es notwendig, sich mit dem d
 	TODO: Muss noch warten
 \end{proof}
 \begin{corollary}
-	Auch jede $\lingua_P$-definierbare Menge $S\subseteq B^n$ stimmt bis auf eine kleine Menge mit einer $\lingua$-definierbaren Menge $S'$ überein. $S'$ kann man zum Beispiel finden, indem man für die $\lingua_P$-definierbare charakteristische Funktion $\mathbb{1}_S$ die $\lingua$-definierbare Annäherung $f$ findet und $S':=\{f=1\}$ setzt.
+	Auch jede $\lingua_P$-definierbare Menge $S\subseteq B^n$ stimmt bis auf eine kleine Menge mit einer $\lingua$-definierbaren Menge $S'$ überein. $S'$ kann man zum Beispiel finden, indem man für die $\lingua_P$-definierbare charakteristische Funktion $\chi_S$ die $\lingua$-definierbare Annäherung $f$ findet und $S':=\{f=1\}$ setzt.
 \end{corollary}
 
 \begin{lemma}
@@ -287,7 +287,7 @@ Um definierbare Funktionen besser zu verstehen, ist es notwendig, sich mit dem d
 	Allerdings ist nach Lemma \ref{Unabhängigkeitsregeln} (6.) wegen $a'\in A'^n$ die Erweiterung $(Ba',Aa')\subseteq(B',A')$ frei, nach Lemma \ref{Freie Definierbarkeit} ist $Ba'$ also $\lingua_P$-definierbar abgeschlossen. Da $F(a')$ $\lingua_P$-definierbar über $Ba'$ ist, ist es in $Ba'$, wegen $F:A'^n\rightarrow A$ ist $F(a')\in A'$. Wegen Unabhängigkeit liegt also $F(a')\in Ba'\cap A'=Aa'$ und es gibt eine $\lingua_A$-definierbare Abbildung $f:A'^n\rightarrow A'$ mit $f(a')=F(a')$ - ein Widerspruch!
 \end{proof}
 
-\section{TODO: Hier noch passende Überschrift finden}
+\section{Definierbare eindimensionale Mengen}
 TODO: Hier noch einleitende Worte finden\\
 In diesem Teil sei $(B,A)$ ein dichtes Paar, als Konvention nehmen wir an, dass $A^0=\{0\}$.
 
@@ -305,8 +305,8 @@ In diesem Teil sei $(B,A)$ ein dichtes Paar, als Konvention nehmen wir an, dass 
 		also erfüllt $S':=\bigcap\limits_{i=1}^k S'_i$ das Gewünschte.
 		\item Wenn $k=1$ gilt, zerlege $S$ in Zellen $(Z_i)$, deren Dimension natürlich $\leq\dim S$ ist. Wenn man da das Problem löst (induktiv bzw. von Hand) und jeweils ein passendes $S'_i$ findet, löst $\bigcup\limits_i S'_i$ das Problem für $S$.\\ Sei also $S$ jetzt schon eine Zelle.
 		\begin{itemize}
-			\item Wenn $n:=\dim S<m$ ist und $\pi$ die entsprechende homöomorphe Projektion auf eine offene Zelle in $B^n$  bzw. eine $\lingua$-definierbare Fortsetzung davon auf ganz $B^m$, sei $\lambda$ eine $\lingua$-definierbare Fortsetzung der Umkehrfunktion dieser Projektion. Löse dann mit einem $\lingua$-definierbaren $S''\subseteq \pi(S)$ das Problem $$A^n\cap\pi(S)\cap\lambda^{-1}(A^m)\cap (g\circ\lambda)^{-1}(A)=A^n\cap S''.$$
-			Das Problem entspricht im Übrigen den Anforderungen, weil man\linebreak $\lambda^{-1}(A^m)\cap (g\circ\lambda)^{-1}(A)$ wie im Fall $k>1$ umschreiben kann. Schneidet man das mit $\lambda^{-1}(A^m)$ und wendet darauf $\lambda$ an, erhält man
+			\item Wenn $n:=\dim S<m$ ist und $\pi$ die entsprechende homöomorphe Projektion auf eine offene Zelle in $B^n$  bzw. eine $\lingua$-definierbare Fortsetzung davon auf ganz $B^m$, sei $\lambda$ eine $\lingua$-definierbare Fortsetzung der Umkehrfunktion dieser Projektion. Wähle die Fortsetzung $\lambda$ dabei so, dass $\lambda(\pi(S))$ und $\lambda(B^n\setminus\pi(S))$ disjunkt sind. Das ermöglicht die Gleichheit $\lambda(C\cap D)=\lambda(C)\cap\lambda(D)$ für $C\subseteq\pi(S)$. Löse dann mit einem $\lingua$-definierbaren $S''\subseteq \pi(S)$ das Problem $$A^n\cap\pi(S)\cap\lambda^{-1}(A^m)\cap (g\circ\lambda)^{-1}(A)=A^n\cap S''.$$
+			Das Problem entspricht im Übrigen den Anforderungen, weil man\linebreak $\lambda^{-1}(A^m)\cap (g\circ\lambda)^{-1}(A)$ wie im Fall $k>1$ umschreiben kann. Schneidet man das mit $\lambda^{-1}(A^m)$ und wendet darauf $\lambda$ an, erhält man (mit schrittweiser Verwendung des $\cap$-Herausziehens)
 			\begin{align*}
 			\lambda(A^n)\cap S\cap A^m\cap g^{-1}(A)&=\lambda(A^n\cap\pi(S)\cap\lambda^{-1}(A^m)\cap (g\circ\lambda)^{-1}(A))\\
 			&=\lambda(\lambda^{-1}(A^m)\cap A^n\cap S'')\\
@@ -315,13 +315,34 @@ In diesem Teil sei $(B,A)$ ein dichtes Paar, als Konvention nehmen wir an, dass 
 			wegen $A^m\cap S\subseteq\lambda(A^n)$ aufgrund der Projektionseigenschaft von $\pi$, kann man $\lambda(A^n)$ weglassen und erhält $$A^m\cap S\cap g^{-1}(A)=A^m\cap\lambda(S''),$$
 			also löst $\lambda(S'')$ das Problem für $S$.
 			\newpage
-			\item Wenn $\dim S=m$, finde eine $\lingua_A$-definierbare Funktion $G:B^{m+n}\rightarrow B$ mit $g=G(\cdot,b)$ für ein über $A$ unabhängiges Tupel $b\in B^n$. Wenn $n=0$, dann ist nichts zu tun, weil dann $g$ schon $A$-definierbar ist, also $g^{-1}(A)=A^m$ und man dann $S'=S$ wählen kann. Ansonsten zerlege $S$ wie schon im Beweis von Lemma \ref{Freie Definierbarkeit} in Mengen
+			\item Wenn $\dim S=m$, finde eine $\lingua_A$-definierbare Funktion $G:B^{m+n}\rightarrow B$ mit $g=G(\cdot,b)$ für ein über $A$ unabhängiges Tupel $b\in B^n$. Als nächstes betreiben wir Induktion über $n$. Wenn $n=0$, dann ist nichts zu tun, weil dann $g$ schon $A$-definierbar ist, also $g^{-1}(A)=A^m$ und man dann $S'=S$ wählen kann. Ansonsten zerlege $S$ wie schon im Beweis von Lemma \ref{Freie Definierbarkeit} in Mengen
 			\begin{align*}
 			S_1:=\{x\in B^{m+n}\mid&G(x_1,\dots,x_{m+n-1},\cdot)\text{ ist streng monoton wachsend }\\&\text{auf einem Intervall um }x_n\},\\S_2:=\{x\in B^{m+n}\mid&G(x_1,\dots,x_{m+n-1},\cdot)\text{ ist streng monoton fallend }\\&\text{auf einem Intervall um }x_n\},\\S_3:=\{x\in B^{m+n}\mid&G(x_1,\dots,x_{m+n-1},\cdot)\text{ ist konstant auf einem Intervall um }x_n\}
 			\end{align*}
-			und den Rest $S_4:=B^{m+n}\setminus(S_1\cup S_2\cup S_3)$, partitioniere diese Mengen dann noch in Zellen $(Z_i)_i$ und definiere $Z'_i:=\{x\in B\mid (x,b)\in Z_i\}$ für alle $i$.\\
-			Löse das Problem jetzt für alle $(Z'_i)_i$, wegen $S:=\bigcup\limits_i Z'_i$ ist es dann auch für $S$ gelöst: Für nicht-offene Zellen geht das per Induktion bzw. genauso wie im vorigen Unterpunkt. Wenn $Z'_i$ nun eine offene Zelle ist, gilt für ein generisches Element $x$, dass $(x,b)$ generisch von $B^{m+n}$ ist, also in $S_1\cup S_2\cup S_3$. Also 
+			und den Rest $S_4:=B^{m+n}\setminus(S_1\cup S_2\cup S_3)$, partitioniere diese Mengen dann noch in $A$-definierbare Zellen $(Z_i)_i$ und definiere $Z'_i:=\{x\in B\mid (x,b)\in Z_i\}$ für alle $i$. Dann ist für jede offene Zelle $G$ in der letzten Koordinate entweder streng monoton steigend, fallend oder konstant jeweils auf der ganzen Zelle; das folgt, indem analog zum Beweis von Lemma \ref{Freie Definierbarkeit} offene Zellen schon Teilmenge von $S_1,S_2$ oder $S_3$ sind, die lokale Definition dieser Mengen überträgt sich durch Supremumsbildung auf die gesamte Zelle.\\
+			Löse das Problem jetzt für alle $(Z'_i)_i$, wegen $S:=\bigcup\limits_i Z'_i$ ist es dann auch für $S$ gelöst: Für nicht-offene Zellen geht das per Induktion bzw. genauso wie im vorigen Unterpunkt. Wenn $Z'_i$ nun eine offene Zelle ist, gilt für ein generisches Element $x$ über $A,b$, dass $(x,b)$ generisch von $B^{m+n}$ ist, also in $S_1\cup S_2\cup S_3$. Also ist $Z_i$ entweder in $S_1,S_2$ oder $S_3$ enthalten.
+			\begin{itemize}
+				\item Wenn $Z_i\subseteq S_3$ ist, definiere $$\tilde{G}(\overline{x})=z:\Leftrightarrow z=G(\overline{x},y)\text{ für ein }y\text{ mit }(\overline{x},y)\in Z_i,$$ dann gilt $g=\tilde{G}(\cdot,b_1,\dots,b_{n-1})$ und per Induktion kann man das Problem für $n-1$ lösen.
+				\item Wenn $Z_i\subseteq S_1,S_2$, also $G$ auf $Z_i$ injektiv in der letzten Koordinate ist, wird das Problem durch $\emptyset$ gelöst: Denn sei $a\in A^m\cap S'_i\cap g^{-1}(A)$, also existiert $a'\in A$ mit $a'=g(a)=G(a,b)$, weil $a\in Z'_i$ ist, ist $(a,b)\in Z_i$, also ist wegen Injektivität von $G$ in der letzten Koordinate $b_n$ eindeutig bestimmt mit $(a,b)\in Z_i$ und $a'=G(a,b)$. Das ist aber $A,b_1,\dots,b_{n-1}$-definierbar, also ist $b$ nicht unabhängig über $A$.
+			\end{itemize}
 		\end{itemize}
-		
 	\end{itemize}
+\end{proof}
+
+\begin{lemma}
+	Sei $X\subseteq B$ eine kleine Teilmenge. Dann ist $X$ eine endliche Vereinigung von Mengen $f(A^n\cap E)$ für $E$ eine offene Zelle und $f:E\rightarrow B$ eine stetige $\lingua$-definierbare Funktion.
+\end{lemma}
+\begin{proof}
+	Wenn $X$ klein ist, existiert ein $\lingua$-definierbares $g:B^m\rightarrow B$, sodass $X\subseteq g(A^m)$. Setze $X':=g^{-1}(X)\cap A^m=(g\upharpoonright A^m)^{-1}(X)$, das ist $\lingua_P$-definierbar und es gilt $g(X')=X$ wegen $X\subseteq\operatorname{im}(g\upharpoonright A^m)$.\\
+	Beweise die Aussage jetzt induktiv über $m$: Wenn $m=0$ ist, ist $X$ maximal einelementig und entweder gleich $f(\{0\})$ für eine konstante Funktion $f$ oder schon die leere Vereinigung.\\
+	Wenn $m>0$ ist, schreibe $X'$ als Teilmenge von $A^m$ wegen Satz \ref{Definierbare Mengen} in der Form $Y\cap A^m$ für ein $\lingua$-definierbares $Y$. Sei eine Zerlegung $\mathfrak{Z}$ von $Y$ in Zellen gegeben, auf denen $g$ jeweils stetig ist, dann ist $$X=g(Y\cap A^m)=\bigcup\limits_{Z\in\mathfrak{Z}}g(Z\cap A^m).$$
+	Für offene Zellen $Z$ ist so eine Darstellung also schon gefunden. Sei $Z$ nun eine Zelle der Dimension $d<m$ und $\pi:B^d\rightarrow B^m$ eine $\lingua$-definierbare Fortsetzung des kanonischen Homöomorphismus der entsprechenden offenen Zelle $Z'$ nach $Z$, die so gewählt ist, dass $\pi(Z')$ und $\pi(M^d\setminus Z')$ disjunkt sind. Dann gilt mit derselben Argumentation wie im letzten Beweis und mit Anwendung des daraus resultierenden Lemmas $$f(Z\cap A^m)=(f\circ\pi)(A^d\cap Z\cap\pi^{-1}(A^m))=(f\circ\pi)(A^d\cap S)$$ für ein passendes $\lingua$-definierbares $S$. Das ist dann aber schon der Fall eines kleineren $m$ und mit der Induktionsbehauptung folgt die Aussage.
+\end{proof}
+
+\begin{theorem}
+	Sei $X\subseteq B$ eine $\lingua_P$-definierbare Menge. Dann existiert eine endliche Unterteilung von $B$, sodass jedes dadurch erzeugte offene Intervall $I$ entweder disjunkt zu $X$ ist, Teilmenge von $X$ ist oder $X\cap I$ dicht \& kodicht in $I$ ist. Für kleine $X$ entfällt der Fall \glqq{}Teilmenge\grqq{} natürlich.
+\end{theorem}
+\begin{proof}
+	Die gesuchte Eigenschaft bleibt unter endlichen Vereinigungen von Mengen erhalten, man muss nur eine Verfeinerung der Unterteilung durchführen. Deswegen sei $X$ zunächst klein und nach dem letzten Lemma gegeben als $X=f(A^n\cap E)$ für ein stetiges, $\lingua$-definierbares $f:E\rightarrow B$ und eine offene Zelle $E\subseteq B^n$. Da definierbarer Zusammenhang unter definierbaren stetigen Funktionen erhalten bleibt, ist $I:=f(E)$ auch definierbar zusammenhängend, weil es $\lingua$-definierbar ist, hat es auch ein Supremum und Infimum in $B\cup\{\pm\infty\}$, ist also ein Intervall (ausnahmsweise sei hier auch ein nichtoffenes Intervall mitgemeint). Wenn $I$ endlich ist, ist auch $X$ endlich und es ist nichts zu zeigen. $X$ ist disjunkt zu $B\setminus I$, nun muss nur noch gezeigt werden, dass $X=X\cap I$ dicht und kodicht in $I$ ist, denn Dichte und Kodichte in nichtoffenen unendlichen Intervallen ist äquivalent zu Dichte und Kodichte in deren Innerem. Aber für dichte Teilmengen werden durch stetige Abbildungen auf dichte Teilmengen abgebildet; da $A^n$ dicht in $B^n$ ist, ist auch $A^n\cap E$ dicht in $E$ und folglich $X$ dicht in $I$. Andererseits muss auch das Komplement von $X$ dicht in $I$ sein, da es sonst ein Intervall ganz in $X$ gäbe, was der Kleinheit mit Lemma \ref{Kleinheit} widerspricht.\\
+	Sei jetzt $X$ nicht mehr klein, dann stimmt es aber bis auf eine kleine Menge mit einer $\lingua$-definierbaren Menge $X$ überein.
 \end{proof}
