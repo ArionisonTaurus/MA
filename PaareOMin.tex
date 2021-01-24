@@ -2,7 +2,7 @@
 \chapter{Dichte Paare o-minimaler Strukturen}
 \section{Allgemeine Betrachtungen und Anforderungen an die Theorien}
 
-Viele Techniken und Gedanken aus dem vorigen Kapitel werden jetzt auf o-minimale Theorien übertragen: Im Folgenden halten wir einfach eine vollständige o-minimale Theorie T in der Sprache $\lingua$ fest und betrachten die Theorie $\tq$ in der Sprache $\lingua_P:=\lingua\cup\{P(x)\}$, sodass die Modelle von $\tq$ Modelle von T sind und in jedem Modell $\fM$ die Menge $P(M)$ ebenfalls Modell von T ist. Schreibe so ein Paar dann auch als $(B,A)$ mit $A=P(B)$.\\
+Viele Techniken und Gedanken aus dem vorigen Kapitel werden jetzt auf o-minimale Theorien übertragen: Im Folgenden halten wir einfach eine vollständige o-minimale Theorie T mit dichter Ordnung in der Sprache $\lingua$ fest und betrachten die Theorie $\tq$ in der Sprache $\lingua_P:=\lingua\cup\{P(x)\}$, sodass die Modelle von $\tq$ Modelle von T sind und in jedem Modell $\fM$ die Menge $P(M)$ ebenfalls Modell von T ist. Schreibe so ein Paar dann auch als $(B,A)$ mit $A=P(B)$.\\
 Wir setzen voraus, dass $T$ eine durch $+$ dicht und linear angeordnete abelsche Gruppe mit einem positiven Element $1$ beschreibt, sodass Definable Choice gilt. Dann sind die Skolemfunktionen definierbar und \OE\ ist $\lingua$ schon so eine definitorische Erweiterung, dass $T$ Quantorenelimination hat und universell axiomatisierbar ist (wobei bei einzelnen Theorien die Frage interessant wäre, welche Skolemfunktionen man dafür überhaupt hinzufügen muss). Außerdem seien alle Modelle genug saturiert, dass die üblichen Rechenregeln für die Dimension gelten.\\
 Aus T universell mit Quantorenelimination folgt, dass Unterstrukturen von Modellen von T schon elementare Unterstrukturen sind. Also ist für jede Teilmenge $S$ eines Modells $\dcl(S)$ schon eine elementare Substruktur; zur Vereinfachung bezeichne in Zukunft $AB:=\dcl(A\cup B)$ für zwei Teilmengen $A,B$ eines Modells.\\
 $P$ beschreibt also eine elementare Unterstruktur, mit $\td$ wird nun die Theorie beschrieben, die ausdrückt, dass $P$ eine dichte echte Unterstruktur ist (diese zwei Sachen oder deren Gegenteil müssen auf jeden Fall von der Theorie beschrieben werden, wenn sie vollständig sein soll). Klar ist dann, dass Unterstrukturen von $\td$ automatisch Modelle von $\tq$ sind.\\
@@ -26,6 +26,9 @@ Im folgenden Lemma meint $(\cdot,+)$ nicht unbedingt die Operationen in $\lingua
 \end{proof}
 
 \newpage
+\begin{definition}
+	Sei $\fA$ eine Struktur in einer Sprache $\lingua$ und $\fB$ eine Struktur in einer Sprache $\lingua'$. Dann heißt $\fB$ Erweiterung von $\fA$, wenn $A=B$ und die Interpretation von $\lingua$ in $\fA$ schon $\lingua'$-definierbar in $\fB$ ist. TODO: Muss es sogar schon 0-definierbar sein? sonst später Problem mit dem Typ...
+\end{definition}
 
 \begin{lemma}
 	Sei $\fA$ eine o-minimale Erweiterung eines angeordneten Vektorraums über einem angeordneten Körper $F$ und $g:A^{p+1}\rightarrow A$ definierbar, außerdem existiere für unendlich viele $\lambda\in F$ ein $a_\lambda\in A^p$ mit $g(a_\lambda,x)=\lambda x$ für unendlich viele $x\in A$. Dann existiert ein Intervall $I$ in $A$, sodass auf $I$ eine $A$-definierbare Körperstruktur existiert, die mit $<$ kompatibel ist (was automatisch einen reell abgeschlossenen Körper impliziert).
@@ -105,7 +108,7 @@ In diesem Kontext wird wieder die $\acl$-Unabhängigkeit in einem Modell von T r
 
 Zu bemerken ist, dass ein Spezialfall von Unabhängigkeit viele nützliche Eigenschaften hat. Auf diesen wird später noch oft zurückgegriffen werden.
 \begin{definition}
-	Seien $(D,C)\subseteq(B,A)$ zwei Modelle von $\tq$. Dann heiße diese Erweiterung \textbf{frei}, wenn $D$ und $A$ unabhängig über $C$ sind.
+	Seien $(D,C)\subseteq(B,A)$ zwei Modelle von $\tq$. Dann heiße diese Inklusion \textbf{frei}, wenn $D$ und $A$ unabhängig über $C$ sind.
 \end{definition}
 
 \begin{lemma}\label{Kodichte von A}
@@ -118,7 +121,7 @@ Zu bemerken ist, dass ein Spezialfall von Unabhängigkeit viele nützliche Eigen
 \newpage
 Für die Konstruktion des gewünschten Back\&Forth-Systems sei $\kappa>\abs{T}$ eine beliebige, aber feste Kardinalzahl und $(B,A),(D,C)\models\td$ zwei $\kappa$-saturierte Modelle.
 \begin{theorem}\label{BackForth}
-	Sei $S$ die Menge aller partiellen Isomorphismen zwischen Unterstrukturen $(B',A')$ von $(B,A)$ und $(D',C')$ von $(D,C)$ der Mächtigkeit $<\kappa$, sodass die Erweiterungen frei sind. Dann bildet $S$ ein nichtleeres B\&F-System und $\td$ ist insbesondere vollständig.
+	Sei $S$ die Menge aller partiellen Isomorphismen zwischen Unterstrukturen $(B',A')$ von $(B,A)$ und $(D',C')$ von $(D,C)$ der Mächtigkeit $<\kappa$, sodass die Inklusionen frei sind. Dann bildet $S$ ein nichtleeres B\&F-System und $\td$ ist insbesondere vollständig.
 \end{theorem}
 \begin{proof}
 	Das System ist nichtleer, denn es gibt ein Primmodell $\fM$ von $T$, weil $T$ vollständig ist und in jedem Modell $A$ alle Eigenschaften von $\fM_A:=\langle\emptyset\rangle_\lingua$ in $T$ beschrieben werden. Klarerweise ist $\abs{M}=\abs{T}<\kappa$. Der Isomorphismus $(\fM_A,\fM_A)\cong(\fM_C,\fM_C)$ liegt in $S$, denn Unabhängigkeit ist bei zwei gleichen Mengen offensichtlich.\\
@@ -159,11 +162,11 @@ Dieses B\&F-System beweist die Formelreduzierung in $\td$.
 \section{Folgen der Existenz des B\&F-Systems}
 Im Folgenden werden einige Anordnungen von wechselseitigen Inklusionen von Modellen von T betrachtet, in der Gleichheit von bestimmten Typen folgt.
 
-\begin{lemma}\label{freie Erweiterungen}
+\begin{lemma}\label{freie Inklusionen}
 	Für dichte Paare $(B,A),(D,C)$ mit $(D,C)\subseteq(B,A)$ sind folgende Eigenschaften äquivalent:
 	\begin{enumerate}
 		\item $(D,C)\preceq(B,A)$
-		\item Die Erweiterung ist frei.
+		\item Die Inklusion ist frei.
 	\end{enumerate}
 \end{lemma}
 \begin{proof}
@@ -175,7 +178,7 @@ Im Folgenden werden einige Anordnungen von wechselseitigen Inklusionen von Model
 	Seien $(B_1,A_1),(B_2,A_2)\models\td$ und $(B,A)$ eine gemeinsame Unterstruktur, sodass die Inklusionen frei sind. Wenn $a\in (A_1)^n$ und $b\in (A_2)^n$ denselben $\lingua$-Typen über $B$ erfüllen, erfüllen sie auch denselben $\lingua_P$-Typen über $B$.
 \end{lemma}
 \begin{proof}
-	\OE\ seien $(B_1,A_1)$ und $(B_2,A_2)$ schon genügend saturiert, das ändert nichts an Typen über $B$ und (nach derselben Argumentation wie im vorigen Lemma) auch nichts an der Unabhängigkeit. Da $a$ und $b$ denselben Typen über $B$ erfüllen, kann man wieder $\lingua_B$-Terme mit eingesetztem $a$ auf $\lingua_B$-Terme mit eingesetztem $b$ abbilden (Wohldefiniertheit und Injektivität wird durch die Typengleichheit ermöglicht) und bekommt einen partiellen Isomorphismus $i:Ba\cong Bb$, dessen Einschränkung auf die $\lingua_A$-Terme einen partiellen Isomorphismus $Aa\cong Ab$ induziert und sodass $i(a)=b$. Also gilt $i:(Ba,Aa)\cong(Bb,Ab)$, da außerdem die Erweiterungen $(Ba,Aa)\subseteq(B_1,A_1)$ und $(Bb,Ab)\subseteq(B_2,A_2)$ frei sind nach Lemma \ref{Unabhängigkeitsregeln} (6.), ist $i$ im Back\&Forth-System, also elementar, also haben $a$ und $b$ denselben $\lingua_P$-Typen über $B$.
+	\OE\ seien $(B_1,A_1)$ und $(B_2,A_2)$ schon genügend saturiert, das ändert nichts an Typen über $B$ und (nach derselben Argumentation wie im vorigen Lemma) auch nichts an der Unabhängigkeit. Da $a$ und $b$ denselben Typen über $B$ erfüllen, kann man wieder $\lingua_B$-Terme mit eingesetztem $a$ auf $\lingua_B$-Terme mit eingesetztem $b$ abbilden (Wohldefiniertheit und Injektivität wird durch die Typengleichheit ermöglicht) und bekommt einen partiellen Isomorphismus $i:Ba\cong Bb$, dessen Einschränkung auf die $\lingua_A$-Terme einen partiellen Isomorphismus $Aa\cong Ab$ induziert und sodass $i(a)=b$. Also gilt $i:(Ba,Aa)\cong(Bb,Ab)$, da außerdem die Inklusionen $(Ba,Aa)\subseteq(B_1,A_1)$ und $(Bb,Ab)\subseteq(B_2,A_2)$ frei sind nach Lemma \ref{Unabhängigkeitsregeln} (6.), ist $i$ im Back\&Forth-System, also elementar, also haben $a$ und $b$ denselben $\lingua_P$-Typen über $B$.
 \end{proof}
 
 \begin{corollary}
@@ -238,7 +241,7 @@ Um definierbare Funktionen besser zu verstehen, ist es notwendig, sich mit dem d
 	In jedem dichten Paar $(B,A)$ ist $A$ definierbar abgeschlossen.
 \end{lemma}
 \begin{proof}
-	Sei $b\in B\setminus A$ und $(B,A)\preceq(D,C)$ eine genügend saturierte Erweiterung. Dann wird der Ordnungstyp von $b$ über $A$ auch von einem Element $D\setminus C\ni d\neq b$ realisiert wegen Dichtheit von $D\setminus C$ in $D$ und Saturation.\newpage
+	Sei $b\in B\setminus A$ und $(B,A)\preceq(D,C)$ eine genügend saturierte Elementarerweiterung. Dann wird der Ordnungstyp von $b$ über $A$ auch von einem Element $D\setminus C\ni d\neq b$ realisiert wegen Dichtheit von $D\setminus C$ in $D$ und Saturation.\newpage
 	Nach Lemma \ref{selber Schnitt} haben $b$ und $d$ dann den selben $\lingua_P$-Typen über $A$, weswegen $b$ nicht definierbar über $A$ in $(D,C)$ sein kann, also auch nicht in $(B,A)$.
 \end{proof}
 
@@ -253,7 +256,7 @@ Um definierbare Funktionen besser zu verstehen, ist es notwendig, sich mit dem d
 	Sei $(D,C)\subseteq(B,A)$ frei und $(B,A)$ dichtes Paar. Dann ist $D$ definierbar abgeschlossen in $(B,A)$.
 \end{lemma}
 \begin{proof}
-	Wenn $D=C$, ist $D\preceq A$ und die Aussage daher klar nach der vorigen Folgerung. Die Erweiterung $(AD,A)\subseteq(B,A)$ ist trivialerweise frei (zwei gleiche Mengen in der Unabhängigkeit), außerdem ist $A\preceq AD$ dicht (da $A$ dicht in $B\supseteq AD$) und eine echte Inklusion, da für $D=A$ wegen Unabhängigkeit von $D$ und $A$ ansonsten $D=C$ folgen würde. Nach Lemma \ref{freie Erweiterungen} ist also $(AD,A)\preceq(B,A)$ und daher ist $\dcl(D)\subseteq\dcl(AD)=AD$, da $AD$ definierbar abgeschlossen nach Lemma \ref{A definierbar abgeschl}.\\
+	Wenn $D=C$, ist $D\preceq A$ und die Aussage daher klar nach der vorigen Folgerung. Die Inklusion $(AD,A)\subseteq(B,A)$ ist trivialerweise frei (zwei gleiche Mengen in der Unabhängigkeit), außerdem ist $A\preceq AD$ dicht (da $A$ dicht in $B\supseteq AD$) und eine echte Inklusion, da für $D=A$ wegen Unabhängigkeit von $D$ und $A$ ansonsten $D=C$ folgen würde. Nach Lemma \ref{freie Inklusionen} ist also $(AD,A)\preceq(B,A)$ und daher ist $\dcl(D)\subseteq\dcl(AD)=AD$, da $AD$ definierbar abgeschlossen nach Lemma \ref{A definierbar abgeschl}.\\
 	Sei jetzt $d\in AD$ $\lingua_P$-definierbar über $D$ und $a\in A^n$ minimal mit $d\in Da$ (insbesondere ist $a$ unabhängig über $D$). Im Folgenden wird gezeigt, dass dann $a$ schon das leere Tupel, also $d\in D$ ist.\\
 	Nimm an, dass $n>0$ und sei $f:B^n\rightarrow B$ die definierende Funktion von $d$, also ist sie $D$-definierbar und $f(a)=d$. Seien $$S_1:=\{x\in B^n\mid f(x_1,\dots,x_{n-1},\cdot)\text{ ist streng monoton wachsend auf einem Intervall um }x_n\},$$ $$S_2:=\{x\in B^n\mid f(x_1,\dots,x_{n-1},\cdot)\text{ ist streng monoton fallend auf einem Intervall um }x_n\},$$ $$S_3:=\{x\in B^n\mid f(x_1,\dots,x_{n-1},\cdot)\text{ ist konstant auf einem Intervall um }x_n\}.$$
 	$S_1\cup S_2\cup S_3$ ist groß, denn wenn eine offene Menge $U\subseteq B^n\setminus(S_1\cup S_2\cup S_3)$ existiert, wähle $x\in U$ beliebig und ein Intervall $I$ um $x_n$ mit $\{(x_1,\dots,x_{n-1})\}\times I\subset U$. Nach der Charakterisierung o-minimaler definierbarer Funktionen existiert ein Subintervall $J\subseteq I$, sodass $f(x_1,\dots,x_{n-1},\cdot)$ entweder streng monoton wachsend, fallend oder konstant ist auf $J$. Also ist $x\in S_1\cup S_2\cup S_3$ im Widerspruch zu $x\in U$.\newpage
@@ -269,7 +272,7 @@ Um definierbare Funktionen besser zu verstehen, ist es notwendig, sich mit dem d
 
 \fcolorbox{red}{red}{Ab hier müsst ihr (Stand 20.1.) nicht mehr korrekturlesen. (TODO: Entfernen, wenn unnötig)}
 
-\begin{theorem}
+\begin{theorem}\label{Satz 3}
 	Sei $(B,A)\models\td$ und sei $F:B\rightarrow B$ eine $\lingua_P$-definierbare Funktion. Dann stimmt $F$ auf bis auf eine kleine Menge mit einer $\lingua$-definierbaren Funktion überein.
 \end{theorem}
 \begin{proof}
@@ -284,12 +287,11 @@ Um definierbare Funktionen besser zu verstehen, ist es notwendig, sich mit dem d
 \end{lemma}
 \begin{proof}
 	Wenn die Aussage nicht gilt, gilt für alle $k\in\setN$ und alle $\lingua_A$-definierbaren $f_1,\dots,f_k:A^n\rightarrow A$, dass ein $a\in A$ existiert mit $f_i(a)\neq F(a)$ für alle $i$. Also ist der partielle Typ $$\{F(x)\neq f(x)\mid f:A^n\rightarrow A\ \lingua_A\text{-definierbar}\}$$ konsistent und es existiert $(B,A)\preceq(B',A')$ und $a'\in A'^n$ mit $F(a')\neq f(a')$ für alle $\lingua_A$-definierbaren $f:A'^n\rightarrow A'$.\\
-	Allerdings ist nach Lemma \ref{Unabhängigkeitsregeln} (6.) wegen $a'\in A'^n$ die Erweiterung $(Ba',Aa')\subseteq(B',A')$ frei, nach Lemma \ref{Freie Definierbarkeit} ist $Ba'$ also $\lingua_P$-definierbar abgeschlossen. Da $F(a')$ $\lingua_P$-definierbar über $Ba'$ ist, ist es in $Ba'$, wegen $F:A'^n\rightarrow A$ ist $F(a')\in A'$. Wegen Unabhängigkeit liegt also $F(a')\in Ba'\cap A'=Aa'$ und es gibt eine $\lingua_A$-definierbare Abbildung $f:A'^n\rightarrow A'$ mit $f(a')=F(a')$ - ein Widerspruch!
+	Allerdings ist nach Lemma \ref{Unabhängigkeitsregeln} (6.) wegen $a'\in A'^n$ die Inklusion $(Ba',Aa')\subseteq(B',A')$ frei, nach Lemma \ref{Freie Definierbarkeit} ist $Ba'$ also $\lingua_P$-definierbar abgeschlossen. Da $F(a')$ $\lingua_P$-definierbar über $Ba'$ ist, ist es in $Ba'$, wegen $F:A'^n\rightarrow A$ ist $F(a')\in A'$. Wegen Unabhängigkeit liegt also $F(a')\in Ba'\cap A'=Aa'$ und es gibt eine $\lingua_A$-definierbare Abbildung $f:A'^n\rightarrow A'$ mit $f(a')=F(a')$ - ein Widerspruch!
 \end{proof}
 
 \section{Definierbare eindimensionale Mengen}
-TODO: Hier noch einleitende Worte finden\\
-In diesem Teil sei $(B,A)$ ein dichtes Paar, als Konvention nehmen wir an, dass $A^0=\{0\}$.
+In diesem Abschnitt wird eine zur o-Minimalität ähnliche Charakterisierung von eindimensionalen Mengen in Modellen von $\td$ hergeleitet. Hierbei sei $(B,A)$ vorerst ein beliebiges dichtes Paar, als Konvention nehmen wir an, dass $A^0=\{0\}$.
 
 \begin{lemma}
 	Für jede $\lingua$-definierbare Menge $S\subseteq B^m$ und Funktion $g:B^m\rightarrow B^k$ gibt es eine $\lingua$-definierbare Teilmenge $S'\subseteq S$, sodass $$A^m\cap S\cap g^{-1}(A^k)=A^m\cap S'.$$
@@ -339,7 +341,7 @@ In diesem Teil sei $(B,A)$ ein dichtes Paar, als Konvention nehmen wir an, dass 
 	Für offene Zellen $Z$ ist so eine Darstellung also schon gefunden. Sei $Z$ nun eine Zelle der Dimension $d<m$ und $\pi:B^d\rightarrow B^m$ eine $\lingua$-definierbare Fortsetzung des kanonischen Homöomorphismus der entsprechenden offenen Zelle $Z'$ nach $Z$, die so gewählt ist, dass $\pi(Z')$ und $\pi(M^d\setminus Z')$ disjunkt sind. Dann gilt mit derselben Argumentation wie im letzten Beweis und mit Anwendung des daraus resultierenden Lemmas $$f(Z\cap A^m)=(f\circ\pi)(A^d\cap Z\cap\pi^{-1}(A^m))=(f\circ\pi)(A^d\cap S)$$ für ein passendes $\lingua$-definierbares $S$. Das ist dann aber schon der Fall eines kleineren $m$ und mit der Induktionsbehauptung folgt die Aussage.
 \end{proof}
 
-\begin{theorem}
+\begin{theorem}\label{Satz 4}
 	Sei $X\subseteq B$ eine $\lingua_P$-definierbare Menge. Dann existiert eine endliche Unterteilung von $B$, sodass jedes dadurch erzeugte offene Intervall $I$ entweder disjunkt zu $X$ ist, Teilmenge von $X$ ist oder $X\cap I$ dicht \& kodicht in $I$ ist. Für kleine $X$ entfällt der Fall \glqq{}Teilmenge\grqq{} natürlich.
 \end{theorem}
 \begin{proof}
@@ -347,11 +349,41 @@ In diesem Teil sei $(B,A)$ ein dichtes Paar, als Konvention nehmen wir an, dass 
 	Sei jetzt $X$ nicht mehr klein, dann stimmt es aber bis auf eine kleine Menge mit einer $\lingua$-definierbaren Menge $X'$ überein. Schreibe also $X=(X'\setminus Y)\cup Z$ für $Y$ und $Z$ klein. $X'$ hat als $\lingua$-definierbare Menge sowieso schon die gewünschte Gestalt (sogar nur unter Benutzung der ersten zwei Fälle), $Y$ und $Z$ nach dem ersten Teil des Beweises auch. Da die Darstellung unter Differenz und Vereinigung erhalten bleibt, hat auch $X$ die gewünschte Form.
 \end{proof}
 
-\begin{corollary}
+\begin{lemma}
 	$\td$ eliminiert $\exists^\infty$: Wenn $S\subseteq B^{m+n}$ eine $\lingua_P$-definierbare Menge ist mit $S_x$ endlich für alle $x\in B^m$, dann ist $(\abs{S_x})_{x\in B^m}$ beschränkt.
-\end{corollary}
+\end{lemma}
 \begin{proof}
 	Für $n=1$ gilt das nach Bemerkung 5.33. aus \cite{Lukas}. Denn $S_x$ ist endlich, genau dann, wenn $S_x$ diskret in $B$ ist; und das ist uniform $\lingua_P$-ausdrückbar. Die Äquivalenz zur Diskretheit sieht man ein, indem man eine Aufteilung von $S_x$ wie im letzten Satz vornimmt. Dann ist $S_x$ genau dann endlich, wenn nur der Fall $\glqq{}S_x\cap I=\emptyset\grqq{}$ vorkommt; weil dichte Mengen und Intervalle nicht diskret sind, gilt das wiederum genau dann, wenn $S_x$ diskret ist.\\
 	Sei $n>1$. Dann sind für $\pi_{i_1,\dots,i_k}$ als Projektionsabbildung auf die Koordinaten $i_1,\dots,i_k$ jeweils auch $$Y_x:=(\pi_{1,\dots,m+1}(S))_x=(\pi_{m+1}(S_x))$$ und $$Z_x:=(\pi_{1,\dots,m,m+2,\dots,m+n}(S))_x=(\pi_{m+2,\dots,m+n}(S_x))$$ endlich und daher ist nach Induktionsvoraussetzung die Mächtigkeit jeweils uniform beschränkt durch irgendwelche $K,L\in\setN$. Dann gilt aber $$\abs{S_x}\leq \abs{Y_x\times Z_x}=\abs{Y_x}\abs{Z_x},$$ was uniform durch $KL$ beschränkt ist.
 \end{proof}
 
+\begin{lemma}
+	Sei $f:B\rightarrow B$ stückweise stetig und $\lingua_P$-definierbar. Dann ist $f$ schon $\lingua$-definierbar.
+\end{lemma}
+\begin{proof}
+	Nach Satz $\ref{Satz 3}$ stimmt $f$ bis auf eine kleine Menge $X$ mit einer $\lingua$-definierbaren Funktion $f'$ überein. Wegen o-Minimalität von $T$ ist $f'$ auch stückweise stetig. Unterteile $X$ wie in Satz \ref{Satz 4} und verfeinere die Unterteilung, so dass $f,f'$ auf jedem Intervall stetig sind. Für jedes Intervall $I$ dieser Unterteilung gilt dann entweder, dass $X\cap I$ dicht und kodicht in $I$ ist oder, dass $X\cap I=\emptyset$. Der erste Fall kann nie eintreten, da zwei stetige Funktionen, die auf der dichten Teilmenge $I\setminus X$ übereinstimmen, schon auf ganz $I$ übereinstimmen. Also ist $X$ endlich und $f$ kann mit $\lingua$ definiert werden (nämlich durch $f'$ außerhalb von $X$ und ansonsten manuell).
+\end{proof}
+
+\section{Offene Teilmengen von $\setR^n$}
+TODO: Beschreibung
+
+\begin{lemma}
+	Sei $\fA$ eine unendliche Struktur, und sei $\fB$ eine $\aleph_0$-saturierte o-minimale Erweiterung von $\fA$, , sodass Definable Choice gilt und alle in $\fB$ definierbaren Funktionen $A\rightarrow A$ schon in $\fA$ definierbar sind. Dann sind die in $\fA$ und $\fB$ definierbaren Mengen die gleichen.
+\end{lemma}
+TODO: Eigentlich musste $\fB$ nicht o-minimal sein, dafür $\fA$. Fehler?
+\begin{proof}
+	Per Definition einer Erweiterung sind alle $\fA$-definierbaren Mengen auch $\fB$-definierbar.\\
+	Sei $S\subseteq A^n$ definierbar in $\fB$. Wenn $n=1$ ist, ist die charakteristische Funktion $\chi_S:A\rightarrow A$ definierbar in $\fB$, also per Voraussetzung auch in $\fA$, also ist auch $S=\{\chi_S=1\}$ definierbar in $\fA$. Wenn $0,1$ nicht in $A$ enthalten sind, muss man sich stattdessen einfach ein Analogon mit zwei bestimmten Elementen aus $A$ basteln.\\
+	Wenn $n>1$ ist, dann zerlege $S$ in $\fB$-Zellen. Es reicht daher, die Aussage für eine beliebige $\fB$-Zelle $S$ zu beweisen, genauer reicht es sogar aus, die $\fA$-Definierbarkeit für die definierende(n) partiellen Funktion(en) $x\mapsto\sup S_x,x\mapsto\inf S_x$ zu beweisen; nach wählen eines willkürlichen noch nicht angenommenen Funktionswertes, reicht es, die $\fA$-Definierbarkeit für beliebige $\fB$-definierbare Funktionen $f:A^{n-1}\rightarrow A$ zu beweisen.\\
+	Wenn $n=2$ ist, gilt das auch schon per Voraussetzung. Wenn $n>2$ ist, definiere die $\fB$-definierbaren Funktionen $f_a:A^{n-2}\rightarrow A,x\mapsto f(a,x)$. Nach Induktionsvoraussetzung ist jede davon $\fA$ definierbar, sei also $f_a=F_a(c_a,\cdot)$ für 0-$\fA$-definierbare Funktionen $F_a:A^{m_a+n-2}\rightarrow A$ und passende $m_a\in\setN,c_a\in A^{n_a}$. Es ist möglich, bloß endlich viele unterschiedliche $F_a$ zu verwenden: Ansonsten ist nämlich $$\{\forall c(f(a,x)\neq F(c,x))\mid F:A^{m+n-2}\rightarrow A\ \text{0-}\fA\text{-definierbar,}m\in\setN\}$$ konsistent in $\fB$, der Erfüller davon darf nach obigen Erkenntnissen aber nicht existieren.\\
+	Also existieren 0-$\fA$-definierbare Funktionen $F_i:A^{m_i+n-2}\rightarrow A$ für $i=1,\dots,k$, sodass für alle $a\in A$ ein $i\leq k$ und ein $c\in A^{m_i}$ existiert mit $f_a=F_i(c_i,\cdot)$. Für ein $b\in A$ und $z$ von der Dimension $\max\limits_i m_i$ sei
+	$$F(z,y,x):=\left\{\begin{array}{ll}
+	F_i(y_1,\dots,y_{m_i},x)&i\text{ ist das einzige }j\text{ mit }z_j=b\\
+	b&\text{sonst}
+	\end{array}\right..$$
+	Dann ist $F$ definierbar in $\fA$ und es gilt, dass für alle $a\in A$ ein $(z,y)\in A^{k+\max\limits_i m_i}$ mit $f_a=F(z,y,\cdot)$. Da in $\fB$ Definable Choice gilt, existiert eine $\fB$-definierbare Funktion $g$, sodass $f(a,x)=F(g(a),x)$ gilt. Nach der Voraussetzung sind alle Koordinatenfunktionen von $g$ definierbar in $\fA$, also auch $g$ selbst, also auch $f$.
+\end{proof}
+
+\begin{theorem}
+	Sei $(B,A)\models\td,\operatorname{RCF}\subseteq\operatorname{T},\setR\subseteq B$ und $X\subseteq \setR^n$. Wenn $X$ offen und $\lingua_P$-definierbar ist, ist es $\lingua$-definierbar.
+\end{theorem}
