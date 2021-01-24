@@ -6,14 +6,14 @@ Viele Techniken und Gedanken aus dem vorigen Kapitel werden jetzt auf o-minimale
 Wir setzen voraus, dass $T$ eine durch $+$ dicht und linear angeordnete abelsche Gruppe mit einem positiven Element $1$ beschreibt, sodass Definable Choice gilt. Dann sind die Skolemfunktionen definierbar und \OE\ ist $\lingua$ schon so eine definitorische Erweiterung, dass $T$ Quantorenelimination hat und universell axiomatisierbar ist (wobei bei einzelnen Theorien die Frage interessant wäre, welche Skolemfunktionen man dafür überhaupt hinzufügen muss). Außerdem seien alle Modelle genug saturiert, dass die üblichen Rechenregeln für die Dimension gelten.\\
 Aus T universell mit Quantorenelimination folgt, dass Unterstrukturen von Modellen von T schon elementare Unterstrukturen sind. Also ist für jede Teilmenge $S$ eines Modells $\dcl(S)$ schon eine elementare Substruktur; zur Vereinfachung bezeichne in Zukunft $AB:=\dcl(A\cup B)$ für zwei Teilmengen $A,B$ eines Modells.\\
 $P$ beschreibt also eine elementare Unterstruktur, mit $\td$ wird nun die Theorie beschrieben, die ausdrückt, dass $P$ eine dichte echte Unterstruktur ist (diese zwei Sachen oder deren Gegenteil müssen auf jeden Fall von der Theorie beschrieben werden, wenn sie vollständig sein soll). Klar ist dann, dass Unterstrukturen von $\td$ automatisch Modelle von $\tq$ sind.\\
-Dem Verlauf in \cite{VanDenDries} folgend, wird zunächst die Vollständigkeit und eine Art von Quantorenelimination für $\td$ gezeigt, wofür aber eine genauere Betrachtung von sogenannten kleinen Mengen vonnöten ist.
+Der Arbeit \cite{VanDenDries} folgend, wird die Vollständigkeit und eine Art von Quantorenelimination für $\td$ gezeigt, die mittels eines Back\&Forth-Systems bewiesen wird, bevor genauer auf einige Eigenschaften von definierbaren Mengen und Abbildungen in $\td$ eingegangen wird. Zunächst ist aber eine genauere Betrachtung von sogenannten kleinen Mengen vonnöten.
 
 \section{Kleine Mengen}
 \begin{definition}
 	Sei $(B,A)\models\td$, dann ist eine $\lingua_P$-definierbare Menge $S\subseteq B$ \textbf{klein}, wenn eine $\lingua$-definierbare Funktion $f:B^n\rightarrow B$ existiert mit $S\subseteq f(A^n)$.
 \end{definition}
 
-Das Ziel ist jetzt, zu zeigen, dass definierbare Intervalle nicht klein sind.\newpage
+Das Ziel ist jetzt, zu zeigen, dass definierbare Intervalle nicht klein sind.\\
 Im folgenden Lemma meint $(\cdot,+)$ nicht unbedingt die Operationen in $\lingua$, sondern nur irgendwelche definierbaren Verknüpfungen.
 
 \begin{lemma}\label{Hilfsaussage Kleinheit}
@@ -357,7 +357,7 @@ In diesem Abschnitt wird eine zur o-Minimalität ähnliche Charakterisierung von
 	Sei $n>1$. Dann sind für $\pi_{i_1,\dots,i_k}$ als Projektionsabbildung auf die Koordinaten $i_1,\dots,i_k$ jeweils auch $$Y_x:=(\pi_{1,\dots,m+1}(S))_x=(\pi_{m+1}(S_x))$$ und $$Z_x:=(\pi_{1,\dots,m,m+2,\dots,m+n}(S))_x=(\pi_{m+2,\dots,m+n}(S_x))$$ endlich und daher ist nach Induktionsvoraussetzung die Mächtigkeit jeweils uniform beschränkt durch irgendwelche $K,L\in\setN$. Dann gilt aber $$\abs{S_x}\leq \abs{Y_x\times Z_x}=\abs{Y_x}\abs{Z_x},$$ was uniform durch $KL$ beschränkt ist.
 \end{proof}
 
-\begin{lemma}
+\begin{lemma}\label{Stückweise stetige Abbildungen}
 	Sei $f:B\rightarrow B$ stückweise stetig und $\lingua_P$-definierbar. Dann ist $f$ schon $\lingua$-definierbar.
 \end{lemma}
 \begin{proof}
@@ -367,7 +367,7 @@ In diesem Abschnitt wird eine zur o-Minimalität ähnliche Charakterisierung von
 \section{Offene Teilmengen von $\setR^n$}
 TODO: Beschreibung
 
-\begin{lemma}
+\begin{lemma}\label{Erweiterung definierbare Mengen}
 	Sei $\fA$ eine unendliche Struktur, und sei $\fB$ eine $\aleph_0$-saturierte o-minimale Erweiterung von $\fA$, , sodass Definable Choice gilt und alle in $\fB$ definierbaren Funktionen $A\rightarrow A$ schon in $\fA$ definierbar sind. Dann sind die in $\fA$ und $\fB$ definierbaren Mengen die gleichen.
 \end{lemma}
 TODO: Eigentlich musste $\fB$ nicht o-minimal sein, dafür $\fA$. Fehler?
@@ -387,3 +387,16 @@ TODO: Eigentlich musste $\fB$ nicht o-minimal sein, dafür $\fA$. Fehler?
 \begin{theorem}
 	Sei $(B,A)\models\td,\operatorname{RCF}\subseteq\operatorname{T},\setR\subseteq B$ und $X\subseteq \setR^n$. Wenn $X$ offen und $\lingua_P$-definierbar ist, ist es $\lingua$-definierbar.
 \end{theorem}
+\begin{remark}
+	Für eindimensionale Mengen ist das trivial, denn in der Darstellung von Satz \ref{Satz 4} kann der Fall $X\cap I$ dicht und kodicht nicht auftreten, weil offene Mengen niemals kodicht sind. Also sind die definierbaren offenen Teilmengen von $B$ gerade die endlichen Vereinigungen von Intervallen und das ist $\lingua$-definierbar.
+\end{remark}
+\begin{proof}[Beweis des Satzes]
+	Füge zunächst zu $\lingua$ $n$-stellige Relationen $O_\varphi$ für jede $(\lingua_P)_B$-Formel $\varphi$, die in $(B,A)$ eine offene Teilmenge von $\setR^n$ definiert, in dieser Sprache $\lingua'$ sei $\tilde{B}$ die Erweiterung von $B$ durch kanonische Interpretation als $O_\varphi(B):=\varphi((B,A))$. Nach der Bemerkung oben sind die eindimensionalen $\lingua_P$-definierbaren Teilmengen von $\setR$ die Vereinigungen von Intervallen in $\setR$ und daher (TODO: warum?) folgt nach \cite{MillSpeiss}, dass $\tilde{B}$ o-minimal ist. Es sei $(D,C)$ eine $\aleph_0$-saturierte Elementarerweiterung von $(B,A)$ und $\tilde{D}$ die Erweiterung von $D$ auf $\lingua'$ durch kanonische Interpretation der $O_\varphi$. Dann muss $\tilde{B}\preceq\tilde{D}$ gelten, denn alle $\lingua'_B$-Formeln gehen auf $(\lingua_P)_B$-Formeln zurück und für die gilt per Konstruktion die Elementarität der Inklusion. Also ist $\tilde{D}$ auch o-minimal, daher ist jede $\lingua'$-definierbare Funktion $f:D\rightarrow D$ stückweise stetig. Weil sie dann auch $\lingua_P$-definierbar ist, gilt nach Lemma \ref{Stückweise stetige Abbildungen}, dass jede $\lingua'$-definierbare Funktion $f:D\rightarrow D$ schon $\lingua$-definierbar ist. $\tilde{D}$ ist o-minimal und hat Definable Choice, deswegen erfüllt die Erweiterung $\tilde{D}/D$ die Voraussetzungen des Lemma \ref{Erweiterung dealsofinierbare Mengen} und die definierbaren Mengen in $D$ und $\tilde{D}$ sind die gleichen.\\
+	Wenn $X$ jetzt eine offene Teilmenge von $\setR^n$ ist, die durch $\chi$ in $(B,A)$ definiert werde, dann ist $X_{(D,C)}=\chi((D,C))$ eine definierbare Teilmenge in $\tilde{D}$, also definierbar in $D$ durch eine Formel $\psi(x,d)$ für ein $d\in D^m$. In $(D,C)$ gilt also $\exists y(\chi(x)\leftrightarrow\psi(x,y))$, also existiert wegen $(B,A)\preceq(D,C)$ ein $b\in B^m$ mit $X=\chi((B,A))=\psi((B,A),d)=\psi(B,d)$. Das heißt, $X$ ist definierbar in $\lingua$.
+\end{proof}
+\begin{corollary}
+	Auch abgeschlossene $\lingua_P$-definierbare Teilmengen von $\setR$ sind $\lingua$-definierbar. Die Definition läuft in diesem Fall über das Komplement.
+\end{corollary}
+\begin{corollary}
+	TODO
+\end{corollary}
