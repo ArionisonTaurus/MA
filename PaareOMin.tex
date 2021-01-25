@@ -365,7 +365,7 @@ In diesem Abschnitt wird eine zur o-Minimalität ähnliche Charakterisierung von
 \end{proof}
 
 \section{Offene Teilmengen von $\setR^n$}
-TODO: Beschreibung
+Nach der Beschreibung der Struktur von $\lingua_P$-definierbaren Mengen liegt die Vermutung nahe, dass offene und abgeschlossene $\lingua_P$-definierbare Mengen schon $\lingua$-definierbar sind. Zumindest für Teilmengen von $\setR^n$ kann man das beweisen.
 
 \begin{lemma}\label{Erweiterung definierbare Mengen}
 	Sei $\fA$ eine unendliche Struktur, und sei $\fB$ eine $\aleph_0$-saturierte o-minimale Erweiterung von $\fA$, , sodass Definable Choice gilt und alle in $\fB$ definierbaren Funktionen $A\rightarrow A$ schon in $\fA$ definierbar sind. Dann sind die in $\fA$ und $\fB$ definierbaren Mengen die gleichen.
@@ -398,5 +398,9 @@ TODO: Eigentlich musste $\fB$ nicht o-minimal sein, dafür $\fA$. Fehler?
 	Auch abgeschlossene $\lingua_P$-definierbare Teilmengen von $\setR$ sind $\lingua$-definierbar. Die Definition läuft in diesem Fall über das Komplement.
 \end{corollary}
 \begin{corollary}
-	TODO
+	Sei $(B,A)$ wie oben und $S\subseteq\setR^n$ $\lingua_P$-definierbar. Dann
+	\begin{itemize}
+		\item sind $\int S,\overline{S}$ definierbar in $B$ nach dem Satz und der Folgerung als offene bzw. abgeschlossene $\lingua_P$-definierbare Mengen.
+		\item ist $S$ genau dann $\lingua$-definierbar, wenn es eine boolesche Kombination von offenen/abgeschlossenen Teilmengen von $\setR^n$ ist, von denen jede $\lingua_P$-definierbar ist. Die Rückrichtung folgt dabei aus dem Satz und der Folgerung, da dann jede einzelne Menge in der Kombination $\lingua$-definierbar ist; die Hinrichtung folgt per Zellzerlegung.
+	\end{itemize}
 \end{corollary}
