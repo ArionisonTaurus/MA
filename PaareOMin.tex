@@ -400,7 +400,28 @@ TODO: Eigentlich musste $\fB$ nicht o-minimal sein, dafür $\fA$. Fehler?
 \begin{corollary}
 	Sei $(B,A)$ wie oben und $S\subseteq\setR^n$ $\lingua_P$-definierbar. Dann
 	\begin{itemize}
-		\item sind $\int S,\overline{S}$ definierbar in $B$ nach dem Satz und der Folgerung als offene bzw. abgeschlossene $\lingua_P$-definierbare Mengen.
+		\item sind $\inn S,\overline{S}$ definierbar in $B$ nach dem Satz und der Folgerung als offene bzw. abgeschlossene $\lingua_P$-definierbare Mengen.
 		\item ist $S$ genau dann $\lingua$-definierbar, wenn es eine boolesche Kombination von offenen/abgeschlossenen Teilmengen von $\setR^n$ ist, von denen jede $\lingua_P$-definierbar ist. Die Rückrichtung folgt dabei aus dem Satz und der Folgerung, da dann jede einzelne Menge in der Kombination $\lingua$-definierbar ist; die Hinrichtung folgt per Zellzerlegung.
 	\end{itemize}
 \end{corollary}
+
+\section{TODO: Noch woanders einsortieren}
+\begin{lemma}
+	Sei $(U_y)_{y\in Y}, Y\subseteq B^n$ eine Familie von offenen, eindimensionalen, in einem dichten Paar $(B,A)$ uniform $\lingua$-definierbaren Mengen. Dann ist $$S:=\bigcup\limits_{y\in Y\cap A^n}U_y$$ auch $\lingua$-definierbar.
+\end{lemma}
+\begin{proof}
+	Wir führen eine Induktion über $\dim Y$, man kann schon annehmen, dass alle $U_y$ nichtleer sind, sonst muss man entsprechend aus $Y$ aussondern. Wenn $\dim Y=0$ ist, ist $Y$ endlich und es ist schon $Y\cap A^n$ definierbar, also auch $S$.\\
+	Zerlege $Y$ in Zellen, das ändert nichts an irgendwelchen Definierbarkeiten, also kann man annehmen, dass $Y$ selbst schon Zelle ist. Wenn $Y$ keine offene Zelle ist und $\pi:Y\rightarrow Z$ der kanonische homöomorphe Projektion zu einer offenen Zelle von Dimension $m<\dim Y$, existiert nach Satz \ref{Definierbare Mengen} ein $\lingua$-definierbares $Z'\subseteq B^m$ mit $\pi(Y\cap A^n)=Z'\cap A^m$, da $\pi(Y\cap A^n)\subseteq A^m$ eine $\lingua_P$-definierbare Menge ist. Definiere dann $Y':=Z\cap Z'$, sodass man die Menge umparametrisieren kann:
+	$$\bigcup\limits_{y'\in Y'\cap A^m}U_{\pi^{-1}(y')}=\bigcup\limits_{y\in\pi^{-1}(Y'\cap A^m)}U_y=\bigcup\limits_{y\in Y\cap A^n}U_y$$
+	Da $(U_{\pi^{-1}(y')})_{y'\in Y'}$ die gleichen Dinge erfüllt wie $(U_y)_{y\in Y}$ und $\dim Y'\leq\dim Z<\dim Y$, gilt die Aussage per Induktion.\\
+	Für den Beweis für offene Zellen wird die Endlichkeit einer bestimmten Menge benötigt:
+	
+	\begin{lemma}
+		Seien drei $\lingua$-definierbare Mengen $$U:=\bigcup\limits_{y\in Y}U_y,$$ $$Y_x:=\{y\in Y\mid x\in U_y\},$$ $$B:=\{x\in U\mid\inn(Y_x)\neq\emptyset\},$$ dann ist $B$ endlich.
+	\end{lemma}
+    \begin{proof}
+    	TODO
+    \end{proof}
+    
+    TODO
+\end{proof}
