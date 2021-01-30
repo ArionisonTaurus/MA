@@ -226,34 +226,11 @@ Wir interessieren uns für die Gestalt von $\lingua_P$-definierbaren Teilmengen 
 	$\glqq{}3.\Rightarrow 1.\grqq{}:$ Da $A$und alle $R_b$ in $(B,A)$ definierbar sind, ist $Y$ auch in $(B,A)$ definierbar.
 \end{proof}
 
-\section{Definierbare Funktionen}
-Um definierbare Funktionen besser zu verstehen, ist es notwendig, sich mit dem definierbaren Abschluss zu beschäftigen.
-
-\begin{lemma}\label{A definierbar abgeschl}
-	In jedem dichten Paar $(B,A)$ ist $A$ definierbar abgeschlossen.
-\end{lemma}
-\begin{proof}
-	Sei $b\in B\setminus A$ und $(B,A)\preceq(D,C)$ eine genügend saturierte Elementarerweiterung. Dann wird der Ordnungstyp von $b$ über $A$ auch von einem Element $D\setminus C\ni d\neq b$ realisiert wegen Dichtheit von $D\setminus C$ in $D$ und Saturation.\newpage
-	Nach Lemma \ref{selber Schnitt} haben $b$ und $d$ dann den selben $\lingua_P$-Typen über $A$, weswegen $b$ nicht definierbar über $A$ in $(D,C)$ sein kann, also auch nicht in $(B,A)$.
-\end{proof}
-
-\begin{corollary}
-	Sei $(B,A)$ ein dichtes Paar und $A_0\preceq A$. Dann ist $A_0$ definierbar abgeschlossen.
-\end{corollary}
-\begin{proof}
-	Sei $b$ definierbar über $A_0$. Dann ist $b$ insbesondere definierbar über $A$, also in $A$. Nach Folgerung \ref{Definierbarkeit aus A} ist dann $\{a\}=\{a\}\cap A$ schon $\lingua$-definierbar aus $A_0$, also in $A_0$, da $A_0$ elementare Substruktur ist.
-\end{proof}
-
-\begin{lemma}\label{Freie Definierbarkeit}
-	Sei $(D,C)\subseteq(B,A)$ frei und $(B,A)$ dichtes Paar. Dann ist $D$ definierbar abgeschlossen in $(B,A)$.
-\end{lemma}
-\begin{proof}
-	Für eine beliebige Struktur $(B',A')\succeq (B,A)$ gelten die Voraussetzungen ebenso, da $\acl$-Abhängigkeit über $A$ als Teil vom Typen äquivalent ist zu $\acl$-Abhängigkeit über $A'$. Ebenso ist $D$ in $(B,A)$ definierbar abgeschlossen genau dann, wenn es in $(B',A')$ definierbar abgeschlossen ist. Also sei $(B,A)$ jetzt schon \OE\ hinreichend saturiert und $b\in B\setminus D$.\\
-	Nach dem Beweis zur Existenz des B\&F-Systems kann der partielle Isomorphismus $(B,A)\supseteq(D,C)\cong(D,C)\subseteq(B,A)$ insbesondere auf mehrere Weisen auf $b$ fortgesetzt werden: Wenn $b\in A$ oder $b\in B\setminus AD$, ging es nur um die Erfüllung von transzendenten Ordnungstypen, da hat man also viele Optionen. Wenn $b\in AD\setminus(A\cup D)$ ist und $a\in A^n$ unabhängig über $D$ mit $b\in Da$, dann finde $a'_1$ transzendent über $Da$ von passendem Ordnungstyp über $D$, $a'_2$ transzendent über $Daa'_1$ von passendem Ordnungstyp über $Da'_1$, usw. So kann man den Isomorphismus auf $Da$ fortsetzen mit Bild $Da'$; da aber $a$ und $a'$ per Konstruktion unabhängig über $D$ waren, sind auch $Da$ und $Da'$ unabhängig über $D$, also $Da\cap Da'=D$ und das Bild von $b$ kann nicht $b$ selbst sein. Also gibt es auch in diesem Fall mehrere Möglichkeiten für eine Fortsetzung, also mehrere elementare Abbildungen, also kann $b$ nicht definierbar über $D$ sein.
-\end{proof}
+\section{Definierbare eindimensionale Mengen}
+In diesem Abschnitt wird eine zur o-Minimalität ähnliche Charakterisierung von eindimensionalen Mengen in Modellen von $\td$ hergeleitet. Hierbei sei $(B,A)$ vorerst ein beliebiges dichtes Paar, als Konvention nehmen wir an, dass $A^0=\{0\}$.
 
 \begin{lemma}
-	Sei $(U_y)_{y\in Y}, Y\subseteq B^n$ eine Familie von offenen, eindimensionalen, in einem dichten Paar $(B,A)$ uniform $\lingua$-definierbaren Mengen. Dann ist $$S:=\bigcup\limits_{y\in Y\cap A^n}U_y$$ auch $\lingua$-definierbar.
+	Sei $(U_y)_{y\in Y}, Y\subseteq B^n$ eine Familie von offenen, eindimensionalen, in $(B,A)$ uniform $\lingua$-definierbaren Mengen. Dann ist $$S:=\bigcup\limits_{y\in Y\cap A^n}U_y$$ auch $\lingua$-definierbar.
 \end{lemma}
 \begin{proof}
 	Wir führen eine Induktion über $\dim Y$, man kann schon annehmen, dass alle $U_y$ nichtleer sind, sonst muss man entsprechend aus $Y$ aussondern. Wenn $\dim Y=0$ ist, ist $Y$ endlich und es ist schon $Y\cap A^n$ definierbar, also auch $S$.\\
@@ -275,7 +252,7 @@ Um definierbare Funktionen besser zu verstehen, ist es notwendig, sich mit dem d
 \end{proof}
 
 \begin{lemma}
-	Sei $(B,A)$ ein dichtes Paar und eine $\lingua_P$-definierbare $X\subseteq B$. Dann stimmt $X$ bis auf eine kleine Menge mit einer $\lingua$-definierbaren Menge $X'$ überein.
+	Sei eine $\lingua_P$-definierbare Menge $X\subseteq B$. Dann stimmt $X$ bis auf eine kleine Menge mit einer $\lingua$-definierbaren Menge $X'$ überein.
 \end{lemma}
 \begin{proof}
 	Sei zunächst $X$ gegeben durch $\exists y\in P(\psi(x,y))$ für eine Formel $\psi\in\fF_{1+n}(\lingua_B)$. Die Mengen $F_y:=\psi(B,y)\cap\partial\psi(B,y)$ sind endlich für jedes $y\in M^n$ und weil o-minimale Theorien $\exists^\infty$ eliminieren, ist deren Mächtigkeit uniform beschränkt, sagen wir durch $k$. Sei $Y:=\exists x\psi(x,B)$ und $\lingua$-definierbare Funktionen $g_1,\dots,g_k:Y\rightarrow F_y$, sodass $F_y=\{g_1(y),\dots,g_k(y)\}$ für alle $y\in Y$. Als diese Funktionen kann man zum Beispiel die angeordnete Aufzählung der Elemente in $F_y$ nehmen. Dann gilt
@@ -284,25 +261,6 @@ Um definierbare Funktionen besser zu verstehen, ist es notwendig, sich mit dem d
 	\end{align*}
 	Da $X':=\bigcup\limits_{i=1}^kg_i(Y\cap A^n)$ klein ist und $S:=\bigcup\limits_{y\in Y\cap A^n}\inn\psi(B,y)$ nach dem letzten Lemma $\lingua$-definierbar, stimmen $X$ und $X'$ bis auf die kleine Menge $S$ überein. Da Darstellungen \glqq{}$(X\setminus  S')\cup S,X\ \lingua$-definierbar, $S,S'$ klein\grqq{} unter booleschen Kombinationen erhalten bleiben, folgt die Aussage für gute Formeln und daher für alle Mengen.
 \end{proof}
-
-\begin{theorem}\label{Satz 3}
-	Sei $(B,A)\models\td$ und sei $F:B\rightarrow B$ eine $\lingua_P$-definierbare Funktion. Dann stimmt $F$ auf bis auf eine kleine Menge mit einer $\lingua$-definierbaren Funktion überein.
-\end{theorem}
-\begin{proof}
-	TODO: Muss noch warten
-\end{proof}
-
-\begin{lemma}
-	Sei $(B,A)\models\td$ und sei $F:A^n\rightarrow A$ eine $\lingua_P$-definierbare Funktion. Dann gibt es $\lingua_A$-definierbare $f_1,\dots,f_k:A^n\rightarrow A$, sodass für alle $a\in A^n$ ein $f_i$ existiert mit $F(a)=f_i(a)$.
-\end{lemma}
-\begin{proof}
-	TODO: muss nach vorne
-	Wenn die Aussage nicht gilt, gilt für alle $k\in\setN$ und alle $\lingua_A$-definierbaren $f_1,\dots,f_k:A^n\rightarrow A$, dass ein $a\in A$ existiert mit $f_i(a)\neq F(a)$ für alle $i$. Also ist der partielle Typ $$\{F(x)\neq f(x)\mid f:A^n\rightarrow A\ \lingua_A\text{-definierbar}\}$$ konsistent und es existiert $(B,A)\preceq(B',A')$ und $a'\in A'^n$ mit $F(a')\neq f(a')$ für alle $\lingua_A$-definierbaren $f:A'^n\rightarrow A'$.\\
-	Allerdings ist nach Lemma \ref{Unabhängigkeitsregeln} (6.) wegen $a'\in A'^n$ die Inklusion $(Ba',Aa')\subseteq(B',A')$ frei, nach Lemma \ref{Freie Definierbarkeit} ist $Ba'$ also $\lingua_P$-definierbar abgeschlossen. Da $F(a')$ $\lingua_P$-definierbar über $Ba'$ ist, ist es in $Ba'$, wegen $F:A'^n\rightarrow A$ ist $F(a')\in A'$. Wegen Unabhängigkeit liegt also $F(a')\in Ba'\cap A'=Aa'$ und es gibt eine $\lingua_A$-definierbare Abbildung $f:A'^n\rightarrow A'$ mit $f(a')=F(a')$ - ein Widerspruch!
-\end{proof}
-
-\section{Definierbare eindimensionale Mengen}
-In diesem Abschnitt wird eine zur o-Minimalität ähnliche Charakterisierung von eindimensionalen Mengen in Modellen von $\td$ hergeleitet. Hierbei sei $(B,A)$ vorerst ein beliebiges dichtes Paar, als Konvention nehmen wir an, dass $A^0=\{0\}$.
 
 \begin{lemma}
 	Für jede $\lingua$-definierbare Menge $S\subseteq B^m$ und Funktion $g:B^m\rightarrow B^k$ gibt es eine $\lingua$-definierbare Teilmenge $S'\subseteq S$, sodass $$A^m\cap S\cap g^{-1}(A^k)=A^m\cap S'.$$
@@ -353,7 +311,7 @@ In diesem Abschnitt wird eine zur o-Minimalität ähnliche Charakterisierung von
 \end{proof}
 
 \begin{theorem}\label{Satz 4}
-	Sei $X\subseteq B$ eine $\lingua_P$-definierbare Menge. Dann existiert eine endliche Unterteilung von $B$, sodass jedes dadurch erzeugte offene Intervall $I$ entweder disjunkt zu $X$ ist, Teilmenge von $X$ ist oder $X\cap I$ dicht \& kodicht in $I$ ist. Für kleine $X$ entfällt der Fall \glqq{}Teilmenge\grqq{} natürlich. TODO: klein und Koklein, muss nach vorne
+	Sei $X\subseteq B$ eine $\lingua_P$-definierbare Menge. Dann existiert eine endliche Unterteilung von $B$, sodass jedes dadurch erzeugte offene Intervall $I$ entweder disjunkt zu $X$ ist, Teilmenge von $X$ ist oder $X\cap I$ dicht \& kodicht in $I$ ist. Für kleine $X$ entfällt der Fall \glqq{}Teilmenge\grqq{} natürlich. TODO: klein und Koklein
 \end{theorem}
 \begin{proof}
 	Die gesuchte Eigenschaft bleibt unter endlichen Vereinigungen und Differenzen von Mengen erhalten, man muss nur eine Verfeinerung der Unterteilung durchführen. Deswegen sei $X$ zunächst klein und nach dem letzten Lemma gegeben als $X=f(A^n\cap E)$ für ein stetiges, $\lingua$-definierbares $f:E\rightarrow B$ und eine offene Zelle $E\subseteq B^n$. Da definierbarer Zusammenhang unter definierbaren stetigen Funktionen erhalten bleibt, ist $I:=f(E)$ auch definierbar zusammenhängend, weil es $\lingua$-definierbar ist, hat es auch ein Supremum und Infimum in $B\cup\{\pm\infty\}$, ist also ein Intervall (ausnahmsweise sei hier auch ein nichtoffenes Intervall mitgemeint). Wenn $I$ endlich ist, ist auch $X$ endlich und es ist nichts zu zeigen. $X$ ist disjunkt zu $B\setminus I$, nun muss nur noch gezeigt werden, dass $X=X\cap I$ dicht und kodicht in $I$ ist, denn Dichte und Kodichte in nichtoffenen unendlichen Intervallen ist äquivalent zu Dichte und Kodichte in deren Innerem. Aber für dichte Teilmengen werden durch stetige Abbildungen auf dichte Teilmengen abgebildet; da $A^n$ dicht in $B^n$ ist, ist auch $A^n\cap E$ dicht in $E$ und folglich $X$ dicht in $I$. Andererseits muss auch das Komplement von $X$ dicht in $I$ sein, da es sonst ein Intervall ganz in $X$ gäbe, was der Kleinheit mit Lemma \ref{Kleinheit} widerspricht.\\
@@ -369,10 +327,52 @@ In diesem Abschnitt wird eine zur o-Minimalität ähnliche Charakterisierung von
 \end{proof}
 
 \begin{lemma}\label{Stückweise stetige Abbildungen}
-	Sei $f:B\rightarrow B$ stückweise stetig und $\lingua_P$-definierbar. Dann ist $f$ schon $\lingua$-definierbar.
+	Sei $f:B\rightarrow B$ stückweise stetig und $\lingua_P$-definierbar. Dann ist $f$ schon $\lingua$-definierbar. TODO: nach hinten
 \end{lemma}
 \begin{proof}
 	Nach Satz $\ref{Satz 3}$ stimmt $f$ bis auf eine kleine Menge $X$ mit einer $\lingua$-definierbaren Funktion $f'$ überein. Wegen o-Minimalität von $T$ ist $f'$ auch stückweise stetig. Unterteile $X$ wie in Satz \ref{Satz 4} und verfeinere die Unterteilung, so dass $f,f'$ auf jedem Intervall stetig sind. Für jedes Intervall $I$ dieser Unterteilung gilt dann entweder, dass $X\cap I$ dicht und kodicht in $I$ ist oder, dass $X\cap I=\emptyset$. Der erste Fall kann nie eintreten, da zwei stetige Funktionen, die auf der dichten Teilmenge $I\setminus X$ übereinstimmen, schon auf ganz $I$ übereinstimmen. Also ist $X$ endlich und $f$ kann mit $\lingua$ definiert werden (nämlich durch $f'$ außerhalb von $X$ und ansonsten manuell).
+\end{proof}
+
+\section{Definierbare Funktionen}
+Um definierbare Funktionen besser zu verstehen, ist es notwendig, sich mit dem definierbaren Abschluss zu beschäftigen.
+
+\begin{lemma}\label{A definierbar abgeschl}
+	In jedem dichten Paar $(B,A)$ ist $A$ definierbar abgeschlossen.
+\end{lemma}
+\begin{proof}
+	Sei $b\in B\setminus A$ und $(B,A)\preceq(D,C)$ eine genügend saturierte Elementarerweiterung. Dann wird der Ordnungstyp von $b$ über $A$ auch von einem Element $D\setminus C\ni d\neq b$ realisiert wegen Dichtheit von $D\setminus C$ in $D$ und Saturation.\newpage
+	Nach Lemma \ref{selber Schnitt} haben $b$ und $d$ dann den selben $\lingua_P$-Typen über $A$, weswegen $b$ nicht definierbar über $A$ in $(D,C)$ sein kann, also auch nicht in $(B,A)$.
+\end{proof}
+
+\begin{corollary}
+	Sei $(B,A)$ ein dichtes Paar und $A_0\preceq A$. Dann ist $A_0$ definierbar abgeschlossen.
+\end{corollary}
+\begin{proof}
+	Sei $b$ definierbar über $A_0$. Dann ist $b$ insbesondere definierbar über $A$, also in $A$. Nach Folgerung \ref{Definierbarkeit aus A} ist dann $\{a\}=\{a\}\cap A$ schon $\lingua$-definierbar aus $A_0$, also in $A_0$, da $A_0$ elementare Substruktur ist.
+\end{proof}
+
+\begin{lemma}\label{Freie Definierbarkeit}
+	Sei $(D,C)\subseteq(B,A)$ frei und $(B,A)$ dichtes Paar. Dann ist $D$ definierbar abgeschlossen in $(B,A)$.
+\end{lemma}
+\begin{proof}
+	Für eine beliebige Struktur $(B',A')\succeq (B,A)$ gelten die Voraussetzungen ebenso, da $\acl$-Abhängigkeit über $A$ als Teil vom Typen äquivalent ist zu $\acl$-Abhängigkeit über $A'$. Ebenso ist $D$ in $(B,A)$ definierbar abgeschlossen genau dann, wenn es in $(B',A')$ definierbar abgeschlossen ist. Also sei $(B,A)$ jetzt schon \OE\ hinreichend saturiert und $b\in B\setminus D$.\\
+	Nach dem Beweis zur Existenz des B\&F-Systems kann der partielle Isomorphismus $(B,A)\supseteq(D,C)\cong(D,C)\subseteq(B,A)$ insbesondere auf mehrere Weisen auf $b$ fortgesetzt werden: Wenn $b\in A$ oder $b\in B\setminus AD$, ging es nur um die Erfüllung von transzendenten Ordnungstypen, da hat man also viele Optionen. Wenn $b\in AD\setminus(A\cup D)$ ist und $a\in A^n$ unabhängig über $D$ mit $b\in Da$, dann finde $a'_1$ transzendent über $Da$ von passendem Ordnungstyp über $D$, $a'_2$ transzendent über $Daa'_1$ von passendem Ordnungstyp über $Da'_1$, usw. So kann man den Isomorphismus auf $Da$ fortsetzen mit Bild $Da'$; da aber $a$ und $a'$ per Konstruktion unabhängig über $D$ waren, sind auch $Da$ und $Da'$ unabhängig über $D$, also $Da\cap Da'=D$ und das Bild von $b$ kann nicht $b$ selbst sein. Also gibt es auch in diesem Fall mehrere Möglichkeiten für eine Fortsetzung, also mehrere elementare Abbildungen, also kann $b$ nicht definierbar über $D$ sein.
+\end{proof}
+
+\begin{theorem}\label{Satz 3}
+	Sei $(B,A)\models\td$ und sei $F:B\rightarrow B$ eine $\lingua_P$-definierbare Funktion. Dann stimmt $F$ auf bis auf eine kleine Menge mit einer $\lingua$-definierbaren Funktion überein.
+\end{theorem}
+\begin{proof}
+	TODO: Muss noch warten
+\end{proof}
+
+\begin{lemma}
+	Sei $(B,A)\models\td$ und sei $F:A^n\rightarrow A$ eine $\lingua_P$-definierbare Funktion. Dann gibt es $\lingua_A$-definierbare $f_1,\dots,f_k:A^n\rightarrow A$, sodass für alle $a\in A^n$ ein $f_i$ existiert mit $F(a)=f_i(a)$.
+\end{lemma}
+\begin{proof}
+	TODO: muss nach vorne
+	Wenn die Aussage nicht gilt, gilt für alle $k\in\setN$ und alle $\lingua_A$-definierbaren $f_1,\dots,f_k:A^n\rightarrow A$, dass ein $a\in A$ existiert mit $f_i(a)\neq F(a)$ für alle $i$. Also ist der partielle Typ $$\{F(x)\neq f(x)\mid f:A^n\rightarrow A\ \lingua_A\text{-definierbar}\}$$ konsistent und es existiert $(B,A)\preceq(B',A')$ und $a'\in A'^n$ mit $F(a')\neq f(a')$ für alle $\lingua_A$-definierbaren $f:A'^n\rightarrow A'$.\\
+	Allerdings ist nach Lemma \ref{Unabhängigkeitsregeln} (6.) wegen $a'\in A'^n$ die Inklusion $(Ba',Aa')\subseteq(B',A')$ frei, nach Lemma \ref{Freie Definierbarkeit} ist $Ba'$ also $\lingua_P$-definierbar abgeschlossen. Da $F(a')$ $\lingua_P$-definierbar über $Ba'$ ist, ist es in $Ba'$, wegen $F:A'^n\rightarrow A$ ist $F(a')\in A'$. Wegen Unabhängigkeit liegt also $F(a')\in Ba'\cap A'=Aa'$ und es gibt eine $\lingua_A$-definierbare Abbildung $f:A'^n\rightarrow A'$ mit $f(a')=F(a')$ - ein Widerspruch!
 \end{proof}
 
 \section{Offene Teilmengen von $\setR^n$}
@@ -402,7 +402,7 @@ TODO: Eigentlich musste $\fB$ nicht o-minimal sein, dafür $\fA$. Fehler?
 	Für eindimensionale Mengen ist das trivial, denn in der Darstellung von Satz \ref{Satz 4} kann der Fall $X\cap I$ dicht und kodicht nicht auftreten, weil offene Mengen niemals kodicht sind. Also sind die definierbaren offenen Teilmengen von $B$ gerade die endlichen Vereinigungen von Intervallen und das ist $\lingua$-definierbar.
 \end{remark}
 \begin{proof}[Beweis des Satzes]
-	Füge zunächst zu $\lingua$ $n$-stellige Relationen $O_\varphi$ für jede $(\lingua_P)_B$-Formel $\varphi$, die in $(B,A)$ eine offene Teilmenge von $\setR^n$ definiert, in dieser Sprache $\lingua'$ sei $\tilde{B}$ die Erweiterung von $B$ durch kanonische Interpretation als $O_\varphi(B):=\varphi((B,A))$. Nach der Bemerkung oben sind die eindimensionalen $\lingua_P$-definierbaren Teilmengen von $\setR$ die Vereinigungen von Intervallen in $\setR$ und daher (TODO: warum?) folgt nach \cite{MillSpeiss}, dass $\tilde{B}$ o-minimal ist. Es sei $(D,C)$ eine $\aleph_0$-saturierte Elementarerweiterung von $(B,A)$ und $\tilde{D}$ die Erweiterung von $D$ auf $\lingua'$ durch kanonische Interpretation der $O_\varphi$. Dann muss $\tilde{B}\preceq\tilde{D}$ gelten, denn alle $\lingua'_B$-Formeln gehen auf $(\lingua_P)_B$-Formeln zurück und für die gilt per Konstruktion die Elementarität der Inklusion. Also ist $\tilde{D}$ auch o-minimal, daher ist jede $\lingua'$-definierbare Funktion $f:D\rightarrow D$ stückweise stetig. Weil sie dann auch $\lingua_P$-definierbar ist, gilt nach Lemma \ref{Stückweise stetige Abbildungen}, dass jede $\lingua'$-definierbare Funktion $f:D\rightarrow D$ schon $\lingua$-definierbar ist. $\tilde{D}$ ist o-minimal und hat Definable Choice, deswegen erfüllt die Erweiterung $\tilde{D}/D$ die Voraussetzungen des Lemma \ref{Erweiterung dealsofinierbare Mengen} und die definierbaren Mengen in $D$ und $\tilde{D}$ sind die gleichen.\\
+	Füge zunächst zu $\lingua$ $n$-stellige Relationen $O_\varphi$ für jede $(\lingua_P)_B$-Formel $\varphi$, die in $(B,A)$ eine offene Teilmenge von $\setR^n$ definiert, in dieser Sprache $\lingua'$ sei $\tilde{B}$ die Erweiterung von $B$ durch kanonische Interpretation als $O_\varphi(B):=\varphi((B,A))$. Nach der Bemerkung oben sind die eindimensionalen $\lingua_P$-definierbaren Teilmengen von $\setR$ die Vereinigungen von Intervallen in $\setR$ und daher (TODO: warum?) folgt nach \cite{MillSpeiss}, dass $\tilde{B}$ o-minimal ist. Es sei $(D,C)$ eine $\aleph_0$-saturierte Elementarerweiterung von $(B,A)$ und $\tilde{D}$ die Erweiterung von $D$ auf $\lingua'$ durch kanonische Interpretation der $O_\varphi$. Dann muss $\tilde{B}\preceq\tilde{D}$ gelten, denn alle $\lingua'_B$-Formeln gehen auf $(\lingua_P)_B$-Formeln zurück und für die gilt per Konstruktion die Elementarität der Inklusion. Also ist $\tilde{D}$ auch o-minimal, daher ist jede $\lingua'$-definierbare Funktion $f:D\rightarrow D$ stückweise stetig. Weil sie dann auch $\lingua_P$-definierbar ist, gilt nach Lemma \ref{Stückweise stetige Abbildungen}, dass jede $\lingua'$-definierbare Funktion $f:D\rightarrow D$ schon $\lingua$-definierbar ist. $\tilde{D}$ ist o-minimal und hat Definable Choice, deswegen erfüllt die Erweiterung $\tilde{D}/D$ die Voraussetzungen des Lemma \ref{Erweiterung definierbare Mengen} und die definierbaren Mengen in $D$ und $\tilde{D}$ sind die gleichen.\\
 	Wenn $X$ jetzt eine offene Teilmenge von $\setR^n$ ist, die durch $\chi$ in $(B,A)$ definiert werde, dann ist $X_{(D,C)}=\chi((D,C))$ eine definierbare Teilmenge in $\tilde{D}$, also definierbar in $D$ durch eine Formel $\psi(x,d)$ für ein $d\in D^m$. In $(D,C)$ gilt also $\exists y(\chi(x)\leftrightarrow\psi(x,y))$, also existiert wegen $(B,A)\preceq(D,C)$ ein $b\in B^m$ mit $X=\chi((B,A))=\psi((B,A),d)=\psi(B,d)$. Das heißt, $X$ ist definierbar in $\lingua$.
 \end{proof}
 \begin{corollary}
@@ -416,6 +416,8 @@ TODO: Eigentlich musste $\fB$ nicht o-minimal sein, dafür $\fA$. Fehler?
 	\end{itemize}
 \end{corollary}
 
+
+\newpage
 \section{TODO: Noch woanders einsortieren oder löschen}
 
 \begin{lemma}
