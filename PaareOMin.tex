@@ -263,7 +263,7 @@ In diesem Abschnitt wird eine zur o-Minimalität ähnliche Charakterisierung von
 \end{proof}
 
 \begin{lemma}
-	Für jede $\lingua$-definierbare Menge $S\subseteq B^m$ und Funktion $g:B^m\rightarrow B^k$ gibt es eine $\lingua$-definierbare Teilmenge $S'\subseteq S$, sodass $$A^m\cap S\cap g^{-1}(A^k)=A^m\cap S'.$$
+	Für jede $\lingua$-definierbare Menge $S\subseteq B^m$ und Funktion $g:B^m\rightarrow B^k$ gibt es eine $\lingua$-definierbare Teilmenge $S'\subseteq S$, sodass $$A^m\cap S\cap g^{-1}(A^k)=A^m\cap S'.$$ TODO: Überarbeiten
 \end{lemma}
 \begin{proof}
 	Für $S=\emptyset$, wähle $S'=\emptyset$. Ansonsten führen wir eine Induktion über $(m,k,\dim S)$ mit elementweiser Halbordnung (die ist fundiert):\\
@@ -326,13 +326,6 @@ In diesem Abschnitt wird eine zur o-Minimalität ähnliche Charakterisierung von
 	Sei $n>1$. Dann sind für $\pi_{i_1,\dots,i_k}$ als Projektionsabbildung auf die Koordinaten $i_1,\dots,i_k$ jeweils auch $$Y_x:=(\pi_{1,\dots,m+1}(S))_x=(\pi_{m+1}(S_x))$$ und $$Z_x:=(\pi_{1,\dots,m,m+2,\dots,m+n}(S))_x=(\pi_{m+2,\dots,m+n}(S_x))$$ endlich und daher ist nach Induktionsvoraussetzung die Mächtigkeit jeweils uniform beschränkt durch irgendwelche $K,L\in\setN$. Dann gilt aber $$\abs{S_x}\leq \abs{Y_x\times Z_x}=\abs{Y_x}\abs{Z_x},$$ was uniform durch $KL$ beschränkt ist.
 \end{proof}
 
-\begin{lemma}\label{Stückweise stetige Abbildungen}
-	Sei $f:B\rightarrow B$ stückweise stetig und $\lingua_P$-definierbar. Dann ist $f$ schon $\lingua$-definierbar. TODO: nach hinten
-\end{lemma}
-\begin{proof}
-	Nach Satz $\ref{Satz 3}$ stimmt $f$ bis auf eine kleine Menge $X$ mit einer $\lingua$-definierbaren Funktion $f'$ überein. Wegen o-Minimalität von $T$ ist $f'$ auch stückweise stetig. Unterteile $X$ wie in Satz \ref{Satz 4} und verfeinere die Unterteilung, so dass $f,f'$ auf jedem Intervall stetig sind. Für jedes Intervall $I$ dieser Unterteilung gilt dann entweder, dass $X\cap I$ dicht und kodicht in $I$ ist oder, dass $X\cap I=\emptyset$. Der erste Fall kann nie eintreten, da zwei stetige Funktionen, die auf der dichten Teilmenge $I\setminus X$ übereinstimmen, schon auf ganz $I$ übereinstimmen. Also ist $X$ endlich und $f$ kann mit $\lingua$ definiert werden (nämlich durch $f'$ außerhalb von $X$ und ansonsten manuell).
-\end{proof}
-
 \section{Definierbare Funktionen}
 Um definierbare Funktionen besser zu verstehen, ist es notwendig, sich mit dem definierbaren Abschluss zu beschäftigen.
 
@@ -359,6 +352,22 @@ Um definierbare Funktionen besser zu verstehen, ist es notwendig, sich mit dem d
 	Nach dem Beweis zur Existenz des B\&F-Systems kann der partielle Isomorphismus $(B,A)\supseteq(D,C)\cong(D,C)\subseteq(B,A)$ insbesondere auf mehrere Weisen auf $b$ fortgesetzt werden: Wenn $b\in A$ oder $b\in B\setminus AD$, ging es nur um die Erfüllung von transzendenten Ordnungstypen, da hat man also viele Optionen. Wenn $b\in AD\setminus(A\cup D)$ ist und $a\in A^n$ unabhängig über $D$ mit $b\in Da$, dann finde $a'_1$ transzendent über $Da$ von passendem Ordnungstyp über $D$, $a'_2$ transzendent über $Daa'_1$ von passendem Ordnungstyp über $Da'_1$, usw. So kann man den Isomorphismus auf $Da$ fortsetzen mit Bild $Da'$; da aber $a$ und $a'$ per Konstruktion unabhängig über $D$ waren, sind auch $Da$ und $Da'$ unabhängig über $D$, also $Da\cap Da'=D$ und das Bild von $b$ kann nicht $b$ selbst sein. Also gibt es auch in diesem Fall mehrere Möglichkeiten für eine Fortsetzung, also mehrere elementare Abbildungen, also kann $b$ nicht definierbar über $D$ sein.
 \end{proof}
 
+\begin{lemma}
+	Sei $(B,A)\models\td$ und sei $F:A^n\rightarrow A$ eine $\lingua_P$-definierbare Funktion. Dann gibt es in $A$ definierbare $f_1,\dots,f_k:A^n\rightarrow A$, sodass für alle $a\in A^n$ ein $f_i$ existiert mit $F(a)=f_i(a)$.
+\end{lemma}
+\begin{proof}
+	Wenn die Aussage nicht gilt, gilt für alle $k\in\setN$ und alle in $A$ definierbaren $f_1,\dots,f_k:A^n\rightarrow A$, dass ein $a\in A$ existiert mit $f_i(a)\neq F(a)$ für alle $i$. Also ist der partielle Typ $$\{P(x)\}\cup\{F(x)\neq f(x)\mid f:A^n\rightarrow A\ \lingua_A\text{-definierbar}\}$$ konsistent und es existiert $(B,A)\preceq(B',A')$ und $a'\in A'^n$ mit $F(a')\neq f(a')$ für alle in $A'$ $\lingua_A$-definierbaren $f:A'^n\rightarrow A'$.\\
+	Allerdings ist nach Lemma \ref{Unabhängigkeitsregeln} (6.) wegen $a'\in A'^n$ die Inklusion $(Ba',Aa')\subseteq(B',A')$ frei, nach Lemma \ref{Freie Definierbarkeit} ist $Ba'$ also $\lingua_P$-definierbar abgeschlossen. Da $F(a')$ $\lingua_P$-definierbar über $Ba'$ ist, ist es in $Ba'$, wegen $F:A'^n\rightarrow A'$ ist $F(a')\in A'$. Wegen Unabhängigkeit liegt also $F(a')\in Ba'\cap A'=Aa'$ und es gibt eine $\lingua_A$-definierbare Abbildung $f:A'^n\rightarrow A'$ mit $f(a')=F(a')$ - ein Widerspruch!
+\end{proof}
+
+\begin{lemma}
+	Sei $(B,A)\models\td$ und sei $F:B\rightarrow B$ eine $\lingua_P$-definierbare Funktion. Dann gibt es $\lingua$-definierbare $f_1,\dots,f_k:B\rightarrow B$ und eine kleine Menge $X\subset B$, sodass für alle $b\in B\setminus X$ ein $f_i$ existiert mit $F(b)=f_i(b)$.
+\end{lemma}
+\begin{proof}
+	Wenn die Aussage nicht gilt, gilt für alle $k\in\setN$, alle kleinen Mengen $X\subset B$ und alle $\lingua$-definierbaren $f_1,\dots,f_k:B\rightarrow B$, dass ein $b\in B\setminus X$ existiert mit $f_i(b)\neq F(b)$ für alle $i$. Also ist der partielle Typ $$\{x\notin X\mid X\text{ klein in }B\}\cup\{F(x)\neq f(x)\mid f:B\rightarrow B\ \lingua_B\text{-definierbar}\}$$ konsistent und es existiert $(B,A)\preceq(B',A')$ und $$b'\in B'\setminus\bigcup\limits_{f:B'^n\rightarrow B'\ \lingua_B\text{-definierbar}}f(A'^n)=B'\setminus A'B$$ mit $F(b')\neq f(b')$ für alle $\lingua_B$-definierbaren $f:B'\rightarrow B'$.\\
+	Allerdings ist nach Lemma \ref{Unabhängigkeitsregeln} (7.) wegen $b'\in B'\setminus A'B$ die Inklusion $(Bb',A)\subseteq(B',A')$ frei, nach Lemma \ref{Freie Definierbarkeit} ist $Bb'$ also $\lingua_P$-definierbar abgeschlossen. Da $F(b')$ $\lingua_P$-definierbar über $Bb'$ ist, ist es in $Bb'$, also existiert eine $\lingua_B$-definierbare Abbildung $f:B'\rightarrow B'$ mit $f(b')=F(b')$ - ein Widerspruch!
+\end{proof}
+
 \begin{theorem}\label{Satz 3}
 	Sei $(B,A)\models\td$ und sei $F:B\rightarrow B$ eine $\lingua_P$-definierbare Funktion. Dann stimmt $F$ auf bis auf eine kleine Menge mit einer $\lingua$-definierbaren Funktion überein.
 \end{theorem}
@@ -366,13 +375,11 @@ Um definierbare Funktionen besser zu verstehen, ist es notwendig, sich mit dem d
 	TODO: Muss noch warten
 \end{proof}
 
-\begin{lemma}
-	Sei $(B,A)\models\td$ und sei $F:A^n\rightarrow A$ eine $\lingua_P$-definierbare Funktion. Dann gibt es $\lingua_A$-definierbare $f_1,\dots,f_k:A^n\rightarrow A$, sodass für alle $a\in A^n$ ein $f_i$ existiert mit $F(a)=f_i(a)$.
+\begin{lemma}\label{Stückweise stetige Abbildungen}
+	Sei $f:B\rightarrow B$ stückweise stetig und $\lingua_P$-definierbar. Dann ist $f$ schon $\lingua$-definierbar.
 \end{lemma}
 \begin{proof}
-	TODO: muss nach vorne
-	Wenn die Aussage nicht gilt, gilt für alle $k\in\setN$ und alle $\lingua_A$-definierbaren $f_1,\dots,f_k:A^n\rightarrow A$, dass ein $a\in A$ existiert mit $f_i(a)\neq F(a)$ für alle $i$. Also ist der partielle Typ $$\{F(x)\neq f(x)\mid f:A^n\rightarrow A\ \lingua_A\text{-definierbar}\}$$ konsistent und es existiert $(B,A)\preceq(B',A')$ und $a'\in A'^n$ mit $F(a')\neq f(a')$ für alle $\lingua_A$-definierbaren $f:A'^n\rightarrow A'$.\\
-	Allerdings ist nach Lemma \ref{Unabhängigkeitsregeln} (6.) wegen $a'\in A'^n$ die Inklusion $(Ba',Aa')\subseteq(B',A')$ frei, nach Lemma \ref{Freie Definierbarkeit} ist $Ba'$ also $\lingua_P$-definierbar abgeschlossen. Da $F(a')$ $\lingua_P$-definierbar über $Ba'$ ist, ist es in $Ba'$, wegen $F:A'^n\rightarrow A$ ist $F(a')\in A'$. Wegen Unabhängigkeit liegt also $F(a')\in Ba'\cap A'=Aa'$ und es gibt eine $\lingua_A$-definierbare Abbildung $f:A'^n\rightarrow A'$ mit $f(a')=F(a')$ - ein Widerspruch!
+	Nach Satz $\ref{Satz 3}$ stimmt $f$ bis auf eine kleine Menge $X$ mit einer $\lingua$-definierbaren Funktion $f'$ überein. Wegen o-Minimalität von $T$ ist $f'$ auch stückweise stetig. Unterteile $X$ wie in Satz \ref{Satz 4} und verfeinere die Unterteilung, so dass $f,f'$ auf jedem Intervall stetig sind. Für jedes Intervall $I$ dieser Unterteilung gilt dann entweder, dass $X\cap I$ dicht und kodicht in $I$ ist oder, dass $X\cap I=\emptyset$. Der erste Fall kann nie eintreten, da zwei stetige Funktionen, die auf der dichten Teilmenge $I\setminus X$ übereinstimmen, schon auf ganz $I$ übereinstimmen. Also ist $X$ endlich und $f$ kann mit $\lingua$ definiert werden (nämlich durch $f'$ außerhalb von $X$ und ansonsten manuell).
 \end{proof}
 
 \section{Offene Teilmengen von $\setR^n$}
