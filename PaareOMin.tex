@@ -3,7 +3,7 @@
 \section{Allgemeine Betrachtungen und Anforderungen an die Theorien}
 
 Viele Techniken und Gedanken aus dem vorigen Kapitel werden jetzt auf o-minimale Theorien übertragen: Im Folgenden halten wir einfach eine vollständige o-minimale Theorie T mit dichter Ordnung in der Sprache $\lingua$ fest und betrachten die Theorie $\tq$ in der Sprache $\lingua_P:=\lingua\cup\{P(x)\}$, sodass die Modelle von $\tq$ Modelle von T sind und in jedem Modell $\fM$ die Menge $P(M)$ ebenfalls Modell von T ist. Schreibe so ein Paar dann auch als $(B,A)$ mit $A=P(B)$.\\
-Wir setzen voraus, dass $T$ eine durch $+$ dicht und linear angeordnete abelsche Gruppe mit einem positiven Element $1$ beschreibt, sodass Definable Choice gilt. Dann sind die Skolemfunktionen definierbar und \OE\ ist $\lingua$ schon so eine definitorische Erweiterung, dass $T$ Quantorenelimination hat und universell axiomatisierbar ist (wobei bei einzelnen Theorien die Frage interessant wäre, welche Skolemfunktionen man dafür überhaupt hinzufügen muss). Außerdem seien alle Modelle genug saturiert, dass die üblichen Rechenregeln für die Dimension gelten.\\
+Wir setzen voraus, dass T RCF erweitert, insbesondere gilt Definable Choice. Dann sind die Skolemfunktionen definierbar und \OE\ ist $\lingua$ schon so eine definitorische Erweiterung, dass $T$ Quantorenelimination hat und universell axiomatisierbar ist (wobei bei einzelnen Theorien die Frage interessant wäre, welche Skolemfunktionen man dafür überhaupt hinzufügen muss). Außerdem seien alle Modelle genug saturiert, dass die üblichen Rechenregeln für die Dimension gelten.\\
 Aus T universell mit Quantorenelimination folgt, dass Unterstrukturen von Modellen von T schon elementare Unterstrukturen sind. Also ist für jede Teilmenge $S$ eines Modells $\dcl(S)$ schon eine elementare Substruktur; zur Vereinfachung bezeichne in Zukunft $AB:=\dcl(A\cup B)$ für zwei Teilmengen $A,B$ eines Modells.\\
 $P$ beschreibt also eine elementare Unterstruktur, mit $\td$ wird nun die Theorie beschrieben, die ausdrückt, dass $P$ eine dichte echte Unterstruktur ist (diese zwei Sachen oder deren Gegenteil müssen auf jeden Fall von der Theorie beschrieben werden, wenn sie vollständig sein soll). Klar ist dann, dass Unterstrukturen von $\td$ automatisch Modelle von $\tq$ sind.\\
 Der Arbeit \cite{VanDenDries} folgend, wird die Vollständigkeit und eine Art von Quantorenelimination für $\td$ gezeigt, die mittels eines Back\&Forth-Systems bewiesen wird, bevor genauer auf einige Eigenschaften von definierbaren Mengen und Abbildungen in $\td$ eingegangen wird. Zunächst ist aber eine genauere Betrachtung von sogenannten kleinen Mengen vonnöten.
@@ -13,11 +13,11 @@ Der Arbeit \cite{VanDenDries} folgend, wird die Vollständigkeit und eine Art vo
 	Sei $(B,A)\models\td$, dann ist eine $\lingua_P$-definierbare Menge $S\subseteq B$ \textbf{klein}, wenn eine $\lingua$-definierbare Funktion $f:B^n\rightarrow B$ existiert mit $S\subseteq f(A^n)$.
 \end{definition}
 
-Das Ziel ist jetzt, zu zeigen, dass definierbare Intervalle nicht klein sind.\\
-Im folgenden Lemma meint $(\cdot,+)$ nicht unbedingt die Operationen in $\lingua$, sondern nur irgendwelche definierbaren Verknüpfungen.
+\newpage
+In dem folgenden Lemma meint $+,\cdot$ nicht die Operationen aus $\lingua$, sondern neue, beliebige Operationen.
 
 \begin{lemma}\label{Hilfsaussage Kleinheit}
-	Seien $A\prec B\models\operatorname{T},\ f:B^{n+1}\rightarrow B\ A\text{-definierbar},\ b\in B\setminus A,\ {\beta,\gamma\in A}$ mit $\beta<b<\gamma$ und einer angeordneten $A$-definierbaren Körperstruktur $(\cdot,+)$ auf $(\beta,\gamma)=:I$. Dann existieren $a_0,\dots,a_n\in I_A$ mit $$a_nb^n+a_{n-1}b^{n-1}+\dots,a_0\in I\setminus f(A^n\times\{b\}).$$
+	Seien $A\prec B\models\operatorname{T},\ f:B^{n+1}\rightarrow B\ A\text{-definierbar},\ b\in B\setminus A,\ \beta,\gamma\in A\cup\{\pm\infty\}$ mit $\beta<b<\gamma$ und einer angeordneten $A$-definierbaren Körperstruktur $(\cdot,+)$ auf $(\beta,\gamma)=:I$. Dann existieren $a_0,\dots,a_n\in I_A$ mit $$a_nb^n+a_{n-1}b^{n-1}+\dots,a_0\in I\setminus f(A^n\times\{b\}).$$
 \end{lemma}
 \begin{proof}
 	Wenn die Aussage nicht gilt, dann gilt mit $p(x,y):=x_ny^n+x_{n-1}y^{n-1}+\dots,x_0$, dass für jedes $a\in (I_A)^{n+1}$ ein $\alpha\in A^n$ existiert mit $p(a,b)=f(\alpha,b)$. Es muss für festes $a\in I_A$ ein Intervall um $b$ in $I_A$ mit dieser Eigenschaft geben, denn sonst wäre $b\in\dcl(A)=A$.\\
@@ -30,24 +30,12 @@ Im folgenden Lemma meint $(\cdot,+)$ nicht unbedingt die Operationen in $\lingua
 	Sei $\fA$ eine Struktur in einer Sprache $\lingua$ und $\fB$ eine Struktur in einer Sprache $\lingua'$. Dann heißt $\fB$ Erweiterung von $\fA$, wenn $A=B$ und die Interpretation von $\lingua$ in $\fA$ schon $\lingua'$-definierbar in $\fB$ ist. TODO: Muss es sogar schon 0-definierbar sein? sonst später Problem mit dem Typ...
 \end{definition}
 
-\begin{lemma}
-	Sei $\fA$ eine o-minimale Erweiterung eines angeordneten Vektorraums über einem angeordneten Körper $F$ und $g:A^{p+1}\rightarrow A$ definierbar, außerdem existiere für unendlich viele $\lambda\in F$ ein $a_\lambda\in A^p$ mit $g(a_\lambda,x)=\lambda x$ für unendlich viele $x\in A$. Dann existiert ein Intervall $I$ in $A$, sodass auf $I$ eine $A$-definierbare Körperstruktur existiert, die mit $<$ kompatibel ist (was automatisch einen reell abgeschlossenen Körper impliziert).
-\end{lemma}
-\begin{proof}
-	TODO: Geht irgendwie aus \cite{PeterStarch} hervor.
-\end{proof}
-
-\begin{lemma}
+\begin{corollary}
 	Es sei $(A,B)\models\td,\ f:B^{n+1}\rightarrow B$ $A$-definierbar in $B$ und $b\in B\setminus A$. Dann enthält $f(A^n\times\{b\})$ kein Intervall um $b$.
-\end{lemma}
+\end{corollary}
 \begin{proof}
-	Nimm an, dass das Gegenteil gelte für das Intervall $J$ (\OE\ mit Randpunkten in $A$): Dann existiert insbesondere für jedes $q\in\setQ$ hinreichend nahe bei $1$ ein $a_q\in A^n$ mit $f(a_q,b)=qb$. Dann existiert wieder ein Intervall $I_q\subseteq J_A$ mit $f(a_q,x)=qx$ für alle $x\in I_q$. \OE\ ist dieses Intervall schon beschränkt und die Randpunkte seien $c_q<d_q$. Definiere dann $$r_q:=\frac{c_q+d_q}{2},s_q:=\frac{d_q-c_q}{2}\in A,$$ $$g:(u,v,x)\mapsto f(u,v+x)-f(u,v)\ \ \ \ u\in A^n,v,x\in A.$$
-	Dann gilt für alle $x\in(-s_q,s_q)$ $$g(a_q,r_q,x)=f(a_q,r_q+x)-f(a_k,r_q)=q(r_q+x)-qr_q=qx.$$
-	Also existiert nach dem letzten Lemma ein Intervall in $A$ mit einer $A$-definierbaren Körperstruktur als RCF. Durch Translation (benutze Dichtheit) nehme an, dass $b\in I_B$ liegt. Dann existiert nach Lemma \ref{Hilfsaussage Kleinheit} ein Element $c\in I_B\setminus f(A^n\times\{b\})$. \OE\ sei schon $\inf J,\sup J\in I$, sonst ersetze $J$ durch ein kleineres Intervall.\\
-	Seien $d,e\in I$ mit $d<c<e$ und $\varphi$ die orientierungserhaltende, $A$-definierbare affine Abbildung in $I$ mit $\varphi(d)=\inf J,\varphi(e)=\sup J$. Dann ist $\varphi(c)\in J\setminus(\phi\circ f)(A^n\times\{b\})$ und da das Verketten mit einer $A$-definierbaren invertierbaren Abbildung nichts an der Aussage ändert, gibt es einen Widerspruch.
+	Nimm an, dass das Gegenteil gelte für das Intervall $J$ (\OE\ mit Randpunkten $c<d\in A$): Dann ist $x\mapsto\frac{1}{c-x}+\frac{1}{d-x}$ eine ordnungstreue $A$-definierbare Bijektion $(c,d)\rightarrow A$. Diese erzeugt in $A$ eine definierbare angeordnete Körperstruktur auf $(c,d)=J_A$, also auch auf $J$ eine $A$-definierbare angeordnete Körperstruktur. Mit dem vorigen Lemma existiert ein Element aus $J\setminus f(A^n\times\{b\})$.
 \end{proof}
-
-\newpage
 
 \begin{theorem}\label{Kleinheit}
 	Wenn $(B,A)\models\td$, dann ist kein Intervall eine kleine Teilmenge.
@@ -70,16 +58,20 @@ Im folgenden Lemma meint $(\cdot,+)$ nicht unbedingt die Operationen in $\lingua
 	Schreibe ab jetzt $P(\overline{x}):=\bigwedge\limits_{i=1}^\abs{x}P(x_i)$.
 \end{definition}
 
+\newpage
+
 \begin{lemma}
 	Wenn $(B,A)$ für ein unendliches $\kappa>\abs{\operatorname{T}}$ ein $\kappa$-saturiertes Modell von $\td$ ist, ist $\dim(B/A)\geq\kappa$.
 \end{lemma}
 \begin{proof}
 	Sei $S$ eine Basis von $B/A$ mit $\abs{S}<\kappa$; zeige nun, dass es kein Erzeugendensystem sein kann. Das folgt aus der Saturation angewandt auf den partiellen Typen $$\{\forall\overline{y}\in P(x\neq t(\overline{y}))\mid t\ \lingua_E\text{-Term}\},$$ der endlich erfüllbar ist, weil die Negation jeder dieser Formeln \glqq{}$x$ ist in einer kleinen Menge\grqq{} impliziert. Wenn der Typ also nicht endlich erfüllbar wäre, würde eine endliche Vereinigung von kleinen Mengen ganz $B$ überdecken. Das kann aber nicht gelten, denn eine endliche Vereinigung von kleinen Mengen ist wieder klein (in der das bezeugenden Abbildung kann man das durch Erhöhen der Dimension des Urbildes und Fallunterscheidung über eine Koordinate beweisen).
 \end{proof}
-\newpage
+
 \begin{corollary}\label{Finden transz Elte}
 	Der Beweis zeigt sogar, dass in einem $\kappa$-saturiertem Modell $(B,A)\models\td$, gegeben Menge, $S,S',S''\subset B$ mit $\abs{S},\abs{S'},\abs{S''}<\kappa$, ein transzendentes Element $b$ über $SA$ gefunden werden kann mit $a<b$ für alle $a\in S'$ und $b<c$ für alle $c\in S''$, sofern dieser Ordnungstyp von $b$ überhaupt konsistent ist.
 \end{corollary}
+
+\newpage
 
 \section{Formelreduzierung in $\td$}
 In diesem Abschnitt wird gezeigt, dass sich $\lingua_P$-Formeln modulo $\td$ sehr stark vereinfachen lassen. Indem dieses mit einem Back\&Forth-System gezeigt wird, erhält man zusätzlich eine sehr große Klasse von elementaren Abbildungen zwischen Modellen von $\td$.\\
@@ -257,25 +249,41 @@ Um definierbare Funktionen besser zu verstehen, ist es notwendig, sich mit dem d
 \end{lemma}
 \begin{proof}
 	Für eine beliebige Struktur $(B',A')\succeq (B,A)$ gelten die Voraussetzungen ebenso, da $\acl$-Abhängigkeit über $A$ als Teil vom Typen äquivalent ist zu $\acl$-Abhängigkeit über $A'$. Ebenso ist $D$ in $(B,A)$ definierbar abgeschlossen genau dann, wenn es in $(B',A')$ definierbar abgeschlossen ist. Also sei $(B,A)$ jetzt schon \OE\ hinreichend saturiert und $b\in B\setminus D$.\\
-	Nach dem Beweis zur Existenz des B\&F-Systems kann der partielle Isomorphismus $(B,A)\supseteq(D,C)\cong(D,C)\subseteq(B,A)$ insbesondere auf mehrere Weisen auf $b$ fortgesetzt werden: Wenn $b\in A$ oder $b\in B\setminus AD$, ging es nur um die Erfüllung von transzendenten Ordnungstypen, da hat man also viele Optionen. Wenn $b\in AD\setminus(A\cup D)$ ist und $a\in A^n$ unabhängig über $D$ mit $b\in Da$, dann finde $a'_1$ transzendent über $Da$ von passendem Ordnungstyp über $D$, $a'_2$ transzendent über $Daa'_1$ von passendem Ordnungstyp über $Da'_1$, usw. So kann man den Isomorphismus auf $Da$ fortsetzen mit Bild $Da'$; da aber $a$ und $a'$ per Konstruktion unabhängig über $D$ waren, sind auch $Da$ und $Da'$ unabhängig über $D$, also $Da\cap Da'=D$ und das Bild von $b$ kann nicht $b$ selbst sein. Also gibt es auch in diesem Fall mehrere Möglichkeiten für eine Fortsetzung, also mehrere elementare Abbildungen, alo kann $b$ nicht definierbar über $D$ sein.
-\end{proof}
-\begin{proof}
-	TODO: Diesen Beweis auf die Resterampe verschieben
-	Wenn $D=C$, ist $D\preceq A$ und die Aussage daher klar nach der vorigen Folgerung. Die Inklusion $(AD,A)\subseteq(B,A)$ ist trivialerweise frei (zwei gleiche Mengen in der Unabhängigkeit), außerdem ist $A\preceq AD$ dicht (da $A$ dicht in $B\supseteq AD$) und eine echte Inklusion, da für $D=A$ wegen Unabhängigkeit von $D$ und $A$ ansonsten $D=C$ folgen würde. Nach Lemma \ref{freie Inklusionen} ist also $(AD,A)\preceq(B,A)$ und daher ist $\dcl(D)\subseteq\dcl(AD)=AD$, da $AD$ definierbar abgeschlossen nach Lemma \ref{A definierbar abgeschl}.\\
-	Sei jetzt $d\in AD$ $\lingua_P$-definierbar über $D$ und $a\in A^n$ minimal mit $d\in Da$ (insbesondere ist $a$ unabhängig über $D$). Im Folgenden wird gezeigt, dass dann $a$ schon das leere Tupel, also $d\in D$ ist.\\
-	Nimm an, dass $n>0$ und sei $f:B^n\rightarrow B$ die definierende Funktion von $d$, also ist sie $D$-definierbar und $f(a)=d$. Seien $$S_1:=\{x\in B^n\mid f(x_1,\dots,x_{n-1},\cdot)\text{ ist streng monoton wachsend auf einem Intervall um }x_n\},$$ $$S_2:=\{x\in B^n\mid f(x_1,\dots,x_{n-1},\cdot)\text{ ist streng monoton fallend auf einem Intervall um }x_n\},$$ $$S_3:=\{x\in B^n\mid f(x_1,\dots,x_{n-1},\cdot)\text{ ist konstant auf einem Intervall um }x_n\}.$$
-	$S_1\cup S_2\cup S_3$ ist groß, denn wenn eine offene Menge $U\subseteq B^n\setminus(S_1\cup S_2\cup S_3)$ existiert, wähle $x\in U$ beliebig und ein Intervall $I$ um $x_n$ mit $\{(x_1,\dots,x_{n-1})\}\times I\subset U$. Nach der Charakterisierung o-minimaler definierbarer Funktionen existiert ein Subintervall $J\subseteq I$, sodass $f(x_1,\dots,x_{n-1},\cdot)$ entweder streng monoton wachsend, fallend oder konstant ist auf $J$. Also ist $x\in S_1\cup S_2\cup S_3$ im Widerspruch zu $x\in U$.\newpage
-	Da $a$ generisch ist, muss es also in der großen Menge liegen.
-	\begin{itemize}
-		\item Wenn $a$ in $S_1$ liegt, nehmen wir an, dass $(B,A)$ schon hinreichend saturiert ist (das ändert nichts, da $(B,A)$ ja nur irgendeine Oberstruktur und Modell von $\td$ sein muss) und finden in $A\setminus Da_1\dots a_{n-1}$ ein $a'\neq a_n$ mit demselben Ordnungstyp über $Da_1\dots a_{n-1}$ (ansonsten wäre $a_n$ definierbar über $a_1,\dots,a_{n-1}$). Insbesondere ist $a_1,\dots,a_{n-1},a'\in S_1$, weil die Menge aller solchen Elemente $a'$ $Da_1\dots a_{n-1}$-definierbar ist und daher eine $Da_1\dots a_{n-1}$-definierbare Umgebung von $a_n$ dort drin liegt, in der $a'$ liegen muss. Da $f$ streng monoton ist, ist $f(a_1,\dots,a_{n-1},a')\neq f(a)=d\in D$.\\
-		Allerdings ist $d$ $\lingua_P$-definierbar über $D$, also ist $$f(a_1,\dots,a_{n-1},x)=d\in\tp_{\lingua_P}(a/Da_1\dots a_{n-1})\setminus\tp_{\lingua_P}(a'/Da_1\dots a_{n-1})$$ (oder zumindest mit der definierenden Formel für $d$ eingesetzt), die Typen sind daher nicht gleich.\\
-		Da $a_n,a'\in A$ aber den gleichen Ordnungstyp über $Da_1\dots a_{n-1}$ haben, haben sie auch den gleichen $\lingua$-Typ über $Da_1\dots a_{n-1}$ nach dem Beweis von Satz \ref{BackForth}. Außerdem ist $(Da_1\dots a_{n-1},Ca_1\dots a_{n-1})\subseteq(B,A)$ nach Lemma \ref{Unabhängigkeitsregeln} (6.) frei, weswegen aus Lemma \ref{Gemeinsame Unterstruktur} folgt, dass $a_n,a'$ denselben $\lingua_P$-Typ über $Da_1\dots a_{n-1}$ haben - Widerspruch!
-		\item Das Fall $a\in S_2$ geht analog, es wurde eben auch nur streng monoton benutzt.
-		\item Im Falle $a\in S_3$ ist $d$ $\lingua$-definierbar über $Da_1\dots a_{n-1}$ durch $$\glqq{}d=f(a_1,\dots,a_{n-1},x)\text{ für irgendein }(a_1,\dots,a_{n-1},x)\in S_3.$$
-	\end{itemize}
+	Nach dem Beweis zur Existenz des B\&F-Systems kann der partielle Isomorphismus $(B,A)\supseteq(D,C)\cong(D,C)\subseteq(B,A)$ insbesondere auf mehrere Weisen auf $b$ fortgesetzt werden: Wenn $b\in A$ oder $b\in B\setminus AD$, ging es nur um die Erfüllung von transzendenten Ordnungstypen, da hat man also viele Optionen. Wenn $b\in AD\setminus(A\cup D)$ ist und $a\in A^n$ unabhängig über $D$ mit $b\in Da$, dann finde $a'_1$ transzendent über $Da$ von passendem Ordnungstyp über $D$, $a'_2$ transzendent über $Daa'_1$ von passendem Ordnungstyp über $Da'_1$, usw. So kann man den Isomorphismus auf $Da$ fortsetzen mit Bild $Da'$; da aber $a$ und $a'$ per Konstruktion unabhängig über $D$ waren, sind auch $Da$ und $Da'$ unabhängig über $D$, also $Da\cap Da'=D$ und das Bild von $b$ kann nicht $b$ selbst sein. Also gibt es auch in diesem Fall mehrere Möglichkeiten für eine Fortsetzung, also mehrere elementare Abbildungen, also kann $b$ nicht definierbar über $D$ sein.
 \end{proof}
 
-\fcolorbox{red}{red}{Ab hier müsst ihr (Stand 20.1.) nicht mehr korrekturlesen. (TODO: Entfernen, wenn unnötig)}
+\begin{lemma}
+	Sei $(U_y)_{y\in Y}, Y\subseteq B^n$ eine Familie von offenen, eindimensionalen, in einem dichten Paar $(B,A)$ uniform $\lingua$-definierbaren Mengen. Dann ist $$S:=\bigcup\limits_{y\in Y\cap A^n}U_y$$ auch $\lingua$-definierbar.
+\end{lemma}
+\begin{proof}
+	Wir führen eine Induktion über $\dim Y$, man kann schon annehmen, dass alle $U_y$ nichtleer sind, sonst muss man entsprechend aus $Y$ aussondern. Wenn $\dim Y=0$ ist, ist $Y$ endlich und es ist schon $Y\cap A^n$ definierbar, also auch $S$.\\
+	Zerlege $Y$ in Zellen, das ändert nichts an irgendwelchen Definierbarkeiten, also kann man annehmen, dass $Y$ selbst schon Zelle ist. Wenn $Y$ keine offene Zelle ist und $\pi:Y\rightarrow Z$ der kanonische homöomorphe Projektion zu einer offenen Zelle von Dimension $m<\dim Y$, existiert nach Satz \ref{Definierbare Mengen} ein $\lingua$-definierbares $Z'\subseteq B^m$ mit $\pi(Y\cap A^n)=Z'\cap A^m$, da $\pi(Y\cap A^n)\subseteq A^m$ eine $\lingua_P$-definierbare Menge ist. Definiere dann $Y':=Z\cap Z'$, sodass man die Menge umparametrisieren kann:
+	$$\bigcup\limits_{y'\in Y'\cap A^m}U_{\pi^{-1}(y')}=\bigcup\limits_{y\in\pi^{-1}(Y'\cap A^m)}U_y=\bigcup\limits_{y\in Y\cap A^n}U_y=S$$
+	Da $(U_{\pi^{-1}(y')})_{y'\in Y'}$ die gleichen Dinge erfüllt wie $(U_y)_{y\in Y}$ und $\dim Y'\leq\dim Z<\dim Y$, gilt die Aussage per Induktion.\\
+	Für den Beweis für offene Zellen wird die Endlichkeit einer bestimmten Menge benötigt:
+	
+	\begin{lemma}
+		Seien die drei $\lingua$-definierbare Mengen $$U:=\bigcup\limits_{y\in Y}U_y,$$ $$Y_x:=\{y\in Y\mid x\in U_y\},$$ $$B:=\{x\in U\mid\inn(Y_x)\neq\emptyset\},$$ dann ist $B$ endlich.
+	\end{lemma}
+	\begin{proof}
+		Wenn $B$ nicht endlich ist, hat es als definierbare Teilmenge von $B$ nichtleeres Inneres und daher ist $A:=\bigcup\limits_{x\in\inn B}Y_x$ nichtleer, denn jedes $Y_x$ ist nichtleer (sonst wäre $x\notin U\supseteq B$). Es gilt außerdem $$A=\bigcup\limits_{x\in U}\{y\in Y\mid x\in U_y\cap\inn B\}=\{y\in Y\mid U_y\cap\inn B\neq\emptyset\}.$$
+		Wir wollen jetzt den Widerspruch herleiten, dass $A$ leer sein muss. Seien dafür mit Definable Choice die $\lingua$-definierbaren Funktionen $f,g_1,g_2:A\rightarrow M$ gegeben mit $$f(y)\in(g_1(y),g_2(y))\subseteq U_y\cap\inn B.$$
+		Sei \OE\ $A$ offen (TODO: warum ist $\inn A$ nichtleer?) und $f,g_1,g_2$ stetig auf $A$. Sei außerdem $d,e\in U_y\cap\inn B, (c,k)\subseteq U_y\cap\inn B$ (das ist offen), sodass $$c<g_1(y)<d<f(y)<e<g_2(y)<k.$$ Setze $$V:=g_1^{-1}((c,d))\cap f^{-1}((d,e))\cap g_2^{-1}((e,k)),$$ das ist dann eine offene Umgebung um $y$ in $B^n$. Für alle $z\in V$ ist $$f(y)\in(d,e)\subseteq(g_1(z),g_2(z))\subseteq U_z,$$ also ist $z\in Y_{f(y)}$. Das heißt, es gilt $V\subseteq Y_{f(y)}$; da aber $f(y)\in B$, ist das unmöglich, weil $V$ offen ist.
+	\end{proof}
+	
+	Da $B$ endlich ist, ist auch seine Teilmenge $$B':=B\cap\bigcup\limits_{y\in Y\cap A^n}U_y$$ endlich und damit $\lingua$-definierbar. Es gilt $$\bigcup\limits_{y\in Y\cap A^n}(U_y\setminus B)=\bigcup\limits_{y\in Y}(U_y\setminus B):$$ In einer Richtung herrscht per Konstruktion eine Inklusion, für die andere Richtung sei $x\in U_y\setminus B$ für ein $y\in Y$. Dann ist $\inn Y_x$ nichtleer, also existiert wegen der Dichte des Paares ein $z\in Y_x\cap A^n$, also ein $z\in Y\cap A^n$ mit $x\in U_z$. Also ist $x\in\bigcup\limits_{y\in Y\cap A^n}(U_y\setminus B)$. Da $\bigcup\limits_{y\in Y}(U_y\setminus B)$ definierbar ist, ist auch $$S=\bigcup\limits_{y\in Y\cap A^n}U_y=\bigcup\limits_{y\in Y\cap A^n}(U_y\setminus B)\cup\bigcup\limits_{y\in Y\cap A}(U_y\cap B)=\bigcup\limits_{y\in Y}(U_y\setminus B)\cup B'$$ definierbar.
+\end{proof}
+
+\begin{lemma}
+	Sei $(B,A)$ ein dichtes Paar und eine $\lingua_P$-definierbare $X\subseteq B$. Dann stimmt $X$ bis auf eine kleine Menge mit einer $\lingua$-definierbaren Menge $X'$ überein.
+\end{lemma}
+\begin{proof}
+	Sei zunächst $X$ gegeben durch $\exists y\in P(\psi(x,y))$ für eine Formel $\psi\in\fF_{1+n}(\lingua_B)$. Die Mengen $F_y:=\psi(B,y)\cap\partial\psi(B,y)$ sind endlich für jedes $y\in M^n$ und weil o-minimale Theorien $\exists^\infty$ eliminieren, ist deren Mächtigkeit uniform beschränkt, sagen wir durch $k$. Sei $Y:=\exists x\psi(x,B)$ und $\lingua$-definierbare Funktionen $g_1,\dots,g_k:Y\rightarrow F_y$, sodass $F_y=\{g_1(y),\dots,g_k(y)\}$ für alle $y\in Y$. Als diese Funktionen kann man zum Beispiel die angeordnete Aufzählung der Elemente in $F_y$ nehmen. Dann gilt
+	\begin{align*}
+	X&=\exists y\in P(\psi(x,y))(B,A)=\bigcup\limits_{y\in A^n}\psi(B,y)=\bigcup\limits_{y\in Y\cap A^n}\psi(B,y)=\bigcup\limits_{y\in Y\cap A^n}\psi(B,y)\\&=\bigcup\limits_{y\in Y\cap A^n}(\psi(B,y\cap \partial\psi(B,y))\cap \partial\psi(B,y))\cup\bigcup\limits_{y\in Y\cap A^n}\inn\psi(B,y)\\&=\bigcup\limits_{y\in Y\cap A^n}\{g_1(y),\dots,g_k(y)\}\cup\bigcup\limits_{y\in Y\cap A^n}\inn\psi(B,y)=\bigcup\limits_{i=1}^kg_i(Y\cap A^n)\cup \bigcup\limits_{y\in Y\cap A^n}\inn\psi(B,y).
+	\end{align*}
+	Da $X':=\bigcup\limits_{i=1}^kg_i(Y\cap A^n)$ klein ist und $S:=\bigcup\limits_{y\in Y\cap A^n}\inn\psi(B,y)$ nach dem letzten Lemma $\lingua$-definierbar, stimmen $X$ und $X'$ bis auf die kleine Menge $S$ überein. Da Darstellungen \glqq{}$(X\setminus  S')\cup S,X\ \lingua$-definierbar, $S,S'$ klein\grqq{} unter booleschen Kombinationen erhalten bleiben, folgt die Aussage für gute Formeln und daher für alle Mengen.
+\end{proof}
 
 \begin{theorem}\label{Satz 3}
 	Sei $(B,A)\models\td$ und sei $F:B\rightarrow B$ eine $\lingua_P$-definierbare Funktion. Dann stimmt $F$ auf bis auf eine kleine Menge mit einer $\lingua$-definierbaren Funktion überein.
@@ -283,14 +291,12 @@ Um definierbare Funktionen besser zu verstehen, ist es notwendig, sich mit dem d
 \begin{proof}
 	TODO: Muss noch warten
 \end{proof}
-\begin{corollary}
-	Auch jede $\lingua_P$-definierbare Menge $S\subseteq B^n$ stimmt bis auf eine kleine Menge mit einer $\lingua$-definierbaren Menge $S'$ überein. $S'$ kann man zum Beispiel finden, indem man für die $\lingua_P$-definierbare charakteristische Funktion $\chi_S$ die $\lingua$-definierbare Annäherung $f$ findet und $S':=\{f=1\}$ setzt.
-\end{corollary}
 
 \begin{lemma}
 	Sei $(B,A)\models\td$ und sei $F:A^n\rightarrow A$ eine $\lingua_P$-definierbare Funktion. Dann gibt es $\lingua_A$-definierbare $f_1,\dots,f_k:A^n\rightarrow A$, sodass für alle $a\in A^n$ ein $f_i$ existiert mit $F(a)=f_i(a)$.
 \end{lemma}
 \begin{proof}
+	TODO: muss nach vorne
 	Wenn die Aussage nicht gilt, gilt für alle $k\in\setN$ und alle $\lingua_A$-definierbaren $f_1,\dots,f_k:A^n\rightarrow A$, dass ein $a\in A$ existiert mit $f_i(a)\neq F(a)$ für alle $i$. Also ist der partielle Typ $$\{F(x)\neq f(x)\mid f:A^n\rightarrow A\ \lingua_A\text{-definierbar}\}$$ konsistent und es existiert $(B,A)\preceq(B',A')$ und $a'\in A'^n$ mit $F(a')\neq f(a')$ für alle $\lingua_A$-definierbaren $f:A'^n\rightarrow A'$.\\
 	Allerdings ist nach Lemma \ref{Unabhängigkeitsregeln} (6.) wegen $a'\in A'^n$ die Inklusion $(Ba',Aa')\subseteq(B',A')$ frei, nach Lemma \ref{Freie Definierbarkeit} ist $Ba'$ also $\lingua_P$-definierbar abgeschlossen. Da $F(a')$ $\lingua_P$-definierbar über $Ba'$ ist, ist es in $Ba'$, wegen $F:A'^n\rightarrow A$ ist $F(a')\in A'$. Wegen Unabhängigkeit liegt also $F(a')\in Ba'\cap A'=Aa'$ und es gibt eine $\lingua_A$-definierbare Abbildung $f:A'^n\rightarrow A'$ mit $f(a')=F(a')$ - ein Widerspruch!
 \end{proof}
@@ -347,7 +353,7 @@ In diesem Abschnitt wird eine zur o-Minimalität ähnliche Charakterisierung von
 \end{proof}
 
 \begin{theorem}\label{Satz 4}
-	Sei $X\subseteq B$ eine $\lingua_P$-definierbare Menge. Dann existiert eine endliche Unterteilung von $B$, sodass jedes dadurch erzeugte offene Intervall $I$ entweder disjunkt zu $X$ ist, Teilmenge von $X$ ist oder $X\cap I$ dicht \& kodicht in $I$ ist. Für kleine $X$ entfällt der Fall \glqq{}Teilmenge\grqq{} natürlich. TODO: klein und Koklein
+	Sei $X\subseteq B$ eine $\lingua_P$-definierbare Menge. Dann existiert eine endliche Unterteilung von $B$, sodass jedes dadurch erzeugte offene Intervall $I$ entweder disjunkt zu $X$ ist, Teilmenge von $X$ ist oder $X\cap I$ dicht \& kodicht in $I$ ist. Für kleine $X$ entfällt der Fall \glqq{}Teilmenge\grqq{} natürlich. TODO: klein und Koklein, muss nach vorne
 \end{theorem}
 \begin{proof}
 	Die gesuchte Eigenschaft bleibt unter endlichen Vereinigungen und Differenzen von Mengen erhalten, man muss nur eine Verfeinerung der Unterteilung durchführen. Deswegen sei $X$ zunächst klein und nach dem letzten Lemma gegeben als $X=f(A^n\cap E)$ für ein stetiges, $\lingua$-definierbares $f:E\rightarrow B$ und eine offene Zelle $E\subseteq B^n$. Da definierbarer Zusammenhang unter definierbaren stetigen Funktionen erhalten bleibt, ist $I:=f(E)$ auch definierbar zusammenhängend, weil es $\lingua$-definierbar ist, hat es auch ein Supremum und Infimum in $B\cup\{\pm\infty\}$, ist also ein Intervall (ausnahmsweise sei hier auch ein nichtoffenes Intervall mitgemeint). Wenn $I$ endlich ist, ist auch $X$ endlich und es ist nichts zu zeigen. $X$ ist disjunkt zu $B\setminus I$, nun muss nur noch gezeigt werden, dass $X=X\cap I$ dicht und kodicht in $I$ ist, denn Dichte und Kodichte in nichtoffenen unendlichen Intervallen ist äquivalent zu Dichte und Kodichte in deren Innerem. Aber für dichte Teilmengen werden durch stetige Abbildungen auf dichte Teilmengen abgebildet; da $A^n$ dicht in $B^n$ ist, ist auch $A^n\cap E$ dicht in $E$ und folglich $X$ dicht in $I$. Andererseits muss auch das Komplement von $X$ dicht in $I$ sein, da es sonst ein Intervall ganz in $X$ gäbe, was der Kleinheit mit Lemma \ref{Kleinheit} widerspricht.\\
@@ -410,36 +416,53 @@ TODO: Eigentlich musste $\fB$ nicht o-minimal sein, dafür $\fA$. Fehler?
 	\end{itemize}
 \end{corollary}
 
-\section{TODO: Noch woanders einsortieren}
+\section{TODO: Noch woanders einsortieren oder löschen}
+
 \begin{lemma}
-	Sei $(U_y)_{y\in Y}, Y\subseteq B^n$ eine Familie von offenen, eindimensionalen, in einem dichten Paar $(B,A)$ uniform $\lingua$-definierbaren Mengen. Dann ist $$S:=\bigcup\limits_{y\in Y\cap A^n}U_y$$ auch $\lingua$-definierbar.
+	Sei $\fA$ eine o-minimale Erweiterung eines angeordneten Vektorraums über einem angeordneten Körper $F$ und $g:A^{p+1}\rightarrow A$ definierbar, außerdem existiere für unendlich viele $\lambda\in F$ ein $a_\lambda\in A^p$ mit $g(a_\lambda,x)=\lambda x$ für unendlich viele $x\in A$. Dann existiert ein Intervall $I$ in $A$, sodass auf $I$ eine $A$-definierbare Körperstruktur existiert, die mit $<$ kompatibel ist (was automatisch einen reell abgeschlossenen Körper impliziert).
 \end{lemma}
 \begin{proof}
-	Wir führen eine Induktion über $\dim Y$, man kann schon annehmen, dass alle $U_y$ nichtleer sind, sonst muss man entsprechend aus $Y$ aussondern. Wenn $\dim Y=0$ ist, ist $Y$ endlich und es ist schon $Y\cap A^n$ definierbar, also auch $S$.\\
-	Zerlege $Y$ in Zellen, das ändert nichts an irgendwelchen Definierbarkeiten, also kann man annehmen, dass $Y$ selbst schon Zelle ist. Wenn $Y$ keine offene Zelle ist und $\pi:Y\rightarrow Z$ der kanonische homöomorphe Projektion zu einer offenen Zelle von Dimension $m<\dim Y$, existiert nach Satz \ref{Definierbare Mengen} ein $\lingua$-definierbares $Z'\subseteq B^m$ mit $\pi(Y\cap A^n)=Z'\cap A^m$, da $\pi(Y\cap A^n)\subseteq A^m$ eine $\lingua_P$-definierbare Menge ist. Definiere dann $Y':=Z\cap Z'$, sodass man die Menge umparametrisieren kann:
-	$$\bigcup\limits_{y'\in Y'\cap A^m}U_{\pi^{-1}(y')}=\bigcup\limits_{y\in\pi^{-1}(Y'\cap A^m)}U_y=\bigcup\limits_{y\in Y\cap A^n}U_y=S$$
-	Da $(U_{\pi^{-1}(y')})_{y'\in Y'}$ die gleichen Dinge erfüllt wie $(U_y)_{y\in Y}$ und $\dim Y'\leq\dim Z<\dim Y$, gilt die Aussage per Induktion.\\
-	Für den Beweis für offene Zellen wird die Endlichkeit einer bestimmten Menge benötigt:
-	
-	\begin{lemma}
-		Seien die drei $\lingua$-definierbare Mengen $$U:=\bigcup\limits_{y\in Y}U_y,$$ $$Y_x:=\{y\in Y\mid x\in U_y\},$$ $$B:=\{x\in U\mid\inn(Y_x)\neq\emptyset\},$$ dann ist $B$ endlich.
-	\end{lemma}
-    \begin{proof}
-    	Wenn $B$ nicht endlich ist, hat es als definierbare Teilmenge von $B$ nichtleeres Inneres und daher ist $A:=\bigcup\limits_{x\in\inn B}Y_x$ nichtleer, denn jedes $Y_x$ ist nichtleer (sonst wäre $x\notin U\supseteq B$). Es gilt außerdem $$A=\bigcup\limits_{x\in U}\{y\in Y\mid x\in U_y\cap\inn B\}=\{y\in Y\mid U_y\cap\inn B\neq\emptyset\}.$$
-    	Wir wollen jetzt den Widerspruch herleiten, dass $A$ leer sein muss. Seien dafür mit Definable Choice die $\lingua$-definierbaren Funktionen $f,g_1,g_2:A\rightarrow M$ gegeben mit $$f(y)\in(g_1(y),g_2(y))\subseteq U_y\cap\inn B.$$
-    	Sei \OE\ $A$ offen (TODO: warum ist $\inn A$ nichtleer?) und $f,g_1,g_2$ stetig auf $A$. Sei außerdem $d,e\in U_y\cap\inn B, (c,k)\subseteq U_y\cap\inn B$ (das ist offen), sodass $$c<g_1(y)<d<f(y)<e<g_2(y)<k.$$ Setze $$V:=g_1^{-1}((c,d))\cap f^{-1}((d,e))\cap g_2^{-1}((e,k)),$$ das ist dann eine offene Umgebung um $y$ in $B^n$. Für alle $z\in V$ ist $$f(y)\in(d,e)\subseteq(g_1(z),g_2(z))\subseteq U_z,$$ also ist $z\in Y_{f(y)}$. Das heißt, es gilt $V\subseteq Y_{f(y)}$; da aber $f(y)\in B$, ist das unmöglich, weil $V$ offen ist.
-    \end{proof}
-    
-    Da $B$ endlich ist, ist auch seine Teilmenge $$B':=B\cap\bigcup\limits_{y\in Y\cap A^n}U_y$$ endlich und damit $\lingua$-definierbar. Es gilt $$\bigcup\limits_{y\in Y\cap A^n}(U_y\setminus B)=\bigcup\limits_{y\in Y}(U_y\setminus B):$$ In einer Richtung herrscht per Konstruktion eine Inklusion, für die andere Richtung sei $x\in U_y\setminus B$ für ein $y\in Y$. Dann ist $\inn Y_x$ nichtleer, also existiert wegen der Dichte des Paares ein $z\in Y_x\cap A^n$, also ein $z\in Y\cap A^n$ mit $x\in U_z$. Also ist $x\in\bigcup\limits_{y\in Y\cap A^n}(U_y\setminus B)$. Da $\bigcup\limits_{y\in Y}(U_y\setminus B)$ definierbar ist, ist auch $$S=\bigcup\limits_{y\in Y\cap A^n}U_y=\bigcup\limits_{y\in Y\cap A^n}(U_y\setminus B)\cup\bigcup\limits_{y\in Y\cap A}(U_y\cap B)=\bigcup\limits_{y\in Y}(U_y\setminus B)\cup B'$$ definierbar.
+	TODO: Geht irgendwie aus \cite{PeterStarch} hervor.
 \end{proof}
 
 \begin{lemma}
-	Sei $(B,A)$ ein dichtes Paar und eine $\lingua_P$-definierbare $X\subseteq B$. Dann stimmt $X$ bis auf eine kleine Menge mit einer $\lingua$-definierbaren Menge $X'$ überein.
+	Es sei $(A,B)\models\td,\ f:B^{n+1}\rightarrow B$ $A$-definierbar in $B$ und $b\in B\setminus A$. Dann enthält $f(A^n\times\{b\})$ kein Intervall um $b$.
 \end{lemma}
 \begin{proof}
-	Sei zunächst $X$ gegeben durch $\exists y\in P(\psi(x,y))$ für eine Formel $\psi\in\fF_{1+n}(\lingua_B)$. Die Mengen $F_y:=\psi(B,y)\cap\partial\psi(B,y)$ sind endlich für jedes $y\in M^n$ und weil o-minimale Theorien $\exists^\infty$ eliminieren, ist deren Mächtigkeit uniform beschränkt, sagen wir durch $k$. Sei $Y:=\exists x\psi(x,B)$ und $\lingua$-definierbare Funktionen $g_1,\dots,g_k:Y\rightarrow F_y$, sodass $F_y=\{g_1(y),\dots,g_k(y)\}$ für alle $y\in Y$. Als diese Funktionen kann man zum Beispiel die angeordnete Aufzählung der Elemente in $F_y$ nehmen. Dann gilt
+	Nimm an, dass das Gegenteil gelte für das Intervall $J$ (\OE\ mit Randpunkten in $A$): Dann existiert insbesondere für jedes $q\in\setQ$ hinreichend nahe bei $1$ ein $a_q\in A^n$ mit $f(a_q,b)=qb$. Dann existiert wieder ein Intervall $I_q\subseteq J_A$ mit $f(a_q,x)=qx$ für alle $x\in I_q$. \OE\ ist dieses Intervall schon beschränkt und die Randpunkte seien $c_q<d_q$. Definiere dann $$r_q:=\frac{c_q+d_q}{2},s_q:=\frac{d_q-c_q}{2}\in A,$$ $$g:(u,v,x)\mapsto f(u,v+x)-f(u,v)\ \ \ \ u\in A^n,v,x\in A.$$
+	Dann gilt für alle $x\in(-s_q,s_q)$ $$g(a_q,r_q,x)=f(a_q,r_q+x)-f(a_k,r_q)=q(r_q+x)-qr_q=qx.$$
+	Also existiert nach dem letzten Lemma ein Intervall in $A$ mit einer $A$-definierbaren Körperstruktur als RCF. Durch Translation (benutze Dichtheit) nehme an, dass $b\in I_B$ liegt. Dann existiert nach Lemma \ref{Hilfsaussage Kleinheit} ein Element $c\in I_B\setminus f(A^n\times\{b\})$. \OE\ sei schon $\inf J,\sup J\in I$, sonst ersetze $J$ durch ein kleineres Intervall.\\
+	Seien $d,e\in I$ mit $d<c<e$ und $\varphi$ die orientierungserhaltende, $A$-definierbare affine Abbildung in $I$ mit $\varphi(d)=\inf J,\varphi(e)=\sup J$. Dann ist $\varphi(c)\in J\setminus(\phi\circ f)(A^n\times\{b\})$ und da das Verketten mit einer $A$-definierbaren invertierbaren Abbildung nichts an der Aussage ändert, gibt es einen Widerspruch.
+\end{proof}
+
+\begin{theorem}
+	Wenn $(B,A)\models\td$, dann ist kein Intervall eine kleine Teilmenge.
+\end{theorem}
+\begin{proof}
+	Sei $f:B^n\rightarrow B$ eine durch $\varphi(x,y,b)$ definierbare Abbildung mit $\varphi$ eine\linebreak$\lingua_A$-Formel und $b\in B^m$ für ein $m\in\setN$ definiert. Für $\dim(b/A)=0$ ist $f(A^n)\subseteq A$ klar, deswegen sei \OE\ $\dim(b/A)\geq1$. Definiere
 	\begin{align*}
-	X&=\exists y\in P(\psi(x,y))(B,A)=\bigcup\limits_{y\in A^n}\psi(B,y)=\bigcup\limits_{y\in Y\cap A^n}\psi(B,y)=\bigcup\limits_{y\in Y\cap A^n}\psi(B,y)\\&=\bigcup\limits_{y\in Y\cap A^n}(\psi(B,y\cap \partial\psi(B,y))\cap \partial\psi(B,y))\cup\bigcup\limits_{y\in Y\cap A^n}\inn\psi(B,y)=\bigcup\limits_{y\in Y\cap A^n}\{g_1(y),\dots,g_k(y)\}\cup\bigcup\limits_{y\in Y\cap A^n}\inn\psi(B,y)\\&=\bigcup\limits_{i=1}^kg_i(Y\cap A^n)\cup \bigcup\limits_{y\in Y\cap A^n}\inn\psi(B,y).
+	g(x,z):=\left\{\begin{array}{ll}
+	\text{das eindeutige }y\in B &\text{für alle z, für die }\varphi(x,y,z)\\
+	\text{ mit }B\models\varphi(x,y,z) &\text{ bei festem }\text{ eine Funktion definiert}\\
+	\ &\ \\
+	0 &\text{sonst}
+	\end{array}\right.,
 	\end{align*}
-	Da $X':=\bigcup\limits_{i=1}^kg_i(Y\cap A^n)$ klein ist und $S:=\bigcup\limits_{y\in Y\cap A^n}\inn\psi(B,y)$ nach dem letzten Lemma $\lingua$-definierbar, stimmen $X$ und $X'$ bis auf die kleine Menge $S$ überein. Da Darstellungen \glqq{}$(X\setminus  S')\cup S,X\ \lingua$-definierbar, $S,S'$ klein\grqq{} unter booleschen Kombinationen erhalten bleiben, folgt die Aussage für gute Formeln und daher für alle Mengen.
+	Dann ist $g$ in $B$ $A$-definierbar und $g(\cdot,b)=f$. Falls $\dim(b/A)>1$, füge genug Komponenten von $b$ zu $A$ hinzu, sodass $\dim(b/A)=1$. Das Hinzufügen ändert nichts, denn $Ab_i$ ist nach den Eingangsbemerkungen Modell von T und $Ab_i$ ist erst recht dicht in, aber nicht gleich $B$ (sonst hätte man die Dimension mit diesem Schritt schon zu sehr verkleinert).\\
+	Finde also $b_i$, sodass $A$-definierbare $(h_j)$ existieren mit $b_j=h_j(b_i)$ für alle $j$. Wenn jetzt $J\subseteq f(A^n)=g(A^n,b)=g(A^n,h(b_i))$ für ein Intervall $J$, dann widerspricht das der Aussage des letzten Lemmas für die Funktion $(x,y)\mapsto g(x,h(y))$.
+\end{proof}
+
+\begin{proof}
+	Wenn $D=C$, ist $D\preceq A$ und die Aussage daher klar nach der vorigen Folgerung. Die Inklusion $(AD,A)\subseteq(B,A)$ ist trivialerweise frei (zwei gleiche Mengen in der Unabhängigkeit), außerdem ist $A\preceq AD$ dicht (da $A$ dicht in $B\supseteq AD$) und eine echte Inklusion, da für $D=A$ wegen Unabhängigkeit von $D$ und $A$ ansonsten $D=C$ folgen würde. Nach Lemma \ref{freie Inklusionen} ist also $(AD,A)\preceq(B,A)$ und daher ist $\dcl(D)\subseteq\dcl(AD)=AD$, da $AD$ definierbar abgeschlossen nach Lemma \ref{A definierbar abgeschl}.\\
+	Sei jetzt $d\in AD$ $\lingua_P$-definierbar über $D$ und $a\in A^n$ minimal mit $d\in Da$ (insbesondere ist $a$ unabhängig über $D$). Im Folgenden wird gezeigt, dass dann $a$ schon das leere Tupel, also $d\in D$ ist.\\
+	Nimm an, dass $n>0$ und sei $f:B^n\rightarrow B$ die definierende Funktion von $d$, also ist sie $D$-definierbar und $f(a)=d$. Seien $$S_1:=\{x\in B^n\mid f(x_1,\dots,x_{n-1},\cdot)\text{ ist streng monoton wachsend auf einem Intervall um }x_n\},$$ $$S_2:=\{x\in B^n\mid f(x_1,\dots,x_{n-1},\cdot)\text{ ist streng monoton fallend auf einem Intervall um }x_n\},$$ $$S_3:=\{x\in B^n\mid f(x_1,\dots,x_{n-1},\cdot)\text{ ist konstant auf einem Intervall um }x_n\}.$$
+	$S_1\cup S_2\cup S_3$ ist groß, denn wenn eine offene Menge $U\subseteq B^n\setminus(S_1\cup S_2\cup S_3)$ existiert, wähle $x\in U$ beliebig und ein Intervall $I$ um $x_n$ mit $\{(x_1,\dots,x_{n-1})\}\times I\subset U$. Nach der Charakterisierung o-minimaler definierbarer Funktionen existiert ein Subintervall $J\subseteq I$, sodass $f(x_1,\dots,x_{n-1},\cdot)$ entweder streng monoton wachsend, fallend oder konstant ist auf $J$. Also ist $x\in S_1\cup S_2\cup S_3$ im Widerspruch zu $x\in U$.\newpage
+	Da $a$ generisch ist, muss es also in der großen Menge liegen.
+	\begin{itemize}
+		\item Wenn $a$ in $S_1$ liegt, nehmen wir an, dass $(B,A)$ schon hinreichend saturiert ist (das ändert nichts, da $(B,A)$ ja nur irgendeine Oberstruktur und Modell von $\td$ sein muss) und finden in $A\setminus Da_1\dots a_{n-1}$ ein $a'\neq a_n$ mit demselben Ordnungstyp über $Da_1\dots a_{n-1}$ (ansonsten wäre $a_n$ definierbar über $a_1,\dots,a_{n-1}$). Insbesondere ist $a_1,\dots,a_{n-1},a'\in S_1$, weil die Menge aller solchen Elemente $a'$ $Da_1\dots a_{n-1}$-definierbar ist und daher eine $Da_1\dots a_{n-1}$-definierbare Umgebung von $a_n$ dort drin liegt, in der $a'$ liegen muss. Da $f$ streng monoton ist, ist $f(a_1,\dots,a_{n-1},a')\neq f(a)=d\in D$.\\
+		Allerdings ist $d$ $\lingua_P$-definierbar über $D$, also ist $$f(a_1,\dots,a_{n-1},x)=d\in\tp_{\lingua_P}(a/Da_1\dots a_{n-1})\setminus\tp_{\lingua_P}(a'/Da_1\dots a_{n-1})$$ (oder zumindest mit der definierenden Formel für $d$ eingesetzt), die Typen sind daher nicht gleich.\\
+		Da $a_n,a'\in A$ aber den gleichen Ordnungstyp über $Da_1\dots a_{n-1}$ haben, haben sie auch den gleichen $\lingua$-Typ über $Da_1\dots a_{n-1}$ nach dem Beweis von Satz \ref{BackForth}. Außerdem ist $(Da_1\dots a_{n-1},Ca_1\dots a_{n-1})\subseteq(B,A)$ nach Lemma \ref{Unabhängigkeitsregeln} (6.) frei, weswegen aus Lemma \ref{Gemeinsame Unterstruktur} folgt, dass $a_n,a'$ denselben $\lingua_P$-Typ über $Da_1\dots a_{n-1}$ haben - Widerspruch!
+		\item Das Fall $a\in S_2$ geht analog, es wurde eben auch nur streng monoton benutzt.
+		\item Im Falle $a\in S_3$ ist $d$ $\lingua$-definierbar über $Da_1\dots a_{n-1}$ durch $$\glqq{}d=f(a_1,\dots,a_{n-1},x)\text{ für irgendein }(a_1,\dots,a_{n-1},x)\in S_3.$$
+	\end{itemize}
 \end{proof}
