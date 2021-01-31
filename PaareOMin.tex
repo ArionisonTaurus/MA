@@ -26,9 +26,6 @@ In dem folgenden Lemma meint $+,\cdot$ nicht die Operationen aus $\lingua$, sond
 \end{proof}
 
 \newpage
-\begin{definition}
-	Sei $\fA$ eine Struktur in einer Sprache $\lingua$ und $\fB$ eine Struktur in einer Sprache $\lingua'$. Dann heißt $\fB$ Erweiterung von $\fA$, wenn $A=B$ und die Interpretation von $\lingua$ in $\fA$ schon $\lingua'$-definierbar in $\fB$ ist. TODO: Nach hinten. Muss es sogar schon 0-definierbar sein? sonst später Problem mit dem Typ...
-\end{definition}
 
 \begin{corollary}
 	Es sei $(A,B)\models\td,\ f:B^{n+1}\rightarrow B$ $A$-definierbar in $B$ und $b\in B\setminus A$. Dann enthält $f(A^n\times\{b\})$ kein Intervall um $b$.
@@ -228,7 +225,7 @@ Wir interessieren uns für die Gestalt von $\lingua_P$-definierbaren Teilmengen 
 
 \section{Definierbare eindimensionale Mengen}
 In diesem Abschnitt wird eine zur o-Minimalität ähnliche Charakterisierung von eindimensionalen Mengen in Modellen von $\td$ hergeleitet. Hierbei sei $(B,A)$ vorerst ein beliebiges dichtes Paar, als Konvention nehmen wir an, dass $A^0=\{0\}$.
-TODO: Das noch überarbeiten, Pizarro erwähnen
+TODO: Das noch überarbeiten, \cite{Piz} erwähnen
 
 \begin{lemma}
 	Sei $(U_y)_{y\in Y}, Y\subseteq B^n$ eine Familie von offenen, eindimensionalen, in $(B,A)$ uniform $\lingua$-definierbaren Mengen. Dann ist $$S:=\bigcup\limits_{y\in Y\cap A^n}U_y$$ auch $\lingua$-definierbar.
@@ -264,7 +261,7 @@ TODO: Das noch überarbeiten, Pizarro erwähnen
 \end{proof}
 
 \begin{lemma}
-	Für jede $\lingua$-definierbare Menge $S\subseteq B^m$ und Funktion $g:B^m\rightarrow B^k$ gibt es eine $\lingua$-definierbare Teilmenge $S'\subseteq S$, sodass $$A^m\cap S\cap g^{-1}(A^k)=A^m\cap S'.$$ TODO: Überarbeiten
+	Für jede $\lingua$-definierbare Menge $S\subseteq B^m$ und Funktion $g:B^m\rightarrow B^k$ gibt es eine $\lingua$-definierbare Teilmenge $S'\subseteq S$, sodass $$A^m\cap S\cap g^{-1}(A^k)=A^m\cap S'.$$
 \end{lemma}
 \begin{proof}
 	Für $S=\emptyset$, wähle $S'=\emptyset$. Ansonsten führen wir eine Induktion über $(m,k,\dim S)$ mit elementweiser Halbordnung (die ist fundiert):\\
@@ -287,11 +284,13 @@ TODO: Das noch überarbeiten, Pizarro erwähnen
 			wegen $A^m\cap S\subseteq\lambda(A^n)$ aufgrund der Projektionseigenschaft von $\pi$, kann man $\lambda(A^n)$ weglassen und erhält $$A^m\cap S\cap g^{-1}(A)=A^m\cap\lambda(S''),$$
 			also löst $\lambda(S'')$ das Problem für $S$.
 			\newpage
-			\item Wenn $\dim S=m$, finde eine $\lingua_A$-definierbare Funktion $G:B^{m+n}\rightarrow B$ mit $g=G(\cdot,b)$ für ein über $A$ unabhängiges Tupel $b\in B^n$. Als nächstes betreiben wir Induktion über $n$. Wenn $n=0$, dann ist nichts zu tun, weil dann $g$ schon $A$-definierbar ist, also $g^{-1}(A)=A^m$ und man dann $S'=S$ wählen kann. Ansonsten zerlege $S$ wie schon im Beweis von Lemma \ref{Freie Definierbarkeit} in Mengen
+			\item Wenn $\dim S=m$, finde eine $\lingua_A$-definierbare Funktion $G:B^{m+n}\rightarrow B$ mit $g=G(\cdot,b)$ für ein über $A$ unabhängiges Tupel $b\in B^n$. Als nächstes betreiben wir Induktion über $n$. Wenn $n=0$, dann ist nichts zu tun, weil dann $g$ schon $A$-definierbar ist, also $g^{-1}(A)=A^m$ und man dann $S'=S$ wählen kann. Ansonsten zerlege $S$ in die Mengen
 			\begin{align*}
 			S_1:=\{x\in B^{m+n}\mid&G(x_1,\dots,x_{m+n-1},\cdot)\text{ ist streng monoton wachsend }\\&\text{auf einem Intervall um }x_n\},\\S_2:=\{x\in B^{m+n}\mid&G(x_1,\dots,x_{m+n-1},\cdot)\text{ ist streng monoton fallend }\\&\text{auf einem Intervall um }x_n\},\\S_3:=\{x\in B^{m+n}\mid&G(x_1,\dots,x_{m+n-1},\cdot)\text{ ist konstant auf einem Intervall um }x_n\}
 			\end{align*}
-			und den Rest $S_4:=B^{m+n}\setminus(S_1\cup S_2\cup S_3)$, partitioniere diese Mengen dann noch in $A$-definierbare Zellen $(Z_i)_i$ und definiere $Z'_i:=\{x\in B\mid (x,b)\in Z_i\}$ für alle $i$. Dann ist für jede offene Zelle $G$ in der letzten Koordinate entweder streng monoton steigend, fallend oder konstant jeweils auf der ganzen Zelle; das folgt, indem analog zum Beweis von Lemma \ref{Freie Definierbarkeit} offene Zellen schon Teilmenge von $S_1,S_2$ oder $S_3$ sind, die lokale Definition dieser Mengen überträgt sich durch Supremumsbildung auf die gesamte Zelle.\\
+			und den Rest $S_4:=B^{m+n}\setminus(S_1\cup S_2\cup S_3)$.
+			$S_1\cup S_2\cup S_3$ ist groß, denn wenn eine offene Menge $U\subseteq S_4$ existiert, wähle $x\in U$ beliebig und ein Intervall $I$ um $x_n$ mit $\{(x_1,\dots,x_{n-1})\}\times I\subset U$. Nach der Charakterisierung o-minimaler definierbarer Funktionen existiert ein Subintervall $J\subseteq I$, sodass $G(x_1,\dots,x_{m+n-1},\cdot)$ entweder streng monoton wachsend, fallend oder konstant ist auf $J$. Also ist $x\in S_1\cup S_2\cup S_3$ im Widerspruch zu $x\in U$.
+			Partitioniere diese Mengen dann noch in $A$-definierbare Zellen $(Z_i)_i$ und definiere $Z'_i:=\{x\in B\mid (x,b)\in Z_i\}$ für alle $i$. Dann ist für jede offene Zelle $G$ in der letzten Koordinate entweder streng monoton steigend, fallend oder konstant jeweils auf der ganzen Zelle; das folgt, indem offene Zellen schon Teilmenge von $S_1,S_2$ oder $S_3$ sind. Die lokale Definition dieser Mengen überträgt sich durch Supremumsbildung oder definierbaren Zusammenhang auf die gesamte Zelle.\\
 			Löse das Problem jetzt für alle $(Z'_i)_i$, wegen $S:=\bigcup\limits_i Z'_i$ ist es dann auch für $S$ gelöst: Für nicht-offene Zellen geht das per Induktion bzw. genauso wie im vorigen Unterpunkt. Wenn $Z'_i$ nun eine offene Zelle ist, gilt für ein generisches Element $x$ über $A,b$, dass $(x,b)$ generisch von $B^{m+n}$ ist, also in $S_1\cup S_2\cup S_3$. Also ist $Z_i$ entweder in $S_1,S_2$ oder $S_3$ enthalten.
 			\begin{itemize}
 				\item Wenn $Z_i\subseteq S_3$ ist, definiere $$\tilde{G}(\overline{x})=z:\Leftrightarrow z=G(\overline{x},y)\text{ für ein }y\text{ mit }(\overline{x},y)\in Z_i,$$ dann gilt $g=\tilde{G}(\cdot,b_1,\dots,b_{n-1})$ und per Induktion kann man das Problem für $n-1$ lösen.
@@ -312,10 +311,16 @@ TODO: Das noch überarbeiten, Pizarro erwähnen
 \end{proof}
 
 \begin{theorem}\label{Satz 4}
-	Sei $X\subseteq B$ eine $\lingua_P$-definierbare Menge. Dann existiert eine endliche Unterteilung von $B$, sodass jedes dadurch erzeugte offene Intervall $I$ entweder disjunkt zu $X$ ist, Teilmenge von $X$ ist oder $X\cap I$ dicht \& kodicht in $I$ ist. Für kleine $X$ entfällt der Fall \glqq{}Teilmenge\grqq{} natürlich. TODO: klein und Koklein
+	Sei $X\subseteq B$ eine $\lingua_P$-definierbare Menge. Dann existiert eine endliche Unterteilung von $B$, sodass für jedes dadurch erzeugte offene Intervall $I$ genau einer der folgenden Fälle gilt:
+	\begin{itemize}
+		\item $I$ ist disjunkt zu $X$.
+		\item $I$ ist Teilmenge von $X$.
+		\item $X\cap I$ ist dicht \& kodicht in $I$ und entweder ist $X\cap I$ klein oder $I\setminus X$.
+	\end{itemize}
+	Für kleine $X$ entfallen die Fälle \glqq{}Teilmenge\grqq{} und \glqq{}koklein\grqq{} natürlich.
 \end{theorem}
 \begin{proof}
-	Die gesuchte Eigenschaft bleibt unter endlichen Vereinigungen und Differenzen von Mengen erhalten, man muss nur eine Verfeinerung der Unterteilung durchführen. Deswegen sei $X$ zunächst klein und nach dem letzten Lemma gegeben als $X=f(A^n\cap E)$ für ein stetiges, $\lingua$-definierbares $f:E\rightarrow B$ und eine offene Zelle $E\subseteq B^n$. Da definierbarer Zusammenhang unter definierbaren stetigen Funktionen erhalten bleibt, ist $I:=f(E)$ auch definierbar zusammenhängend, weil es $\lingua$-definierbar ist, hat es auch ein Supremum und Infimum in $B\cup\{\pm\infty\}$, ist also ein Intervall (ausnahmsweise sei hier auch ein nichtoffenes Intervall mitgemeint). Wenn $I$ endlich ist, ist auch $X$ endlich und es ist nichts zu zeigen. $X$ ist disjunkt zu $B\setminus I$, nun muss nur noch gezeigt werden, dass $X=X\cap I$ dicht und kodicht in $I$ ist, denn Dichte und Kodichte in nichtoffenen unendlichen Intervallen ist äquivalent zu Dichte und Kodichte in deren Innerem. Aber für dichte Teilmengen werden durch stetige Abbildungen auf dichte Teilmengen abgebildet; da $A^n$ dicht in $B^n$ ist, ist auch $A^n\cap E$ dicht in $E$ und folglich $X$ dicht in $I$. Andererseits muss auch das Komplement von $X$ dicht in $I$ sein, da es sonst ein Intervall ganz in $X$ gäbe, was der Kleinheit mit Lemma \ref{Kleinheit} widerspricht.\\
+	Die gesuchte Eigenschaft bleibt unter endlichen Vereinigungen und Differenzen von Mengen erhalten (die Eigenschaft für kleine Mengen nur unter Vereinigungen), man muss nur eine Verfeinerung der Unterteilung durchführen. Deswegen sei $X$ zunächst klein und nach dem letzten Lemma gegeben als $X=f(A^n\cap E)$ für ein stetiges, $\lingua$-definierbares $f:E\rightarrow B$ und eine offene Zelle $E\subseteq B^n$. Da definierbarer Zusammenhang unter definierbaren stetigen Funktionen erhalten bleibt, ist $I:=f(E)$ auch definierbar zusammenhängend, weil es $\lingua$-definierbar ist, hat es auch ein Supremum und Infimum in $B\cup\{\pm\infty\}$, ist also ein Intervall (ausnahmsweise sei hier auch ein nichtoffenes Intervall mitgemeint). Wenn $I$ endlich ist, ist auch $X$ endlich und es ist nichts zu zeigen. $X$ ist disjunkt zu $B\setminus I$, nun muss nur noch gezeigt werden, dass $X=X\cap I$ dicht und kodicht in $I$ ist, denn Dichte und Kodichte in nichtoffenen unendlichen Intervallen ist äquivalent zu Dichte und Kodichte in deren Innerem. Aber für dichte Teilmengen werden durch stetige Abbildungen auf dichte Teilmengen abgebildet; da $A^n$ dicht in $B^n$ ist, ist auch $A^n\cap E$ dicht in $E$ und folglich $X$ dicht in $I$. Andererseits muss auch das Komplement von $X$ dicht in $I$ sein, da es sonst ein Intervall ganz in $X$ gäbe, was der Kleinheit mit Lemma \ref{Kleinheit} widerspricht.\\
 	Sei jetzt $X$ nicht mehr klein, dann stimmt es aber bis auf eine kleine Menge mit einer $\lingua$-definierbaren Menge $X'$ überein. Schreibe also $X=(X'\setminus Y)\cup Z$ für $Y$ und $Z$ klein. $X'$ hat als $\lingua$-definierbare Menge sowieso schon die gewünschte Gestalt (sogar nur unter Benutzung der ersten zwei Fälle), $Y$ und $Z$ nach dem ersten Teil des Beweises auch. Da die Darstellung unter Differenz und Vereinigung erhalten bleibt, hat auch $X$ die gewünschte Form.
 \end{proof}
 
@@ -385,6 +390,10 @@ Um definierbare Funktionen besser zu verstehen, ist es notwendig, sich mit dem d
 
 \section{Offene Teilmengen von $\setR^n$}
 Nach der Beschreibung der Struktur von $\lingua_P$-definierbaren Teilmengen von $B$ liegt die Vermutung nahe, dass offene und abgeschlossene $\lingua_P$-definierbare Mengen schon $\lingua$-definierbar sind. Zumindest für Teilmengen von $\setR^n$ kann man das beweisen.
+
+\begin{definition}
+	Sei $\fA$ eine Struktur in einer Sprache $\lingua$ und $\fB$ eine Struktur in einer Sprache $\lingua'$. Dann heißt $\fB$ Erweiterung von $\fA$, wenn $A=B$ und die Interpretation von $\lingua$ in $\fA$ schon $\lingua'$-definierbar in $\fB$ ist. TODO: Muss es sogar schon 0-definierbar sein? sonst später Problem mit dem Typ...
+\end{definition}
 
 \begin{lemma}\label{Erweiterung definierbare Mengen}
 	Sei $\fA$ eine unendliche Struktur, und sei $\fB$ eine $\aleph_0$-saturierte o-minimale Erweiterung von $\fA$, , sodass Definable Choice gilt und alle in $\fB$ definierbaren Funktionen $A\rightarrow A$ schon in $\fA$ definierbar sind. Dann sind die in $\fA$ und $\fB$ definierbaren Mengen die gleichen.
