@@ -2,8 +2,8 @@
 \chapter{Dichte Paare o-minimaler Strukturen}
 \section{Allgemeine Betrachtungen und Anforderungen an die Theorien}
 
-Viele Techniken und Gedanken aus dem vorigen Kapitel werden jetzt auf o-minimale Theorien übertragen: Im Folgenden halten wir einfach eine vollständige o-minimale Theorie T mit dichter Ordnung in der Sprache $\lingua$ fest und betrachten die Theorie $\tq$ in der Sprache $\lingua_P:=\lingua\cup\{P(x)\}$, sodass die Modelle von $\tq$ Modelle von T sind und in jedem Modell $\fM$ die Menge $P(M)$ ebenfalls Modell von T ist. Schreibe so ein Paar dann auch als $(B,A)$ mit $A=P(B)$.\\
-Wir setzen voraus, dass T RCF erweitert, insbesondere gilt Definable Choice. Dann sind die Skolemfunktionen definierbar und \OE\ ist $\lingua$ schon so eine definitorische Erweiterung, dass $T$ Quantorenelimination hat und universell axiomatisierbar ist (wobei bei einzelnen Theorien die Frage interessant wäre, welche Skolemfunktionen man dafür überhaupt hinzufügen muss). Außerdem seien alle Modelle genug saturiert, dass die üblichen Rechenregeln für die Dimension gelten.\\
+Viele Techniken und Gedanken aus dem vorigen Kapitel werden jetzt auf o-minimale Theorien übertragen: Im Folgenden halten wir eine vollständige o-minimale Theorie T mit dichter Ordnung in der Sprache $\lingua$ fest und betrachten die Theorie $\tq$ in der Sprache $\lingua_P:=\lingua\cup\{P(x)\}$, sodass die Modelle von $\tq$ Modelle von T sind und in jedem Modell $\fM$ die Menge $P(M)$ ebenfalls Modell von T ist. Schreibe so ein Paar dann als $(B,A)$ mit $A=P(B)$.\\
+Wir setzen voraus, dass T RCF erweitert, insbesondere gilt Definable Choice. Dann sind die Skolemfunktionen definierbar und \OE\ ist $\lingua$ schon so eine definitorische Erweiterung, dass $T$ Quantorenelimination hat und universell axiomatisierbar ist (wobei bei einzelnen Theorien die Frage interessant wäre, welche Skolemfunktionen man dafür überhaupt hinzufügen muss). TODO: braucht man das? Außerdem seien alle Modelle genug saturiert, dass die üblichen Rechenregeln für die Dimension gelten.\\
 Aus T universell mit Quantorenelimination folgt, dass Unterstrukturen von Modellen von T schon elementare Unterstrukturen sind. Also ist für jede Teilmenge $S$ eines Modells $\dcl(S)$ schon eine elementare Substruktur; zur Vereinfachung bezeichne in Zukunft $AB:=\dcl(A\cup B)$ für zwei Teilmengen $A,B$ eines Modells.\\
 $P$ beschreibt also eine elementare Unterstruktur, mit $\td$ wird nun die Theorie beschrieben, die ausdrückt, dass $P$ eine dichte echte Unterstruktur ist (diese zwei Sachen oder deren Gegenteil müssen auf jeden Fall von der Theorie beschrieben werden, wenn sie vollständig sein soll). Klar ist dann, dass Unterstrukturen von $\td$ automatisch Modelle von $\tq$ sind.\\
 Der Arbeit \cite{VanDenDries} folgend, wird die Vollständigkeit und eine Art von Quantorenelimination für $\td$ gezeigt, die mittels eines Back\&Forth-Systems bewiesen wird, bevor genauer auf einige Eigenschaften von definierbaren Mengen und Abbildungen in $\td$ eingegangen wird. Zunächst ist aber eine genauere Betrachtung von sogenannten kleinen Mengen vonnöten.
@@ -21,13 +21,13 @@ In dem folgenden Lemma meint $+,\cdot$ nicht die Operationen aus $\lingua$, sond
 \end{lemma}
 \begin{proof}
 	Wenn die Aussage nicht gilt, dann gilt mit $p(x,y):=x_ny^n+x_{n-1}y^{n-1}+\dots,x_0$, dass für jedes $a\in (I_A)^{n+1}$ ein $\alpha\in A^n$ existiert mit $p(a,b)=f(\alpha,b)$. Es muss für festes $a\in I_A$ ein Intervall um $b$ in $I_A$ mit dieser Eigenschaft geben, denn sonst wäre $b\in\dcl(A)=A$.\\
-	Sei jetzt $a$ nicht mehr fixiert, dann existiert mit Definable Choice eine definierbare Zuordnung $a\mapsto\alpha(a)$, sodass $p(a,\cdot)=f(\alpha(a),\cdot)$ auf einem Intervall gilt. Da jedes $a$ $n+1$ viele Einträge hat und jedes $\alpha(a)$ $n$ viele, müssen unendlich viele $a\in (I_A)^{n+1}$ existieren, die durch $\alpha$ auf das selbe Element abgebildet werden. Denn wenn das nicht so wäre, wäre ein generisches Element aus $(I_A)^{n+1}$ algebraisch über einem Element aus $A^n$, was der Generizität widerspricht. Da es unendlich viele Elemente gibt, sodass $\alpha$ auf ihnen konstant ist, gibt es schon eine Zelle von Dimension $>0$ mit der Eigenschaft und damit insbesondere eine Zelle $E$ von Dimension 1 (Als Teilmenge einer Zelle lässt sich immer eine von kleinerer Dimension finden). Nenne den konstanten Wert dann $\alpha^*$.\\
+	Sei jetzt $a$ nicht mehr fixiert, dann existiert mit Definable Choice in $I_A$ eine definierbare Zuordnung $a\mapsto\alpha(a)$, sodass $p(a,\cdot)=f(\alpha(a),\cdot)$ auf einem Intervall gilt. Da jedes $a$ $n+1$ viele Einträge hat und jedes $\alpha(a)$ $n$ viele, müssen unendlich viele $a\in (I_A)^{n+1}$ existieren, die durch $\alpha$ auf das selbe Element abgebildet werden. Denn wenn das nicht so wäre, wäre ein generisches Element aus $(I_A)^{n+1}$ algebraisch über einem Element aus $A^n$, was der Generizität widerspricht. Da es unendlich viele Elemente gibt, sodass $\alpha$ auf ihnen konstant ist, gibt es schon eine Zelle von Dimension $>0$ mit der Eigenschaft und damit insbesondere eine Zelle $E$ von Dimension 1 (Als Teilmenge einer Zelle lässt sich immer eine von kleinerer Dimension finden). Nenne den konstanten Wert dann $\alpha^*$.\\
 	Da also gilt: Für alle $a\in E$ existiert ein Intervall $J$ mit $p(a,\cdot)=f(\alpha^*,\cdot)$ auf $J$; existieren mit Definable Choice $\beta^*,\gamma^*:E\rightarrow I_A$, sodass $p(a,\cdot)=f(\alpha^*,\cdot)$ auf $(\beta^*(a),\gamma^*(a))$ gilt. \OE\ seien $\beta^*$ und $\gamma^*$ jetzt schon stetig auf $E$ und ein $e\in E$ beliebig· Dann existiert für $\varepsilon$ hinreichend klein eine $E$-Umgebung $U$ um $e$, sodass $$\beta^*<\frac{1}{2}(\beta^*(e)+\gamma^*(e))-\varepsilon,\ \frac{1}{2}(\beta^*(e)+\gamma^*(e))+\varepsilon<\gamma^*$$ auf $U$, also $$p(a,x)=f(\alpha^*,x)\text{ für alle }a\in U,x\in(\frac{1}{2}(\beta^*(e)+\gamma^*(e))-\varepsilon,\frac{1}{2}(\beta^*(e)+\gamma^*(e))+\varepsilon)$$ gilt. Es kann aber nicht $p(a-a',x)=p(a,x)-p(a',x)=f(\alpha^*,x)-f(\alpha^*,x)=0$ für $a,a'\in U$ verschieden und unendlich viele $x$ sein, weil ein Nichtnullpolynom nicht unendlich viele Nullstellen haben kann.
 \end{proof}
 
 \newpage
 \begin{definition}
-	Sei $\fA$ eine Struktur in einer Sprache $\lingua$ und $\fB$ eine Struktur in einer Sprache $\lingua'$. Dann heißt $\fB$ Erweiterung von $\fA$, wenn $A=B$ und die Interpretation von $\lingua$ in $\fA$ schon $\lingua'$-definierbar in $\fB$ ist. TODO: Muss es sogar schon 0-definierbar sein? sonst später Problem mit dem Typ...
+	Sei $\fA$ eine Struktur in einer Sprache $\lingua$ und $\fB$ eine Struktur in einer Sprache $\lingua'$. Dann heißt $\fB$ Erweiterung von $\fA$, wenn $A=B$ und die Interpretation von $\lingua$ in $\fA$ schon $\lingua'$-definierbar in $\fB$ ist. TODO: Nach hinten. Muss es sogar schon 0-definierbar sein? sonst später Problem mit dem Typ...
 \end{definition}
 
 \begin{corollary}
@@ -50,7 +50,7 @@ In dem folgenden Lemma meint $+,\cdot$ nicht die Operationen aus $\lingua$, sond
 	0 &\text{sonst}
 	\end{array}\right.,
 	\end{align*}
-	Dann ist $g$ in $B$ $A$-definierbar und $g(\cdot,b)=f$. Falls $\dim(b/A)>1$, füge genug Komponenten von $b$ zu $A$ hinzu, sodass $\dim(b/A)=1$. Das Hinzufügen ändert nichts, denn $Ab_i$ ist nach den Eingangsbemerkungen Modell von T und $Ab_i$ ist erst recht dicht in, aber nicht gleich $B$ (sonst hätte man die Dimension mit diesem Schritt schon zu sehr verkleinert).\\
+	Dann ist $g$ in $B$ $A$-definierbar und $g(\cdot,b)=f$. Falls $\dim(b/A)>1$, füge genug Komponenten von $b$ zu $A$ hinzu, sodass $\dim(b/A)=1$. Das Hinzufügen einer Komponente $b_j$ ändert nichts, denn $Ab_j$ ist nach den Eingangsbemerkungen Modell von T und $Ab_j$ ist erst recht dicht in, aber nicht gleich $B$ (sonst hätte man die Dimension mit diesem Schritt schon zu sehr verkleinert).\\
 	Finde also $b_i$, sodass $A$-definierbare $(h_j)$ existieren mit $b_j=h_j(b_i)$ für alle $j$. Wenn jetzt $J\subseteq f(A^n)=g(A^n,b)=g(A^n,h(b_i))$ für ein Intervall $J$, dann widerspricht das der Aussage des letzten Lemmas für die Funktion $(x,y)\mapsto g(x,h(y))$.
 \end{proof}
 
@@ -64,11 +64,11 @@ In dem folgenden Lemma meint $+,\cdot$ nicht die Operationen aus $\lingua$, sond
 	Wenn $(B,A)$ für ein unendliches $\kappa>\abs{\operatorname{T}}$ ein $\kappa$-saturiertes Modell von $\td$ ist, ist $\dim(B/A)\geq\kappa$.
 \end{lemma}
 \begin{proof}
-	Sei $S$ eine Basis von $B/A$ mit $\abs{S}<\kappa$; zeige nun, dass es kein Erzeugendensystem sein kann. Das folgt aus der Saturation angewandt auf den partiellen Typen $$\{\forall\overline{y}\in P(x\neq t(\overline{y}))\mid t\ \lingua_E\text{-Term}\},$$ der endlich erfüllbar ist, weil die Negation jeder dieser Formeln \glqq{}$x$ ist in einer kleinen Menge\grqq{} impliziert. Wenn der Typ also nicht endlich erfüllbar wäre, würde eine endliche Vereinigung von kleinen Mengen ganz $B$ überdecken. Das kann aber nicht gelten, denn eine endliche Vereinigung von kleinen Mengen ist wieder klein (in der das bezeugenden Abbildung kann man das durch Erhöhen der Dimension des Urbildes und Fallunterscheidung über eine Koordinate beweisen).
+	Sei $S$ eine Basis von $B/A$ mit $\abs{S}<\kappa$; zeige nun, dass es kein Erzeugendensystem sein kann. Das folgt aus der Saturation angewandt auf den partiellen Typen $$\{\forall\overline{y}\in P(x\neq t(\overline{y}))\mid t\ \lingua_S\text{-Term}\},$$ der endlich erfüllbar ist, weil die Negation jeder dieser Formeln \glqq{}$x$ ist in einer kleinen Menge\grqq{} impliziert. Wenn der Typ also nicht endlich erfüllbar wäre, würde eine endliche Vereinigung von kleinen Mengen ganz $B$ überdecken. Das kann aber nicht gelten, denn eine endliche Vereinigung von kleinen Mengen ist wieder klein (in der das bezeugenden Abbildung kann man das durch Erhöhen der Dimension des Definitionsbereiches und Fallunterscheidung über eine Koordinate beweisen). TODO: ausführen!
 \end{proof}
 
 \begin{corollary}\label{Finden transz Elte}
-	Der Beweis zeigt sogar, dass in einem $\kappa$-saturiertem Modell $(B,A)\models\td$, gegeben Menge, $S,S',S''\subset B$ mit $\abs{S},\abs{S'},\abs{S''}<\kappa$, ein transzendentes Element $b$ über $SA$ gefunden werden kann mit $a<b$ für alle $a\in S'$ und $b<c$ für alle $c\in S''$, sofern dieser Ordnungstyp von $b$ überhaupt konsistent ist.
+	Da Intervalle nicht klein sind, zeigt der Beweis sogar, dass in einem $\kappa$-saturiertem Modell $(B,A)\models\td$, gegeben Menge, $S,S',S''\subset B$ mit $\abs{S},\abs{S'},\abs{S''}<\kappa$, ein transzendentes Element $b$ über $SA$ gefunden werden kann mit $a<b$ für alle $a\in S'$ und $b<c$ für alle $c\in S''$, sofern dieser Ordnungstyp von $b$ überhaupt konsistent ist.
 \end{corollary}
 
 \newpage
@@ -107,7 +107,7 @@ Zu bemerken ist, dass ein Spezialfall von Unabhängigkeit viele nützliche Eigen
 	Sei $(B,A)\models\td$. Dann ist $A$ auch kodicht in $B$.
 \end{lemma}
 \begin{proof}
-	Zu zeigen ist, dass für alle $a,c\in B$ ein $b\in B\setminus A$ existiert mit $a<b<c$. Durch Translation und Inversion kann man annehmen, dass $a=0$. Wähle jetzt ein $d\in B\setminus A$ beliebig und $e\in A$ mit $d-c<e<d$. Dann ist $d-e$ nicht in $A$ (denn sonst wäre es $d$) und $0=e-e<d-e<d-(d-c)=c$.
+	Zu zeigen ist, dass für alle $a,c\in B$ ein $b\in B\setminus A$ existiert mit $a<b<c$. Durch Translation und additive Inversion kann man annehmen, dass $a=0$. Wähle jetzt ein $d\in B\setminus A$ beliebig und $e\in A$ mit $d-c<e<d$. Dann ist $d-e$ nicht in $A$ (denn sonst wäre es $d$) und $0=e-e<d-e<d-(d-c)=c$.
 \end{proof}
 
 \newpage
@@ -117,9 +117,9 @@ Für die Konstruktion des gewünschten Back\&Forth-Systems sei $\kappa>\abs{T}$ 
 \end{theorem}
 \begin{proof}
 	Das System ist nichtleer, denn es gibt ein Primmodell $\fM$ von $T$, weil $T$ vollständig ist und in jedem Modell $A$ alle Eigenschaften von $\fM_A:=\langle\emptyset\rangle_\lingua$ in $T$ beschrieben werden. Klarerweise ist $\abs{M}=\abs{T}<\kappa$. Der Isomorphismus $(\fM_A,\fM_A)\cong(\fM_C,\fM_C)$ liegt in $S$, denn Unabhängigkeit ist bei zwei gleichen Mengen offensichtlich.\\
-	Sei jetzt $S\ni i:(B',A')\rightarrow(D',C')$ und $b\in B$. Wenn $b\in B'$ ist, ist nichts zu zeigen. Wenn $b\in A\setminus B'$, betrachte den partiellen Typ $$\{\alpha<x\mid i^{-1}(\alpha)<b\}\cup\{x<\beta\mid b<i^{-1}(\beta)\}\cup\{P(x)\}.$$
+	Sei jetzt $S\ni i:(B',A')\rightarrow(D',C')$ und $b\in B$. Wenn $b\in B'$ ist, ist nichts zu zeigen. Wenn $b\in A\setminus B'$, betrachte den partiellen Typ über $D'$ $$\{\alpha<x\mid i^{-1}(\alpha)<b\}\cup\{x<\beta\mid b<i^{-1}(\beta)\}\cup\{P(x)\}.$$
 	Dieser ist konsistent, da $i$ ein Isomorphismus ist und $C$ dicht in $D$; mit Saturation existiert ein $d\in C\setminus D'$ mit diesem Ordnungstyp. $i$ setzt sich dann eindeutig zu einem Isomorphismus $i':(B'b,A'b)\rightarrow(D'd,C'd)$ mit $i(b)=d$ fort, der gegeben ist durch die Abbildung $t(b)\mapsto i(t)(d)$ für $t$ einen $\lingua_{B'}$-Term und $i(t)$ den durch $i$ geshifteten Term. Die Surjektivität dieser Abbildung ist klar, ebenso dass $i'(A'b)=C'd$. Wohldefiniertheit, Injektivität und Isomorphismuseigenschaft gelten, denn:\\
-	$Rt_1(b)\dots t_n(b)$ gilt für $\lingua_{B'}$-Terme $t_1,\dots,t_n$ und eine Relation $R$ genau dann, wenn es ein $B'$-definierbares Intervall $I$ um $b$ mit dieser Eigenschaft gibt (denn sonst wäre $b$ definierbar über $B'$ und somit in $B'$). Schickt man $I\cap B'$ mit $i$ nach $J:=i(I\cap B')$, so gilt für alle Elemente $z\in J$, dass $Ri(t_1)(z)\dots i(t_n)(z)$, da $i$ ein Isomorphismus ist. Wäre jetzt nicht $Ri(t_1)(d)\dots i(t_n)(d)$, so gäbe es ein $D'$-definierbares Intervall $I'$ um $d$, sodass das nicht gilt; insbesondere ist $I'$ disjunkt zu $J$. Allerdings ist $$b\in I'\cap\operatorname{convex}(J)=I'\cap(i(\inf I),i(\sup I)),$$ also können $I'$ und $J$ nicht disjunkt sein. Es gilt also $Ri(t_1)(d)\dots i(t_n)(d)$.\\
+	$Rt_1(b)\dots t_n(b)$ gilt für $\lingua_{B'}$-Terme $t_1,\dots,t_n$ und eine Relation $R$ genau dann, wenn es ein $B'$-definierbares Intervall $I$ um $b$ mit dieser Eigenschaft gibt (denn sonst wäre $b$ definierbar über $B'$ und somit in $B'$). Schickt man $I\cap B'$ mit $i$ nach $J:=i(I\cap B')$, so gilt für alle Elemente $z\in J$, dass $Ri(t_1)(z)\dots i(t_n)(z)$, da $i$ ein Isomorphismus ist. Wäre jetzt nicht $Ri(t_1)(d)\dots i(t_n)(d)$, so gäbe es ein $D'$-definierbares Intervall $I'$ um $d$, sodass das nicht gilt; insbesondere ist $I'$ disjunkt zu $J$. Allerdings ist $$d\in I'\cap\operatorname{convex}(J)=I'\cap(i(\inf I),i(\sup I)),$$ also können $I'$ und $J$ nicht disjunkt sein. Es gilt also $Ri(t_1)(d)\dots i(t_n)(d)$.\\
 	Die Rückrichtung geht analog.\\
 	Zu zeigen ist nun, dass $B'b$ und $A$ frei über $A'b$ sowie $D'd$ und $C$ frei über $C'd$ sind, ebenso zu zeigen ist noch, dass $(B'b,A'b)\subseteq(B,A),(D'd,C'd)\subseteq(D,C)$. Das alles folgt aber aus Lemma \ref{Unabhängigkeitsregeln} (6.). Außerdem gilt $\abs{D'd}=\abs{B'b}=\abs{B'}+\abs{T}<\kappa$.\\
 	Sei jetzt $b\in B'A\setminus(A\cup B')$. Dann gibt es $\overline{a}\in A$ mit $b\in B'\overline{a}$. Erweitere wie schon bekannt $i$, sodass $\overline{a}\in\operatorname{dom}(i)$; dann ist schon ganz $B'\overline{a}\subseteq\operatorname{dom}(i)$, also auch $b$.\\
@@ -228,6 +228,7 @@ Wir interessieren uns für die Gestalt von $\lingua_P$-definierbaren Teilmengen 
 
 \section{Definierbare eindimensionale Mengen}
 In diesem Abschnitt wird eine zur o-Minimalität ähnliche Charakterisierung von eindimensionalen Mengen in Modellen von $\td$ hergeleitet. Hierbei sei $(B,A)$ vorerst ein beliebiges dichtes Paar, als Konvention nehmen wir an, dass $A^0=\{0\}$.
+TODO: Das noch überarbeiten, Pizarro erwähnen
 
 \begin{lemma}
 	Sei $(U_y)_{y\in Y}, Y\subseteq B^n$ eine Familie von offenen, eindimensionalen, in $(B,A)$ uniform $\lingua$-definierbaren Mengen. Dann ist $$S:=\bigcup\limits_{y\in Y\cap A^n}U_y$$ auch $\lingua$-definierbar.
@@ -327,7 +328,7 @@ In diesem Abschnitt wird eine zur o-Minimalität ähnliche Charakterisierung von
 \end{proof}
 
 \section{Definierbare Funktionen}
-Um definierbare Funktionen besser zu verstehen, ist es notwendig, sich mit dem definierbaren Abschluss zu beschäftigen.
+Um definierbare Funktionen besser zu verstehen, ist es notwendig, sich mit dem definierbaren Abschluss zu beschäftigen. Damit kann man zeigen, dass definierbare Funktionen in einer Variablen \glqq{}fast überall\grqq{} $\lingua$-definierbar sind.
 
 \begin{lemma}\label{A definierbar abgeschl}
 	In jedem dichten Paar $(B,A)$ ist $A$ definierbar abgeschlossen.
@@ -383,7 +384,7 @@ Um definierbare Funktionen besser zu verstehen, ist es notwendig, sich mit dem d
 \end{proof}
 
 \section{Offene Teilmengen von $\setR^n$}
-Nach der Beschreibung der Struktur von $\lingua_P$-definierbaren Mengen liegt die Vermutung nahe, dass offene und abgeschlossene $\lingua_P$-definierbare Mengen schon $\lingua$-definierbar sind. Zumindest für Teilmengen von $\setR^n$ kann man das beweisen.
+Nach der Beschreibung der Struktur von $\lingua_P$-definierbaren Teilmengen von $B$ liegt die Vermutung nahe, dass offene und abgeschlossene $\lingua_P$-definierbare Mengen schon $\lingua$-definierbar sind. Zumindest für Teilmengen von $\setR^n$ kann man das beweisen.
 
 \begin{lemma}\label{Erweiterung definierbare Mengen}
 	Sei $\fA$ eine unendliche Struktur, und sei $\fB$ eine $\aleph_0$-saturierte o-minimale Erweiterung von $\fA$, , sodass Definable Choice gilt und alle in $\fB$ definierbaren Funktionen $A\rightarrow A$ schon in $\fA$ definierbar sind. Dann sind die in $\fA$ und $\fB$ definierbaren Mengen die gleichen.
@@ -391,7 +392,7 @@ Nach der Beschreibung der Struktur von $\lingua_P$-definierbaren Mengen liegt di
 TODO: Eigentlich musste $\fB$ nicht o-minimal sein, dafür $\fA$. Fehler?
 \begin{proof}
 	Per Definition einer Erweiterung sind alle $\fA$-definierbaren Mengen auch $\fB$-definierbar.\\
-	Sei $S\subseteq A^n$ definierbar in $\fB$. Wenn $n=1$ ist, ist die charakteristische Funktion $\chi_S:A\rightarrow A$ definierbar in $\fB$, also per Voraussetzung auch in $\fA$, also ist auch $S=\{\chi_S=1\}$ definierbar in $\fA$. Wenn $0,1$ nicht in $A$ enthalten sind, muss man sich stattdessen einfach ein Analogon mit zwei bestimmten Elementen aus $A$ basteln.\\
+	Sei $S\subseteq A^n$ definierbar in $\fB$. Wenn $n=1$ ist, ist die charakteristische Funktion $\chi_S:A\rightarrow A$ definierbar in $\fB$, also per Voraussetzung auch in $\fA$, also ist auch $S=\{\chi_S=1\}$ definierbar in $\fA$. Wenn $0,1$ nicht in $A$ enthalten sind, muss man sich stattdessen ein Analogon mit zwei bestimmten Elementen aus $A$ basteln.\\
 	Wenn $n>1$ ist, dann zerlege $S$ in $\fB$-Zellen. Es reicht daher, die Aussage für eine beliebige $\fB$-Zelle $S$ zu beweisen, genauer reicht es sogar aus, die $\fA$-Definierbarkeit für die definierende(n) partiellen Funktion(en) $x\mapsto\sup S_x,x\mapsto\inf S_x$ zu beweisen; nach wählen eines willkürlichen noch nicht angenommenen Funktionswertes, reicht es, die $\fA$-Definierbarkeit für beliebige $\fB$-definierbare Funktionen $f:A^{n-1}\rightarrow A$ zu beweisen.\\
 	Wenn $n=2$ ist, gilt das auch schon per Voraussetzung. Wenn $n>2$ ist, definiere die $\fB$-definierbaren Funktionen $f_a:A^{n-2}\rightarrow A,x\mapsto f(a,x)$. Nach Induktionsvoraussetzung ist jede davon $\fA$ definierbar, sei also $f_a=F_a(c_a,\cdot)$ für 0-$\fA$-definierbare Funktionen $F_a:A^{m_a+n-2}\rightarrow A$ und passende $m_a\in\setN,c_a\in A^{n_a}$. Es ist möglich, bloß endlich viele unterschiedliche $F_a$ zu verwenden: Ansonsten ist nämlich $$\{\forall c(f(a,x)\neq F(c,x))\mid F:A^{m+n-2}\rightarrow A\ \text{0-}\fA\text{-definierbar,}m\in\setN\}$$ konsistent in $\fB$, der Erfüller davon darf nach obigen Erkenntnissen aber nicht existieren.\\
 	Also existieren 0-$\fA$-definierbare Funktionen $F_i:A^{m_i+n-2}\rightarrow A$ für $i=1,\dots,k$, sodass für alle $a\in A$ ein $i\leq k$ und ein $c\in A^{m_i}$ existiert mit $f_a=F_i(c_i,\cdot)$. Für ein $b\in A$ und $z$ von der Dimension $\max\limits_i m_i$ sei
