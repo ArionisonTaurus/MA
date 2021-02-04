@@ -378,7 +378,18 @@ Um definierbare Funktionen besser zu verstehen, ist es notwendig, sich mit dem d
 	Sei $(B,A)\models\td$ und sei $F:B\rightarrow B$ eine $\lingua_P$-definierbare Funktion. Dann stimmt $F$ auf bis auf eine kleine Menge mit einer $\lingua$-definierbaren Funktion überein.
 \end{theorem}
 \begin{proof}
-	TODO: Muss noch warten
+	Nach dem vorigen Lemma existieren $\lingua$-definierbare $f_1,\dots,f_k:B\rightarrow B$ und ein kleines $X$, sodass für alle $b\in B\setminus X$ ein $i$ existiert mit $F(b)=f_i(b)$. Wenn $k=1$ ist, ist das die gewünschte Aussage, wenn nicht, zeige dass man $k$ weiter reduzieren kann. Dafür partitioniere $B$ mit Satz \ref{Satz 4} in $\lingua$-definierbare $E,T,D,K,C\subseteq B$, sodass $E$ endlich ist, alle anderen Mengen dafür offen, 
+	$$T\subseteq\{F=f_1\}, D\cap\{F=f_1\}=\emptyset,K':=K\cap\{F=f_1\}\text{ klein, dicht und kodicht in }K$$ $$\text{sowie }C':=C\cap\{F=f_1\}\text{ koklein, dicht und kodicht in }C.$$
+	Definiere dann $$f:x\mapsto\left\{\begin{array}{ll}
+	f_1(x)&x\in T\cup C\\
+	f_2(x)&\text{sonst}
+	\end{array}\right.$$
+	Die Menge $X':=X\cup E\cup K'\cup (C\setminus C')$ ist klein als Vereinigung von kleinen Mengen und wenn $x\in B\setminus X'$ mit $F(x)\neq f_i(x)$ für $i=3,\dots,k$, dann gibt es folgende Möglichkeiten:
+	\begin{itemize}
+		\item $x\in T\cup C'\subseteq\subseteq\{F=f_1\}$: Dann ist $F(x)=f_1(x)=f(x)$.
+		\item $x\in D\cup(K\setminus K')$, also insbesondere $x\notin\{F=f_1\}$: Dann ist $f(x)=f_2(x)$ und wegen $F(x)\neq f_1(x)$ ist $F(x)=f(x)$.
+	\end{itemize}
+    Also nimmt $F$ auf $B\setminus X'$ immer die Werte von $f,f_3,\dots,f_k$ an und induktiv ist die Aussage gezeigt.
 \end{proof}
 
 \begin{lemma}\label{Stückweise stetige Abbildungen}
@@ -419,7 +430,7 @@ TODO: Eigentlich musste $\fB$ nicht o-minimal sein, dafür $\fA$. Fehler?
 	Für eindimensionale Mengen ist das trivial, denn in der Darstellung von Satz \ref{Satz 4} kann der Fall $X\cap I$ dicht und kodicht nicht auftreten, weil offene Mengen niemals kodicht sind. Also sind die definierbaren offenen Teilmengen von $B$ gerade die endlichen Vereinigungen von Intervallen und das ist $\lingua$-definierbar.
 \end{remark}
 \begin{proof}[Beweis des Satzes]
-	Füge zunächst zu $\lingua$ $n$-stellige Relationen $O_\varphi$ für jede $(\lingua_P)_B$-Formel $\varphi$, die in $(B,A)$ eine offene Teilmenge von $\setR^n$ definiert, in dieser Sprache $\lingua'$ sei $\tilde{B}$ die Erweiterung von $B$ durch kanonische Interpretation als $O_\varphi(B):=\varphi((B,A))$. Nach der Bemerkung oben sind die eindimensionalen $\lingua_P$-definierbaren Teilmengen von $\setR$ die Vereinigungen von Intervallen in $\setR$ und daher (TODO: warum?) folgt nach \cite{MillSpeiss}, dass $\tilde{B}$ o-minimal ist. Es sei $(D,C)$ eine $\aleph_0$-saturierte Elementarerweiterung von $(B,A)$ und $\tilde{D}$ die Erweiterung von $D$ auf $\lingua'$ durch kanonische Interpretation der $O_\varphi$. Dann muss $\tilde{B}\preceq\tilde{D}$ gelten, denn alle $\lingua'_B$-Formeln gehen auf $(\lingua_P)_B$-Formeln zurück und für die gilt per Konstruktion die Elementarität der Inklusion. Also ist $\tilde{D}$ auch o-minimal, daher ist jede $\lingua'$-definierbare Funktion $f:D\rightarrow D$ stückweise stetig. Weil sie dann auch $\lingua_P$-definierbar ist, gilt nach Lemma \ref{Stückweise stetige Abbildungen}, dass jede $\lingua'$-definierbare Funktion $f:D\rightarrow D$ schon $\lingua$-definierbar ist. $\tilde{D}$ ist o-minimal und hat Definable Choice, deswegen erfüllt die Erweiterung $\tilde{D}/D$ die Voraussetzungen des Lemma \ref{Erweiterung definierbare Mengen} und die definierbaren Mengen in $D$ und $\tilde{D}$ sind die gleichen.\\
+	Füge zunächst zu $\lingua$ $n$-stellige Relationen $O_\varphi$ für jede $(\lingua_P)_B$-Formel $\varphi$, die in $(B,A)$ eine offene Teilmenge von $\setR^n$ definiert, in dieser Sprache $\lingua'$ sei $\tilde{B}$ die Erweiterung von $B$ durch kanonische Interpretation als $O_\varphi(B):=\varphi((B,A))$. Nach der Bemerkung oben sind die eindimensionalen offenen $\lingua_P$-definierbaren Teilmengen von $\setR$ die Vereinigungen von Intervallen in $\setR$ und daher (TODO: warum?) folgt nach \cite{MillSpeiss}, dass $\tilde{B}$ o-minimal ist. Es sei $(D,C)$ eine $\aleph_0$-saturierte Elementarerweiterung von $(B,A)$ und $\tilde{D}$ die Erweiterung von $D$ auf $\lingua'$ durch kanonische Interpretation der $O_\varphi$. Dann muss $\tilde{B}\preceq\tilde{D}$ gelten, denn alle $\lingua'_B$-Formeln gehen auf $(\lingua_P)_B$-Formeln zurück und für die gilt per Konstruktion die Elementarität der Inklusion. Also ist $\tilde{D}$ auch o-minimal, daher ist jede $\lingua'$-definierbare Funktion $f:D\rightarrow D$ stückweise stetig. Weil sie dann auch $\lingua_P$-definierbar ist, gilt nach Lemma \ref{Stückweise stetige Abbildungen}, dass jede $\lingua'$-definierbare Funktion $f:D\rightarrow D$ schon $\lingua$-definierbar ist. $\tilde{D}$ ist o-minimal und hat Definable Choice, deswegen erfüllt die Erweiterung $\tilde{D}/D$ die Voraussetzungen des Lemma \ref{Erweiterung definierbare Mengen} und die definierbaren Mengen in $D$ und $\tilde{D}$ sind die gleichen.\\
 	Wenn $X$ jetzt eine offene Teilmenge von $\setR^n$ ist, die durch $\chi$ in $(B,A)$ definiert werde, dann ist $X_{(D,C)}=\chi((D,C))$ eine definierbare Teilmenge in $\tilde{D}$, also definierbar in $D$ durch eine Formel $\psi(x,d)$ für ein $d\in D^m$. In $(D,C)$ gilt also $\exists y(\chi(x)\leftrightarrow\psi(x,y))$, also existiert wegen $(B,A)\preceq(D,C)$ ein $b\in B^m$ mit $X=\chi((B,A))=\psi((B,A),d)=\psi(B,d)$. Das heißt, $X$ ist definierbar in $\lingua$.
 \end{proof}
 \begin{corollary}
