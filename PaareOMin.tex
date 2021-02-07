@@ -124,7 +124,7 @@ Für die Konstruktion des gewünschten Back\&Forth-Systems sei $\kappa>\abs{T}$ 
 \end{proof}
 
 Dieses B\&F-System beweist die Formelreduzierung in $\td$.
-\begin{theorem}
+\begin{theorem}\label{Formelreduzierung}
 	Jede $\lingua_P$-Formel ist modulo $\td$ äquivalent zu einer booleschen Kombination von Formeln der Gestalt
 	$$\exists\overline{y}\in P(\phi(\overline{x},\overline{y}))$$
 	für $\phi$ eine $\lingua$-Formel. Nenne eine solche boolesche Kombination eine \textbf{gute Formel} und eine Formel der Gestalt wie beschrieben eine \textbf{gute Formel in Reinform}.
@@ -220,82 +220,55 @@ Wir interessieren uns für die Gestalt von $\lingua_P$-definierbaren Teilmengen 
 	g(b,z)>0\Leftrightarrow\ &\text{Es existiert ein }0<\varepsilon\in A\text{ und ein }A^m\ni a<b\text{ (koordinatenweise),}\\&\text{sodass für alle }a'\in A^m\text{ mit }a<a'<b\text{ (koordinatenweise)}\\&\text{gilt, dass }\abs{f(a',z)}>\varepsilon.
 	\end{align*}
 	Die rechten Bedingungen sind jeweils in $(A,(R_b)_{b\in B})$ definierbar.\\
-	$\glqq{}3.\Rightarrow 1.\grqq{}:$ Da $A$und alle $R_b$ in $(B,A)$ definierbar sind, ist $Y$ auch in $(B,A)$ definierbar.
+	$\glqq{}3.\Rightarrow 1.\grqq{}:$ Da $A$ und alle $R_b$ in $(B,A)$ definierbar sind, ist $Y$ auch in $(B,A)$ definierbar.
+\end{proof}
+
+\begin{definition}
+	Sei $(B,A)\models\tq$, dann heißt $S\subseteq B$ speziell, wenn $S$ und $A$ frei über $A\cap S$ sind.
+\end{definition}
+
+\begin{lemma}\label{Definierbare Mengen Spezialität}
+	Der Fall 2. aus dem vorigen Lemma lässt sich wie folgt verallgemeinern: Wenn $Y\subseteq A^n$ eine $(\lingua_P)_D$-definierbare Menge ist für ein spezielles $D\subseteq B$, dann existiert ein $\lingua_D$-definierbares $Z\subseteq B^n$ mit $Y=Z\cap A^n$.
+\end{lemma}
+\begin{proof}
+	Da eine Ersetzung $D\leftrightarrow\dcl(D)$ nichts ändert, können wir gleich davon ausgehen, dass $D$ schon ein Modell von T ist.\\
+	Der Beweis geht dann analog, nur müssen diesmal $\mathfrak{Th}(B,A)_D\cup\{P(x)\}\cup\{\varphi(x)\}$ und $\mathfrak{Th}(B,A)_D\cup\{P(x)\}\cup\{\neg\varphi(x)\}$ in $\lingua_D$ getrennt werden. Das ergibt anstatt von $(B,A)\preceq(D_1,C_1),(D_2,C_2)$ hier $(D_1,C_1),(D_2,C_2)\models\mathfrak{Th}(B,A)_D$.\\
+	Wegen der Spezialität von $D$ gilt, dass die Inklusionen $(D,D\cap A)\subseteq(D_1,C_1),(D_2,C_2)$ frei sind: Wenn $\varphi(c,x)$ nämlich in $(D_i,C_i)$ für ein $i$ die Abhängigkeit von $d\in D^n$ über $C_i$ bezeugt, muss $$\glqq{}\text{Es existiert ein }a'\in P\text{ mit }\varphi(a',x)\text{ bezeugt die Abhängigkeit von }d\text{ über }P\grqq{}$$ in $\mathfrak{Th}(B,A)_D$ gelten, also ist $d$ abhängig über $A$, also wegen Spezialität von $D$ auch abhängig über $D\cap A$. Ab dann kann man den Beweis wie bekannt weiterführen und muss nur $(B,A)$ durch $(D,D\cap A)$ ersetzen.
 \end{proof}
 
 \section{Definierbare eindimensionale Mengen}
-In diesem Abschnitt wird eine zur o-Minimalität ähnliche Charakterisierung von eindimensionalen Mengen in Modellen von $\td$ hergeleitet. Hierbei sei $(B,A)$ vorerst ein beliebiges dichtes Paar, als Konvention nehmen wir an, dass $A^0=\{0\}$.
+In diesem Abschnitt wird eine zur o-Minimalität ähnliche Charakterisierung von eindimensionalen Mengen in Modellen von $\td$ hergeleitet. Hierbei sei $(B,A)$ vorerst ein beliebiges dichtes Paar und $S\subseteq B$ eine spezielle Menge, als Konvention nehmen wir an, dass $A^0=\{0\}$.
 TODO: Das noch überarbeiten, \cite{Piz} erwähnen
 
 \begin{lemma}
-	Sei $(U_y)_{y\in Y}, Y\subseteq B^n$ eine Familie von offenen, eindimensionalen, in $(B,A)$ uniform $\lingua$-definierbaren Mengen. Dann ist $$S:=\bigcup\limits_{y\in Y\cap A^n}U_y$$ auch $\lingua$-definierbar.
+	Sei $Y\subseteq B^n$ $\lingua_S$-definierbar und $(U_y)_{y\in Y}\subseteq B$ eine Familie von offenen, uniform $\lingua_S$-definierbaren Mengen. Dann ist $$X:=\bigcup\limits_{y\in Y\cap A^n}U_y$$ auch $\lingua_S$-definierbar.
 \end{lemma}
 \begin{proof}
-	Wir führen eine Induktion über $\dim Y$, man kann schon annehmen, dass alle $U_y$ nichtleer sind, sonst muss man entsprechend aus $Y$ aussondern. Wenn $\dim Y=0$ ist, ist $Y$ endlich und es ist schon $Y\cap A^n$ definierbar, also auch $S$.\\
-	Zerlege $Y$ in Zellen, das ändert nichts an irgendwelchen Definierbarkeiten, also kann man annehmen, dass $Y$ selbst schon Zelle ist. Wenn $Y$ keine offene Zelle ist und $\pi:Y\rightarrow Z$ der kanonische homöomorphe Projektion zu einer offenen Zelle von Dimension $m<\dim Y$, existiert nach Satz \ref{Definierbare Mengen} ein $\lingua$-definierbares $Z'\subseteq B^m$ mit $\pi(Y\cap A^n)=Z'\cap A^m$, da $\pi(Y\cap A^n)\subseteq A^m$ eine $\lingua_P$-definierbare Menge ist. Definiere dann $Y':=Z\cap Z'$, sodass man die Menge umparametrisieren kann:
+	Wir führen eine Induktion über $\dim Y$, man kann schon annehmen, dass alle $U_y$ nichtleer sind, sonst muss man entsprechend aus $Y$ aussondern. Wenn $\dim Y=0$ ist, ist $Y$ endlich und es ist schon $Y\cap A^n$ definierbar mit Parametern aus $S$ (zähle z.B. auf, das wievielte Element aus $Y$ man nimmt), also auch $X$.\\
+	Zerlege $Y$ in Zellen, das ändert nichts an irgendwelchen Definierbarkeiten, also kann man annehmen, dass $Y$ selbst schon Zelle ist. Wenn $Y$ keine offene Zelle ist und $\pi:Y\rightarrow Z$ der kanonische homöomorphe Projektion zu einer offenen Zelle von Dimension $m<\dim Y$, existiert nach Satz \ref{Definierbare Mengen Spezialität} ein $\lingua_S$-definierbares $Z'\subseteq B^m$ mit $\pi(Y\cap A^n)=Z'\cap A^m$, da $\pi(Y\cap A^n)\subseteq A^m$ eine $(\lingua_P)_S$-definierbare Menge ist. Definiere dann $Y':=Z\cap Z'$, sodass man die Menge umparametrisieren kann:
 	$$\bigcup\limits_{y'\in Y'\cap A^m}U_{\pi^{-1}(y')}=\bigcup\limits_{y\in\pi^{-1}(Y'\cap A^m)}U_y=\bigcup\limits_{y\in Y\cap A^n}U_y=S$$
 	Da $(U_{\pi^{-1}(y')})_{y'\in Y'}$ die gleichen Dinge erfüllt wie $(U_y)_{y\in Y}$ und $\dim Y'\leq\dim Z<\dim Y$, gilt die Aussage per Induktion.\\
-	Für den Beweis für offene Zellen definiere die vier $\lingua$-definierbare Mengen $$U:=\bigcup\limits_{y\in Y}U_y,$$ $$Y_x:=\{y\in Y\mid x\in U_y\},$$ $$C:=\{x\in U\mid\inn(Y_x)=\emptyset\},$$ $$D:=\bigcup\limits_{x\in\inn C}Y_x.$$
+	Für den Beweis für offene Zellen definiere die vier $\lingua_S$-definierbaren Mengen $$U:=\bigcup\limits_{y\in Y}U_y,$$ $$Y_x:=\{y\in Y\mid x\in U_y\},$$ $$C:=\{x\in U\mid\inn(Y_x)=\emptyset\},$$ $$D:=\bigcup\limits_{x\in\inn C}Y_x.$$
 	Es gilt $$D=\bigcup\limits_{x\in U}\{y\in Y\mid x\in U_y\cap\inn C\}=\{y\in Y\mid U_y\cap\inn C\neq\emptyset\}.$$
-	Wir wollen jetzt herleiten, dass $\inn D$ leer sein muss. Seien dafür mit Definable Choice die $\lingua$-definierbaren Funktionen $f,g_1,g_2:D\rightarrow B$ gegeben mit $$f(y)\in(g_1(y),g_2(y))\subseteq U_y\cap\inn C.$$
+	Wir wollen jetzt herleiten, dass $\inn D$ leer sein muss. Seien dafür mit Definable Choice die $\lingua_S$-definierbaren Funktionen $f,g_1,g_2:D\rightarrow B$ gegeben mit $$f(y)\in(g_1(y),g_2(y))\subseteq U_y\cap\inn C.$$
 	Wenn $\inn D\neq\emptyset$, schränke $D$ ein, sodass es offen ist und $f,g_1,g_2$ stetig auf $D$ sind. Sei außerdem $d,e\in U_y\cap\inn C, (c,k)\subseteq U_y\cap\inn C$ (das ist offen), sodass $$c<g_1(y)<d<f(y)<e<g_2(y)<k.$$ Setze $$V:=g_1^{-1}((c,d))\cap f^{-1}((d,e))\cap g_2^{-1}((e,k)),$$ das ist dann eine offene Umgebung um $y$ in $B^n$. Für alle $z\in V$ ist $$f(y)\in(d,e)\subseteq(g_1(z),g_2(z))\subseteq U_z,$$ also ist $z\in Y_{f(y)}$. Das heißt, es gilt $V\subseteq Y_{f(y)}$; da aber $f(y)\in C$, ist das unmöglich, weil $V$ offen in dem (eingeschränkten) Definitionsbereich, also auch in $B^n$ ist und also $Y_{f(y)}$ nichtleeres Inneres hätte.\\
 	$D$ hat als Menge ohne Inneres eine kleinere Dimension als $n$. Also ist induktiv auch $$\bigcup\limits_{y\in D\cap A^n}U_y$$ definierbar in $B$. Es ist außerdem
 	\begin{align}\label{align 1}
 	\bigcup\limits_{y\in (Y\setminus D)\cap A^n}U_y\cup((C\setminus\inn C)\cap\bigcup\limits_{y\in Y\setminus D}U_y)=\bigcup\limits_{y\in Y\setminus D}U_y.
 	\end{align}
 	Dass die linke Seite Teilmenge der Rechten ist, ist sowieso klar per Definition; sei nun $$x\in\bigcup\limits_{y\in Y\setminus D}U_y\setminus (C\setminus\inn C)$$ und $y\in Y\setminus D$ mit $x\in U_y$. Wegen $x\notin C\setminus\inn C$ hat $Y_x$ nichtleeres Inneres ($x\notin C$) oder $x\in\inn C$ und $y\in D$. Da zweiteres ausgeschlossen wurde, hat $Y_x$ nichtleeres Inneres, also auch $Y_x\setminus D$ (denn $D$ war niedrigdimensional) und enthält damit ein Element $z\in A^n\cap(Y_x\setminus D)$ wegen Dichtheit. $z$ bezeugt, dass $x\in\bigcup\limits_{y\in (Y\setminus D)\cap A^n}U_y$ liegt.\\
-	Aus \ref{align 1} folgt, dass $$\bigcup\limits_{y\in (Y\setminus D)\cap A^n}U_y=\bigcup\limits_{y\in Y\setminus D}U_y\setminus(C\setminus\inn C)\cup((C\setminus\inn C)\cap\bigcup\limits_{y\in (Y\setminus D)\cap A^n}U_y)$$ definierbar in $B$ ist (der letzte Teil ist es wegen Endlichkeit von $C\setminus\inn C$). Also ist auch $$S=\bigcup\limits_{y\in Y\cap A^n}U_y=\bigcup\limits_{y\in (Y\setminus D)\cap A^n}U_y\cup\bigcup\limits_{y\in D\cap A^n}U_y$$ definierbar in $B$.
+	Aus \ref{align 1} folgt, dass $$\bigcup\limits_{y\in (Y\setminus D)\cap A^n}U_y=\bigcup\limits_{y\in Y\setminus D}U_y\setminus(C\setminus\inn C)\cup((C\setminus\inn C)\cap\bigcup\limits_{y\in (Y\setminus D)\cap A^n}U_y)$$ $\lingua_S$-definierbar ist (der letzte Teil ist es wegen Endlichkeit von $C\setminus\inn C$). Also ist auch $$X=\bigcup\limits_{y\in Y\cap A^n}U_y=\bigcup\limits_{y\in (Y\setminus D)\cap A^n}U_y\cup\bigcup\limits_{y\in D\cap A^n}U_y$$ $\lingua_S$-definierbar in $B$.
 \end{proof}
 
 \begin{lemma}
-	Sei eine $\lingua_P$-definierbare Menge $X\subseteq B$. Dann stimmt $X$ bis auf eine kleine Menge mit einer $\lingua$-definierbaren Menge $X'$ überein.
+	Sei eine $(\lingua_P)_S$-definierbare Menge $X\subseteq B$. Dann stimmt $X$ bis auf eine kleine $(\lingua_P)_S$-definierbare Menge mit einer $\lingua_S$-definierbaren Menge $X'$ überein.
 \end{lemma}
 \begin{proof}
-	Sei zunächst $X$ gegeben durch $\exists y\in P(\psi(x,y))$ für eine Formel $\psi\in\fF_{1+n}(\lingua_B)$. Die Mengen $F_y:=\psi(B,y)\cap\partial\psi(B,y)$ sind endlich für jedes $y\in M^n$ und weil o-minimale Theorien $\exists^\infty$ eliminieren, ist deren Mächtigkeit uniform beschränkt, sagen wir durch $k$. Sei $Y:=\exists x\psi(x,B)$ und $\lingua$-definierbare Funktionen $g_1,\dots,g_k:Y\rightarrow F_y$, sodass $F_y=\{g_1(y),\dots,g_k(y)\}$ für alle $y\in Y$. Als diese Funktionen kann man zum Beispiel die angeordnete Aufzählung der Elemente in $F_y$ nehmen. Dann gilt
+	Sei zunächst $X$ gegeben durch $\exists y\in P(\psi(x,y))$ für eine Formel $\psi\in\fF_{1+n}(\lingua_S)$. Die Mengen $F_y:=\psi(B,y)\cap\partial\psi(B,y)$ sind endlich für jedes $y\in M^n$ und weil o-minimale Theorien $\exists^\infty$ eliminieren, ist deren Mächtigkeit uniform beschränkt, sagen wir durch $k$. Sei $Y:=\exists x\psi(x,B)$ und $\lingua_S$-definierbare Funktionen $g_1,\dots,g_k:Y\rightarrow F_y$, sodass $F_y=\{g_1(y),\dots,g_k(y)\}$ für alle $y\in Y$. Als diese Funktionen kann man zum Beispiel die angeordnete Aufzählung der Elemente in $F_y$ nehmen. Dann gilt
 	\begin{align*}
 	X&=\exists y\in P(\psi(x,y))(B,A)=\bigcup\limits_{y\in A^n}\psi(B,y)=\bigcup\limits_{y\in Y\cap A^n}\psi(B,y)=\bigcup\limits_{y\in Y\cap A^n}\psi(B,y)\\&=\bigcup\limits_{y\in Y\cap A^n}(\psi(B,y\cap \partial\psi(B,y))\cap \partial\psi(B,y))\cup\bigcup\limits_{y\in Y\cap A^n}\inn\psi(B,y)\\&=\bigcup\limits_{y\in Y\cap A^n}\{g_1(y),\dots,g_k(y)\}\cup\bigcup\limits_{y\in Y\cap A^n}\inn\psi(B,y)=\bigcup\limits_{i=1}^kg_i(Y\cap A^n)\cup \bigcup\limits_{y\in Y\cap A^n}\inn\psi(B,y).
 	\end{align*}
-	Da $X':=\bigcup\limits_{i=1}^kg_i(Y\cap A^n)$ klein ist und $S:=\bigcup\limits_{y\in Y\cap A^n}\inn\psi(B,y)$ nach dem letzten Lemma $\lingua$-definierbar, stimmen $X$ und $X'$ bis auf die kleine Menge $S$ überein. Da Darstellungen \glqq{}$(X\setminus  S')\cup S,X\ \lingua$-definierbar, $S,S'$ klein\grqq{} unter booleschen Kombinationen erhalten bleiben, folgt die Aussage für gute Formeln und daher für alle Mengen.
-\end{proof}
-
-\begin{lemma}
-	Für jede $\lingua$-definierbare Menge $S\subseteq B^m$ und Funktion $g:B^m\rightarrow B^k$ gibt es eine $\lingua$-definierbare Teilmenge $S'\subseteq S$, sodass $$A^m\cap S\cap g^{-1}(A^k)=A^m\cap S'.$$
-\end{lemma}
-\begin{proof}
-	Für $S=\emptyset$, wähle $S'=\emptyset$. Ansonsten führen wir eine Induktion über $(m,k,\dim S)$ mit elementweiser Halbordnung (die ist fundiert):\\
-	Wenn $m=0,k=0$ oder $\dim S=0$, ist $A^m\cap S\cap g^{-1}(A^k)$ endlich und daher $\lingua$-definierbar, also kann man $S'=A^m\cap S\cap g^{-1}(A^k)$ wählen. Sei also $(m,k,\dim S)>(0,0,0)$.
-	\begin{itemize}
-		\item Wenn $k>1$ gilt und $g$ die Koordinatenfunktionen $g_1,\dots,g_k$ hat, so existieren $(S'_i)_{i\leq k}$ mit $S'_i\subseteq S$ und $A^m\cap S\cap g_k^{-1}(A)=A^m\cap S'_i$ für alle $i$ per Induktionsvoraussetzung. Dann gilt
-		\begin{align*}
-		A^m\cap S\cap g^{-1}(A^k)=\bigcap\limits_{i=1}^k A^m\cap S\cap g_i^{-1}(A)=\bigcap\limits_{i=1}^k A^m\cap S'_i=A^m\cap(\bigcap\limits_{i=1}^k S'_i),
-		\end{align*}
-		also erfüllt $S':=\bigcap\limits_{i=1}^k S'_i$ das Gewünschte.
-		\item Wenn $k=1$ gilt, zerlege $S$ in Zellen $(Z_i)$, deren Dimension natürlich $\leq\dim S$ ist. Wenn man da das Problem löst (induktiv bzw. von Hand) und jeweils ein passendes $S'_i$ findet, löst $\bigcup\limits_i S'_i$ das Problem für $S$.\\ Sei also $S$ jetzt schon eine Zelle.
-		\begin{itemize}
-			\item Wenn $n:=\dim S<m$ ist und $\pi$ die entsprechende homöomorphe Projektion auf eine offene Zelle in $B^n$  bzw. eine $\lingua$-definierbare Fortsetzung davon auf ganz $B^m$, sei $\lambda$ eine $\lingua$-definierbare Fortsetzung der Umkehrfunktion dieser Projektion. Wähle die Fortsetzung $\lambda$ dabei so, dass $\lambda(\pi(S))$ und $\lambda(B^n\setminus\pi(S))$ disjunkt sind. Das ermöglicht die Gleichheit $\lambda(C\cap D)=\lambda(C)\cap\lambda(D)$ für $C\subseteq\pi(S)$. Löse dann mit einem $\lingua$-definierbaren $S''\subseteq \pi(S)$ das Problem $$A^n\cap\pi(S)\cap\lambda^{-1}(A^m)\cap (g\circ\lambda)^{-1}(A)=A^n\cap S''.$$
-			Das Problem entspricht im Übrigen den Anforderungen, weil man\linebreak $\lambda^{-1}(A^m)\cap (g\circ\lambda)^{-1}(A)$ wie im Fall $k>1$ umschreiben kann. Schneidet man das mit $\lambda^{-1}(A^m)$ und wendet darauf $\lambda$ an, erhält man (mit schrittweiser Verwendung des $\cap$-Herausziehens)
-			\begin{align*}
-			\lambda(A^n)\cap S\cap A^m\cap g^{-1}(A)&=\lambda(A^n\cap\pi(S)\cap\lambda^{-1}(A^m)\cap (g\circ\lambda)^{-1}(A))\\
-			&=\lambda(\lambda^{-1}(A^m)\cap A^n\cap S'')\\
-			&=A^m\cap\lambda(A^n)\cap\lambda(S''),
-			\end{align*}
-			wegen $A^m\cap S\subseteq\lambda(A^n)$ aufgrund der Projektionseigenschaft von $\pi$, kann man $\lambda(A^n)$ weglassen und erhält $$A^m\cap S\cap g^{-1}(A)=A^m\cap\lambda(S''),$$
-			also löst $\lambda(S'')$ das Problem für $S$.
-			\newpage
-			\item Wenn $\dim S=m$, finde eine $\lingua_A$-definierbare Funktion $G:B^{m+n}\rightarrow B$ mit $g=G(\cdot,b)$ für ein über $A$ unabhängiges Tupel $b\in B^n$. Als nächstes betreiben wir Induktion über $n$. Wenn $n=0$, dann ist nichts zu tun, weil dann $g$ schon $A$-definierbar ist, also $g^{-1}(A)=A^m$ und man dann $S'=S$ wählen kann. Ansonsten zerlege $S$ in die Mengen
-			\begin{align*}
-			S_1:=\{x\in B^{m+n}\mid&G(x_1,\dots,x_{m+n-1},\cdot)\text{ ist streng monoton wachsend }\\&\text{auf einem Intervall um }x_n\},\\S_2:=\{x\in B^{m+n}\mid&G(x_1,\dots,x_{m+n-1},\cdot)\text{ ist streng monoton fallend }\\&\text{auf einem Intervall um }x_n\},\\S_3:=\{x\in B^{m+n}\mid&G(x_1,\dots,x_{m+n-1},\cdot)\text{ ist konstant auf einem Intervall um }x_n\}
-			\end{align*}
-			und den Rest $S_4:=B^{m+n}\setminus(S_1\cup S_2\cup S_3)$.
-			$S_1\cup S_2\cup S_3$ ist groß, denn wenn eine offene Menge $U\subseteq S_4$ existiert, wähle $x\in U$ beliebig und ein Intervall $I$ um $x_n$ mit $\{(x_1,\dots,x_{n-1})\}\times I\subset U$. Nach der Charakterisierung o-minimaler definierbarer Funktionen existiert ein Subintervall $J\subseteq I$, sodass $G(x_1,\dots,x_{m+n-1},\cdot)$ entweder streng monoton wachsend, fallend oder konstant ist auf $J$. Also ist $x\in S_1\cup S_2\cup S_3$ im Widerspruch zu $x\in U$.
-			Partitioniere diese Mengen dann noch in $A$-definierbare Zellen $(Z_i)_i$ und definiere $Z'_i:=\{x\in B\mid (x,b)\in Z_i\}$ für alle $i$. Dann ist für jede offene Zelle $G$ in der letzten Koordinate entweder streng monoton steigend, fallend oder konstant jeweils auf der ganzen Zelle; das folgt, indem offene Zellen schon Teilmenge von $S_1,S_2$ oder $S_3$ sind. Die lokale Definition dieser Mengen überträgt sich durch Supremumsbildung oder definierbaren Zusammenhang auf die gesamte Zelle.\\
-			Löse das Problem jetzt für alle $(Z'_i)_i$, wegen $S:=\bigcup\limits_i Z'_i$ ist es dann auch für $S$ gelöst: Für nicht-offene Zellen geht das per Induktion bzw. genauso wie im vorigen Unterpunkt. Wenn $Z'_i$ nun eine offene Zelle ist, gilt für ein generisches Element $x$ über $A,b$, dass $(x,b)$ generisch von $B^{m+n}$ ist, also in $S_1\cup S_2\cup S_3$. Also ist $Z_i$ entweder in $S_1,S_2$ oder $S_3$ enthalten.
-			\begin{itemize}
-				\item Wenn $Z_i\subseteq S_3$ ist, definiere $$\tilde{G}(\overline{x})=z:\Leftrightarrow z=G(\overline{x},y)\text{ für ein }y\text{ mit }(\overline{x},y)\in Z_i,$$ dann gilt $g=\tilde{G}(\cdot,b_1,\dots,b_{n-1})$ und per Induktion kann man das Problem für $n-1$ lösen.
-				\item Wenn $Z_i\subseteq S_1,S_2$, also $G$ auf $Z_i$ injektiv in der letzten Koordinate ist, wird das Problem durch $\emptyset$ gelöst: Denn sei $a\in A^m\cap S'_i\cap g^{-1}(A)$, also existiert $a'\in A$ mit $a'=g(a)=G(a,b)$, weil $a\in Z'_i$ ist, ist $(a,b)\in Z_i$, also ist wegen Injektivität von $G$ in der letzten Koordinate $b_n$ eindeutig bestimmt mit $(a,b)\in Z_i$ und $a'=G(a,b)$. Das ist aber $A,b_1,\dots,b_{n-1}$-definierbar, also ist $b$ nicht unabhängig über $A$.
-			\end{itemize}
-		\end{itemize}
-	\end{itemize}
+	Da $X':=\bigcup\limits_{i=1}^kg_i(Y\cap A^n)$ klein ist und $S'':=\bigcup\limits_{y\in Y\cap A^n}\inn\psi(B,y)$ nach dem letzten Lemma $\lingua_S$-definierbar, stimmen $X$ und $X'$ bis auf die kleine $(\lingua_P)_S$-definierbare Menge $S''$ überein. Da Darstellungen \glqq{}$(X\setminus  S')\cup S'',X\ \lingua_S$-definierbar, $S',S''$ klein, $(\lingua_P)_S$-definierbar\grqq{} unter booleschen Kombinationen erhalten bleiben, folgt die Aussage für gute Formeln und daher für alle Mengen. Dabei ist zu beachten, dass Satz \ref{Formelreduzierung} auch hergibt, dass $(\lingua_P)_S$-Formeln zu guten $(\lingua_P)_S$-Formeln äquivalent sind.
 \end{proof}
 
 \begin{lemma}
@@ -492,5 +465,45 @@ TODO: Eigentlich musste $\fB$ nicht o-minimal sein, dafür $\fA$. Fehler?
 		Da $a_n,a'\in A$ aber den gleichen Ordnungstyp über $Da_1\dots a_{n-1}$ haben, haben sie auch den gleichen $\lingua$-Typ über $Da_1\dots a_{n-1}$ nach dem Beweis von Satz \ref{BackForth}. Außerdem ist $(Da_1\dots a_{n-1},Ca_1\dots a_{n-1})\subseteq(B,A)$ nach Lemma \ref{Unabhängigkeitsregeln} (6.) frei, weswegen aus Lemma \ref{Gemeinsame Unterstruktur} folgt, dass $a_n,a'$ denselben $\lingua_P$-Typ über $Da_1\dots a_{n-1}$ haben - Widerspruch!
 		\item Das Fall $a\in S_2$ geht analog, es wurde eben auch nur streng monoton benutzt.
 		\item Im Falle $a\in S_3$ ist $d$ $\lingua$-definierbar über $Da_1\dots a_{n-1}$ durch $$\glqq{}d=f(a_1,\dots,a_{n-1},x)\text{ für irgendein }(a_1,\dots,a_{n-1},x)\in S_3.$$
+	\end{itemize}
+\end{proof}
+
+\begin{lemma}
+	Für jede $\lingua$-definierbare Menge $S\subseteq B^m$ und Funktion $g:B^m\rightarrow B^k$ gibt es eine $\lingua$-definierbare Teilmenge $S'\subseteq S$, sodass $$A^m\cap S\cap g^{-1}(A^k)=A^m\cap S'.$$
+\end{lemma}
+\begin{proof}
+	Für $S=\emptyset$, wähle $S'=\emptyset$. Ansonsten führen wir eine Induktion über $(m,k,\dim S)$ mit elementweiser Halbordnung (die ist fundiert):\\
+	Wenn $m=0,k=0$ oder $\dim S=0$, ist $A^m\cap S\cap g^{-1}(A^k)$ endlich und daher $\lingua$-definierbar, also kann man $S'=A^m\cap S\cap g^{-1}(A^k)$ wählen. Sei also $(m,k,\dim S)>(0,0,0)$.
+	\begin{itemize}
+		\item Wenn $k>1$ gilt und $g$ die Koordinatenfunktionen $g_1,\dots,g_k$ hat, so existieren $(S'_i)_{i\leq k}$ mit $S'_i\subseteq S$ und $A^m\cap S\cap g_k^{-1}(A)=A^m\cap S'_i$ für alle $i$ per Induktionsvoraussetzung. Dann gilt
+		\begin{align*}
+		A^m\cap S\cap g^{-1}(A^k)=\bigcap\limits_{i=1}^k A^m\cap S\cap g_i^{-1}(A)=\bigcap\limits_{i=1}^k A^m\cap S'_i=A^m\cap(\bigcap\limits_{i=1}^k S'_i),
+		\end{align*}
+		also erfüllt $S':=\bigcap\limits_{i=1}^k S'_i$ das Gewünschte.
+		\item Wenn $k=1$ gilt, zerlege $S$ in Zellen $(Z_i)$, deren Dimension natürlich $\leq\dim S$ ist. Wenn man da das Problem löst (induktiv bzw. von Hand) und jeweils ein passendes $S'_i$ findet, löst $\bigcup\limits_i S'_i$ das Problem für $S$.\\ Sei also $S$ jetzt schon eine Zelle.
+		\begin{itemize}
+			\item Wenn $n:=\dim S<m$ ist und $\pi$ die entsprechende homöomorphe Projektion auf eine offene Zelle in $B^n$  bzw. eine $\lingua$-definierbare Fortsetzung davon auf ganz $B^m$, sei $\lambda$ eine $\lingua$-definierbare Fortsetzung der Umkehrfunktion dieser Projektion. Wähle die Fortsetzung $\lambda$ dabei so, dass $\lambda(\pi(S))$ und $\lambda(B^n\setminus\pi(S))$ disjunkt sind. Das ermöglicht die Gleichheit $\lambda(C\cap D)=\lambda(C)\cap\lambda(D)$ für $C\subseteq\pi(S)$. Löse dann mit einem $\lingua$-definierbaren $S''\subseteq \pi(S)$ das Problem $$A^n\cap\pi(S)\cap\lambda^{-1}(A^m)\cap (g\circ\lambda)^{-1}(A)=A^n\cap S''.$$
+			Das Problem entspricht im Übrigen den Anforderungen, weil man\linebreak $\lambda^{-1}(A^m)\cap (g\circ\lambda)^{-1}(A)$ wie im Fall $k>1$ umschreiben kann. Schneidet man das mit $\lambda^{-1}(A^m)$ und wendet darauf $\lambda$ an, erhält man (mit schrittweiser Verwendung des $\cap$-Herausziehens)
+			\begin{align*}
+			\lambda(A^n)\cap S\cap A^m\cap g^{-1}(A)&=\lambda(A^n\cap\pi(S)\cap\lambda^{-1}(A^m)\cap (g\circ\lambda)^{-1}(A))\\
+			&=\lambda(\lambda^{-1}(A^m)\cap A^n\cap S'')\\
+			&=A^m\cap\lambda(A^n)\cap\lambda(S''),
+			\end{align*}
+			wegen $A^m\cap S\subseteq\lambda(A^n)$ aufgrund der Projektionseigenschaft von $\pi$, kann man $\lambda(A^n)$ weglassen und erhält $$A^m\cap S\cap g^{-1}(A)=A^m\cap\lambda(S''),$$
+			also löst $\lambda(S'')$ das Problem für $S$.
+			\newpage
+			\item Wenn $\dim S=m$, finde eine $\lingua_A$-definierbare Funktion $G:B^{m+n}\rightarrow B$ mit $g=G(\cdot,b)$ für ein über $A$ unabhängiges Tupel $b\in B^n$. Als nächstes betreiben wir Induktion über $n$. Wenn $n=0$, dann ist nichts zu tun, weil dann $g$ schon $A$-definierbar ist, also $g^{-1}(A)=A^m$ und man dann $S'=S$ wählen kann. Ansonsten zerlege $S$ in die Mengen
+			\begin{align*}
+			S_1:=\{x\in B^{m+n}\mid&G(x_1,\dots,x_{m+n-1},\cdot)\text{ ist streng monoton wachsend }\\&\text{auf einem Intervall um }x_n\},\\S_2:=\{x\in B^{m+n}\mid&G(x_1,\dots,x_{m+n-1},\cdot)\text{ ist streng monoton fallend }\\&\text{auf einem Intervall um }x_n\},\\S_3:=\{x\in B^{m+n}\mid&G(x_1,\dots,x_{m+n-1},\cdot)\text{ ist konstant auf einem Intervall um }x_n\}
+			\end{align*}
+			und den Rest $S_4:=B^{m+n}\setminus(S_1\cup S_2\cup S_3)$.
+			$S_1\cup S_2\cup S_3$ ist groß, denn wenn eine offene Menge $U\subseteq S_4$ existiert, wähle $x\in U$ beliebig und ein Intervall $I$ um $x_n$ mit $\{(x_1,\dots,x_{n-1})\}\times I\subset U$. Nach der Charakterisierung o-minimaler definierbarer Funktionen existiert ein Subintervall $J\subseteq I$, sodass $G(x_1,\dots,x_{m+n-1},\cdot)$ entweder streng monoton wachsend, fallend oder konstant ist auf $J$. Also ist $x\in S_1\cup S_2\cup S_3$ im Widerspruch zu $x\in U$.
+			Partitioniere diese Mengen dann noch in $A$-definierbare Zellen $(Z_i)_i$ und definiere $Z'_i:=\{x\in B\mid (x,b)\in Z_i\}$ für alle $i$. Dann ist für jede offene Zelle $G$ in der letzten Koordinate entweder streng monoton steigend, fallend oder konstant jeweils auf der ganzen Zelle; das folgt, indem offene Zellen schon Teilmenge von $S_1,S_2$ oder $S_3$ sind. Die lokale Definition dieser Mengen überträgt sich durch Supremumsbildung oder definierbaren Zusammenhang auf die gesamte Zelle.\\
+			Löse das Problem jetzt für alle $(Z'_i)_i$, wegen $S:=\bigcup\limits_i Z'_i$ ist es dann auch für $S$ gelöst: Für nicht-offene Zellen geht das per Induktion bzw. genauso wie im vorigen Unterpunkt. Wenn $Z'_i$ nun eine offene Zelle ist, gilt für ein generisches Element $x$ über $A,b$, dass $(x,b)$ generisch von $B^{m+n}$ ist, also in $S_1\cup S_2\cup S_3$. Also ist $Z_i$ entweder in $S_1,S_2$ oder $S_3$ enthalten.
+			\begin{itemize}
+				\item Wenn $Z_i\subseteq S_3$ ist, definiere $$\tilde{G}(\overline{x})=z:\Leftrightarrow z=G(\overline{x},y)\text{ für ein }y\text{ mit }(\overline{x},y)\in Z_i,$$ dann gilt $g=\tilde{G}(\cdot,b_1,\dots,b_{n-1})$ und per Induktion kann man das Problem für $n-1$ lösen.
+				\item Wenn $Z_i\subseteq S_1,S_2$, also $G$ auf $Z_i$ injektiv in der letzten Koordinate ist, wird das Problem durch $\emptyset$ gelöst: Denn sei $a\in A^m\cap S'_i\cap g^{-1}(A)$, also existiert $a'\in A$ mit $a'=g(a)=G(a,b)$, weil $a\in Z'_i$ ist, ist $(a,b)\in Z_i$, also ist wegen Injektivität von $G$ in der letzten Koordinate $b_n$ eindeutig bestimmt mit $(a,b)\in Z_i$ und $a'=G(a,b)$. Das ist aber $A,b_1,\dots,b_{n-1}$-definierbar, also ist $b$ nicht unabhängig über $A$.
+			\end{itemize}
+		\end{itemize}
 	\end{itemize}
 \end{proof}
