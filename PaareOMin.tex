@@ -237,7 +237,7 @@ Wir interessieren uns für die Gestalt von $\lingua_P$-definierbaren Teilmengen 
 \end{proof}
 
 \section{Definierbare eindimensionale Mengen}
-In diesem Abschnitt wird eine zur o-Minimalität ähnliche Charakterisierung von eindimensionalen Mengen in Modellen von $\td$ hergeleitet. Hierbei sei $(B,A)$ vorerst ein beliebiges dichtes Paar und $S\subseteq B$ eine spezielle Menge, als Konvention nehmen wir an, dass $A^0=\{0\}$.
+In diesem Abschnitt wird eine zur o-Minimalität ähnliche Charakterisierung von eindimensionalen Mengen in Modellen von $\td$ hergeleitet. Hierbei sei $(B,A)$ vorerst ein beliebiges dichtes Paar und $S\subseteq B$ eine spezielle Menge, als Konvention nehmen wir an, dass $A^0=\{0\}$. Da $B$ selbst eine spezielle Menge ist, gelten die folgenden Aussagen insbesondere alle auch für Definierbarkeit unabhängig von irgendwelchen Parametermengen.
 TODO: Das noch überarbeiten, \cite{Piz} erwähnen
 
 \begin{lemma}
@@ -266,7 +266,7 @@ TODO: Das noch überarbeiten, \cite{Piz} erwähnen
 \begin{proof}
 	Sei zunächst $X$ gegeben durch $\exists y\in P(\psi(x,y))$ für eine Formel $\psi\in\fF_{1+n}(\lingua_S)$. Die Mengen $F_y:=\psi(B,y)\cap\partial\psi(B,y)$ sind endlich für jedes $y\in M^n$ und weil o-minimale Theorien $\exists^\infty$ eliminieren, ist deren Mächtigkeit uniform beschränkt, sagen wir durch $k$. Sei $Y:=\exists x\psi(x,B)$ und $\lingua_S$-definierbare Funktionen $g_1,\dots,g_k:Y\rightarrow F_y$, sodass $F_y=\{g_1(y),\dots,g_k(y)\}$ für alle $y\in Y$. Als diese Funktionen kann man zum Beispiel die angeordnete Aufzählung der Elemente in $F_y$ nehmen. Dann gilt
 	\begin{align*}
-	X&=\exists y\in P(\psi(x,y))(B,A)=\bigcup\limits_{y\in A^n}\psi(B,y)=\bigcup\limits_{y\in Y\cap A^n}\psi(B,y)=\bigcup\limits_{y\in Y\cap A^n}\psi(B,y)\\&=\bigcup\limits_{y\in Y\cap A^n}(\psi(B,y\cap \partial\psi(B,y))\cap \partial\psi(B,y))\cup\bigcup\limits_{y\in Y\cap A^n}\inn\psi(B,y)\\&=\bigcup\limits_{y\in Y\cap A^n}\{g_1(y),\dots,g_k(y)\}\cup\bigcup\limits_{y\in Y\cap A^n}\inn\psi(B,y)=\bigcup\limits_{i=1}^kg_i(Y\cap A^n)\cup \bigcup\limits_{y\in Y\cap A^n}\inn\psi(B,y).
+	X&=\exists y\in P(\psi(x,y))(B,A)=\bigcup\limits_{y\in A^n}\psi(B,y)=\bigcup\limits_{y\in Y\cap A^n}\psi(B,y)\\&=\bigcup\limits_{y\in Y\cap A^n}(\psi(B,y)\cap \partial\psi(B,y))\cup\bigcup\limits_{y\in Y\cap A^n}\inn\psi(B,y)\\&=\bigcup\limits_{y\in Y\cap A^n}\{g_1(y),\dots,g_k(y)\}\cup\bigcup\limits_{y\in Y\cap A^n}\inn\psi(B,y)\\&=\bigcup\limits_{i=1}^kg_i(Y\cap A^n)\cup \bigcup\limits_{y\in Y\cap A^n}\inn\psi(B,y).
 	\end{align*}
 	Da $X':=\bigcup\limits_{i=1}^kg_i(Y\cap A^n)$ klein ist und $S'':=\bigcup\limits_{y\in Y\cap A^n}\inn\psi(B,y)$ nach dem letzten Lemma $\lingua_S$-definierbar, stimmen $X$ und $X'$ bis auf die kleine $(\lingua_P)_S$-definierbare Menge $S''$ überein. Da Darstellungen \glqq{}$(X\setminus  S')\cup S'',X\ \lingua_S$-definierbar, $S',S''$ klein, $(\lingua_P)_S$-definierbar\grqq{} unter booleschen Kombinationen erhalten bleiben, folgt die Aussage für gute Formeln und daher für alle Mengen. Dabei ist zu beachten, dass Satz \ref{Formelreduzierung} auch hergibt, dass $(\lingua_P)_S$-Formeln zu guten $(\lingua_P)_S$-Formeln äquivalent sind.
 \end{proof}
@@ -282,7 +282,7 @@ TODO: Das noch überarbeiten, \cite{Piz} erwähnen
 \end{proof}
 
 \begin{theorem}\label{Satz 4}
-	Sei $X\subseteq B$ eine $\lingua_P$-definierbare Menge. Dann existiert eine endliche Unterteilung von $B$, sodass für jedes dadurch erzeugte offene Intervall $I$ genau einer der folgenden Fälle gilt:
+	Sei $X\subseteq B$ eine $(\lingua_P)_S$-definierbare Menge. Dann existiert eine endliche $\lingua_S$-definierbare Unterteilung von $B$, sodass für jedes dadurch erzeugte offene Intervall $I$ genau einer der folgenden Fälle gilt:
 	\begin{itemize}
 		\item $I$ ist disjunkt zu $X$.
 		\item $I$ ist Teilmenge von $X$.
@@ -291,8 +291,10 @@ TODO: Das noch überarbeiten, \cite{Piz} erwähnen
 	Für kleine $X$ entfallen die Fälle \glqq{}Teilmenge\grqq{} und \glqq{}koklein\grqq{} natürlich.
 \end{theorem}
 \begin{proof}
+	Zuerst sei $S=B$.\\
 	Die gesuchte Eigenschaft bleibt unter endlichen Vereinigungen und Differenzen von Mengen erhalten (die Eigenschaft für kleine Mengen nur unter Vereinigungen), man muss nur eine Verfeinerung der Unterteilung durchführen. Deswegen sei $X$ zunächst klein und nach dem letzten Lemma gegeben als $X=f(A^n\cap E)$ für ein stetiges, $\lingua$-definierbares $f:E\rightarrow B$ und eine offene Zelle $E\subseteq B^n$. Da definierbarer Zusammenhang unter definierbaren stetigen Funktionen erhalten bleibt, ist $I:=f(E)$ auch definierbar zusammenhängend, weil es $\lingua$-definierbar ist, hat es auch ein Supremum und Infimum in $B\cup\{\pm\infty\}$, ist also ein Intervall (ausnahmsweise sei hier auch ein nichtoffenes Intervall mitgemeint). Wenn $I$ endlich ist, ist auch $X$ endlich und es ist nichts zu zeigen. $X$ ist disjunkt zu $B\setminus I$, nun muss nur noch gezeigt werden, dass $X=X\cap I$ dicht und kodicht in $I$ ist, denn Dichte und Kodichte in nichtoffenen unendlichen Intervallen ist äquivalent zu Dichte und Kodichte in deren Innerem. Aber für dichte Teilmengen werden durch stetige Abbildungen auf dichte Teilmengen abgebildet; da $A^n$ dicht in $B^n$ ist, ist auch $A^n\cap E$ dicht in $E$ und folglich $X$ dicht in $I$. Andererseits muss auch das Komplement von $X$ dicht in $I$ sein, da es sonst ein Intervall ganz in $X$ gäbe, was der Kleinheit mit Lemma \ref{Kleinheit} widerspricht.\\
-	Sei jetzt $X$ nicht mehr klein, dann stimmt es aber bis auf eine kleine Menge mit einer $\lingua$-definierbaren Menge $X'$ überein. Schreibe also $X=(X'\setminus Y)\cup Z$ für $Y$ und $Z$ klein. $X'$ hat als $\lingua$-definierbare Menge sowieso schon die gewünschte Gestalt (sogar nur unter Benutzung der ersten zwei Fälle), $Y$ und $Z$ nach dem ersten Teil des Beweises auch. Da die Darstellung unter Differenz und Vereinigung erhalten bleibt, hat auch $X$ die gewünschte Form.
+	Sei jetzt $X$ nicht mehr klein, dann stimmt es aber bis auf eine kleine Menge mit einer $\lingua$-definierbaren Menge $X'$ überein. Schreibe also $X=(X'\setminus Y)\cup Z$ für $Y$ und $Z$ klein. $X'$ hat als $\lingua$-definierbare Menge sowieso schon die gewünschte Gestalt (sogar nur unter Benutzung der ersten zwei Fälle), $Y$ und $Z$ nach dem ersten Teil des Beweises auch. Da die Darstellung unter Differenz und Vereinigung erhalten bleibt, hat auch $X$ die gewünschte Form.\\
+	Für $S\neq B$ ist die Unterteilung schon $\lingua_S$-definierbar, indem für kleine $(\lingua_P)_S$-definierbare Mengen das $i$-te maximale Intervall, in dem die Menge dicht ist, definierbar über $\lingua_S$ ist. Dann ergibt sich die Aussage genauso wie oben.
 \end{proof}
 
 \begin{lemma}
@@ -341,7 +343,7 @@ Um definierbare Funktionen besser zu verstehen, ist es notwendig, sich mit dem d
 	Sei $(B,A)\models\td$ und sei $F:B\rightarrow B$ eine $\lingua_P$-definierbare Funktion. Dann gibt es $\lingua$-definierbare $f_1,\dots,f_k:B\rightarrow B$ und eine kleine Menge $X\subset B$, sodass für alle $b\in B\setminus X$ ein $f_i$ existiert mit $F(b)=f_i(b)$.
 \end{lemma}
 \begin{proof}
-	Wenn die Aussage nicht gilt, gilt für alle $k\in\setN$, alle kleinen Mengen $X\subset B$ und alle $\lingua$-definierbaren $f_1,\dots,f_k:B\rightarrow B$, dass ein $b\in B\setminus X$ existiert mit $f_i(b)\neq F(b)$ für alle $i$. Also ist der partielle Typ $$\{x\notin X\mid X\text{ klein in }B\}\cup\{F(x)\neq f(x)\mid f:B\rightarrow B\ \lingua_B\text{-definierbar}\}$$ konsistent und es existiert $(B,A)\preceq(B',A')$ und $$b'\in B'\setminus\bigcup\limits_{f:B'^n\rightarrow B'\ \lingua_B\text{-definierbar}}f(A'^n)=B'\setminus A'B$$ mit $F(b')\neq f(b')$ für alle $\lingua_B$-definierbaren $f:B'\rightarrow B'$.\\
+	Wenn die Aussage nicht gilt, gilt für alle $k\in\setN$, alle kleinen Mengen $X\subset B$ und alle $\lingua$-definierbaren $f_1,\dots,f_k:B\rightarrow B$, dass ein $b\in B\setminus X$ existiert mit $f_i(b)\neq F(b)$ für alle $i$. Also ist der partielle Typ $$\{x\notin X\mid X\text{ klein in }B\}\cup\{F(x)\neq f(x)\mid f:B\rightarrow B\ \lingua_B\text{-definierbar}\}$$ (endlich) konsistent und es existiert $(B,A)\preceq(B',A')$ und $$b'\in B'\setminus\bigcup\limits_{f:B'^n\rightarrow B'\ \lingua_B\text{-definierbar}}f(A'^n)=B'\setminus A'B$$ mit $F(b')\neq f(b')$ für alle $\lingua_B$-definierbaren $f:B'\rightarrow B'$.\\
 	Allerdings ist nach Lemma \ref{Unabhängigkeitsregeln} (7.) wegen $b'\in B'\setminus A'B$ die Inklusion $(Bb',A)\subseteq(B',A')$ frei, nach Lemma \ref{Freie Definierbarkeit} ist $Bb'$ also $\lingua_P$-definierbar abgeschlossen. Da $F(b')$ $\lingua_P$-definierbar über $Bb'$ ist, ist es in $Bb'$, also existiert eine $\lingua_B$-definierbare Abbildung $f:B'\rightarrow B'$ mit $f(b')=F(b')$ - ein Widerspruch!
 \end{proof}
 
