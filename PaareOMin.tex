@@ -278,7 +278,12 @@ TODO: Das noch überarbeiten, \cite{Piz} erwähnen
 	Wenn $X$ klein ist, existiert ein $\lingua$-definierbares $g:B^m\rightarrow B$, sodass $X\subseteq g(A^m)$. Setze $X':=g^{-1}(X)\cap A^m=(g\upharpoonright A^m)^{-1}(X)$, das ist $\lingua_P$-definierbar und es gilt $g(X')=X$ wegen $X\subseteq\operatorname{im}(g\upharpoonright A^m)$.\\
 	Beweise die Aussage jetzt induktiv über $m$: Wenn $m=0$ ist, ist $X$ maximal einelementig und entweder gleich $f(\{0\})$ für eine konstante Funktion $f$ oder schon die leere Vereinigung.\\
 	Wenn $m>0$ ist, schreibe $X'$ als Teilmenge von $A^m$ wegen Satz \ref{Definierbare Mengen} in der Form $Y\cap A^m$ für ein $\lingua$-definierbares $Y$. Sei eine Zerlegung $\mathfrak{Z}$ von $Y$ in Zellen gegeben, auf denen $g$ jeweils stetig ist, dann ist $$X=g(Y\cap A^m)=\bigcup\limits_{Z\in\mathfrak{Z}}g(Z\cap A^m).$$
-	Für offene Zellen $Z$ ist so eine Darstellung also schon gefunden. Sei $Z$ nun eine Zelle der Dimension $d<m$ und $\pi:B^d\rightarrow B^m$ eine $\lingua$-definierbare Fortsetzung des kanonischen Homöomorphismus der entsprechenden offenen Zelle $Z'$ nach $Z$, die so gewählt ist, dass $\pi(Z')$ und $\pi(M^d\setminus Z')$ disjunkt sind. Dann gilt mit derselben Argumentation wie im letzten Beweis und mit Anwendung des daraus resultierenden Lemmas $$f(Z\cap A^m)=(f\circ\pi)(A^d\cap Z\cap\pi^{-1}(A^m))=(f\circ\pi)(A^d\cap S)$$ für ein passendes $\lingua$-definierbares $S$. Das ist dann aber schon der Fall eines kleineren $m$ und mit der Induktionsbehauptung folgt die Aussage.
+	Für offene Zellen $Z$ ist so eine Darstellung also schon gefunden. Sei $Z$ nun eine Zelle der Dimension $d<m$ und $\pi:B^d\rightarrow B^m$ eine $\lingua$-definierbare Fortsetzung des kanonischen Homöomorphismus der entsprechenden offenen Zelle $Z'$ nach $Z$. Indem man mit Lemma \ref{Definierbare Mengen} ein $\lingua$-definierbares $E\subseteq B^d$ findet mit $A^d\cap Z'\cap\pi^{-1}(A^m)=A^d\cap E$, erhält man 
+	\begin{align*}
+	f(Z\cap A^m)&=f(\pi|_{Z'}(\pi^{-1}(A^m)))=(f\circ\pi)(Z'\cap\pi^{-1}(A^m))\\&=(f\circ\pi)(A^d\cap Z'\cap\pi^{-1}(A^m))=(f\circ\pi)(A^d\cap E),
+	\end{align*}
+	wobei die mittlere Gleichheit gilt, da $A^d\cap Z'\supseteq Z'\cap\pi^{-1}(A^m)$, weil $\pi|_{Z'}$ die Umkehrabbildung einer Projektion ist.\\
+	Die Gleichung ist dann aber schon der Fall eines kleineren $m$ und mit der Induktionsbehauptung folgt die Aussage.
 \end{proof}
 
 \begin{theorem}\label{Satz 4}
