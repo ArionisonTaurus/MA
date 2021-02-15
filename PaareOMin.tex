@@ -377,11 +377,11 @@ Um definierbare Funktionen besser zu verstehen, ist es notwendig, sich mit dem d
 	Nach Satz $\ref{Satz 3}$ stimmt $f$ bis auf eine kleine Menge $X$ mit einer $\lingua$-definierbaren Funktion $f'$ überein. Wegen o-Minimalität von $T$ ist $f'$ auch stückweise stetig. Unterteile $X$ wie in Satz \ref{Satz 4} und verfeinere die Unterteilung, so dass $f,f'$ auf jedem Intervall stetig sind. Für jedes Intervall $I$ dieser Unterteilung gilt dann entweder, dass $X\cap I$ dicht und kodicht in $I$ ist oder, dass $X\cap I=\emptyset$. Der erste Fall kann nie eintreten, da zwei stetige Funktionen, die auf der dichten Teilmenge $I\setminus X$ übereinstimmen, schon auf ganz $I$ übereinstimmen. Also ist $X$ endlich und $f$ kann mit $\lingua$ definiert werden (nämlich durch $f'$ außerhalb von $X$ und ansonsten manuell).
 \end{proof}
 
-\section{Offene Teilmengen von $\setR^n$}
+\section{Offene und abgeschlossene $\lingua^P$-definierbare Mengen}
 Nach der Beschreibung der Struktur von $\lingua^P$-definierbaren Teilmengen von $B$ liegt die Vermutung nahe, dass offene und abgeschlossene $\lingua^P$-definierbare Mengen schon $\lingua$-definierbar sind.\\
 Zum Beweis dessen benötigt man einen Satz aus \cite{Piz}.
-\begin{theorem}
-	Sei $F:B^n\rightarrow B$ eine $\lingua^P_S$-definierbare Funktion. Dann ist $F$ definierbar in $\lingua_S$ genau dann, wenn für alle speziellen $X\supseteq S$ und alle $\lingua_X$-definierbaren partiellen Funktionen $\alpha: Y\rightarrow B$ mit $Y$ offen in $B$ auch $F\circ\alpha$ schon $\lingua_X$-definierbar ist.
+\begin{theorem}\label{Kurven}
+	Sei $F:B^n\rightarrow B$ eine $\lingua^P_S$-definierbare Funktion. Dann ist $F$ definierbar in $\lingua_S$ genau dann, wenn für alle speziellen $X\supseteq S$ und alle $\lingua_X$-definierbaren partiellen Funktionen $\alpha: Y\rightarrow B^n$ mit $Y$ offen in $B$ auch $F\circ\alpha$ schon $\lingua_X$-definierbar ist.
 \end{theorem}
 
 Als erstes ist festzuhalten, dass die Aussage für Mengen in einer Variable leicht zu sehen ist und man sie nur für offene Mengen zeigen muss.
@@ -394,8 +394,18 @@ Als erstes ist festzuhalten, dass die Aussage für Mengen in einer Variable leic
 \begin{proof}
 	\begin{itemize}
 		\item In der Darstellung von Satz \ref{Satz 4} kann der Fall $Z\cap I$ dicht und kodicht nicht auftreten, weil offene Mengen niemals kodicht sind. Also sind die $\lingua^P_S$-definierbaren offenen Teilmengen von $B$ gerade die endlichen Vereinigungen von Intervallen mit Rand aus $\dcl(S)\cup\{\pm\infty\}$ und Punkten aus $\dcl(S)$ und das ist $\lingua_S$-definierbar.
-		\item Wenn $Z\subseteq B^n$ abgeschlossen und $\lingua^P_S$-definierbar ist.
+		\item Wenn $Z\subseteq B^n$ abgeschlossen und $\lingua^P_S$-definierbar ist, ist $Z^c$ offen und $\lingua^P_S$-definierbar, also $\lingua_S$-definierbar per Voraussetzung. Damit ist $Z$ dann selbst $\lingua_S$-definierbar.
 	\end{itemize}
+\end{proof}
+
+\begin{theorem}
+	Offene und abgeschlossene $\lingua^P_S$-definierbare Mengen sind $\lingua_S$-definierbar.
+\end{theorem}
+\begin{proof}
+	Nach dem vorigen Lemma reicht es, das für offene Mengen zu zeigen, genauer reicht es, die Definierbarkeit für charakteristische Funktionen solcher Mengen zu zeigen. Sei $Z\subseteq B^n$ eine offene $\lingua^P_S$-definierbare Menge und $X\supseteq S$ speziell, $\alpha:Y\rightarrow B^n$ eine $\lingua_X$-definierbare, partielle Funktion und $Y\subseteq B$ offen. Zu zeigen ist für die Anwendung von Satz \ref{Kurven}, dass $\chi_Z\circ\alpha$ definierbar in $\lingua_X$ ist. Man kann annehmen, dass $\alpha$ stetig ist, sonst zerlege $Y$ in Intervalle, auf denen $\alpha$ stetig ist und Punkte; das ändert nichts an irgendwelchen Definierbarkeiten. Man kann dann feststellen, dass $$1=\chi_Z\circ\alpha(x)\Leftrightarrow\alpha(x)\in Z\Leftrightarrow x\in\alpha^{-1}(Z).$$ Da aber $\alpha^{-1}(Z)$ eine $\lingua^P_X$-definierbare Teilmenge von $B$ ist, offen wegen Stetigkeit von $\alpha$ und Offenheit von $Z$ und zusätzlich $X$ speziell ist, ist $\alpha^{-1}(Z)$ nach dem vorigen Lemma $\lingua_X$-definierbar. Also ist $\chi_Z\circ\alpha$ definierbar in $\lingua_X$ durch $$\chi_Z\circ\alpha(x)=\left\{\begin{array}{ll}
+	1&x\in\alpha^{-1}(Z)\\
+	0&\text{sonst}
+	\end{array}\right..$$
 \end{proof}
 
 \newpage
