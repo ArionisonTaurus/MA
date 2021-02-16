@@ -2,12 +2,51 @@
 \chapter{Dichte Paare o-minimaler Strukturen}
 \section{Allgemeine Betrachtungen und Anforderungen an die Theorien}
 
-Viele Techniken und Gedanken aus dem vorigen Kapitel werden jetzt auf o-minimale Theorien übertragen.
+Viele Techniken und Gedanken aus dem vorigen Kapitel werden jetzt auf o-minimale Theorien übertragen. Einführend folgen hier zunächst die wichtigsten Erkenntnisse über diese Theorien, basierend auf \cite{vdDZellzerlegung}.
 
 \begin{definition}
 	Eine $\lingua$-Struktur $\fM$ heißt \textbf{o-minimal}, wenn $\lingua$ eine zweistellige Relation $<$ enthält, deren Interpretation die einer linearen Ordnung ist, und die definierbaren Teilmengen von $\fM$ endliche Vereinigungen von Intervallen und Punkten sind.
 \end{definition}
 
+Induktiv kann man den Begriff einer Zelle in einer solchen Struktur definieren.
+\begin{definition}
+	Sei $\sigma$ eine $\{0,1\}$-wertige endliche Folge der Länge $n$. Eine $\sigma$-Zelle $Z$ in der o-minimalen Struktur $\fM$ ist eine (definierbare) Teilmenge von $M^n$, sodass genau eine der folgenden Möglichkeiten gilt:
+	\begin{itemize}
+		\item $\sigma$ ist die leere Folge, $n=0$ und $Z=B^0=\{0\}$.
+		\item $n=1$ und $Z$ ist entweder Intervall oder Punktmenge.
+		\item Es existiert ein $\sigma'$, eine $\sigma'$-Zelle Z' und eine definierbare stetige Funktion $f:Z'\rightarrow M$, sodass $Z=\operatorname{Graph}(f)$. Außerdem ist $\sigma=\sigma'\textasciicircum0$.
+		\item Es existiert ein $\sigma'$, eine $\sigma'$-Zelle Z' und zwei definierbare stetige Funktionen $f,g:M^{Z'}\cup\{\pm\infty\}$, sodass $f<g$ überall und $$Z=\{(x,y)\in Z'\times M\mid f(x)<y<g(x)\}.$$ Außerdem ist $\sigma=\sigma'\textasciicircum1$.
+	\end{itemize}
+\end{definition}
+\begin{definition}
+	Sei $\fM$ o-minimal. Eine Menge $Z\subseteq M^n$ heißt \textbf{Zelle}, wenn es eine $\{0,1\}$-Folge $\sigma$ der Länge $n$ gibt, sodass $Z$ eine $\sigma$-Zelle ist.
+\end{definition}
+
+Es gibt \glqq{}schöne\grqq{} Zellen, nämlich die offenen. Glücklicherweise ist jede Zelle definierbar homöomorph zu einer offenen Zelle.
+\begin{lemma}
+	Jede $\sigma$-Zelle ist homöomorph zu einer offenen Zelle. Der kanonische Homöomorphismus entsteht dabei durch weglassen der Koordinaten, in denen $\sigma$ den Wert 0 hat. Insbesondere ist der Homöomorphismus definierbar über der selben Menge wie die Zelle.
+\end{lemma}
+
+Wichtigste Grundlage der Arbeit mit o-minimalen Theorien sind die folgenden Aussagen zur \textbf{Zellzerlegung}. Sie stellen quasi eine Verallgemeinerung der Definition von O-Minimalität auf höhere Dimensionen dar und geben die Struktur definierbarer Funktionen an.
+\begin{theorem}
+	In einer o-minimalen Struktur ist jede definierbare Menge eine endliche disjunkte Vereinigung von Zellen. Für jede definierbare (möglicherweise partielle) Funktion gibt es eine Zerlegung des Definitionsbereiches in Zellen, sodass die Funktion auf jeder Zelle stetig ist. Wenn es eine Funktion in einer Variable ist, ist sie nicht nur stückweise stetig, sondern es gibt auch eine Zerlegung, sodass die Funktion auf jedem Stück entweder streng monoton oder konstant ist.
+\end{theorem}
+\begin{remark}
+	Wenn die Menge bzw. die Funktion über einer bestimmten Menge definierbar sind, kann man sich die Zerlegung ebenso über dieser Menge definierbar wählen. Außerdem kann man endlich viele Mengen simultan zerlegen und sie auch so zerlegen, dass die Projektion der Zerlegung wieder eine Zerlegung der Projektion(en) der Menge(n) ist.
+\end{remark}
+
+\begin{corollary}
+	O-Minimale Strukturen eliminieren $\exists^\infty$. Damit ist für jede definierbare Menge die Menge der zu vereinigendenden Punkte und Intervalle uniform beschränkt. Also lässt sich o-Minimalität als Formelmenge beschreiben und ist somit Eigenschaft einer vollständigen Theorie.
+\end{corollary}
+
+\begin{definition}
+	Eine vollständige Theorie sei o-minimal, wenn ein Modell es ist.
+\end{definition}
+
+Ab jetzt geben wir uns ein o-minimales Modell $\fM$ so vor, dass die Ordnung dicht ist.
+\begin{bemdef}
+	Die endliche Folge $\sigma$ zur jeweiligen Zelle $Z$ ist eindeutig bestimmt und daher der Wert $\dim(Z)=\sum\limits_{i=1}^n\sigma(i)$ wohldefiniert. Er wird \textbf{Dimension der Zelle} genannt.
+\end{bemdef}
 
 Im Folgenden halten wir eine vollständige o-minimale Theorie T mit dichter Ordnung in der Sprache $\lingua$ fest und betrachten die Theorie $\tq$ in der Sprache $\lingua^P:=\lingua\cup\{P(x)\}$, sodass die Modelle von $\tq$ Modelle von T sind und in jedem Modell $\fM$ die Menge $P(M)$ ebenfalls Modell von T ist. Schreibe so ein Paar dann als $(B,A)$ mit $A=P(B)$.\\
 Wir setzen voraus, dass T RCF erweitert, insbesondere gilt Definable Choice. Dann sind die Skolemfunktionen definierbar und \OE\ ist $\lingua$ schon so eine definitorische Erweiterung, dass $T$ Quantorenelimination hat und universell axiomatisierbar ist (wobei bei einzelnen Theorien die Frage interessant wäre, welche Skolemfunktionen man dafür überhaupt hinzufügen muss). TODO: braucht man das? Außerdem seien alle Modelle genug saturiert, dass die üblichen Rechenregeln für die Dimension gelten.\\
