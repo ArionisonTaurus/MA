@@ -43,10 +43,15 @@ Wichtigste Grundlage der Arbeit mit o-minimalen Theorien sind die folgenden Auss
 	Eine vollständige Theorie sei o-minimal, wenn eines ihrer Modelle es ist.
 \end{definition}
 
-Ab jetzt geben wir uns ein o-minimales Modell $\fM$ so vor, dass die Ordnung dicht ist.
-\begin{bemdef}
-	Die endliche Folge $\sigma$ zur jeweiligen Zelle $Z$ ist eindeutig bestimmt und daher der Wert $\dim(Z)=\sum\limits_{i=1}^n\sigma(i)$ wohldefiniert. Er wird \textbf{Dimension der Zelle} genannt.
-\end{bemdef}
+Ab jetzt geben wir uns ein o-minimales Modell $\fM$ einer vollständigen $\lingua$-Theorie T so vor, dass die Ordnung dicht ist.
+\begin{lemdef}
+	Die endliche Folge $\sigma$ zur jeweiligen Zelle $Z$ ist eindeutig bestimmt und daher der Wert $\dim(Z)=\sum\limits_{i=1}^n\sigma(i)$ wohldefiniert. Er wird \textbf{Dimension der Zelle} genannt. Für allgemeine definierbare Mengen $X$ sei die \textbf{Dimension} $\dim(X)$ definiert als das Maximum der Zelldimensionen in einer beliebigen Zellzerlegung. Das ist wohldefiniert und rein topologisch definierbar: $\dim(X)\leq n$ genau dann, wenn eine Projektion von $X$ nach $M^n$ nichtleeres Inneres hat. Damit ist die Dimension auch $\lingua$-definierbar.
+\end{lemdef}
+
+Man kann die Dimension auch anders definieren:
+\begin{lemma}
+	In o-minimalen Strukturen erfüllt $\acl=\dcl$ das Austauschprinzip und induziert also einen Dimensionsbegriff für Tupel. Wenn $\fM$ hinreichend saturiert ist und $X\subseteq M^n$ definierbar über $Y$, ist $\dim(X)=\max\{\dim(a/Y)\mid a\in X\}$.
+\end{lemma}
 
 Im Folgenden halten wir eine vollständige o-minimale Theorie T mit dichter Ordnung in der Sprache $\lingua$ fest und betrachten die Theorie $\tq$ in der Sprache $\lingua^P:=\lingua\cup\{P(x)\}$, sodass die Modelle von $\tq$ Modelle von T sind und in jedem Modell $\fM$ die Menge $P(M)$ ebenfalls Modell von T ist. Schreibe so ein Paar dann als $(B,A)$ mit $A=P(B)$.\\
 Wir setzen voraus, dass T RCF erweitert, insbesondere gilt Definable Choice. Dann sind die Skolemfunktionen definierbar und \OE\ ist $\lingua$ schon so eine definitorische Erweiterung, dass $T$ Quantorenelimination hat und universell axiomatisierbar ist (wobei bei einzelnen Theorien die Frage interessant wäre, welche Skolemfunktionen man dafür überhaupt hinzufügen muss). TODO: braucht man das? Außerdem seien alle Modelle genug saturiert, dass die üblichen Rechenregeln für die Dimension gelten.\\
