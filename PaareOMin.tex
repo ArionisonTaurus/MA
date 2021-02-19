@@ -232,7 +232,12 @@ Im Folgenden werden einige Anordnungen von wechselseitigen Inklusionen von Model
 	Es sind trivialer Weise $A_i$ und $A$ unabhängig über $A$ für $i=1,2$, außerdem ist $a$ transzendent über $A_1$ und $b$ transzendent über $A_2$. Nach Lemma \ref{Unabhängigkeitsregeln} (4.) sind also die Einbettungen $(Aa,A)\subseteq(B_1,A_1)$ und $(Ab,A)\subseteq(B_2,A_2)$ frei. Nach dem Beweis zu Satz \ref{BackForth} gibt es also einen Isomorphismus $Aa\cong Ab$, der $A\cong A$ fortsetzt und für den $i(a)=b$ gilt, also gibt es einen Isomorphismus $i:(Aa,A)\cong(Ab,A)$.\\ Wenn \OE\ die beiden Modelle von $\td$ genügend saturiert sind, ist $i$ im B\&F-System, also erfüllen $a$ und $b$ dieselben Formeln.
 \end{proof}
 
-\newpage
+\begin{lemma}
+	Sei $(D,C)\subseteq(B,A)$ frei und $(B,A)\models\td$, sowie $X\subseteq B$ eine kleine $\lingua^P_D$-definierbare Menge. Dann gibt es sogar eine $\lingua_D$-definierbare Funktion $f:B^n\rightarrow B$, die die Kleinheit von $X$ bezeugt.
+\end{lemma}
+\begin{proof}
+	Man kann für $(B,A)$ schon hinreichende Saturiertheit annehmen. Wenn es keine solche Funktion gäbe, wäre $$\{x\in X\}\cup\{x\notin f(A^n)\mid f:B^n\rightarrow B\ D\text{-definierbar}\}$$ eine konsistente Formelmenge über $D$; ihr Erfüller sei $b\in B\setminus DA$. Da $X$ klein ist, kann man den Ordnungstyp von $b$ über $D$ auch durch ein Element $\tilde{b}\in B\setminus(X\cup DA)$ erfüllen. Nach Konstruktion des B\&F-Systems haben $b$ und $\tilde{b}$ dann aber den selben $\lingua^P_D$-Typ über $D$, was im Widerspruch zu $b\in X,\tilde{b}\notin X$ steht.
+\end{proof}
 
 \section{Definierbare Teilmengen von $A^n$}
 Wir interessieren uns für die Gestalt von $\lingua^P$-definierbaren Teilmengen von $A^n$. Dafür braucht man zuerst eine Hilfsaussage für definierbare Mengen in o-minimalen Strukturen.
