@@ -45,7 +45,7 @@ Wichtigste Grundlage der Arbeit mit o-minimalen Theorien sind die folgenden Auss
 
 Ab jetzt geben wir uns ein o-minimales Modell $\fM$ einer vollständigen $\lingua$-Theorie T so vor, dass die Ordnung dicht ist.
 \begin{lemdef}
-	Die endliche Folge $\sigma$ zur jeweiligen Zelle $Z$ ist eindeutig bestimmt und daher der Wert $\dim(Z)=\sum\limits_{i=1}^n\sigma(i)$ wohldefiniert. Er wird \textbf{Dimension der Zelle} genannt. Für allgemeine definierbare Mengen $X$ sei die \textbf{Dimension} $\dim(X)$ definiert als das Maximum der Zelldimensionen in einer beliebigen Zellzerlegung. Das ist wohldefiniert und rein topologisch definierbar: $\dim(X)\leq n$ genau dann, wenn eine Projektion von $X$ nach $M^n$ nichtleeres Inneres hat. Damit ist die Dimension auch $\lingua$-definierbar.
+	Die endliche Folge $\sigma$ zur jeweiligen Zelle $Z$ ist eindeutig bestimmt und daher der Wert $\dim(Z)=\sum\limits_{i=1}^n\sigma(i)$ wohldefiniert. Er wird \textbf{Dimension der Zelle} genannt. Für allgemeine definierbare Mengen $X$ sei die \textbf{Dimension} $\dim(X)$ definiert als das Maximum der Zelldimensionen in einer beliebigen Zellzerlegung, die Dimension der leeren Menge sei 0. Das ist wohldefiniert und rein topologisch definierbar: $\dim(X)\leq n$ genau dann, wenn eine Projektion von $X$ nach $M^n$ nichtleeres Inneres hat. Damit ist die Dimension auch $\lingua$-definierbar.
 \end{lemdef}
 
 Man kann die Dimension auch anders definieren:
@@ -54,7 +54,7 @@ Man kann die Dimension auch anders definieren:
 \end{lemma}
 
 Im Folgenden halten wir eine vollständige o-minimale Theorie T mit dichter Ordnung in der Sprache $\lingua$ fest und betrachten die Theorie $\tq$ in der Sprache $\lingua^P:=\lingua\cup\{P(x)\}$, sodass die Modelle von $\tq$ Modelle von T sind und in jedem Modell $\fM$ die Menge $P(M)$ ebenfalls Modell von T ist. Schreibe so ein Paar dann als $(B,A)$ mit $A=P(B)$.\\
-Wir setzen voraus, dass T RCF erweitert, insbesondere gilt Definable Choice. Dann sind die Skolemfunktionen definierbar und \OE\ ist $\lingua$ schon so eine definitorische Erweiterung, dass $T$ Quantorenelimination hat und universell axiomatisierbar ist (wobei bei einzelnen Theorien die Frage interessant wäre, welche Skolemfunktionen man dafür überhaupt hinzufügen muss). TODO: braucht man das? Außerdem seien alle Modelle genug saturiert, dass die üblichen Rechenregeln für die Dimension gelten.\\
+Wir setzen voraus, dass T RCF erweitert, insbesondere gilt Definable Choice. Dann sind die Skolemfunktionen definierbar und \OE\ ist $\lingua$ schon so eine definitorische Erweiterung, dass $T$ Quantorenelimination hat und universell axiomatisierbar ist (wobei bei einzelnen Theorien die Frage interessant wäre, welche Skolemfunktionen man dafür überhaupt hinzufügen muss). Außerdem seien alle Modelle genug saturiert, dass die üblichen Rechenregeln für die Dimension gelten.\\
 Aus T universell mit Quantorenelimination folgt, dass Unterstrukturen von Modellen von T schon elementare Unterstrukturen sind. Also ist für jede Teilmenge $S$ eines Modells $\dcl(S)$ schon eine elementare Substruktur; zur Vereinfachung bezeichne in Zukunft $AB:=\dcl(A\cup B)$ für zwei Teilmengen $A,B$ eines Modells.\\
 $P$ beschreibt also eine elementare Unterstruktur, mit $\td$ wird nun die Theorie beschrieben, die ausdrückt, dass $P$ eine dichte echte Unterstruktur ist (diese zwei Sachen oder deren Gegenteil müssen auf jeden Fall von der Theorie beschrieben werden, wenn sie vollständig sein soll). Klar ist dann, dass Unterstrukturen von $\td$ automatisch Modelle von $\tq$ sind.\\
 Der Arbeit \cite{VanDenDries} folgend, wird die Vollständigkeit und eine Art von Quantorenelimination für $\td$ gezeigt, die mittels eines Back\&Forth-Systems bewiesen wird, bevor genauer auf einige Eigenschaften von definierbaren Mengen und Abbildungen in $\td$ eingegangen wird. Zunächst ist aber eine genauere Betrachtung von sogenannten kleinen Mengen vonnöten.
@@ -192,7 +192,7 @@ Dieses B\&F-System beweist die Formelreduzierung in $\td$.
 \end{proof}
 
 \begin{corollary}\label{Definierbarkeit aus A}
-	Für ein dichtes Paar $(B,A)$ und $S\subseteq B^n$ eine $A_0$-definierbare Menge in $\lingua^P$ (wobei $A_0\subseteq A$) ist $S\cap A^n$ eine $A_0$-definierbare Menge in $\lingua$.
+	Für ein dichtes Paar $(B,A)$ und $S\subseteq B^n$ eine $\lingua^P_{A_0}$-definierbare Menge (wobei $A_0\subseteq A$) ist $S\cap A^n$ eine $\lingua_{A_0}$-definierbare Menge.
 \end{corollary}
 \begin{proof}
 	Nach der Formelreduzierung sei $S$ \OE\ durch eine gute Formel definiert. Da die Definierbarkeit abgeschlossen unter booleschen Kombinationen ist, reicht es, eine Formel in Reinform zu betrachten.\newpage
@@ -232,7 +232,7 @@ Im Folgenden werden einige Anordnungen von wechselseitigen Inklusionen von Model
 	Es sind trivialer Weise $A_i$ und $A$ unabhängig über $A$ für $i=1,2$, außerdem ist $a$ transzendent über $A_1$ und $b$ transzendent über $A_2$. Nach Lemma \ref{Unabhängigkeitsregeln} (4.) sind also die Einbettungen $(Aa,A)\subseteq(B_1,A_1)$ und $(Ab,A)\subseteq(B_2,A_2)$ frei. Nach dem Beweis zu Satz \ref{BackForth} gibt es also einen Isomorphismus $Aa\cong Ab$, der $A\cong A$ fortsetzt und für den $i(a)=b$ gilt, also gibt es einen Isomorphismus $i:(Aa,A)\cong(Ab,A)$.\\ Wenn \OE\ die beiden Modelle von $\td$ genügend saturiert sind, ist $i$ im B\&F-System, also erfüllen $a$ und $b$ dieselben Formeln.
 \end{proof}
 
-\begin{lemma}
+\begin{lemma}\label{Speziell definierbare kleine Mengen}
 	Sei $(D,C)\subseteq(B,A)$ frei und $(B,A)\models\td$, sowie $X\subseteq B$ eine kleine $\lingua^P_D$-definierbare Menge. Dann gibt es sogar eine $\lingua_D$-definierbare Funktion $f:B^n\rightarrow B$, die die Kleinheit von $X$ bezeugt.
 \end{lemma}
 \begin{proof}
@@ -328,15 +328,15 @@ TODO: Das noch überarbeiten, \cite{Piz} erwähnen
 \end{proof}
 
 \begin{lemma}
-	Sei $X\subseteq B$ eine kleine Teilmenge. Dann ist $X$ eine endliche Vereinigung von Mengen $f(A^n\cap E)$ für $E$ eine offene Zelle und $f:E\rightarrow B$ eine stetige $\lingua$-definierbare Funktion.
+	Sei $X\subseteq B$ eine kleine $\lingua^P_S$-definierbare Teilmenge. Dann ist $X$ eine endliche Vereinigung von Mengen $f(A^n\cap E)$ für $E$ eine offene $\lingua_S$-definierbare Zelle und $f:E\rightarrow B$ eine stetige $\lingua_S$-definierbare Funktion.
 \end{lemma}
 \begin{proof}
-	Wenn $X$ klein ist, existiert ein $\lingua$-definierbares $g:B^m\rightarrow B$, sodass $X\subseteq g(A^m)$. Setze $X':=g^{-1}(X)\cap A^m=(g\upharpoonright A^m)^{-1}(X)$, das ist $\lingua^P$-definierbar und es gilt $g(X')=X$ wegen $X\subseteq\operatorname{im}(g\upharpoonright A^m)$.\\
-	Beweise die Aussage jetzt induktiv über $m$: Wenn $m=0$ ist, ist $X$ maximal einelementig und entweder gleich $f(\{0\})$ für eine konstante Funktion $f$ oder schon die leere Vereinigung.\\
-	Wenn $m>0$ ist, schreibe $X'$ als Teilmenge von $A^m$ wegen Satz \ref{Definierbare Mengen} in der Form $Y\cap A^m$ für ein $\lingua$-definierbares $Y$. Sei eine Zerlegung $\mathfrak{Z}$ von $Y$ in Zellen gegeben, auf denen $g$ jeweils stetig ist, dann ist $$X=g(Y\cap A^m)=\bigcup\limits_{Z\in\mathfrak{Z}}g(Z\cap A^m).$$
-	Für offene Zellen $Z$ ist so eine Darstellung also schon gefunden. Sei $Z$ nun eine Zelle der Dimension $d<m$ und $\pi:B^d\rightarrow B^m$ eine $\lingua$-definierbare Fortsetzung des kanonischen Homöomorphismus der entsprechenden offenen Zelle $Z'$ nach $Z$. Indem man mit Lemma \ref{Definierbare Mengen} ein $\lingua$-definierbares $E\subseteq B^d$ findet mit $A^d\cap Z'\cap\pi^{-1}(A^m)=A^d\cap E$, erhält man 
+	Wenn $X$ klein ist, existiert ein $\lingua$-definierbares $g:B^m\rightarrow B$, sodass $X\subseteq g(A^m)$, nach Lemma \ref{Speziell definierbare kleine Mengen} kann man schon annehmen, dass $g$ über $\dcl(S)$ definierbar ist (denn $(\dcl(S),\dcl(S)\cap A)\subseteq (B,A)$ ist normal), also auch über $S$. Setze $X':=g^{-1}(X)\cap A^m=(g\upharpoonright A^m)^{-1}(X)$, das ist $\lingua^P_S$-definierbar und es gilt $g(X')=X$ wegen $X\subseteq\operatorname{im}(g\upharpoonright A^m)$.\\
+	Beweise die Aussage jetzt induktiv über $m$: Wenn $m=0$ ist, ist $X$ maximal einelementig und entweder gleich $f(\{0\})$ für eine konstante Funktion $f$ oder schon die leere Vereinigung. Wegen Endlichkeit gilt $X\subseteq\dcl(S)$, also ist $f$ \--- sofern es definiert werden muss \--- über $S$ definierbar.\\
+	Wenn $m>0$ ist, schreibe $X'$ als Teilmenge von $A^m$ wegen Lemma \ref{Definierbare Mengen Spezialität} in der Form $Y\cap A^m$ für ein $\lingua_S$-definierbares $Y$. Sei eine Zerlegung $\mathfrak{Z}$ von $Y$ in $\lingua_S$-definierbare Zellen gegeben, auf denen $g$ jeweils stetig ist, dann ist $$X=g(Y\cap A^m)=\bigcup\limits_{Z\in\mathfrak{Z}}g(Z\cap A^m).$$
+	Für offene Zellen $Z$ ist so eine Darstellung also schon gefunden. Sei $Z$ nun eine Zelle der Dimension $d<m$ und $\pi:B^d\rightarrow B^m$ eine $\lingua_S$-definierbare Fortsetzung des kanonischen Homöomorphismus der entsprechenden offenen Zelle $Z'$ nach $Z$. Indem man mit Lemma \ref{Definierbare Mengen Spezialität} ein $\lingua$-definierbares $E\subseteq B^d$ findet mit $A^d\cap Z'\cap\pi^{-1}(A^m)=A^d\cap E$, erhält man 
 	\begin{align*}
-	f(Z\cap A^m)&=f(\pi|_{Z'}(\pi^{-1}(A^m)))=(f\circ\pi)(Z'\cap\pi^{-1}(A^m))\\&=(f\circ\pi)(A^d\cap Z'\cap\pi^{-1}(A^m))=(f\circ\pi)(A^d\cap E),
+	g(Z\cap A^m)&=g(\pi|_{Z'}(\pi^{-1}(A^m)))=(g\circ\pi)(Z'\cap\pi^{-1}(A^m))\\&=(g\circ\pi)(A^d\cap Z'\cap\pi^{-1}(A^m))=(g\circ\pi)(A^d\cap E),
 	\end{align*}
 	wobei die mittlere Gleichheit gilt, da $A^d\cap Z'\supseteq Z'\cap\pi^{-1}(A^m)$, weil $\pi|_{Z'}$ die Umkehrabbildung einer Projektion ist.\\
 	Die Gleichung ist dann aber schon der Fall eines kleineren $m$ und mit der Induktionsbehauptung folgt die Aussage.
@@ -349,13 +349,11 @@ TODO: Das noch überarbeiten, \cite{Piz} erwähnen
 		\item $I$ ist Teilmenge von $X$.
 		\item $X\cap I$ ist dicht \& kodicht in $I$ und entweder ist $X\cap I$ klein oder $I\setminus X$.
 	\end{itemize}
-	Für kleine $X$ entfallen die Fälle \glqq{}Teilmenge\grqq{} und \glqq{}koklein\grqq{} natürlich.
+	Für kleine $X$ entfallen die Fälle \glqq{}Teilmenge\grqq{} und \glqq{}koklein\grqq{}.
 \end{theorem}
 \begin{proof}
-	Zuerst sei $S=B$.\\
-	Die gesuchte Eigenschaft bleibt unter endlichen Vereinigungen und Differenzen von Mengen erhalten (die Eigenschaft für kleine Mengen nur unter Vereinigungen), man muss nur eine Verfeinerung der Unterteilung durchführen. Deswegen sei $X$ zunächst klein und nach dem letzten Lemma gegeben als $X=f(A^n\cap E)$ für ein stetiges, $\lingua$-definierbares $f:E\rightarrow B$ und eine offene Zelle $E\subseteq B^n$. Da definierbarer Zusammenhang unter definierbaren stetigen Funktionen erhalten bleibt, ist $I:=f(E)$ auch definierbar zusammenhängend, weil es $\lingua$-definierbar ist, hat es auch ein Supremum und Infimum in $B\cup\{\pm\infty\}$, ist also ein Intervall (ausnahmsweise sei hier auch ein nichtoffenes Intervall mitgemeint). Wenn $I$ endlich ist, ist auch $X$ endlich und es ist nichts zu zeigen. $X$ ist disjunkt zu $B\setminus I$, nun muss nur noch gezeigt werden, dass $X=X\cap I$ dicht und kodicht in $I$ ist, denn Dichte und Kodichte in nichtoffenen unendlichen Intervallen ist äquivalent zu Dichte und Kodichte in deren Innerem. Aber für dichte Teilmengen werden durch stetige Abbildungen auf dichte Teilmengen abgebildet; da $A^n$ dicht in $B^n$ ist, ist auch $A^n\cap E$ dicht in $E$ und folglich $X$ dicht in $I$. Andererseits muss auch das Komplement von $X$ dicht in $I$ sein, da es sonst ein Intervall ganz in $X$ gäbe, was der Kleinheit mit Lemma \ref{Kleinheit} widerspricht.\\
-	Sei jetzt $X$ nicht mehr klein, dann stimmt es aber bis auf eine kleine Menge mit einer $\lingua$-definierbaren Menge $X'$ überein. Schreibe also $X=(X'\setminus Y)\cup Z$ für $Y$ und $Z$ klein. $X'$ hat als $\lingua$-definierbare Menge sowieso schon die gewünschte Gestalt (sogar nur unter Benutzung der ersten zwei Fälle), $Y$ und $Z$ nach dem ersten Teil des Beweises auch. Da die Darstellung unter Differenz und Vereinigung erhalten bleibt, hat auch $X$ die gewünschte Form.\\
-	Für $S\neq B$ ist die Unterteilung schon $\lingua_S$-definierbar, indem für kleine $\lingua^P_S$-definierbare Mengen das $i$-te maximale Intervall, in dem die Menge dicht ist, definierbar über $\lingua_S$ ist. Dann ergibt sich die Aussage genauso wie oben.
+	Die gesuchte Eigenschaft bleibt unter endlichen Vereinigungen und Differenzen von Mengen erhalten TODO: warum? (die Eigenschaft für kleine Mengen nur unter Vereinigungen), man muss nur eine Verfeinerung der Unterteilung durchführen. Deswegen sei $X$ zunächst klein und nach dem letzten Lemma gegeben als $X=f(A^n\cap E)$ für ein stetiges, $\lingua_S$-definierbares $f:E\rightarrow B$ und eine offene $\lingua_S$-definierbare Zelle $E\subseteq B^n$. Da definierbarer Zusammenhang unter definierbaren stetigen Funktionen erhalten bleibt, ist $I:=f(E)$ auch definierbar zusammenhängend, weil es $\lingua_S$-definierbar ist, hat es auch ein Supremum und Infimum in $B\cup\{\pm\infty\}$, ist also ein Intervall (ausnahmsweise sei hier auch ein nichtoffenes Intervall mitgemeint). Wenn $I$ endlich ist, ist auch $X$ endlich und es ist nichts zu zeigen. $X$ ist disjunkt zu $B\setminus I$, nun muss nur noch gezeigt werden, dass $X=X\cap I$ dicht und kodicht in $I$ ist, denn Dichte und Kodichte in nichtoffenen unendlichen Intervallen ist äquivalent zu Dichte und Kodichte in deren Innerem. Aber für dichte Teilmengen werden durch stetige Abbildungen auf dichte Teilmengen abgebildet; da $A^n$ dicht in $B^n$ ist, ist auch $A^n\cap E$ dicht in $E$ und folglich $X$ dicht in $I$. Andererseits muss auch das Komplement von $X$ dicht in $I$ sein, da es sonst ein Intervall ganz in $X$ gäbe, was der Kleinheit mit Lemma \ref{Kleinheit} widerspricht.\\
+	Sei jetzt $X$ nicht mehr klein, dann stimmt es aber bis auf eine kleine Menge mit einer $\lingua$-definierbaren Menge $X'$ überein. Schreibe also $X=(X'\setminus Y)\cup Z$ für $Y$ und $Z$ klein. $X'$ hat als $\lingua$-definierbare Menge sowieso schon die gewünschte Gestalt (sogar nur unter Benutzung der ersten zwei Fälle), $Y$ und $Z$ nach dem ersten Teil des Beweises auch. Da die Darstellung unter Differenz und Vereinigung erhalten bleibt, hat auch $X$ die gewünschte Form.
 \end{proof}
 
 \begin{lemma}
@@ -381,7 +379,7 @@ Um definierbare Funktionen besser zu verstehen, ist es notwendig, sich mit dem d
 	Sei $(B,A)$ ein dichtes Paar und $A_0\preceq A$. Dann ist $A_0$ definierbar abgeschlossen.
 \end{corollary}
 \begin{proof}
-	Sei $b$ definierbar über $A_0$. Dann ist $b$ insbesondere definierbar über $A$, also in $A$. Nach Folgerung \ref{Definierbarkeit aus A} ist dann $\{a\}=\{a\}\cap A$ schon $\lingua$-definierbar aus $A_0$, also in $A_0$, da $A_0$ elementare Substruktur ist.
+	Sei $b$ definierbar über $A_0$. Dann ist $b$ insbesondere definierbar über $A$, also in $A$. Nach Folgerung \ref{Definierbarkeit aus A} ist dann $\{b\}=\{b\}\cap A$ schon $\lingua$-definierbar aus $A_0$, also in $A_0$, da $A_0$ elementare Substruktur ist.
 \end{proof}
 
 \begin{lemma}\label{Freie Definierbarkeit}
@@ -393,32 +391,34 @@ Um definierbare Funktionen besser zu verstehen, ist es notwendig, sich mit dem d
 \end{proof}
 
 \begin{lemma}
-	Sei $(B,A)\models\td$ und sei $F:A^n\rightarrow A$ eine $\lingua^P$-definierbare Funktion. Dann gibt es in $A$ definierbare $f_1,\dots,f_k:A^n\rightarrow A$, sodass für alle $a\in A^n$ ein $f_i$ existiert mit $F(a)=f_i(a)$.
+	Sei $(B,A)\models\td$ und sei $F:A^n\rightarrow A$ eine $\lingua^P_S$-definierbare Funktion. Dann gibt es $\dcl(S)\cap A$-definierbare (TODO: das gilt doch bestimmt auch ohne $\dcl$??) $f_1,\dots,f_k:A^n\rightarrow A$ in $A$, sodass für alle $a\in A^n$ ein $f_i$ existiert mit $F(a)=f_i(a)$.
 \end{lemma}
 \begin{proof}
-	Wenn die Aussage nicht gilt, gilt für alle $k\in\setN$ und alle in $A$ definierbaren $f_1,\dots,f_k:A^n\rightarrow A$, dass ein $a\in A$ existiert mit $f_i(a)\neq F(a)$ für alle $i$. Also ist der partielle Typ $$\{P(x)\}\cup\{F(x)\neq f(x)\mid f:A^n\rightarrow A\ \lingua_A\text{-definierbar}\}$$ konsistent und es existiert $(B,A)\preceq(B',A')$ und $a'\in A'^n$ mit $F(a')\neq f(a')$ für alle in $A'$ $\lingua_A$-definierbaren $f:A'^n\rightarrow A'$.\\
-	Allerdings ist nach Lemma \ref{Unabhängigkeitsregeln} (6.) wegen $a'\in A'^n$ die Inklusion $(Ba',Aa')\subseteq(B',A')$ frei, nach Lemma \ref{Freie Definierbarkeit} ist $Ba'$ also $\lingua^P$-definierbar abgeschlossen. Da $F(a')$ $\lingua^P$-definierbar über $Ba'$ ist, ist es in $Ba'$, wegen $F:A'^n\rightarrow A'$ ist $F(a')\in A'$. Wegen Unabhängigkeit liegt also $F(a')\in Ba'\cap A'=Aa'$ und es gibt eine $\lingua_A$-definierbare Abbildung $f:A'^n\rightarrow A'$ mit $f(a')=F(a')$ - ein Widerspruch!
+	Man kann annehmen, dass $S$ schon Modell von T ist, ansonsten geht man zu $\dcl(S)$ über.\\
+	Wenn die Aussage nicht gilt, gilt für alle $k\in\setN$ und alle in $A$ über $S\cap A$ definierbaren $f_1,\dots,f_k:A^n\rightarrow A$, dass ein $a\in A$ existiert mit $f_i(a)\neq F(a)$ für alle $i$. Also ist der partielle Typ $$\{P(x)\}\cup\{F(x)\neq f(x)\mid f:A^n\rightarrow A\ \lingua_{S\cap A}\text{-definierbar}\}$$ konsistent und es existiert $(B,A)\preceq(B',A')$ und $a'\in A'^n$ mit $F(a')\neq f(a')$ für alle $\lingua_{S\cap A}$-definierbaren $f:A'^n\rightarrow A'$.\\
+	Allerdings ist die Inklusion $(S,S\cap A)\subseteq (B,A)$ frei, wegen Elementarität auch $(S,S\cap A)\subseteq (B',A')$. Nach Lemma \ref{Unabhängigkeitsregeln} (6.) wegen $a'\in A'^n$ und die Inklusion $(Sa',(S\cap A)a')\subseteq(B',A')$ frei, nach Lemma \ref{Freie Definierbarkeit} ist $Sa'$ also $\lingua^P$-definierbar abgeschlossen. Da $F(a')$ $\lingua^P$-definierbar über $Sa'$ ist, liegt es in $Sa'$, wegen $F:A'^n\rightarrow A'$ ist $F(a')\in A'$. Wegen Unabhängigkeit liegt also $F(a')\in Sa'\cap A'=(S\cap A)a'$ und es gibt eine $\lingua_{S\cap A}$-definierbare Abbildung $f:A'^n\rightarrow A'$ mit $f(a')=F(a')$ - ein Widerspruch!
 \end{proof}
 
 \begin{lemma}
-	Sei $(B,A)\models\td$ und sei $F:B\rightarrow B$ eine $\lingua^P$-definierbare Funktion. Dann gibt es $\lingua$-definierbare $f_1,\dots,f_k:B\rightarrow B$ und eine kleine Menge $X\subset B$, sodass für alle $b\in B\setminus X$ ein $f_i$ existiert mit $F(b)=f_i(b)$.
+	Sei $(B,A)\models\td$ und sei $F:B\rightarrow B$ eine $\lingua^P_S$-definierbare Funktion. Dann gibt es $\lingua_S$-definierbare $f_1,\dots,f_k:B\rightarrow B$ und eine kleine $\lingua^P_S$-definierbare Menge $X\subseteq B$, sodass für alle $b\in B\setminus X$ ein $f_i$ existiert mit $F(b)=f_i(b)$.
 \end{lemma}
 \begin{proof}
-	Wenn die Aussage nicht gilt, gilt für alle $k\in\setN$, alle kleinen Mengen $X\subset B$ und alle $\lingua$-definierbaren $f_1,\dots,f_k:B\rightarrow B$, dass ein $b\in B\setminus X$ existiert mit $f_i(b)\neq F(b)$ für alle $i$. Also ist der partielle Typ $$\{x\notin X\mid X\text{ klein in }B\}\cup\{F(x)\neq f(x)\mid f:B\rightarrow B\ \lingua_B\text{-definierbar}\}$$ (endlich) konsistent und es existiert $(B,A)\preceq(B',A')$ und $$b'\in B'\setminus\bigcup\limits_{f:B'^n\rightarrow B'\ \lingua_B\text{-definierbar}}f(A'^n)=B'\setminus A'B$$ mit $F(b')\neq f(b')$ für alle $\lingua_B$-definierbaren $f:B'\rightarrow B'$.\\
-	Allerdings ist nach Lemma \ref{Unabhängigkeitsregeln} (7.) wegen $b'\in B'\setminus A'B$ die Inklusion $(Bb',A)\subseteq(B',A')$ frei, nach Lemma \ref{Freie Definierbarkeit} ist $Bb'$ also $\lingua^P$-definierbar abgeschlossen. Da $F(b')$ $\lingua^P$-definierbar über $Bb'$ ist, ist es in $Bb'$, also existiert eine $\lingua_B$-definierbare Abbildung $f:B'\rightarrow B'$ mit $f(b')=F(b')$ - ein Widerspruch!
+	\OE\ ist wieder $S$ ein Modell.\\
+	Wenn die Aussage nicht gilt, gilt für alle $k\in\setN$, alle kleinen $\lingua^P_S$-definierbaren Mengen $X\subset B$ und alle $\lingua_S$-definierbaren $f_1,\dots,f_k:B\rightarrow B$, dass ein $b\in B\setminus X$ existiert mit $f_i(b)\neq F(b)$ für alle $i$. Also ist der partielle Typ $$\{x\notin X\mid X\text{ klein, }\lingua^P_S\text{-definierbar}\}\cup\{F(x)\neq f(x)\mid f:B\rightarrow B\ \lingua_S\text{-definierbar}\}$$ (endlich) konsistent und es existiert $(B,A)\preceq(B',A')$ und $$b'\in B'\setminus\bigcup\limits_{f:B'^n\rightarrow B'\ \lingua_S\text{-definierbar}}f(A'^n)=B'\setminus A'S$$ mit $F(b')\neq f(b')$ für alle $\lingua_S$-definierbaren $f:B'\rightarrow B'$.\\
+	Allerdings ist wie im letzten Beweis $(S,S\cap A)\subseteq(B',A')$ frei und nach Lemma \ref{Unabhängigkeitsregeln} (7.) wegen $b'\in B'\setminus A'S$ die Inklusion $(Sb',S\cap A)\subseteq(B',A')$ ebenso, nach Lemma \ref{Freie Definierbarkeit} ist $Sb'$ also $\lingua^P$-definierbar abgeschlossen. Da $F(b')$ $\lingua^P$-definierbar über $Sb'$ ist, ist es in $Sb'$, also existiert eine $\lingua_S$-definierbare Abbildung $f:B'\rightarrow B'$ mit $f(b')=F(b')$ - ein Widerspruch!
 \end{proof}
 
 \begin{theorem}\label{Satz 3}
-	Sei $(B,A)\models\td$ und sei $F:B\rightarrow B$ eine $\lingua^P$-definierbare Funktion. Dann stimmt $F$ auf bis auf eine kleine Menge mit einer $\lingua$-definierbaren Funktion überein.
+	Sei $(B,A)\models\td$ und sei $F:B\rightarrow B$ eine $\lingua^P_S$-definierbare Funktion. Dann stimmt $F$ auf bis auf eine $\lingua^P_S$-definierbare kleine Menge mit einer $\lingua_S$-definierbaren Funktion überein.
 \end{theorem}
 \begin{proof}
-	Nach dem vorigen Lemma existieren $\lingua$-definierbare $f_1,\dots,f_k:B\rightarrow B$ und ein kleines $X$, sodass für alle $b\in B\setminus X$ ein $i$ existiert mit $F(b)=f_i(b)$. Wenn $k=1$ ist, ist das die gewünschte Aussage, wenn nicht, zeige dass man $k$ weiter reduzieren kann. Dafür partitioniere $B$ mit Satz \ref{Satz 4} in $\lingua$-definierbare $E,T,D,K,C\subseteq B$, sodass $E$ endlich ist, alle anderen Mengen dafür offen, 
+	Nach dem vorigen Lemma existieren $\lingua_S$-definierbare $f_1,\dots,f_k:B\rightarrow B$ und ein kleines $\lingua^P_S$-definierbares $X$, sodass für alle $b\in B\setminus X$ ein $i$ existiert mit $F(b)=f_i(b)$. Wenn $k=1$ ist, ist das die gewünschte Aussage, wenn nicht, zeige dass man $k$ weiter reduzieren kann. Dafür partitioniere $B$ mit Satz \ref{Satz 4} in $\lingua_S$-definierbare $E,T,D,K,C\subseteq B$, sodass $E$ endlich ist, alle anderen Mengen dafür offen, 
 	$$T\subseteq\{F=f_1\}, D\cap\{F=f_1\}=\emptyset,K':=K\cap\{F=f_1\}\text{ klein, dicht und kodicht in }K$$ $$\text{sowie }C':=C\cap\{F=f_1\}\text{ koklein, dicht und kodicht in }C.$$
 	Definiere dann $$f:x\mapsto\left\{\begin{array}{ll}
 	f_1(x)&x\in T\cup C\\
 	f_2(x)&\text{sonst}
 	\end{array}\right.$$
-	Die Menge $X':=X\cup E\cup K'\cup (C\setminus C')$ ist klein als Vereinigung von kleinen Mengen und wenn $x\in B\setminus X'$ mit $F(x)\neq f_i(x)$ für $i=3,\dots,k$, dann gibt es folgende Möglichkeiten:
+	Die Menge $X':=X\cup E\cup K'\cup (C\setminus C')$ ist klein als Vereinigung von kleinen Mengen, außerdem $\lingua^P_S$-definierbar, und wenn $x\in B\setminus X'$ mit $F(x)\neq f_i(x)$ für $i=3,\dots,k$, dann gibt es folgende Möglichkeiten:
 	\begin{itemize}
 		\item $x\in T\cup C'\subseteq\{F=f_1\}$: Dann ist $F(x)=f_1(x)=f(x)$.
 		\item $x\in D\cup(K\setminus K')$, also insbesondere $x\notin\{F=f_1\}$: Dann ist $f(x)=f_2(x)$ und wegen $F(x)\neq f_1(x)$ ist $F(x)=f(x)$.
@@ -427,10 +427,10 @@ Um definierbare Funktionen besser zu verstehen, ist es notwendig, sich mit dem d
 \end{proof}
 
 \begin{lemma}\label{Stückweise stetige Abbildungen}
-	Sei $f:B\rightarrow B$ stückweise stetig und $\lingua^P$-definierbar. Dann ist $f$ schon $\lingua$-definierbar.
+	Sei $f:B\rightarrow B$ stückweise stetig und $\lingua^P_S$-definierbar. Dann ist $f$ schon $\lingua_S$-definierbar.
 \end{lemma}
 \begin{proof}
-	Nach Satz $\ref{Satz 3}$ stimmt $f$ bis auf eine kleine Menge $X$ mit einer $\lingua$-definierbaren Funktion $f'$ überein. Wegen o-Minimalität von $T$ ist $f'$ auch stückweise stetig. Unterteile $X$ wie in Satz \ref{Satz 4} und verfeinere die Unterteilung, so dass $f,f'$ auf jedem Intervall stetig sind. Für jedes Intervall $I$ dieser Unterteilung gilt dann entweder, dass $X\cap I$ dicht und kodicht in $I$ ist oder, dass $X\cap I=\emptyset$. Der erste Fall kann nie eintreten, da zwei stetige Funktionen, die auf der dichten Teilmenge $I\setminus X$ übereinstimmen, schon auf ganz $I$ übereinstimmen. Also ist $X$ endlich und $f$ kann mit $\lingua$ definiert werden (nämlich durch $f'$ außerhalb von $X$ und ansonsten manuell).
+	Nach Satz $\ref{Satz 3}$ stimmt $f$ bis auf eine kleine $\lingua^P_S$-definierbare Menge $X$ mit einer $\lingua_S$-definierbaren Funktion $f'$ überein. Wegen o-Minimalität von $T$ ist $f'$ auch stückweise stetig. Unterteile $X$ wie in Satz \ref{Satz 4} und verfeinere die Unterteilung, so dass $f,f'$ auf jedem Intervall stetig sind. Für jedes Intervall $I$ dieser Unterteilung gilt dann entweder, dass $X\cap I$ dicht und kodicht in $I$ ist oder, dass $X\cap I=\emptyset$. Der erste Fall kann nie eintreten, da zwei stetige Funktionen, die auf der dichten Teilmenge $I\setminus X$ übereinstimmen, schon auf ganz $I$ übereinstimmen. Also ist $X$ endlich und $f$ kann mit $\lingua$ definiert werden (nämlich durch $f'$ außerhalb von $X$ und ansonsten manuell). Da diese Unterteilung $\lingua_S$-definierbar ist, ist auch $f$ schon $\lingua_S$-definierbar.
 \end{proof}
 
 \section{Offene und abgeschlossene $\lingua^P$-definierbare Mengen}
