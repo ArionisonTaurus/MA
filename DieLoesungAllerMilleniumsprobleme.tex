@@ -120,27 +120,37 @@
 
 
 \begin{document}
+	\begin{titlepage}
+		\centering
+		$ $\par
+		\vspace{4.5cm}
+		\Huge{\textbf{TODO: Titel überlegen}\par}
+		\vspace{3cm}
+		\large{Masterarbeit von \par}
+		\vspace{0.4cm}
+		\Large{Max Aaron Vollprecht\par}
+		\vspace{0.6cm}
+		\large{Betreuer: Prof. Dr. Amador Martin-Pizarro\par}
+		\vfill
+		\large{\today\par}
+		\vspace{0.6cm}
+		Albert-Ludwigs-Universität Freiburg im Breisgau\\
+		Fakultät für Mathematik und Physik
+	\end{titlepage}
+	\include{Einleitung}
 	\tableofcontents
 	\newpage
-	
-	\addcontentsline{toc}{section}{Notation}
-	\section*{Notation}
-	Im Folgenden seien, wenn nicht weiter erklärt, mit $i,j,k,l,m,n$ immer natürliche Zahlen gemeint, mit hebräischen Buchstaben immer unendliche Kardinalzahlen.\\
-	Oftmals wird nicht zwischen Strukturen und deren Trägermengen unterschieden, insbesondere bei Paaren von Strukturen. Wenn von $\lingua$-Definierbarkeit in einem Modell $\fM$ die Rede ist, ist Definierbarkeit mit $\lingua_M$-Formeln gemeint, bei $\lingua_S$-Definierbarkeit für ein $S\subseteq M$ nur Definierbarkeit mit $\lingua_S$-Formeln. Wenn von $\dcl$ und $\acl$ die Rede ist, ist das immer in der kleinsten Sprache gemeint, falls mehrere verwendet werden.\\
-	Als Topologie wird immer die Ordnungstopologie bzw. deren Produkttopologie verstanden, mit \glqq{}Intervall\grqq{} ist immer ein offenes, nichtleeres Intervall mit Randpunkten in der Struktur oder $\pm\infty$ gemeint. Außerdem sei für $A\prec B$ und $X\subseteq B$ $A$-definierbar in $T$ die Menge $X_A$ die durch dieselbe definierende Formel in $B$ definierbare Menge (für $X\subseteq A$ und $X_B$ natürlich analog). Außerdem sei für Relationen $P$ mit \glqq{}$\exists/\forall x\in P(\dots)$\grqq{} die Formel \glqq{}$\exists x(P(x)\land\dots)/\forall x(P(x)\rightarrow\dots)$\grqq{} gemeint.\\
-	Mit $\abs{\overline{a}}$ ist je nach Kontext unterschiedliches gemeint, einerseits die Supremumsnorm von $\overline{a}$, andererseits die Anzahl der Einträge. Da das eine ein Element der Struktur ist und das andere eine natürliche Zahl, ist immer klar erkennbar, was gemeint ist. Im Allgemeinen wird auch nicht immer zwischen Tupeln und Elementen unterschieden, außer, wenn das für das Verständnis notwendig ist.\\
-	Im modelltheoretischen Kontext ungewöhnlich sind Mengen der Form $\{f=g\},\{f>g\}$ und $\{f<g\}$ für zwei Abbildungen $f,g:X\rightarrow Y$. Hiermit sind die maßtheoretischen Interpretationen dieser Ausdrucksweise ($\{x\in X\mid f(x)=g(x)\},\{x\in X\mid f(x)>g(x)\}$ und $\{x\in X\mid f(x)<g(x)\}$) gemeint.
-	
+	\include{Notation}
 	\include{PaareAlgAbg}
     \include{PaareOMin}
     \newpage
     \appendix
     \include{Anhang}
-    
     \newpage
     \bibliography{quellen}{}
     \addtocontents{toc}{\bigskip}
     \addcontentsline{toc}{section}{Literaturverzeichnis}
     \bibliographystyle{alpha}
-    
+    \newpage
+    \include{Schlussteil}
 \end{document}
