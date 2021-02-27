@@ -266,7 +266,6 @@ Wir interessieren uns für die Gestalt von $\lingua^P$-definierbaren Teilmengen 
 		\item $Y$ ist definierbar in $(A,(R_b)_{b\in B})$ mit der Interpretation $A\models R_b(a)$ genau dann, wenn $0<a<b$ in $B$.
 	\end{enumerate}
 \end{theorem}
-\newpage
 \begin{proof}
 	$\glqq{}1.\Rightarrow 2.\grqq{}:$ Sei $\varphi$ eine $\lingua^P_B$-Formel mit $\varphi(B)=Y$. Zu zeigen ist, dass eine $\lingua_B$-Formel $\psi$ existiert mit $(B,A)\models P(x)\rightarrow(\varphi(x)\leftrightarrow\psi(x))$; das ist genau dann der Fall, wenn $\mathfrak{Th}(B,A)_B\cup\{P(x)\}\cup\{\varphi(x)\}$ und $\mathfrak{Th}(B,A)_B\cup\{P(x)\}\cup\{\neg\varphi(x)\}$ in $\lingua_B$ getrennt werden können. Nach dem Trennungslemma gilt das genau dann, wenn für alle $(B,A)\preceq(D_1,C_1),(D_2,C_2)$ und alle $c_i\in C_i\ (i=1,2)$ mit $(D_1,C_1)\models\varphi(c_1),(D_2,C_2)\models\neg\varphi(c_2)$ eine $\lingua_B$-Formel $\chi$ existiert mit $(D_1,C_1)\models\chi(c_1),(D_2,C_2)\models\neg\chi(c_2)$.\\
 	Seien solche $(D_i,C_i)$ und $c_i$, die die Voraussetzungen von oben erfüllen. Dann ist das die Situation aus Lemma \ref{Gemeinsame Unterstruktur}, denn elementare Erweiterungen sind frei. Also muss ein trennendes $\chi$ wie verlangt existieren, denn ansonsten würden $c_1$ und $c_2$ denselben $\lingua$-Typ erfüllen, aber nicht denselben $\lingua^P$-Typ.\\
@@ -292,8 +291,8 @@ Wir interessieren uns für die Gestalt von $\lingua^P$-definierbaren Teilmengen 
 	Wegen der Spezialität von $D$ gilt, dass die Inklusionen $(D,D\cap A)\subseteq(D_1,C_1),(D_2,C_2)$ frei sind: Wenn $\varphi(c,x)$ nämlich in $(D_i,C_i)$ für ein $i$ die Abhängigkeit von $d\in D^n$ über $C_i$ bezeugt, muss $$\glqq{}\text{Es existiert ein }a'\in P\text{ mit }\varphi(a',x)\text{ bezeugt die Abhängigkeit von }d\text{ über }P\grqq{}$$ in $\mathfrak{Th}(B,A)_D$ gelten, also ist $d$ abhängig über $A$, also wegen Spezialität von $D$ auch abhängig über $D\cap A$. Ab dann kann man den Beweis wie bekannt weiterführen und muss nur $(B,A)$ durch $(D,D\cap A)$ ersetzen.
 \end{proof}
 
-\section{Definierbare eindimensionale Mengen}
-In diesem Abschnitt wird eine zur o-Minimalität ähnliche Charakterisierung von eindimensionalen Mengen in Modellen von $\td$ hergeleitet. Hierbei sei $(B,A)$ vorerst ein beliebiges dichtes Paar und $S\subseteq B$ eine spezielle Menge, als Konvention nehmen wir an, dass $A^0=\{0\}$. Da $B$ selbst eine spezielle Menge ist, gelten die folgenden Aussagen insbesondere alle auch für Definierbarkeit unabhängig von irgendwelchen Parametermengen.
+\section{Definierbare Mengen in einer Variablen}
+In diesem Abschnitt wird eine zur o-Minimalität ähnliche Charakterisierung von Mengen in einer Variable in Modellen von $\td$ hergeleitet. Hierbei sei $(B,A)$ vorerst ein beliebiges dichtes Paar und $S\subseteq B$ eine spezielle Menge, als Konvention nehmen wir an, dass $A^0=\{0\}$. Da $B$ selbst eine spezielle Menge ist, gelten die folgenden Aussagen insbesondere alle auch für Definierbarkeit unabhängig von irgendwelchen Parametermengen.
 TODO: Das noch überarbeiten, \cite{Piz} erwähnen
 
 \begin{lemma}
@@ -316,9 +315,9 @@ TODO: Das noch überarbeiten, \cite{Piz} erwähnen
 	Aus \ref{align 1} folgt, dass $$\bigcup\limits_{y\in (Y\setminus D)\cap A^n}U_y=\bigcup\limits_{y\in Y\setminus D}U_y\setminus(C\setminus\inn C)\cup((C\setminus\inn C)\cap\bigcup\limits_{y\in (Y\setminus D)\cap A^n}U_y)$$ $\lingua_S$-definierbar ist (der letzte Teil ist es wegen Endlichkeit von $C\setminus\inn C$). Also ist auch $$X=\bigcup\limits_{y\in Y\cap A^n}U_y=\bigcup\limits_{y\in (Y\setminus D)\cap A^n}U_y\cup\bigcup\limits_{y\in D\cap A^n}U_y$$ $\lingua_S$-definierbar in $B$.
 \end{proof}
 
-\begin{lemma}
+\begin{theorem}
 	Sei eine $\lingua^P_S$-definierbare Menge $X\subseteq B$. Dann stimmt $X$ bis auf eine kleine $\lingua^P_S$-definierbare Menge mit einer $\lingua_S$-definierbaren Menge $X'$ überein.
-\end{lemma}
+\end{theorem}
 \begin{proof}
 	Sei zunächst $X$ gegeben durch $\exists y\in P(\psi(x,y))$ für eine Formel $\psi\in\fF_{1+n}(\lingua_S)$. Die Mengen $F_y:=\psi(B,y)\cap\partial\psi(B,y)$ sind endlich für jedes $y\in M^n$ und weil o-minimale Theorien $\exists^\infty$ eliminieren, ist deren Mächtigkeit uniform beschränkt, sagen wir durch $k$. Sei $Y:=\exists x\psi(x,B)$ und $\lingua_S$-definierbare Funktionen $g_1,\dots,g_k:Y\rightarrow F_y$, sodass $F_y=\{g_1(y),\dots,g_k(y)\}$ für alle $y\in Y$. Als diese Funktionen kann man zum Beispiel die angeordnete Aufzählung der Elemente in $F_y$ nehmen. Dann gilt
 	\begin{align*}
@@ -352,9 +351,21 @@ TODO: Das noch überarbeiten, \cite{Piz} erwähnen
 	Für kleine $X$ entfallen die Fälle \glqq{}Teilmenge\grqq{} und \glqq{}koklein\grqq{}.
 \end{theorem}
 \begin{proof}
-	Die gesuchte Eigenschaft bleibt unter endlichen Vereinigungen und Differenzen von Mengen erhalten TODO: warum? (die Eigenschaft für kleine Mengen nur unter Vereinigungen), man muss nur eine Verfeinerung der Unterteilung durchführen. Deswegen sei $X$ zunächst klein und nach dem letzten Lemma gegeben als $X=f(A^n\cap E)$ für ein stetiges, $\lingua_S$-definierbares $f:E\rightarrow B$ und eine offene $\lingua_S$-definierbare Zelle $E\subseteq B^n$. Da definierbarer Zusammenhang unter definierbaren stetigen Funktionen erhalten bleibt, ist $I:=f(E)$ auch definierbar zusammenhängend, weil es $\lingua_S$-definierbar ist, hat es auch ein Supremum und Infimum in $B\cup\{\pm\infty\}$, ist also ein Intervall (ausnahmsweise sei hier auch ein nichtoffenes Intervall mitgemeint). Wenn $I$ endlich ist, ist auch $X$ endlich und es ist nichts zu zeigen. $X$ ist disjunkt zu $B\setminus I$, nun muss nur noch gezeigt werden, dass $X=X\cap I$ dicht und kodicht in $I$ ist, denn Dichte und Kodichte in nichtoffenen unendlichen Intervallen ist äquivalent zu Dichte und Kodichte in deren Innerem. Aber für dichte Teilmengen werden durch stetige Abbildungen auf dichte Teilmengen abgebildet; da $A^n$ dicht in $B^n$ ist, ist auch $A^n\cap E$ dicht in $E$ und folglich $X$ dicht in $I$. Andererseits muss auch das Komplement von $X$ dicht in $I$ sein, da es sonst ein Intervall ganz in $X$ gäbe, was der Kleinheit mit Lemma \ref{Kleinheit} widerspricht.\\
-	Sei jetzt $X$ nicht mehr klein, dann stimmt es aber bis auf eine kleine Menge mit einer $\lingua$-definierbaren Menge $X'$ überein. Schreibe also $X=(X'\setminus Y)\cup Z$ für $Y$ und $Z$ klein. $X'$ hat als $\lingua$-definierbare Menge sowieso schon die gewünschte Gestalt (sogar nur unter Benutzung der ersten zwei Fälle), $Y$ und $Z$ nach dem ersten Teil des Beweises auch. Da die Darstellung unter Differenz und Vereinigung erhalten bleibt, hat auch $X$ die gewünschte Form.
+	Sei $X$ zunächst klein und gegeben als $X=f(A^n\cap E)$ für ein stetiges, $\lingua_S$-definierbares $f:E\rightarrow B$ und eine offene $\lingua_S$-definierbare Zelle $E\subseteq B^n$. Da definierbarer Zusammenhang unter definierbaren stetigen Funktionen erhalten bleibt, ist $I:=f(E)$ auch definierbar zusammenhängend, weil es $\lingua_S$-definierbar ist, hat es auch ein Supremum und Infimum in $B\cup\{\pm\infty\}$, ist also ein Intervall (ausnahmsweise sei hier auch ein nichtoffenes Intervall mitgemeint). Wenn $I$ endlich ist, ist auch $X$ endlich und es ist nichts zu zeigen. $X$ ist disjunkt zu $B\setminus I$, nun muss nur noch gezeigt werden, dass $X=X\cap I$ dicht und kodicht in $I$ ist, denn Dichte und Kodichte in nichtoffenen unendlichen Intervallen ist äquivalent zu Dichte und Kodichte in deren Innerem. Aber für dichte Teilmengen werden durch stetige Abbildungen auf dichte Teilmengen abgebildet; da $A^n$ dicht in $B^n$ ist, ist auch $A^n\cap E$ dicht in $E$ und folglich $X$ dicht in $I$. Andererseits muss auch das Komplement von $X$ dicht in $I$ sein, da es sonst ein Intervall ganz in $X$ gäbe, was der Kleinheit mit Satz \ref{Kleinheit} widerspricht.\\
+	Die gesuchte Eigenschaft für kleine Mengen bleibt unter Vereinigungen erhalten. Man muss nur eine Verfeinerung der Unterteilung durchführen und dann ausnutzen, dass endliche Vereinigungen von kleinen Mengen klein sind. Also gilt für $Y$ und $Z$ als kleine Teilmengen eines Intervalls $I$:
+	\begin{itemize}
+		\item $Y\cup Z$ klein
+		\item $Y\cup Z=Y$, wenn $Z=\emptyset$
+		\item $Y\cup Z$ dicht in $I$, wenn $Y$ und $Z$ dicht in $I$
+		\item $Y\cup Z$ kodicht in $I$ als kleine Menge (s. Begr. oben)
+	\end{itemize}
+    Also gilt mit dem letzten Lemma die Aussage für kleine Mengen allgemein.\\
+	Sei jetzt $X$ nicht mehr klein, dann stimmt es aber bis auf eine kleine Menge mit einer $\lingua$-definierbaren Menge $X'$ überein. Schreibe also $X=(X'\cup Y)\setminus Z$ für $Y$ und $Z$ klein und disjunkt. $X'$ ist als $\lingua$-definierbare Menge eine endliche Vereinigung von Punkten und Intervallen, da $Y,Z$  als kleine Mengen die oben beschriebene Gestalt haben, entspricht $X'\cup Y$ der Darstellung ohne den Fall koklein. In der Darstellung der drei Fälle wird der erste durch Subtraktion von $Z$ nicht geändert, der zweite bleibt oder wird zum dritten (2. Teil) und der dritte bleibt auch, da er nur von $Y$ kommt, aber $Y$ und $Z$ disjunkt sind. Also hat $X$ auch so eine Darstellung.
 \end{proof}
+
+\begin{corollary}
+	Jede $\lingua^P_S$-definierbare Menge $X\subseteq B$ hat ein Supremum und Infimum in $\dcl(S)\cup\{\pm\infty\}$.
+\end{corollary}
 
 \begin{lemma}
 	$\td$ eliminiert $\exists^\infty$: Wenn $S\subseteq B^{m+n}$ eine $\lingua^P$-definierbare Menge ist mit $S_x$ endlich für alle $x\in B^m$, dann ist $(\abs{S_x})_{x\in B^m}$ beschränkt.
@@ -364,7 +375,7 @@ TODO: Das noch überarbeiten, \cite{Piz} erwähnen
 	Sei $n>1$. Dann sind für $\pi_{i_1,\dots,i_k}$ als Projektionsabbildung auf die Koordinaten $i_1,\dots,i_k$ jeweils auch $$Y_x:=(\pi_{1,\dots,m+1}(S))_x=(\pi_{m+1}(S_x))$$ und $$Z_x:=(\pi_{1,\dots,m,m+2,\dots,m+n}(S))_x=(\pi_{m+2,\dots,m+n}(S_x))$$ endlich und daher ist nach Induktionsvoraussetzung die Mächtigkeit jeweils uniform beschränkt durch irgendwelche $K,L\in\setN$. Dann gilt aber $$\abs{S_x}\leq \abs{Y_x\times Z_x}=\abs{Y_x}\abs{Z_x},$$ was uniform durch $KL$ beschränkt ist.
 \end{proof}
 
-\section{Definierbare Funktionen}
+\section{Definierbare Funktionen und definierbarer Abschluss}
 Um definierbare Funktionen besser zu verstehen, ist es notwendig, sich mit dem definierbaren Abschluss zu beschäftigen. Damit kann man zeigen, dass definierbare Funktionen in einer Variablen \glqq{}fast überall\grqq{} $\lingua$-definierbar sind.
 
 \begin{lemma}\label{A definierbar abgeschl}
@@ -463,3 +474,7 @@ Als erstes ist festzuhalten, dass die Aussage für Mengen in einer Variable leic
 	0&\text{sonst}
 	\end{array}\right..$$
 \end{proof}
+
+\begin{corollary}
+	Der Abschluss und das Innere von $\lingua^P_S$-definierbaren Mengen sind $\lingua_S$-definierbar.
+\end{corollary}
