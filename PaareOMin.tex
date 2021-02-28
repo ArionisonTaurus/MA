@@ -57,15 +57,30 @@ Im Folgenden halten wir eine vollständige o-minimale Theorie T mit dichter Ordn
 Wir setzen voraus, dass T RCF erweitert, insbesondere gilt Definable Choice. Dann sind die Skolemfunktionen definierbar und \OE\ ist $\lingua$ schon so eine definitorische Erweiterung, dass $T$ Quantorenelimination hat und universell axiomatisierbar ist (wobei bei einzelnen Theorien die Frage interessant wäre, welche Skolemfunktionen man dafür überhaupt hinzufügen muss). Außerdem seien alle Modelle genug saturiert, dass die üblichen Rechenregeln für die Dimension gelten.\\
 Aus T universell mit Quantorenelimination folgt, dass Unterstrukturen von Modellen von T schon elementare Unterstrukturen sind. Also ist für jede Teilmenge $S$ eines Modells $\dcl(S)$ schon eine elementare Substruktur; zur Vereinfachung bezeichne in Zukunft $AB:=\dcl(A\cup B)$ für zwei Teilmengen $A,B$ eines Modells.\\
 $P$ beschreibt also eine elementare Unterstruktur, mit $\td$ wird nun die Theorie beschrieben, die ausdrückt, dass $P$ eine dichte echte Unterstruktur ist (diese zwei Sachen oder deren Gegenteil müssen auf jeden Fall von der Theorie beschrieben werden, wenn sie vollständig sein soll). Klar ist dann, dass Unterstrukturen von $\td$ automatisch Modelle von $\tq$ sind.\\
-Der Arbeit \cite{VanDenDries} folgend, wird die Vollständigkeit und eine Art von Quantorenelimination für $\td$ gezeigt, die mittels eines Back\&Forth-Systems bewiesen wird, bevor genauer auf einige Eigenschaften von definierbaren Mengen und Abbildungen in $\td$ eingegangen wird. Zunächst ist aber eine genauere Betrachtung von sogenannten kleinen Mengen vonnöten.
+Der Arbeit \cite{VanDenDries} folgend, wird in den nächsten Abschnitten die Vollständigkeit und eine Art von Quantorenelimination für $\td$ gezeigt, die mittels eines Back\&Forth-Systems bewiesen wird. Danach werden einige Erkenntnisse aus dem B\&F-System gezogen, bevor die Hauptaussagen dieser Arbeit bewiesen werden. Zunächst ist aber eine genauere Betrachtung von sogenannten kleinen Mengen vonnöten.
 
 \section{Kleine Mengen}
 \begin{definition}
 	Sei $(B,A)\models\td$, dann ist eine $\lingua^P$-definierbare Menge $S\subseteq B$ \textbf{klein}, wenn eine $\lingua$-definierbare Funktion $f:B^n\rightarrow B$ existiert mit $S\subseteq f(A^n)$.
 \end{definition}
 
-\newpage
-In dem folgenden Lemma meint $+,\cdot$ nicht die Operationen aus $\lingua$, sondern neue, beliebige Operationen.
+\begin{lemma}
+	Kleine Mengen in einem dichten Paar bilden ein Ideal bzgl. $\glqq{}\subseteq\grqq{}$.
+\end{lemma}
+\begin{proof}
+	Es gibt kleine Mengen, zum Beispiel Punktmengen, außerdem sind Teilmengen von kleinen Mengen offensichtlich wieder klein.\\
+	Sei jetzt $(B,A)$ ein dichtes Paar und $X,Y$ kleine Mengen, seien $f,g:B^n\rightarrow B$ definierbar mit $X\subseteq f(A^n),Y\subseteq g(A^n)$. \OE\ bilden $f,g$ dabei schon von demselben $B^n$ ab, ansonsten muss man beide mit Dummyvariablen vergrößern. Definiere
+	\begin{align*}
+	h:B^{n+1}&\rightarrow B,\\
+	h(\overline{x},y):=&\left\{\begin{array}{ll}
+	f(\overline{x})&y=0\\
+	g(\overline{x})&\text{sonst}\\
+	\end{array}\right.,
+	\end{align*}
+	das ist $\lingua$-definierbar und es gilt $X\cup Y\subseteq h(A^{n+1})$, also ist $X\cup Y$ auch klein.
+\end{proof}
+
+In dem folgenden Lemma meint $+,\cdot$ nicht unbedingt die Operationen aus $\lingua$, sondern neue, beliebige Operationen.
 
 \begin{lemma}\label{Hilfsaussage Kleinheit}
 	Seien $A\prec B\models\operatorname{T},\ f:B^{n+1}\rightarrow B\ A\text{-definierbar},\ b\in B\setminus A,\ \beta,\gamma\in A\cup\{\pm\infty\}$ mit $\beta<b<\gamma$ und einer angeordneten $A$-definierbaren Körperstruktur $(\cdot,+)$ auf $(\beta,\gamma)=:I$. Dann existieren $a_0,\dots,a_n\in I_A$ mit $$a_nb^n+a_{n-1}b^{n-1}+\dots,a_0\in I\setminus f(A^n\times\{b\}).$$
@@ -112,7 +127,7 @@ In dem folgenden Lemma meint $+,\cdot$ nicht die Operationen aus $\lingua$, sond
 	Wenn $(B,A)$ für ein unendliches $\kappa>\abs{\operatorname{T}}$ ein $\kappa$-saturiertes Modell von $\td$ ist, ist $\dim(B/A)\geq\kappa$.
 \end{lemma}
 \begin{proof}
-	Sei $S$ eine Basis von $B/A$ mit $\abs{S}<\kappa$; zeige nun, dass es kein Erzeugendensystem sein kann. Das folgt aus der Saturation angewandt auf den partiellen Typen $$\{\forall\overline{y}\in P(x\neq t(\overline{y}))\mid t\ \lingua_S\text{-Term}\},$$ der endlich erfüllbar ist, weil die Negation jeder dieser Formeln \glqq{}$x$ ist in einer kleinen Menge\grqq{} impliziert. Wenn der Typ also nicht endlich erfüllbar wäre, würde eine endliche Vereinigung von kleinen Mengen ganz $B$ überdecken. Das kann aber nicht gelten, denn eine endliche Vereinigung von kleinen Mengen ist wieder klein (in der das bezeugenden Abbildung kann man das durch Erhöhen der Dimension des Definitionsbereiches und Fallunterscheidung über eine Koordinate beweisen). TODO: ausführen!
+	Sei $S$ eine Basis von $B/A$ mit $\abs{S}<\kappa$; zeige nun, dass es kein Erzeugendensystem sein kann. Das folgt aus der Saturation angewandt auf den partiellen Typen $$\{\forall\overline{y}\in P(x\neq t(\overline{y}))\mid t\ \lingua_S\text{-Term}\},$$ der endlich erfüllbar ist, weil die Negation jeder dieser Formeln \glqq{}$x$ ist in einer kleinen Menge\grqq{} impliziert. Wenn der Typ also nicht endlich erfüllbar wäre, würde eine endliche Vereinigung von kleinen Mengen ganz $B$ überdecken. Das kann aber nicht gelten, denn eine endliche Vereinigung von kleinen Mengen ist wieder klein.
 \end{proof}
 
 \begin{corollary}\label{Finden transz Elte}
@@ -292,8 +307,7 @@ Wir interessieren uns für die Gestalt von $\lingua^P$-definierbaren Teilmengen 
 \end{proof}
 
 \section{Definierbare Mengen in einer Variablen}
-In diesem Abschnitt wird eine zur o-Minimalität ähnliche Charakterisierung von Mengen in einer Variable in Modellen von $\td$ hergeleitet. Hierbei sei $(B,A)$ vorerst ein beliebiges dichtes Paar und $S\subseteq B$ eine spezielle Menge, als Konvention nehmen wir an, dass $A^0=\{0\}$. Da $B$ selbst eine spezielle Menge ist, gelten die folgenden Aussagen insbesondere alle auch für Definierbarkeit unabhängig von irgendwelchen Parametermengen.
-TODO: Das noch überarbeiten, \cite{Piz} erwähnen
+In diesem Abschnitt wird eine zur o-Minimalität ähnliche Charakterisierung von Mengen in einer Variable in Modellen von $\td$ hergeleitet. Ab jetzt sei $(B,A)$ ein beliebiges dichtes Paar und $S\subseteq B$ eine spezielle Menge, als Konvention nehmen wir an (TODO: nach vorne), dass $A^0=\{0\}$. Da $B$ selbst eine spezielle Menge ist, gelten die folgenden Aussagen insbesondere alle auch für Definierbarkeit unabhängig von irgendwelchen Parametermengen. Angelehnt ist die folgende Vorgehensweise (auch im nächsten Abschnitt) an die Modifikation in \cite{Piz} von \cite{VanDenDries}, Teile konnten noch präziser für spezielle Mengen gemacht werden.
 
 \begin{lemma}
 	Sei $Y\subseteq B^n$ $\lingua_S$-definierbar und $(U_y)_{y\in Y}\subseteq B$ eine Familie von offenen, uniform $\lingua_S$-definierbaren Mengen. Dann ist $$X:=\bigcup\limits_{y\in Y\cap A^n}U_y$$ auch $\lingua_S$-definierbar.
@@ -376,10 +390,10 @@ TODO: Das noch überarbeiten, \cite{Piz} erwähnen
 \end{proof}
 
 \section{Definierbare Funktionen und definierbarer Abschluss}
-Um definierbare Funktionen besser zu verstehen, ist es notwendig, sich mit dem definierbaren Abschluss zu beschäftigen. Damit kann man zeigen, dass definierbare Funktionen in einer Variablen \glqq{}fast überall\grqq{} $\lingua$-definierbar sind.
+Um definierbare Funktionen besser zu verstehen, ist es notwendig, sich mit dem definierbaren Abschluss in $\lingua^P$ zu beschäftigen. Damit kann man zeigen, dass definierbare Funktionen in einer Variablen \glqq{}fast überall\grqq{} $\lingua$-definierbar sind. Wir erinnern uns, dass ein dichtes Paar $(B,A)$ fixiert war und $S\subseteq B$ speziell. Mit \glqq{}definierbar abgeschlossen\grqq{} ist im Folgenden \glqq{}$\lingua^P$-definierbar abgeschlossen\grqq{} gemeint.
 
 \begin{lemma}\label{A definierbar abgeschl}
-	In jedem dichten Paar $(B,A)$ ist $A$ definierbar abgeschlossen.
+	$A$ definierbar abgeschlossen.
 \end{lemma}
 \begin{proof}
 	Sei $b\in B\setminus A$ und $(B,A)\preceq(D,C)$ eine genügend saturierte Elementarerweiterung. Dann wird der Ordnungstyp von $b$ über $A$ auch von einem Element $D\setminus C\ni d\neq b$ realisiert wegen Dichtheit von $D\setminus C$ in $D$ und Saturation.\\
@@ -387,14 +401,14 @@ Um definierbare Funktionen besser zu verstehen, ist es notwendig, sich mit dem d
 \end{proof}
 
 \begin{corollary}
-	Sei $(B,A)$ ein dichtes Paar und $A_0\preceq A$. Dann ist $A_0$ definierbar abgeschlossen.
+	Sei $A_0\preceq A$. Dann ist $A_0$ definierbar abgeschlossen.
 \end{corollary}
 \begin{proof}
 	Sei $b$ definierbar über $A_0$. Dann ist $b$ insbesondere definierbar über $A$, also in $A$. Nach Folgerung \ref{Definierbarkeit aus A} ist dann $\{b\}=\{b\}\cap A$ schon $\lingua$-definierbar aus $A_0$, also in $A_0$, da $A_0$ elementare Substruktur ist.
 \end{proof}
 
 \begin{lemma}\label{Freie Definierbarkeit}
-	Sei $(D,C)\subseteq(B,A)$ frei und $(B,A)$ dichtes Paar. Dann ist $D$ definierbar abgeschlossen in $(B,A)$.
+	Sei $(D,C)\subseteq(B,A)$ frei, dann ist $D$ definierbar abgeschlossen in $(B,A)$.
 \end{lemma}
 \begin{proof}
 	Für eine beliebige Struktur $(B',A')\succeq (B,A)$ gelten die Voraussetzungen ebenso, da $\acl$-Abhängigkeit über $A$ als Teil vom Typen äquivalent ist zu $\acl$-Abhängigkeit über $A'$. Ebenso ist $D$ in $(B,A)$ definierbar abgeschlossen genau dann, wenn es in $(B',A')$ definierbar abgeschlossen ist. Also sei $(B,A)$ jetzt schon \OE\ hinreichend saturiert und $b\in B\setminus D$.\\
@@ -402,7 +416,7 @@ Um definierbare Funktionen besser zu verstehen, ist es notwendig, sich mit dem d
 \end{proof}
 
 \begin{lemma}
-	Sei $(B,A)\models\td$ und sei $F:A^n\rightarrow A$ eine $\lingua^P_S$-definierbare Funktion. Dann gibt es $\dcl(S)\cap A$-definierbare (TODO: das gilt doch bestimmt auch ohne $\dcl$??) $f_1,\dots,f_k:A^n\rightarrow A$ in $A$, sodass für alle $a\in A^n$ ein $f_i$ existiert mit $F(a)=f_i(a)$.
+	Sei $F:A^n\rightarrow A$ eine $\lingua^P_S$-definierbare Funktion. Dann gibt es $\dcl(S)\cap A$-definierbare (TODO: das gilt doch bestimmt auch ohne $\dcl$??) $f_1,\dots,f_k:A^n\rightarrow A$ in $A$, sodass für alle $a\in A^n$ ein $f_i$ existiert mit $F(a)=f_i(a)$.
 \end{lemma}
 \begin{proof}
 	Man kann annehmen, dass $S$ schon Modell von T ist, ansonsten geht man zu $\dcl(S)$ über.\\
@@ -411,7 +425,7 @@ Um definierbare Funktionen besser zu verstehen, ist es notwendig, sich mit dem d
 \end{proof}
 
 \begin{lemma}
-	Sei $(B,A)\models\td$ und sei $F:B\rightarrow B$ eine $\lingua^P_S$-definierbare Funktion. Dann gibt es $\lingua_S$-definierbare $f_1,\dots,f_k:B\rightarrow B$ und eine kleine $\lingua^P_S$-definierbare Menge $X\subseteq B$, sodass für alle $b\in B\setminus X$ ein $f_i$ existiert mit $F(b)=f_i(b)$.
+	Sei $F:B\rightarrow B$ eine $\lingua^P_S$-definierbare Funktion. Dann gibt es $\lingua_S$-definierbare $f_1,\dots,f_k:B\rightarrow B$ und eine kleine $\lingua^P_S$-definierbare Menge $X\subseteq B$, sodass für alle $b\in B\setminus X$ ein $f_i$ existiert mit $F(b)=f_i(b)$.
 \end{lemma}
 \begin{proof}
 	\OE\ ist wieder $S$ ein Modell.\\
@@ -420,7 +434,7 @@ Um definierbare Funktionen besser zu verstehen, ist es notwendig, sich mit dem d
 \end{proof}
 
 \begin{theorem}\label{Satz 3}
-	Sei $(B,A)\models\td$ und sei $F:B\rightarrow B$ eine $\lingua^P_S$-definierbare Funktion. Dann stimmt $F$ auf bis auf eine $\lingua^P_S$-definierbare kleine Menge mit einer $\lingua_S$-definierbaren Funktion überein.
+	Sei $F:B\rightarrow B$ eine $\lingua^P_S$-definierbare Funktion. Dann stimmt $F$ auf bis auf eine $\lingua^P_S$-definierbare kleine Menge mit einer $\lingua_S$-definierbaren Funktion überein.
 \end{theorem}
 \begin{proof}
 	Nach dem vorigen Lemma existieren $\lingua_S$-definierbare $f_1,\dots,f_k:B\rightarrow B$ und ein kleines $\lingua^P_S$-definierbares $X$, sodass für alle $b\in B\setminus X$ ein $i$ existiert mit $F(b)=f_i(b)$. Wenn $k=1$ ist, ist das die gewünschte Aussage, wenn nicht, zeige dass man $k$ weiter reduzieren kann. Dafür partitioniere $B$ mit Satz \ref{Satz 4} in $\lingua_S$-definierbare $E,T,D,K,C\subseteq B$, sodass $E$ endlich ist, alle anderen Mengen dafür offen, 
