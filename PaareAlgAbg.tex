@@ -67,12 +67,10 @@
     	Geht mit Bewertungen, steht zum Beispiel in \cite{SergeLang} (Seite 57, Theorem 3).
     \end{proof}
     
-    \colorbox{red}{Bis hierhin und nicht weiter}
-    
     \begin{lemma}\label{Rechenregeln}
     	\begin{enumerate}
     		\item $K\ld_CL$ impliziert $K\cap L=C$.
-    		\item Wenn $C\subseteq K$ algebraisch und $C\subseteq L$ regulär, dann ist $K\ld_CL$.
+    		\item Wenn $C\subseteq K$ algebraisch und $C\subseteq L$ regulär ist, dann gilt $K\ld_CL$.
     		\item $K\ld_CL$ impliziert $K\ad_CL$.
     		\item $K\ad_CL$ impliziert $\overline{K}\ad_C\overline{L}$.
     		\item Wenn $K\ld_CL, K\subset M$ und $X\subset M$ algebraisch unabhängig über $KL$, dann $K(X)\ld_KKL$.
@@ -81,22 +79,22 @@
     \end{lemma}
     \begin{proof}
     	\begin{enumerate}
-    		\item Die eine Inklusion ist klar. Für die Rückrichtung sei $x\in K\cap L\setminus C$. Dann ist $(1,x)\in K^2$ linear abhängig über $L$ und somit über $C$. Aber dann ist $x$ schon in $C$.
+    		\item Die eine Inklusion gilt, denn $C\subseteq K,L$. Für die Rückrichtung sei $x\in (K\cap L)\setminus C$. Dann ist $(1,x)\in K^2$ linear abhängig über $L$ und somit über $C$. Aber dann ist $x$ schon in $C$.
     		\item Wegen der Regularität gilt $L\ld_C\overline{C}$ und wegen $C\subseteq K\subseteq\overline{C}$ und dem Lemma \ref{Stapellemma} gilt $L\ld_C K$.
-    		\item Seien $k_1,\dots,k_n\in K$ algebraisch abhängig über $L$, das heißt, es gibt ein Polynom $0\neq f(X)=\sum\limits_{\abs{\alpha}\leq m}l_\alpha X^\alpha\in L[X_1,\dots,X_n]$ mit $f(k)=0$, also insbesondere $(k^\alpha)_{\abs{\alpha}\leq m}$ linear abhängig über $L$, per Annahme also auch über $C$. Dann existiert aber eine Linearkombination $\sum\limits_{\abs{\alpha}\leq m}c_\alpha k^\alpha=0$ mit $c_\alpha\in C$ nicht alle Null, und diese bezeugt die algebraische Abhängigkeit über $C$
-    		\item Folgt aus $\dim(\cdot/L)=\dim(\cdot/acl(L))$ als Matroideneigenschaft.
+    		\item Seien $k_1,\dots,k_n\in K$ algebraisch abhängig über $L$, das heißt, es gibt ein Polynom $0\neq f(X)=\sum\limits_{\abs{\alpha}\leq m}l_\alpha X^\alpha\in L[X_1,\dots,X_n]$ mit $f(k)=0$, also insbesondere $(k^\alpha)_{\abs{\alpha}\leq m}$ linear abhängig über $L$, per Annahme also auch über $C$. Dann existiert aber eine Linearkombination $\sum\limits_{\abs{\alpha}\leq m}c_\alpha k^\alpha=0$ mit $c_\alpha\in C$ nicht alle Null, und diese bezeugt die algebraische Abhängigkeit über $C$.
+    		\item Folgt aus $\dim(\cdot/L)=\dim(\cdot/acl(L))$ als Matroideneigenschaft. TODO: sollte ich deutlicher machen, dass ich die $\acl$-Dimension in ACF meine?
     		\item Wegen algebraischer Unabhängigkeit ist $\abs{\overline{x}}=\dim(\overline{x}/KL)\leq\dim(\overline{x}/K)\leq\abs{\overline{x}}$ für alle $\overline{x}\in X$, also sind $X$ und $KL$ im modelltheoretischen Sinne unabhängig über $K$. Das gilt dann aber auch für $K\cup X$ und $KL$, $\acl(K\cup X)$ und $KL$ und auch für $K(X)$ und $KL$, also $K(X)\ad_KKL$.\\
-    		$K(X)\supseteq K$ ist außerdem regulär, denn $K[X]$ hat als $K$-Basis $(x^n)_{x\in X,n\in\setN}$, wie man wegen algebraischer Unabhängigkeit sieht. Diese Basis bleibt aber linear unabhängig über $\overline{K}$, denn sonst wäre ein Polynom in $\overline{K}[X_1,X_2,\dots]$ gefunden, was ein $x\in X$ algebraisiert, also $x\in\acl(X\setminus\{x\}\cup\overline{K})=\acl(X\setminus\{x\}\cup K)$, also wäre $X$ nicht mehr algebraisch unabhängig über $K$. Lemma \ref{Fraktionskörper} $K(X)=\operatorname{Frac}(K[X])\ld_K\overline{K}$.\\
+    		$K(X)\supseteq K$ ist außerdem regulär, denn $K[X]$ hat als $K$-Basis $(x^n)_{x\in X,n\in\setN}$, wie man wegen algebraischer Unabhängigkeit sieht. Diese Basis bleibt aber linear unabhängig über $\overline{K}$, denn sonst wäre ein Polynom in $\overline{K}[X_1,X_2,\dots]$ gefunden, was ein $x\in X$ algebraisiert, also $x\in\acl(X\setminus\{x\}\cup\overline{K})=\acl(X\setminus\{x\}\cup K)$, also wäre $X$ nicht mehr algebraisch unabhängig über $K$. Lemma \ref{Fraktionskörper} besagt dann $K(X)=\operatorname{Frac}(K[X])\ld_K\overline{K}$.\\
     		Also haben wir $K(X)\ad_KKL$ und $K(X)\supseteq K$ regulär, woraus nach Lemma \ref{Das komplizierte Lemma} $K(X)\ld_KKL$ folgt.
     		\item Mit 3. folgt $K\ad_CL$, mit 4. $\overline{K}\ad_C\overline{L}$, mit Lemma \ref{Stapellemma} $K\ad_C\overline{L}$, mit Lemma \ref{Das komplizierte Lemma} $K\ld_C\overline{L}$ (benutze $C\subseteq K$ regulär) und mit noch einmal Lemma \ref{Stapellemma} gilt schließlich für die Einbettungskette $C\subseteq L\subseteq\overline{L}$ die Regularitätsbedingung $LK\ld_L\overline{L}$.
     	\end{enumerate}
     \end{proof}
     
     \section{Paare algebraisch abgeschlossener Körper}
-    Wir wollen Paare $(K,E_K)$ von Körpern betrachten, wobei $E_K\subseteq K$. In der richtigen Sprache haben lassen diese sich axiomatisieren, dort haben echte Paare (d.h. $K\neq E_K$) algebraisch abgeschlossener Körper sogar Quantorenelimination und sind in einer kleineren Sprache modellvollständig. Diese Sprachen und einige der Folgerungen für ihre Strukturen wollen wir hier (angelehnt an \cite{Delon}) einführen:
+    Wir wollen Paare $(K,E_K)$ von Körpern betrachten, wobei $E_K\subseteq K$. In der richtigen Sprache haben lassen diese sich axiomatisieren, dort haben echte Paare (d.h. $K\neq E_K$) algebraisch abgeschlossener Körper mit fixierter Charakteristik sogar Quantorenelimination, sind vollständig und in einer kleineren Sprache modellvollständig. Diese Sprachen und einige der Folgerungen für ihre Strukturen wollen wir hier (angelehnt an \cite{Delon}) einführen:
     
     \begin{definition}
-    	Wir definieren die Sprachen $\lld:=\{0,1,+,-,\cdot,(l_n)_{n\geq2}\},\lf:=\lld\cup\{f_{i,n}\mid n\geq2,1\leq i\leq n\}$ und $\lfc:=\lf\cup\{^{-1}\}$, wobei die $(l_n)$ $n$-stellige Relationen sein sollen und die $f_{i,n}$ $n+1$-stellige partielle Funktionen.
+    	Wir definieren die Sprachen $\lld:=\{0,1,+,-,\cdot,(l_n)_{n\geq2}\},\lf:=\lld\cup\{f_{i,n}\mid n\geq2,1\leq i\leq n\}$ und $\lfc:=\lf\cup\{^{-1}\}$, wobei die $(l_n)_n$ $n$-stellige Relationen sein sollen und die $(f_{i,n})_{i,n}$ $n+1$-stellige partielle Funktionen.
     \end{definition}
     
     \begin{lemma}\label{Symbolik}
@@ -112,7 +110,7 @@
     	Mit dem Ganzen sind echte algebraisch abgeschlossene Paare von Körpern definierbar in allen drei Sprachen $\lld,\lf,\lfc$, nenne die Theorien $\operatorname{ACP}^{\lld},\operatorname{ACP}^{\lf},\operatorname{ACP}^{\lfc}$. Das einzig nicht offensichtliche hierbei ist, dass man in der Theorie sagen muss, dass $\neg l_2(1,x)$ einen Körper definiert.
     \end{lemma}
     
-    An sich wird alles sowieso interdefinierbar zwischen Sprachen sein, aber manchmal ist es klüger, eine spezielle Sprache zu betrachten. Das Ziel ist jetzt, zu beweisen, dass $\operatorname{ACP}^{\lf},\operatorname{ACP}^{\lfc}$ Quantorenelimination haben und $\operatorname{ACP}^{\lld}$ immerhin modellvollständig ist.\\
+    An sich wird alles sowieso interdefinierbar zwischen den Sprachen sein, aber manchmal ist es klüger, eine spezielle Sprache zu betrachten. Die intuitivste Sprache wäre dabei $\lingua^E:\lingua\cup\{E(x)\}$, aber diese hat leider nicht so schöne Eigenschaften (TODO: sollte ich ausführen, wieso?). Das Ziel ist jetzt, zu beweisen, dass $\operatorname{ACP}^{\lf},\operatorname{ACP}^{\lfc}$ Quantorenelimination haben und $\operatorname{ACP}^{\lld}$ immerhin modellvollständig ist.\\
     Dazu müssen wir erst einmal verstehen, wie $\lfc$-Unterstrukturen von $\operatorname{ACP}^{\lfc}$-Modellen aussehen.
     
     \begin{lemma}
@@ -126,9 +124,11 @@
     	&\fA\models l_{\abs{\overline{a}}}(\overline{a})\Leftrightarrow(K,E_K)\models l_{\abs{\overline{a}}}(\overline{a})\\
     	\Leftrightarrow&\ \overline{a}\text{ linear unabhängig über }E_K\Leftrightarrow\overline{a}\text{ linear unabhängig über }E_A,
     	\end{align*}
-    	wobei die letzte Äquivalenz davon herrührt, dass die lineare Abhängigkeit bezeugende Linearkombination sich z.B. durch Projektionen und Nullen als Koeffizienten schreiben lässt und Projektionen von Elementen aus $A$ wegen Unterstruktureigenschaft wieder in $A$ sind. Also stimmen die Interpretationen der $l_n$ in $\fA$ mit denen in $(A,E_A)$ überein und es ist $A\ld_{E_A}E_K$. Da die definierende Formel der $(f_{i,n})$ bis auf die Angabe des Bildbereiches eine Ringformel ist, und da $f_{i,n}(\overline{a})\in E_K\cap A$, stimmen auch die Interpretationen der $f_{i,n}$ in $\fA$ und in $(A,E_A)$ überein. Damit ist $\fA=(A,E_A)$.\\
-    	Die Rückrichtung folgt mit den ersten Zeilen dieses Beweises und, da die definierende Eigenschaft der $f_{n,i}$ \glqq{}fast nur\grqq{} als Ringformel gegeben ist (s.o.).
+    	wobei die letzte Äquivalenz davon herrührt, dass die lineare Abhängigkeit bezeugende Linearkombination sich z.B. mit Projektionen und Nullen als Koeffizienten schreiben lässt und Projektionen von Elementen aus $A$ wegen Unterstruktureigenschaft wieder in $A$ sind. Also stimmen die Interpretationen der $l_n$ in $\fA$ mit denen in $(A,E_A)$ überein und es ist $A\ld_{E_A}E_K$. Da die definierende Formel der $(f_{i,n})$ bis auf die Angabe des Bildbereiches eine Ringformel ist, und da $f_{i,n}(\overline{a})\in E_K\cap A$ für alle $\overline{a}\in A$, für alle $n,i$, stimmen auch die Interpretationen der $f_{i,n}$ in $\fA$ und in $(A,E_A)$ überein. Damit ist $\fA=(A,E_A)$.\\
+    	Die Rückrichtung folgt mit den ersten Zeilen dieses Beweises und, weil die Projektionen $f_{n,i}$ Elemente aus $A$ nach $A$ abbilden. Das sieht man daran, dass man die Koeffizienten einer Linearkombination in eine Abhängigkeitsbedingung umschreiben kann; wenn diese in $E_K$ erfüllt ist, muss sie wegen linearer Disjunktheit auch in $E_A$ erfüllt sein, also sind die Projektionen schon in $E_A$.
     \end{proof}
+
+    \colorbox{red}{Bis hierhin und nicht weiter}
     
     \begin{lemma}\label{transz Erw}
     	Wenn $(A,E_A)\subseteq_{\lfc}(K,E_K)$ und $X\subseteq K$ algebraisch unabhängig über $AE_K$ ist, dann ist $(A(X),E_A)\subseteq_{\lfc}(K,E_K)$.
