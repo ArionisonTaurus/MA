@@ -127,14 +127,13 @@
     	wobei die letzte Äquivalenz davon herrührt, dass die lineare Abhängigkeit bezeugende Linearkombination sich z.B. mit Projektionen und Nullen als Koeffizienten schreiben lässt und Projektionen von Elementen aus $A$ wegen Unterstruktureigenschaft wieder in $A$ sind. Also stimmen die Interpretationen der $l_n$ in $\fA$ mit denen in $(A,E_A)$ überein und es ist $A\ld_{E_A}E_K$. Da die definierende Formel der $(f_{i,n})$ bis auf die Angabe des Bildbereiches eine Ringformel ist, und da $f_{i,n}(\overline{a})\in E_K\cap A$ für alle $\overline{a}\in A$, für alle $n,i$, stimmen auch die Interpretationen der $f_{i,n}$ in $\fA$ und in $(A,E_A)$ überein. Damit ist $\fA=(A,E_A)$.\\
     	Die Rückrichtung folgt mit den ersten Zeilen dieses Beweises und, weil die Projektionen $f_{n,i}$ Elemente aus $A$ nach $A$ abbilden. Das sieht man daran, dass man die Koeffizienten einer Linearkombination in eine Abhängigkeitsbedingung umschreiben kann; wenn diese in $E_K$ erfüllt ist, muss sie wegen linearer Disjunktheit auch in $E_A$ erfüllt sein, also sind die Projektionen schon in $E_A$.
     \end{proof}
-
-    \colorbox{red}{Bis hierhin und nicht weiter}
     
     \begin{lemma}\label{transz Erw}
-    	Wenn $(A,E_A)\subseteq_{\lfc}(K,E_K)$ und $X\subseteq K$ algebraisch unabhängig über $AE_K$ ist, dann ist $(A(X),E_A)\subseteq_{\lfc}(K,E_K)$.
+    	Wenn $(A,E_A)\subseteq_{\lfc}(K,E_K)$ und $X\subseteq K$ algebraisch unabhängig über $AE_K$ ist, dann ist $(A,E_A)\subseteq_{\lfc}(A(X),E_A)\subseteq_{\lfc}(K,E_K)$.
     \end{lemma}
     \begin{proof}
-    	Nach vorigem Lemma ist $A\ld_{E_A}E_K$, daher gilt mit Lemma \ref{Rechenregeln} (5.) $A(X)\ld_{E_A}E_K$ und da $A(X)$ Unterkörper von $K$ ist, gilt mit der Rückrichtung des letzten Lemmas $(A(X),E_A)\subseteq_{\lfc}(K,E_K)$.
+    	Nach vorigem Lemma ist $A\ld_{E_A}E_K$, daher gilt mit Lemma \ref{Rechenregeln} (5.) $A(X)\ld_{E_A}E_K$ und da $A(X)$ Unterkörper von $K$ ist, gilt mit der Rückrichtung des letzten Lemmas $(A(X),E_A)\subseteq_{\lfc}(K,E_K)$.\\
+    	$(A,E_A)\subseteq_{\lfc}(A(X),E_A)$ gilt, weil die Bedingung $A\ld_{E_A} E_A$ immer gilt.
     \end{proof}
     
     \begin{lemma}\label{E-Erw}
@@ -148,7 +147,7 @@
     	Im Falle dass das vorige Lemma auf $(A,E_A)\subseteq_{\lfc}(K,E_K)$, $(\tilde{A},E_{\tilde{A}})\subseteq_{\lfc}(\tilde{K},E_{\tilde{K}})$, $E_A\subseteq B\subseteq E_K$ und $E_{\tilde{A}}\subseteq \tilde{B}\subseteq E_{\tilde{K}}$ angewendet wird und dass gilt $A\cong \tilde{A},B\cong \tilde{B},E_A\cong E_{\tilde{A}}$ (wobei die ersten Isomorphismen den dritten fortsetzen), sind $(AB,B)$ und $(\tilde{A}\tilde{B},\tilde{B})$ schon isomorph als $\lfc$-Strukturen.
     \end{lemma}
     \begin{proof}
-    	Mit Lemma \ref{Tensoren} erhält man wegen $A\ld_{E_A}B,\tilde{A}\ld_{E_{\tilde{A}}}\tilde{B}$ den Isomorphismus $$A[B]\cong A\otimes_{E_A}B\cong \tilde{A}\otimes_{E_{\tilde{A}}}\tilde{B}\cong\tilde{A}[\tilde{B}],$$ der sich zu einem Isomorphismus der Quotientenkörper $AB$ und $\tilde{A}\tilde{B}$ fortsetzt und $A$ auf $\tilde{A}$, $B$ auf $\tilde{B}$ und $E_A$ auf $E_{\tilde{A}}$ abbildet. Als Körperisomorphismus erhält er auch lineare Disjunktheit, weswegen er auch ein $\lfc$-Isomorphismus ist.
+    	Mit Lemma \ref{Tensoren} erhält man wegen $A\ld_{E_A}B,\tilde{A}\ld_{E_{\tilde{A}}}\tilde{B}$ den Isomorphismus $$A[B]\cong A\otimes_{E_A}B\cong \tilde{A}\otimes_{E_{\tilde{A}}}\tilde{B}\cong\tilde{A}[\tilde{B}],$$ der sich zu einem Isomorphismus der Quotientenkörper $AB$ und $\tilde{A}\tilde{B}$ fortsetzt und $A$ auf $\tilde{A}$, $B$ auf $\tilde{B}$ und $E_A$ auf $E_{\tilde{A}}$ abbildet. Als Körperisomorphismus überträgt er auch Linearkombinationen, also auch die Bedeutung der $(l_n)_n$ und $(f_{i,n})_{i,n}$, weswegen er ein $\lfc$-Isomorphismus ist.
     \end{proof}
     
     \begin{lemma}
@@ -182,10 +181,12 @@
     	Wenn ansonsten $a$ algebraisch über $E_KM$ ist, ist $a\in\acl(E_KM)$, also existiert $X\subset E_K$ endlich mit $a\in\acl(MX)$. OBdA sei $X$ jetzt schon ein Oberkörper von $E_M$, wichtig ist nur der endliche Transzendenzgrad über $E_M$. Für einen beliebigen algebraisch abgeschlossenen Zwischenkörper $E_N\subseteq Y\subseteq E_L$ von gleichem Transzendenzgrad (den gibt es, da die Saturation Transzendenzgrad $\infty$ von $E_N\subset E_L$ ergibt) kann $E_M\cong E_N$ fortgesetzt werden zu einem Isomorphismus $X\cong Y$. Diesen kann man wie in Lemma \ref{Fortsetzungslemma} fortsetzen zu einem $\lfc$-Isomorphismus zwischen den Zwischenstrukturen $(\overline{MX},X),(\overline{NY},Y)$, wobei die erste $a$ enthält.\\
     	Wenn $a$ transzendent über $E_KM$ ist, gibt es ein $b\in L$ transzendent über $E_LM$, denn der entsprechende Typ ist konsistent, wenn $\abs{L}>\abs{E_L}$. So etwas lässt sich aber in einer elementaren Oberstruktur erreichen (für die endliche Konsistenz ist die genaue Kardinalität des Transzendenzgrads von $E_L\subset L$ egal) und wenn der Typ dort konsistent ist, dann auch unten.\\
     	$a$ und $b$ erzeugen dann einen Isomorphismus $C:=\overline{M(a)}\overset{\phi}{\cong}\overline{N(b)}$. Setze $$E:=\overline{M(a)}\cap E_K\cap\phi^{-1}(E_L\cap\overline{N(b)}),$$ dann gilt $(C,E)\cong_{\lfc}(\phi(C),\phi(E))$ und $b\in\phi(C)$.\\
-    	Zu zeigen ist nun nur noch $$(M,E_M)\subseteq_{\lfc}(C,E)\subseteq_{\lfc}(K,E_K),(N,E_N)\subseteq_{\lfc}(\phi(C),\phi(E)\subseteq_{\lfc}(K,E_K):$$\\
+    	Zu zeigen ist nun nur noch $$(M,E_M)\subseteq_{\lfc}(C,E)\subseteq_{\lfc}(K,E_K),(N,E_N)\subseteq_{\lfc}(\phi(C),\phi(E))\subseteq_{\lfc}(K,E_K):$$\\
     	Aus $(M,E_M)\subseteq_{\lfc}(K,E_K)$ folgt mit Lemma \ref{transz Erw} $$(M,E_M)\subseteq_{\lfc}(M(a),E_M)\subseteq_{\lfc}(K,E_K),$$ daraus mit Lemma \ref{E-Erw} und $E_M\subseteq E\subseteq E_K$ $$(M,E_M)\subseteq_{\lfc}(M(a)E,E)\subseteq_{\lfc}(K,E_K),$$ daraus folgt mit Lemma \ref{alg Abschl} und $E\subseteq\overline{M(a)}=C$ schließlich $$(M,E_M)\subseteq_{\lfc}(C,E)\subseteq_{\lfc}(K,E_K).$$
+    	Der Teil für $(\phi(C),\phi(E))$ geht analog und wegen $a\in C$ haben wir die gesuchte Fortsetzung gefunden.
     \end{proof}
     
+    \colorbox{red}{Bis hierhin und nicht weiter}
     \newpage
     
     \begin{lemma}\label{Eliminierungsregeln}
