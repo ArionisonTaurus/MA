@@ -186,7 +186,6 @@
     	Der Teil für $(\phi(C),\phi(E))$ geht analog und wegen $a\in C$ haben wir die gesuchte Fortsetzung gefunden.
     \end{proof}
     
-    \colorbox{red}{Bis hierhin und nicht weiter}
     \newpage
     
     \begin{lemma}\label{Eliminierungsregeln}
@@ -222,28 +221,24 @@
     	\end{align*}
     \end{lemma}
     \begin{proof}
-    	Die Rechnung will keiner sehen :)
+    	Durch Fallunterscheidung.
     \end{proof}
+
+    \begin{definition}
+    Wenn es keine Rolle spielt, in welcher Sprache man gerade ist, schreibe einfach \textbf{ACP} für die drei Theorien.
+    \end{definition}
     
     \begin{corollary}\label{Formel-Vereinfachung}
-    	Man kann jede Formel mit Parametern aus $X$ modulo $\operatorname{ACP}^{\lfc}$ schreiben als
-    	\begin{enumerate}
-    		\item quantorenfreie Formel in $\lf_X$ oder
-    		\item boolesche Kombination aus \glqq{}$l_n(\text{Monome mit Koeffizienten in }X)$\grqq{} und\\
-    		\glqq{}(Polynom in $\mathbb{P}[X])(f_{i_1,n_1}(\text{Monome in }X),\dots,f_{i_m,n_m}(\text{Monome in }X))=0$\grqq{},
-    	\end{enumerate}
+    	Man kann jede Formel mit Parametern aus $X$ modulo $\operatorname{ACP}$ schreiben als boolesche Kombination aus \glqq{}$l_n(\text{Monome mit Koeffizienten in }X)$\grqq{} und\\
+    	\glqq{}(Polynom in $\mathbb{P}[X])(f_{i_1,n_1}(\text{Monome in }X),\dots,f_{i_m,n_m}(\text{Monome in }X))=0$\grqq{},
         wobei $\mathbb{P}$ den Primkörper der entsprechenden Charakteristik bezeichne.
     \end{corollary}
     \begin{corollary}
-    	In jedem Modell $(K,E_K)$ ist jede definierbare Menge $X\subset E_K^n$ schon beschreibbar als $X=E_K^n\cap Z$, wobei $Z$ definierbar in der Ringsprache ist. Dementsprechend ist $E(x)$ eine streng minimale Formel und für $e_1,\dots,e_n\in E_K$ ist $\operatorname{RM}(\overline{e})=\dim_{\operatorname{ACL}}(\overline{e})$.
+    	In jedem Modell $(K,E_K)$ ist jede definierbare Menge $X\subset E_K^n$ schon beschreibbar als $X=E_K^n\cap Z$, wobei $Z$ definierbar in der Ringsprache ist. Dementsprechend ist $E(x)$ eine streng minimale Formel und für $e_1,\dots,e_n\in E_K$ ist $\operatorname{RM}(\overline{e}/X)=\dim(\overline{e}/X)$ für alle $X\subseteq K$. TODO: Nochmal nachprüfen, dass das wirklich auch für streng minimale Formeln gilt
     \end{corollary}
     \begin{corollary}
-    	$\operatorname{ACP}^{\lf}$ hat ebenfalls Quantorenelimination. Da in Lemma \ref{Symbolik} gezeigt wurde, dass die $f_{i,n}$ sowohl existenziell als auch universell definierbar sind, ist jede Formel modulo $\operatorname{ACP}^{\lld}$ immerhin universell und $\operatorname{ACP}^{\lld}$ ist modellvollständig.
+    	$\operatorname{ACP}^{\lf}$ hat ebenfalls Quantorenelimination nach Folgerung \ref{Formel-Vereinfachung}. Da in Lemma \ref{Symbolik} gezeigt wurde, dass die $f_{i,n}$ sowohl existenziell als auch universell definierbar sind, ist jede Formel modulo $\operatorname{ACP}^{\lld}$ immerhin universell und $\operatorname{ACP}^{\lld}$ ist modellvollständig.
     \end{corollary}
-    
-    \begin{definition}
-    	Wenn es keine Rolle spielt, in welcher Sprache man gerade ist, schreibe einfach \textbf{ACP} für die drei Theorien.
-    \end{definition}
     
     \begin{corollary}
     	Man kann sich leicht überlegen, dass ACP$\cup\{$\glqq{}Charakteristik=p\grqq{}$\}$ das Primmodell $(\overline{\mathbb{P}(e)},\overline{\mathbb{P}})$ hat für $\mathbb{P}$ als Primkörper und ein beliebiges $e$ transzendent über $\mathbb{P}$.
@@ -259,8 +254,9 @@
     		\item Die Typen eines Elementes $a$ in $\overline{SE_K}\setminus S$ (bestimmt durch den endlichen Transzendenzgrad über $S$ des minimalen Unterkörpers $E_S\subseteq X\subseteq E_K$, sodass $a\in\overline{SX}$, sowie durch den Isomorphietyp des Minimalpoynoms von $a$ über $SX$)
     		\item Den Typ eines Elementes in $K\setminus\overline{SE_K}$
     	\end{itemize}
-        Der erste Typ hat klarerweise Morleyrang 0. Sei $a$ ein Realisator eines Typen der zweiten Art. Dann ist $a$ algebraisch über $S\overline{e}$ für gewisse $e_1,\dots,e_n\in E_K$, also $$\operatorname{RM}(a)\leq\operatorname{RM}(\overline{e})=\dim_{\operatorname{ACL}}(\overline{e})<\omega.$$
+        Der erste Typ hat klarerweise Morleyrang 0. Sei $a$ ein Realisator eines Typen der zweiten Art. Dann ist $a$ algebraisch über $S\overline{e}$ für gewisse $e_1,\dots,e_n\in E_K$, also $$\operatorname{RM}(a/S)\leq\operatorname{RM}(\overline{e}/S)=\dim(\overline{e}/S)<\omega.$$
         Der dritte Typ kann keinen Morleyrang $>\omega$ haben, denn dann müsste es einen Typen mit Morleyrang $\omega$ geben, die anderen Arten von Typen haben aber endlichen Rang. Sei $(a_n)$ eine Folge von Elementen, sodass $n<\operatorname{RM}(a_n)<\omega$ für alle $n\in\setN$ (TODO: sowas gibt es). Dann ist im Stoneraum $\lim\limits_{n\rightarrow\infty}\tp(a_n)=p$ für den Typen $p$ der dritten Art: Denn $a_n$ kann jeweils nicht mehr algebraisch über $SX$ sein für alle $E_S\subset X$ von Transzendenzgrad $\leq n$. Also sind für jede Umgebung, die das Nichterfüllen einer bestimmten Art von Polynom über $SE_K$ beschreibt, fast alle $a_n$ enthalten. Aber diese Umgebungen bestimmen den Typen $p$ eindeutig, also sind für jedes $\phi\in p$ fast alle $\tp(a_n)$ in $\fU_\phi$.\\
         Jedes $\phi\in S_1(S)$ mit $\operatorname{RM}(\phi)<\omega$ ist dann nur in endlich vielen $\tp(a_n)$ enthalten (nämlich maximal $\operatorname{RM}(\phi)$ vielen), also ist $\operatorname{RM}(p)\geq\omega$, damit herrscht Gleichheit.\\
-        Da alle Typen Morleyrang $<\infty$ haben, haben alle Formeln in einer freien Variable Morleyrang $<\infty$ und die Theorie ist $\omega$-stabil.
+        Da alle Typen Morleyrang $<\infty$ haben, haben alle Formeln in einer freien Variable Morleyrang $<\infty$ und die Theorie ist $\omega$-stabil.\\
+        Alternativ gibt es nicht mehr Typen über $S$ als $\abs{S}+\aleph_0$, auch das beweist die $\omega$-Stabilität.
     \end{proof}
