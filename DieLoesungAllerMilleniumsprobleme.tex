@@ -98,6 +98,19 @@
 \newtheorem*{bem}{Bemerkung}
 \newtheorem*{erinn}{Erinnerung}
 
+\makeatletter
+\newenvironment{proof2}[1][\proofname]{\par
+	\pushQED{\hfill$\blacksquare$}%
+	\normalfont \topsep6\p@\@plus6\p@\relax
+	\trivlist
+	\item\relax
+	{\itshape
+		#1\@addpunct{.}}\hspace\labelsep\ignorespaces
+}{%
+	\popQED\endtrivlist\@endpefalse
+}
+\makeatother
+
 \txisection{chapter}{\normalfont \huge \bfseries }
 \txisection{section}{\normalfont \Large \bfseries }
 
