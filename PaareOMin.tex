@@ -58,7 +58,7 @@ Man kann die Dimension auch anders definieren:
 
 Im Folgenden halten wir eine vollständige o-minimale Theorie T mit dichter Ordnung in der Sprache $\lingua$ fest und betrachten die Theorie $\tq$ in der Sprache $\lingua^P:=\lingua\cup\{P(x)\}$, sodass die Modelle von $\tq$ Modelle von T sind und in jedem Modell $\fM$ die Menge $P(M)$ ebenfalls Modell von T ist. Schreibe so ein Paar dann als $(B,A)$ mit $A=P(B)$.\\
 Wir setzen voraus, dass T RCF erweitert, insbesondere gilt Definable Choice. Dann sind Skolemfunktionen definierbar und \OE\ ist $\lingua$ schon so eine definitorische Erweiterung, dass T Quantorenelimination hat und universell axiomatisierbar ist (wobei bei einzelnen Theorien die Frage interessant wäre, welche Skolemfunktionen man dafür überhaupt hinzufügen muss). Außerdem seien alle Modelle genug saturiert, dass die üblichen Rechenregeln für die Dimension gelten.\\
-Aus T universell mit Quantorenelimination folgt, dass Unterstrukturen von Modellen von T schon elementare Unterstrukturen sind. Also ist für jede Teilmenge $S$ eines Modells $\dcl(S)$ schon eine elementare Substruktur; zur Vereinfachung bezeichne in Zukunft $AB:=\dcl(A\cup B)$ für zwei Teilmengen $A,B$ eines Modells.\\
+Aus T universell mit Quantorenelimination folgt, dass Unterstrukturen von Modellen von T schon elementare Unterstrukturen sind. Also ist für jede Teilmenge $S$ eines Modells $\dcl(S)$ schon eine elementare Substruktur; zur Vereinfachung bezeichne in Zukunft $AB:=\dcl(A\cup B)=\langle A\cup B\rangle_\lingua$ für zwei Teilmengen $A,B$ eines Modells.\\
 $P$ beschreibt also eine elementare Unterstruktur, mit $\td$ wird nun die Theorie beschrieben, die ausdrückt, dass $P$ eine dichte echte Unterstruktur ist (diese zwei Sachen oder deren Gegenteil müssen auf jeden Fall von der Theorie beschrieben werden, wenn sie vollständig sein soll). Klar ist dann, dass Unterstrukturen von $\td$ automatisch Modelle von $\tq$ sind.\\
 Der Arbeit \cite{VanDenDries} folgend, wird in den nächsten Abschnitten die Vollständigkeit und eine Art von Quantorenelimination für $\td$ gezeigt, die mittels eines Back\&Forth-Systems bewiesen wird. Danach werden einige Erkenntnisse aus dem B\&F-System gezogen, bevor die Hauptaussagen dieser Arbeit bewiesen werden. Zunächst ist aber eine genauere Betrachtung von sogenannten kleinen Mengen vonnöten.
 
@@ -230,7 +230,7 @@ Im Folgenden werden einige Anordnungen von wechselseitigen Inklusionen von Model
 \end{lemma}
 \begin{proof}
 	$\glqq{}1.\Rightarrow2.\grqq{}:$ Diese Richtung ist schon aus Lemma \ref{Unabhängigkeitsregeln} (5.) bekannt.\\
-	$\glqq{}2.\Rightarrow1.\grqq{}:$ Finde $(\abs{B}+\abs{\operatorname{T}})^+$-saturierte Strukturen $$(B,A)\preceq(B',A'),(D,C)\preceq(D',C');$$ es ist dann $(D,C)$ eine gemeinsame Unterstruktur und $(D,C)\subseteq(D',C')$ ist frei nach dem Beweis der Gegenrichtung. Außerdem sind nach Voraussetzung $D$ und $A$ unabhängig über $C$, da aber Unabhängigkeit von Tupeln in $D$ über $A$ auch über $A'$ erhalten bleibt (da $(B',A')$ elementare Oberstruktur), ist auch $(D,C)\subseteq(B',A')$ frei. Also ist die Identität auf $(D,C)$ im Back\&Forth-System, daher elementare Abbildung. Daraus folgt für alle $\lingua^P_D$-Formeln $\varphi$, dass $$(D,C)\models\phi\Leftrightarrow(D',C')\models\varphi\Leftrightarrow(B',A')\models\varphi\Leftrightarrow(B,A)\models\varphi.$$
+	$\glqq{}2.\Rightarrow1.\grqq{}:$ Finde $(\abs{B}+\abs{\operatorname{T}})^+$-saturierte Strukturen $$(B,A)\preceq(B',A'),(D,C)\preceq(D',C');$$ es ist dann $(D,C)$ eine gemeinsame Unterstruktur und $(D,C)\subseteq(D',C')$ ist frei nach dem Beweis der Gegenrichtung. Außerdem sind nach Voraussetzung $D$ und $A$ unabhängig über $C$, also wird Unabhängigkeit von Tupeln in $D$ über $C$ \glqq{}hochgegeben\grqq{} über $A$, da aber Unabhängigkeit von Tupeln in $D\subseteq B$ über $A$ auch über $A'$ erhalten bleibt (da $(B',A')$ elementare Oberstruktur), ist auch $(D,C)\subseteq(B',A')$ frei. Also ist die Identität auf $(D,C)$ im Back\&Forth-System, daher elementare Abbildung. Daraus folgt für alle $\lingua^P_D$-Formeln $\varphi$, dass $$(D,C)\models\phi\Leftrightarrow(D',C')\models\varphi\Leftrightarrow(B',A')\models\varphi\Leftrightarrow(B,A)\models\varphi.$$
 \end{proof}
 
 \begin{lemma}\label{Gemeinsame Unterstruktur}
@@ -241,23 +241,23 @@ Im Folgenden werden einige Anordnungen von wechselseitigen Inklusionen von Model
 \end{proof}
 
 \begin{corollary}
-	Wenn man sich solch ein Paar $(a,b)$ beliebig wählt (z.B. $a=b=0$), sind in dem Typen auch die parameterfreien $\lingua^P_B$-Formeln, die in $(B_1,A_1)$ bzw. $(B_2,A_2)$ gelten. Also gelten dieselben Formeln, was als $(B_1,A_1)\equiv_B(B_2,A_2)$ geschrieben wird.
+	Wenn man sich solch ein Paar $(a,b)$ beliebig wählt (z.B. $a=b=0$), sind in dem Typen auch die parameterfreien $\lingua^P_B$-Formeln, die in $(B_1,A_1)$ bzw. $(B_2,A_2)$ gelten. Also gelten dieselben Formeln, was als $(B_1,A_1)\equiv_B(B_2,A_2)$ geschrieben wird und Lemma \ref{freie Inklusionen} verallgemeinert.
 \end{corollary}
 
 \begin{lemma}\label{selber Schnitt}
 	Seien $(B_1,A_1),(B_2,A_2)$ zwei dichte Paare und $A\subseteq A_1\cap A_2$ eine gemeinsame Substruktur, sowie $a\in B_1\setminus A_1,\ b\in B_2\setminus A_2$, die den gleichen Ordnungstyp über $A$ haben. Dann haben $a$ und $b$ sogar den gleichen $\lingua^P$-Typ über $A$.
 \end{lemma}
 \begin{proof}
-	Es sind trivialer Weise $A_i$ und $A$ unabhängig über $A$ für $i=1,2$, außerdem ist $a$ transzendent über $A_1$ und $b$ transzendent über $A_2$. Nach Lemma \ref{Unabhängigkeitsregeln} (4.) sind also die Einbettungen $(Aa,A)\subseteq(B_1,A_1)$ und $(Ab,A)\subseteq(B_2,A_2)$ frei. Nach dem Beweis zu Satz \ref{BackForth} gibt es also einen Isomorphismus $Aa\cong Ab$, der $A\cong A$ fortsetzt und für den $i(a)=b$ gilt, also gibt es einen Isomorphismus $i:(Aa,A)\cong(Ab,A)$.\\ Wenn \OE\ die beiden Modelle von $\td$ genügend saturiert sind, ist $i$ im B\&F-System, also erfüllen $a$ und $b$ dieselben Formeln.
+	Es sind trivialer Weise $A_i$ und $A$ unabhängig über $A$ für $i=1,2$, außerdem ist $a$ transzendent über $A_1$ und $b$ transzendent über $A_2$. Nach Lemma \ref{Unabhängigkeitsregeln} (4.) sind also die Einbettungen $(Aa,A)\subseteq(B_1,A_1)$ und $(Ab,A)\subseteq(B_2,A_2)$ frei. Nach dem Beweis zu Satz \ref{BackForth} gibt es einen Isomorphismus $Aa\cong Ab$, der $A\cong A$ fortsetzt und für den $i(a)=b$ gilt, also einen Isomorphismus $i:(Aa,A)\cong(Ab,A)$.\\ Wenn \OE\ die beiden Modelle von $\td$ genügend saturiert sind, ist $i$ im B\&F-System, also erfüllen $a$ und $b$ dieselben $\lingua^P_A$-Formeln.
 \end{proof}
 
 \begin{lemma}\label{Speziell definierbare kleine Mengen}
 	Sei $(D,C)\subseteq(B,A)$ frei und $(B,A)\models\td$, sowie $X\subseteq B$ eine kleine $\lingua^P_D$-definierbare Menge. Dann gibt es sogar eine $\lingua_D$-definierbare Funktion $f:B^n\rightarrow B$, die die Kleinheit von $X$ bezeugt.
 \end{lemma}
 \begin{proof}
-	Man kann für $(B,A)$ schon hinreichende Saturiertheit annehmen. Wenn es keine solche Funktion gäbe, wäre $$\{x\in X\}\cup\{x\notin f(A^n)\mid f:B^n\rightarrow B\ D\text{-definierbar}\}$$ eine konsistente Formelmenge über $D$; ihr Erfüller sei $b\in B\setminus DA$. Da $X$ klein ist, kann man den Ordnungstyp von $b$ über $D$ auch durch ein Element $\tilde{b}\in B\setminus(X\cup DA)$ erfüllen. Nach Konstruktion des B\&F-Systems haben $b$ und $\tilde{b}$ dann aber den selben $\lingua^P_D$-Typ über $D$, was im Widerspruch zu $b\in X,\tilde{b}\notin X$ steht.
+	Man kann für $(B,A)$ schon hinreichende Saturiertheit annehmen. Wenn es keine solche Funktion gäbe, wäre $$\{x\in X\}\cup\{x\notin f(A^n)\mid f:B^n\rightarrow B\ D\text{-definierbar}\}$$ eine konsistente Formelmenge über $D$; ihr Erfüller sei $b\in B\setminus DA$. Da $X$ klein ist, kann man den Ordnungstyp von $b$ über $D$ auch durch ein Element $\tilde{b}\in B\setminus(X\cup DA)$ erfüllen wie in Folgerung \ref{Finden transz Elte}. Nach Konstruktion des B\&F-Systems haben $b$ und $\tilde{b}$ dann aber den selben $\lingua^P_D$-Typ über $D$, was im Widerspruch zu $b\in X,\tilde{b}\notin X$ steht.
 \end{proof}
-
+\colorbox{red}{Bis hierhin und nicht weiter}
 \section{Definierbare Teilmengen von $A^n$}
 Wir interessieren uns für die Gestalt von $\lingua^P$-definierbaren Teilmengen von $A^n$. Dafür braucht man zuerst eine Hilfsaussage für definierbare Mengen in o-minimalen Strukturen.
 
