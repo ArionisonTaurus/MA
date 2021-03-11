@@ -23,7 +23,7 @@ Induktiv kann man den Begriff einer Zelle in einer solchen Struktur definieren.
 
 Es gibt \glqq{}schöne\grqq{} Zellen, nämlich die offenen. Glücklicherweise ist jede Zelle definierbar homöomorph zu einer offenen Zelle.
 \begin{lemma}
-	Jede $\sigma$-Zelle ist homöomorph zu einer offenen Zelle. Der kanonische Homöomorphismus entsteht dabei durch weglassen der Koordinaten, in denen $\sigma$ den Wert 0 hat. Insbesondere ist der Homöomorphismus definierbar über der selben Menge wie die Zelle.
+	Jede $\sigma$-Zelle ist homöomorph zu einer offenen Zelle. Der kanonische Homöomorphismus entsteht dabei durch weglassen der Koordinaten, in denen $\sigma$ den Wert 0 hat. Insbesondere ist der Homöomorphismus definierbar über der selben Menge wie die Zelle. Außerdem sind Zellen lokal abgeschlossen, das heißt, sie sind offen in der Spurtopologie ihres Abschlusses.
 \end{lemma}
 
 Wichtigste Grundlage der Arbeit mit o-minimalen Theorien sind die folgenden Aussagen zur \textbf{Zellzerlegung}. Sie stellen quasi eine Verallgemeinerung der Definition von O-Minimalität auf höhere Dimensionen dar und geben die Struktur definierbarer Funktionen an.
@@ -217,7 +217,7 @@ Das eben aufgestellte B\&F-System beweist die Formelreduzierung in $\td$.
 	Nach der Formelreduzierung sei $S$ \OE\ durch eine gute Formel definiert. Da die Definierbarkeit abgeschlossen unter booleschen MengeKombinationen ist, reicht es, eine Formel in Reinform zu betrachten.\newpage
 	Da aber für jede $\lingua_{A_0}$-Formel $\varphi(x,y,a')$ und jedes $a\in A^n$ die Aussagen $$\glqq{}\text{Es existiert ein }y\in A^m\text{ mit }(B,A)\models\varphi(a,y,a')\grqq{},$$ $$\glqq{}\text{Es existiert ein }y\in A^m\text{ mit }B\models\varphi(a,y,a')\grqq{},$$ $$\glqq{}\text{Es existiert ein }y\in A^m\text{ mit }A\models\varphi(a,y,a')\grqq{}$$ äquivalent sind wegen $\varphi$ als $\lingua$-Formel und $A\prec B$, folgt, dass $$\exists y\in P(\varphi(x,y,a'))(B)\cap A^n=\exists y(\varphi(x,y,a'))(A).$$
 \end{proof}
-\colorbox{red}{Bis hierhin und nicht weiter}
+
 \section{Folgen der Existenz des B\&F-Systems}
 Im Folgenden werden einige Anordnungen von wechselseitigen Inklusionen von Modellen von T betrachtet, in der Gleichheit von bestimmten Typen folgt.
 
@@ -265,7 +265,7 @@ Wir interessieren uns für die Gestalt von $\lingua^P$-definierbaren Teilmengen 
 	Sei $\fM$ eine o-minimale Struktur, die eine angeordnete Gruppenoperation $+$ mit positivem Element 1 hat und $Y\subseteq M^n$ definierbar. Dann ist $Y$ eine endliche Vereinigung von Mengen der Form $\{f(b,\cdot)=0,g(b,\cdot)>0\}$, wobei $b\in M^m$ und $f,g$ stetige, 0-definierbare Abbildungen $M^{m+n}\rightarrow M$ sind.
 \end{lemma}
 \begin{proof}
-	Schreibe $Y=\phi(b,\fM)$ für ein $b\in M^m$ und definiere $Z:=\phi(\fM)$. Wenn man $Z$ in Zellen $(Z_i)_i$ zerlegt, erhält man $Y$ als endliche Vereinigung von $((Z_i)_b)_i$.  Es sei also o.B.d.A. $Z$ schon eine 0-definierbare Zelle.\\
+	Schreibe $Y=\phi(b,\fM)$ für ein $b\in M^m$ und definiere $Z:=\phi(\fM)$. Wenn man $Z$ in 0-definierbare Zellen $(Z_i)_i$ zerlegt, erhält man $Y$ als endliche Vereinigung der Fasern $((Z_i)_b)_i$.  Es sei also \OE\ $Z$ schon eine 0-definierbare Zelle.\\
 	Definiere $$f(x):=\left\{\begin{array}{ll}
 	\inf\{\abs{x-d}\mid d\in Z\}&Z\text{ nichtleer}\\
 	1&\text{sonst}
@@ -286,12 +286,12 @@ Wir interessieren uns für die Gestalt von $\lingua^P$-definierbaren Teilmengen 
 	\end{enumerate}
 \end{theorem}
 \begin{proof}
-	$\glqq{}1.\Rightarrow 2.\grqq{}:$ Sei $\varphi$ eine $\lingua^P_B$-Formel mit $\varphi(B)=Y$. Zu zeigen ist, dass eine $\lingua_B$-Formel $\psi$ existiert mit $(B,A)\models P(x)\rightarrow(\varphi(x)\leftrightarrow\psi(x))$; das ist genau dann der Fall, wenn $\mathfrak{Th}(B,A)_B\cup\{P(x)\}\cup\{\varphi(x)\}$ und $\mathfrak{Th}(B,A)_B\cup\{P(x)\}\cup\{\neg\varphi(x)\}$ in $\lingua_B$ getrennt werden können. Nach dem Trennungslemma gilt das genau dann, wenn für alle $(B,A)\preceq(D_1,C_1),(D_2,C_2)$ und alle $c_i\in C_i\ (i=1,2)$ mit $(D_1,C_1)\models\varphi(c_1),(D_2,C_2)\models\neg\varphi(c_2)$ eine $\lingua_B$-Formel $\chi$ existiert mit $(D_1,C_1)\models\chi(c_1),(D_2,C_2)\models\neg\chi(c_2)$.\\
+	$\glqq{}1.\Rightarrow 2.\grqq{}:$ Sei $\varphi$ eine $\lingua^P_B$-Formel mit $\varphi(B)=Y$. Zu zeigen ist, dass eine $\lingua_B$-Formel $\psi$ existiert mit $(B,A)\models P(x)\rightarrow(\varphi(x)\leftrightarrow\psi(x))$; das ist genau dann der Fall, wenn $\mathfrak{Th}(B,A)_B\cup\{P(x)\}\cup\{\varphi(x)\}$ und $\mathfrak{Th}(B,A)_B\cup\{P(x)\}\cup\{\neg\varphi(x)\}$ in $\lingua_B$ getrennt werden können. Nach dem Trennungslemma gilt das genau dann, wenn für alle $$(B,A)\preceq(D_1,C_1),(D_2,C_2)$$ und alle $c_i\in C_i\ (i=1,2)$ mit $$(D_1,C_1)\models\varphi(c_1),(D_2,C_2)\models\neg\varphi(c_2)$$ eine $\lingua_B$-Formel $\chi$ existiert mit $$(D_1,C_1)\models\chi(c_1),(D_2,C_2)\models\neg\chi(c_2).$$
 	Seien solche $(D_i,C_i)$ und $c_i$, die die Voraussetzungen von oben erfüllen. Dann ist das die Situation aus Lemma \ref{Gemeinsame Unterstruktur}, denn elementare Erweiterungen sind frei. Also muss ein trennendes $\chi$ wie verlangt existieren, denn ansonsten würden $c_1$ und $c_2$ denselben $\lingua$-Typ erfüllen, aber nicht denselben $\lingua^P$-Typ.\\
 	$\glqq{}2.\Rightarrow 3.\grqq{}:$ Sei $Y=Z\cap A^n$. Nach dem letzten Lemma ist $Z$ eine boolesche Kombination aus Mengen der Form $\{f(b,\cdot)=0\}$ und $\{g(b,\cdot)>0\}$ für stetige 0-$\lingua$-definierbare Funktionen $f,g$ und passende $b\in B^m$. Es reicht also die Aussage für Mengen in diesen Formen zu zeigen. Wegen der Stetigkeit der Funktionen und $A$ dicht in $B$ gilt aber in $B$
 	\begin{align*}
 	f(b,z)=0\Leftrightarrow\ &\text{Für alle }0<\varepsilon\in A\text{ existiert }A^m\ni a<b\text{ (koordinatenweise),}\\&\text{sodass für alle }a'\in A^m\text{ mit }a<a'<b\text{ (koordinatenweise)}\\&\text{gilt, dass }\abs{f(a',z)}<\varepsilon,\\
-	g(b,z)>0\Leftrightarrow\ &\text{Es existiert ein }0<\varepsilon\in A\text{ und ein }A^m\ni a<b\text{ (koordinatenweise),}\\&\text{sodass für alle }a'\in A^m\text{ mit }a<a'<b\text{ (koordinatenweise)}\\&\text{gilt, dass }\abs{f(a',z)}>\varepsilon.
+	g(b,z)>0\Leftrightarrow\ &\text{Es existiert ein }0<\varepsilon\in A\text{ und ein }A^m\ni a<b\text{ (koordinatenweise),}\\&\text{sodass für alle }a'\in A^m\text{ mit }a<a'<b\text{ (koordinatenweise)}\\&\text{gilt, dass }g(a',z)>\varepsilon.
 	\end{align*}
 	Die rechten Bedingungen sind jeweils in $(A,(R_b)_{b\in B})$ definierbar.\\
 	$\glqq{}3.\Rightarrow 1.\grqq{}:$ Da $A$ und alle $R_b$ in $(B,A)$ definierbar sind, ist $Y$ auch in $(B,A)$ definierbar.
@@ -301,18 +301,25 @@ Wir interessieren uns für die Gestalt von $\lingua^P$-definierbaren Teilmengen 
 	Sei $(B,A)\models\tq$, dann heißt $S\subseteq B$ speziell, wenn $S$ und $A$ frei über $A\cap S$ sind.
 \end{definition}
 
-\begin{lemma}\label{Definierbare Mengen Spezialität}
-	Der Fall 2. aus dem vorigen Lemma lässt sich wie folgt verallgemeinern: Wenn $Y\subseteq A^n$ eine $\lingua^P_D$-definierbare Menge ist für ein spezielles $D\subseteq B$, dann existiert ein $\lingua_D$-definierbares $Z\subseteq B^n$ mit $Y=Z\cap A^n$.
+\begin{lemma}\label{Spezialität dcl}
+	Wenn $S$ in $(B,A)$ speziell ist, ist auch $\dcl(S)$ speziell und $\dcl(S)\cap A=\dcl(S\cap A)$.
 \end{lemma}
 \begin{proof}
-	Da eine Ersetzung $D\leftrightarrow\dcl(D)$ nichts ändert, können wir gleich davon ausgehen, dass $D$ schon ein Modell von T ist.\\
+	Sei $a\in\dcl(S)\cap A$, also ist $a\in A$ und abhängig (als einelementiges Tupel) über $S$. Wegen Unabhängigkeit von $A$ und $S$ ist $a$ abhängig über $S\cap A$, also in $\dcl(S\cap A)$. Andererseits gilt $$\dcl(S\cap A)\subseteq\dcl(S)\cap\dcl(A)=\dcl(S)\cap A$$ sowieso und es folgt die zweite Behauptung. Mit Lemma \ref{Unabhängigkeitsregeln} (3.) folgt dass $\dcl(S)$ und $A$ unabhängig über $\dcl(S\cap A)$ sind.
+\end{proof}
+
+\begin{lemma}\label{Definierbare Mengen Spezialität}
+	Der Fall 2. aus dem Satz \ref{Definierbare Mengen} lässt sich wie folgt verallgemeinern: Wenn $Y\subseteq A^n$ eine $\lingua^P_D$-definierbare Menge ist für ein spezielles $D\subseteq B$, dann existiert ein $\lingua_D$-definierbares $Z\subseteq B^n$ mit $Y=Z\cap A^n$.
+\end{lemma}
+\begin{proof}
+	Da eine Ersetzung $D\rightarrowtail\dcl(D)$ nichts ändert, können wir gleich davon ausgehen, dass $D$ schon ein Modell von T ist.\\
 	Der Beweis geht dann analog, nur müssen diesmal $\mathfrak{Th}(B,A)_D\cup\{P(x)\}\cup\{\varphi(x)\}$ und $\mathfrak{Th}(B,A)_D\cup\{P(x)\}\cup\{\neg\varphi(x)\}$ in $\lingua_D$ getrennt werden. Das ergibt anstatt von $(B,A)\preceq(D_1,C_1),(D_2,C_2)$ hier $(D_1,C_1),(D_2,C_2)\models\mathfrak{Th}(B,A)_D$.\\
 	Wegen der Spezialität von $D$ gilt, dass die Inklusionen $(D,D\cap A)\subseteq(D_1,C_1),(D_2,C_2)$ frei sind: Wenn $\varphi(c,x)$ nämlich in $(D_i,C_i)$ für ein $i$ die Abhängigkeit von $d\in D^n$ über $C_i$ bezeugt, muss $$\glqq{}\text{Es existiert ein }a'\in P\text{ mit }\varphi(a',x)\text{ bezeugt die Abhängigkeit von }d\text{ über }P\grqq{}$$ in $\mathfrak{Th}(B,A)_D$ gelten, also ist $d$ abhängig über $A$, also wegen Spezialität von $D$ auch abhängig über $D\cap A$. Ab dann kann man den Beweis wie bekannt weiterführen und muss nur $(B,A)$ durch $(D,D\cap A)$ ersetzen.
 \end{proof}
 
 \section{Definierbare Mengen in einer Variablen}
 In diesem Abschnitt wird eine zur o-Minimalität ähnliche Charakterisierung von Mengen in einer Variable in Modellen von $\td$ hergeleitet. Ab jetzt sei $(B,A)$ ein beliebiges dichtes Paar und $S\subseteq B$ eine spezielle Menge, als Konvention nehmen wir an (TODO: nach vorne), dass $A^0=\{0\}$. Da $B$ selbst eine spezielle Menge ist, gelten die folgenden Aussagen insbesondere alle auch für Definierbarkeit unabhängig von irgendwelchen Parametermengen. Angelehnt ist die folgende Vorgehensweise (auch im nächsten Abschnitt) an die Modifikation in \cite{Piz} von \cite{VanDenDries}, Teile konnten noch präziser für spezielle Mengen gemacht werden.
-
+\colorbox{red}{Bis hierhin und nicht weiter}
 \begin{lemma}
 	Sei $Y\subseteq B^n$ $\lingua_S$-definierbar und $(U_y)_{y\in Y}\subseteq B$ eine Familie von offenen, uniform $\lingua_S$-definierbaren Mengen. Dann ist $$X:=\bigcup\limits_{y\in Y\cap A^n}U_y$$ auch $\lingua_S$-definierbar.
 \end{lemma}
