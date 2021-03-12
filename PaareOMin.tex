@@ -23,7 +23,12 @@ Induktiv kann man den Begriff einer Zelle in einer solchen Struktur definieren.
 
 Es gibt \glqq{}schöne\grqq{} Zellen, nämlich die offenen. Glücklicherweise ist jede Zelle definierbar homöomorph zu einer offenen Zelle.
 \begin{lemma}
-	Jede $\sigma$-Zelle ist homöomorph zu einer offenen Zelle. Der kanonische Homöomorphismus entsteht dabei durch weglassen der Koordinaten, in denen $\sigma$ den Wert 0 hat. Insbesondere ist der Homöomorphismus definierbar über der selben Menge wie die Zelle. Außerdem sind Zellen lokal abgeschlossen, das heißt, sie sind offen in der Spurtopologie ihres Abschlusses.
+	Jede $\sigma$-Zelle ist homöomorph zu einer offenen Zelle. Der kanonische Homöomorphismus entsteht dabei durch weglassen der Koordinaten, in denen $\sigma$ den Wert 0 hat. Insbesondere ist der Homöomorphismus definierbar über der selben Menge wie die Zelle.
+\end{lemma}
+
+Zellen haben auch zwei andere wichtige topologische Eigenschaften:
+\begin{lemma}
+	Zellen sind \textbf{lokal abgeschlossen}, das heißt, sie sind offen in der Spurtopologie ihres Abschlusses. Sie sind außerdem \textbf{definierbar zusammenhängend}, das heißt, sie enthalten keine definierbaren clopen Teilmengen.
 \end{lemma}
 
 Wichtigste Grundlage der Arbeit mit o-minimalen Theorien sind die folgenden Aussagen zur \textbf{Zellzerlegung}. Sie stellen quasi eine Verallgemeinerung der Definition von O-Minimalität auf höhere Dimensionen dar und geben die Struktur definierbarer Funktionen an.
@@ -46,7 +51,7 @@ Wichtigste Grundlage der Arbeit mit o-minimalen Theorien sind die folgenden Auss
 	Eine vollständige Theorie sei o-minimal, wenn eines ihrer Modelle es ist.
 \end{definition}
 
-Ab jetzt geben wir uns ein o-minimales Modell $\fM$ einer vollständigen $\lingua$-Theorie T so vor, dass die Ordnung dicht ist.
+Ab jetzt geben wir uns ein o-minimales Modell $\fM$ einer vollständigen $\lingua$-Theorie T so vor, dass die Ordnung dicht ist. Zellen sind sehr ähnlich zu Mannigfaltigkeiten, genauso wie diesen kann man ihnen eine Dimension zuweisen.
 \begin{lemdef}
 	Die endliche Folge $\sigma$ zur jeweiligen Zelle $Z$ ist eindeutig bestimmt und daher der Wert $\dim(Z)=\sum\limits_{i=1}^n\sigma(i)$ wohldefiniert. Er wird \textbf{Dimension der Zelle} genannt. Für allgemeine definierbare nichtleere Mengen $X$ sei die \textbf{Dimension} $\dim(X)$ definiert als das Maximum der Zelldimensionen in einer beliebigen Zellzerlegung, die Dimension der leeren Menge sei 0. Das ist wohldefiniert und rein topologisch definierbar: $\dim(X)\leq n$ genau dann, wenn eine Projektion von $X$ nach $M^n$ nichtleeres Inneres hat. Damit ist die Dimension auch $\lingua$-definierbar.
 \end{lemdef}
@@ -341,7 +346,7 @@ In diesem Abschnitt wird eine zur o-Minimalität ähnliche Charakterisierung von
 	Dass die linke Seite Teilmenge der Rechten ist, ist sowieso klar per Definition; sei nun $$x\in\bigcup\limits_{y\in Y\setminus D}U_y\setminus (C\setminus\inn C)$$ und $y\in Y\setminus D$ mit $x\in U_y$. Wegen $x\notin C\setminus\inn C$ hat $Y_x$ nichtleeres Inneres ($x\notin C$) oder $x\in\inn C$ und daher $y\in D$ (denn $\{x\}\subseteq U_y\cap\inn C$). Da zweiteres ausgeschlossen wurde, hat $Y_x$ nichtleeres Inneres, also auch $Y_x\setminus D$ (denn $D$ war niedrigdimensional) und enthält damit ein Element $z\in A^n\cap(Y_x\setminus D)$ wegen Dichtheit. $z$ bezeugt, dass $x\in\bigcup\limits_{y\in (Y\setminus D)\cap A^n}U_y$ liegt.\\
 	Aus \ref{align 1} folgt, dass $$\bigcup\limits_{y\in (Y\setminus D)\cap A^n}U_y=\left(\bigcup\limits_{y\in Y\setminus D}U_y\setminus(C\setminus\inn C)\right)\cup\left((C\setminus\inn C)\cap\bigcup\limits_{y\in (Y\setminus D)\cap A^n}U_y\right)$$ $\lingua_S$-definierbar ist (der letzte Teil ist es wegen Endlichkeit von $C\setminus\inn C$). Also ist auch $$X=\bigcup\limits_{y\in Y\cap A^n}U_y=\bigcup\limits_{y\in (Y\setminus D)\cap A^n}U_y\cup\bigcup\limits_{y\in D\cap A^n}U_y$$ $\lingua_S$-definierbar in $B$.
 \end{proof}
-\colorbox{red}{Bis hierhin und nicht weiter}
+
 \begin{theorem}
 	Sei eine $\lingua^P_S$-definierbare Menge $X\subseteq B$. Dann stimmt $X$ bis auf eine kleine $\lingua^P_S$-definierbare Menge mit einer $\lingua_S$-definierbaren Menge $X'$ überein.
 \end{theorem}
@@ -360,12 +365,10 @@ In diesem Abschnitt wird eine zur o-Minimalität ähnliche Charakterisierung von
 	Wenn $X$ klein ist, existiert ein $\lingua$-definierbares $g:B^m\rightarrow B$, sodass $X\subseteq g(A^m)$, nach Lemma \ref{Speziell definierbare kleine Mengen} kann man schon annehmen, dass $g$ über $\dcl(S)$ definierbar ist (denn $(\dcl(S),\dcl(S)\cap A)\subseteq (B,A)$ ist frei nach Lemma \ref{Spezialität dcl}), also auch über $S$. Setze $$X':=g^{-1}(X)\cap A^m=(g\upharpoonright A^m)^{-1}(X),$$ das ist $\lingua^P_S$-definierbar und es gilt $g(X')=X$ wegen $X\subseteq\operatorname{im}(g\upharpoonright A^m)$.\\
 	Beweise die Aussage jetzt induktiv über $m$: Wenn $m=0$ ist, ist $X$ endlich und eine Vereinigung der Mengen $f(\{0\})$ für konstante Funktionen $f$. Wegen Endlichkeit gilt $X\subseteq\dcl(S)$, also sind die Funktionen $f$ über $S$ definierbar.\\
 	Wenn $m>0$ ist, schreibe $X'$ als Teilmenge von $A^m$ wegen Lemma \ref{Definierbare Mengen Spezialität} in der Form $Y\cap A^m$ für ein $\lingua_S$-definierbares $Y$. Sei eine Zerlegung $\mathfrak{Z}$ von $Y$ in $\lingua_S$-definierbare Zellen gegeben, auf denen $g$ jeweils stetig ist, dann ist $$X=g(Y\cap A^m)=\bigcup\limits_{Z\in\mathfrak{Z}}g(Z\cap A^m).$$
-	Für offene Zellen $Z$ ist so eine Darstellung also schon gefunden. Sei $Z$ nun eine Zelle der Dimension $d<m$ und $\pi:B^d\rightarrow B^m$ eine $\lingua_S$-definierbare Fortsetzung des kanonischen Homöomorphismus der entsprechenden offenen Zelle $Z'$ nach $Z$. Indem man mit Lemma \ref{Definierbare Mengen Spezialität} ein $\lingua_S$-definierbares $E\subseteq B^d$ findet mit $A^d\cap Z'\cap\pi^{-1}(A^m)=A^d\cap E$, erhält man 
-	\begin{align*}
-	g(Z\cap A^m)&=(g\circ\pi)(Z'\cap\pi^{-1}(A^m))\\&=(g\circ\pi)(A^d\cap Z'\cap\pi^{-1}(A^m))=(g\circ\pi)(A^d\cap E),
-	\end{align*}
-	wobei die mittlere Gleichheit gilt, da $A^d\supseteq Z'\cap\pi^{-1}(A^m)$, weil $\pi|_{Z'}$ die Umkehrabbildung einer Projektion ist.\\
-	Die Gleichung ist dann aber schon der Fall eines kleineren $m$ und mit Induktion folgt die Aussage.
+	Für offene Zellen $Z$ ist so eine Darstellung also schon gefunden. Sei $Z$ nun eine Zelle der Dimension $d<m$ und $\pi:B^d\rightarrow B^m$ eine $\lingua_S$-definierbare Fortsetzung des kanonischen Homöomorphismus der entsprechenden offenen Zelle $Z'$ nach $Z$. Mit Lemma \ref{Definierbare Mengen Spezialität} kann man ein $\lingua_S$-definierbares $E\subseteq B^d$ findet mit $$Z'\cap\pi^{-1}(A^m)=A^d\cap E,$$ denn es gilt $$A^d\supseteq Z'\cap\pi^{-1}(A^m),$$ weil $\pi|_{Z'}$ die Umkehrabbildung einer Projektion ist.\\
+	Es ergibt sich dann
+	$$g(Z\cap A^m)=(g\circ\pi)(Z'\cap\pi^{-1}(A^m))=(g\circ\pi)(A^d\cap E)$$
+	Die Gleichung ist aber schon der Fall eines kleineren $m$ und mit Induktion folgt die Aussage.
 \end{proof}
 
 \begin{theorem}\label{Satz 4}
@@ -378,7 +381,7 @@ In diesem Abschnitt wird eine zur o-Minimalität ähnliche Charakterisierung von
 	Für kleine $X$ entfallen die Fälle \glqq{}Teilmenge\grqq{} und \glqq{}koklein\grqq{}.
 \end{theorem}
 \begin{proof}
-	Sei $X$ zunächst klein und gegeben als $X=f(A^n\cap E)$ für ein stetiges, $\lingua_S$-definierbares $f:E\rightarrow B$ und eine offene $\lingua_S$-definierbare Zelle $E\subseteq B^n$. Da definierbarer Zusammenhang unter definierbaren stetigen Funktionen erhalten bleibt, ist $I:=f(E)$ auch definierbar zusammenhängend, weil es $\lingua_S$-definierbar ist, hat es auch ein Supremum und Infimum in $B\cup\{\pm\infty\}$, ist also ein Intervall (ausnahmsweise sei hier auch ein nichtoffenes Intervall mitgemeint). Wenn $I$ endlich ist, ist auch $X$ endlich und es ist nichts zu zeigen. $X$ ist disjunkt zu $B\setminus I$, nun muss nur noch gezeigt werden, dass $X=X\cap I$ dicht und kodicht in $I$ ist, denn Dichte und Kodichte in nichtoffenen unendlichen Intervallen ist äquivalent zu Dichte und Kodichte in deren Innerem. Aber für dichte Teilmengen werden durch stetige Abbildungen auf dichte Teilmengen abgebildet; da $A^n$ dicht in $B^n$ ist, ist auch $A^n\cap E$ dicht in $E$ und folglich $X$ dicht in $I$. Andererseits muss auch das Komplement von $X$ dicht in $I$ sein, da es sonst ein Intervall ganz in $X$ gäbe, was der Kleinheit mit Satz \ref{Kleinheit} widerspricht.\\
+	Sei $X$ zunächst klein und gegeben als $X=f(A^n\cap E)$ für ein stetiges, $\lingua_S$-definierbares $f:E\rightarrow B$ und eine offene $\lingua_S$-definierbare Zelle $E\subseteq B^n$. Da definierbarer Zusammenhang unter definierbaren stetigen Funktionen erhalten bleibt, ist $I:=f(E)$ auch definierbar zusammenhängend, weil es $\lingua_S$-definierbar ist, ist es Vereinigung von Intervallen und Punkten, also muss es ein Intervall (ausnahmsweise seien hier auch ein nichtoffene Intervalle mitgemeint). Wenn $I$ endlich ist, ist auch $X$ endlich und es ist nichts zu zeigen. $X$ ist disjunkt zu $B\setminus I$, nun muss nur noch gezeigt werden, dass $X=X\cap I$ dicht und kodicht in $I$ ist. Der Satz verlangt eigentlich Dichte und Kodichte in einem offenen Intervall, allerdings ist Dichte und Kodichte in nichtoffenen unendlichen Intervallen äquivalent zu Dichte und Kodichte in deren Innerem. Aber dichte Teilmengen werden durch stetige Abbildungen auf dichte Teilmengen abgebildet; da $A^n$ dicht in $B^n$ ist, ist auch $A^n\cap E$ dicht in $E$ und folglich $X$ dicht in $I$. Andererseits muss auch das Komplement von $X$ dicht in $I$ sein, da es sonst ein Intervall ganz in $X$ gäbe, was der Kleinheit mit Satz \ref{Kleinheit} widerspricht.\\
 	Die gesuchte Eigenschaft für kleine Mengen bleibt unter Vereinigungen erhalten. Man muss nur eine Verfeinerung der Unterteilung durchführen und dann ausnutzen, dass endliche Vereinigungen von kleinen Mengen klein sind. Also gilt für $Y$ und $Z$ als kleine Teilmengen eines Intervalls $I$:
 	\begin{itemize}
 		\item $Y\cup Z$ klein
@@ -398,13 +401,13 @@ In diesem Abschnitt wird eine zur o-Minimalität ähnliche Charakterisierung von
 	$\td$ eliminiert $\exists^\infty$: Wenn $S\subseteq B^{m+n}$ eine $\lingua^P$-definierbare Menge ist mit $S_x$ endlich für alle $x\in B^m$, dann ist $(\abs{S_x})_{x\in B^m}$ beschränkt.
 \end{lemma}
 \begin{proof}
-	Für $n=1$ gilt das nach Bemerkung 5.33. aus \cite{Lukas}. Denn $S_x$ ist endlich, genau dann, wenn $S_x$ diskret in $B$ ist; und das ist uniform $\lingua^P$-ausdrückbar. Die Äquivalenz zur Diskretheit sieht man ein, indem man eine Aufteilung von $S_x$ wie im letzten Satz vornimmt. Dann ist $S_x$ genau dann endlich, wenn nur der Fall $\glqq{}S_x\cap I=\emptyset\grqq{}$ vorkommt; weil dichte Mengen und Intervalle nicht diskret sind, gilt das wiederum genau dann, wenn $S_x$ diskret ist.\\
-	Sei $n>1$. Dann sind für $\pi_{i_1,\dots,i_k}$ als Projektionsabbildung auf die Koordinaten $i_1,\dots,i_k$ jeweils auch $$Y_x:=(\pi_{1,\dots,m+1}(S))_x=(\pi_{m+1}(S_x))$$ und $$Z_x:=(\pi_{1,\dots,m,m+2,\dots,m+n}(S))_x=(\pi_{m+2,\dots,m+n}(S_x))$$ endlich und daher ist nach Induktionsvoraussetzung die Mächtigkeit jeweils uniform beschränkt durch irgendwelche $K,L\in\setN$. Dann gilt aber $$\abs{S_x}\leq \abs{Y_x\times Z_x}=\abs{Y_x}\abs{Z_x},$$ was uniform durch $KL$ beschränkt ist.
+	Für $n=1$ gilt das nach Bemerkung 5.33. aus \cite{Lukas}. Denn $S_x$ ist endlich, genau dann, wenn $S_x$ diskret in $B$ ist; und das ist uniform $\lingua^P$-ausdrückbar. Die Äquivalenz zur Diskretheit sieht man ein, indem man eine Aufteilung von $S_x$ wie im letzten Satz vornimmt. Dann ist $S_x$ genau dann endlich, wenn nur der Fall $\glqq{}S_x\cap I=\emptyset\grqq{}$ vorkommt; weil dichte Teilmengen und Intervalle nicht diskret sind, gilt das wiederum genau dann, wenn $S_x$ diskret ist.\\
+	Sei $n>1$. Dann sind für $\pi_{i_1,\dots,i_k}$ als Projektionsabbildung auf die Koordinaten $i_1,\dots,i_k$ jeweils auch $$Y_x:=(\pi_{1,\dots,m+1}(S))_x=\pi_{m+1}(S_x)$$ und $$Z_x:=(\pi_{1,\dots,m,m+2,\dots,m+n}(S))_x=\pi_{m+2,\dots,m+n}(S_x)$$ endlich und daher ist nach Induktionsvoraussetzung die Mächtigkeit jeweils uniform beschränkt durch irgendwelche $K,L\in\setN$. Dann gilt aber $$\abs{S_x}\leq \abs{Y_x\times Z_x}=\abs{Y_x}\abs{Z_x},$$ was uniform durch $KL$ beschränkt ist.
 \end{proof}
 
 \section{Definierbare Funktionen und definierbarer Abschluss}
 Um definierbare Funktionen besser zu verstehen, ist es notwendig, sich mit dem definierbaren Abschluss in $\lingua^P$ zu beschäftigen. Damit kann man zeigen, dass definierbare Funktionen in einer Variablen \glqq{}fast überall\grqq{} $\lingua$-definierbar sind. Wir erinnern uns, dass ein dichtes Paar $(B,A)$ fixiert war und $S\subseteq B$ speziell. Mit \glqq{}definierbar abgeschlossen\grqq{} ist im Folgenden \glqq{}$\lingua^P$-definierbar abgeschlossen\grqq{} gemeint.
-
+\colorbox{red}{Bis hierhin und nicht weiter}
 \begin{lemma}\label{A definierbar abgeschl}
 	$A$ definierbar abgeschlossen.
 \end{lemma}
