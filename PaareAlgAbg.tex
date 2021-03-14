@@ -190,9 +190,9 @@
     
     \begin{lemma}\label{Eliminierungsregeln}
     	Es gilt:\\
-    	\begin{align*}\operatorname{ACP}^{\lfc}&\models\forall x_1,\dots,x_n\forall y_1,\dots,y_n\neq0(l_n(x_1y_1^{-1},\dots,x_ny_n^{-1})\\&\leftrightarrow l_n(x_1\prod\limits_{i=1\dots n,i\neq 1}y_i,\dots,x_n\prod\limits_{i=1\dots n,i\neq n}y_i)\\
-    	\operatorname{ACP}^{\lfc}&\models\forall x_1,\dots,x_n\forall e_1,\dots,e_n\in E(l_n(e_1x_1,\dots,e_nx_n)\leftrightarrow l_n(x_1,\dots,x_n)\\
-    	\operatorname{ACP}^{\lfc}&\models\forall x_1,\dots,x_n,y\forall e_1,\dots,e_n,e\in E(f_{n,i}(ey,e_1x_1,\dots,e_nx_n)=f_{n,i}\frac{e}{e_i}f_{n,i}(y,x_1,\dots,x_n)\\
+    	\begin{align*}\operatorname{ACP}^{\lfc}&\models\forall x_1,\dots,x_n\forall y_1,\dots,y_n\neq0(l_n(x_1y_1^{-1},\dots,x_ny_n^{-1})\\&\leftrightarrow l_n\left(x_1\prod\limits_{i=1\dots n,i\neq 1}y_i,\dots,x_n\prod\limits_{i=1\dots n,i\neq n}y_i\right))\\
+    	\operatorname{ACP}^{\lfc}&\models\forall x_1,\dots,x_n\forall e_1,\dots,e_n\in E\left(l_n(e_1x_1,\dots,e_nx_n)\leftrightarrow l_n(x_1,\dots,x_n)\right)\\
+    	\operatorname{ACP}^{\lfc}&\models\forall x_1,\dots,x_n,y\forall e_1,\dots,e_n,e\in E(f_{n,i}(ey,e_1x_1,\dots,e_nx_n)=f_{n,i}\frac{e}{e_i}f_{n,i}(y,x_1,\dots,x_n))\\
     	\operatorname{ACP}^{\lfc}&\models\forall a,b,x_2,\dots,x_n(\neg t_n(a+b,x_2,\dots,x_n)\leftrightarrow\neg t_{n-1}(x_2,\dots,x_n)\lor\\
     	&t_{n-1}(x_2,\dots,x_n)\land((l_n(b,x_2,\dots,x_n)\land\neg l_{n+1}(a,b,x_2,\dots,x_n))\lor\\
     	&(\neg l_n(b,x_2,\dots,x_n)\land l_n(a,x_2,\dots,x_n))))\\
@@ -217,11 +217,11 @@
     	-f_{i,n}(z,x_1,\dots,x_{i-1},a+b,x_{i+1},\dots,x_n)f_{j,n}(a,x_1,\dots,x_{i-1},b,x_{i+1},\dots,x_n)\\
     	\ \ \text{wenn nicht}
     	\end{array}\right.)\\
-    	&\text{für alle }i=1,\dots,n\text{ für alle }j\neq i\\
+    	&\text{für alle }i=1,\dots,n\text{, für alle }j\neq i\\
     	\end{align*}
     \end{lemma}
     \begin{proof}
-    	Durch Fallunterscheidung.
+    	Ist reine Fallunterscheidung und Rechenarbeit.
     \end{proof}
 
     \begin{definition}

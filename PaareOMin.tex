@@ -406,10 +406,10 @@ In diesem Abschnitt wird eine zur o-Minimalität ähnliche Charakterisierung von
 \end{proof}
 
 \section{Definierbare Funktionen und definierbarer Abschluss}
-Um definierbare Funktionen besser zu verstehen, ist es notwendig, sich mit dem definierbaren Abschluss in $\lingua^P$ zu beschäftigen. Damit kann man zeigen, dass definierbare Funktionen in einer Variablen \glqq{}fast überall\grqq{} $\lingua$-definierbar sind. Wir erinnern uns, dass ein dichtes Paar $(B,A)$ fixiert war und $S\subseteq B$ speziell. Mit \glqq{}definierbar abgeschlossen\grqq{} ist im Folgenden \glqq{}$\lingua^P$-definierbar abgeschlossen\grqq{} gemeint.
-\colorbox{red}{Bis hierhin und nicht weiter}
+Um definierbare Funktionen besser zu verstehen, ist es notwendig, sich mit dem definierbaren Abschluss in $\lingua^P$ zu beschäftigen. Damit kann man zeigen, dass definierbare Funktionen in einer Variablen \glqq{}fast überall\grqq{} $\lingua$-definierbar sind. Wir erinnern uns, dass ein dichtes Paar $(B,A)$ fixiert war und $S\subseteq B$ speziell. Mit \glqq{}definierbar abgeschlossen\grqq{} ist im Folgenden \glqq{}$\lingua^P$-definierbar abgeschlossen\grqq{} gemeint. Zuerst kommen zwei einfach zu beweisende Aussagen, um sie dann stark zu verallgemeinern und daraus Wissen über Funktionen zu erhalten.
+
 \begin{lemma}\label{A definierbar abgeschl}
-	$A$ definierbar abgeschlossen.
+	$A$ ist definierbar abgeschlossen.
 \end{lemma}
 \begin{proof}
 	Sei $b\in B\setminus A$ und $(B,A)\preceq(D,C)$ eine genügend saturierte Elementarerweiterung. Dann wird der Ordnungstyp von $b$ über $A$ auch von einem Element $D\setminus C\ni d\neq b$ realisiert wegen Dichtheit von $D\setminus C$ in $D$ und Saturation.\\
@@ -420,7 +420,7 @@ Um definierbare Funktionen besser zu verstehen, ist es notwendig, sich mit dem d
 	Sei $A_0\preceq A$. Dann ist $A_0$ definierbar abgeschlossen.
 \end{corollary}
 \begin{proof}
-	Sei $b$ definierbar über $A_0$. Dann ist $b$ insbesondere definierbar über $A$, also in $A$. Nach Folgerung \ref{Definierbarkeit aus A} ist dann $\{b\}=\{b\}\cap A$ schon $\lingua$-definierbar aus $A_0$, also in $A_0$, da $A_0$ elementare Substruktur ist.
+	Sei $b$ definierbar über $A_0$. Dann ist $b$ insbesondere definierbar über $A$, also in $A$. Nach Folgerung \ref{Definierbarkeit aus A} ist dann $\{b\}=\{b\}\cap A$ schon $\lingua$-definierbar in $A$ über $A_0$, also in $A_0$, da $A_0$ elementare Substruktur ist.
 \end{proof}
 
 \begin{lemma}\label{Freie Definierbarkeit}
@@ -428,16 +428,16 @@ Um definierbare Funktionen besser zu verstehen, ist es notwendig, sich mit dem d
 \end{lemma}
 \begin{proof}
 	Für eine beliebige Struktur $(B',A')\succeq (B,A)$ gelten die Voraussetzungen ebenso, da $\acl$-Abhängigkeit über $A$ als Teil vom Typen äquivalent ist zu $\acl$-Abhängigkeit über $A'$. Ebenso ist $D$ in $(B,A)$ definierbar abgeschlossen genau dann, wenn es in $(B',A')$ definierbar abgeschlossen ist. Also sei $(B,A)$ jetzt schon \OE\ hinreichend saturiert und $b\in B\setminus D$.\\
-	Nach dem Beweis zur Existenz des B\&F-Systems kann der partielle Isomorphismus $(B,A)\supseteq(D,C)\cong(D,C)\subseteq(B,A)$ insbesondere auf mehrere Weisen auf $b$ fortgesetzt werden: Wenn $b\in A$ oder $b\in B\setminus AD$, ging es nur um die Erfüllung von transzendenten Ordnungstypen, da hat man also viele Optionen. Wenn $b\in AD\setminus(A\cup D)$ ist und $a\in A^n$ unabhängig über $D$ mit $b\in Da$, dann finde $a'_1$ transzendent über $Da$ von passendem Ordnungstyp über $D$, $a'_2$ transzendent über $Daa'_1$ von passendem Ordnungstyp über $Da'_1$, usw. So kann man den Isomorphismus auf $Da$ fortsetzen mit Bild $Da'$; da aber $a$ und $a'$ per Konstruktion unabhängig über $D$ waren, sind auch $Da$ und $Da'$ unabhängig über $D$, also $Da\cap Da'=D$ und das Bild von $b$ kann nicht $b$ selbst sein. Also gibt es auch in diesem Fall mehrere Möglichkeiten für eine Fortsetzung, also mehrere elementare Abbildungen, also kann $b$ nicht definierbar über $D$ sein.
+	Nach dem Beweis zur Existenz des B\&F-Systems kann der partielle Isomorphismus $(B,A)\supseteq(D,C)\cong(D,C)\subseteq(B,A)$ insbesondere auf mehrere Weisen auf $b$ fortgesetzt werden: Wenn $b\in A$ oder $b\in B\setminus AD$, ging es nur um die Erfüllung von transzendenten Ordnungstypen, da hat man also viele Optionen. Wenn $b\in AD\setminus(A\cup D)$ ist und $a\in A^n$ unabhängig über $D$ mit $b\in Da$, dann finde $a'_1$ transzendent über $Da$ von passendem Ordnungstyp über $D$, $a'_2$ transzendent über $Daa'_1$ von passendem Ordnungstyp über $Da'_1$, usw. So kann man den Isomorphismus auf $Da$ fortsetzen mit Bild $Da'$; da aber $a$ und $a'$ per Konstruktion unabhängig über $D$ waren, sind auch $Da$ und $Da'$ unabhängig über $D$, also $Da\cap Da'=D$ und das Bild von $b$ kann nicht $b$ selbst sein. Also gibt es auch in diesem Fall mehrere Möglichkeiten für eine Fortsetzung, also mehrere elementare Abbildungen, daher kann $b$ nicht definierbar über $D$ sein.
 \end{proof}
 
 \begin{lemma}
-	Sei $F:A^n\rightarrow A$ eine $\lingua^P_S$-definierbare Funktion. Dann gibt es $\dcl(S)\cap A$-definierbare (TODO: das gilt doch bestimmt auch ohne $\dcl$??) $f_1,\dots,f_k:A^n\rightarrow A$ in $A$, sodass für alle $a\in A^n$ ein $f_i$ existiert mit $F(a)=f_i(a)$.
+	Sei $F:A^n\rightarrow A$ eine $\lingua^P_S$-definierbare Funktion. Dann gibt es $S\cap A$-definierbare $f_1,\dots,f_k:A^n\rightarrow A$ in $A$, sodass für alle $a\in A^n$ ein $f_i$ existiert mit $F(a)=f_i(a)$.
 \end{lemma}
 \begin{proof}
-	Man kann annehmen, dass $S$ schon Modell von T ist, ansonsten geht man zu $\dcl(S)$ über.\\
-	Wenn die Aussage nicht gilt, gilt für alle $k\in\setN$ und alle in $A$ über $S\cap A$ definierbaren $f_1,\dots,f_k:A^n\rightarrow A$, dass ein $a\in A$ existiert mit $f_i(a)\neq F(a)$ für alle $i$. Also ist der partielle Typ $$\{P(x)\}\cup\{F(x)\neq f(x)\mid f:A^n\rightarrow A\ \lingua_{S\cap A}\text{-definierbar}\}$$ konsistent und es existiert $(B,A)\preceq(B',A')$ und $a'\in A'^n$ mit $F(a')\neq f(a')$ für alle $\lingua_{S\cap A}$-definierbaren $f:A'^n\rightarrow A'$.\\
-	Allerdings ist die Inklusion $(S,S\cap A)\subseteq (B,A)$ frei, wegen Elementarität auch $(S,S\cap A)\subseteq (B',A')$. Nach Lemma \ref{Unabhängigkeitsregeln} (6.) wegen $a'\in A'^n$ und die Inklusion $(Sa',(S\cap A)a')\subseteq(B',A')$ frei, nach Lemma \ref{Freie Definierbarkeit} ist $Sa'$ also $\lingua^P$-definierbar abgeschlossen. Da $F(a')$ $\lingua^P$-definierbar über $Sa'$ ist, liegt es in $Sa'$, wegen $F:A'^n\rightarrow A'$ ist $F(a')\in A'$. Wegen Unabhängigkeit liegt also $F(a')\in Sa'\cap A'=(S\cap A)a'$ und es gibt eine $\lingua_{S\cap A}$-definierbare Abbildung $f:A'^n\rightarrow A'$ mit $f(a')=F(a')$ - ein Widerspruch!
+	Man kann annehmen, dass $S$ schon Modell von T ist, ansonsten geht man zu $\dcl(S)$ über. Nach Lemma \ref{Spezialität dcl} ist $\dcl(S)\cap A=\dcl(S\cap A)$, also ändert das die Aussage nicht.\\
+	Wenn das Lemma nicht gälte, gilt für alle $k\in\setN$ und alle in $A$ über $S\cap A$ definierbaren $f_1,\dots,f_k:A^n\rightarrow A$, dass ein $a\in A$ existiert mit $f_i(a)\neq F(a)$ für alle $i$. Also ist der partielle Typ $$\{P(x)\}\cup\{F(x)\neq f(x)\mid f:A^n\rightarrow A\ \lingua_{S\cap A}\text{-definierbar}\}$$ konsistent und es existiert $(B,A)\preceq(B',A')$ und $a'\in A'^n$ mit $F(a')\neq f(a')$ für alle $\lingua_{S\cap A}$-definierbaren $f:A'^n\rightarrow A'$.\\
+	Allerdings ist die Inklusion $$(S,S\cap A)\subseteq (B,A)$$ frei, wegen Elementarität auch $$(S,S\cap A)\subseteq (B',A').$$ Nach Lemma \ref{Unabhängigkeitsregeln} (6.) ist wegen $a'\in A'^n$ die Inklusion $(Sa',(S\cap A)a')\subseteq(B',A')$ frei, nach Lemma \ref{Freie Definierbarkeit} ist $Sa'$ also $\lingua^P$-definierbar abgeschlossen. Da $F(a')$ $\lingua^P$-definierbar über $Sa'$ ist, liegt es in $Sa'$, wegen $F:A'^n\rightarrow A'$ ist $F(a')\in A'$. Wegen Unabhängigkeit liegt also $F(a')\in Sa'\cap A'=(S\cap A)a'$ und es gibt eine $\lingua_{S\cap A}$-definierbare Abbildung $f:A'^n\rightarrow A'$ mit $f(a')=F(a')$ - ein Widerspruch!
 \end{proof}
 
 \begin{lemma}
@@ -445,8 +445,8 @@ Um definierbare Funktionen besser zu verstehen, ist es notwendig, sich mit dem d
 \end{lemma}
 \begin{proof}
 	\OE\ ist wieder $S$ ein Modell.\\
-	Wenn die Aussage nicht gilt, gilt für alle $k\in\setN$, alle kleinen $\lingua^P_S$-definierbaren Mengen $X\subset B$ und alle $\lingua_S$-definierbaren $f_1,\dots,f_k:B\rightarrow B$, dass ein $b\in B\setminus X$ existiert mit $f_i(b)\neq F(b)$ für alle $i$. Also ist der partielle Typ $$\{x\notin X\mid X\text{ klein, }\lingua^P_S\text{-definierbar}\}\cup\{F(x)\neq f(x)\mid f:B\rightarrow B\ \lingua_S\text{-definierbar}\}$$ (endlich) konsistent und es existiert $(B,A)\preceq(B',A')$ und $$b'\in B'\setminus\bigcup\limits_{f:B'^n\rightarrow B'\ \lingua_S\text{-definierbar}}f(A'^n)=B'\setminus A'S$$ mit $F(b')\neq f(b')$ für alle $\lingua_S$-definierbaren $f:B'\rightarrow B'$.\\
-	Allerdings ist wie im letzten Beweis $(S,S\cap A)\subseteq(B',A')$ frei und nach Lemma \ref{Unabhängigkeitsregeln} (7.) wegen $b'\in B'\setminus A'S$ die Inklusion $(Sb',S\cap A)\subseteq(B',A')$ ebenso, nach Lemma \ref{Freie Definierbarkeit} ist $Sb'$ also $\lingua^P$-definierbar abgeschlossen. Da $F(b')$ $\lingua^P$-definierbar über $Sb'$ ist, ist es in $Sb'$, also existiert eine $\lingua_S$-definierbare Abbildung $f:B'\rightarrow B'$ mit $f(b')=F(b')$ - ein Widerspruch!
+	Wenn die Aussage nicht gilt, gilt für alle $k\in\setN$, alle kleinen $\lingua^P_S$-definierbaren Mengen $X\subseteq B$ und alle $\lingua_S$-definierbaren $f_1,\dots,f_k:B\rightarrow B$, dass ein $b\in B\setminus X$ existiert mit $f_i(b)\neq F(b)$ für alle $i$. Also ist der partielle Typ $$\{x\notin X\mid X\text{ klein, }\lingua^P_S\text{-definierbar}\}\cup\{F(x)\neq f(x)\mid f:B\rightarrow B\ \lingua_S\text{-definierbar}\}$$ (endlich) konsistent und es existiert $(B,A)\preceq(B',A')$ und $$b'\in B'\setminus\bigcup\limits_{f:B'^n\rightarrow B'\ \lingua_S\text{-definierbar}}f(A'^n)=B'\setminus A'S$$ mit $F(b')\neq f(b')$ für alle $\lingua_S$-definierbaren $f:B'\rightarrow B'$.\\
+	Allerdings ist $(S,S\cap A)\subseteq(B',A')$ frei und nach Lemma \ref{Unabhängigkeitsregeln} (7.) wegen $b'\in B'\setminus A'S$ die Inklusion $(Sb',S\cap A)\subseteq(B',A')$ ebenso, nach Lemma \ref{Freie Definierbarkeit} ist $Sb'$ also $\lingua^P$-definierbar abgeschlossen. Da $F(b')$ $\lingua^P$-definierbar über $Sb'$ ist, ist es in $Sb'$, also existiert eine $\lingua_S$-definierbare Abbildung $f:B'\rightarrow B'$ mit $f(b')=F(b')$ - ein Widerspruch!
 \end{proof}
 
 \begin{theorem}\label{Satz 3}
@@ -490,7 +490,7 @@ Als erstes ist festzuhalten, dass die Aussage für Mengen in einer Variable leic
 \end{lemma}
 \begin{proof}
 	\begin{itemize}
-		\item In der Darstellung von Satz \ref{Satz 4} kann der Fall $Z\cap I$ dicht und kodicht nicht auftreten, weil offene Mengen niemals kodicht sind. Also sind die $\lingua^P_S$-definierbaren offenen Teilmengen von $B$ gerade die endlichen Vereinigungen von Intervallen mit Rand aus $\dcl(S)\cup\{\pm\infty\}$ und Punkten aus $\dcl(S)$ und das ist $\lingua_S$-definierbar.
+		\item In der Darstellung von Satz \ref{Satz 4} kann der Fall $Z\cap I$ dicht und kodicht nicht auftreten, weil offene Mengen niemals kodicht sind. Also sind die $\lingua^P_S$-definierbaren offenen Teilmengen von $B$ gerade die endlichen Vereinigungen von Intervallen mit Rand aus $\dcl(S)\cup\{\pm\infty\}$ und das ist $\lingua_S$-definierbar.
 		\item Wenn $Z\subseteq B^n$ abgeschlossen und $\lingua^P_S$-definierbar ist, ist $Z^c$ offen und $\lingua^P_S$-definierbar, also $\lingua_S$-definierbar per Voraussetzung. Damit ist $Z$ dann selbst $\lingua_S$-definierbar.
 	\end{itemize}
 \end{proof}
@@ -499,7 +499,7 @@ Als erstes ist festzuhalten, dass die Aussage für Mengen in einer Variable leic
 	Offene und abgeschlossene $\lingua^P_S$-definierbare Mengen sind $\lingua_S$-definierbar.
 \end{theorem}
 \begin{proof}
-	Nach dem vorigen Lemma reicht es, das für offene Mengen zu zeigen, genauer reicht es, die Definierbarkeit für charakteristische Funktionen solcher Mengen zu zeigen. Sei $Z\subseteq B^n$ eine offene $\lingua^P_S$-definierbare Menge und $X\supseteq S$ speziell, $\alpha:Y\rightarrow B^n$ eine $\lingua_X$-definierbare, partielle Funktion und $Y\subseteq B$ offen. Zu zeigen ist für die Anwendung von Satz \ref{Kurven}, dass $\chi_Z\circ\alpha$ definierbar in $\lingua_X$ ist. Man kann annehmen, dass $\alpha$ stetig ist, sonst zerlege $Y$ in Intervalle, auf denen $\alpha$ stetig ist und Punkte; das ändert nichts an irgendwelchen Definierbarkeiten. Man kann dann feststellen, dass $$1=\chi_Z\circ\alpha(x)\Leftrightarrow\alpha(x)\in Z\Leftrightarrow x\in\alpha^{-1}(Z).$$ Da aber $\alpha^{-1}(Z)$ eine $\lingua^P_X$-definierbare Teilmenge von $B$ ist, offen wegen Stetigkeit von $\alpha$ und Offenheit von $Z$ und zusätzlich $X$ speziell ist, ist $\alpha^{-1}(Z)$ nach dem vorigen Lemma $\lingua_X$-definierbar. Also ist $\chi_Z\circ\alpha$ definierbar in $\lingua_X$ durch $$\chi_Z\circ\alpha(x)=\left\{\begin{array}{ll}
+	Nach dem vorigen Lemma reicht es, das für offene Mengen zu zeigen, genauer reicht es, die Definierbarkeit für charakteristische Funktionen solcher Mengen zu zeigen. Sei $Z\subseteq B^n$ eine offene $\lingua^P_S$-definierbare Menge und $X\supseteq S$ speziell, $\alpha:Y\rightarrow B^n$ eine $\lingua_X$-definierbare, partielle Funktion und $Y\subseteq B$ offen. Zu zeigen ist für die Anwendung von Satz \ref{Kurven}, dass $\chi_Z\circ\alpha$ definierbar in $\lingua_X$ ist. Man kann annehmen, dass $\alpha$ stetig ist, sonst zerlege $Y$ in Intervalle, auf denen $\alpha$ stetig ist, und Punkte; das ändert nichts an irgendwelchen Definierbarkeiten. Man kann dann feststellen, dass $$1=\chi_Z\circ\alpha(x)\Leftrightarrow\alpha(x)\in Z\Leftrightarrow x\in\alpha^{-1}(Z).$$ Da aber $\alpha^{-1}(Z)$ eine $\lingua^P_X$-definierbare Teilmenge von $B$ ist, offen wegen Stetigkeit von $\alpha$ und Offenheit von $Z$ und zusätzlich $X$ speziell ist, ist $\alpha^{-1}(Z)$ nach dem vorigen Lemma $\lingua_X$-definierbar. Also ist $\chi_Z\circ\alpha$ definierbar in $\lingua_X$ durch $$\chi_Z\circ\alpha(x)=\left\{\begin{array}{ll}
 	1&x\in\alpha^{-1}(Z)\\
 	0&\text{sonst}
 	\end{array}\right..$$
