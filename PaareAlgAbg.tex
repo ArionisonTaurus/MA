@@ -89,14 +89,14 @@
     		\item Mit 3. folgt $K\ad_CL$, mit 4. $\overline{K}\ad_C\overline{L}$, mit Lemma \ref{Stapellemma} $K\ad_C\overline{L}$, mit Lemma \ref{Das komplizierte Lemma} $K\ld_C\overline{L}$ (benutze $C\subseteq K$ regulär) und mit noch einmal Lemma \ref{Stapellemma} gilt schließlich für die Einbettungskette $C\subseteq L\subseteq\overline{L}$ die Regularitätsbedingung $LK\ld_L\overline{L}$.
     	\end{enumerate}
     \end{proof}
-    
+    \newpage
     \section{Paare algebraisch abgeschlossener Körper}
     Wir wollen Paare $(K,E_K)$ von Körpern betrachten, wobei $E_K\subseteq K$. In der richtigen Sprache haben lassen diese sich axiomatisieren, dort haben echte Paare (d.h. $K\neq E_K$) algebraisch abgeschlossener Körper mit fixierter Charakteristik sogar Quantorenelimination, sind vollständig und in einer kleineren Sprache modellvollständig. Diese Sprachen und einige der Folgerungen für ihre Strukturen wollen wir hier (angelehnt an \cite{Delon}) einführen:
     
     \begin{definition}
     	Wir definieren die Sprachen $\lld:=\{0,1,+,-,\cdot,(l_n)_{n\geq2}\},\lf:=\lld\cup\{f_{i,n}\mid n\geq2,1\leq i\leq n\}$ und $\lfc:=\lf\cup\{^{-1}\}$, wobei die $(l_n)_n$ $n$-stellige Relationen sein sollen und die $(f_{i,n})_{i,n}$ $n+1$-stellige partielle Funktionen.
     \end{definition}
-    \newpage
+
     \begin{lemma}\label{Symbolik}
     	Beliebige Paare $(K,E_K)$ von Körpern werden kanonisch zu $\lld$-Strukturen, indem man folgendes setzt:
     	$$\models l_n(x_1,\dots,x_n):\Leftrightarrow x_1,\dots,x_n\text{ sind linear unabhängig über }E_K$$
@@ -105,19 +105,18 @@
     	$$\models (z=f_{n,i}(y,\overline{x})):\Leftrightarrow\ \models\phi(\overline{x},y)\text{ und }z\text{ ist die }i\text{-te Koordinate von }y\text{ in der Basisdarstellung},$$
     	wobei letzteres durch $$\exists z_1,\dots,z_n(z=z_i\land y=x_1z_1+\dots+x_nz_n\land z_1,\dots,z_n\in E_K)$$ oder aber auch $$\forall z_1,\dots,z_n(y=x_1z_1+\dots+x_nz_n\land z_1,\dots,z_n\in E_K\rightarrow z_i=z)$$ definierbar ist.
     \end{lemma}
-    
+    \newpage
     \begin{lemma}
     	Mit dem Ganzen sind echte algebraisch abgeschlossene Paare von Körpern definierbar in allen drei Sprachen $\lld,\lf,\lfc$, nenne die Theorien $$\operatorname{ACP}^{\lld},\operatorname{ACP}^{\lf},\operatorname{ACP}^{\lfc}.$$ Das einzig nicht offensichtliche hierbei ist, dass man in der Theorie sagen muss, dass $\neg l_2(1,x)$ einen Körper definiert.
     \end{lemma}
     
     An sich wird alles sowieso interdefinierbar zwischen den Sprachen sein, aber manchmal ist es klüger, eine spezielle Sprache zu betrachten. Die intuitivste Sprache wäre dabei $\lingua^E:\lingua\cup\{E(x)\}$, aber diese hat leider nicht so schöne Eigenschaften (TODO: sollte ich ausführen, wieso?). Das Ziel ist jetzt, zu beweisen, dass $\operatorname{ACP}^{\lf},\operatorname{ACP}^{\lfc}$ Quantorenelimination haben und $\operatorname{ACP}^{\lld}$ immerhin modellvollständig ist.\\
     Dazu müssen wir erst einmal verstehen, wie $\lfc$-Unterstrukturen von $\operatorname{ACP}^{\lfc}$-Modellen aussehen.
-    \newpage
+    
     \begin{lemma}
     	Betrachte einen Paar von Körpern $(K,E_K)$ und eine Teilmenge ${A\subseteq K}$ sowie eine $\lfc$-Struktur $$\fA:=(A,0,1,+,-,\cdot,^{-1},(l_n)_{n\geq2},(f_{i,n})_{n\geq2,1\leq i\leq n}).$$ Dann ist $\fA\subseteq_{\lfc}(K,E_K)$ genau dann, wenn $A$ ein Unterkörper von $K$ ist, $\fA=(A,E_A)$ für $E_A:=A\cap E_K$, und $A\ld_{E_A}E_K$.
     \end{lemma}
     \begin{proof}
-    	\colorbox{green}{Ende Korrektur der Formatierung}
     	$A$ ist genau dann Unterkörper von $K$, wenn es $0,1$ enthält, unter $+,-,\cdot,^{-1}$ abgeschlossen ist und die entsprechenden Abbildungsvorschriften erbt.\\
     	Außerdem ist $A\ld_{E_A}E_K$ genau dann, wenn für alle $\overline{a}\in A$ aus $\overline{a}$ linear abhängig über $E_K$ schon äquivalent zu linearer Abhängigkeit über $E_A$ ist; per kanonischer Definition also genau dann wenn $$(A,E_A)\models l_{\abs{\overline{a}}}(\overline{a}) \Leftrightarrow (K,E_K)\models l_{\abs{\overline{a}}}(\overline{a}).$$
     	Wenn $\fA$ Unterstruktur ist, dann gilt für alle $\overline{a}\in A$
@@ -128,31 +127,31 @@
     	wobei die letzte Äquivalenz davon herrührt, dass die lineare Abhängigkeit bezeugende Linearkombination sich z.B. mit Projektionen und Nullen als Koeffizienten schreiben lässt und Projektionen von Elementen aus $A$ wegen Unterstruktureigenschaft wieder in $A$ sind. Also stimmen die Interpretationen der $l_n$ in $\fA$ mit denen in $(A,E_A)$ überein und es ist $A\ld_{E_A}E_K$. Da die definierende Formel der $(f_{i,n})$ bis auf die Angabe des Bildbereiches eine Ringformel ist, und da $f_{i,n}(\overline{a})\in E_K\cap A$ für alle $\overline{a}\in A$, für alle $n,i$, stimmen auch die Interpretationen der $f_{i,n}$ in $\fA$ und in $(A,E_A)$ überein. Damit ist $\fA=(A,E_A)$.\\
     	Die Rückrichtung folgt mit den ersten Zeilen dieses Beweises und, weil die Projektionen $f_{n,i}$ Elemente aus $A$ nach $A$ abbilden. Das sieht man daran, dass man die Koeffizienten einer Linearkombination in eine Abhängigkeitsbedingung umschreiben kann; wenn diese in $E_K$ erfüllt ist, muss sie wegen linearer Disjunktheit auch in $E_A$ erfüllt sein, also sind die Projektionen schon in $E_A$.
     \end{proof}
-    \newpage
+    
     \begin{lemma}\label{transz Erw}
     	Wenn $(A,E_A)\subseteq_{\lfc}(K,E_K)$ und $X\subseteq K$ algebraisch unabhängig über $AE_K$ ist, dann ist $$(A,E_A)\subseteq_{\lfc}(A(X),E_A)\subseteq_{\lfc}(K,E_K).$$
     \end{lemma}
     \begin{proof}
     	Nach vorigem Lemma ist $A\ld_{E_A}E_K$, daher gilt mit Lemma \ref{Rechenregeln} (5.)\linebreak$A(X)\ld_{E_A}E_K$ und da $A(X)$ Unterkörper von $K$ ist, gilt mit der Rückrichtung des letzten Lemmas $(A(X),E_A)\subseteq_{\lfc}(K,E_K)$.\\
-    	$(A,E_A)\subseteq_{\lfc}(A(X),E_A)$ gilt, weil die Bedingung $A\ld_{E_A} E_A$ immer gilt.
+    	$(A,E_A)\subseteq_{\lfc}(A(X),E_A)$ gilt, weil die Bedingung $A\ld_{E_A} E_A$ immer stimmt.
     \end{proof}
     
     \begin{lemma}\label{E-Erw}
-    	Sei $(A,E_A)\subseteq_{\lfc}(K,E_K)$ und $E_A\subseteq B\subseteq E_K$ ein Zwischenkörper. Dann ist $(A,E_A)\subseteq_{\lfc}(AB,B)\subseteq_{\lfc}(K,E_K)$.
+    	Sei $(A,E_A)\subseteq_{\lfc}(K,E_K)$ und $E_A\subseteq B\subseteq E_K$ ein Zwischenkörper. Dann ist $$(A,E_A)\subseteq_{\lfc}(AB,B)\subseteq_{\lfc}(K,E_K).$$
     \end{lemma}
     \begin{proof}
     	Es ist nur $A\ld_{E_A}B,AB\ld_BE_K$ zu zeigen. Wegen $(A,E_A)\subseteq_{\lfc}(K,E_K)$ gilt $A\ld_{E_A}E_K$ und mit Lemma \ref{Stapellemma} gilt schon beides.
     \end{proof}
     
     \begin{lemma}\label{Fortsetzungslemma}
-    	Im Falle dass das vorige Lemma auf $(A,E_A)\subseteq_{\lfc}(K,E_K)$, $(\tilde{A},E_{\tilde{A}})\subseteq_{\lfc}(\tilde{K},E_{\tilde{K}})$, $E_A\subseteq B\subseteq E_K$ und $E_{\tilde{A}}\subseteq \tilde{B}\subseteq E_{\tilde{K}}$ angewendet wird und dass gilt $A\cong \tilde{A},B\cong \tilde{B},E_A\cong E_{\tilde{A}}$ (wobei die ersten Isomorphismen den dritten fortsetzen), sind $(AB,B)$ und $(\tilde{A}\tilde{B},\tilde{B})$ schon isomorph als $\lfc$-Strukturen.
+    	Im Falle dass das vorige Lemma auf $$(A,E_A)\subseteq_{\lfc}(K,E_K),(\tilde{A},E_{\tilde{A}})\subseteq_{\lfc}(\tilde{K},E_{\tilde{K}}),E_A\subseteq B\subseteq E_K\text{ und }E_{\tilde{A}}\subseteq \tilde{B}\subseteq E_{\tilde{K}}$$ angewendet wird und dass gilt $$A\cong \tilde{A},B\cong \tilde{B},E_A\cong E_{\tilde{A}}$$ \--- wobei die ersten beiden Isomorphismen den dritten fortsetzen \---, sind $(AB,B)$ und $(\tilde{A}\tilde{B},\tilde{B})$ schon isomorph als $\lfc$-Strukturen.
     \end{lemma}
     \begin{proof}
     	Mit Lemma \ref{Tensoren} erhält man wegen $A\ld_{E_A}B,\tilde{A}\ld_{E_{\tilde{A}}}\tilde{B}$ den Isomorphismus $$A[B]\cong A\otimes_{E_A}B\cong \tilde{A}\otimes_{E_{\tilde{A}}}\tilde{B}\cong\tilde{A}[\tilde{B}],$$ der sich zu einem Isomorphismus der Quotientenkörper $AB$ und $\tilde{A}\tilde{B}$ fortsetzt und $A$ auf $\tilde{A}$, $B$ auf $\tilde{B}$ und $E_A$ auf $E_{\tilde{A}}$ abbildet. Als Körperisomorphismus überträgt er auch Linearkombinationen, also auch die Bedeutung der $(l_n)_n$ und $(f_{i,n})_{i,n}$, weswegen er ein $\lfc$-Isomorphismus ist.
     \end{proof}
     
     \begin{lemma}
-    	Wenn $(A,E_A)\subseteq_{\lfc}(K,E_K)$ und $(K,E_K)$ Paar algebraisch abgeschlossener Körper ist, ist $E_A\subseteq A$ regulär.
+    	Wenn $(A,E_A)\subseteq_{\lfc}(K,E_K)$ und $(K,E_K)$ ein Paar algebraisch abgeschlossener Körper ist, ist $E_A\subseteq A$ regulär.
     \end{lemma}
     \begin{proof}
     	Die Aussage folgt aus $A\ld_{E_A}E_K$ und der Körperinklusion $E_A\subseteq\overline{E_A}\subseteq E_K$ mit dem Lemma \ref{Stapellemma}.
@@ -165,7 +164,7 @@
     	Laut Lemma \ref{E-Erw} ist $(A\overline{E_A},\overline{E_A})$ Zwischenstruktur und damit insbesondere $$A\ld_{E_A}\overline{E_A},A\overline{E_A}\ld_{\overline{E_A}}E_K.$$ Klarerweise ist $$(A,E_A)\subseteq_{\lfc}(\overline{A\overline{E_A}},\overline{E_A})=(\overline{A},\overline{E_A}),$$ weil $A\overline{E_A}$ in der Bedingung $A\ld_{E_A}\overline{E_A}$ gar nicht vorkommt und die Erweiterung also nichts ändert.\\
     	Lemma \ref{Rechenregeln} (6.) ergibt wegen $\overline{E_A}\subseteq E_K$ regulär $$\overline{A}=\overline{A\overline{E_A}}\ld_{\overline{E_A}}E_K,$$ was $(\overline{A},\overline{E_A})\subseteq_{\lfc}(K,E_K)$ beweist.
     \end{proof}
-    
+    \newpage
     \begin{theorem}\label{QE}
     	$\operatorname{ACP}^{\lfc}$ hat Quantorenelimination und ist vollständig, wenn man noch eine Charakteristik vorgibt.
     \end{theorem}
@@ -177,9 +176,9 @@
     	Das kann man zum Beispiel erreichen, indem die Erweiterung offenkundig transzendent ist, und man dann jeweils den partiellen Typ über $\emptyset$ betrachtet, der die algebraische Unabhängigkeit von $n$ Elementen über $E_K$ bzw. $E_L$ beschreibt, dieser hat folgende Gestalt:
     	$$\{\forall \overline{e}\in E\setminus\{0\}(f(\overline{e},\overline{x})\neq0)\mid 0\neq f\in\mathbb{P}(T_1,T_2,\dots,\overline{x})\}$$
     	Er ist endlich erfüllbar, da für $m$ größer als der größte Polynomgrad im endlichen Teilfragment und $x$ transzendent über $E_K$ bzw. $E_L$ die Elemente $x,x^m,x^{m^2},\dots$ algebraisch unabhängig über Polynome von Grad kleiner $m$ sind.\\
-    	\OE\ ist $(M,E_M)(N,E_N)$ jeweils algebraisch abgeschlossen. Denn Lemma \ref{E-Erw} erzeugt einen Isomorphismus zwischen den Zwischenstrukturen $$(ME_M^{\text{alg }K},E_M^{\text{alg }K})\text{ und }(NE_N^{\text{alg }L},E_N^{\text{alg }L}),$$ der sich auf einen Isomorphismus $$(M^{\text{alg }K},E_M^{\text{alg }K})\cong(N^{\text{alg }L},E_N^{\text{alg }L})$$ fortsetzt.\\
+    	\OE\ seien $(M,E_M)(N,E_N)$ jeweils algebraisch abgeschlossen. Denn Lemma \ref{E-Erw} erzeugt einen Isomorphismus zwischen den Zwischenstrukturen $$(ME_M^{\text{alg }K},E_M^{\text{alg }K})\text{ und }(NE_N^{\text{alg }L},E_N^{\text{alg }L}),$$ der sich auf einen Isomorphismus $$(M^{\text{alg }K},E_M^{\text{alg }K})\cong(N^{\text{alg }L},E_N^{\text{alg }L})$$ fortsetzt.\\
     	Sei jetzt $a\in K$. Wenn $a\in M$ liegt, dann kann man die Abbildung auf triviale Weise auf $a$ fortsetzen.\\
-    	Wenn ansonsten $a$ algebraisch über $E_KM$ ist, ist $a\in\acl(E_KM)$, also existiert $X\subset E_K$ endlich mit $a\in\acl(MX)$. OBdA sei $X$ jetzt schon ein Oberkörper von $E_M$, wichtig ist nur der endliche Transzendenzgrad über $E_M$. Für einen beliebigen algebraisch abgeschlossenen Zwischenkörper $E_N\subseteq Y\subseteq E_L$ von gleichem Transzendenzgrad (den gibt es, da die Saturation Transzendenzgrad $\infty$ von $E_N\subset E_L$ ergibt) kann $E_M\cong E_N$ fortgesetzt werden zu einem Isomorphismus $X\cong Y$. Diesen kann man wie in Lemma \ref{Fortsetzungslemma} fortsetzen zu einem $\lfc$-Isomorphismus zwischen den Zwischenstrukturen $(\overline{MX},X),(\overline{NY},Y)$, wobei die erste $a$ enthält.\\
+    	Wenn ansonsten $a$ algebraisch über $E_KM$ ist, ist $a\in\acl(E_KM)$, also existiert $X\subset E_K$ endlich mit $a\in\acl(MX)$. \OE\ sei $X$ jetzt schon ein Oberkörper von $E_M$, wichtig ist nur der endliche Transzendenzgrad über $E_M$. Für einen beliebigen algebraisch abgeschlossenen Zwischenkörper $E_N\subseteq Y\subseteq E_L$ von gleichem Transzendenzgrad (den gibt es, da die Saturation Transzendenzgrad $\infty$ von $E_N\subset E_L$ ergibt) kann $E_M\cong E_N$ fortgesetzt werden zu einem Isomorphismus $X\cong Y$. Diesen kann man wie in Lemma \ref{Fortsetzungslemma} fortsetzen zu einem $\lfc$-Isomorphismus zwischen den Zwischenstrukturen $(\overline{MX},X),(\overline{NY},Y)$, wobei die erste $a$ enthält.\\
     	Wenn $a$ transzendent über $E_KM$ ist, gibt es ein $b\in L$ transzendent über $E_LM$, denn der entsprechende Typ ist konsistent, wenn $\abs{L}>\abs{E_L}$. So etwas lässt sich aber in einer elementaren Oberstruktur erreichen (für die endliche Konsistenz ist die genaue Kardinalität des Transzendenzgrads von $E_L\subset L$ egal) und wenn der Typ dort konsistent ist, dann auch unten.\\
     	$a$ und $b$ erzeugen dann einen Isomorphismus $C:=\overline{M(a)}\overset{\phi}{\cong}\overline{N(b)}$. Setze $$E:=\overline{M(a)}\cap E_K\cap\phi^{-1}(E_L\cap\overline{N(b)}),$$ dann gilt $(C,E)\cong_{\lfc}(\phi(C),\phi(E))$ und $b\in\phi(C)$.\\
     	Zu zeigen ist nun nur noch $$(M,E_M)\subseteq_{\lfc}(C,E)\subseteq_{\lfc}(K,E_K),(N,E_N)\subseteq_{\lfc}(\phi(C),\phi(E))\subseteq_{\lfc}(K,E_K):$$\\
@@ -193,7 +192,7 @@
     	Es gilt:\\
     	\begin{align*}\operatorname{ACP}^{\lfc}&\models\forall x_1,\dots,x_n\forall y_1,\dots,y_n\neq0(l_n(x_1y_1^{-1},\dots,x_ny_n^{-1})\\&\leftrightarrow l_n\left(x_1\prod\limits_{i=1\dots n,i\neq 1}y_i,\dots,x_n\prod\limits_{i=1\dots n,i\neq n}y_i\right))\\
     	\operatorname{ACP}^{\lfc}&\models\forall x_1,\dots,x_n\forall e_1,\dots,e_n\in E\left(l_n(e_1x_1,\dots,e_nx_n)\leftrightarrow l_n(x_1,\dots,x_n)\right)\\
-    	\operatorname{ACP}^{\lfc}&\models\forall x_1,\dots,x_n,y\forall e_1,\dots,e_n,e\in E(f_{n,i}(ey,e_1x_1,\dots,e_nx_n)=f_{n,i}\frac{e}{e_i}f_{n,i}(y,x_1,\dots,x_n))\\
+    	\operatorname{ACP}^{\lfc}&\models\forall x_1,\dots,x_n,y\forall e_1,\dots,e_n,e\in E(f_{n,i}(ey,e_1x_1,\dots,e_nx_n)=\frac{e}{e_i}f_{n,i}(y,x_1,\dots,x_n))\\
     	\operatorname{ACP}^{\lfc}&\models\forall a,b,x_2,\dots,x_n(\neg t_n(a+b,x_2,\dots,x_n)\leftrightarrow\neg t_{n-1}(x_2,\dots,x_n)\lor\\
     	&t_{n-1}(x_2,\dots,x_n)\land((l_n(b,x_2,\dots,x_n)\land\neg l_{n+1}(a,b,x_2,\dots,x_n))\lor\\
     	&(\neg l_n(b,x_2,\dots,x_n)\land l_n(a,x_2,\dots,x_n))))\\
@@ -230,34 +229,36 @@
     \end{definition}
     
     \begin{corollary}\label{Formel-Vereinfachung}
-    	Man kann jede Formel mit Parametern aus $X$ modulo $\operatorname{ACP}$ schreiben als boolesche Kombination aus \glqq{}$l_n(\text{Monome mit Koeffizienten in }X)$\grqq{} und\\
-    	\glqq{}(Polynom in $\mathbb{P}[X])(f_{i_1,n_1}(\text{Monome in }X),\dots,f_{i_m,n_m}(\text{Monome in }X))=0$\grqq{},
+    	Man kann jede Formel mit Parametern aus $X$ modulo $\operatorname{ACP}$ schreiben als boolesche Kombination aus $$\glqq{}l_n(\text{Monome mit Koeffizienten von Produkten aus }X)\grqq{}$$ und
+    	\begin{align*}
+    	\text{\glqq{}}(\text{Polynom in }\mathbb{P}[X])(&f_{i_1,n_1}(\text{Monome in Produkten aus }X),\\\dots,&f_{i_m,n_m}(\text{Monome in Produkten aus }X))=0\grqq{},
+    	\end{align*}
         wobei $\mathbb{P}$ den Primkörper der entsprechenden Charakteristik bezeichne.
     \end{corollary}
     \begin{corollary}
-    	In jedem Modell $(K,E_K)$ ist jede definierbare Menge $X\subset E_K^n$ schon beschreibbar als $X=E_K^n\cap Z$, wobei $Z$ definierbar in der Ringsprache über denselben Parametern ist. Das liegt daran, dass die $(f_{i,n}),(l_n)$ nicht definiert bzw. trivial sind, wenn man Werte aus $E_K$ einsetzt.\\ Dementsprechend ist $E(x)$ eine streng minimale Formel und für $e_1,\dots,e_n\in E_K$ ist $\operatorname{RM}(\overline{e}/X)=\dim(\overline{e}/X)$ für alle $X\subseteq K$. TODO: Nochmal nachprüfen, dass das wirklich auch für streng minimale Formeln gilt
+    	In jedem Modell $(K,E_K)$ ist jede definierbare Menge $X\subset E_K^n$ schon beschreibbar als $X=E_K^n\cap Z$, wobei $Z$ definierbar in der Ringsprache über denselben Parametern ist. Das liegt daran, dass die $(f_{i,n}),(l_n)$ nicht definiert bzw. trivial sind, wenn man Werte aus $E_K$ einsetzt.\\ Dementsprechend ist $E(x)$ eine streng minimale Formel und für $e_1,\dots,e_n\in E_K$ ist $\operatorname{RM}(\overline{e}/X)=\dim(\overline{e}/X)$ für alle $X\subseteq K$.
     \end{corollary}
     \begin{corollary}
-    	$\operatorname{ACP}^{\lf}$ hat ebenfalls Quantorenelimination nach Folgerung \ref{Formel-Vereinfachung}. Da in Lemma \ref{Symbolik} gezeigt wurde, dass die $f_{i,n}$ sowohl existenziell als auch universell definierbar sind, ist jede Formel modulo $\operatorname{ACP}^{\lld}$ immerhin universell und $\operatorname{ACP}^{\lld}$ ist modellvollständig.
+    	$\operatorname{ACP}^{\lf}$ hat für fixierte Charakteristik ebenfalls Quantorenelimination, da nach Folgerung \ref{Formel-Vereinfachung} die Operation \glqq{}$^{-1}$\grqq{} eliminiert werden kann. Da in Lemma \ref{Symbolik} gezeigt wurde, dass die $(f_{i,n})$ sowohl existenziell als auch universell definierbar sind, ist jede Formel modulo $\operatorname{ACP}^{\lld}$ immerhin universell und $\operatorname{ACP}^{\lld}$ ist modellvollständig.
     \end{corollary}
     
     \begin{corollary}
     	Man kann sich leicht überlegen, dass ACP$\cup\{$\glqq{}Charakteristik=p\grqq{}$\}$ das Primmodell $(\overline{\mathbb{P}(e)},\overline{\mathbb{P}})$ hat für $\mathbb{P}$ als Primkörper und ein beliebiges $e$ transzendent über $\mathbb{P}$.
     \end{corollary}
-    
+    \newpage
     \begin{theorem}
     	ACP ist $\omega$-stabil.
     \end{theorem}
     \begin{proof}
-    	Betrachte die Menge der Typen in einem Modell $(K,E_K)$ über einer vorgegebenen Menge $S\subset K$ und wähle als Sprache $\lfc$. \OE\ ist das Modell schon $\abs{S}^+$-saturiert und $S$ Träger einer Unterstruktur. Aus dem B\&F-System in Satz \ref{QE} geht hervor, dass es die folgenden Typen über $S$ gibt:
+    	Betrachte die Menge der Typen in einem Modell $(K,E_K)$ über einer vorgegebenen Menge $S\subset K$ und wähle als Sprache $\lfc$. \OE\ ist das Modell schon $\abs{S}^+$-saturiert und $S$ Träger einer $\lfc$-Unterstruktur. Aus dem B\&F-System in Satz \ref{QE} geht hervor, dass es die folgenden Typen über $S$ gibt:
     	\begin{itemize}
     		\item Den Typ eines Elementes in $S$
-    		\item Die Typen eines Elementes $a$ in $\overline{SE_K}\setminus S$ (bestimmt durch den endlichen Transzendenzgrad über $S$ des minimalen Unterkörpers $E_S\subseteq X\subseteq E_K$, sodass $a\in\overline{SX}$, sowie durch den Isomorphietyp des Minimalpoynoms von $a$ über $SX$)
+    		\item Die Typen eines Elementes $a$ in $\overline{SE_K}\setminus S$ (bestimmt durch den endlichen Trans\-zen\-denz\-grad über $S$ des minimalen Unterkörpers $E_S\subseteq X\subseteq E_K$, sodass $a\in\overline{SX}$, sowie durch den Isomorphietyp des Minimalpoynoms von $a$ über $SX$)
     		\item Den Typ eines Elementes in $K\setminus\overline{SE_K}$
     	\end{itemize}
         Der erste Typ hat klarerweise Morleyrang 0. Sei $a$ ein Realisator eines Typen der zweiten Art. Dann ist $a$ algebraisch über $S\overline{e}$ für gewisse $e_1,\dots,e_n\in E_K$, also $$\operatorname{RM}(a/S)\leq\operatorname{RM}(\overline{e}/S)=\dim(\overline{e}/S)<\omega.$$
         Der dritte Typ kann keinen Morleyrang $>\omega$ haben, denn dann müsste es einen Typen mit Morleyrang $\omega$ geben, die anderen Arten von Typen haben aber endlichen Rang. Sei $(a_n)$ eine Folge von Elementen, sodass $n<\operatorname{RM}(a_n)<\omega$ für alle $n\in\setN$ (TODO: sowas gibt es). Dann ist im Stoneraum $\lim\limits_{n\rightarrow\infty}\tp(a_n)=p$ für den Typen $p$ der dritten Art: Denn $a_n$ kann jeweils nicht mehr algebraisch über $SX$ sein für alle $E_S\subset X$ von Transzendenzgrad $\leq n$. Also sind für jede Umgebung, die das Nichterfüllen einer bestimmten Art von Polynom über $SE_K$ beschreibt, fast alle $a_n$ enthalten. Aber diese Umgebungen bestimmen den Typen $p$ eindeutig, also sind für jedes $\phi\in p$ fast alle $\tp(a_n)$ in $\fU_\phi$.\\
         Jedes $\phi\in S_1(S)$ mit $\operatorname{RM}(\phi)<\omega$ ist dann nur in endlich vielen $\tp(a_n)$ enthalten (nämlich maximal $\operatorname{RM}(\phi)$ vielen), also ist $\operatorname{RM}(p)\geq\omega$, damit herrscht Gleichheit.\\
         Da alle Typen Morleyrang $<\infty$ haben, haben alle Formeln in einer freien Variable Morleyrang $<\infty$ und die Theorie ist $\omega$-stabil.\\
-        Alternativ gibt es nicht mehr Typen über $S$ als $\abs{S}+\aleph_0$, auch das beweist die $\omega$-Stabilität.
+        Ein Alternativbeweis wäre auch, dass es nicht mehr Typen über $S$ gibt als $\abs{S}+\aleph_0$, auch das beweist die $\omega$-Stabilität. Und auch mit algebraischen Methoden ist ein Beweis möglich, siehe dazu den Anhang.
     \end{proof}
