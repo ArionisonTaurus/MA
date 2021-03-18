@@ -1,7 +1,7 @@
 %!TEX root = DieLoesungAllerMilleniumsprobleme.tex
 \chapter{Dichte Paare o-minimaler Strukturen}
 \section{Allgemeine Betrachtungen und Anforderungen an die Theorien}
-\colorbox{green}{Ende Korrektur der Formatierung}
+
 Viele Techniken und Gedanken aus dem vorigen Kapitel werden jetzt auf o-minimale Theorien übertragen. Einführend folgen hier zunächst die wichtigsten Erkenntnisse über diese Theorien, basierend auf \cite{vdDZellzerlegung}.
 
 \begin{definition}
@@ -12,9 +12,9 @@ Induktiv kann man den Begriff einer Zelle in einer solchen Struktur definieren.
 \begin{definition}
 	Sei $\sigma$ eine $\{0,1\}$-wertige endliche Folge der Länge $n$. Eine $\sigma$-Zelle $Z$ in der o-minimalen Struktur $\fM$ ist eine (definierbare) Teilmenge von $M^n$, sodass genau eine der folgenden Möglichkeiten gilt:
 	\begin{itemize}
-		\item $\sigma$ ist die leere Folge, $n=0$ und $Z=B^0=\{0\}$.
-		\item $n=1$ und $Z$ ist entweder Intervall ($\sigma=(1)$) oder einelementig ($\sigma=0$).
-		\item Es existiert ein $\sigma'$, eine $\sigma'$-Zelle Z' und eine definierbare stetige Funktion $f:Z'\rightarrow M$, sodass $Z=\operatorname{Graph}(f)$. Außerdem ist $\sigma=\sigma'\textasciicircum0$.
+		\item $\sigma$ ist die leere Folge, $n=0$ und $Z=M^0=\{0\}$.
+		\item $n=1$ und $Z$ ist entweder Intervall ($\sigma=(1)$) oder einelementig ($\sigma=(0)$).
+		\item Es existiert ein $\sigma'$, eine $\sigma'$-Zelle Z' und eine definierbare stetige Funktion\linebreak$f:Z'\rightarrow M$, sodass $Z=\operatorname{Graph}(f)$. Außerdem ist $\sigma=\sigma'\textasciicircum0$.
 		\item Es existiert ein $\sigma'$, eine $\sigma'$-Zelle Z' und zwei definierbare stetige Funktionen $f,g:M^{Z'}\cup\{\pm\infty\}$, sodass $f<g$ überall und $$Z=\{(x,y)\in Z'\times M\mid f(x)<y<g(x)\}.$$ Außerdem ist $\sigma=\sigma'\textasciicircum1$.
 	\end{itemize}
 \end{definition}
@@ -51,7 +51,7 @@ Wichtigste Grundlage der Arbeit mit o-minimalen Theorien sind die folgenden Auss
 \begin{definition}
 	Eine vollständige Theorie sei o-minimal, wenn eines ihrer Modelle es ist.
 \end{definition}
-
+\newpage
 Ab jetzt geben wir uns ein o-minimales Modell $\fM$ einer vollständigen $\lingua$-Theorie T so vor, dass die Ordnung dicht ist. Zellen sind sehr ähnlich zu Mannigfaltigkeiten, genauso wie diesen kann man ihnen eine Dimension zuweisen.
 \begin{lemdef}
 	Die endliche Folge $\sigma$ zur jeweiligen Zelle $Z$ ist eindeutig bestimmt und daher der Wert $\dim(Z)=\sum\limits_{i=1}^n\sigma(i)$ wohldefiniert. Er wird \textbf{Dimension der Zelle} genannt. Für allgemeine definierbare nichtleere Mengen $X$ sei die \textbf{Dimension} $\dim(X)$ definiert als das Maximum der Zelldimensionen in einer beliebigen Zellzerlegung, die Dimension der leeren Menge sei 0. Das ist wohldefiniert und rein topologisch definierbar: $\dim(X)\leq n$ genau dann, wenn eine Projektion von $X$ nach $M^n$ nichtleeres Inneres hat. Damit ist die Dimension auch $\lingua$-definierbar.
@@ -59,7 +59,7 @@ Ab jetzt geben wir uns ein o-minimales Modell $\fM$ einer vollständigen $\lingu
 
 Man kann die Dimension auch anders definieren:
 \begin{lemma}
-	In o-minimalen Strukturen erfüllt $\acl=\dcl$ das Austauschprinzip und induziert also einen Dimensionsbegriff für Tupel. Wenn $\fM$ hinreichend saturiert ist und $X\subseteq M^n$ definierbar über $Y$, ist $\dim(X)=\max\{\dim(a/Y)\mid a\in X\}$.
+	Es erfüllt $\acl=\dcl$ das Austauschprinzip und induziert also einen Dimensionsbegriff für Tupel. Wenn $\fM$ hinreichend saturiert ist und $X\subseteq M^n$ definierbar über $Y$, ist $\dim(X)=\max\{\dim(a/Y)\mid a\in X\}$.
 \end{lemma}
 
 Im Folgenden halten wir eine vollständige o-minimale Theorie T mit dichter Ordnung in der Sprache $\lingua$ fest und betrachten die Theorie $\tq$ in der Sprache $\lingua^P:=\lingua\cup\{P(x)\}$, sodass die Modelle von $\tq$ Modelle von T sind und in jedem Modell $\fM$ die Menge $P(M)$ ebenfalls Modell von T ist. Schreibe so ein Paar dann als $(B,A)$ mit $A=P(B)$.\\
@@ -67,7 +67,7 @@ Wir setzen voraus, dass T RCF erweitert, insbesondere gilt Definable Choice. Dan
 Aus T universell mit Quantorenelimination folgt, dass Unterstrukturen von Modellen von T schon elementare Unterstrukturen sind. Also ist für jede Teilmenge $S$ eines Modells $\dcl(S)$ schon eine elementare Substruktur; zur Vereinfachung bezeichne in Zukunft $AB:=\dcl(A\cup B)=\langle A\cup B\rangle_\lingua$ für zwei Teilmengen $A,B$ eines Modells.\\
 $P$ beschreibt also eine elementare Unterstruktur, mit $\td$ wird nun die Theorie beschrieben, die ausdrückt, dass $P$ eine dichte echte Unterstruktur ist (diese zwei Sachen oder deren Gegenteil müssen auf jeden Fall von der Theorie beschrieben werden, wenn sie vollständig sein soll). Klar ist dann, dass Unterstrukturen von $\td$ automatisch Modelle von $\tq$ sind.\\
 Der Arbeit \cite{VanDenDries} folgend, wird in den nächsten Abschnitten die Vollständigkeit und eine Art von Quantorenelimination für $\td$ gezeigt, die mittels eines Back\&Forth-Systems bewiesen wird. Danach werden einige Erkenntnisse aus dem B\&F-System gezogen, bevor die Hauptaussagen dieser Arbeit bewiesen werden. Zunächst ist aber eine genauere Betrachtung von sogenannten kleinen Mengen vonnöten.
-
+\colorbox{green}{Ende Korrektur der Formatierung}
 \section{Kleine Mengen}
 \begin{definition}
 	Sei $(B,A)\models\td$, dann ist eine $\lingua^P$-definierbare Menge $S\subseteq B$ \textbf{klein}, wenn eine $\lingua$-definierbare Funktion $f:B^n\rightarrow B$ existiert mit $S\subseteq f(A^n)$.
@@ -76,7 +76,7 @@ Der Arbeit \cite{VanDenDries} folgend, wird in den nächsten Abschnitten die Vol
 TODO: Hier ein Satz über Saturierung bei den Rechenregeln einfügen
 
 \begin{lemma}
-	Kleine Mengen in einem dichten Paar bilden ein Ideal bzgl. $\glqq{}\subseteq\grqq{}$.
+	Kleine Mengen in einem dichten Paar bilden ein Ideal in den $\lingua^P$-definierbaren Mengen bzgl. $\glqq{}\subseteq\grqq{}$.
 \end{lemma}
 \begin{proof}
 	Es gibt kleine Mengen, zum Beispiel Punktmengen oder der kleinere Teil eines Paares, außerdem sind Teilmengen von kleinen Mengen offensichtlich wieder klein.\\
