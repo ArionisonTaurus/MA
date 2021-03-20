@@ -1,6 +1,6 @@
 %!TEX root = DieLoesungAllerMilleniumsprobleme.tex
 \chapter{Dichte Paare o-minimaler Strukturen}
-\section{Allgemeine Betrachtungen und Anforderungen an die Theorien}
+\section{O-Minimale Theorien und ihre Eigenschaften}
 
 Viele Techniken und Gedanken aus dem vorigen Kapitel werden jetzt auf o-minimale Theorien übertragen. Einführend folgen hier zunächst die wichtigsten Erkenntnisse über diese Theorien, basierend auf \cite{vdDZellzerlegung}.
 
@@ -62,13 +62,19 @@ Man kann die Dimension auch anders definieren:
 	Es erfüllt $\acl=\dcl$ das Austauschprinzip und induziert also einen Dimensionsbegriff für Tupel. Wenn $\fM$ hinreichend saturiert ist und $X\subseteq M^n$ definierbar über $Y$, ist $\dim(X)=\max\{\dim(a/Y)\mid a\in X\}$.
 \end{lemma}
 
+O-Minimale Gruppen haben eine enorm wichtige Eigenschaft, aus der viele weitere (hier nicht bedeutende Dinge folgen).
+\begin{lemma}
+	Wenn $\fM$ eine 0-definierbare, durch $<$ angeordnete Gruppenoperation mit einem 0-definierbaren positiven Element (üblicherweise 1 genannt) besitzt, gilt \textbf{Definable Choice}: Aus jeder definierbaren Menge lässt sich kanonisch, uniform und definierbar ein Element auswählen. Insbesondere gibt es zu jeder Menge eine definierbare Skolemfunktion und jede definierbare Familie von uniform parametrisierten Mengen hat eine definierbare Auswahlfunktion. Die Auswahl ist dabei definierbar über derselben Menge wie die ursprüngliche(n) Menge(n).
+\end{lemma}
+\newpage
+\section{Anforderungen an die hier betrachteten Theorien}
+
 Im Folgenden halten wir eine vollständige o-minimale Theorie T mit dichter Ordnung in der Sprache $\lingua$ fest und betrachten die Theorie $\tq$ in der Sprache $\lingua^P:=\lingua\cup\{P(x)\}$, sodass die Modelle von $\tq$ Modelle von T sind und in jedem Modell $\fM$ die Menge $P(M)$ ebenfalls Modell von T ist. Schreibe so ein Paar dann als $(B,A)$ mit $A=P(B)$.\\
 Wir setzen voraus, dass T RCF erweitert, insbesondere gilt Definable Choice. Dann sind Skolemfunktionen definierbar und \OE\ ist $\lingua$ schon so eine definitorische Erweiterung, dass T Quantorenelimination hat und universell axiomatisierbar ist (wobei bei einzelnen Theorien die Frage interessant wäre, welche Skolemfunktionen man dafür überhaupt hinzufügen muss).\\
 Aus T universell mit Quantorenelimination folgt, dass Unterstrukturen von Modellen von T schon elementare Unterstrukturen sind. Also ist für jede Teilmenge $S$ eines Modells $\dcl(S)$ schon eine elementare Substruktur; zur Vereinfachung bezeichne in Zukunft $AB:=\dcl(A\cup B)=\langle A\cup B\rangle_\lingua$ für zwei Teilmengen $A,B$ eines Modells.\\
-$P$ beschreibt also eine elementare Unterstruktur, mit $\td$ wird nun die Theorie beschrieben, die ausdrückt, dass $P$ eine dichte echte Unterstruktur ist (diese zwei Sachen oder deren Gegenteil müssen auf jeden Fall von der Theorie beschrieben werden, wenn sie vollständig sein soll). Klar ist dann, dass Unterstrukturen von $\td$ automatisch Modelle von $\tq$ sind.
-\newpage
+$P$ beschreibt also eine elementare Unterstruktur, mit $\td$ wird nun die Theorie beschrieben, die ausdrückt, dass $P$ eine dichte echte Unterstruktur ist (diese zwei Sachen oder deren Gegenteil müssen auf jeden Fall von der Theorie beschrieben werden, wenn sie vollständig sein soll). Klar ist dann, dass Unterstrukturen von $\td$ automatisch Modelle von $\tq$ sind.\\\\
 Der Arbeit \cite{VanDenDries} folgend, wird in den nächsten Abschnitten die Vollständigkeit und eine Art von Quantorenelimination für $\td$ gezeigt, die mittels eines Back\&Forth-Systems bewiesen wird. Danach werden einige Erkenntnisse aus dem B\&F-System gezogen, bevor die Hauptaussagen dieser Arbeit bewiesen werden. Zunächst ist aber eine genauere Betrachtung von sogenannten kleinen Mengen vonnöten.
-
+\newpage
 \section{Kleine Mengen, Dichtheit und saturierte Modelle}
 \begin{definition}
 	Sei $(B,A)\models\td$, dann ist eine $\lingua^P$-definierbare Menge $S\subseteq B$ \textbf{klein}, wenn eine $\lingua$-definierbare Funktion $f:B^n\rightarrow B$ existiert mit $S\subseteq f(A^n)$.
@@ -145,7 +151,7 @@ Zum Abschluss dieses Abschnittes sollen hier noch ein paar weitere Fakten über 
 \end{proof}
 
 \begin{corollary}\label{Finden transz Elte}
-	Da Intervalle nicht klein sind, zeigt der Beweis sogar, dass in einem $\kappa$-saturiertem Modell $(B,A)\models\td$, gegeben Mengen $S,S',S''\subset B$ mit $$\abs{S},\abs{S'},\abs{S''}<\kappa,$$ ein transzendentes Element $b$ über $SA$ gefunden werden kann mit $a<b$ für alle $a\in S'$ und $b<c$ für alle $c\in S''$, sofern dieser Ordnungstyp von $b$ überhaupt konsistent ist.
+	Da Intervalle nicht klein sind, zeigt ein abgewandelter Beweis sogar, dass in einem $\kappa$-saturiertem Modell $(B,A)\models\td$, gegeben Mengen $S,S',S''\subset B$ mit $$\abs{S},\abs{S'},\abs{S''}<\kappa,$$ ein transzendentes Element $b$ über $SA$ gefunden werden kann mit $a<b$ für alle $a\in S'$ und $b<c$ für alle $c\in S''$, sofern dieser Ordnungstyp von $b$ überhaupt konsistent ist.
 \end{corollary}
 
 \begin{lemma}\label{Kodichte von A}
@@ -237,7 +243,7 @@ Das eben aufgestellte B\&F-System beweist die Formelreduzierung in $\td$.
 \newpage
 \section{Folgen der Existenz des B\&F-Systems}
 Im Folgenden werden einige Anordnungen von wechselseitigen Inklusionen von Modellen von T betrachtet, in der Gleichheit von bestimmten Typen folgt.
-\colorbox{green}{Ende Korrektur der Formatierung}
+
 \begin{lemma}\label{freie Inklusionen}
 	Für dichte Paare $(B,A),(D,C)$ mit $(D,C)\subseteq(B,A)$ sind folgende Eigenschaften äquivalent:
 	\begin{enumerate}
@@ -265,21 +271,21 @@ Im Folgenden werden einige Anordnungen von wechselseitigen Inklusionen von Model
 	Seien $(B_1,A_1),(B_2,A_2)$ zwei dichte Paare und $A\subseteq A_1\cap A_2$ eine gemeinsame Substruktur, sowie $a\in B_1\setminus A_1,\ b\in B_2\setminus A_2$, die den gleichen Ordnungstyp über $A$ haben. Dann haben $a$ und $b$ sogar den gleichen $\lingua^P$-Typ über $A$.
 \end{lemma}
 \begin{proof}
-	Es sind trivialer Weise $A_i$ und $A$ unabhängig über $A$ für $i=1,2$, außerdem ist $a$ transzendent über $A_1$ und $b$ transzendent über $A_2$. Nach Lemma \ref{Unabhängigkeitsregeln} (4.) sind also die Einbettungen $(Aa,A)\subseteq(B_1,A_1)$ und $(Ab,A)\subseteq(B_2,A_2)$ frei. Nach dem Beweis zu Satz \ref{BackForth} gibt es einen Isomorphismus $Aa\cong Ab$, der $A\cong A$ fortsetzt und für den $i(a)=b$ gilt, also einen Isomorphismus $i:(Aa,A)\cong(Ab,A)$.\\ Wenn \OE\ die beiden Modelle von $\td$ genügend saturiert sind, ist $i$ im B\&F-System, also erfüllen $a$ und $b$ dieselben $\lingua^P_A$-Formeln.
+	Es sind trivialer Weise $A_i$ und $A$ unabhängig über $A$ für $i=1,2$, außerdem ist $a$ transzendent über $A_1$ und $b$ transzendent über $A_2$. Nach Lemma \ref{Unabhängigkeitsregeln} (4.) sind also die Einbettungen $$(Aa,A)\subseteq(B_1,A_1)\text{ und }(Ab,A)\subseteq(B_2,A_2)$$ frei. Nach dem Beweis zu Satz \ref{BackForth} gibt es einen Isomorphismus $Aa\cong Ab$, der $A\cong A$ fortsetzt und für den $i(a)=b$ gilt, also einen Isomorphismus $i:(Aa,A)\cong(Ab,A)$.\\ Wenn \OE\ die beiden Modelle von $\td$ genügend saturiert sind, ist $i$ im B\&F-System, also erfüllen $a$ und $b$ dieselben $\lingua^P_A$-Formeln.
 \end{proof}
 
 \begin{lemma}\label{Speziell definierbare kleine Mengen}
 	Sei $(D,C)\subseteq(B,A)$ frei und $(B,A)\models\td$, sowie $X\subseteq B$ eine kleine $\lingua^P_D$-definierbare Menge. Dann gibt es sogar eine $\lingua_D$-definierbare Funktion $f:B^n\rightarrow B$, die die Kleinheit von $X$ bezeugt.
 \end{lemma}
 \begin{proof}
-	Man kann für $(B,A)$ schon hinreichende Saturiertheit annehmen. Wenn es keine solche Funktion gäbe, wäre $$\{x\in X\}\cup\{x\notin f(A^n)\mid f:B^n\rightarrow B\ D\text{-definierbar}\}$$ eine konsistente Formelmenge über $D$; ihr Erfüller sei $b\in B\setminus DA$. Da $X$ klein ist, kann man den Ordnungstyp von $b$ über $D$ auch durch ein Element $\tilde{b}\in B\setminus(X\cup DA)$ erfüllen wie in Folgerung \ref{Finden transz Elte}. Nach Konstruktion des B\&F-Systems haben $b$ und $\tilde{b}$ dann aber den selben $\lingua^P_D$-Typ über $D$, was im Widerspruch zu $b\in X,\tilde{b}\notin X$ steht.
+	Man kann für $(B,A)$ schon hinreichende Saturiertheit annehmen. Wenn es keine solche Funktion gäbe, wäre $$\{x\in X\}\cup\{x\notin f(A^n)\mid f:B^n\rightarrow B\ D\text{-definierbar}\}$$ eine konsistente Formelmenge über $D$; ihr Erfüller sei $b\in B\setminus DA$. Da $X$ klein ist und als solches kein Intervall enthält, kann man den Ordnungstyp von $b$ über $D$ auch durch ein Element $$\tilde{b}\in B\setminus(X\cup DA)$$ erfüllen wie in Folgerung \ref{Finden transz Elte}. Nach Konstruktion des B\&F-Systems haben $b$ und $\tilde{b}$ dann aber den selben $\lingua^P_D$-Typ über $D$, was im Widerspruch zu $b\in X,\tilde{b}\notin X$ steht.
 \end{proof}
 
 \section{Definierbare Teilmengen von $A^n$}
 Wir interessieren uns für die Gestalt von $\lingua^P$-definierbaren Teilmengen von $A^n$. Dafür braucht man zuerst eine Hilfsaussage für definierbare Mengen in o-minimalen Strukturen.
-
+\colorbox{green}{Ende Korrektur der Formatierung}
 \begin{lemma}
-	Sei $\fM$ eine o-minimale Struktur, die eine angeordnete Gruppenoperation $+$ mit positivem Element 1 hat und $Y\subseteq M^n$ definierbar. Dann ist $Y$ eine endliche Vereinigung von Mengen der Form $\{f(b,\cdot)=0,g(b,\cdot)>0\}$, wobei $b\in M^m$ und $f,g$ stetige, 0-definierbare Abbildungen $M^{m+n}\rightarrow M$ sind.
+	Sei $\fM$ eine o-minimale Struktur, die eine angeordnete 0-definierbare Gruppenoperation $+$ mit positivem Element 1 hat und $Y\subseteq M^n$ definierbar. Dann ist $Y$ eine endliche Vereinigung von Mengen der Form $\{f(b,\cdot)=0,g(b,\cdot)>0\}$, wobei $b\in M^m$ und $f,g$ stetige, 0-definierbare Abbildungen $M^{m+n}\rightarrow M$ sind.
 \end{lemma}
 \begin{proof}
 	Schreibe $Y=\phi(b,\fM)$ für ein $b\in M^m$ und definiere $Z:=\phi(\fM)$. Wenn man $Z$ in 0-definierbare Zellen $(Z_i)_i$ zerlegt, erhält man $Y$ als endliche Vereinigung der Fasern $((Z_i)_b)_i$.  Es sei also \OE\ $Z$ schon eine 0-definierbare Zelle.\\
