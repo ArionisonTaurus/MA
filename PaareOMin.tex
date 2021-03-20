@@ -158,7 +158,7 @@ Zum Abschluss dieses Abschnittes sollen hier noch ein paar weitere Fakten über 
 \newpage
 
 \section{Formelreduzierung in $\td$}
-In diesem Abschnitt wird gezeigt, dass sich $\lingua^P$-Formeln modulo $\td$ sehr stark vereinfachen lassen. Indem dieses mit einem Back\&Forth-System gezeigt wird, erhält man zusätzlich eine sehr große Klasse von elementaren Abbildungen zwischen Modellen von $\td$.\\
+In diesem Abschnitt wird gezeigt, dass sich $\lingua^P$-Formeln modulo $\td$ sehr stark vereinfachen lassen und dass $\td$ vollständig ist. Indem dieses mit einem Back\&Forth-System gezeigt wird, erhält man zusätzlich eine sehr große Klasse von elementaren Abbildungen zwischen Modellen von $\td$.\\
 In diesem Kontext wird wieder die $\acl$-Unabhängigkeit (TODO: Sollte man das vielleicht doch definieren?) in einem Modell von T relevant, die im ersten Kapitel mit \glqq{}algebraisch disjunkt\grqq{} bezeichnet wurde. Man kann sich dafür folgende (teilweise schon bekannte) Fakten überlegen.
 
 \begin{lemma}\label{Unabhängigkeitsregeln}
@@ -206,7 +206,7 @@ Für die Konstruktion des gewünschten Back\&Forth-Systems sei $\kappa>\abs{\ope
 \end{proof}
 
 Das eben aufgestellte B\&F-System beweist die Formelreduzierung in $\td$.
-\colorbox{green}{Ende Korrektur der Formatierung}
+
 \begin{theorem}\label{Formelreduzierung}
 	Jede $\lingua^P$-Formel ist modulo $\td$ äquivalent zu einer booleschen Kombination von Formeln der Gestalt
 	$$\exists\overline{y}\in P(\phi(\overline{x},\overline{y}))$$
@@ -214,12 +214,16 @@ Das eben aufgestellte B\&F-System beweist die Formelreduzierung in $\td$.
 \end{theorem}
 \begin{proof}
 	\underline{Hilfsaussage:}\\
-	Es reicht zu zeigen, dass für alle Modelle $(B,A),(D,C)\models\td$ und für alle $b\in B^n,d\in D^n$ gilt: Wenn $b$ und $d$ dieselben guten Formeln erfüllen, sind ihre Typen in $(B,A)$ und $(D,C)$ dieselben.\\
-	Dass dies ausreicht, erkennt man mit dem Ziegler'schen Trennungslemma: Sei $\psi\in\fF_n(\lingua^P)$ nicht äquivalent zu einer guten Formel und nenne die Menge aller guten Formeln in $n$ freien Koordinaten $K$. Dann ist $K$ abgeschlossen unter $\land,\lor$ und enthält $\top,\bot$. Wenn $\psi$ nicht äquivalent zu einer Formel aus $K$ ist, sind $\td\cup\{\psi\}$ und $\td\cup\{\neg\psi\}$ nicht durch $K$ trennbar, also existieren $(B,A),(D,C)\models\td,b\in B^n,d\in D^n$, sodass $(B,A)\models\psi(b)$ und $(D,C)\models\neg\psi(d)$, aber $(B,A)\models\chi(b)$ genau dann, wenn $(D,C)\models\chi(d)$, und das für alle $\chi\in K$. Dann erfüllen $b$ und $d$ dieselben guten Formeln, aber haben nicht denselben Typ - ein Widerspruch!\\
+	Es reicht zu zeigen, dass für alle Modelle $(B,A),(D,C)\models\td$ und für alle $b\in B^n$, $d\in D^n$ gilt: Wenn $b$ und $d$ dieselben guten Formeln erfüllen, sind ihre Typen in $(B,A)$ und $(D,C)$ dieselben.\\
+	Dass dies ausreicht, erkennt man mit dem Ziegler'schen Trennungslemma:\linebreak
+	Sei $\psi\in\fF_n(\lingua^P)$ nicht äquivalent zu einer guten Formel und nenne die Menge aller guten Formeln in $n$ freien Koordinaten $K$. Dann ist $K$ abgeschlossen unter $\land,\lor$ und enthält $\top,\bot$. Wenn $\psi$ nicht äquivalent zu einer Formel aus $K$ ist, sind $\td\cup\{\psi\}$ und $\td\cup\{\neg\psi\}$ nicht durch $K$ trennbar, also existieren $(B,A),(D,C)\models\td,b\in B^n,d\in D^n$, sodass $(B,A)\models\psi(b)$ und $(D,C)\models\neg\psi(d)$, aber $(B,A)\models\chi(b)$ genau dann, wenn $(D,C)\models\chi(d)$, und das für alle $\chi\in K$. Dann erfüllen $b$ und $d$ dieselben guten Formeln, aber haben nicht denselben Typ - ein Widerspruch!
+	\newpage
 	\begin{proof2}[Beweis der Hilfsaussage]
-		Seien $b,d$ wie verlangt und $(B,A),(D,C)$ schon \OE\linebreak $\abs{\operatorname{T}}^+$-saturiert, denn das ändert nichts an Typen und dem Erfüllen von guten Formeln. Sei $a\in A^m$ für ein hinreichend großes $m$, mit der Eigenschaft dass $\dim(b/a)\leq\dim(b/A)$. So etwas gibt es, wenn man endlich viele $\lingua_A$-Formeln betrachtet, sodass jede Interdefinierbarkeit in $b$ durch diese Formeln bezeugt wird; als $a$ kann man dann die Parametermenge nehmen. Es folgt dann Gleichheit der Dimensionen, da über einer kleineren Menge nicht mehr interdefinierbar werden kann. Für $A':=\dcl(a),B':=\dcl(a,b)$ gilt dann, dass $A$ und $B'$ unabhängig über $A'$ sind. Es sind nämlich per Definition von $a$ die Mengen $A$ und $b$ unabhängig über $a$ (eben wegen $\dim(b/a)=\dim(b/A)$), mit Lemma \ref{Unabhängigkeitsregeln} (2.) sind dann auch $A$ und $a\cup b$ unabhängig über $a$ und mit (3.) sind $A$ und $B'=\dcl(a,b)$ unabhängig über $A'\dcl(a)=$. Außerdem sind $A'$ und $B'$ maximal $\abs{\operatorname{T}}$ groß und $(B',A')\subseteq (B,A)$.\newpage
-		Wenn man den partiellen $\lingua^P$-Typ $\tp_\lingua(a/b)\cup\{P(\overline{x})\}$ betrachtet, bleibt er konsistent unter der Ersetzung $b\rightarrowtail d$ in den Formeln. Seien nämlich $\psi_1(\overline{x},b),\dots,\psi_n(\overline{x},b)\in\tp_\lingua(a/b)$, dann ist $$\exists\overline{x}\in P(\bigwedge\limits_{i=1}^n\psi_i(\overline{x},\overline{y}))$$ eine gute Formel, die von $b$ und daher auch von $d$ erfüllt wird. Also ist der ersetzte partielle Typ endlich konsistent, wegen Saturation habe er den Erfüller $c\in C$ und es gilt $\tp_\lingua(a,b)=\tp_\lingua(c,d)$. Wegen der Typengleichheit folgt insbesondere $\dim(b/a)=\dim(d/c)$; es bleibt noch zu zeigen, dass $\dim(b/A)=\dim(d/C)$, damit dann gilt $$\dim(d/C)=\dim(b/A)=\dim(b/a)=\dim(d/c)$$ und wie oben $C$ und $D':=\dcl(c,d)$ frei über $C':=\dcl(c)$ sind sowie $(D',C')\subseteq(D,C)$. Die Gleichheit $\dim(b/A)=\dim(d/C)$ gilt aber, da für jede $\lingua$-Formel $\psi$ und $j_1,\dots,j_n\in\setN$ die Formel zu $$\glqq{}\text{es existiert }\overline{y}\in P\text{, sodass }\psi(\overline{x},\overline{y})\ x_i\text{ über }x_{j_1},\dots,x_{j_m}\text{ definiert}\grqq{}$$ eine gute Formel in Reinform ist, die also genau dann von $b$ erfüllt wird, wenn sie von $d$ erfüllt wird.\\
-		Da $(a,b)$ und $(c,d)$ den gleichen $\lingua$-Typ haben, gibt es einen partiellen Isomorphismus $i$ von $B'=\dcl(a,b)$ nach $D'=\dcl(c,d)$ durch Abbilden der $\lingua_{b,a}$-Terme auf $\lingua_{d,c}$-Terme. Dieser erfüllt $i((a,b))=(c,d)$, die Einschränkung auf $A'=\dcl(a)$ bildet einen Isomorphismus nach $C'=\dcl(c)$. Also ist $i$ partieller Isomorphismus $(B',A')\rightarrow(D',C')$, damit im B\&F-System, also elementare Abbildung, weswegen $b$ und $d$ denselben $\lingua^P$-Typen haben.
+		Seien $b,d$ wie verlangt und $(B,A),(D,C)$ schon \OE\linebreak $\abs{\operatorname{T}}^+$-saturiert, denn das ändert nichts an Typen und dem Erfüllen von guten Formeln. Sei $a\in A^m$ für ein hinreichend großes $m$, mit der Eigenschaft dass $$\dim(b/a)\leq\dim(b/A).$$ So etwas gibt es, wenn man endlich viele $\lingua_A$-Formeln betrachtet, sodass jede Interdefinierbarkeit in $b$ durch diese Formeln bezeugt wird; als $a$ kann man dann die vereinigte Parametermenge dieser ganzen Formeln nehmen. Es folgt dann Gleichheit der Dimensionen, da über einer kleineren Menge nicht mehr interdefinierbar werden kann. Für $$A':=\dcl(a),B':=\dcl(a,b)$$ gilt dann, dass $A$ und $B'$ unabhängig über $A'$ sind. Es sind nämlich per Definition von $a$ die Mengen $A$ und $b$ unabhängig über $a$ (eben wegen $\dim(b/a)=\dim(b/A)$), mit Lemma \ref{Unabhängigkeitsregeln} (2.) sind dann auch $A$ und $a\cup b$ unabhängig über $a$ und mit (3.) sind $A$ und $B'=\dcl(a,b)$ unabhängig über $A'=\dcl(a)$. Außerdem sind $A'$ und $B'$ maximal $\abs{\operatorname{T}}$ groß und $(B',A')\subseteq (B,A)$.\\
+		Wenn man den partiellen $\lingua^P$-Typ $\tp_\lingua(a/b)\cup\{P(\overline{x})\}$ betrachtet, bleibt er konsistent unter der Ersetzung $b\rightarrowtail d$ in den Formeln. Seien nämlich ${\psi_1(\overline{x},b),\dots,\psi_n(\overline{x},b)\in\tp_\lingua(a/b)}$, dann ist $$\exists\overline{x}\in P(\bigwedge\limits_{i=1}^n\psi_i(\overline{x},\overline{y}))$$ eine gute Formel, die von $b$ und daher auch von $d$ erfüllt wird. Also ist der ersetzte partielle Typ endlich konsistent, wegen Saturation habe er den Erfüller $c\in C$ und es gilt $\tp_\lingua(a,b)=\tp_\lingua(c,d)$. Wegen der Typengleichheit folgt insbesondere $$\dim(b/a)=\dim(d/c);$$ es bleibt noch zu zeigen, dass $\dim(b/A)=\dim(d/C)$, damit dann gilt $$\dim(d/C)=\dim(b/A)=\dim(b/a)=\dim(d/c)$$ und wie oben $C$ und $D':=\dcl(c,d)$ frei über $C':=\dcl(c)$ sind sowie $(D',C')\subseteq(D,C)$.
+		\newpage
+		Die Gleichheit $\dim(b/A)=\dim(d/C)$ gilt aber, da für jede $\lingua$-Formel $\psi$ und $j_1,\dots,j_n\in\setN$ die Formel zu $$\glqq{}\text{es existiert }\overline{y}\in P\text{, sodass }\psi(\overline{x},\overline{y})\ x_i\text{ über }x_{j_1},\dots,x_{j_m}\text{ definiert}\grqq{}$$ eine gute Formel in Reinform ist, die also genau dann von $b$ erfüllt wird, wenn sie von $d$ erfüllt wird.\\
+		Da $(a,b)$ und $(c,d)$ den gleichen $\lingua$-Typ haben, gibt es einen partiellen Isomorphismus $i$ von $B'=\dcl(a,b)$ nach $D'=\dcl(c,d)$ durch Abbilden der $\lingua_{a,b}$-Terme auf $\lingua_{c,d}$-Terme. Dieser erfüllt $i((a,b))=(c,d)$, die Einschränkung auf $A'=\dcl(a)$ bildet einen Isomorphismus nach $C'=\dcl(c)$. Also ist $i$ partieller Isomorphismus $(B',A')\rightarrow(D',C')$, damit im B\&F-System, also elementare Abbildung, weswegen $b$ und $d$ denselben $\lingua^P$-Typen haben.
 	\end{proof2}
 \end{proof}
 
@@ -227,13 +231,13 @@ Das eben aufgestellte B\&F-System beweist die Formelreduzierung in $\td$.
 	Für ein dichtes Paar $(B,A)$ und $S\subseteq B^n$ eine $\lingua^P_{A_0}$-definierbare Menge (wobei $A_0\subseteq A$) ist $S\cap A^n$ eine $\lingua_{A_0}$-definierbare Teilmenge von $A$.
 \end{corollary}
 \begin{proof}
-	Nach der Formelreduzierung sei $S$ \OE\ durch eine gute Formel definiert. Da die Definierbarkeit abgeschlossen unter booleschen MengeKombinationen ist, reicht es, eine Formel in Reinform zu betrachten.\newpage
-	Da aber für jede $\lingua_{A_0}$-Formel $\varphi(x,y,a')$ und jedes $a\in A^n$ die Aussagen $$\glqq{}\text{Es existiert ein }y\in A^m\text{ mit }(B,A)\models\varphi(a,y,a')\grqq{},$$ $$\glqq{}\text{Es existiert ein }y\in A^m\text{ mit }B\models\varphi(a,y,a')\grqq{},$$ $$\glqq{}\text{Es existiert ein }y\in A^m\text{ mit }A\models\varphi(a,y,a')\grqq{}$$ äquivalent sind wegen $\varphi$ als $\lingua$-Formel und $A\prec B$, folgt, dass $$\exists y\in P(\varphi(x,y,a'))(B)\cap A^n=\exists y(\varphi(x,y,a'))(A).$$
+	Nach der Formelreduzierung sei $S$ \OE\ durch eine gute Formel definiert. Da Definierbarkeit abgeschlossen unter booleschen Kombinationen ist, reicht es, eine Formel in Reinform zu betrachten.\\
+	Für jede $\lingua_{A_0}$-Formel $\varphi(x,y,a')$ und jedes $a\in A^n$ sind die Aussagen $$\glqq{}\text{Es existiert ein }y\in A^m\text{ mit }(B,A)\models\varphi(a,y,a')\grqq{},$$ $$\glqq{}\text{Es existiert ein }y\in A^m\text{ mit }B\models\varphi(a,y,a')\grqq{},$$ $$\glqq{}\text{Es existiert ein }y\in A^m\text{ mit }A\models\varphi(a,y,a')\grqq{}$$ äquivalent wegen $\varphi$ als $\lingua$-Formel und $A\prec B$. Es folgt, dass $$(\exists y\in P(\varphi(x,y,a')))(B)\cap A^n=(\exists y(\varphi(x,y,a')))(A).$$
 \end{proof}
-
+\newpage
 \section{Folgen der Existenz des B\&F-Systems}
 Im Folgenden werden einige Anordnungen von wechselseitigen Inklusionen von Modellen von T betrachtet, in der Gleichheit von bestimmten Typen folgt.
-
+\colorbox{green}{Ende Korrektur der Formatierung}
 \begin{lemma}\label{freie Inklusionen}
 	Für dichte Paare $(B,A),(D,C)$ mit $(D,C)\subseteq(B,A)$ sind folgende Eigenschaften äquivalent:
 	\begin{enumerate}
