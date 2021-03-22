@@ -447,6 +447,21 @@ Um definierbare Funktionen besser zu verstehen, ist es notwendig, sich mit dem d
 	Nach dem Beweis zur Existenz des B\&F-Systems kann der partielle Isomorphismus $(B,A)\supseteq(D,C)\cong(D,C)\subseteq(B,A)$ insbesondere auf mehrere Weisen auf $b$ fortgesetzt werden: Wenn $b\in A$ oder $b\in B\setminus AD$, ging es nur um die Erfüllung von transzendenten Ordnungstypen, da hat man also viele Optionen. Wenn $b\in AD\setminus(A\cup D)$ ist und $a\in A^n$ unabhängig über $D$ mit $b\in Da$, dann finde $a'_1$ transzendent über $Da$ von passendem Ordnungstyp über $D$, $a'_2$ transzendent über $Daa'_1$ von passendem Ordnungstyp über $Da'_1$, usw. So kann man den Isomorphismus auf $Da$ fortsetzen mit Bild $Da'$; da aber $a$ und $a'$ per Konstruktion unabhängig über $D$ waren, sind auch $Da$ und $Da'$ unabhängig über $D$, also $Da\cap Da'=D$ und das Bild von $b$ kann nicht $b$ selbst sein. Also gibt es auch in diesem Fall mehrere Möglichkeiten für eine Fortsetzung, also mehrere elementare Abbildungen, daher kann $b$ nicht definierbar über $D$ sein.
 \end{proof}
 
+Das vorige Lemma kann man unter bestimmten Bedingungen umkehren, so zum Beispiel für $\operatorname{RCF^d}$.
+\begin{definition}
+	$\td$ sei \textbf{zahm für Paare}, wenn jede definierbar abgeschlossene Menge in jedem Modell $(B,A)\models\td$ speziell ist.
+\end{definition}
+
+\begin{lemma}\label{RCF zahm}
+	$\operatorname{RCF^d}$ ist zahm für Paare.
+\end{lemma}
+\begin{proof}
+	Sei $(B,A)$ ein Modell und $S$ definierbar abgeschlossen. Dann ist $S$ Träger einer $\lingua$-Unterstruktur von $B$, also auch Modell von RCF. Sei $\overline{B}$ ein algebraischer Abschluss von $B$, dann stimmt der RCF-$\acl$ auf $B$ mit dem auf $B$ eingeschränkten ACF-$\acl$ auf $\overline{B}$ überein, wir brauchen sie also nicht zu unterscheiden. Zu zeigen ist dann $$S\ad_{S\cap A}A.$$
+	Es gilt aber $$S\ld_{S\cap A}A,$$ denn wenn $\overline{x}\in S$ linear abhängig über $A$ ist und \OE\ $x_1,\dots,x_k$ eine Basis des Tupels über $A$ sind, dann kann jedes $x_i\in\overline{x}$ eindeutig als $A$-Linearkombination davon geschrieben werden. Also ist diese Linearkombination $\lingua^P_S$-definierbar, also in $S\cap A$; somit ist $\overline{x}$ linear abhängig über $S\cap A$. Mit Lemma \ref{Rechenregeln} folgt $S\ad_{S\cap A}A$.
+\end{proof}
+
+Nun aber zu den definierbaren Funktionen. Es gibt mehrere Möglichkeiten, $\lingua^P$-definierbare Funktionen mit $\lingua$-definierbaren Funktionen in Verbindung zu setzen.
+
 \begin{lemma}
 	Sei $F:A^n\rightarrow A$ eine $\lingua^P_S$-definierbare Funktion. Dann gibt es $S\cap A$-definierbare $f_1,\dots,f_k:A^n\rightarrow A$ in $A$, sodass für alle $a\in A^n$ ein $f_i$ existiert mit $F(a)=f_i(a)$.
 \end{lemma}
@@ -492,35 +507,41 @@ Um definierbare Funktionen besser zu verstehen, ist es notwendig, sich mit dem d
 
 \section{Offene und abgeschlossene $\lingua^P$-definierbare Mengen}
 Nach der Beschreibung der Struktur von $\lingua^P$-definierbaren Teilmengen von $B$ liegt die Vermutung nahe, dass offene und abgeschlossene $\lingua^P$-definierbare Mengen schon $\lingua$-definierbar sind.\\
-Zum Beweis dessen benötigt man einen Satz aus \cite{Piz}.
-\begin{theorem}\label{Kurven}
-	Sei $F:B^n\rightarrow B$ eine $\lingua^P_S$-definierbare Funktion. Dann ist $F$ definierbar in $\lingua_S$ genau dann, wenn für alle speziellen $X\supseteq S$ und alle $\lingua_X$-definierbaren partiellen Funktionen $\alpha: Y\rightarrow B^n$ mit $Y$ offen in $B$ auch $F\circ\alpha$ schon $\lingua_X$-definierbar ist.
-\end{theorem}
-
+Dies lässt sich in vielen Situationen auch beweisen. Im Folgenden werden mehrere Möglichkeiten dafür angegeben. Hierbei sei $(B,A)$ wieder ein dichtes Paar und $S$ speziell.\\
 Als erstes ist festzuhalten, dass die Aussage für Mengen in einer Variable leicht zu sehen ist und man sie nur für offene Mengen zeigen muss.
-\begin{lemma}
+\begin{lemma}\ 
 	\begin{itemize}
 		\item Sei $Z\subseteq B$ offen und $\lingua^P_S$-definierbar. Dann ist $Z$ schon $\lingua_S$-definierbar.
 		\item Wenn alle offenen $\lingua^P_S$-definierbaren Teilmengen von $B^n$ auch $\lingua_S$-definierbar sind, sind es alle abgeschlossenen solchen Mengen auch.
 	\end{itemize}
 \end{lemma}
-\begin{proof}
+\begin{proof}\ 
 	\begin{itemize}
-		\item In der Darstellung von Satz \ref{Satz 4} kann der Fall $Z\cap I$ dicht und kodicht nicht auftreten, weil offene Mengen niemals kodicht sind. Also sind die $\lingua^P_S$-definierbaren offenen Teilmengen von $B$ gerade die endlichen Vereinigungen von Intervallen mit Rand aus $\dcl(S)\cup\{\pm\infty\}$ und das ist $\lingua_S$-definierbar.
+		\item In der Darstellung von Satz \ref{Satz 4} kann der Fall $Z\cap I$ dicht und kodicht nicht auftreten. Die Menge $Z\cap I$ ist nämlich offen und kann daher nicht kodicht in $I$ sein (denn sonst würde sie ein Element ihres eigenen Komplements enthalten). Also sind die $\lingua^P_S$-definierbaren offenen Teilmengen von $B$ gerade die endlichen Vereinigungen von Intervallen mit Rand aus $\dcl(S)\cup\{\pm\infty\}$ und Punkten aus $\dcl(S)$ und das ist $\lingua_S$-definierbar.
 		\item Wenn $Z\subseteq B^n$ abgeschlossen und $\lingua^P_S$-definierbar ist, ist $Z^c$ offen und $\lingua^P_S$-definierbar, also $\lingua_S$-definierbar per Voraussetzung. Damit ist $Z$ dann selbst $\lingua_S$-definierbar.
 	\end{itemize}
 \end{proof}
 
+
+Für mehrstellige Mengen kann man folgenden Satz aus \cite{Piz} benutzen, die Voraussetzungen dafür sind allerdings nicht zwangsläufig erfüllt. Für einige Theorien wie z.B. $\operatorname{RCF^d}$ ist das aber ein gangbarer Weg (siehe auch Lemma \ref{RCF zahm}).
+\begin{theorem}\label{Kurven}
+	Sei $F:B^n\rightarrow B$ eine $\lingua^P_S$-definierbare Funktion und $\td$ sei zahm für Paare. Dann ist $F$ definierbar in $\lingua_S$ genau dann, wenn für alle speziellen $X\supseteq S$ und alle $\lingua_X$-definierbaren partiellen Funktionen $\alpha: Y\rightarrow B^n$ mit $Y$ offen in $B$ auch $F\circ\alpha$ schon $\lingua_X$-definierbar ist.
+\end{theorem}
+
+Mit diesem Satz kann man dann die gewünschte Eigenschaft beweisen.
+
 \begin{theorem}
-	Offene und abgeschlossene $\lingua^P_S$-definierbare Mengen sind $\lingua_S$-definierbar.
+	Offene und abgeschlossene $\lingua^P_S$-definierbare Mengen sind $\lingua_S$-definierbar, sofern $\td$ zahm für Paare ist.
 \end{theorem}
 \begin{proof}
-	Nach dem vorigen Lemma reicht es, das für offene Mengen zu zeigen, genauer reicht es, die Definierbarkeit für charakteristische Funktionen solcher Mengen zu zeigen. Sei $Z\subseteq B^n$ eine offene $\lingua^P_S$-definierbare Menge und $X\supseteq S$ speziell, $\alpha:Y\rightarrow B^n$ eine $\lingua_X$-definierbare, partielle Funktion und $Y\subseteq B$ offen. Zu zeigen ist für die Anwendung von Satz \ref{Kurven}, dass $\chi_Z\circ\alpha$ definierbar in $\lingua_X$ ist. Man kann annehmen, dass $\alpha$ stetig ist, sonst zerlege $Y$ in Intervalle, auf denen $\alpha$ stetig ist, und Punkte; das ändert nichts an irgendwelchen Definierbarkeiten. Man kann dann feststellen, dass $$1=\chi_Z\circ\alpha(x)\Leftrightarrow\alpha(x)\in Z\Leftrightarrow x\in\alpha^{-1}(Z).$$ Da aber $\alpha^{-1}(Z)$ eine $\lingua^P_X$-definierbare Teilmenge von $B$ ist, offen wegen Stetigkeit von $\alpha$ und Offenheit von $Z$ und zusätzlich $X$ speziell ist, ist $\alpha^{-1}(Z)$ nach dem vorigen Lemma $\lingua_X$-definierbar. Also ist $\chi_Z\circ\alpha$ definierbar in $\lingua_X$ durch $$\chi_Z\circ\alpha(x)=\left\{\begin{array}{ll}
+	Es reicht, das für offene Mengen zu zeigen, genauer reicht es, die Definierbarkeit für charakteristische Funktionen solcher Mengen zu zeigen. Sei $Z\subseteq B^n$ eine offene $\lingua^P_S$-definierbare Menge und $X\supseteq S$ speziell, $\alpha:Y\rightarrow B^n$ eine $\lingua_X$-definierbare, partielle Funktion und $Y\subseteq B$ offen. Zu zeigen ist für die Anwendung von Satz \ref{Kurven}, dass $\chi_Z\circ\alpha$ definierbar in $\lingua_X$ ist. Man kann annehmen, dass $\alpha$ stetig ist, sonst zerlege $Y$ in Intervalle, auf denen $\alpha$ stetig ist, und Punkte; das ändert nichts an irgendwelchen Definierbarkeiten. Man kann dann feststellen, dass $$1=\chi_Z\circ\alpha(x)\Leftrightarrow\alpha(x)\in Z\Leftrightarrow x\in\alpha^{-1}(Z).$$ Da aber $\alpha^{-1}(Z)$ eine $\lingua^P_X$-definierbare Teilmenge von $B$ ist, offen wegen Stetigkeit von $\alpha$ und Offenheit von $Z$ und zusätzlich $X$ speziell ist, ist $\alpha^{-1}(Z)$ nach dem vorigen Lemma $\lingua_X$-definierbar. Also ist $\chi_Z\circ\alpha$ definierbar in $\lingua_X$ durch $$\chi_Z\circ\alpha(x)=\left\{\begin{array}{ll}
 	1&x\in\alpha^{-1}(Z)\\
 	0&\text{sonst}
 	\end{array}\right..$$
 \end{proof}
 
 \begin{corollary}
-	Der Abschluss und das Innere von $\lingua^P_S$-definierbaren Mengen sind $\lingua_S$-definierbar.
+	Der Abschluss und das Innere von $\lingua^P_S$-definierbaren Mengen sind unter dieser Anforderung an die Theorie $\lingua_S$-definierbar.
 \end{corollary}
+
+Es gibt auch andere Möglichkeiten, die gesuchte Aussage für manche Theorien zu beweisen. Für Teilmengen von $\setR^n$ wird das zum Beispiel in \cite{VanDenDries} beschrieben. Es wäre auch zu betrachten, ob die Argumentation in \cite{DieMoeglicheLoesung} eine Lösung dieses Problems hergibt. Man könnte sich überlegen, wie Satz \ref{Satz 4} und Satz \ref{Satz 3} ins mehrdimensionale zu verallgemeinern wären und dann so vorgehen, wie beim Beweis der Zellzerlegung in \cite{vdDZellzerlegung}. Aber dies wäre eine Aufgabe für eine weitere Arbeit zu dem Thema.
