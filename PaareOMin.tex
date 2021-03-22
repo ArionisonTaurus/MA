@@ -283,9 +283,9 @@ Im Folgenden werden einige Anordnungen von wechselseitigen Inklusionen von Model
 
 \section{Definierbare Teilmengen von $A^n$}
 Wir interessieren uns für die Gestalt von $\lingua^P$-definierbaren Teilmengen von $A^n$. Dafür braucht man zuerst eine Hilfsaussage für definierbare Mengen in o-minimalen Strukturen.
-\colorbox{green}{Ende Korrektur der Formatierung}
+
 \begin{lemma}
-	Sei $\fM$ eine o-minimale Struktur, die eine angeordnete 0-definierbare Gruppenoperation $+$ mit positivem Element 1 hat und $Y\subseteq M^n$ definierbar. Dann ist $Y$ eine endliche Vereinigung von Mengen der Form $\{f(b,\cdot)=0,g(b,\cdot)>0\}$, wobei $b\in M^m$ und $f,g$ stetige, 0-definierbare Abbildungen $M^{m+n}\rightarrow M$ sind.
+	Sei $\fM$ eine o-minimale Struktur, die eine angeordnete 0-definierbare Gruppenoperation $+$ mit positivem Element 1 hat und $Y\subseteq M^n$ definierbar. Dann ist $Y$ eine endliche Vereinigung von Mengen der Form $$\{f(b,\cdot)=0,g(b,\cdot)>0\},$$ wobei $b\in M^m$ und $f,g$ stetige, 0-definierbare Abbildungen $M^{m+n}\rightarrow M$ sind.
 \end{lemma}
 \begin{proof}
 	Schreibe $Y=\phi(b,\fM)$ für ein $b\in M^m$ und definiere $Z:=\phi(\fM)$. Wenn man $Z$ in 0-definierbare Zellen $(Z_i)_i$ zerlegt, erhält man $Y$ als endliche Vereinigung der Fasern $((Z_i)_b)_i$.  Es sei also \OE\ $Z$ schon eine 0-definierbare Zelle.\\
@@ -297,9 +297,9 @@ Wir interessieren uns für die Gestalt von $\lingua^P$-definierbaren Teilmengen 
 	\inf\{\abs{x-d}\mid d\in \overline{Z}\setminus Z\}&Z\text{ nichtleer}\\
 	1&\text{sonst}
 	\end{array}\right.,$$ das sind lipschitzstetige Funktionen.\\
-	Klar ist, dass $\overline{Z}=\{f=0\}$; da Zellen lokal abgeschlossen sind, ist $\overline{Z}\setminus Z=\overline{\overline{Z}\setminus Z}=\{g=0\}$. Also erhalten wir $$Z=\overline{Z}\setminus(\overline{Z}\setminus Z)=\{f=0\}\setminus\{g=0\}=\{f=0\}\cap\{g>0\}$$ und $$Y=Z_b=\{f(b,\cdot)=0\}\cap\{g(b,\cdot)>0\}.$$
+	Klar ist, dass $\overline{Z}=\{f=0\}$; da Zellen lokal abgeschlossen sind, ist $$\overline{Z}\setminus Z=\overline{\overline{Z}\setminus Z}=\{g=0\}.$$ Also erhalten wir $$Z=\overline{Z}\setminus(\overline{Z}\setminus Z)=\{f=0\}\setminus\{g=0\}=\{f=0\}\cap\{g>0\}$$ und $$Y=Z_b=\{f(b,\cdot)=0\}\cap\{g(b,\cdot)>0\}.$$
 \end{proof}
-
+\newpage
 \begin{theorem}\label{Definierbare Mengen}
 	Für ein dichtes Paar $(B,A)$ und $Y\subseteq A^n$ ist folgendes äquivalent:
 	\begin{enumerate}
@@ -309,9 +309,11 @@ Wir interessieren uns für die Gestalt von $\lingua^P$-definierbaren Teilmengen 
 	\end{enumerate}
 \end{theorem}
 \begin{proof}
-	$\glqq{}1.\Rightarrow 2.\grqq{}:$ Sei $\varphi$ eine $\lingua^P_B$-Formel mit $\varphi(B)=Y$. Zu zeigen ist, dass eine $\lingua_B$-Formel $\psi$ existiert mit $(B,A)\models P(x)\rightarrow(\varphi(x)\leftrightarrow\psi(x))$; das ist genau dann der Fall, wenn $\mathfrak{Th}(B,A)_B\cup\{P(x)\}\cup\{\varphi(x)\}$ und $\mathfrak{Th}(B,A)_B\cup\{P(x)\}\cup\{\neg\varphi(x)\}$ in $\lingua_B$ getrennt werden können. Nach dem Trennungslemma gilt das genau dann, wenn für alle $$(B,A)\preceq(D_1,C_1),(D_2,C_2)$$ und alle $c_i\in C_i\ (i=1,2)$ mit $$(D_1,C_1)\models\varphi(c_1),(D_2,C_2)\models\neg\varphi(c_2)$$ eine $\lingua_B$-Formel $\chi$ existiert mit $$(D_1,C_1)\models\chi(c_1),(D_2,C_2)\models\neg\chi(c_2).$$
+	$\glqq{}1.\Rightarrow 2.\grqq{}:$ Sei $\varphi$ eine $\lingua^P_B$-Formel mit $\varphi(B)=Y$. Zu zeigen ist, dass eine $\lingua_B$-Formel $\psi$ existiert mit $(B,A)\models P(x)\rightarrow(\varphi(x)\leftrightarrow\psi(x))$;
+	 das ist genau dann der Fall, wenn $$\mathfrak{Th}(B,A)_B\cup\{P(x)\}\cup\{\varphi(x)\}\text{ und }\mathfrak{Th}(B,A)_B\cup\{P(x)\}\cup\{\neg\varphi(x)\}$$ in $\lingua_B$ getrennt werden können. Nach dem Trennungslemma gilt das genau dann, wenn für alle $$(B,A)\preceq(D_1,C_1),(D_2,C_2)$$ und alle $c_i\in C_i\ (i=1,2)$ mit $$(D_1,C_1)\models\varphi(c_1),(D_2,C_2)\models\neg\varphi(c_2)$$ eine $\lingua_B$-Formel $\chi$ existiert mit $$(D_1,C_1)\models\chi(c_1),(D_2,C_2)\models\neg\chi(c_2).$$
 	Seien solche $(D_i,C_i)$ und $c_i$, die die Voraussetzungen von oben erfüllen. Dann ist das die Situation aus Lemma \ref{Gemeinsame Unterstruktur}, denn elementare Erweiterungen sind frei. Also muss ein trennendes $\chi$ wie verlangt existieren, denn ansonsten würden $c_1$ und $c_2$ denselben $\lingua$-Typ erfüllen, aber nicht denselben $\lingua^P$-Typ.\\
-	$\glqq{}2.\Rightarrow 3.\grqq{}:$ Sei $Y=Z\cap A^n$. Nach dem letzten Lemma ist $Z$ eine boolesche Kombination aus Mengen der Form $\{f(b,\cdot)=0\}$ und $\{g(b,\cdot)>0\}$ für stetige 0-$\lingua$-definierbare Funktionen $f,g$ und passende $b\in B^m$. Es reicht also die Aussage für Mengen in diesen Formen zu zeigen. Wegen der Stetigkeit der Funktionen und $A$ dicht in $B$ gilt aber in $B$
+	$\glqq{}2.\Rightarrow 3.\grqq{}:$ Sei $Y=Z\cap A^n$. Nach dem letzten Lemma ist $Z$ eine boolesche Kombination aus Mengen der Form $\{f(b,\cdot)=0\}$ und $\{g(b,\cdot)>0\}$ für stetige 0-$\lingua$-definierbare Funktionen $f,g$ und passende $b\in B^m$. Es reicht also die Aussage für Mengen in diesen Formen zu zeigen.\\
+	Wegen der Stetigkeit der Funktionen und $A$ dicht in $B$ gilt aber in $B$
 	\begin{align*}
 	f(b,z)=0\Leftrightarrow\ &\text{Für alle }0<\varepsilon\in A\text{ existiert }A^m\ni a<b\text{ (koordinatenweise),}\\&\text{sodass für alle }a'\in A^m\text{ mit }a<a'<b\text{ (koordinatenweise)}\\&\text{gilt, dass }\abs{f(a',z)}<\varepsilon,\\
 	g(b,z)>0\Leftrightarrow\ &\text{Es existiert ein }0<\varepsilon\in A\text{ und ein }A^m\ni a<b\text{ (koordinatenweise),}\\&\text{sodass für alle }a'\in A^m\text{ mit }a<a'<b\text{ (koordinatenweise)}\\&\text{gilt, dass }g(a',z)>\varepsilon.
@@ -321,7 +323,7 @@ Wir interessieren uns für die Gestalt von $\lingua^P$-definierbaren Teilmengen 
 \end{proof}
 
 \begin{definition}
-	Sei $(B,A)\models\tq$, dann heißt $S\subseteq B$ speziell, wenn $S$ und $A$ frei über $A\cap S$ sind.
+	Sei $(B,A)\models\tq$. Dann heißt $S\subseteq B$ speziell, wenn $S$ und $A$ frei über $A\cap S$ sind.
 \end{definition}
 
 \begin{lemma}\label{Spezialität dcl}
@@ -336,25 +338,27 @@ Wir interessieren uns für die Gestalt von $\lingua^P$-definierbaren Teilmengen 
 \end{lemma}
 \begin{proof}
 	Da eine Ersetzung $D\rightarrowtail\dcl(D)$ nichts ändert, können wir gleich davon ausgehen, dass $D$ schon ein Modell von T ist.\\
-	Der Beweis geht dann analog, nur müssen diesmal $\mathfrak{Th}(B,A)_D\cup\{P(x)\}\cup\{\varphi(x)\}$ und $\mathfrak{Th}(B,A)_D\cup\{P(x)\}\cup\{\neg\varphi(x)\}$ in $\lingua_D$ getrennt werden. Das ergibt anstatt von $(B,A)\preceq(D_1,C_1),(D_2,C_2)$ hier $(D_1,C_1),(D_2,C_2)\models\mathfrak{Th}(B,A)_D$.\\
+	Der Beweis geht dann analog, nur müssen diesmal $$\mathfrak{Th}(B,A)_D\cup\{P(x)\}\cup\{\varphi(x)\}\text{ und }\mathfrak{Th}(B,A)_D\cup\{P(x)\}\cup\{\neg\varphi(x)\}$$ in $\lingua_D$ getrennt werden. Das ergibt anstatt von $(B,A)\preceq(D_1,C_1),(D_2,C_2)$ hier $$(D_1,C_1),(D_2,C_2)\models\mathfrak{Th}(B,A)_D.$$
 	Wegen der Spezialität von $D$ gilt, dass die Inklusionen $(D,D\cap A)\subseteq(D_1,C_1),(D_2,C_2)$ frei sind: Wenn $\varphi(c,x)$ nämlich in $(D_i,C_i)$ für ein $i$ die Abhängigkeit von $d\in D^n$ über $C_i$ bezeugt, muss $$\glqq{}\text{Es existiert ein }a'\in P\text{ mit }\varphi(a',x)\text{ bezeugt die Abhängigkeit von }d\text{ über }P\grqq{}$$ in $\mathfrak{Th}(B,A)_D$ gelten, also ist $d$ abhängig über $A$, also wegen Spezialität von $D$ auch abhängig über $D\cap A$. Ab dann kann man den Beweis wie bekannt weiterführen und muss nur $(B,A)$ durch $(D,D\cap A)$ ersetzen.
 \end{proof}
 
 \section{Definierbare Mengen in einer Variablen}
-In diesem Abschnitt wird eine zur o-Minimalität ähnliche Charakterisierung von Mengen in einer Variable in Modellen von $\td$ hergeleitet. Ab jetzt sei $(B,A)$ ein beliebiges dichtes Paar und $S\subseteq B$ eine spezielle Menge, als Konvention nehmen wir an (TODO: nach vorne), dass $A^0=\{0\}$. Da $B$ selbst eine spezielle Menge ist, gelten die folgenden Aussagen insbesondere alle auch für Definierbarkeit unabhängig von irgendwelchen Parametermengen. Angelehnt ist die folgende Vorgehensweise (auch im nächsten Abschnitt) an die Modifikation in \cite{Piz} von \cite{VanDenDries}, Teile konnten noch präziser für spezielle Mengen gemacht werden.
+In diesem Abschnitt wird eine zur o-Minimalität ähnliche Charakterisierung von Mengen in einer Variable in Modellen von $\td$ hergeleitet. Ab jetzt sei $(B,A)$ ein beliebiges dichtes Paar und $S\subseteq B$ eine spezielle Menge. Da $B$ selbst eine spezielle Menge ist, gelten die folgenden Aussagen insbesondere alle auch für Definierbarkeit unabhängig von irgendwelchen Parametermengen. Angelehnt ist die folgende Vorgehensweise (auch im nächsten Abschnitt) an die Modifikation in \cite{Piz} von \cite{VanDenDries}, Teile konnten noch präziser für spezielle Mengen gemacht werden.
 
 \begin{lemma}
 	Sei $Y\subseteq B^n$ $\lingua_S$-definierbar und $(U_y)_{y\in Y}\subseteq B$ eine Familie von offenen, uniform $\lingua_S$-definierbaren Mengen. Dann ist $$X:=\bigcup\limits_{y\in Y\cap A^n}U_y$$ auch $\lingua_S$-definierbar.
 \end{lemma}
 \begin{proof}
 	Wir führen eine Induktion über $\dim Y$, man kann schon annehmen, dass alle $U_y$ nichtleer sind, sonst muss man entsprechend aus $Y$ aussondern. Wenn $\dim Y=0$ ist, ist $Y$ endlich und es ist schon $Y\cap A^n$ definierbar mit Parametern aus $S$ (zähle z.B. auf, das wievielte Element aus $Y$ man nimmt), also auch $X$.\\
-	Zerlege $Y$ in Zellen, das ändert nichts an irgendwelchen Definierbarkeiten, also kann man annehmen, dass $Y$ selbst schon Zelle ist. Wenn $Y$ keine offene Zelle ist und $\pi:Y\rightarrow Z$ der kanonische homöomorphe Projektion zu einer offenen Zelle von Dimension $m<\dim Y$, existiert nach Satz \ref{Definierbare Mengen Spezialität} ein $\lingua_S$-definierbares $Z'\subseteq B^m$ mit $\pi(Y\cap A^n)=Z'\cap A^m$, da $\pi(Y\cap A^n)\subseteq A^m$ eine $\lingua^P_S$-definierbare Menge ist. Definiere dann $Y':=Z\cap Z'$, sodass immer noch $\pi(Y\cap A^n)=Y'\cap A^m$ gilt und man die Menge umparametrisieren kann:
+	Zerlege $Y$ in Zellen, das ändert nichts an irgendwelchen Definierbarkeiten, also kann man annehmen, dass $Y$ selbst schon Zelle ist. Wenn $Y$ keine offene Zelle ist und ${\pi:Y\rightarrow Z}$ die kanonische homöomorphe Projektion zu einer offenen Zelle von Dimension $m<\dim Y$, existiert nach Satz \ref{Definierbare Mengen Spezialität} ein $\lingua_S$-definierbares $Z'\subseteq B^m$ mit $$\pi(Y\cap A^n)=Z'\cap A^m,$$ da $\pi(Y\cap A^n)\subseteq A^m$ eine $\lingua^P_S$-definierbare Menge ist.\\
+	Definiere dann $Y':=Z\cap Z'$, sodass immer noch $\pi(Y\cap A^n)=Y'\cap A^m$ gilt und man die Menge umparametrisieren kann:
 	$$\bigcup\limits_{y'\in Y'\cap A^m}U_{\pi^{-1}(y')}=\bigcup\limits_{y\in\pi^{-1}(Y'\cap A^m)}U_y=\bigcup\limits_{y\in Y\cap A^n}U_y=S$$
 	Da $(U_{\pi^{-1}(y')})_{y'\in Y'}$ die gleichen Dinge erfüllt wie $(U_y)_{y\in Y}$ und $\dim Y'\leq\dim Z<\dim Y$, gilt die Aussage per Induktion.\\
 	Für den Beweis für offene Zellen definiere die vier $\lingua_S$-definierbaren Mengen $$U:=\bigcup\limits_{y\in Y}U_y,$$ $$Y_x:=\{y\in Y\mid x\in U_y\},$$ $$C:=\{x\in U\mid\inn(Y_x)=\emptyset\},$$ $$D:=\bigcup\limits_{x\in\inn C}Y_x.$$
 	Es gilt $$D=\bigcup\limits_{x\in U}\{y\in Y\mid x\in U_y\cap\inn C\}=\{y\in Y\mid U_y\cap\inn C\neq\emptyset\}.$$
 	Wir wollen jetzt herleiten, dass $\inn D$ leer sein muss. Seien dafür mit Definable Choice die $\lingua_S$-definierbaren Funktionen $f,g_1,g_2:D\rightarrow B$ gegeben mit $$f(y)\in(g_1(y),g_2(y))\subseteq U_y\cap\inn C.$$
-	Wenn $\inn D\neq\emptyset$, schränke $D$ ein, sodass es offen ist und $f,g_1,g_2$ stetig auf $D$ sind. Sei außerdem $d,e\in U_y\cap\inn C, (c,k)\subseteq U_y\cap\inn C$ (das ist offen), sodass $$c<g_1(y)<d<f(y)<e<g_2(y)<k.$$ Setze $$V:=g_1^{-1}((c,d))\cap f^{-1}((d,e))\cap g_2^{-1}((e,k)),$$ das ist dann eine offene Umgebung um $y$ in $B^n$. Für alle $z\in V$ ist $$f(y)\in(d,e)\subseteq(g_1(z),g_2(z))\subseteq U_z,$$ also ist $z\in Y_{f(y)}$. Das heißt, es gilt $V\subseteq Y_{f(y)}$; aber das ist unmöglich, weil $V$ offen in dem (eingeschränkten) Definitionsbereich, also auch in $B^n$ ist und also $Y_{f(y)}$ nichtleeres Inneres hätte, was $f(y)\in C$ widerspricht.\\
+	Wenn $\inn D\neq\emptyset$, schränke $D$ ein, sodass es offen ist und $f,g_1,g_2$ stetig auf $D$ sind. Sei außerdem $d,e\in U_y\cap\inn C, (c,h)\subseteq U_y\cap\inn C$ (das ist offen), sodass $$c<g_1(y)<d<f(y)<e<g_2(y)<h.$$ Setze $$V:=g_1^{-1}((c,d))\cap f^{-1}((d,e))\cap g_2^{-1}((e,h)),$$ das ist dann eine offene Umgebung um $y$ in $B^n$. Für alle $z\in V$ ist $$f(y)\in(d,e)\subseteq(g_1(z),g_2(z))\subseteq U_z,$$ also ist $z\in Y_{f(y)}$.\newpage
+	Das heißt, es gilt $V\subseteq Y_{f(y)}$; aber das ist unmöglich, weil $V$ offen in dem (eingeschränkten) Definitionsbereich, also auch in $B^n$ ist und also $Y_{f(y)}$ nichtleeres Inneres hätte, was $f(y)\in C$ widerspricht.\\
 	$D$ hat als Menge ohne Inneres eine kleinere Dimension als $n$. Also ist induktiv auch $$\bigcup\limits_{y\in D\cap A^n}U_y$$ $S$-definierbar in $B$. Es ist außerdem
 	\begin{align}\label{align 1}
 	\bigcup\limits_{y\in (Y\setminus D)\cap A^n}U_y\cup((C\setminus\inn C)\cap\bigcup\limits_{y\in Y\setminus D}U_y)=\bigcup\limits_{y\in Y\setminus D}U_y.
@@ -362,9 +366,9 @@ In diesem Abschnitt wird eine zur o-Minimalität ähnliche Charakterisierung von
 	Dass die linke Seite Teilmenge der Rechten ist, ist sowieso klar per Definition; sei nun $$x\in\bigcup\limits_{y\in Y\setminus D}U_y\setminus (C\setminus\inn C)$$ und $y\in Y\setminus D$ mit $x\in U_y$. Wegen $x\notin C\setminus\inn C$ hat $Y_x$ nichtleeres Inneres ($x\notin C$) oder $x\in\inn C$ und daher $y\in D$ (denn $\{x\}\subseteq U_y\cap\inn C$). Da zweiteres ausgeschlossen wurde, hat $Y_x$ nichtleeres Inneres, also auch $Y_x\setminus D$ (denn $D$ war niedrigdimensional) und enthält damit ein Element $z\in A^n\cap(Y_x\setminus D)$ wegen Dichtheit. $z$ bezeugt, dass $x\in\bigcup\limits_{y\in (Y\setminus D)\cap A^n}U_y$ liegt.\\
 	Aus \ref{align 1} folgt, dass $$\bigcup\limits_{y\in (Y\setminus D)\cap A^n}U_y=\left(\bigcup\limits_{y\in Y\setminus D}U_y\setminus(C\setminus\inn C)\right)\cup\left((C\setminus\inn C)\cap\bigcup\limits_{y\in (Y\setminus D)\cap A^n}U_y\right)$$ $\lingua_S$-definierbar ist (der letzte Teil ist es wegen Endlichkeit von $C\setminus\inn C$). Also ist auch $$X=\bigcup\limits_{y\in Y\cap A^n}U_y=\bigcup\limits_{y\in (Y\setminus D)\cap A^n}U_y\cup\bigcup\limits_{y\in D\cap A^n}U_y$$ $\lingua_S$-definierbar in $B$.
 \end{proof}
-
+\newpage
 \begin{theorem}
-	Sei eine $\lingua^P_S$-definierbare Menge $X\subseteq B$. Dann stimmt $X$ bis auf eine kleine $\lingua^P_S$-definierbare Menge mit einer $\lingua_S$-definierbaren Menge $X'$ überein.
+	Sei eine $\lingua^P_S$-definierbare Menge $X\subseteq B$. Dann stimmt $X$ bis auf eine kleine $\lingua^P_S$-definierbare Menge mit einer $\lingua_S$-definierbaren Menge $X'$ überein.\colorbox{green}{Ende Korrektur der Formatierung}
 \end{theorem}
 \begin{proof}
 	Sei zunächst $X$ gegeben durch $\exists y\in P(\psi(x,y))$ für eine Formel $\psi\in\fF_{1+n}(\lingua_S)$. Die Mengen $$F_y:=\psi(B,y)\cap\partial\psi(B,y)$$ sind endlich für jedes $y\in M^n$ und weil o-minimale Theorien $\exists^\infty$ eliminieren, ist deren Mächtigkeit uniform beschränkt, sagen wir durch $k$. Sei $$Y:=\exists x\psi(x,B),Y':=\{y\in Y\mid F_y\neq\emptyset\}$$ und $\lingua_S$-definierbare Funktionen $g_1,\dots,g_k:Y'\rightarrow F_y$, sodass $F_y=\{g_1(y),\dots,g_k(y)\}$ für alle $y\in Y'$. Als diese Funktionen kann man zum Beispiel die angeordnete Aufzählung der Elemente in $F_y$ nehmen. Dann gilt
