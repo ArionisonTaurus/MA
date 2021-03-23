@@ -167,15 +167,29 @@
 		Fakultät für Mathematik und Physik
 
 	\end{titlepage}
-
+    \newpage
+    \thispagestyle{empty}
+    \mbox{}
+    \pagenumbering{roman}
+    \setcounter{page}{0}
 	\include{Einleitung}
+	\include{Notation}
 	\tableofcontents
 	\newpage
-	\include{Notation}
+	\thispagestyle{empty}
+	\mbox{}
+	\newpage
+	\pagenumbering{arabic}
+	\setcounter{page}{1}
 	\include{PaareAlgAbg}
     \include{PaareOMin}
     \newpage
+    \thispagestyle{empty}
+    \mbox{}
+    \newpage
     \appendix
+    \pagenumbering{Roman}
+    \setcounter{page}{1}
     \include{Anhang}
     \newpage
     \bibliography{quellen}{}
