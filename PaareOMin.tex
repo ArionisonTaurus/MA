@@ -368,18 +368,18 @@ In diesem Abschnitt wird eine zur o-Minimalität ähnliche Charakterisierung von
 \end{proof}
 \newpage
 \begin{theorem}
-	Sei eine $\lingua^P_S$-definierbare Menge $X\subseteq B$. Dann stimmt $X$ bis auf eine kleine $\lingua^P_S$-definierbare Menge mit einer $\lingua_S$-definierbaren Menge $X'$ überein.\colorbox{green}{Ende Korrektur der Formatierung}
+	Sei eine $\lingua^P_S$-definierbare Menge $X\subseteq B$. Dann stimmt $X$ bis auf eine kleine $\lingua^P_S$-definierbare Menge mit einer $\lingua_S$-definierbaren Menge $X'$ überein.
 \end{theorem}
 \begin{proof}
-	Sei zunächst $X$ gegeben durch $\exists y\in P(\psi(x,y))$ für eine Formel $\psi\in\fF_{1+n}(\lingua_S)$. Die Mengen $$F_y:=\psi(B,y)\cap\partial\psi(B,y)$$ sind endlich für jedes $y\in M^n$ und weil o-minimale Theorien $\exists^\infty$ eliminieren, ist deren Mächtigkeit uniform beschränkt, sagen wir durch $k$. Sei $$Y:=\exists x\psi(x,B),Y':=\{y\in Y\mid F_y\neq\emptyset\}$$ und $\lingua_S$-definierbare Funktionen $g_1,\dots,g_k:Y'\rightarrow F_y$, sodass $F_y=\{g_1(y),\dots,g_k(y)\}$ für alle $y\in Y'$. Als diese Funktionen kann man zum Beispiel die angeordnete Aufzählung der Elemente in $F_y$ nehmen. Dann gilt
+	Sei zunächst $X$ gegeben durch $\exists y\in P(\psi(x,y))$ für eine Formel $\psi\in\fF_{1+n}(\lingua_S)$. Die Mengen $$F_y:=\psi(B,y)\cap\partial\psi(B,y)$$ sind endlich für jedes $y\in M^n$ und weil o-minimale Theorien $\exists^\infty$ eliminieren, ist deren Mächtigkeit uniform beschränkt, sagen wir durch $k$. Sei $$Y:=(\exists x\psi(x,y))(B),Y':=\{y\in Y\mid F_y\neq\emptyset\}$$ und $\lingua_S$-definierbare Funktionen $g_1,\dots,g_k:Y'\rightarrow F_y$, sodass $F_y=\{g_1(y),\dots,g_k(y)\}$ für alle $y\in Y'$. Als diese Funktionen kann man zum Beispiel die angeordnete Aufzählung der Elemente in $F_y$ nehmen. Dann gilt
 	\begin{align*}
 	X&=\left(\exists y\in P(\psi(x,y))\right)(B,A)=\bigcup\limits_{y\in A^n}\psi(B,y)=\bigcup\limits_{y\in Y\cap A^n}\psi(B,y)\\&=\bigcup\limits_{y\in Y\cap A^n}(\psi(B,y)\cap \partial\psi(B,y))\cup\bigcup\limits_{y\in Y\cap A^n}\inn\psi(B,y)\\&=\bigcup\limits_{y\in Y'\cap A^n}\{g_1(y),\dots,g_k(y)\}\cup\bigcup\limits_{y\in Y\cap A^n}\inn\psi(B,y)\\&=\bigcup\limits_{i=1}^kg_i(Y'\cap A^n)\cup \bigcup\limits_{y\in Y\cap A^n}\inn\psi(B,y).
 	\end{align*}
-	Da $X':=\bigcup\limits_{i=1}^kg_i(Y'\cap A^n)$ klein ist und $S'':=\bigcup\limits_{y\in Y\cap A^n}\inn\psi(B,y)$ nach dem letzten Lemma $\lingua_S$-definierbar, stimmen $X$ und $X'$ bis auf die kleine $\lingua^P_S$-definierbare Menge $S''$ überein. Da Darstellungen \glqq{}$(X\setminus  S')\cup S'',X\ \lingua_S$-definierbar, $S',S''$ klein, $\lingua^P_S$-definierbar\grqq{} unter booleschen Kombinationen erhalten bleiben (Zur Erinnerung: Kleine Mengen bilden ein Ideal), folgt die Aussage für gute Formeln und daher für alle Mengen. Dabei ist zu beachten, dass Satz \ref{Formelreduzierung} auch hergibt, dass $\lingua^P_S$-Formeln zu guten $\lingua^P_S$-Formeln äquivalent sind.
+	Da $X':=\bigcup\limits_{i=1}^kg_i(Y'\cap A^n)$ klein ist und $S'':=\bigcup\limits_{y\in Y\cap A^n}\inn\psi(B,y)$ nach dem letzten Lemma $\lingua_S$-definierbar, stimmen $X$ und $X'$ bis auf die kleine $\lingua^P_S$-definierbare Menge $S''$ überein. Da Darstellungen $$\glqq{}(X\setminus  S')\cup S'',X\ \lingua_S\text{-definierbar, }S',S''\text{ klein, }\lingua^P_S\text{-definierbar}\grqq{}$$ unter booleschen Kombinationen erhalten bleiben (Zur Erinnerung: Kleine Mengen bilden ein Ideal), folgt die Aussage für gute Formeln und daher für alle Mengen. Dabei ist zu beachten, dass Satz \ref{Formelreduzierung} auch hergibt, dass $\lingua^P_S$-Formeln zu guten $\lingua^P_S$-Formeln äquivalent sind.
 \end{proof}
-
+\newpage
 \begin{lemma}
-	Sei $X\subseteq B$ eine kleine $\lingua^P_S$-definierbare Teilmenge. Dann ist $X$ eine endliche Vereinigung von Mengen $f(A^n\cap E)$ für $E$ eine offene $\lingua_S$-definierbare Zelle und $f:E\rightarrow B$ eine stetige $\lingua_S$-definierbare Funktion.
+	Sei $X\subseteq B$ eine kleine $\lingua^P_S$-definierbare Teilmenge. Dann ist $X$ eine endliche Vereinigung von Mengen der Form $f(A^n\cap E)$ für $E$ eine offene $\lingua_S$-definierbare Zelle und $f:E\rightarrow B$ eine stetige $\lingua_S$-definierbare Funktion.
 \end{lemma}
 \begin{proof}
 	Wenn $X$ klein ist, existiert ein $\lingua$-definierbares $g:B^m\rightarrow B$, sodass $X\subseteq g(A^m)$, nach Lemma \ref{Speziell definierbare kleine Mengen} kann man schon annehmen, dass $g$ über $\dcl(S)$ definierbar ist (denn $(\dcl(S),\dcl(S)\cap A)\subseteq (B,A)$ ist frei nach Lemma \ref{Spezialität dcl}), also auch über $S$. Setze $$X':=g^{-1}(X)\cap A^m=(g\upharpoonright A^m)^{-1}(X),$$ das ist $\lingua^P_S$-definierbar und es gilt $g(X')=X$ wegen $X\subseteq\operatorname{im}(g\upharpoonright A^m)$.\\
@@ -390,7 +390,7 @@ In diesem Abschnitt wird eine zur o-Minimalität ähnliche Charakterisierung von
 	$$g(Z\cap A^m)=(g\circ\pi)(Z'\cap\pi^{-1}(A^m))=(g\circ\pi)(A^d\cap E)$$
 	Die Gleichung ist aber schon der Fall eines kleineren $m$ und mit Induktion folgt die Aussage.
 \end{proof}
-
+\newpage
 \begin{theorem}\label{Satz 4}
 	Sei $X\subseteq B$ eine $\lingua^P_S$-definierbare Menge. Dann existiert eine endliche $\lingua_S$-definierbare Unterteilung von $B$, sodass für jedes dadurch erzeugte offene Intervall $I$ genau einer der folgenden Fälle gilt:
 	\begin{itemize}
@@ -409,7 +409,7 @@ In diesem Abschnitt wird eine zur o-Minimalität ähnliche Charakterisierung von
 		\item $Y\cup Z$ dicht in $I$, wenn $Y$ und $Z$ dicht in $I$
 		\item $Y\cup Z$ kodicht in $I$ als kleine Menge (s. Begr. oben)
 	\end{itemize}
-    Also gilt mit dem letzten Lemma die Aussage für kleine Mengen allgemein.\\
+    Also gilt mit dem letzten Lemma die Aussage für kleine Mengen allgemein.\newpage
 	Sei jetzt $X$ nicht mehr klein, dann stimmt es aber bis auf eine kleine Menge mit einer $\lingua$-definierbaren Menge $X'$ überein. Schreibe also $X=(X'\cup Y)\setminus Z$ für $Y$ und $Z$ klein und disjunkt. $X'$ ist als $\lingua$-definierbare Menge eine endliche Vereinigung von Punkten und Intervallen, da $Y,Z$  als kleine Mengen die oben beschriebene Gestalt haben, entspricht $X'\cup Y$ der Darstellung ohne den Fall koklein. In der Darstellung der drei Fälle wird der erste durch Subtraktion von $Z$ nicht geändert, der zweite bleibt oder wird zum dritten (2. Teil) und der dritte bleibt auch, da er nur von $Y$ kommt, aber $Y$ und $Z$ disjunkt sind. Also hat $X$ auch so eine Darstellung.
 \end{proof}
 
@@ -424,7 +424,7 @@ In diesem Abschnitt wird eine zur o-Minimalität ähnliche Charakterisierung von
 	Für $n=1$ gilt das nach Bemerkung 5.33. aus \cite{Lukas}. Denn $S_x$ ist endlich, genau dann, wenn $S_x$ diskret in $B$ ist; und das ist uniform $\lingua^P$-ausdrückbar. Die Äquivalenz zur Diskretheit sieht man ein, indem man eine Aufteilung von $S_x$ wie im letzten Satz vornimmt. Dann ist $S_x$ genau dann endlich, wenn nur der Fall $\glqq{}S_x\cap I=\emptyset\grqq{}$ vorkommt; weil dichte Teilmengen und Intervalle nicht diskret sind, gilt das wiederum genau dann, wenn $S_x$ diskret ist.\\
 	Sei $n>1$. Dann sind für $\pi_{i_1,\dots,i_k}$ als Projektionsabbildung auf die Koordinaten $i_1,\dots,i_k$ jeweils auch $$Y_x:=(\pi_{1,\dots,m+1}(S))_x=\pi_{m+1}(S_x)$$ und $$Z_x:=(\pi_{1,\dots,m,m+2,\dots,m+n}(S))_x=\pi_{m+2,\dots,m+n}(S_x)$$ endlich und daher ist nach Induktionsvoraussetzung die Mächtigkeit jeweils uniform beschränkt durch irgendwelche $K,L\in\setN$. Dann gilt aber $$\abs{S_x}\leq \abs{Y_x\times Z_x}=\abs{Y_x}\abs{Z_x},$$ was uniform durch $KL$ beschränkt ist.
 \end{proof}
-
+\newpage
 \section{Definierbare Funktionen und definierbarer Abschluss}
 Um definierbare Funktionen besser zu verstehen, ist es notwendig, sich mit dem definierbaren Abschluss in $\lingua^P$ zu beschäftigen. Damit kann man zeigen, dass definierbare Funktionen in einer Variablen \glqq{}fast überall\grqq{} $\lingua$-definierbar sind. Wir erinnern uns, dass ein dichtes Paar $(B,A)$ fixiert war und $S\subseteq B$ speziell. Mit \glqq{}definierbar abgeschlossen\grqq{} ist im Folgenden \glqq{}$\lingua^P$-definierbar abgeschlossen\grqq{} gemeint. Zuerst kommen zwei einfach zu beweisende Aussagen, um sie dann stark zu verallgemeinern und daraus Wissen über Funktionen zu erhalten.
 
@@ -448,7 +448,8 @@ Um definierbare Funktionen besser zu verstehen, ist es notwendig, sich mit dem d
 \end{lemma}
 \begin{proof}
 	Für eine beliebige Struktur $(B',A')\succeq (B,A)$ gelten die Voraussetzungen ebenso, da $\acl$-Abhängigkeit über $A$ als Teil vom Typen äquivalent ist zu $\acl$-Abhängigkeit über $A'$. Ebenso ist $D$ in $(B,A)$ definierbar abgeschlossen genau dann, wenn es in $(B',A')$ definierbar abgeschlossen ist. Also sei $(B,A)$ jetzt schon \OE\ hinreichend saturiert und $b\in B\setminus D$.\\
-	Nach dem Beweis zur Existenz des B\&F-Systems kann der partielle Isomorphismus $(B,A)\supseteq(D,C)\cong(D,C)\subseteq(B,A)$ insbesondere auf mehrere Weisen auf $b$ fortgesetzt werden: Wenn $b\in A$ oder $b\in B\setminus AD$, ging es nur um die Erfüllung von transzendenten Ordnungstypen, da hat man also viele Optionen. Wenn $b\in AD\setminus(A\cup D)$ ist und $a\in A^n$ unabhängig über $D$ mit $b\in Da$, dann finde $a'_1$ transzendent über $Da$ von passendem Ordnungstyp über $D$, $a'_2$ transzendent über $Daa'_1$ von passendem Ordnungstyp über $Da'_1$, usw. So kann man den Isomorphismus auf $Da$ fortsetzen mit Bild $Da'$; da aber $a$ und $a'$ per Konstruktion unabhängig über $D$ waren, sind auch $Da$ und $Da'$ unabhängig über $D$, also $Da\cap Da'=D$ und das Bild von $b$ kann nicht $b$ selbst sein. Also gibt es auch in diesem Fall mehrere Möglichkeiten für eine Fortsetzung, also mehrere elementare Abbildungen, daher kann $b$ nicht definierbar über $D$ sein.
+	Nach dem Beweis zur Existenz des B\&F-Systems kann der partielle Isomorphismus $$(B,A)\supseteq(D,C)\cong(D,C)\subseteq(B,A)$$ insbesondere auf mehrere Weisen auf $b$ fortgesetzt werden: Wenn $b\in A$ oder $b\in B\setminus AD$, ging es nur um die Erfüllung von transzendenten Ordnungstypen, da hat man also viele Optionen. Wenn $b\in AD\setminus(A\cup D)$ ist und $a\in A^n$ unabhängig über $D$ mit $b\in Da$, dann finde $a'_1$ transzendent über $Da$ von passendem Ordnungstyp über $D$, $a'_2$ transzendent über $Daa'_1$ von passendem Ordnungstyp über $Da'_1$, usw.\newpage
+	So kann man den Isomorphismus auf $Da$ fortsetzen mit Bild $Da'$; da aber $a$ und $a'$ per Konstruktion unabhängig über $D$ waren, sind auch $Da$ und $Da'$ unabhängig über $D$, also $Da\cap Da'=D$ und das Bild von $b$ kann nicht $b$ selbst sein. Also gibt es auch in diesem Fall mehrere Möglichkeiten für eine Fortsetzung, also mehrere elementare Abbildungen, daher kann $b$ nicht definierbar über $D$ sein.
 \end{proof}
 
 Das vorige Lemma kann man unter bestimmten Bedingungen umkehren, so zum Beispiel für $\operatorname{RCF^d}$.
@@ -470,9 +471,9 @@ Nun aber zu den definierbaren Funktionen. Es gibt mehrere Möglichkeiten, $\ling
 	Sei $F:A^n\rightarrow A$ eine $\lingua^P_S$-definierbare Funktion. Dann gibt es $S\cap A$-definierbare $f_1,\dots,f_k:A^n\rightarrow A$ in $A$, sodass für alle $a\in A^n$ ein $f_i$ existiert mit $F(a)=f_i(a)$.
 \end{lemma}
 \begin{proof}
-	Man kann annehmen, dass $S$ schon Modell von T ist, ansonsten geht man zu $\dcl(S)$ über. Nach Lemma \ref{Spezialität dcl} ist $\dcl(S)\cap A=\dcl(S\cap A)$, also ändert das die Aussage nicht.\\
+	Man kann annehmen, dass $S$ schon Modell von T ist, ansonsten geht man zu $\dcl(S)$ über. Nach Lemma \ref{Spezialität dcl} ist $\dcl(S)\cap A=\dcl(S\cap A)$, also ändert das die Aussage nicht.\newpage
 	Wenn das Lemma nicht gälte, gilt für alle $k\in\setN$ und alle in $A$ über $S\cap A$ definierbaren $f_1,\dots,f_k:A^n\rightarrow A$, dass ein $a\in A$ existiert mit $f_i(a)\neq F(a)$ für alle $i$. Also ist der partielle Typ $$\{P(x)\}\cup\{F(x)\neq f(x)\mid f:A^n\rightarrow A\ \lingua_{S\cap A}\text{-definierbar}\}$$ konsistent und es existiert $(B,A)\preceq(B',A')$ und $a'\in A'^n$ mit $F(a')\neq f(a')$ für alle $\lingua_{S\cap A}$-definierbaren $f:A'^n\rightarrow A'$.\\
-	Allerdings ist die Inklusion $$(S,S\cap A)\subseteq (B,A)$$ frei, wegen Elementarität auch $$(S,S\cap A)\subseteq (B',A').$$ Nach Lemma \ref{Unabhängigkeitsregeln} (6.) ist wegen $a'\in A'^n$ die Inklusion $(Sa',(S\cap A)a')\subseteq(B',A')$ frei, nach Lemma \ref{Freie Definierbarkeit} ist $Sa'$ also $\lingua^P$-definierbar abgeschlossen. Da $F(a')$ $\lingua^P$-definierbar über $Sa'$ ist, liegt es in $Sa'$, wegen $F:A'^n\rightarrow A'$ ist $F(a')\in A'$. Wegen Unabhängigkeit liegt also $F(a')\in Sa'\cap A'=(S\cap A)a'$ und es gibt eine $\lingua_{S\cap A}$-definierbare Abbildung $f:A'^n\rightarrow A'$ mit $f(a')=F(a')$ - ein Widerspruch!
+	Allerdings ist die Inklusion $$(S,S\cap A)\subseteq (B,A)$$ frei, wegen Elementarität auch $$(S,S\cap A)\subseteq (B',A').$$ Nach Lemma \ref{Unabhängigkeitsregeln} (6.) ist wegen $a'\in A'^n$ die Inklusion $$(Sa',(S\cap A)a')\subseteq(B',A')$$ frei, nach Lemma \ref{Freie Definierbarkeit} ist $Sa'$ also $\lingua^P$-definierbar abgeschlossen. Da $F(a')$ $\lingua^P$-definierbar über $Sa'$ ist, liegt es in $Sa'$, wegen $F:A'^n\rightarrow A'$ ist $F(a')\in A'$. Wegen Unabhängigkeit liegt also $$F(a')\in Sa'\cap A'=(S\cap A)a'$$ und es gibt eine $\lingua_{S\cap A}$-definierbare Abbildung $f:A'^n\rightarrow A'$ mit $f(a')=F(a')$ - ein Widerspruch!
 \end{proof}
 
 \begin{lemma}
@@ -480,20 +481,21 @@ Nun aber zu den definierbaren Funktionen. Es gibt mehrere Möglichkeiten, $\ling
 \end{lemma}
 \begin{proof}
 	\OE\ ist wieder $S$ ein Modell.\\
-	Wenn die Aussage nicht gilt, gilt für alle $k\in\setN$, alle kleinen $\lingua^P_S$-definierbaren Mengen $X\subseteq B$ und alle $\lingua_S$-definierbaren $f_1,\dots,f_k:B\rightarrow B$, dass ein $b\in B\setminus X$ existiert mit $f_i(b)\neq F(b)$ für alle $i$. Also ist der partielle Typ $$\{x\notin X\mid X\text{ klein, }\lingua^P_S\text{-definierbar}\}\cup\{F(x)\neq f(x)\mid f:B\rightarrow B\ \lingua_S\text{-definierbar}\}$$ (endlich) konsistent und es existiert $(B,A)\preceq(B',A')$ und $$b'\in B'\setminus\bigcup\limits_{f:B'^n\rightarrow B'\ \lingua_S\text{-definierbar}}f(A'^n)=B'\setminus A'S$$ mit $F(b')\neq f(b')$ für alle $\lingua_S$-definierbaren $f:B'\rightarrow B'$.\\
-	Allerdings ist $(S,S\cap A)\subseteq(B',A')$ frei und nach Lemma \ref{Unabhängigkeitsregeln} (7.) wegen $b'\in B'\setminus A'S$ die Inklusion $(Sb',S\cap A)\subseteq(B',A')$ ebenso, nach Lemma \ref{Freie Definierbarkeit} ist $Sb'$ also $\lingua^P$-definierbar abgeschlossen. Da $F(b')$ $\lingua^P$-definierbar über $Sb'$ ist, ist es in $Sb'$, also existiert eine $\lingua_S$-definierbare Abbildung $f:B'\rightarrow B'$ mit $f(b')=F(b')$ - ein Widerspruch!
+	Wenn die Aussage nicht gilt, gilt für alle $k\in\setN$, alle kleinen $\lingua^P_S$-definierbaren Mengen $X\subseteq B$ und alle $\lingua_S$-definierbaren $f_1,\dots,f_k:B\rightarrow B$, dass ein $b\in B\setminus X$ existiert mit $f_i(b)\neq F(b)$ für alle $i$.\newpage
+	Also ist der partielle Typ $$\{x\notin X\mid X\text{ klein, }\lingua^P_S\text{-definierbar}\}\cup\{F(x)\neq f(x)\mid f:B\rightarrow B\ \lingua_S\text{-definierbar}\}$$ (endlich) konsistent und es existiert $(B,A)\preceq(B',A')$ und $$b'\in B'\setminus\bigcup\limits_{f:B'^n\rightarrow B'\ \lingua_S\text{-definierbar}}f(A'^n)=B'\setminus A'S$$ mit $F(b')\neq f(b')$ für alle $\lingua_S$-definierbaren $f:B'\rightarrow B'$.\\
+	Allerdings ist $$(S,S\cap A)\subseteq(B',A')$$ frei und nach Lemma \ref{Unabhängigkeitsregeln} (7.) wegen $b'\in B'\setminus A'S$ die Inklusion $$(Sb',S\cap A)\subseteq(B',A')$$ ebenso, nach Lemma \ref{Freie Definierbarkeit} ist $Sb'$ also $\lingua^P$-definierbar abgeschlossen. Da $F(b')$ $\lingua^P$-definierbar über $Sb'$ ist, ist es in $Sb'$, also existiert eine $\lingua_S$-definierbare Abbildung $f:B'\rightarrow B'$ mit $f(b')=F(b')$ - ein Widerspruch!
 \end{proof}
 
 \begin{theorem}\label{Satz 3}
 	Sei $F:B\rightarrow B$ eine $\lingua^P_S$-definierbare Funktion. Dann stimmt $F$ auf bis auf eine $\lingua^P_S$-definierbare kleine Menge mit einer $\lingua_S$-definierbaren Funktion überein.
 \end{theorem}
 \begin{proof}
-	Nach dem vorigen Lemma existieren $\lingua_S$-definierbare $f_1,\dots,f_k:B\rightarrow B$ und ein kleines $\lingua^P_S$-definierbares $X$, sodass für alle $b\in B\setminus X$ ein $i$ existiert mit $F(b)=f_i(b)$. Wenn $k=1$ ist, ist das die gewünschte Aussage, wenn nicht, zeige dass man $k$ weiter reduzieren kann. Dafür partitioniere $B$ mit Satz \ref{Satz 4} in $\lingua_S$-definierbare $E,T,D,K,C\subseteq B$, sodass $E$ endlich ist, alle anderen Mengen dafür offen, 
+	Nach dem vorigen Lemma existieren $\lingua_S$-definierbare $f_1,\dots,f_k:B\rightarrow B$ und ein kleines $\lingua^P_S$-definierbares $X$, sodass für alle $b\in B\setminus X$ ein $i$ existiert mit $F(b)=f_i(b)$. Wenn $k=1$ ist, ist das die gewünschte Aussage, wenn nicht, zeige dass man $k$ weiter reduzieren kann. Dafür partitioniere $B$ mit Satz \ref{Satz 4} in $\lingua_S$-definierbare ${E,T,D,K,C\subseteq B}$, sodass $E$ endlich ist, alle anderen Mengen dafür offen, 
 	$$T\subseteq\{F=f_1\}, D\cap\{F=f_1\}=\emptyset,K':=K\cap\{F=f_1\}\text{ klein, dicht und kodicht in }K$$ $$\text{sowie }C':=C\cap\{F=f_1\}\text{ koklein, dicht und kodicht in }C.$$
 	Definiere dann $$f:x\mapsto\left\{\begin{array}{ll}
 	f_1(x)&x\in T\cup C\\
 	f_2(x)&\text{sonst}
-	\end{array}\right.$$
+	\end{array}\right.$$\newpage
 	Die Menge $X':=X\cup E\cup K'\cup (C\setminus C')$ ist klein als Vereinigung von kleinen Mengen, außerdem $\lingua^P_S$-definierbar, und wenn $x\in B\setminus X'$ mit $F(x)\neq f_i(x)$ für $i=3,\dots,k$, dann gibt es folgende Möglichkeiten:
 	\begin{itemize}
 		\item $x\in T\cup C'\subseteq\{F=f_1\}$: Dann ist $F(x)=f_1(x)=f(x)$.
@@ -513,7 +515,8 @@ Nun aber zu den definierbaren Funktionen. Es gibt mehrere Möglichkeiten, $\ling
 Nach der Beschreibung der Struktur von $\lingua^P$-definierbaren Teilmengen von $B$ liegt die Vermutung nahe, dass offene und abgeschlossene $\lingua^P$-definierbare Mengen schon $\lingua$-definierbar sind.\\
 Dies lässt sich in vielen Situationen auch beweisen. Im Folgenden werden mehrere Möglichkeiten dafür angegeben. Hierbei sei $(B,A)$ wieder ein dichtes Paar und $S$ speziell.\\
 Als erstes ist festzuhalten, dass die Aussage für Mengen in einer Variable leicht zu sehen ist und man sie nur für offene Mengen zeigen muss.
-\begin{lemma}\ 
+\newpage
+\begin{lemma}\label{Offenheit einfache Fälle}\ 
 	\begin{itemize}
 		\item Sei $Z\subseteq B$ offen und $\lingua^P_S$-definierbar. Dann ist $Z$ schon $\lingua_S$-definierbar.
 		\item Wenn alle offenen $\lingua^P_S$-definierbaren Teilmengen von $B^n$ auch $\lingua_S$-definierbar sind, sind es alle abgeschlossenen solchen Mengen auch.
@@ -538,7 +541,8 @@ Mit diesem Satz kann man dann die gewünschte Eigenschaft beweisen.
 	Offene und abgeschlossene $\lingua^P_S$-definierbare Mengen sind $\lingua_S$-definierbar, sofern $\td$ zahm für Paare ist.
 \end{theorem}
 \begin{proof}
-	Es reicht, das für offene Mengen zu zeigen, genauer reicht es, die Definierbarkeit für charakteristische Funktionen solcher Mengen zu zeigen. Sei $Z\subseteq B^n$ eine offene $\lingua^P_S$-definierbare Menge und $X\supseteq S$ speziell, $\alpha:Y\rightarrow B^n$ eine $\lingua_X$-definierbare, partielle Funktion und $Y\subseteq B$ offen. Zu zeigen ist für die Anwendung von Satz \ref{Kurven}, dass $\chi_Z\circ\alpha$ definierbar in $\lingua_X$ ist. Man kann annehmen, dass $\alpha$ stetig ist, sonst zerlege $Y$ in Intervalle, auf denen $\alpha$ stetig ist, und Punkte; das ändert nichts an irgendwelchen Definierbarkeiten. Man kann dann feststellen, dass $$1=\chi_Z\circ\alpha(x)\Leftrightarrow\alpha(x)\in Z\Leftrightarrow x\in\alpha^{-1}(Z).$$ Da aber $\alpha^{-1}(Z)$ eine $\lingua^P_X$-definierbare Teilmenge von $B$ ist, offen wegen Stetigkeit von $\alpha$ und Offenheit von $Z$ und zusätzlich $X$ speziell ist, ist $\alpha^{-1}(Z)$ nach dem vorigen Lemma $\lingua_X$-definierbar. Also ist $\chi_Z\circ\alpha$ definierbar in $\lingua_X$ durch $$\chi_Z\circ\alpha(x)=\left\{\begin{array}{ll}
+	Es reicht, das für offene Mengen zu zeigen; genauer reicht es schon, die Definierbarkeit für charakteristische Funktionen solcher Mengen zu zeigen. Sei $Z\subseteq B^n$ eine offene $\lingua^P_S$-definierbare Menge und $X\supseteq S$ speziell, $\alpha:Y\rightarrow B^n$ eine $\lingua_X$-definierbare, partielle Funktion und $Y\subseteq B$ offen. Zu zeigen ist für die Anwendung von Satz \ref{Kurven}, dass $\chi_Z\circ\alpha$ definierbar in $\lingua_X$ ist.\newpage
+	Man kann annehmen, dass $\alpha$ stetig ist, sonst zerlege $Y$ in Intervalle, auf denen $\alpha$ stetig ist, und Punkte; das ändert nichts an irgendwelchen Definierbarkeiten. Es ist festzustellen, dass $$1=\chi_Z\circ\alpha(x)\Leftrightarrow\alpha(x)\in Z\Leftrightarrow x\in\alpha^{-1}(Z).$$ Da aber $\alpha^{-1}(Z)$ eine $\lingua^P_X$-definierbare Teilmenge von $B$ ist, offen wegen Stetigkeit von $\alpha$ und Offenheit von $Z$ und zusätzlich $X$ speziell ist, ist $\alpha^{-1}(Z)$ nach Lemma \ref{Offenheit einfache Fälle} $\lingua_X$-definierbar. Also ist $\chi_Z\circ\alpha$ definierbar in $\lingua_X$ durch $$\chi_Z\circ\alpha(x)=\left\{\begin{array}{ll}
 	1&x\in\alpha^{-1}(Z)\\
 	0&\text{sonst}
 	\end{array}\right..$$
@@ -548,4 +552,4 @@ Mit diesem Satz kann man dann die gewünschte Eigenschaft beweisen.
 	Der Abschluss und das Innere von $\lingua^P_S$-definierbaren Mengen sind unter dieser Anforderung an die Theorie $\lingua_S$-definierbar.
 \end{corollary}
 
-Es gibt auch andere Möglichkeiten, die gesuchte Aussage für manche Theorien zu beweisen. Für Teilmengen von $\setR^n$ wird das zum Beispiel in \cite{VanDenDries} beschrieben. Es wäre auch zu betrachten, ob die Argumentation in \cite{DieMoeglicheLoesung} eine Lösung dieses Problems hergibt. Man könnte sich überlegen, wie Satz \ref{Satz 4} und Satz \ref{Satz 3} ins mehrdimensionale zu verallgemeinern wären und dann so vorgehen, wie beim Beweis der Zellzerlegung in \cite{vdDZellzerlegung}. Aber dies wäre eine Aufgabe für eine weitere Arbeit zu dem Thema.
+Es gibt auch andere Möglichkeiten, die gesuchte Aussage für manche Theorien zu beweisen. Für Teilmengen von $\setR^n$ in einer o-minimalen Erweiterung von RCF mit Grundmenge $\setR$ wird das zum Beispiel in \cite{VanDenDries} beschrieben. Es wäre auch zu betrachten, ob die Argumentation in \cite{DieMoeglicheLoesung} eine Lösung dieses Problems hergibt. Man könnte sich überlegen, wie Satz \ref{Satz 4} und Satz \ref{Satz 3} ins mehrdimensionale zu verallgemeinern wären und dann so vorgehen, wie beim Beweis der Zellzerlegung in \cite{vdDZellzerlegung}. Aber dies wäre eine Aufgabe für eine weitere Arbeit zu dem Thema.
