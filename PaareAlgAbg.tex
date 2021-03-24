@@ -1,8 +1,7 @@
 %!TEX root = DieLoesungAllerMilleniumsprobleme.tex
 	\chapter{Paare algebraisch abgeschlossener Körper}
 	\section{Algebraische und lineare Disjunktheit von Körpern}
-	In diesem Teil richten wir uns im Aufbau etwas nach \cite{Delon} und in manchen Beweisen nach \cite{SergeLang}.\\
-	TODO: Das etwas modelltheoretischer aufziehen?
+	In diesem Teil richten wir uns im Aufbau etwas nach \cite{Delon} und in manchen Beweisen nach \cite{SergeLang}.
 	
     \begin{definition}
     	Gegeben Körperinklusionen $C\subseteq K,L\subseteq M$ in Rautenform, nenne $K$ und $L$ \textbf{linear disjunkt über } $C$, falls alle Basen von $K$ als $C$-Vektorraum auch über $L$ linear unabhängig bleiben. Nenne $K$ und $L$ \textbf{algebraisch disjunkt über} $C$, falls alle Transzendenzbasen von $K$ über $C$ auch algebraisch unabhängig über $L$ bleiben. Schreibe $K\ld_CL$ bzw. $K\ad_CL$.
@@ -22,7 +21,8 @@
     	Sei $C$ ein Körper und $C\subseteq R,S$ Ringerweiterungen von Integritätsbereichen. Dann gilt $\operatorname{Frac}(R)\ld_C\operatorname{Frac}(S)$ genau dann wenn linear unabhängige Mengen in $R$ über $C$ auch linear unabhängig über $S$ bleiben.
     \end{lemma}
     \begin{proof}
-    	Die Hinrichtung folgt leicht aus $R\subseteq\operatorname{Frac}(R),S\subseteq\operatorname{Frac}(S)$. Für die Rückrichtung seien $r_1x_1^{-1},\dots,r_nx_n^{-1}\in\operatorname{Frac}(R)$ linear unabhängig über $C$, aber linear abhängig über $\operatorname{Frac}(S)$ mit nichttrivialer Linearkombination $$(s_1y_1^{-1})r_1x_1^{-1},\dots,(s_ny_n^{-1})r_nx_n^{-1}=0.$$ Dann gilt aber nach Multiplikation mit $\prod\limits_{i=1}^nx_iy_i\neq0$ die lineare Abhängigkeit über $S$ der über $C$ unabhängigen Elemente $((\prod\limits_{i\neq j}x_i)r_j)_{1,\dots,n}\in R$ mit der folgenden Gleichung: $$0=\sum\limits_{j=1}^n(\prod\limits_{i\neq j}x_i)r_j(\prod\limits_{i\neq j}y_i)s_j$$
+    	Die Hinrichtung folgt leicht aus $R\subseteq\operatorname{Frac}(R),S\subseteq\operatorname{Frac}(S)$. Für die Rückrichtung seien $r_1x_1^{-1},\dots,r_nx_n^{-1}\in\operatorname{Frac}(R)$ linear unabhängig über $C$, aber linear abhängig über $\operatorname{Frac}(S)$ mit nichttrivialer Linearkombination $$(s_1y_1^{-1})r_1x_1^{-1},\dots,(s_ny_n^{-1})r_nx_n^{-1}=0.$$\newpage
+    	Dann gilt aber nach Multiplikation mit $\prod\limits_{i=1}^nx_iy_i\neq0$ die lineare Abhängigkeit über $S$ der über $C$ unabhängigen Elemente $((\prod\limits_{i\neq j}x_i)r_j)_{1,\dots,n}\in R$ mit der folgenden Gleichung: $$0=\sum\limits_{j=1}^n(\prod\limits_{i\neq j}x_i)r_j(\prod\limits_{i\neq j}y_i)s_j$$
     \end{proof}
     
     \begin{remark}
@@ -110,7 +110,7 @@
     	Mit dem Ganzen sind echte algebraisch abgeschlossene Paare von Körpern definierbar in allen drei Sprachen $\lld,\lf,\lfc$, nenne die Theorien $$\operatorname{ACP}^{\lld},\operatorname{ACP}^{\lf},\operatorname{ACP}^{\lfc}.$$ Das einzig nicht offensichtliche hierbei ist, dass man in der Theorie sagen muss, dass $\neg l_2(1,x)$ einen Körper definiert.
     \end{lemma}
     
-    An sich wird alles sowieso interdefinierbar zwischen den Sprachen sein, aber manchmal ist es klüger, eine spezielle Sprache zu betrachten. Die intuitivste Sprache wäre dabei $\lingua^E:\lingua\cup\{E(x)\}$, aber diese hat leider nicht so schöne Eigenschaften (TODO: sollte ich ausführen, wieso?). Das Ziel ist jetzt, zu beweisen, dass $\operatorname{ACP}^{\lf},\operatorname{ACP}^{\lfc}$ Quantorenelimination haben und $\operatorname{ACP}^{\lld}$ immerhin modellvollständig ist.\\
+    An sich wird alles sowieso interdefinierbar zwischen den Sprachen sein, aber manchmal ist es klüger, eine spezielle Sprache zu betrachten. Die intuitivste Sprache wäre dabei $\lingua^E:\lingua\cup\{E(x)\}$, aber diese hat leider nicht so schöne Eigenschaften (zum Beispiel ist sie nicht modellvollständig, denn lineare Unabhängigkeit über $E$ überträgt sich nicht auf Oberstrukturen). Das Ziel ist jetzt, zu beweisen, dass $\operatorname{ACP}^{\lf},\operatorname{ACP}^{\lfc}$ Quantorenelimination haben und $\operatorname{ACP}^{\lld}$ immerhin modellvollständig ist.\\
     Dazu müssen wir erst einmal verstehen, wie $\lfc$-Unterstrukturen von $\operatorname{ACP}^{\lfc}$-Modellen aussehen.
     
     \begin{lemma}
@@ -123,7 +123,7 @@
     	\begin{align*}
     	&\fA\models l_{\abs{\overline{a}}}(\overline{a})\Leftrightarrow(K,E_K)\models l_{\abs{\overline{a}}}(\overline{a})\\
     	\Leftrightarrow&\ \overline{a}\text{ linear unabhängig über }E_K\Leftrightarrow\overline{a}\text{ linear unabhängig über }E_A,
-    	\end{align*}
+    	\end{align*}\newpage
     	wobei die letzte Äquivalenz davon herrührt, dass die lineare Abhängigkeit bezeugende Linearkombination sich z.B. mit Projektionen und Nullen als Koeffizienten schreiben lässt und Projektionen von Elementen aus $A$ wegen Unterstruktureigenschaft wieder in $A$ sind. Also stimmen die Interpretationen der $l_n$ in $\fA$ mit denen in $(A,E_A)$ überein und es ist $A\ld_{E_A}E_K$. Da die definierende Formel der $(f_{i,n})$ bis auf die Angabe des Bildbereiches eine Ringformel ist, und da $f_{i,n}(\overline{a})\in E_K\cap A$ für alle $\overline{a}\in A$, für alle $n,i$, stimmen auch die Interpretationen der $f_{i,n}$ in $\fA$ und in $(A,E_A)$ überein. Damit ist $\fA=(A,E_A)$.\\
     	Die Rückrichtung folgt mit den ersten Zeilen dieses Beweises und, weil die Projektionen $f_{n,i}$ Elemente aus $A$ nach $A$ abbilden. Das sieht man daran, dass man die Koeffizienten einer Linearkombination in eine Abhängigkeitsbedingung umschreiben kann; wenn diese in $E_K$ erfüllt ist, muss sie wegen linearer Disjunktheit auch in $E_A$ erfüllt sein, also sind die Projektionen schon in $E_A$.
     \end{proof}
@@ -142,7 +142,7 @@
     \begin{proof}
     	Es ist nur $A\ld_{E_A}B,AB\ld_BE_K$ zu zeigen. Wegen $(A,E_A)\subseteq_{\lfc}(K,E_K)$ gilt $A\ld_{E_A}E_K$ und mit Lemma \ref{Stapellemma} gilt schon beides.
     \end{proof}
-    
+    \newpage
     \begin{lemma}\label{Fortsetzungslemma}
     	Im Falle dass das vorige Lemma auf $$(A,E_A)\subseteq_{\lfc}(K,E_K),(\tilde{A},E_{\tilde{A}})\subseteq_{\lfc}(\tilde{K},E_{\tilde{K}}),E_A\subseteq B\subseteq E_K\text{ und }E_{\tilde{A}}\subseteq \tilde{B}\subseteq E_{\tilde{K}}$$ angewendet wird und dass gilt $$A\cong \tilde{A},B\cong \tilde{B},E_A\cong E_{\tilde{A}}$$ \--- wobei die ersten beiden Isomorphismen den dritten fortsetzen \---, sind $(AB,B)$ und $(\tilde{A}\tilde{B},\tilde{B})$ schon isomorph als $\lfc$-Strukturen.
     \end{lemma}
@@ -161,10 +161,10 @@
     	Unter denselben Bedingungen wie im vorigen Lemma ist $(\overline{A},\overline{E_A})$ Zwischenstruktur.
     \end{lemma}
     \begin{proof}
-    	Laut Lemma \ref{E-Erw} ist $(A\overline{E_A},\overline{E_A})$ Zwischenstruktur und damit insbesondere $$A\ld_{E_A}\overline{E_A},A\overline{E_A}\ld_{\overline{E_A}}E_K.$$ Klarerweise ist $$(A,E_A)\subseteq_{\lfc}(\overline{A\overline{E_A}},\overline{E_A})=(\overline{A},\overline{E_A}),$$ weil $A\overline{E_A}$ in der Bedingung $A\ld_{E_A}\overline{E_A}$ gar nicht vorkommt und die Erweiterung also nichts ändert.\\
+    	Laut Lemma \ref{E-Erw} ist $(A\overline{E_A},\overline{E_A})$ Zwischenstruktur und damit insbesondere $$A\ld_{E_A}\overline{E_A},A\overline{E_A}\ld_{\overline{E_A}}E_K.$$ Klarerweise ist $$(A,E_A)\subseteq_{\lfc}(\overline{A\overline{E_A}},\overline{E_A})=(\overline{A},\overline{E_A}),$$ weil $A\overline{E_A}$ in der Bedingung $A\ld_{E_A}\overline{E_A}$ gar nicht vorkommt und die Erweiterung also nichts ändert.\newpage
     	Lemma \ref{Rechenregeln} (6.) ergibt wegen $\overline{E_A}\subseteq E_K$ regulär $$\overline{A}=\overline{A\overline{E_A}}\ld_{\overline{E_A}}E_K,$$ was $(\overline{A},\overline{E_A})\subseteq_{\lfc}(K,E_K)$ beweist.
     \end{proof}
-    \newpage
+    
     \begin{theorem}\label{QE}
     	$\operatorname{ACP}^{\lfc}$ hat Quantorenelimination und ist vollständig, wenn man noch eine Charakteristik vorgibt.
     \end{theorem}
@@ -177,7 +177,7 @@
     	$$\{\forall \overline{e}\in E\setminus\{0\}(f(\overline{e},\overline{x})\neq0)\mid 0\neq f\in\mathbb{P}(T_1,T_2,\dots,\overline{x})\}$$
     	Er ist endlich erfüllbar, da für $m$ größer als der größte Polynomgrad im endlichen Teilfragment und $x$ transzendent über $E_K$ bzw. $E_L$ die Elemente $x,x^m,x^{m^2},\dots$ algebraisch unabhängig über Polynome von Grad kleiner $m$ sind.\\
     	\OE\ seien $(M,E_M)(N,E_N)$ jeweils algebraisch abgeschlossen. Denn Lemma \ref{E-Erw} erzeugt einen Isomorphismus zwischen den Zwischenstrukturen $$(ME_M^{\text{alg }K},E_M^{\text{alg }K})\text{ und }(NE_N^{\text{alg }L},E_N^{\text{alg }L}),$$ der sich auf einen Isomorphismus $$(M^{\text{alg }K},E_M^{\text{alg }K})\cong(N^{\text{alg }L},E_N^{\text{alg }L})$$ fortsetzt.\\
-    	Sei jetzt $a\in K$. Wenn $a\in M$ liegt, dann kann man die Abbildung auf triviale Weise auf $a$ fortsetzen.\\
+    	Sei jetzt $a\in K$. Wenn $a\in M$ liegt, dann kann man die Abbildung auf triviale Weise auf $a$ fortsetzen.\newpage
     	Wenn ansonsten $a$ algebraisch über $E_KM$ ist, ist $a\in\acl(E_KM)$, also existiert $X\subset E_K$ endlich mit $a\in\acl(MX)$. \OE\ sei $X$ jetzt schon ein Oberkörper von $E_M$, wichtig ist nur der endliche Transzendenzgrad über $E_M$. Für einen beliebigen algebraisch abgeschlossenen Zwischenkörper $E_N\subseteq Y\subseteq E_L$ von gleichem Transzendenzgrad (den gibt es, da die Saturation Transzendenzgrad $\infty$ von $E_N\subset E_L$ ergibt) kann $E_M\cong E_N$ fortgesetzt werden zu einem Isomorphismus $X\cong Y$. Diesen kann man wie in Lemma \ref{Fortsetzungslemma} fortsetzen zu einem $\lfc$-Isomorphismus zwischen den Zwischenstrukturen $(\overline{MX},X),(\overline{NY},Y)$, wobei die erste $a$ enthält.\\
     	Wenn $a$ transzendent über $E_KM$ ist, gibt es ein $b\in L$ transzendent über $E_LM$, denn der entsprechende Typ ist konsistent, wenn $\abs{L}>\abs{E_L}$. So etwas lässt sich aber in einer elementaren Oberstruktur erreichen (für die endliche Konsistenz ist die genaue Kardinalität des Transzendenzgrads von $E_L\subset L$ egal) und wenn der Typ dort konsistent ist, dann auch unten.\\
     	$a$ und $b$ erzeugen dann einen Isomorphismus $C:=\overline{M(a)}\overset{\phi}{\cong}\overline{N(b)}$. Setze $$E:=\overline{M(a)}\cap E_K\cap\phi^{-1}(E_L\cap\overline{N(b)}),$$ dann gilt $(C,E)\cong_{\lfc}(\phi(C),\phi(E))$ und $b\in\phi(C)$.\\
@@ -257,7 +257,7 @@
     		\item Den Typ eines Elementes in $K\setminus\overline{SE_K}$
     	\end{itemize}
         Der erste Typ hat klarerweise Morleyrang 0. Sei $a$ ein Realisator eines Typen der zweiten Art. Dann ist $a$ algebraisch über $S\overline{e}$ für gewisse $e_1,\dots,e_n\in E_K$, also $$\operatorname{RM}(a/S)\leq\operatorname{RM}(\overline{e}/S)=\dim(\overline{e}/S)<\omega.$$
-        Der dritte Typ kann keinen Morleyrang $>\omega$ haben, denn dann müsste es einen Typen mit Morleyrang $\omega$ geben, die anderen Arten von Typen haben aber endlichen Rang. Sei $(a_n)$ eine Folge von Elementen, sodass $n<\operatorname{RM}(a_n)<\omega$ für alle $n\in\setN$ (TODO: sowas gibt es). Dann ist im Stoneraum $\lim\limits_{n\rightarrow\infty}\tp(a_n)=p$ für den Typen $p$ der dritten Art: Denn $a_n$ kann jeweils nicht mehr algebraisch über $SX$ sein für alle $E_S\subset X$ von Transzendenzgrad $\leq n$. Also sind für jede Umgebung, die das Nichterfüllen einer bestimmten Art von Polynom über $SE_K$ beschreibt, fast alle $a_n$ enthalten. Aber diese Umgebungen bestimmen den Typen $p$ eindeutig, also sind für jedes $\phi\in p$ fast alle $\tp(a_n)$ in $\fU_\phi$.\\
+        Der dritte Typ kann keinen Morleyrang $>\omega$ haben, denn dann müsste es einen Typen mit Morleyrang $\omega$ geben, die anderen Arten von Typen haben aber endlichen Rang. Sei $(a_n)$ eine Folge von Elementen, sodass $$n<\operatorname{RM}(a_n)<\omega\text{ für alle }n\in\setN$$ (TODO: sowas gibt es). Dann ist im Stoneraum $\lim\limits_{n\rightarrow\infty}\tp(a_n)=p$ für den Typen $p$ der dritten Art: Denn $a_n$ kann jeweils nicht mehr algebraisch über $SX$ sein für alle $E_S\subset X$ von Transzendenzgrad $\leq n$. Also sind für jede Umgebung, die das Nichterfüllen einer bestimmten Art von Polynom über $SE_K$ beschreibt, fast alle $a_n$ enthalten. Aber diese Umgebungen bestimmen den Typen $p$ eindeutig, also sind für jedes $\phi\in p$ fast alle $\tp(a_n)$ in $\fU_\phi$.\\
         Jedes $\phi\in S_1(S)$ mit $\operatorname{RM}(\phi)<\omega$ ist dann nur in endlich vielen $\tp(a_n)$ enthalten (nämlich maximal $\operatorname{RM}(\phi)$ vielen), also ist $\operatorname{RM}(p)\geq\omega$, damit herrscht Gleichheit.\\
         Da alle Typen Morleyrang $<\infty$ haben, haben alle Formeln in einer freien Variable Morleyrang $<\infty$ und die Theorie ist $\omega$-stabil.\\
         Ein Alternativbeweis wäre auch, dass es nicht mehr Typen über $S$ gibt als $\abs{S}+\aleph_0$, auch das beweist die $\omega$-Stabilität. Und auch mit algebraischen Methoden ist ein Beweis möglich, siehe dazu den Anhang.
