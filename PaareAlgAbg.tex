@@ -11,14 +11,14 @@
     	Es reicht, lineare Disjunktheit für eine Basis zu zeigen. Denn wenn man die lineare Unabhängigkeit über $L$ für eine Basis verliert, verliert man sie per $C$-Basiswechsel auch für alle anderen.
     \end{remark}
     \begin{remark}
-    	Es reicht, die Erhaltung der linearen/algebraischen Unabhängigkeit nur für beliebige endliche Mengen zu prüfen, weil lineare/algebraische Unabhängigkeit einer Menge genau dann besteht, wenn sie für alle endlichen Teilmengen gilt.
+    	Es reicht, die Erhaltung der linearen/algebraischen Unabhängigkeit nur für beliebige endliche Mengen zu prüfen. Denn lineare/algebraische Unabhängigkeit einer Menge besteht genau dann, wenn sie für alle endlichen Teilmengen gilt.
     \end{remark}
     \begin{remark}
     	Der Körper $M$ kommt in der Definition nur vor, damit die Rechenoperationen zwischen $K$ und $L$ wohldefiniert sind. Die genaue Wahl ist irrelevant und daher nicht in der Notation berücksichtigt. Wir nehmen für die Zukunft einfach an, dass die Multiplikation klar definiert ist. Es wird sich sowieso herausstellen, dass im Fall $K\ld_CL$ die Operationen eindeutig bestimmt sind.
     \end{remark}
     
     \begin{lemma}\label{Fraktionskörper}
-    	Sei $C$ ein Körper und $C\subseteq R,S$ Ringerweiterungen von Integritätsbereichen. Dann gilt $\operatorname{Frac}(R)\ld_C\operatorname{Frac}(S)$ genau dann wenn linear unabhängige Mengen in $R$ über $C$ auch linear unabhängig über $S$ bleiben.
+    	Sei $C$ ein Körper und $C\subseteq R,S$ Ringerweiterungen von Integritätsbereichen. Dann gilt $\operatorname{Frac}(R)\ld_C\operatorname{Frac}(S)$ genau dann, wenn linear unabhängige Mengen in $R$ über $C$ auch linear unabhängig über $S$ bleiben.
     \end{lemma}
     \begin{proof}
     	Die Hinrichtung folgt leicht aus $R\subseteq\operatorname{Frac}(R),S\subseteq\operatorname{Frac}(S)$. Für die Rückrichtung seien $r_1x_1^{-1},\dots,r_nx_n^{-1}\in\operatorname{Frac}(R)$ linear unabhängig über $C$, aber linear abhängig über $\operatorname{Frac}(S)$ mit nichttrivialer Linearkombination $$(s_1y_1^{-1})r_1x_1^{-1},\dots,(s_ny_n^{-1})r_nx_n^{-1}=0.$$\newpage
@@ -107,7 +107,7 @@
     \end{lemma}
     \newpage
     \begin{lemma}
-    	Mit dem Ganzen sind echte algebraisch abgeschlossene Paare von Körpern definierbar in allen drei Sprachen $\lld,\lf,\lfc$, nenne die Theorien $$\operatorname{ACP}^{\lld},\operatorname{ACP}^{\lf},\operatorname{ACP}^{\lfc}.$$ Das einzig nicht offensichtliche hierbei ist, dass man in der Theorie sagen muss, dass $\neg l_2(1,x)$ einen Körper definiert.
+    	Mit dem Ganzen sind echte algebraisch abgeschlossene Paare von Körpern definierbar in allen drei Sprachen $\lld,\lf,\lfc$, nenne die Theorien $$\operatorname{ACP}^{\lld},\operatorname{ACP}^{\lf},\operatorname{ACP}^{\lfc}.$$ Einzig nicht offensichtlich hierbei ist, dass man in der Theorie sagen muss, dass $\neg l_2(1,x)$ einen Körper definiert.
     \end{lemma}
     
     An sich wird alles sowieso interdefinierbar zwischen den Sprachen sein, aber manchmal ist es klüger, eine spezielle Sprache zu betrachten. Die intuitivste Sprache wäre dabei $\lingua^E:\lingua\cup\{E(x)\}$, aber diese hat leider nicht so schöne Eigenschaften (zum Beispiel ist sie nicht modellvollständig, denn lineare Unabhängigkeit über $E$ überträgt sich nicht auf Oberstrukturen). Das Ziel ist jetzt, zu beweisen, dass $\operatorname{ACP}^{\lf},\operatorname{ACP}^{\lfc}$ Quantorenelimination haben und $\operatorname{ACP}^{\lld}$ immerhin modellvollständig ist.\\
@@ -144,7 +144,7 @@
     \end{proof}
     \newpage
     \begin{lemma}\label{Fortsetzungslemma}
-    	Im Falle dass das vorige Lemma auf $$(A,E_A)\subseteq_{\lfc}(K,E_K),(\tilde{A},E_{\tilde{A}})\subseteq_{\lfc}(\tilde{K},E_{\tilde{K}}),E_A\subseteq B\subseteq E_K\text{ und }E_{\tilde{A}}\subseteq \tilde{B}\subseteq E_{\tilde{K}}$$ angewendet wird und dass gilt $$A\cong \tilde{A},B\cong \tilde{B},E_A\cong E_{\tilde{A}}$$ \--- wobei die ersten beiden Isomorphismen den dritten fortsetzen \---, sind $(AB,B)$ und $(\tilde{A}\tilde{B},\tilde{B})$ schon isomorph als $\lfc$-Strukturen.
+    	Im Falle, dass das vorige Lemma auf $$(A,E_A)\subseteq_{\lfc}(K,E_K),(\tilde{A},E_{\tilde{A}})\subseteq_{\lfc}(\tilde{K},E_{\tilde{K}}),E_A\subseteq B\subseteq E_K\text{ und }E_{\tilde{A}}\subseteq \tilde{B}\subseteq E_{\tilde{K}}$$ angewendet wird und dass gilt $$A\cong \tilde{A},B\cong \tilde{B},E_A\cong E_{\tilde{A}}$$ \--- wobei die ersten beiden Isomorphismen den dritten fortsetzen \---, sind $(AB,B)$ und $(\tilde{A}\tilde{B},\tilde{B})$ schon isomorph als $\lfc$-Strukturen.
     \end{lemma}
     \begin{proof}
     	Mit Lemma \ref{Tensoren} erhält man wegen $A\ld_{E_A}B,\tilde{A}\ld_{E_{\tilde{A}}}\tilde{B}$ den Isomorphismus $$A[B]\cong A\otimes_{E_A}B\cong \tilde{A}\otimes_{E_{\tilde{A}}}\tilde{B}\cong\tilde{A}[\tilde{B}],$$ der sich zu einem Isomorphismus der Quotientenkörper $AB$ und $\tilde{A}\tilde{B}$ fortsetzt und $A$ auf $\tilde{A}$, $B$ auf $\tilde{B}$ und $E_A$ auf $E_{\tilde{A}}$ abbildet. Als Körperisomorphismus überträgt er auch Linearkombinationen, also auch die Bedeutung der $(l_n)_n$ und $(f_{i,n})_{i,n}$, weswegen er ein $\lfc$-Isomorphismus ist.

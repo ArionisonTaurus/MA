@@ -62,7 +62,7 @@ Man kann die Dimension auch anders definieren:
 	Es erfüllt $\acl=\dcl$ das Austauschprinzip und induziert also einen Dimensionsbegriff für Tupel. Wenn $\fM$ hinreichend saturiert ist und $X\subseteq M^n$ definierbar über $Y$, ist $\dim(X)=\max\{\dim(a/Y)\mid a\in X\}$.
 \end{lemma}
 
-O-Minimale Gruppen haben eine enorm wichtige Eigenschaft, aus der viele weitere (hier nicht bedeutende Dinge folgen).
+O-Minimale Gruppen haben eine enorm wichtige Eigenschaft, aus der viele weitere (hier nicht bedeutende) Dinge folgen.
 \begin{lemma}
 	Wenn $\fM$ eine 0-definierbare, durch $<$ angeordnete Gruppenoperation mit einem 0-definierbaren positiven Element (üblicherweise 1 genannt) besitzt, gilt \textbf{Definable Choice}: Aus jeder definierbaren Menge lässt sich kanonisch, uniform und definierbar ein Element auswählen. Insbesondere gibt es zu jeder Menge eine definierbare Skolemfunktion und jede definierbare Familie von uniform parametrisierten Mengen hat eine definierbare Auswahlfunktion. Die Auswahl ist dabei definierbar über derselben Menge wie die ursprüngliche(n) Menge(n).
 \end{lemma}
@@ -242,7 +242,7 @@ Das eben aufgestellte B\&F-System beweist die Formelreduzierung in $\td$.
 \end{proof}
 \newpage
 \section{Folgen der Existenz des B\&F-Systems}
-Im Folgenden werden einige Anordnungen von wechselseitigen Inklusionen von Modellen von T betrachtet, in der Gleichheit von bestimmten Typen folgt.
+Im Folgenden werden einige Anordnungen von wechselseitigen Inklusionen von Modellen von T betrachtet, in denen Gleichheit von bestimmten Typen folgt.
 
 \begin{lemma}\label{freie Inklusionen}
 	Für dichte Paare $(B,A),(D,C)$ mit $(D,C)\subseteq(B,A)$ sind folgende Eigenschaften äquivalent:
@@ -271,7 +271,7 @@ Im Folgenden werden einige Anordnungen von wechselseitigen Inklusionen von Model
 	Seien $(B_1,A_1),(B_2,A_2)$ zwei dichte Paare und $A\subseteq A_1\cap A_2$ eine gemeinsame Substruktur, sowie $a\in B_1\setminus A_1,\ b\in B_2\setminus A_2$, die den gleichen Ordnungstyp über $A$ haben. Dann haben $a$ und $b$ sogar den gleichen $\lingua^P$-Typ über $A$.
 \end{lemma}
 \begin{proof}
-	Es sind trivialer Weise $A_i$ und $A$ unabhängig über $A$ für $i=1,2$, außerdem ist $a$ transzendent über $A_1$ und $b$ transzendent über $A_2$. Nach Lemma \ref{Unabhängigkeitsregeln} (4.) sind also die Einbettungen $$(Aa,A)\subseteq(B_1,A_1)\text{ und }(Ab,A)\subseteq(B_2,A_2)$$ frei. Nach dem Beweis zu Satz \ref{BackForth} gibt es einen Isomorphismus $Aa\cong Ab$, der $A\cong A$ fortsetzt und für den $i(a)=b$ gilt, also einen Isomorphismus $i:(Aa,A)\cong(Ab,A)$.\\ Wenn \OE\ die beiden Modelle von $\td$ genügend saturiert sind, ist $i$ im B\&F-System, also erfüllen $a$ und $b$ dieselben $\lingua^P_A$-Formeln.
+	Es sind trivialer Weise $A_i$ und $A$ unabhängig über $A$ für $i=1,2$, außerdem ist $a$ transzendent über $A_1$ und $b$ transzendent über $A_2$. Nach Lemma \ref{Unabhängigkeitsregeln} (4.) sind also die Einbettungen $$(Aa,A)\subseteq(B_1,A_1)\text{ und }(Ab,A)\subseteq(B_2,A_2)$$ frei. Nach dem Beweis zu Satz \ref{BackForth} gibt es einen Isomorphismus $Aa\cong Ab$, der $A\cong A$ fortsetzt, und für den $i(a)=b$ gilt, also einen Isomorphismus $i:(Aa,A)\cong(Ab,A)$.\\ Wenn \OE\ die beiden Modelle von $\td$ genügend saturiert sind, ist $i$ im B\&F-System, also erfüllen $a$ und $b$ dieselben $\lingua^P_A$-Formeln.
 \end{proof}
 
 \begin{lemma}\label{Speziell definierbare kleine Mengen}
@@ -313,7 +313,7 @@ Wir interessieren uns für die Gestalt von $\lingua^P$-definierbaren Teilmengen 
 	 das ist genau dann der Fall, wenn $$\mathfrak{Th}(B,A)_B\cup\{P(x)\}\cup\{\varphi(x)\}\text{ und }\mathfrak{Th}(B,A)_B\cup\{P(x)\}\cup\{\neg\varphi(x)\}$$ in $\lingua_B$ getrennt werden können. Nach dem Trennungslemma gilt das genau dann, wenn für alle $$(B,A)\preceq(D_1,C_1),(D_2,C_2)$$ und alle $c_i\in C_i\ (i=1,2)$ mit $$(D_1,C_1)\models\varphi(c_1),(D_2,C_2)\models\neg\varphi(c_2)$$ eine $\lingua_B$-Formel $\chi$ existiert mit $$(D_1,C_1)\models\chi(c_1),(D_2,C_2)\models\neg\chi(c_2).$$
 	Seien solche $(D_i,C_i)$ und $c_i$, die die Voraussetzungen von oben erfüllen. Dann ist das die Situation aus Lemma \ref{Gemeinsame Unterstruktur}, denn elementare Erweiterungen sind frei. Also muss ein trennendes $\chi$ wie verlangt existieren, denn ansonsten würden $c_1$ und $c_2$ denselben $\lingua$-Typ erfüllen, aber nicht denselben $\lingua^P$-Typ.\\
 	$\glqq{}2.\Rightarrow 3.\grqq{}:$ Sei $Y=Z\cap A^n$. Nach dem letzten Lemma ist $Z$ eine boolesche Kombination aus Mengen der Form $\{f(b,\cdot)=0\}$ und $\{g(b,\cdot)>0\}$ für stetige 0-$\lingua$-definierbare Funktionen $f,g$ und passende $b\in B^m$. Es reicht also die Aussage für Mengen in diesen Formen zu zeigen.\\
-	Wegen der Stetigkeit der Funktionen und $A$ dicht in $B$ gilt aber in $B$
+	Wegen der Stetigkeit der Funktionen und $A$ dicht in $B$, gilt aber in $B$
 	\begin{align*}
 	f(b,z)=0\Leftrightarrow\ &\text{Für alle }0<\varepsilon\in A\text{ existiert }A^m\ni a<b\text{ (koordinatenweise),}\\&\text{sodass für alle }a'\in A^m\text{ mit }a<a'<b\text{ (koordinatenweise)}\\&\text{gilt, dass }\abs{f(a',z)}<\varepsilon,\\
 	g(b,z)>0\Leftrightarrow\ &\text{Es existiert ein }0<\varepsilon\in A\text{ und ein }A^m\ni a<b\text{ (koordinatenweise),}\\&\text{sodass für alle }a'\in A^m\text{ mit }a<a'<b\text{ (koordinatenweise)}\\&\text{gilt, dass }g(a',z)>\varepsilon.
