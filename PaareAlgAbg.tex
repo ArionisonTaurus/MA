@@ -30,7 +30,7 @@
     \end{remark}
     
     \begin{lemma}\label{Tensoren}
-    	Für Körper $C,K,L$ wie oben gilt $K\ld_CL$ genau dann wenn $K[L]=L[K]\cong K\otimes_CL$ mit kanonischem Isomorphismus, daher ist $\ld$ symmetrisch.
+    	Für Körper $C,K,L$ wie oben gilt $K\ld_CL$ genau dann, wenn TODO gdw Komme prüfen $K[L]=L[K]\cong K\otimes_CL$ mit kanonischem Isomorphismus, daher ist $\ld$ symmetrisch.
     \end{lemma}
     \begin{proof}
     	Der aufgespannte Ring erfüllt $$K[L]=\{\sum\limits_{(k,l)\in X}kl\mid X\subset K\times L\text{ endlich}\}=L[K].$$
@@ -41,6 +41,7 @@
     \end{remark}
     
     \begin{definition}
+    	\ 
     	\begin{itemize}
     		\item Eine Körpererweiterung $K\subseteq L$ heiße \textbf{regulär}, wenn $\overline{K}\ld_KL$.
     		\item Für Körper $K,L\subseteq M$ sei $KL:=K(L)=L(K)$.
@@ -53,8 +54,8 @@
     	Gegeben die Körperinklusionen $C\subseteq L\subseteq M$ und $C\subseteq K$. Dann gilt $K\ld_CM$ genau dann, wenn $K\ld_CL$ und $KL\ld_LM$.
     \end{lemma}
     \begin{proof}
-    	Sei $(k_h)_H$ eine Basis von $K$ über $C$, $(l_i)_I$ eine von $L$ über $C$ und $(m_j)_J$ eine von $M$ über $L$. $K\ld_CM$ bedeutet, dass die $C$-Basis von $K$ auch $M$-Basis von $K$ ist, aber dann ist sie natürlich auch $L$-Basis, da $C\subseteq L\subseteq M$. Dann kann man sich überlegen, dass $(l_im_j)_{I\times J}$ eine Basis von $M$ über $C$ ist und nach dem letzten Satz $(k_h)_H$ eine Basis von $L[K]$ als $L$-Vektorraum.\\
-    	Wenn $KL\ld_LM$ nicht gelten würde, würde nach den Bemerkungen oben auch schon die Basis $(k_h)_H$ von $L[K]$ über $L$ linear abhängig über $M$ werden, es gäbe also eine Linearkombination $$\sum\limits_{h\in H}\lambda_hk_h=0,\ M\ni\lambda_h=0\text{ für fast alle, aber nicht alle } h\in H.$$
+    	Sei $(k_h)_H$ eine Basis von $K$ über $C$, $(l_i)_I$ eine von $L$ über $C$ und $(m_j)_J$ eine von $M$ über $L$. $K\ld_CM$ bedeutet, dass die $C$-Basis von $K$ auch $M$-Basis von $K$ ist, aber dann ist sie natürlich auch $L$-Basis, da $C\subseteq L\subseteq M$. Dann kann man sich überlegen (TODO), dass $(l_im_j)_{I\times J}$ eine Basis von $M$ über $C$ ist und nach dem letzten Satz $(k_h)_H$ eine Basis von $L[K]$ als $L$-Vektorraum.\\
+    	Wenn $KL\ld_LM$ nicht gelten würde, würde gemäß den obigen Bemerkungen auch schon die Basis $(k_h)_H$ von $L[K]$ über $L$ linear abhängig über $M$ werden, es gäbe also eine Linearkombination $$\sum\limits_{h\in H}\lambda_hk_h=0,\ M\ni\lambda_h=0\text{ für fast alle, aber nicht alle } h\in H.$$
     	Da $(k_h)_H$ aber die Basis von $K$ über $C$ ist, widerspricht das $K\ld_CM$.\\
     	Für die Rückrichtung ist zu zeigen, dass $(l_im_j)_{I\times J}$ linear unabhängig über $K$ bleibt. Wenn das nicht so ist und die Linearkombination $$0=\sum\limits_{(i,j)\in I\times J}\lambda_{ij}l_im_j,\  K\ni\lambda_{ij}=0\text{ für fast alle, aber nicht alle } (i,j)\in I\times J$$ das bezeugt, schreibe $$\lambda_{ij}=:\sum\limits_{h\in H}c_{hij}k_h$$ als $C$-Basisdarstellung für alle $(i,j)\in I\times J$. Einsetzen und Umklammern bringt uns die Linearkombination $$0=\sum\limits_{(i,j)\in I\times J}\lambda_{ij}l_im_j=\sum\limits_{(i,j)\in I\times J}(\sum\limits_{h\in H} c_{hij}k_h)l_im_j=\sum\limits_{i\in I}(\sum\limits_{(h,j)\in H\times J}c_{hij}k_hl_i)m_j,$$ $$C\ni c_{hij}=0\text{ für fast alle, aber nicht alle } (h,i,j)\in H\times I\times J.$$\\
     	Da wir aber $KL\ld_CM$ annehmen, muss $$\sum\limits_{(h,j)\in H\times J}c_{hij}k_hl_i=0\text{ sein für alle }j\in J,$$ da wir $K\ld_CL$ annehmen, folgt daraus $c_{hij}=0$ für alle $h,i,j$.
@@ -68,6 +69,7 @@
     \end{proof}
     
     \begin{lemma}\label{Rechenregeln}
+    	\ 
     	\begin{enumerate}
     		\item $K\ld_CL$ impliziert $K\cap L=C$.
     		\item Wenn $C\subseteq K$ algebraisch und $C\subseteq L$ regulär ist, dann gilt $K\ld_CL$.
@@ -78,20 +80,21 @@
     	\end{enumerate}
     \end{lemma}
     \begin{proof}
+    	\ 
     	\begin{enumerate}
     		\item Die eine Inklusion gilt, denn $C\subseteq K,L$. Für die Rückrichtung sei\linebreak$x\in (K\cap L)\setminus C$. Dann ist $(1,x)\in K^2$ linear abhängig über $L$ und somit über $C$. Aber dann ist $x$ schon in $C$.
     		\item Wegen der Regularität gilt $L\ld_C\overline{C}$ und wegen $C\subseteq K\subseteq\overline{C}$ und dem Lemma \ref{Stapellemma} gilt $L\ld_C K$.
     		\item Seien $k_1,\dots,k_n\in K$ algebraisch abhängig über $L$, das heißt, es gibt ein Polynom $$0\neq f(X)=\sum\limits_{\abs{\alpha}\leq m}l_\alpha X^\alpha\in L[X_1,\dots,X_n]$$ mit $f(k)=0$, also insbesondere $(k^\alpha)_{\abs{\alpha}\leq m}$ linear abhängig über $L$, per Annahme also auch über $C$. Dann existiert aber eine Linearkombination $\sum\limits_{\abs{\alpha}\leq m}c_\alpha k^\alpha=0$ mit $c_\alpha\in C$ nicht alle Null, und diese bezeugt die algebraische Abhängigkeit über $C$.
     		\item Folgt aus $\dim(\cdot/L)=\dim(\cdot/acl(L))$ als Matroideneigenschaft.
     		\item Wegen algebraischer Unabhängigkeit ist $$\abs{\overline{x}}=\dim(\overline{x}/KL)\leq\dim(\overline{x}/K)\leq\abs{\overline{x}}$$ für alle $\overline{x}\in X$, also sind $X$ und $KL$ im modelltheoretischen Sinne unabhängig über $K$. Das gilt dann aber auch für $K\cup X$ und $KL$, $\acl(K\cup X)$ und $KL$ und auch für $K(X)$ und $KL$, also $K(X)\ad_KKL$.\\
-    		$K(X)\supseteq K$ ist außerdem regulär, denn $K[X]$ hat als $K$-Basis $(x^n)_{x\in X,n\in\setN}$, wie man wegen algebraischer Unabhängigkeit sieht. Diese Basis bleibt aber linear unabhängig über $\overline{K}$, denn sonst wäre ein Polynom in $\overline{K}[X_1,X_2,\dots]$ gefunden, was ein $x\in X$ über den anderen Elementen algebraisiert, also $$x\in\acl(X\setminus\{x\}\cup\overline{K})=\acl(X\setminus\{x\}\cup K),$$ also wäre $X$ nicht mehr algebraisch unabhängig über $K$. Lemma \ref{Fraktionskörper} besagt dann $K(X)=\operatorname{Frac}(K[X])\ld_K\overline{K}$.\\
+    		$K(X)\supseteq K$ ist außerdem regulär, denn $K[X]$ hat als $K$-Basis $(x^n)_{x\in X,n\in\setN}$, wie man wegen algebraischer Unabhängigkeit sieht. Diese Basis bleibt aber linear unabhängig über $\overline{K}$, denn sonst wäre ein Polynom in $\overline{K}[X_1,X_2,\dots]$ gefunden, was ein $x\in X$ über den anderen Elementen algebraisiert, also $$x\in\acl(X\setminus\{x\}\cup\overline{K})=\acl(X\setminus\{x\}\cup K),$$ demnach wäre $X$ nicht mehr algebraisch unabhängig über $K$. Lemma \ref{Fraktionskörper} besagt dann $$K(X)=\operatorname{Frac}(K[X])\ld_K\overline{K}.$$
     		Also haben wir $K(X)\ad_KKL$ und $K(X)\supseteq K$ regulär, woraus nach Lemma \ref{Das komplizierte Lemma} $K(X)\ld_KKL$ folgt.
     		\item Mit 3. folgt $K\ad_CL$, mit 4. $\overline{K}\ad_C\overline{L}$, mit Lemma \ref{Stapellemma} $K\ad_C\overline{L}$, mit Lemma \ref{Das komplizierte Lemma} $K\ld_C\overline{L}$ (benutze $C\subseteq K$ regulär) und mit noch einmal Lemma \ref{Stapellemma} gilt schließlich für die Einbettungskette $C\subseteq L\subseteq\overline{L}$ die Regularitätsbedingung $LK\ld_L\overline{L}$.
     	\end{enumerate}
     \end{proof}
     \newpage
     \section{Paare algebraisch abgeschlossener Körper}
-    Wir wollen Paare $(K,E_K)$ von Körpern betrachten, wobei $E_K\subseteq K$. In der richtigen Sprache haben lassen diese sich axiomatisieren, dort haben echte Paare (d.h. $K\neq E_K$) algebraisch abgeschlossener Körper mit fixierter Charakteristik sogar Quantorenelimination, sind vollständig und in einer kleineren Sprache modellvollständig. Diese Sprachen und einige der Folgerungen für ihre Strukturen wollen wir hier (angelehnt an \cite{Delon}) einführen:
+    Wir wollen Paare $(K,E_K)$ von Körpern betrachten, wobei $E_K\subseteq K$ ist. In der richtigen Sprache lassen diese sich axiomatisieren, dort haben echte Paare (d.h. $K\neq E_K$) algebraisch abgeschlossener Körper mit fixierter Charakteristik sogar Quantoren\-elimination, sie sind vollständig und in einer kleineren Sprache modellvollständig. Diese Sprachen und einige der Folgerungen für ihre Strukturen wollen wir hier (angelehnt an \cite{Delon}) einführen:
     
     \begin{definition}
     	Wir definieren die Sprachen $\lld:=\{0,1,+,-,\cdot,(l_n)_{n\geq2}\},\lf:=\lld\cup\{f_{i,n}\mid n\geq2,1\leq i\leq n\}$ und $\lfc:=\lf\cup\{^{-1}\}$, wobei die $(l_n)_n$ $n$-stellige Relationen sein sollen und die $(f_{i,n})_{i,n}$ $n+1$-stellige partielle Funktionen.
@@ -110,22 +113,22 @@
     	Mit dem Ganzen sind echte algebraisch abgeschlossene Paare von Körpern definierbar in allen drei Sprachen $\lld,\lf,\lfc$, nenne die Theorien $$\operatorname{ACP}^{\lld},\operatorname{ACP}^{\lf},\operatorname{ACP}^{\lfc}.$$ Einzig nicht offensichtlich hierbei ist, dass man in der Theorie sagen muss, dass $\neg l_2(1,x)$ einen Körper definiert.
     \end{lemma}
     
-    An sich wird alles sowieso interdefinierbar zwischen den Sprachen sein, aber manchmal ist es klüger, eine spezielle Sprache zu betrachten. Die intuitivste Sprache wäre dabei $\lingua^E:\lingua\cup\{E(x)\}$, aber diese hat leider nicht so schöne Eigenschaften (zum Beispiel ist sie nicht modellvollständig, denn lineare Unabhängigkeit über $E$ überträgt sich nicht auf Oberstrukturen). Das Ziel ist jetzt, zu beweisen, dass $\operatorname{ACP}^{\lf},\operatorname{ACP}^{\lfc}$ Quantorenelimination haben und $\operatorname{ACP}^{\lld}$ immerhin modellvollständig ist.\\
+    An sich wird alles sowieso interdefinierbar zwischen den Sprachen sein, aber manchmal ist es klüger, eine spezielle Sprache zu betrachten. Die intuitivste Sprache wäre dabei $\lingua^E:=\lingua\cup\{E(x)\}$, aber diese hat leider nicht so schöne Eigenschaften (zum Beispiel ist sie nicht modellvollständig, denn lineare Unabhängigkeit über $E$ überträgt sich nicht auf Oberstrukturen). Das Ziel ist jetzt, zu beweisen, dass $\operatorname{ACP}^{\lf},\operatorname{ACP}^{\lfc}$ Quantorenelimination haben und $\operatorname{ACP}^{\lld}$ immerhin modellvollständig ist.\\
     Dazu müssen wir erst einmal verstehen, wie $\lfc$-Unterstrukturen von $\operatorname{ACP}^{\lfc}$-Modellen aussehen.
     
     \begin{lemma}
-    	Betrachte einen Paar von Körpern $(K,E_K)$ und eine Teilmenge ${A\subseteq K}$ sowie eine $\lfc$-Struktur $$\fA:=(A,0,1,+,-,\cdot,^{-1},(l_n)_{n\geq2},(f_{i,n})_{n\geq2,1\leq i\leq n}).$$ Dann ist $\fA\subseteq_{\lfc}(K,E_K)$ genau dann, wenn $A$ ein Unterkörper von $K$ ist, $\fA=(A,E_A)$ für $E_A:=A\cap E_K$, und $A\ld_{E_A}E_K$.
+    	Betrachte ein Paar von Körpern $(K,E_K)$ und eine Teilmenge ${A\subseteq K}$ sowie eine $\lfc$-Struktur $$\fA:=(A,0,1,+,-,\cdot,^{-1},(l_n)_{n\geq2},(f_{i,n})_{n\geq2,1\leq i\leq n}).$$ Dann ist $\fA\subseteq_{\lfc}(K,E_K)$ genau dann, wenn $A$ ein Unterkörper von $K$ ist, $\fA=(A,E_A)$ für $E_A:=A\cap E_K$, und $A\ld_{E_A}E_K$.
     \end{lemma}
     \begin{proof}
     	$A$ ist genau dann Unterkörper von $K$, wenn es $0,1$ enthält, unter $+,-,\cdot,^{-1}$ abgeschlossen ist und die entsprechenden Abbildungsvorschriften erbt.\\
-    	Außerdem ist $A\ld_{E_A}E_K$ genau dann, wenn für alle $\overline{a}\in A$ aus $\overline{a}$ linear abhängig über $E_K$ schon äquivalent zu linearer Abhängigkeit über $E_A$ ist; per kanonischer Definition also genau dann wenn $$(A,E_A)\models l_{\abs{\overline{a}}}(\overline{a}) \Leftrightarrow (K,E_K)\models l_{\abs{\overline{a}}}(\overline{a}).$$
+    	Außerdem ist $A\ld_{E_A}E_K$ genau dann, wenn für alle $\overline{a}\in A$ aus $\overline{a}$ linear abhängig über $E_K$ schon äquivalent zu linearer Abhängigkeit über $E_A$ ist; per kanonischer Definition also genau dann, wenn $$(A,E_A)\models l_{\abs{\overline{a}}}(\overline{a}) \Leftrightarrow (K,E_K)\models l_{\abs{\overline{a}}}(\overline{a}).$$
     	Wenn $\fA$ Unterstruktur ist, dann gilt für alle $\overline{a}\in A$
     	\begin{align*}
     	&\fA\models l_{\abs{\overline{a}}}(\overline{a})\Leftrightarrow(K,E_K)\models l_{\abs{\overline{a}}}(\overline{a})\\
     	\Leftrightarrow&\ \overline{a}\text{ linear unabhängig über }E_K\Leftrightarrow\overline{a}\text{ linear unabhängig über }E_A,
     	\end{align*}\newpage
     	wobei die letzte Äquivalenz davon herrührt, dass die lineare Abhängigkeit bezeugende Linearkombination sich z.B. mit Projektionen und Nullen als Koeffizienten schreiben lässt und Projektionen von Elementen aus $A$ wegen Unterstruktureigenschaft wieder in $A$ sind. Also stimmen die Interpretationen der $l_n$ in $\fA$ mit denen in $(A,E_A)$ überein und es ist $A\ld_{E_A}E_K$. Da die definierende Formel der $(f_{i,n})$ bis auf die Angabe des Bildbereiches eine Ringformel ist, und da $f_{i,n}(\overline{a})\in E_K\cap A$ für alle $\overline{a}\in A$, für alle $n,i$, stimmen auch die Interpretationen der $f_{i,n}$ in $\fA$ und in $(A,E_A)$ überein. Damit ist $\fA=(A,E_A)$.\\
-    	Die Rückrichtung folgt mit den ersten Zeilen dieses Beweises und, weil die Projektionen $f_{n,i}$ Elemente aus $A$ nach $A$ abbilden. Das sieht man daran, dass man die Koeffizienten einer Linearkombination in eine Abhängigkeitsbedingung umschreiben kann; wenn diese in $E_K$ erfüllt ist, muss sie wegen linearer Disjunktheit auch in $E_A$ erfüllt sein, also sind die Projektionen schon in $E_A$.
+    	Die Rückrichtung folgt mit den ersten Zeilen dieses Beweises und, weil die Projektionen $f_{n,i}$ Elemente aus $A$ nach $A$ abbilden. Das erkennt man dadurch, dass man die Koeffizienten einer Linearkombination in eine Abhängigkeitsbedingung umschreiben kann; wenn diese in $E_K$ erfüllt ist, muss sie wegen linearer Disjunktheit auch in $E_A$ erfüllt sein, also sind die Projektionen schon in $E_A$.
     \end{proof}
     
     \begin{lemma}\label{transz Erw}
@@ -161,7 +164,7 @@
     	Unter denselben Bedingungen wie im vorigen Lemma ist $(\overline{A},\overline{E_A})$ Zwischenstruktur.
     \end{lemma}
     \begin{proof}
-    	Laut Lemma \ref{E-Erw} ist $(A\overline{E_A},\overline{E_A})$ Zwischenstruktur und damit insbesondere $$A\ld_{E_A}\overline{E_A},A\overline{E_A}\ld_{\overline{E_A}}E_K.$$ Klarerweise ist $$(A,E_A)\subseteq_{\lfc}(\overline{A\overline{E_A}},\overline{E_A})=(\overline{A},\overline{E_A}),$$ weil $A\overline{E_A}$ in der Bedingung $A\ld_{E_A}\overline{E_A}$ gar nicht vorkommt und die Erweiterung also nichts ändert.\newpage
+    	Laut Lemma \ref{E-Erw} ist $(A\overline{E_A},\overline{E_A})$ Zwischenstruktur und damit insbesondere $$A\ld_{E_A}\overline{E_A},A\overline{E_A}\ld_{\overline{E_A}}E_K.$$ Klarerweise ist $$(A,E_A)\subseteq_{\lfc}(\overline{A\overline{E_A}},\overline{E_A})=(\overline{A},\overline{E_A}),$$ weil $A\overline{E_A}$ in der Bedingung $A\ld_{E_A}\overline{E_A}$ gar nicht vorkommt und die Erweiterung deshalb nichts ändert.\newpage
     	Lemma \ref{Rechenregeln} (6.) ergibt wegen $\overline{E_A}\subseteq E_K$ regulär $$\overline{A}=\overline{A\overline{E_A}}\ld_{\overline{E_A}}E_K,$$ was $(\overline{A},\overline{E_A})\subseteq_{\lfc}(K,E_K)$ beweist.
     \end{proof}
     
@@ -173,8 +176,8 @@
     	Zeige die Aussage mit dem Back\&Forth-System der Isomorphismen zwischen maximal $\kappa$ großen Unterstrukturen von $\kappa^+$-saturierten Modellen $(K,E_K),(L,E_L)$:
     	Dieses ist nichtleer, denn wenn $\mathbb{P}$ der Primkörper der Charakteristik ist, ist $(\mathbb{P},\mathbb{P})$ Unterstruktur von allen Modellen (wegen Gleichheit des Paares ist lineare Disjunktheit klar), bilde das als Unterstruktur von $K$ auf sich selbst als Unterstruktur von $L$ ab.
     	Sei $(M,E_M)\rightarrow(N,E_N)$ im B\&F-System. $K\supset E_K,L\supset E_L$ haben Transzendenzgrad $\infty$.\\
-    	Das kann man zum Beispiel erreichen, indem die Erweiterung offenkundig transzendent ist, und man dann jeweils den partiellen Typ über $\emptyset$ betrachtet, der die algebraische Unabhängigkeit von $n$ Elementen über $E_K$ bzw. $E_L$ beschreibt, dieser hat folgende Gestalt:
-    	$$\{\forall \overline{e}\in E\setminus\{0\}(f(\overline{e},\overline{x})\neq0)\mid 0\neq f\in\mathbb{P}(T_1,T_2,\dots,\overline{x})\}$$
+    	Dieses kann man zum Beispiel erreichen, indem die Erweiterung offenkundig transzendent ist, und man dann jeweils den partiellen Typ über $\emptyset$ betrachtet, der die algebraische Unabhängigkeit von $n$ Elementen über $E_K$ bzw. $E_L$ beschreibt; dieser hat folgende Gestalt:
+    	$$\{\forall \overline{e}\in E\setminus\{0\}(f(\overline{e},\overline{x})\neq0)\mid 0\neq f\in\mathbb{P}(T_1,T_2,\dots,\overline{x})\}.$$
     	Er ist endlich erfüllbar, da für $m$ größer als der größte Polynomgrad im endlichen Teilfragment und $x$ transzendent über $E_K$ bzw. $E_L$ die Elemente $x,x^m,x^{m^2},\dots$ algebraisch unabhängig über Polynome von Grad kleiner $m$ sind.\\
     	\OE\ seien $(M,E_M)(N,E_N)$ jeweils algebraisch abgeschlossen. Denn Lemma \ref{E-Erw} erzeugt einen Isomorphismus zwischen den Zwischenstrukturen $$(ME_M^{\text{alg }K},E_M^{\text{alg }K})\text{ und }(NE_N^{\text{alg }L},E_N^{\text{alg }L}),$$ der sich auf einen Isomorphismus $$(M^{\text{alg }K},E_M^{\text{alg }K})\cong(N^{\text{alg }L},E_N^{\text{alg }L})$$ fortsetzt.\\
     	Sei jetzt $a\in K$. Wenn $a\in M$ liegt, dann kann man die Abbildung auf triviale Weise auf $a$ fortsetzen.\newpage
