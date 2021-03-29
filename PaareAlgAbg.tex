@@ -30,7 +30,7 @@
     \end{remark}
     
     \begin{lemma}\label{Tensoren}
-    	Für Körper $C,K,L$ wie oben gilt $K\ld_CL$ genau dann, wenn TODO gdw Komme prüfen $K[L]=L[K]\cong K\otimes_CL$ mit kanonischem Isomorphismus, daher ist $\ld$ symmetrisch.
+    	Für Körper $C,K,L$ wie oben gilt $K\ld_CL$ genau dann, wenn\linebreak$K[L]=L[K]\cong K\otimes_CL$ mit kanonischem Isomorphismus, daher ist $\ld$ symmetrisch.
     \end{lemma}
     \begin{proof}
     	Der aufgespannte Ring erfüllt $$K[L]=\{\sum\limits_{(k,l)\in X}kl\mid X\subset K\times L\text{ endlich}\}=L[K].$$
@@ -54,7 +54,7 @@
     	Gegeben die Körperinklusionen $C\subseteq L\subseteq M$ und $C\subseteq K$. Dann gilt $K\ld_CM$ genau dann, wenn $K\ld_CL$ und $KL\ld_LM$.
     \end{lemma}
     \begin{proof}
-    	Sei $(k_h)_H$ eine Basis von $K$ über $C$, $(l_i)_I$ eine von $L$ über $C$ und $(m_j)_J$ eine von $M$ über $L$. $K\ld_CM$ bedeutet, dass die $C$-Basis von $K$ auch $M$-Basis von $K$ ist, aber dann ist sie natürlich auch $L$-Basis, da $C\subseteq L\subseteq M$. Dann kann man sich überlegen (TODO), dass $(l_im_j)_{I\times J}$ eine Basis von $M$ über $C$ ist und nach dem letzten Satz $(k_h)_H$ eine Basis von $L[K]$ als $L$-Vektorraum.\\
+    	Sei $(k_h)_H$ eine Basis von $K$ über $C$, $(l_i)_I$ eine von $L$ über $C$ und $(m_j)_J$ eine von $M$ über $L$. $K\ld_CM$ bedeutet, dass die $C$-Basis von $K$ auch $M$-Basis von $K$ ist, aber dann ist sie natürlich auch $L$-Basis, da $C\subseteq L\subseteq M$. Dann ist $(l_im_j)_{I\times J}$ eine Basis von $M$ über $C$ und $(k_h)_H$ eine Basis von $L[K]$ als $L$-Vektorraum. Die erste Aussage ist aus dem Beweis der Multiplikativität von Erweiterungsgraden bekannt und bei der zweiten folgt aus der Definition von $\ld$ die Unabhängigkeit, Erzeugendensystem ist klar.\\
     	Wenn $KL\ld_LM$ nicht gelten würde, würde gemäß den obigen Bemerkungen auch schon die Basis $(k_h)_H$ von $L[K]$ über $L$ linear abhängig über $M$ werden, es gäbe also eine Linearkombination $$\sum\limits_{h\in H}\lambda_hk_h=0,\ M\ni\lambda_h=0\text{ für fast alle, aber nicht alle } h\in H.$$
     	Da $(k_h)_H$ aber die Basis von $K$ über $C$ ist, widerspricht das $K\ld_CM$.\\
     	Für die Rückrichtung ist zu zeigen, dass $(l_im_j)_{I\times J}$ linear unabhängig über $K$ bleibt. Wenn das nicht so ist und die Linearkombination $$0=\sum\limits_{(i,j)\in I\times J}\lambda_{ij}l_im_j,\  K\ni\lambda_{ij}=0\text{ für fast alle, aber nicht alle } (i,j)\in I\times J$$ das bezeugt, schreibe $$\lambda_{ij}=:\sum\limits_{h\in H}c_{hij}k_h$$ als $C$-Basisdarstellung für alle $(i,j)\in I\times J$. Einsetzen und Umklammern führt uns zur Linearkombination $$0=\sum\limits_{(i,j)\in I\times J}\lambda_{ij}l_im_j=\sum\limits_{(i,j)\in I\times J}\left(\sum\limits_{h\in H} c_{hij}k_h\right)l_im_j=\sum\limits_{i\in I}\left(\sum\limits_{(h,j)\in H\times J}c_{hij}k_hl_i\right)m_j,$$ $$C\ni c_{hij}=0\text{ für fast alle, aber nicht alle } (h,i,j)\in H\times I\times J.$$\\
