@@ -129,7 +129,7 @@ In dem folgenden Lemma meint $+,\cdot$ nicht unbedingt die Operationen aus $\lin
 	\text{mit }B\models\varphi(x,y,z) &\text{bei festem }z\text{ eine Funktion definiert}\\
 	\ &\ \\
 	0 &\text{sonst}
-	\end{array}\right.,
+	\end{array}\right..
 	\end{align*}
 	Dann ist $g$ in $B$ $A$-definierbar und $g(\cdot,b)=f$. Falls $\dim(b/A)>1$, füge genug Komponenten von $b$ zu $A$ hinzu, sodass $\dim(b/A)=1$. Das Hinzufügen einer Komponente $b_j$ zu $A$ führt zu einem neuen Gegenbeispiel zur Aussage in einem dichten Paar, denn $Ab_j$ ist nach den Eingangsbemerkungen Modell von T und $Ab_j$ ist erst recht dicht in, aber nicht gleich $B$ (sonst hätte man die Dimension mit diesem Schritt schon zu sehr verkleinert).\\
 	Finde also $b_i$, sodass $A$-definierbare $(h_j)$ existieren mit $b_j=h_j(b_i)$ für alle $j$. Wenn jetzt $J\subseteq f(A^n)=g(A^n,b)=g(A^n,h(b_i))$ für ein Intervall $J$, dann widerspricht das der Aussage des letzten Lemmas für die Funktion $(x,y)\mapsto g(x,h(y))$.
@@ -363,7 +363,7 @@ In diesem Abschnitt wird eine zur o-Minimalität ähnliche Charakterisierung von
 	\begin{align}\label{align 1}
 	\bigcup\limits_{y\in (Y\setminus D)\cap A^n}U_y\cup((C\setminus\inn C)\cap\bigcup\limits_{y\in Y\setminus D}U_y)=\bigcup\limits_{y\in Y\setminus D}U_y.
 	\end{align}
-	Dass die linke Seite Teilmenge der Rechten ist, ist sowieso klar per Definition; sei nun $$x\in\bigcup\limits_{y\in Y\setminus D}U_y\setminus (C\setminus\inn C)$$ und $y\in Y\setminus D$ mit $x\in U_y$. Wegen $x\notin C\setminus\inn C$ hat $Y_x$ nichtleeres Inneres ($x\notin C$) oder $x\in\inn C$ und daher $y\in D$ (denn $\{x\}\subseteq U_y\cap\inn C$). Da zweiteres ausgeschlossen wurde, hat $Y_x$ nichtleeres Inneres, also auch $Y_x\setminus D$ (denn $D$ war niedrigdimensional) und enthält damit ein Element $z\in A^n\cap(Y_x\setminus D)$ wegen Dichtheit. $z$ bezeugt, dass $x\in\bigcup\limits_{y\in (Y\setminus D)\cap A^n}U_y$ liegt.\\
+	Dass die linke Seite Teilmenge der Rechten ist, ist sowieso klar per Definition; sei nun $$x\in\bigcup\limits_{y\in Y\setminus D}U_y\setminus (C\setminus\inn C)$$ und $y\in Y\setminus D$ mit $x\in U_y$. Wegen $x\notin C\setminus\inn C$ hat $Y_x$ nichtleeres Inneres ($x\notin C$) oder $x\in\inn C$ und daher $y\in D$ (denn $\{x\}\subseteq U_y\cap\inn C$). Da das zweite ausgeschlossen wurde, hat $Y_x$ nichtleeres Inneres, also auch $Y_x\setminus D$ (denn $D$ war niedrigdimensional) und enthält damit ein Element $z\in A^n\cap(Y_x\setminus D)$ wegen Dichtheit. $z$ bezeugt, dass $x\in\bigcup\limits_{y\in (Y\setminus D)\cap A^n}U_y$ liegt.\\
 	Aus \ref{align 1} folgt, dass $$\bigcup\limits_{y\in (Y\setminus D)\cap A^n}U_y=\left(\bigcup\limits_{y\in Y\setminus D}U_y\setminus(C\setminus\inn C)\right)\cup\left((C\setminus\inn C)\cap\bigcup\limits_{y\in (Y\setminus D)\cap A^n}U_y\right)$$ $\lingua_S$-definierbar ist (der letzte Teil ist es wegen Endlichkeit von $C\setminus\inn C$). Also ist auch $$X=\bigcup\limits_{y\in Y\cap A^n}U_y=\bigcup\limits_{y\in (Y\setminus D)\cap A^n}U_y\cup\bigcup\limits_{y\in D\cap A^n}U_y$$ $\lingua_S$-definierbar in $B$.
 \end{proof}
 \newpage

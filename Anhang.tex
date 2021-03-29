@@ -17,10 +17,10 @@
 	für Monome $(m_{i,j})\in\mathbb{P}(X)[\overline{x}]$ und ein Polynom $p\in\mathbb{P}(X)[\overline{x}]$. Nenne die Menge aller Formeln der ersten Art $A$ und die aller Formeln der zweiten Art $B$. Insbesondere wurde die Menge der \glqq{}interessanten\grqq{} Formeln nur vergrößert, das heißt, dass ein Typ $p$ eindeutig durch $$(p\cap A)\cup(p\cap B)\cup(p\cap\neg A)\cup(p\cap\neg B)$$ festgelegt wird.\\
 	Das bedeutet, in einem vorgegebenen Modell $\fM$ mit $X\subseteq M$ (\OE unendlich) zerfällt $S_n(X)$ in folgende Teilmengen:\\
 	\begin{enumerate}
-		\item Typen, die eine Formel aus $A$ und eine aus $B$ enthalten.
-		\item Typen, die eine Formel aus $A$ und keine aus $B$ enthalten.
-		\item Typen, die eine Formel aus $B$ und keine aus $A$ enthalten.
-		\item Typen, die keine Formel aus $A\cup B$ enthalten.
+		\item Typen, die eine Formel aus $A$ und eine aus $B$ enthalten
+		\item Typen, die eine Formel aus $A$ und keine aus $B$ enthalten
+		\item Typen, die eine Formel aus $B$ und keine aus $A$ enthalten
+		\item Typen, die keine Formel aus $A\cup B$ enthalten
 	\end{enumerate}
 	Für einen Typen $p$ ist im Fall 3./4. $p\cap A=\emptyset$, also $p\cap(A\cup\neg A)$ eindeutig gegeben durch die Verneinung aller möglichen Formeln in $A$ mit $n$ freien Variablen. Analog ist in Fall 2./4. $p\cap(B\cup\neg B)$ eindeutig bestimmt.\\
 	Es bleibt nun noch zu zeigen, dass es im Fall 1./2. jeweils nur $\abs{X}$ viele Möglichkeiten für Einschränkungen $p\cap(A\cup\neg A)$ geben kann und im Fall 1./3. nur $\abs{X}$ viele Möglichkeiten für Einschränkungen $p\cap(B\cup\neg B)$.\\
@@ -29,5 +29,5 @@
 	&f(\overline{a},\overline{x})=g(\overline{x})\text{ und }\exists\overline{e}\in E(f(\overline{e},\overline{x})=0)\in p.
 	\end{align*}
 	$I:=\{g\in E(X)[\overline{x}]\mid g\in\in p\}$ ist offenbar ein Ideal im Noetherschen Ring $E(X)[\overline{x}]$ (es ist nichtleer im Fall 1./2.) und daher endlich erzeugt durch $h_1,\dots,h_m\in I$. Da jedes Element $g\in I$ mit einem Element $$\exists\overline{e}\in E(\overline{g}(\overline{e},\overline{x})=0)\in p$$ korrespondiert, ist $p\cap(A\cup\neg A)$ isoliert durch die übertragenen Erzeuger $$\exists\overline{e}\in E(\overline{h_1}(\overline{e},\overline{x})=0),\dots,\exists\overline{e}\in E(\overline{h_m}(\overline{e},\overline{x})=0),$$ also gibt es nur $\abs{X}$ viele Möglichkeiten für $p\cap(A\cup\neg A)$.\\
-	Formeln der zweiten Art kann man in Konjunktionen von Formeln der ersten Art umwandeln, indem man $(z_{l,1})_{l=1\dots k}$ zu freien Variablen macht. Auf diese Weise kann man partielle Typen in $B$ zu partiellen Typen in $A$ in mehr Variablen umformen (am angenehmsten geht es wahrscheinlich, wenn man annimmt, dass $\fM$ schon hinreichend saturiert ist und einen Erfüller $\overline{a}$ von einem $p$ der Art 1./3. betrachtet, eine Belegung $(b_{i,j})$ für die $(z_{i,j})$ in einer der Formeln findet und dann $$\operatorname{tp}(\overline{a},(b_{l,1})_{l=1\dots k}/X)\cap(A\cup\neg A)$$ betrachtet). Egal welchen Weg man letztlich anwendet, es können nur mehr Typen werden, dafür landet man wieder in Fall 1./2., wo wir wissen, dass es nur $\abs{X}$ viele Möglichkeiten gibt. Also ist ACP $\kappa$-stabil für alle unendlichen $\kappa$.
+	Formeln der zweiten Art kann man in Konjunktionen von Formeln der ersten Art umwandeln, indem man $(z_{l,1})_{l=1\dots k}$ zu freien Variablen macht. Auf diese Weise kann man partielle Typen in $B$ zu partiellen Typen in $A$ in mehr Variablen umformen (am schnellsten geht es wahrscheinlich, wenn man annimmt, dass $\fM$ schon hinreichend saturiert ist und einen Erfüller $\overline{a}$ von einem $p$ der Art 1./3. betrachtet, eine Belegung $(b_{i,j})$ für die $(z_{i,j})$ in einer der Formeln findet und dann $$\operatorname{tp}(\overline{a},(b_{l,1})_{l=1\dots k}/X)\cap(A\cup\neg A)$$ betrachtet). Egal welchen Weg man letztlich anwendet, es können nur mehr Typen werden, dafür erhält man wieder den Fall 1./2., wo wir wissen, dass es nur $\abs{X}$ viele Möglichkeiten gibt. Also ist ACP $\kappa$-stabil für alle unendlichen $\kappa$.
 \end{proof}

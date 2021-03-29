@@ -48,7 +48,7 @@
     	\end{itemize}
     \end{definition}
     
-    Wir können einige Folgerungen und \glqq{}Rechenregeln\grqq{} aus den definierten Eigenschaften ziehen:
+    Wir können einige Folgerungen und \glqq{}Rechenregeln\grqq{} aus den definierten Eigenschaften ziehen.
     
     \begin{lemma}\label{Stapellemma}
     	Gegeben die Körperinklusionen $C\subseteq L\subseteq M$ und $C\subseteq K$. Dann gilt $K\ld_CM$ genau dann, wenn $K\ld_CL$ und $KL\ld_LM$.
@@ -57,7 +57,7 @@
     	Sei $(k_h)_H$ eine Basis von $K$ über $C$, $(l_i)_I$ eine von $L$ über $C$ und $(m_j)_J$ eine von $M$ über $L$. $K\ld_CM$ bedeutet, dass die $C$-Basis von $K$ auch $M$-Basis von $K$ ist, aber dann ist sie natürlich auch $L$-Basis, da $C\subseteq L\subseteq M$. Dann kann man sich überlegen (TODO), dass $(l_im_j)_{I\times J}$ eine Basis von $M$ über $C$ ist und nach dem letzten Satz $(k_h)_H$ eine Basis von $L[K]$ als $L$-Vektorraum.\\
     	Wenn $KL\ld_LM$ nicht gelten würde, würde gemäß den obigen Bemerkungen auch schon die Basis $(k_h)_H$ von $L[K]$ über $L$ linear abhängig über $M$ werden, es gäbe also eine Linearkombination $$\sum\limits_{h\in H}\lambda_hk_h=0,\ M\ni\lambda_h=0\text{ für fast alle, aber nicht alle } h\in H.$$
     	Da $(k_h)_H$ aber die Basis von $K$ über $C$ ist, widerspricht das $K\ld_CM$.\\
-    	Für die Rückrichtung ist zu zeigen, dass $(l_im_j)_{I\times J}$ linear unabhängig über $K$ bleibt. Wenn das nicht so ist und die Linearkombination $$0=\sum\limits_{(i,j)\in I\times J}\lambda_{ij}l_im_j,\  K\ni\lambda_{ij}=0\text{ für fast alle, aber nicht alle } (i,j)\in I\times J$$ das bezeugt, schreibe $$\lambda_{ij}=:\sum\limits_{h\in H}c_{hij}k_h$$ als $C$-Basisdarstellung für alle $(i,j)\in I\times J$. Einsetzen und Umklammern bringt uns die Linearkombination $$0=\sum\limits_{(i,j)\in I\times J}\lambda_{ij}l_im_j=\sum\limits_{(i,j)\in I\times J}(\sum\limits_{h\in H} c_{hij}k_h)l_im_j=\sum\limits_{i\in I}(\sum\limits_{(h,j)\in H\times J}c_{hij}k_hl_i)m_j,$$ $$C\ni c_{hij}=0\text{ für fast alle, aber nicht alle } (h,i,j)\in H\times I\times J.$$\\
+    	Für die Rückrichtung ist zu zeigen, dass $(l_im_j)_{I\times J}$ linear unabhängig über $K$ bleibt. Wenn das nicht so ist und die Linearkombination $$0=\sum\limits_{(i,j)\in I\times J}\lambda_{ij}l_im_j,\  K\ni\lambda_{ij}=0\text{ für fast alle, aber nicht alle } (i,j)\in I\times J$$ das bezeugt, schreibe $$\lambda_{ij}=:\sum\limits_{h\in H}c_{hij}k_h$$ als $C$-Basisdarstellung für alle $(i,j)\in I\times J$. Einsetzen und Umklammern führt uns zur Linearkombination $$0=\sum\limits_{(i,j)\in I\times J}\lambda_{ij}l_im_j=\sum\limits_{(i,j)\in I\times J}\left(\sum\limits_{h\in H} c_{hij}k_h\right)l_im_j=\sum\limits_{i\in I}\left(\sum\limits_{(h,j)\in H\times J}c_{hij}k_hl_i\right)m_j,$$ $$C\ni c_{hij}=0\text{ für fast alle, aber nicht alle } (h,i,j)\in H\times I\times J.$$\\
     	Da wir aber $KL\ld_CM$ annehmen, muss $$\sum\limits_{(h,j)\in H\times J}c_{hij}k_hl_i=0\text{ sein für alle }j\in J,$$ da wir $K\ld_CL$ annehmen, folgt daraus $c_{hij}=0$ für alle $h,i,j$.
     \end{proof}
     
@@ -94,7 +94,7 @@
     \end{proof}
     \newpage
     \section{Paare algebraisch abgeschlossener Körper}
-    Wir wollen Paare $(K,E_K)$ von Körpern betrachten, wobei $E_K\subseteq K$ ist. In der richtigen Sprache lassen diese sich axiomatisieren, dort haben echte Paare (d.h. $K\neq E_K$) algebraisch abgeschlossener Körper mit fixierter Charakteristik sogar Quantoren\-elimination, sie sind vollständig und in einer kleineren Sprache modellvollständig. Diese Sprachen und einige der Folgerungen für ihre Strukturen wollen wir hier (angelehnt an \cite{Delon}) einführen:
+    Wir wollen Paare $(K,E_K)$ von Körpern betrachten, wobei $E_K\subseteq K$ ist. In der richtigen Sprache lassen diese sich axiomatisieren, dort haben echte Paare (d.h. $K\neq E_K$) algebraisch abgeschlossener Körper mit fixierter Charakteristik sogar Quantoren\-elimination, sie sind vollständig und in einer kleineren Sprache modellvollständig. Diese Sprachen und einige der Folgerungen für ihre Strukturen wollen wir hier (angelehnt an \cite{Delon}) einführen.
     
     \begin{definition}
     	Wir definieren die Sprachen $\lld:=\{0,1,+,-,\cdot,(l_n)_{n\geq2}\},\lf:=\lld\cup\{f_{i,n}\mid n\geq2,1\leq i\leq n\}$ und $\lfc:=\lf\cup\{^{-1}\}$, wobei die $(l_n)_n$ $n$-stellige Relationen sein sollen und die $(f_{i,n})_{i,n}$ $n+1$-stellige partielle Funktionen.
@@ -102,7 +102,7 @@
 
     \begin{lemma}\label{Symbolik}
     	Beliebige Paare $(K,E_K)$ von Körpern werden kanonisch zu $\lld$-Strukturen, indem man folgendes setzt:
-    	$$\models l_n(x_1,\dots,x_n):\Leftrightarrow x_1,\dots,x_n\text{ sind linear unabhängig über }E_K$$
+    	$$\models l_n(x_1,\dots,x_n):\Leftrightarrow x_1,\dots,x_n\text{ sind linear unabhängig über }E_K.$$
     	Dann kann man die Substruktur $E_K$ auch definieren, da $x\in E_K\Leftrightarrow \models\neg l_2(1,x)=:E(x)$ und noch viel weitergehender auch $$y\in\langle\overline{x}\rangle_{E_K}\text{ für } x_1,\dots,x_n\text{ linear unabhängig über }E_K\Leftrightarrow\ \models l_n(\overline{x})\land\neg l_{n+1}(\overline{x},y)=:\phi(\overline{x},y).$$
     	Mit diesem Wissen setzt man jetzt in $\lf,\lfc$
     	$$\models (z=f_{n,i}(y,\overline{x})):\Leftrightarrow\ \models\phi(\overline{x},y)\text{ und }z\text{ ist die }i\text{-te Koordinate von }y\text{ in der Basisdarstellung},$$
@@ -110,10 +110,10 @@
     \end{lemma}
     \newpage
     \begin{lemma}
-    	Mit dem Ganzen sind echte algebraisch abgeschlossene Paare von Körpern definierbar in allen drei Sprachen $\lld,\lf,\lfc$, nenne die Theorien $$\operatorname{ACP}^{\lld},\operatorname{ACP}^{\lf},\operatorname{ACP}^{\lfc}.$$ Einzig nicht offensichtlich hierbei ist, dass man in der Theorie sagen muss, dass $\neg l_2(1,x)$ einen Körper definiert.
+    	Mit diesen Vorarbeiten sind echte algebraisch abgeschlossene Paare von Körpern definierbar in allen drei Sprachen $\lld,\lf,\lfc$, nenne die Theorien $$\operatorname{ACP}^{\lld},\operatorname{ACP}^{\lf},\operatorname{ACP}^{\lfc}.$$ Einzig nicht offensichtlich hierbei ist, dass man in der Theorie sagen muss, dass $\neg l_2(1,x)$ einen Körper definiert.
     \end{lemma}
     
-    An sich wird alles sowieso interdefinierbar zwischen den Sprachen sein, aber manchmal ist es klüger, eine spezielle Sprache zu betrachten. Die intuitivste Sprache wäre dabei $\lingua^E:=\lingua\cup\{E(x)\}$, aber diese hat leider nicht so schöne Eigenschaften (zum Beispiel ist sie nicht modellvollständig, denn lineare Unabhängigkeit über $E$ überträgt sich nicht auf Oberstrukturen). Das Ziel ist jetzt, zu beweisen, dass $\operatorname{ACP}^{\lf},\operatorname{ACP}^{\lfc}$ Quantorenelimination haben und $\operatorname{ACP}^{\lld}$ immerhin modellvollständig ist.\\
+    An sich wird alles sowieso interdefinierbar zwischen den Sprachen sein, aber manchmal ist es klüger, eine spezielle Sprache zu betrachten. Die intuitivste Sprache wäre dabei $\lingua^E:=\lingua\cup\{E(x)\}$, aber diese hat leider nicht so schöne Eigenschaften (zum Beispiel ist sie nicht modellvollständig, denn lineare Unabhängigkeit über $E$ überträgt sich nicht auf Oberstrukturen). Das Ziel ist jetzt, zu beweisen, dass $\operatorname{ACP}^{\lf},\operatorname{ACP}^{\lfc}$ Quantoren\-eli\-mi\-na\-tion haben und $\operatorname{ACP}^{\lld}$ immerhin modellvollständig ist.\\
     Dazu müssen wir erst einmal verstehen, wie $\lfc$-Unterstrukturen von $\operatorname{ACP}^{\lfc}$-Modellen aussehen.
     
     \begin{lemma}
@@ -184,7 +184,7 @@
     	Wenn ansonsten $a$ algebraisch über $E_KM$ ist, ist $a\in\acl(E_KM)$, also existiert $X\subset E_K$ endlich mit $a\in\acl(MX)$. \OE\ sei $X$ jetzt schon ein Oberkörper von $E_M$, wichtig ist nur der endliche Transzendenzgrad über $E_M$. Für einen beliebigen algebraisch abgeschlossenen Zwischenkörper $E_N\subseteq Y\subseteq E_L$ von gleichem Transzendenzgrad (den gibt es, da die Saturation Transzendenzgrad $\infty$ von $E_N\subset E_L$ ergibt) kann $E_M\cong E_N$ fortgesetzt werden zu einem Isomorphismus $X\cong Y$. Diesen kann man wie in Lemma \ref{Fortsetzungslemma} fortsetzen zu einem $\lfc$-Isomorphismus zwischen den Zwischenstrukturen $(\overline{MX},X),(\overline{NY},Y)$, wobei die erste $a$ enthält.\\
     	Wenn $a$ transzendent über $E_KM$ ist, gibt es ein $b\in L$ transzendent über $E_LM$, denn der entsprechende Typ ist konsistent, wenn $\abs{L}>\abs{E_L}$. So etwas lässt sich aber in einer elementaren Oberstruktur erreichen (für die endliche Konsistenz ist die genaue Kardinalität des Transzendenzgrads von $E_L\subset L$ egal) und wenn der Typ dort konsistent ist, dann auch unten.\\
     	$a$ und $b$ erzeugen dann einen Isomorphismus $C:=\overline{M(a)}\overset{\phi}{\cong}\overline{N(b)}$. Setze $$E:=\overline{M(a)}\cap E_K\cap\phi^{-1}(E_L\cap\overline{N(b)}),$$ dann gilt $(C,E)\cong_{\lfc}(\phi(C),\phi(E))$ und $b\in\phi(C)$.\\
-    	Zu zeigen ist nun nur noch $$(M,E_M)\subseteq_{\lfc}(C,E)\subseteq_{\lfc}(K,E_K),(N,E_N)\subseteq_{\lfc}(\phi(C),\phi(E))\subseteq_{\lfc}(K,E_K):$$\\
+    	Zu zeigen ist nun nur noch $$(M,E_M)\subseteq_{\lfc}(C,E)\subseteq_{\lfc}(K,E_K),(N,E_N)\subseteq_{\lfc}(\phi(C),\phi(E))\subseteq_{\lfc}(K,E_K).$$\\
     	Aus $(M,E_M)\subseteq_{\lfc}(K,E_K)$ folgt mit Lemma \ref{transz Erw} $$(M,E_M)\subseteq_{\lfc}(M(a),E_M)\subseteq_{\lfc}(K,E_K),$$ daraus mit Lemma \ref{E-Erw} und $E_M\subseteq E\subseteq E_K$ $$(M,E_M)\subseteq_{\lfc}(M(a)E,E)\subseteq_{\lfc}(K,E_K),$$ daraus folgt mit Lemma \ref{alg Abschl} und $E\subseteq\overline{M(a)}=C$ schließlich $$(M,E_M)\subseteq_{\lfc}(C,E)\subseteq_{\lfc}(K,E_K).$$
     	Der Teil für $(\phi(C),\phi(E))$ geht analog und wegen $a\in C$ haben wir die gesuchte Fortsetzung gefunden.
     \end{proof}
