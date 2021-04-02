@@ -23,19 +23,19 @@ Induktiv kann man den Begriff einer Zelle in einer solchen Struktur definieren.
 \end{definition}
 
 Es gibt besonders hilfreiche Zellen, nämlich die offenen. Glücklicherweise ist jede Zelle definierbar homöomorph zu einer offenen Zelle.
-\begin{lemma}
+\begin{fact}
 	Jede $\sigma$-Zelle ist homöomorph zu einer offenen Zelle. Der kanonische Homöomorphismus entsteht dabei durch Weglassen der Koordinaten, in denen $\sigma$ den Wert 0 hat. Insbesondere ist der Homöomorphismus definierbar über der selben Menge wie die Zelle.
-\end{lemma}
+\end{fact}
 
 Zellen haben auch zwei andere wichtige topologische Eigenschaften:
-\begin{lemma}
+\begin{fact}
 	Zellen sind \textbf{lokal abgeschlossen}, das heißt, sie sind offen in der Spurtopologie ihres Abschlusses. Sie sind außerdem \textbf{definierbar zusammenhängend}, das heißt, sie enthalten keine definierbaren clopen Teilmengen.
-\end{lemma}
+\end{fact}
 
-Wichtigste Grundlage der Arbeit mit o-minimalen Theorien sind die folgenden Aussagen zur \textbf{Zellzerlegung}. Sie stellen quasi eine Verallgemeinerung der Definition von O-Minimalität auf höhere Dimensionen dar und geben die Struktur definierbarer Funktionen an.
-\begin{theorem}
+Wichtigste Grundlage der Arbeit mit o-minimalen Theorien sind die folgenden Aussagen zur \textbf{Zellzerlegung}. Sie stellen quasi eine Verallgemeinerung der Definition von o-Minimalität auf höhere Dimensionen dar und geben die Struktur definierbarer Funktionen an.
+\begin{fact}
 	In einer o-minimalen Struktur $\fM$ ist jede definierbare Menge eine endliche disjunkte Vereinigung von Zellen. Für jede definierbare (möglicherweise partielle) Funktion gibt es eine Zerlegung des Definitionsbereiches in Zellen, sodass die Funktion auf jeder Zelle stetig ist. Wenn es eine Funktion in einer Variable ist, ist sie nicht nur stückweise stetig, sondern es gibt auch eine Zerlegung, sodass die Funktion auf jedem Stück entweder streng monoton oder konstant ist.
-\end{theorem}
+\end{fact}
 \begin{remark}
 	Wenn die Menge bzw. die Funktion über einer bestimmten Menge definierbar sind, kann man sich die Zerlegung ebenso über dieser Menge definierbar wählen. Außerdem kann man endlich viele Mengen simultan zerlegen und sie sogar partitionieren. Eine Partition sei dabei definiert als
 	\begin{itemize}
@@ -45,7 +45,7 @@ Wichtigste Grundlage der Arbeit mit o-minimalen Theorien sind die folgenden Auss
 \end{remark}
 
 \begin{corollary}
-	O-Minimale Strukturen eliminieren $\exists^\infty$. Damit ist für jede definierbare Menge in einer Variable die Menge der zu vereinigenden Punkte und Intervalle uniform beschränkt. Also lässt sich o-Minimalität als Formelmenge beschreiben und ist somit Eigenschaft einer vollständigen Theorie.
+	o-Minimale Strukturen eliminieren $\exists^\infty$. Damit ist für jede definierbare Menge in einer Variable die Menge der zu vereinigenden Punkte und Intervalle uniform beschränkt. Also lässt sich o-Minimalität als Formelmenge beschreiben und ist somit Eigenschaft einer vollständigen Theorie.
 \end{corollary}
 
 \begin{definition}
@@ -53,19 +53,19 @@ Wichtigste Grundlage der Arbeit mit o-minimalen Theorien sind die folgenden Auss
 \end{definition}
 \newpage
 Ab jetzt geben wir uns ein o-minimales Modell $\fM$ einer vollständigen $\lingua$-Theorie T so vor, dass die Ordnung dicht ist. Zellen sind sehr ähnlich zu Mannigfaltigkeiten, genauso wie diesen kann man ihnen eine Dimension zuweisen.
-\begin{lemdef}
+\begin{factdef}
 	Die endliche Folge $\sigma$ zur jeweiligen Zelle $Z$ ist eindeutig bestimmt und daher der Wert $\dim(Z)=\sum\limits_{i=1}^n\sigma(i)$ wohldefiniert. Er wird \textbf{Dimension der Zelle} genannt. Für allgemeine definierbare nichtleere Mengen $X$ sei die \textbf{Dimension} $\dim(X)$ definiert als das Maximum der Zelldimensionen in einer beliebigen Zellzerlegung, die Dimension der leeren Menge sei 0. Das ist wohldefiniert und rein topologisch definierbar: $\dim(X)\leq n$ genau dann, wenn eine Projektion von $X$ nach $M^n$ nichtleeres Inneres hat. Damit ist die Dimension auch $\lingua$-definierbar.
-\end{lemdef}
+\end{factdef}
 
 Man kann die Dimension auch anders definieren:
-\begin{lemma}
+\begin{fact}
 	Es erfüllt $\acl=\dcl$ das Austauschprinzip und induziert also einen Dimensionsbegriff für Tupel. Wenn $\fM$ hinreichend saturiert ist und $X\subseteq M^n$ definierbar über $Y$, ist $\dim(X)=\max\{\dim(a/Y)\mid a\in X\}$.
-\end{lemma}
+\end{fact}
 
 O-Minimale Gruppen haben eine enorm wichtige Eigenschaft, aus der viele weitere (hier nicht bedeutende) Dinge folgen.
-\begin{lemma}
+\begin{fact}
 	Wenn $\fM$ eine 0-definierbare, durch $<$ angeordnete Gruppenoperation mit einem 0-definierbaren positiven Element (üblicherweise 1 genannt) besitzt, gilt \textbf{Definable Choice}: Aus jeder definierbaren Menge lässt sich kanonisch, uniform und definierbar ein Element auswählen. Insbesondere gibt es zu jeder Menge eine definierbare Skolemfunktion und jede definierbare Familie von uniform parametrisierten Mengen hat eine definierbare Auswahlfunktion. Die Auswahl ist dabei definierbar über derselben Menge wie die ursprüngliche(n) Menge(n).
-\end{lemma}
+\end{fact}
 \newpage
 \section{Anforderungen an die hier betrachteten Theorien}
 
@@ -105,7 +105,7 @@ In dem folgenden Lemma meint $+,\cdot$ nicht unbedingt die Operationen aus $\lin
 \newpage
 \begin{proof}
 	Wenn die Aussage nicht gilt, dann gilt mit $$p(x,y):=x_ny^n+x_{n-1}y^{n-1}+\dots,x_0,$$ dass für jedes $a$ aus $(I_A)^{n+1}$ ein $\alpha$ in $A^n$ existiert mit $p(a,b)=f(\alpha,b)$. Es muss für festes $a$ aus $I_A$ ein Intervall um $b$ in $I_A$ mit dieser Eigenschaft geben, denn sonst wäre $b$ in $\dcl(A)=A$.\\
-	Sei jetzt $a$ nicht mehr fixiert, dann existiert mit Definable Choice in $I_A$ eine definierbare Zuordnung $a\mapsto\alpha(a)$, sodass $p(a,\cdot)=f(\alpha(a),\cdot)$ auf einem Intervall gilt. Da jedes $a$ aber $n+1$ viele Einträge hat und jedes $\alpha(a)$ nur $n$ viele, müssen unendlich viele $a$ in $(I_A)^{n+1}$ existieren, die durch $\alpha$ auf das selbe Element abgebildet werden. Denn wenn das nicht so wäre, wäre wegen Saturation ein generisches Element über all den vorigen zu Definitionen benutzten Parametern aus $(I_A)^{n+1}$ algebraisch über einem Element aus $A^n$, was der Generizität widerspricht. Da es unendlich viele Elemente gibt, sodass $\alpha$ auf ihnen konstant ist, gibt es schon eine Zelle von Dimension $>0$ mit der Eigenschaft und damit insbesondere eine Zelle $E$ von Dimension 1 (als Teilmenge einer Zelle lässt sich immer eine von kleinerer Dimension finden). Nenne den konstanten Wert dann $\alpha^*$.\\
+	Sei jetzt $a$ nicht mehr fixiert, dann existiert mit Definable Choice in $I_A$ eine definierbare Zuordnung $a\mapsto\alpha(a)$, sodass $p(a,\cdot)=f(\alpha(a),\cdot)$ auf einem Intervall gilt. Da jedes $a$ die Länge $n+1$ hat und jedes $\alpha(a)$ aber Länge $n$, müssen unendlich viele $a$ in $(I_A)^{n+1}$ existieren, die durch $\alpha$ auf das selbe Element abgebildet werden. Denn wenn das nicht so wäre, wäre wegen Saturation ein generisches Element über all den vorigen zu Definitionen benutzten Parametern aus $(I_A)^{n+1}$ algebraisch über einem Element aus $A^n$, was der Generizität widerspricht. Da es unendlich viele Elemente gibt, sodass $\alpha$ auf ihnen konstant ist, gibt es schon eine Zelle von Dimension $>0$ mit der Eigenschaft und damit insbesondere eine Zelle $E$ von Dimension 1 (als Teilmenge einer Zelle lässt sich immer eine von kleinerer Dimension finden). Nenne den konstanten Wert dann $\alpha^*$.\\
 	Da also gilt: für alle $a$ aus $E$ existiert ein Intervall $J$ mit $p(a,\cdot)=f(\alpha^*,\cdot)$ auf $J$, existieren mit Definable Choice $\beta^*,\gamma^*:E\rightarrow I_A$, sodass $p(a,\cdot)=f(\alpha^*,\cdot)$ auf $(\beta^*(a),\gamma^*(a))$ gilt. Ohne Einschränkungen seien $\beta^*$ und $\gamma^*$ jetzt schon stetig auf $E$ und ein $e$ in $E$ beliebig· Dann existiert für $\varepsilon$ hinreichend klein eine $E$-Umgebung $U$ um $e$, sodass $$\beta^*<\frac{1}{2}(\beta^*(e)+\gamma^*(e))-\varepsilon,\ \frac{1}{2}(\beta^*(e)+\gamma^*(e))+\varepsilon<\gamma^*$$ auf $U$, also $$p(a,x)=f(\alpha^*,x)\text{ für alle }a\text{ in } U,x\text{ in }(\frac{1}{2}(\beta^*(e)+\gamma^*(e))-\varepsilon,\frac{1}{2}(\beta^*(e)+\gamma^*(e))+\varepsilon)$$ gilt. Es kann aber nicht $p(a-a',x)=p(a,x)-p(a',x)=f(\alpha^*,x)-f(\alpha^*,x)=0$ für $a,a'$ verschieden in $U$ und unendlich viele $x$ sein, weil ein Nichtnullpolynom nicht unendlich viele Nullstellen haben kann.
 \end{proof}
 

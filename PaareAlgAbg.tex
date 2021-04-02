@@ -190,45 +190,50 @@
     
     \newpage
     
-    \begin{lemma}\label{Eliminierungsregeln}
-    	Es gilt:\\
-    	\begin{align*}\operatorname{ACP}^{\lfc}&\models\forall x_1,\dots,x_n\forall y_1,\dots,y_n\neq0(l_n(x_1y_1^{-1},\dots,x_ny_n^{-1})\\&\leftrightarrow l_n\left(x_1\prod\limits_{i=1\dots n,i\neq 1}y_i,\dots,x_n\prod\limits_{i=1\dots n,i\neq n}y_i\right))\\
-    	\operatorname{ACP}^{\lfc}&\models\forall x_1,\dots,x_n\forall e_1,\dots,e_n\in E\left(l_n(e_1x_1,\dots,e_nx_n)\leftrightarrow l_n(x_1,\dots,x_n)\right)\\
-    	\operatorname{ACP}^{\lfc}&\models\forall x_1,\dots,x_n,y\forall e_1,\dots,e_n,e\in E(f_{n,i}(ey,e_1x_1,\dots,e_nx_n)=\frac{e}{e_i}f_{n,i}(y,x_1,\dots,x_n))\\
-    	\operatorname{ACP}^{\lfc}&\models\forall a,b,x_2,\dots,x_n(\neg t_n(a+b,x_2,\dots,x_n)\leftrightarrow\neg t_{n-1}(x_2,\dots,x_n)\lor\\
-    	&t_{n-1}(x_2,\dots,x_n)\land((l_n(b,x_2,\dots,x_n)\land\neg l_{n+1}(a,b,x_2,\dots,x_n))\lor\\
-    	&(\neg l_n(b,x_2,\dots,x_n)\land l_n(a,x_2,\dots,x_n))))\\
-    	\operatorname{ACP}^{\lfc}&\models\forall a,b,x_1,\dots,x_n(f_{i,n}(a+b,x_1,\dots,x_n)=f_{i,n}(a,x_1,\dots,x_n)+f_{i,n}(b,x_1,\dots,x_n))\\
-    	&\text{für alle }i=1,\dots,n\\
-    	\operatorname{ACP}^{\lfc}&\models\forall a,b,x_1,\dots,x_{i-1},x_{i+1},\dots,x_n,z(f_{i,n}(z,x_1,\dots,x_{i-1},a+b,x_{i+1},\dots,x_n)=\\
+    \begin{definition}
+    	Wenn es keine Rolle spielt, in welcher Sprache man gerade ist, schreibe einfach \textbf{ACP} für die Theorie.
+    \end{definition}
+    
+    Bis jetzt haben wir zwar die Quantorenelimination erreicht, allerdings kann man Formeln modulo ACP noch weiter reduzieren. Insbesondere wäre eine \glqq{}Schachtelung\grqq{} von mehreren $f_{i,n}$ ineinander schwer zu verstehen. Nach weiterer Reduktion der Formeln braucht man das aber auch nicht, da die Funktionen in den kleineren Körper abbilden. Der folgende Fakt lässt sich durch einige Rechnungen und Fallunterscheidungen beweisen, aus Gründen des Leseflusses werden diese aber hier weggelassen.
+    
+    \begin{fact}\label{Eliminierungsregeln}
+    	In jedem Modell $(K,E_K)$ von ACP gelten die nachfolgenden Äquivalenzen für alle $i,n$. Hierbei seien die Variablen aus $K$ beliebig, ausgenommen die $e_1,\dots,e_n$, diese seien in $E_K$ beliebig. Im Falle der partiellen Funktionen seien nur Situationen betrachtet, wo die betrachteten Argumente im partiellen Definitionsbereich liegen.\\
+    	Es ist möglich, \glqq{}$^{-1}$\grqq{} in gewissen Situationen zu eliminieren:
+    	$$l_n(x_1y_1^{-1},\dots,x_ny_n^{-1})\Leftrightarrow l_n\left(x_1\prod\limits_{i=1\dots n,i\neq 1}y_i,\dots,x_n\prod\limits_{i=1\dots n,i\neq n}y_i\right),$$
+    	$$f_{i,n}(x_0y_0^{-1},x_1y_1^{-1},\dots,x_ny_n^{-1})= f_{i,n}\left(x_0\prod\limits_{i=0\dots n,i\neq 0}y_i,\dots,x_n\prod\limits_{i=0\dots n,i\neq n}y_i\right)$$
+    	Auch lassen sich Vorfaktoren aus $E_K$ nach außen bringen/eliminieren:
+    	$$l_n(e_1x_1,\dots,e_nx_n)\Leftrightarrow l_n(x_1,\dots,x_n),$$
+    	$$f_{n,i}(ey,e_1x_1,\dots,e_nx_n)=e{e_i}^{-1}f_{n,i}(y,x_1,\dots,x_n)$$
+    	Beim \glqq{}$+$\grqq{} ist die Situation schon komplexer. In der ersten Koordinate ist das noch recht leicht:
+    	\begin{align*}
+    	\neg t_n(a+b,x_2,\dots,x_n)\Leftrightarrow&\neg t_{n-1}(x_2,\dots,x_n)\text{ oder }t_{n-1}(x_2,\dots,x_n)\text{ und }\\&((l_n(b,x_2,\dots,x_n)\text{ und }\neg l_{n+1}(a,b,x_2,\dots,x_n))\text{ oder }\\&(\neg l_n(b,x_2,\dots,x_n)\text{ und }l_n(a,x_2,\dots,x_n))),
+    	\end{align*}
+    	$$f_{i,n}(a+b,x_1,\dots,x_n)=f_{i,n}(a,x_1,\dots,x_n)+f_{i,n}(b,x_1,\dots,x_n)$$\newpage
+    	Bei $l_n$ funktioniert diese Äquivalenz analog auch in den anderen Koordinaten, um \glqq{}$+$\grqq{} aus einem $f_{i,n}$ herauszuziehen, bedarf es aber einer größeren Fallunterscheidung:
+    	\begin{align*}
+    	&f_{i,n}(z,x_1,\dots,x_{i-1},a+b,x_{i+1},\dots,x_n)=\\
     	&\left\{\begin{array}{ll}
     	f_{i,n+1}(z,x_1,\dots,x_{i-1},a,b,x_{i+1},\dots,x_n)& a,b,\overline{x}\text{ unabhängig}\\
-    	f_{i,n}(z,x_1,\dots,x_{i-1},a,x_{i+1},\dots,x_n)&\text{wenn nicht und }b\in\langle\overline{x}\rangle_E\\
-    	f_{i,n-1}(z,x_1,\dots,x_{i-1},x_{i+1},\dots,x_n)&\text{wenn nicht und }z\in\langle\overline{x}\rangle_E\\
+    	f_{i,n}(z,x_1,\dots,x_{i-1},a,x_{i+1},\dots,x_n)&\text{wenn nicht und }b\in\langle\overline{x}\rangle_{E_K}\\
+    	f_{i,n-1}(z,x_1,\dots,x_{i-1},x_{i+1},\dots,x_n)&\text{wenn nicht und }z\in\langle\overline{x}\rangle_{E_K}\\
     	\frac{f_{i,n}(z,x_1,\dots,x_{i-1},b,x_{i+1},\dots,x_n)}{1+f_{i,n}(a,x_1,\dots,x_{i-1},b,x_{i+1},\dots,x_n)}&\text{wenn nicht}
-    	\end{array}\right.)\\
-    	&\text{für alle }i=1,\dots,n\\
-    	\operatorname{ACP}^{\lfc}&\models\forall a,b,x_1,\dots,x_{i-1},x_{i+1},\dots,x_n,z(f_{j,n}(z,x_1,\dots,x_{i-1},a+b,x_{i+1},\dots,x_n)=\\
+    	\end{array}\right.,
+    	\end{align*}\begin{align*}
+    	&f_{j,n}(z,x_1,\dots,x_{i-1},a+b,x_{i+1},\dots,x_n)=\\
     	&\left\{\begin{array}{ll}
-    	f_{j+1_{j>i},n+1}(z,x_1,\dots,x_{i-1},a,b,x_{i+1},\dots,x_n)\\
-    	\ \ a,b,\overline{x}\text{ unabhängig}\\
+    	f_{j+1_{j>i},n+1}(z,x_1,\dots,x_{i-1},a,b,x_{i+1},\dots,x_n)&a,b,\overline{x}\text{ unabhängig}\\\\
     	f_{j,n}(z,x_1,\dots,x_{i-1},a,x_{i+1},\dots,x_n)\\
-    	-f_{i,n}(z,x_1,\dots,x_{i-1},a,x_{i+1},\dots,x_n)f_{j-1_{j>i},n-1}(b,x_1,\dots,x_{i-1},x_{i+1},\dots,x_n)\\
-    	\ \ \text{wenn nicht und }b\in\langle\overline{x}\rangle_E\\
+    	-f_{i,n}(z,x_1,\dots,x_{i-1},a,x_{i+1},\dots,x_n)\cdot&\text{wenn nicht und }b\in\langle\overline{x}\rangle_{E_K}\\f_{j-1_{j>i},n-1}(b,x_1,\dots,x_{i-1},x_{i+1},\dots,x_n)\\\\
     	f_{j,n}(z,x_1,\dots,x_{i-1},b,x_{i+1},\dots,x_n)\\
-    	-f_{i,n}(z,x_1,\dots,x_{i-1},a+b,x_{i+1},\dots,x_n)f_{j,n}(a,x_1,\dots,x_{i-1},b,x_{i+1},\dots,x_n)\\
-    	\ \ \text{wenn nicht}
-    	\end{array}\right.)\\
-    	&\text{für alle }i=1,\dots,n\text{, für alle }j\neq i\\
+    	-f_{i,n}(z,x_1,\dots,x_{i-1},a+b,x_{i+1},\dots,x_n)\cdot&\text{wenn nicht}\\f_{j,n}(a,x_1,\dots,x_{i-1},b,x_{i+1},\dots,x_n)
+    	\end{array}\right.\\
+    	&(\text{hierbei sei }j\neq i)
     	\end{align*}
-    \end{lemma}
-    \begin{proof}
-    	Ist reine Fallunterscheidung und Rechenarbeit.
-    \end{proof}
-
-    \begin{definition}
-    Wenn es keine Rolle spielt, in welcher Sprache man gerade ist, schreibe einfach \textbf{ACP} für die drei Theorien.
-    \end{definition}
+    \end{fact}
+    
+    Es steht noch eine Erklärung der genauen Verwendung dieses Faktes aus. Anschaulich betrachtet, kann man damit Formeln, die im Inneren eines $l_n$ oder eines $f_{i,n}$ ein $+,-,^{-1}$ oder ein weiteres $f_{i',n'}$ enthalten, in boolesche Kombinationen von Formeln umwandeln, die so etwas nicht enthalten. Da man $^{-1}$ in Ringformeln auch eliminieren kann, folgt eine einfache Darstellung von Formeln modulo ACP.
+    \\TODO: Hier und auf der nächsten Seite etwas die Leere füllen
+    \newpage
     
     \begin{corollary}\label{Formel-Vereinfachung}
     	Man kann jede Formel mit Parametern aus $X$ modulo $\operatorname{ACP}$ schreiben als boolesche Kombination aus $$\glqq{}l_n(\text{Monome mit Koeffizienten von Produkten aus }X)\grqq{}$$ und
@@ -238,15 +243,15 @@
         wobei $\mathbb{P}$ den Primkörper der entsprechenden Charakteristik bezeichne.
     \end{corollary}
     \begin{corollary}
-    	In jedem Modell $(K,E_K)$ ist jede definierbare Menge $X\subset E_K^n$ schon beschreibbar als $X=E_K^n\cap Z$, wobei $Z$ definierbar in der Ringsprache über denselben Parametern ist. Das liegt daran, dass die $(f_{i,n}),(l_n)$ nicht definiert bzw. trivial sind, wenn man Werte aus $E_K$ einsetzt.\\ Dementsprechend ist $E(x)$ eine streng minimale Formel und für $e_1,\dots,e_n$ in $E_K$ ist $\operatorname{RM}(\overline{e}/X)=\dim(\overline{e}/X)$ für alle $X\subseteq K$.
+    	In jedem Modell $(K,E_K)$ ist jede definierbare Menge $X\subset E_K^n$ schon beschreibbar als $X=E_K^n\cap Z$, wobei $Z$ definierbar in der Ringsprache über denselben Parametern ist. Das liegt daran, dass die $(f_{i,n}),(l_n)$ nicht trivial sind, wenn man Werte aus $E_K$ einsetzt.\\ Dementsprechend ist $E(x)$ eine streng minimale Formel und für $e_1,\dots,e_n$ in $E_K$ ist $\operatorname{RM}(\overline{e}/X)=\dim(\overline{e}/X)$ für alle $X\subseteq K$.
     \end{corollary}
     \begin{corollary}
     	$\operatorname{ACP}^{\lf}$ hat für fixierte Charakteristik ebenfalls Quantorenelimination, da nach Folgerung \ref{Formel-Vereinfachung} die Operation \glqq{}$^{-1}$\grqq{} eliminiert werden kann. Da in Lemma \ref{Symbolik} gezeigt wurde, dass die $(f_{i,n})$ sowohl existenziell als auch universell definierbar sind, ist jede Formel modulo $\operatorname{ACP}^{\lld}$ immerhin universell und $\operatorname{ACP}^{\lld}$ ist modellvollständig.
     \end{corollary}
     
-    \begin{corollary}
+    \begin{remark}
     	Man kann sich leicht überlegen, dass ACP$\cup\{$\glqq{}Charakteristik=p\grqq{}$\}$ das Primmodell $(\overline{\mathbb{P}(e)},\overline{\mathbb{P}})$ hat für $\mathbb{P}$ als Primkörper und ein beliebiges $e$ transzendent über $\mathbb{P}$.
-    \end{corollary}
+    \end{remark}
     \newpage
     \begin{theorem}
     	ACP ist $\omega$-stabil.
