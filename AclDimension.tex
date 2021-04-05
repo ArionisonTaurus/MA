@@ -1,0 +1,61 @@
+%!TEX root = DieLoesungAllerMilleniumsprobleme.tex
+\chapter{Die Unabhängigkeit bezüglich $\acl$}
+Im Folgenden werden wir einen wichtigen Begriff einführen, der im Weiteren hilfreich sein wird. Zuerst sei allgemein T eine $\lingua$-Theorie, die für den algebraischen Abschluss $\acl$ die Austauscheigenschaft erfüllt, außerdem sei $\fM$ ein Modell von $T$. In diesem Fall induziert $\acl$ dann einen Dimensionsbegriff $\dim$ auf $M$.
+
+\begin{definition}
+	Zwei Teilmengen $A$ und $B$ von $M$ seien \textbf{unabhängig über} einer dritten Teilmenge $C\subseteq A,B$ genau dann, wenn für alle $\overline{a}$ in $A$ gilt, dass $$\dim(\overline{a}/B)=\dim(\overline{a}/C).$$
+\end{definition}
+
+\begin{lemma}
+	Äquivalent zu dieser Definition ist die Aussage
+	$$\glqq{}\text{Alle }\overline{a}\text{ aus }A\text{ sind genau dann unabhängig über }B\text{, wenn sie es über }C\text{ sind}\grqq{}.$$
+\end{lemma}
+\begin{proof}
+	Sei die zweite Aussage erfüllt. Da die Dimension die Kardinalität einer maximal unabhängigen Teilmenge beschreibt, gilt für alle $\overline{a}$ in $A$, dass \--- wenn ohne Einschränkungen $a_1,\dots,a_k$ unabhängig über $B$ (also auch über $C$) sind und die restlichen Elemente darüber abhängig über $A$ \--- gilt $$\dim(\overline{a}/B)=\dim(a_1,\dots,a_k/B)=k=\dim(a_1,\dots,a_k/C)\leq\dim(\overline{a}/C).$$
+	Durch die Wahl eines maximalen über $C$ unabhängigen Teiltupels folgt die umgekehrte Ungleichung.\\
+	Wenn anders herum $A$ und $B$ unabhängig über $C$ sind, und $\overline{a}$ ein über $B$ unabhängiges Tupel ist, so gilt
+	$$\abs{\overline{a}}=\dim(\overline{a}/B)=\dim(\overline{a}/C),$$
+	also ist $\overline{a}$ auch unabhängig über $C$. Die Wahl von $\overline{a}$ unabhängig über $C$ beweist auf analogem Weg die Gegenrichtung.
+\end{proof}
+
+\begin{remark}
+	Man kann sich überlegen, dass sowohl in der Definition, als auch in der äquivalenten Aussage, jeweils eine Richtung bzw. Ungleichung klar ist. Beim Übergang zu einer kleineren Menge kann die Dimension eines Tupels nämlich nie kleiner werden und die Unabhängigkeit eines Tupels nie verloren gehen.
+\end{remark}
+
+Diese Definition lässt sich auch auf beliebige Mengen $C\subseteq M$ verallgemeinern.
+\begin{definition}
+	Nenne $A$ und $B$ unabhängig über $C$, wenn $A\cup C$ und $B\cup C$ unabhängig über $C$ sind.
+\end{definition}
+
+\begin{lemma}
+	Es sind $A$ und $B$ unabhängig über $C$ genau dann, wenn für alle $\overline{a}$ in $A$ und alle $\overline{b}$ in $B$ jeweils $\overline{a}$ und $\overline{b}$ über $C$ unabhängig sind.
+\end{lemma}
+\begin{proof}
+	Dass man von $A$ auf endliche Teilmengen übergehen kann, ist klar, da in der Definition nur auf endliche Teilmengen zurückgegriffen wird.\\
+	Man kann von $B$ auf endliche Teilmengen übergehen, denn wenn $A$ und $B$ nicht unabhängig über $C$ sind, gibt es ein $\overline{a}$ in $A$, sodass $\overline{a}$ unabhängig über $C$, aber nicht über $B\cup C$ ist. Es gibt also eine $\lingua_{B\cup C}$-Formel $\varphi(\overline{x},\overline{b},\overline{c})$, die die Abhängigkeit von $\overline{a}$ bezeugt. Da das schon eine $\lingua_{\overline{b}\cup C}$-Formel ist, sind aber $A$ und $\overline{b}$ abhängig über $C$. Wenn andersherum $A$ und $B$ unabhängig über $C$ sind, dann sind alle $\overline{a}$ aus $A$, die unabhängig über $C$ sind, schon unabhängig über $B\cup C$, also erst recht über $\overline{b}\cup C$ für alle $\overline{b}$ in $B$.
+\end{proof}
+
+\begin{lemma}
+	Die Relation der Unabhängigkeit ist symmetrisch in den ersten beiden Mengen.
+\end{lemma}
+\begin{proof}
+	Seien $A$ und $B$ unabhängig über $C$. Nach dem letzten Lemma kann man annehmen, dass wir anstatt $A$ und $B$ Tupel $\overline{a}$ und $\overline{b}$ haben. Nimm an, dass $$\dim(\overline{a}/C)=\dim(\overline{a}/C,\overline{b}),$$
+	dann folgt daraus $$\dim(\overline{a}/C)+\dim(\overline{b}/C,\overline{a})=\dim(\overline{a},\overline{b}/C)=\dim(\overline{a}/C,\overline{b})+\dim(\overline{b}/C)=\dim(\overline{a}/C)+\dim(\overline{b}/C)$$ und durch Kürzen $$\dim(\overline{b}/C)=\dim(\overline{b}/C,\overline{a}).$$
+	Also sind $\overline{b}$ und $\overline{a}$ unabhängig über $C$.
+\end{proof}
+
+\begin{lemma}
+	Es seien $A$ und $B$ unabhängig über $C$ und Teilmengen $A',B',C'$ von $M$ mit $$A'\subseteq A,B'\subseteq B,C\subseteq C'.$$
+	Dann sind $A'$ und $B'$ unabhängig über $C'$.
+\end{lemma}
+\begin{lemma}
+	Für die Ersetzung von $A$ durch $A'$ folgt die Aussage aus der Reduktion auf alle Teiltupel. Die beiden anderen Ersetzungen ändern nichts wegen
+	$$\dim(\overline{a}/C)\leq\dim(\overline{a}/C')\leq\dim(\overline{a}/B')\leq\dim(\overline{a}/B)=\dim(\overline{a}/C)$$ für alle $\overline{a}$ in $A$.
+\end{lemma}
+
+\begin{lemma}
+	Wenn $A$ und $B$ unabhängig über $C$ sind, dann sind $\acl(A)$ und $\acl(B)$ unabhängig über $C$.
+\end{lemma}
+\begin{proof}
+	Das ist eine direkte Konsequenz von $\dim(\cdot/X)=\dim(\cdot/\acl(X))$.
+\end{proof}
