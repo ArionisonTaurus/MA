@@ -59,3 +59,25 @@ Diese Definition lässt sich auch auf beliebige Mengen $C\subseteq M$ verallgeme
 \begin{proof}
 	Das ist eine direkte Konsequenz von $\dim(\cdot/X)=\dim(\cdot/\acl(X))$.
 \end{proof}
+
+\begin{lemma}
+	Seien $A$ und $B$ unabhängig über $C$ und eine über $A\cup B\cup C$ unabhängige Teilmenge $X\subseteq M$. Dann sind $A\cup X$ und $B$ unabhängig über $C$.
+\end{lemma}
+\begin{proof}
+	Sei $(\overline{a},\overline{x})$ ein Tupel aus $A\cup X$, wobei $\overline{a}$ in $A$ ist und $\overline{x}$ in $X$. Da $X$ unabhängig über $A\cup B\cup C$ ist, ist $(\overline{a},\overline{x})$ genau dann unabhängig über $C$, wenn $\overline{a}$ es ist. Wegen der Unabhängigkeit von $A$ und $B$ über $C$ ist das genau dann der Fall, wenn $\overline{a}$ unabhängig über $B\cup C$ ist; wegen der Unabhängigkeit von $X$ ist das wiederum äquivalent dazu, dass $(\overline{a},\overline{x})$ unabhängig ist über $B\cup C$.
+\end{proof}
+
+\begin{lemma}
+	Seien $A$ und $B$ unabhängig über $C$ sind und sei eine Teilmenge $X\subseteq B$. Dann sind $A\cup X$ und $B$ unabhängig über $C\cup X$.
+\end{lemma}
+\begin{proof}
+	Sei $(\overline{a},\overline{x})$ ein Tupel aus $A\cup X$, wobei $\overline{a}$ in $A$ ist und $\overline{x}$ in $X$. Dieses Tupel ist genau dann unabhängig über $C\cup X$ (bzw. $B\cup(C\cup X)$), wenn $\overline{a}$ unabhängig über $C\cup X$ (bzw. $B\cup(C\cup X)$) ist und $\abs{\overline{x}}=0$.\\
+	Wegen der Unabhängigkeit von $A$ und $B$ über $C$ gilt $$\dim(\overline{a}/C)=\dim(\overline{a}/B\cup C)=\dim(\overline{a}/B\cup(C\cup X))\leq\dim(\overline{a}/C\cup X)\leq\dim(\overline{a}/C),$$ also ist $\overline{a}$ genau dann unabhängig über $C\cup X$, wenn es unabhängig über $B\cup(C\cup X)$ ist und zusammen mit der oberen Äquivalenz ist die Unabhängigkeit gezeigt.
+\end{proof}
+
+\begin{lemma}
+	Wenn $A$ und $B$ unabhängig über $C$ sind, gilt die Inklusion $$A\cap B\subseteq\acl(C).$$
+\end{lemma}
+\begin{proof}
+	Es sei $a\in A\cap B$ beliebig. Offenkundig ist $a$ algebraisch über $B$ und daher gilt $$0=\dim(a/B\cup C)=\dim(a/C),$$ also ist $a$ in $\acl(C)$.
+\end{proof}
