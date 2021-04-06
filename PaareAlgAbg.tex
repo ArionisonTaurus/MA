@@ -1,5 +1,7 @@
 %!TEX root = DieLoesungAllerMilleniumsprobleme.tex
 	\chapter{Paare algebraisch abgeschlossener Körper}
+	Der hier vorgestellte Beweis stammt ursprünglich aus einem Werk (\cite{Robinson}) von Robinson, dem es in erster Linie um die Vollständigkeit und Entscheidbarkeit dieser Theorie ging. In diesem Werk soll es aber vorwiegend um Stabilität und eine gewisse Form der Formelreduktion gehen.
+	
 	\section{Algebraische und lineare Disjunktheit von Körpern}
 	In diesem Teil richten wir uns im Aufbau etwas nach \cite{Delon} und in manchen Beweisen nach \cite{SergeLang}.
 	
@@ -10,6 +12,8 @@
     \begin{remark}
     	\ 
     	\begin{itemize}
+    		\item Algebraische Disjunktheit ist nichts anderes als die Einschränkung der Unabhängigkeit aus dem letzten Kapitel auf bestimmte Mengen (nämlich Körpern in Rautenanordnung). Denn Körper $K$ und $L$ sind linear disjunkt über $C$ genau dann, wenn sie unabhängig über $C$ sind im modelltheoretischen Sinn als Teilmengen eines algebraisch abgeschlossenen Körpers.\\
+    		Wir bezeichnen es dennoch anders, um nicht zu verwirren. Wenn nämlich alle betrachteten Mengen schon Körper sind und die beiden Mengen, zwischen denen Unabhängigkeit gilt, schon Obermengen der dritten sind, kann man etwas weitergehende Eigenschaften feststellen, die im Normalfall so nicht gelten.
     		\item Es reicht, lineare Disjunktheit für eine Basis zu zeigen. Denn wenn man die lineare Unabhängigkeit über $L$ für eine Basis verliert, verliert man sie per $C$-Basiswechsel auch für alle anderen.
     		\item Es reicht, die Erhaltung der linearen/algebraischen Unabhängigkeit nur für beliebige endliche Mengen zu prüfen. Denn lineare/algebraische Unabhängigkeit einer Menge besteht genau dann, wenn sie für alle endlichen Teilmengen gilt.
     		\item Der Körper $M$ kommt in der Definition nur vor, damit die Rechenoperationen zwischen $K$ und $L$ wohldefiniert sind. Die genaue Wahl ist irrelevant und daher nicht in der Notation berücksichtigt. Wir nehmen für die Zukunft einfach an, dass die Multiplikation klar definiert ist. Es wird sich sowieso herausstellen, dass im Fall $K\ld_CL$ die Operationen eindeutig bestimmt sind.
@@ -20,7 +24,7 @@
     	Sei $C$ ein Körper und $C\subseteq R,S$ Ringerweiterungen von Integritätsbereichen. Dann sind $\operatorname{Frac}(R)$ und $\operatorname{Frac}(S)$ linear disjunkt über $C$ genau dann, wenn linear unabhängige Mengen in $R$ über $C$ auch linear unabhängig über $S$ bleiben.
     \end{lemma}
     \begin{proof}
-    	Die Hinrichtung folgt leicht aus $R\subseteq\operatorname{Frac}(R),S\subseteq\operatorname{Frac}(S)$. Für die Rückrichtung seien $r_1x_1^{-1},\dots,r_nx_n^{-1}$ in $\operatorname{Frac}(R)$ linear unabhängig über $C$, aber linear abhängig über $\operatorname{Frac}(S)$ mit nichttrivialer Linearkombination $$(s_1y_1^{-1})r_1x_1^{-1},\dots,(s_ny_n^{-1})r_nx_n^{-1}=0.$$\newpage
+    	Die Hinrichtung folgt leicht aus $R\subseteq\operatorname{Frac}(R),S\subseteq\operatorname{Frac}(S)$. Für die Rückrichtung seien $r_1x_1^{-1},\dots,r_nx_n^{-1}$ in $\operatorname{Frac}(R)$ linear unabhängig über $C$, aber linear abhängig über $\operatorname{Frac}(S)$ mit nichttrivialer Linearkombination $$(s_1y_1^{-1})r_1x_1^{-1},\dots,(s_ny_n^{-1})r_nx_n^{-1}=0.$$
     	Dann gilt aber nach Multiplikation mit $\prod\limits_{i=1}^nx_iy_i\neq0$ die lineare Abhängigkeit über $S$ der über $C$ unabhängigen Elemente $((\prod\limits_{i\neq j}x_i)r_j)_{1,\dots,n}$ in $R$ mit der folgenden Gleichung: $$0=\sum\limits_{j=1}^n(\prod\limits_{i\neq j}x_i)r_j(\prod\limits_{i\neq j}y_i)s_j$$
     \end{proof}
     
@@ -33,12 +37,11 @@
     \end{lemma}
     \begin{proof}
     	Der aufgespannte Ring erfüllt $$K[L]=\{\sum\limits_{(k,l)\in X}kl\mid X\subset K\times L\text{ endlich}\}=L[K].$$
-    	Wenn $(k_i)_I,(l_j)_J$ Basen von $K,L$ über $C$ sind, ist $(k_i\otimes l_j)_{i\in I,j\in J}$ eine Basis von $K\otimes_CL$. Der $C$-Homomorphismus $$\sum\limits_{i\in I_0,j\in J_0} c_{ij}k_i\otimes l_j\mapsto \sum\limits_{i\in I_0,j\in J_0} c_{ij}k_il_j$$ für $I_0\subseteq I,J_0\subseteq J$ endlich ist immer surjektiv, da klarerweise $E:=(k_il_j)_{i\in I,j\in J}$ ein Erzeugendensystem von $K[L]$ ist. Er ist injektiv genau dann, wenn $E$ auch linear unabhängig über $C$ ist, also keine Linearkombination $$0=\sum\limits_{i\in I_0,j\in J_0}c_{ij}k_il_j=\sum\limits_{i\in I_0}(\sum\limits_{j\in J_0}c_{ij}l_j)k_i$$ existiert mit $c_{ij}\neq0$ für mindestens ein Paar $(i,j)$. Aber das ist genau dann der Fall, wenn keine $\tilde{c}_i=\sum\limits_{j\in J_0}c_{ij}l_j$ in $L$ existieren für $i$ in $I_0$ mit $\tilde{c}_i\neq0$ für mindestens ein $i$ und $0=\sum\limits_{i\in I_0}\tilde{c}_ik_i$, also wenn die $(k_i)_I$ linear unabhängig über $L$ sind.
+    	Wenn $(k_i)_I,(l_j)_J$ Basen von $K,L$ über $C$ sind, ist $(k_i\otimes l_j)_{i\in I,j\in J}$ eine Basis von $K\otimes_CL$. Der $C$-Homomorphismus $$\sum\limits_{i\in I_0,j\in J_0} c_{ij}k_i\otimes l_j\mapsto \sum\limits_{i\in I_0,j\in J_0} c_{ij}k_il_j$$ für $I_0\subseteq I,J_0\subseteq J$ endlich ist immer surjektiv, da klarerweise $E:=(k_il_j)_{i\in I,j\in J}$ ein Erzeugendensystem von $K[L]$ ist.\\
+    	Er ist injektiv genau dann, wenn $E$ auch linear unabhängig über $C$ ist, also keine Linearkombination $$0=\sum\limits_{i\in I_0,j\in J_0}c_{ij}k_il_j=\sum\limits_{i\in I_0}(\sum\limits_{j\in J_0}c_{ij}l_j)k_i$$ existiert mit $c_{ij}\neq0$ für mindestens ein Paar $(i,j)$. Aber das ist genau dann der Fall, wenn keine $\tilde{c}_i=\sum\limits_{j\in J_0}c_{ij}l_j$ in $L$ existieren für $i$ in $I_0$ mit $\tilde{c}_i\neq0$ für mindestens ein $i$ und $0=\sum\limits_{i\in I_0}\tilde{c}_ik_i$, also wenn die $(k_i)_I$ linear unabhängig über $L$ sind.
     \end{proof}
-    \newpage
-    \begin{remark}
-    	 Auch algebraische Disjunktheit ist symmetrisch, denn $K\ad_CL$ genau dann, wenn $\dim(\overline{k}/C)=\dim(\overline{k}/L)$ für alle $\overline{k}$ in $K$ im Sinne der $\acl$-Dimension in ACF, also gerade dann, wenn $K$ und $L$ unabhängig über $C$ sind im modelltheoretischen Sinn als Teilmengen eines algebraisch abgeschlossenen Körpers.
-    \end{remark}
+    
+    TODO: Hier muss noch was mit Typenerweiterung verglichen werden und nachher ein paar Seiten formatiert werden.
     
     \begin{definition}
     	\ 
@@ -56,8 +59,8 @@
     \begin{proof}
     	Sei $(k_h)_H$ eine Basis von $K$ über $C$, $(l_i)_I$ eine von $L$ über $C$ und $(m_j)_J$ eine von $M$ über $L$. $K\ld_CM$ bedeutet, dass die $C$-Basis von $K$ auch $M$-Basis von $K$ ist, aber dann ist sie natürlich auch $L$-Basis, da $C\subseteq L\subseteq M$. Dann ist $(l_im_j)_{I\times J}$ eine Basis von $M$ über $C$ und $(k_h)_H$ eine Basis von $L[K]$ als $L$-Vektorraum. Die erste Aussage ist aus dem Beweis der Multiplikativität von Erweiterungsgraden bekannt und bei der zweiten folgt aus der Definition von $\ld$ die Unabhängigkeit, Erzeugendensystem ist klar.\\
     	Wenn $KL\ld_LM$ nicht gelten würde, würde gemäß den obigen Bemerkungen auch schon die Basis $(k_h)_H$ von $L[K]$ über $L$ linear abhängig über $M$ werden, es gäbe also eine $M$-Linearkombination $$\sum\limits_{h\in H}\lambda_hk_h=0,\ \lambda_h=0\text{ für fast alle, aber nicht alle } h\text{ in }H.$$
-    	Da $(k_h)_H$ aber die Basis von $K$ über $C$ ist, widerspricht das $K\ld_CM$.\\
-    	Für die Rückrichtung ist zu zeigen, dass $(l_im_j)_{I\times J}$ linear unabhängig über $K$ bleibt. Wenn das nicht so ist und die $K$-Linearkombination $$0=\sum\limits_{(i,j)\in I\times J}\lambda_{ij}l_im_j,\  \lambda_{ij}=0\text{ für fast alle, aber nicht alle } (i,j)\text{ in }I\times J$$ das bezeugt, schreibe $$\lambda_{ij}=:\sum\limits_{h\in H}c_{hij}k_h$$ als $C$-Basisdarstellung für alle $(i,j)$ in $I\times J$.\newpage
+    	Da $(k_h)_H$ aber die Basis von $K$ über $C$ ist, widerspricht das $K\ld_CM$.\newpage
+    	Für die Rückrichtung ist zu zeigen, dass $(l_im_j)_{I\times J}$ linear unabhängig über $K$ bleibt. Wenn das nicht so ist und die $K$-Linearkombination $$0=\sum\limits_{(i,j)\in I\times J}\lambda_{ij}l_im_j,\  \lambda_{ij}=0\text{ für fast alle, aber nicht alle } (i,j)\text{ in }I\times J$$ das bezeugt, schreibe $$\lambda_{ij}=:\sum\limits_{h\in H}c_{hij}k_h$$ als $C$-Basisdarstellung für alle $(i,j)$ in $I\times J$.\\
     	Einsetzen und Umklammern führt uns zur Linearkombination $$0=\sum\limits_{(i,j)\in I\times J}\lambda_{ij}l_im_j=\sum\limits_{(i,j)\in I\times J}\left(\sum\limits_{h\in H} c_{hij}k_h\right)l_im_j=\sum\limits_{i\in I}\left(\sum\limits_{(h,j)\in H\times J}c_{hij}k_hl_i\right)m_j,$$ $$c_{hij}=0\text{ für fast alle, aber nicht alle } (h,i,j)\text{ in }H\times I\times J.$$
     	Da wir aber $KL\ld_CM$ annehmen, muss $$\sum\limits_{(h,j)\in H\times J}c_{hij}k_hl_i=0\text{ sein für alle }j\text{ in }J,$$ da wir $K\ld_CL$ annehmen, folgt daraus $c_{hij}=0$ für alle $h,i,j$.
     \end{proof}

@@ -1,6 +1,6 @@
 %!TEX root = DieLoesungAllerMilleniumsprobleme.tex
 \chapter{Die Unabhängigkeit bezüglich $\acl$}
-Im Folgenden werden wir einen wichtigen Begriff einführen, der im Weiteren hilfreich sein wird. Zuerst sei allgemein T eine $\lingua$-Theorie, die für den algebraischen Abschluss $\acl$ die Austauscheigenschaft erfüllt, außerdem sei $\fM$ ein Modell von $T$. In diesem Fall induziert $\acl$ dann einen Dimensionsbegriff $\dim$ auf $M$.
+Im Folgenden werden wir einen wichtigen Begriff einführen, der im Weiteren hilfreich sein wird. Zuerst sei allgemein T eine $\lingua$-Theorie, die für den algebraischen Abschluss $\acl$ die Austauscheigenschaft erfüllt, außerdem sei $\fM$ ein Modell von $T$. In diesem Fall induziert $\acl$ dann einen Dimensionsbegriff $\dim$ auf $M$ und einen Unabhängigkeitsbegriff für eine Menge (nicht zu verwechseln mit dem hier entwickelten für zwei Mengen).
 
 \begin{definition}
 	Zwei Teilmengen $A$ und $B$ von $M$ seien \textbf{unabhängig über} einer dritten Teilmenge $C\subseteq A,B$ genau dann, wenn für alle $\overline{a}$ in $A$ gilt, dass $$\dim(\overline{a}/B)=\dim(\overline{a}/C).$$
@@ -21,11 +21,13 @@ Im Folgenden werden wir einen wichtigen Begriff einführen, der im Weiteren hilf
 \begin{remark}
 	Man kann sich überlegen, dass sowohl in der Definition, als auch in der äquivalenten Aussage, jeweils eine Richtung bzw. Ungleichung klar ist. Beim Übergang zu einer kleineren Menge kann die Dimension eines Tupels nämlich nie kleiner werden und die Unabhängigkeit eines Tupels nie verloren gehen.
 \end{remark}
-
+\newpage
 Diese Definition lässt sich auch auf beliebige Mengen $C\subseteq M$ verallgemeinern.
 \begin{definition}
 	Nenne $A$ und $B$ unabhängig über $C$, wenn $A\cup C$ und $B\cup C$ unabhängig über $C$ sind.
 \end{definition}
+
+Im Folgenden werden einige Regeln für diese Art von Unabhängigkeit vorgestellt, mit denen man später \glqq{}rechnen\grqq{} kann.
 
 \begin{lemma}
 	Es sind $A$ und $B$ unabhängig über $C$ genau dann, wenn für alle $\overline{a}$ in $A$ und alle $\overline{b}$ in $B$ jeweils $\overline{a}$ und $\overline{b}$ über $C$ unabhängig sind.
@@ -43,15 +45,15 @@ Diese Definition lässt sich auch auf beliebige Mengen $C\subseteq M$ verallgeme
 	dann folgt daraus $$\dim(\overline{a}/C)+\dim(\overline{b}/C,\overline{a})=\dim(\overline{a},\overline{b}/C)=\dim(\overline{a}/C,\overline{b})+\dim(\overline{b}/C)=\dim(\overline{a}/C)+\dim(\overline{b}/C)$$ und durch Kürzen $$\dim(\overline{b}/C)=\dim(\overline{b}/C,\overline{a}).$$
 	Also sind $\overline{b}$ und $\overline{a}$ unabhängig über $C$.
 \end{proof}
-
+\newpage
 \begin{lemma}
 	Es seien $A$ und $B$ unabhängig über $C$ und Teilmengen $A',B',C'$ von $M$ mit $$A'\subseteq A,B'\subseteq B,C\subseteq C'.$$
 	Dann sind $A'$ und $B'$ unabhängig über $C'$.
 \end{lemma}
-\begin{lemma}
+\begin{proof}
 	Für die Ersetzung von $A$ durch $A'$ folgt die Aussage aus der Reduktion auf alle Teiltupel. Die beiden anderen Ersetzungen ändern nichts wegen
 	$$\dim(\overline{a}/C)\leq\dim(\overline{a}/C')\leq\dim(\overline{a}/B')\leq\dim(\overline{a}/B)=\dim(\overline{a}/C)$$ für alle $\overline{a}$ in $A$.
-\end{lemma}
+\end{proof}
 
 \begin{lemma}
 	Wenn $A$ und $B$ unabhängig über $C$ sind, dann sind $\acl(A)$ und $\acl(B)$ unabhängig über $C$.
@@ -74,10 +76,12 @@ Diese Definition lässt sich auch auf beliebige Mengen $C\subseteq M$ verallgeme
 	Sei $(\overline{a},\overline{x})$ ein Tupel aus $A\cup X$, wobei $\overline{a}$ in $A$ ist und $\overline{x}$ in $X$. Dieses Tupel ist genau dann unabhängig über $C\cup X$ (bzw. $B\cup(C\cup X)$), wenn $\overline{a}$ unabhängig über $C\cup X$ (bzw. $B\cup(C\cup X)$) ist und $\abs{\overline{x}}=0$.\\
 	Wegen der Unabhängigkeit von $A$ und $B$ über $C$ gilt $$\dim(\overline{a}/C)=\dim(\overline{a}/B\cup C)=\dim(\overline{a}/B\cup(C\cup X))\leq\dim(\overline{a}/C\cup X)\leq\dim(\overline{a}/C),$$ also ist $\overline{a}$ genau dann unabhängig über $C\cup X$, wenn es unabhängig über $B\cup(C\cup X)$ ist und zusammen mit der oberen Äquivalenz ist die Unabhängigkeit gezeigt.
 \end{proof}
-
+\newpage
 \begin{lemma}
 	Wenn $A$ und $B$ unabhängig über $C$ sind, gilt die Inklusion $$A\cap B\subseteq\acl(C).$$
 \end{lemma}
 \begin{proof}
 	Es sei $a\in A\cap B$ beliebig. Offenkundig ist $a$ algebraisch über $B$ und daher gilt $$0=\dim(a/B\cup C)=\dim(a/C),$$ also ist $a$ in $\acl(C)$.
 \end{proof}
+
+Die hier entwickelte Unabhängigkeit wird in den folgenden zwei Kapiteln auf zwei Arten von $\acl$-Matroiden angewendet. Einerseits im ersten Kapitel auf die streng minimale Theorie ACF und andererseits im zweiten Kapitel auf gewisse o-minimale Theorien, die ebenso die Austauscheigenschaft erfüllen. Aber zunächst wird noch ein weiterer Begriff eingeführt werden, der sehr ähnlich aussieht, aber modelltheoretisch nicht so gut zu begreifen ist. Dies ist der Begriff der linearen Disjunktheit, der im Umgang viel lineare Algebra benutzt. Da in den Theorien der Vektorräume die Skalarmultiplikation jeweils Teil der Sprache ist, kann man modelltheoretisch nicht ganz so gut zwischen verschiedenen Dimensionsfunktionen hin- und herspringen. Darum kommt im Folgenden erst einmal ein großes Stück (lineare) Algebra.
