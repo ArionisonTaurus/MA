@@ -221,7 +221,7 @@ Das eben aufgestellte B\&F-System beweist die Formelreduzierung in $\td$.
 \begin{proof}
 	\underline{Hilfsaussage:}\\
 	Es reicht zu zeigen, dass für alle Modelle $(B,A),(D,C)\models\td$ und für alle $b$ in $B^n$, $d$ in $D^n$ gilt: Wenn $b$ und $d$ dieselben guten Formeln erfüllen, sind ihre Typen in $(B,A)$ und $(D,C)$ dieselben.\\
-	Dass dies ausreicht, erkennt man mit dem Ziegler'schen Trennungslemma:\linebreak
+	Dass dies ausreicht, erkennt man mit dem Trennungslemma:\linebreak
 	Sei $\psi$ aus $\fF_n(\lingua^P)$ und nicht äquivalent zu einer guten Formel und nenne die Menge aller guten Formeln in $n$ freien Koordinaten $K$. Dann ist $K$ abgeschlossen unter $\land,\lor$ und enthält $\top,\bot$. Wenn $\psi$ nicht äquivalent zu einer Formel aus $K$ ist, sind $\td\cup\{\psi\}$ und $\td\cup\{\neg\psi\}$ nicht durch $K$ trennbar, also existieren $(B,A),(D,C)\models\td,b$ in $B^n$, $d$ in $D^n$, sodass $(B,A)\models\psi(b)$ und $(D,C)\models\neg\psi(d)$, aber $(B,A)\models\chi(b)$ genau dann, wenn $(D,C)\models\chi(d)$, und das für alle $\chi$ aus $K$. Dann erfüllen $b$ und $d$ dieselben guten Formeln, aber haben nicht denselben Typ - ein Widerspruch!
 	\newpage
 	\begin{proof2}[Beweis der Hilfsaussage]
