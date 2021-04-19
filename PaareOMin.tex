@@ -1,6 +1,6 @@
 %!TEX root = DieLoesungAllerMilleniumsprobleme.tex
 \chapter{Dichte Paare o-minimaler Körper}
-\section{O-Minimale Theorien und ihre Eigenschaften}
+\section{O-minimale Theorien und ihre Eigenschaften}
 
 Viele Techniken und Gedanken aus dem vorigen Kapitel werden jetzt auf o-minimale Theorien übertragen. Einführend folgen hier zunächst die wichtigsten Erkenntnisse über diese Theorien, basierend auf \cite{vdDZellzerlegung}.
 
@@ -37,24 +37,24 @@ Wichtigste Grundlage der Arbeit mit o-minimalen Theorien sind die folgenden Auss
 	In einer o-minimalen Struktur $\fM$ ist jede definierbare Menge eine endliche disjunkte Vereinigung von Zellen. Für jede definierbare (möglicherweise partielle) Funktion gibt es eine Zerlegung des Definitionsbereiches in Zellen, sodass die Funktion auf jeder Zelle stetig ist. Wenn es eine Funktion in einer Variable ist, ist sie nicht nur stückweise stetig, sondern es gibt auch eine Zerlegung, sodass die Funktion auf jedem Stück entweder streng monoton oder konstant ist.
 \end{fact}
 \begin{remark}
-	Wenn die Menge bzw. die Funktion über einer bestimmten Menge definierbar sind, kann man sich die Zerlegung ebenso über dieser Menge definierbar wählen. Außerdem kann man endlich viele Mengen simultan zerlegen und sie sogar partitionieren. Eine Partition sei dabei definiert als
+	Wenn die Menge bzw. die Funktion über einer bestimmten Menge definierbar ist, kann man sich die Zerlegung ebenso über dieser Menge definierbar wählen. Außerdem kann man endlich viele Mengen simultan zerlegen und sie sogar partitionieren. Eine Partition einer Teilmenge $Z\subseteq M^n$ sei dabei
 	\begin{itemize}
-		\item Eine Zerlegung einer Teilmenge von $M$ oder
-		\item Eine Zerlegung einer Teilmenge von $M^{n+1}$, so dass die Projektion auf die ersten $n$ Koordinaten eine Partition einer Teilmenge von $M^n$ erzeugt.
+		\item eine beliebige Zellzerlegung im Fall $n=1$ oder ansonsten
+		\item eine Zellzerlegung von $Z$, so dass die Projektion $\pi$ auf die ersten $n-1$ Koordinaten eine Partition von $\pi(Z)$ erzeugt.
 	\end{itemize}
 \end{remark}
 
 \begin{corollary}
-	o-Minimale Strukturen eliminieren $\exists^\infty$. Damit ist für jede definierbare Menge in einer Variable die Menge der zu vereinigenden Punkte und Intervalle uniform beschränkt. Also lässt sich o-Minimalität als Formelmenge beschreiben und ist somit Eigenschaft einer vollständigen Theorie.
+	O-minimale Strukturen eliminieren $\exists^\infty$. Damit existiert für jede definierbare Menge in einer Variable eine uniforme obere Schranke für die Anzahl der Punkte und Intervalle in der gröbsten solchen Unterteilung der Menge. Also lässt sich o-Minimalität als Formelmenge beschreiben und ist somit Eigenschaft einer vollständigen Theorie.
 \end{corollary}
 
 \begin{definition}
 	Eine vollständige Theorie sei o-minimal, wenn eines ihrer Modelle es ist.
 \end{definition}
 \newpage
-Ab jetzt geben wir uns ein o-minimales Modell $\fM$ einer vollständigen $\lingua$-Theorie T so vor, dass die Ordnung dicht ist. Zellen sind sehr ähnlich zu Mannigfaltigkeiten, genauso wie diesen kann man ihnen eine Dimension zuweisen.
+Ab jetzt geben wir uns ein o-minimales Modell $\fM$ einer vollständigen $\lingua$-Theorie T vor, in dem die Ordnung dicht ist. Zellen sind sehr ähnlich zu Mannigfaltigkeiten, genauso wie diesen kann man ihnen eine Dimension zuweisen.
 \begin{factdef}
-	Die endliche Folge $\sigma$ zur jeweiligen Zelle $Z$ ist eindeutig bestimmt und daher der Wert $\dim(Z)=\sum\limits_{i=1}^n\sigma(i)$ wohldefiniert. Er wird \textbf{Dimension der Zelle} genannt. Für allgemeine definierbare nichtleere Mengen $X$ sei die \textbf{Dimension} $\dim(X)$ definiert als das Maximum der Zelldimensionen in einer beliebigen Zellzerlegung, die Dimension der leeren Menge sei 0. Das ist wohldefiniert und rein topologisch definierbar: $\dim(X)\leq n$ genau dann, wenn eine Projektion von $X$ nach $M^n$ nichtleeres Inneres hat. Damit ist die Dimension auch $\lingua$-definierbar.
+	Die endliche Folge $\sigma$ zur jeweiligen Zelle $Z$ ist eindeutig bestimmt und daher der Wert $\dim(Z)=\sum\limits_{i=1}^n\sigma(i)$ wohldefiniert. Er wird \textbf{Dimension der Zelle} genannt. Für allgemeine definierbare nichtleere Mengen $X$ sei die \textbf{Dimension} $\dim(X)$ definiert als das Maximum der Zelldimensionen in einer beliebigen Zellzerlegung, die Dimension der leeren Menge sei 0. Das ist wohldefiniert und rein topologisch definierbar: Es ist $\dim(X)\leq n$ genau dann, wenn eine Projektion von $X$ nach $M^n$ nichtleeres Inneres hat. Damit ist die Dimension auch $\lingua$-definierbar.
 \end{factdef}
 
 Man kann die Dimension auch anders definieren:
@@ -62,30 +62,35 @@ Man kann die Dimension auch anders definieren:
 	Es erfüllt $\acl=\dcl$ das Austauschprinzip und induziert also einen Dimensionsbegriff für Tupel. Wenn $\fM$ hinreichend saturiert ist und $X\subseteq M^n$ definierbar über $Y$, ist $\dim(X)=\max\{\dim(a/Y)\mid a\in X\}$.
 \end{fact}
 
-O-Minimale Gruppen haben eine enorm wichtige Eigenschaft, aus der viele weitere (hier nicht bedeutende) Dinge folgen.
+O-minimale Gruppen haben eine enorm wichtige Eigenschaft, aus der viele weitere Eigenschaften folgen, die hier nicht von Bedeutung sind. In unserem Fall reicht die folgende Grundaussage aus.
 \begin{fact}
 	Wenn $\fM$ eine 0-definierbare, durch $<$ angeordnete Gruppenoperation mit einem 0-definierbaren positiven Element (üblicherweise 1 genannt) besitzt, gilt \textbf{Definable Choice}: Aus jeder definierbaren Menge lässt sich kanonisch, uniform und definierbar ein Element auswählen. Insbesondere gibt es zu jeder Menge eine definierbare Skolemfunktion und jede definierbare Familie von uniform parametrisierten Mengen hat eine definierbare Auswahlfunktion. Die Auswahl ist dabei definierbar über derselben Menge wie die ursprüngliche(n) Menge(n).
 \end{fact}
-TODO: RCF und o-Minimalität
+
+\begin{fact}
+	Wie zum Beispiel in \cite{Marker} gezeigt wird, ist insbesondere die Theorie RCF der reell abgeschlossenen Zahlen vollständig und o-minimal mit dichter Ordnung.  Anders herum betrachtet, wird in \cite{Pillay} gezeigt, dass o-minimale Körper mit dichter Ordnung schon reell abgeschlossen sind. Es gibt allerdings Beispiele von o-minimalen Theorien, die RCF in einer größeren Sprache erweitern. In \cite{Wilkie} aufgeführt wären zum Beispiel die Erweiterung durch analytische Funktionen eingeschränkt auf den durch $0$ und $1$ aufgespannten Würfel, aber auch die Erweiterung um die Exponentialfunktion.
+\end{fact}
+
 \newpage
 \section{Anforderungen an die hier betrachteten Theorien}
 
 Im Folgenden halten wir eine vollständige o-minimale Theorie T mit dichter Ordnung in der Sprache $\lingua$ fest und betrachten die Theorie $\tq$ in der Sprache $\lingua^P:=\lingua\cup\{P(x)\}$, sodass die Modelle von $\tq$ Modelle von T sind und in jedem Modell $\fM$ die Menge $P(M)$ ebenfalls Modell von T ist. Schreibe so ein Paar dann als $(B,A)$ mit $A=P(B)$.\\
-T erweitere RCF, insbesondere gilt Definable Choice. Dann sind Skolemfunktionen definierbar und ohne Einschränkungen ist $\lingua$ schon so eine definitorische Erweiterung, dass T Quantorenelimination hat und universell axiomatisierbar ist (wobei bei einzelnen Theorien die Frage interessant wäre, welche Skolemfunktionen man dafür überhaupt hinzufügen muss).\\
-Aus T universell mit Quantorenelimination folgt, dass Unterstrukturen von Modellen von T schon elementare Unterstrukturen sind. Also ist für jede Teilmenge $S$ eines Modells $\dcl(S)$ schon eine elementare Substruktur; zur Vereinfachung bezeichne in Zukunft $AB:=\dcl(A\cup B)=\langle A\cup B\rangle_\lingua$ für zwei Teilmengen $A,B$ eines Modells.\\
-$P$ beschreibt also eine elementare Unterstruktur, mit $\td$ wird nun die Theorie beschrieben, die ausdrückt, dass $P$ eine dichte echte Unterstruktur ist (diese zwei Aussagen oder deren Gegenteil müssen auf jeden Fall von der Theorie beschrieben werden, wenn sie vollständig sein soll). Klar ist dann, dass Unterstrukturen von $\td$ automatisch Modelle von $\tq$ sind.\\\\
+Die Theorie T erweitere RCF, insbesondere gilt Definable Choice. Dann sind Skolemfunktionen definierbar und ohne Einschränkungen ist $\lingua$ schon so eine definitorische Erweiterung, dass T Quantorenelimination hat und universell axiomatisierbar ist (wobei bei einzelnen Theorien die Frage interessant wäre, welche Skolemfunktionen man dafür hinzufügen muss).\\
+Weil T universell mit Quantorenelimination ist, folgt, dass Unterstrukturen von Modellen von T schon elementare Unterstrukturen sind. Also ist für jede Teilmenge $S$ eines Modells der definierbare Abschluss $\dcl(S)$ schon eine elementare Substruktur; zur Vereinfachung bezeichnen wir in Zukunft mit $AB$ den definierbaren Abschluss $\dcl(A\cup B)=\langle A\cup B\rangle_\lingua$ für zwei Teilmengen $A,B$ eines Modells.\\
+Das Prädikat $P$ beschreibt also eine elementare Unterstruktur, mit $\td$ wird nun die Theorie beschrieben, die ausdrückt, dass $P$ eine dichte echte Unterstruktur ist (diese zwei Aussagen oder deren Gegenteil müssen auf jeden Fall von der Theorie beschrieben werden, wenn sie vollständig sein soll). Klar ist dann, dass Unterstrukturen von $\td$ automatisch Modelle von $\tq$ sind.\\\\
 Der Arbeit \cite{VanDenDries} folgend, wird in den nächsten Abschnitten die Vollständigkeit und eine Art von Quantorenelimination für $\td$ gezeigt, die mittels eines Back\&Forth-Systems bewiesen wird. Danach werden einige Erkenntnisse aus dem B\&F-System gezogen, bevor die Hauptaussagen dieser Arbeit bewiesen werden. Zunächst ist aber eine genauere Betrachtung von sogenannten kleinen Mengen vonnöten.
 \newpage
 \section{Kleine Mengen, Dichtheit und saturierte Modelle}
+In diesem Abschnitt wird ein Begriff der Kleinheit entwickelt und für Modelle von $\td$ gezeigt, dass kleine Mengen kein Intervall enthalten. Abschließend werden im Anschluss einige Eigenschaften von saturierten Modellen von $\td$ aufgeführt.
 \begin{definition}
-	Sei $(B,A)\models\td$, dann ist eine $\lingua^P$-definierbare Menge $S\subseteq B$ \textbf{klein}, wenn eine $\lingua$-definierbare Funktion $f:B^n\rightarrow B$ existiert mit $S\subseteq f(A^n)$.
+	Gegeben sei ein Modell $(B,A)\models\td$, dann ist eine $\lingua^P$-definierbare Menge $S\subseteq B$ \textbf{klein}, wenn eine $\lingua$-definierbare Funktion $f:B^n\rightarrow B$ existiert mit $S\subseteq f(A^n)$.
 \end{definition}
 
 \begin{lemma}
-	Kleine Mengen in einem dichten Paar bilden ein Ideal in den $\lingua^P$-definierbaren Mengen bzgl. $\glqq{}\subseteq\grqq{}$.
+	Kleine Mengen in einem echten dichten Paar bilden ein Ideal in den\linebreak $\lingua^P$-definierbaren Mengen bzgl. $\glqq{}\subseteq\grqq{}$.
 \end{lemma}
 \begin{proof}
-	Es gibt kleine Mengen, zum Beispiel Punktmengen oder der kleinere Teil eines Paares, außerdem sind Teilmengen von kleinen Mengen offensichtlich wieder klein.\\
+	Es gibt kleine Mengen, zum Beispiel Punktmengen oder die Interpretation von $P$, außerdem sind Teilmengen von kleinen Mengen offensichtlich wieder klein.\\
 	Sei jetzt $(B,A)$ ein dichtes Paar und $X,Y$ kleine Mengen, seien $f,g:B^n\rightarrow B$ definierbar mit $$X\subseteq f(A^n),Y\subseteq g(A^n).$$ Ohne Einschränkungen bilden $f,g$ dabei schon von demselben $B^n$ ab, ansonsten muss man beide mit Dummyvariablen vergrößern. Definiere
 	\begin{align*}
 	h:B^{n+1}&\rightarrow B,\\
@@ -106,8 +111,8 @@ In dem folgenden Lemma meint $+,\cdot$ nicht unbedingt die Operationen aus $\lin
 \newpage
 \begin{proof}
 	Wenn die Aussage nicht gilt, dann gilt mit $$p(x,y):=x_ny^n+x_{n-1}y^{n-1}+\dots,x_0,$$ dass für jedes $a$ aus $(I_A)^{n+1}$ ein $\alpha$ in $A^n$ existiert mit $p(a,b)=f(\alpha,b)$. Es muss für festes $a$ aus $I_A$ ein Intervall um $b$ in $I_A$ mit dieser Eigenschaft geben, denn sonst wäre $b$ in $\dcl(A)=A$.\\
-	Sei jetzt $a$ nicht mehr fixiert, dann existiert mit Definable Choice in $I_A$ eine definierbare Zuordnung $a\mapsto\alpha(a)$, sodass $p(a,\cdot)=f(\alpha(a),\cdot)$ auf einem Intervall gilt. Da jedes $a$ die Länge $n+1$ hat und jedes $\alpha(a)$ aber Länge $n$, müssen unendlich viele $a$ in $(I_A)^{n+1}$ existieren, die durch $\alpha$ auf das selbe Element abgebildet werden. Denn wenn das nicht so wäre, wäre wegen Saturation ein generisches Element über all den vorigen zu Definitionen benutzten Parametern aus $(I_A)^{n+1}$ algebraisch über einem Element aus $A^n$, was der Generizität widerspricht. Da es unendlich viele Elemente gibt, sodass $\alpha$ auf ihnen konstant ist, gibt es schon eine Zelle von Dimension $>0$ mit der Eigenschaft und damit insbesondere eine Zelle $E$ von Dimension 1 (als Teilmenge einer Zelle lässt sich immer eine von kleinerer Dimension finden). Nenne den konstanten Wert dann $\alpha^*$.\\
-	Da also gilt: für alle $a$ aus $E$ existiert ein Intervall $J$ mit $p(a,\cdot)=f(\alpha^*,\cdot)$ auf $J$, existieren mit Definable Choice $\beta^*,\gamma^*:E\rightarrow I_A$, sodass $p(a,\cdot)=f(\alpha^*,\cdot)$ auf $(\beta^*(a),\gamma^*(a))$ gilt. Ohne Einschränkungen seien $\beta^*$ und $\gamma^*$ jetzt schon stetig auf $E$ und ein $e$ in $E$ beliebig· Dann existiert für $\varepsilon$ hinreichend klein eine $E$-Umgebung $U$ um $e$, sodass $$\beta^*<\frac{1}{2}(\beta^*(e)+\gamma^*(e))-\varepsilon,\ \frac{1}{2}(\beta^*(e)+\gamma^*(e))+\varepsilon<\gamma^*$$ auf $U$, also $$p(a,x)=f(\alpha^*,x)\text{ für alle }a\text{ in } U,x\text{ in }(\frac{1}{2}(\beta^*(e)+\gamma^*(e))-\varepsilon,\frac{1}{2}(\beta^*(e)+\gamma^*(e))+\varepsilon)$$ gilt. Es kann aber nicht $p(a-a',x)=p(a,x)-p(a',x)=f(\alpha^*,x)-f(\alpha^*,x)=0$ für $a,a'$ verschieden in $U$ und unendlich viele $x$ sein, weil ein Nichtnullpolynom nicht unendlich viele Nullstellen haben kann.
+	Sei jetzt $a$ nicht mehr fixiert, dann existiert mit Definable Choice in $I_A$ eine definierbare Zuordnung $a\mapsto\alpha(a)$, sodass $p(a,\cdot)=f(\alpha(a),\cdot)$ auf einem Intervall gilt. Da jedes $a$ die Länge $n+1$ hat und jedes $\alpha(a)$ aber Länge $n$, müssen unendlich viele $a$ in $(I_A)^{n+1}$ existieren, die durch $\alpha$ auf das selbe Element abgebildet werden. Denn wenn das nicht so wäre, wäre wegen Saturation ein generisches Element über all den vorigen zu Definitionen benutzten Parametern aus $(I_A)^{n+1}$ algebraisch über einem Element aus $A^n$, was der Generizität widerspricht. Da es unendlich viele Elemente gibt, sodass $\alpha$ auf ihnen konstant ist, gibt es schon eine Zelle von positiver Dimension mit der Eigenschaft und damit insbesondere eine Zelle $E$ von Dimension 1 (als Teilmenge einer Zelle lässt sich immer eine von kleinerer Dimension finden). Nenne den konstanten Wert dann $\alpha^*$.\\
+	Da also gilt, dass für alle $a$ aus $E$ ein Intervall $J$ existiert mit $p(a,\cdot)=f(\alpha^*,\cdot)$ auf $J$, existieren mit Definable Choice $\beta^*,\gamma^*:E\rightarrow I_A$, sodass $p(a,\cdot)=f(\alpha^*,\cdot)$ auf $(\beta^*(a),\gamma^*(a))$ gilt. Ohne Einschränkungen seien $\beta^*$ und $\gamma^*$ jetzt schon stetig auf $E$ und ein $e$ in $E$ beliebig· Dann existiert für $\varepsilon$ hinreichend klein eine $E$-Umgebung $U$ um $e$, sodass $$\beta^*<\frac{1}{2}(\beta^*(e)+\gamma^*(e))-\varepsilon,\ \frac{1}{2}(\beta^*(e)+\gamma^*(e))+\varepsilon<\gamma^*$$ auf $U$, also $$p(a,x)=f(\alpha^*,x)\text{ für alle }a\text{ in } U,x\text{ in }(\frac{1}{2}(\beta^*(e)+\gamma^*(e))-\varepsilon,\frac{1}{2}(\beta^*(e)+\gamma^*(e))+\varepsilon)$$ gilt. Es kann aber nicht $p(a-a',x)=p(a,x)-p(a',x)=f(\alpha^*,x)-f(\alpha^*,x)=0$ für $a,a'$ verschieden in $U$ und unendlich viele $x$ sein, weil ein Nichtnullpolynom nicht unendlich viele Nullstellen haben kann.
 \end{proof}
 
 \newpage
@@ -166,7 +171,7 @@ Zum Abschluss dieses Abschnittes sollen hier noch ein paar weitere Fakten über 
 
 \section{Formelreduzierung in $\td$}
 In diesem Abschnitt wird gezeigt, dass sich $\lingua^P$-Formeln modulo $\td$ sehr stark vereinfachen lassen und dass $\td$ vollständig ist. Indem dieses mit einem Back\&Forth-System gezeigt wird, erhält man zusätzlich eine sehr große Klasse von elementaren Abbildungen zwischen Modellen von $\td$.\\
-In diesem Kontext wird wieder die $\acl$-Unabhängigkeit (TODO: Sollte man das vielleicht doch definieren?) in einem Modell von T relevant, die im ersten Kapitel mit \glqq{}algebraisch disjunkt\grqq{} bezeichnet wurde. Man kann sich dafür folgende (teilweise schon bekannte) Fakten überlegen.
+In diesem Kontext wird wieder die $\acl$-Unabhängigkeit in einem Modell von T relevant. Man kann sich dafür folgende Fakten überlegen. Dabei sind 1.-4. schon bekannt aus den Aussagen TODO
 
 \begin{lemma}\label{Unabhängigkeitsregeln}
 	Seien $A,B,C,D$ Mengen in irgendeinem Modell von T.
@@ -182,7 +187,6 @@ In diesem Kontext wird wieder die $\acl$-Unabhängigkeit (TODO: Sollte man das v
 \end{lemma}
 \newpage
 \begin{proof}
-	1.-4. sind bekannt. TODO: Vielleicht doch besser ausführen.
 	\item[5.] Wenn $\overline{d}$ algebraisch unabhängig in $D$ über $C$ ist, aber nicht über $A$, dann existiert eine $\lingua_A$-Formel $\varphi(\overline{x},\overline{a})$, sodass $d_1$ von $\varphi(x_1,d_2,d_3\dots,\overline{a})$ algebraisiert wird (ohne Einschränkungen wird $d_1$ schon durch $\varphi$ definiert). Also erfüllt $\overline{d}$ die $\lingua^P$-Formel $$\exists \overline{y}\in P(\varphi(\overline{x},\overline{y})\land\forall z_2,z_3,\dots\exists! z_1(\varphi(\overline{z},\overline{y})))$$ in $(B,A)$, also auch in $(D,C)$. Es existiert also $\overline{c}$ in $C$ mit $$B\models\varphi(\overline{d},\overline{c})\land\forall z_2,z_3,\dots\exists! z_1(\varphi(\overline{z},\overline{c})),$$ was im Widerspruch zur Unabhängigkeit von $\overline{d}$ über $C$ steht.
 	\item[6.] Dass $A$ und $DS$ unabhängig über $CS$ sind, ergibt sich in der Kombination von 2. und dann 3.\\
 	Dass die Trägermenge von $\langle D\cup S\rangle_{\lingua^P}$ die Menge $DS$ ist, ergibt sich direkt per Definition als $DS=\dcl(D\cup S)=\langle D\cup S\rangle_\lingua$. Weil $A$ und $DS$ unabhängig über $CS$ sind, folgt $$P(\langle D\cup S\rangle_{\lingua^P})=DS\cap P(B)=DS\cap A=CS.$$

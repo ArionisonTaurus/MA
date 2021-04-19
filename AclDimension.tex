@@ -8,10 +8,10 @@ Im Folgenden werden wir einen wichtigen Begriff einführen, der im Weiteren hilf
 
 \begin{lemma}
 	Äquivalent zu dieser Definition ist die Aussage
-	$$\glqq{}\text{Alle }\overline{a}\text{ aus }A\text{ sind genau dann unabhängig über }B\text{, wenn sie es über }C\text{ sind}\grqq{}.$$
+	$$\glqq{}\text{Alle }\overline{a}\text{ aus }A\text{ sind genau dann unabhängig als Menge über }B\text{, wenn sie es über }C\text{ sind}\grqq{}.$$
 \end{lemma}
 \begin{proof}
-	Sei die zweite Aussage erfüllt. Da die Dimension die Kardinalität einer maximal unabhängigen Teilmenge beschreibt, gilt für alle $\overline{a}$ in $A$, dass \--- wenn ohne Einschränkungen $a_1,\dots,a_k$ unabhängig über $B$ (also auch über $C$) sind und die restlichen Elemente darüber abhängig über $A$ \--- gilt $$\dim(\overline{a}/B)=\dim(a_1,\dots,a_k/B)=k=\dim(a_1,\dots,a_k/C)\leq\dim(\overline{a}/C).$$
+	Sei die zweite Aussage erfüllt. Da die Dimension die Kardinalität einer maximal unabhängigen Teilmenge beschreibt, gilt für alle $\overline{a}$ in $A$, dass \--- wenn ohne Einschränkungen $a_1,\dots,a_k$ unabhängig über $B$ (also auch über $C$) sind und die restlichen Elemente algebraisch über $B,a_1,\dots,a_k$ \--- gilt $$\dim(\overline{a}/B)=\dim(a_1,\dots,a_k/B)=k=\dim(a_1,\dots,a_k/C)\leq\dim(\overline{a}/C).$$
 	Durch die Wahl eines maximalen über $C$ unabhängigen Teiltupels folgt die umgekehrte Ungleichung.\\
 	Wenn anders herum $A$ und $B$ unabhängig über $C$ sind, und $\overline{a}$ ein über $B$ unabhängiges Tupel ist, so gilt
 	$$\abs{\overline{a}}=\dim(\overline{a}/B)=\dim(\overline{a}/C),$$
@@ -47,19 +47,22 @@ Im Folgenden werden einige Regeln für diese Art von Unabhängigkeit vorgestellt
 \end{proof}
 \newpage
 \begin{lemma}
-	Es seien $A$ und $B$ unabhängig über $C$ und Teilmengen $A',B',C'$ von $M$ mit $$A'\subseteq A,B'\subseteq B,C\subseteq C'.$$
-	Dann sind $A'$ und $B'$ unabhängig über $C'$.
+	Es seien $A$ und $B$ unabhängig über $C$ und Teilmengen $A',B',C'$ von $M$, die die Bedingungen
+	\begin{align*}
+	A'\subseteq A&,\\B'\subseteq B\cup C&\text{ und}\\C\subseteq C'\subseteq B\cup C&\\
+	\end{align*}
+	erfüllen. Dann sind $A'$ und $B'$ unabhängig über $C'$.
 \end{lemma}
 \begin{proof}
-	Für die Ersetzung von $A$ durch $A'$ folgt die Aussage aus der Reduktion auf alle Teiltupel. Die beiden anderen Ersetzungen ändern nichts wegen
-	$$\dim(\overline{a}/C)\leq\dim(\overline{a}/C')\leq\dim(\overline{a}/B')\leq\dim(\overline{a}/B)=\dim(\overline{a}/C)$$ für alle $\overline{a}$ in $A$.
+	Für die Ersetzung von $A$ durch $A'$ folgt die Aussage aus der Reduktion auf alle Teiltupel. Die beiden anderen Ersetzungen ändern nichts, weil für alle $\overline{a}$ in $A$ die Ungleichung
+	$$\dim(\overline{a}/C)\geq\dim(\overline{a}/C')\geq\dim(\overline{a}/B'\cup C')\geq\dim(\overline{a}/B\cup C)=\dim(\overline{a}/C)$$ gilt, die Gleichheit impliziert.
 \end{proof}
 
 \begin{lemma}\label{Unabhängigkeit acl}
 	Wenn $A$ und $B$ unabhängig über $C$ sind, dann sind $\acl(A)$ und $\acl(B)$ unabhängig über $C$.
 \end{lemma}
 \begin{proof}
-	Das ist eine direkte Konsequenz von $\dim(\cdot/X)=\dim(\cdot/\acl(X))$.
+	Das ist eine direkte Konsequenz der Gleichheit $$\dim(\cdot/X)=\dim(\cdot/\acl(X)),$$ die wegen der Symmetrie auf beiden Seiten den Übergang auf die größere Menge ermöglicht.
 \end{proof}
 
 \begin{lemma}
@@ -68,7 +71,7 @@ Im Folgenden werden einige Regeln für diese Art von Unabhängigkeit vorgestellt
 \begin{proof}
 	Sei $(\overline{a},\overline{x})$ ein Tupel aus $A\cup X$, wobei $\overline{a}$ in $A$ ist und $\overline{x}$ in $X$. Da $X$ unabhängig über $A\cup B\cup C$ ist, ist $(\overline{a},\overline{x})$ genau dann unabhängig über $C$, wenn $\overline{a}$ es ist. Wegen der Unabhängigkeit von $A$ und $B$ über $C$ ist das genau dann der Fall, wenn $\overline{a}$ unabhängig über $B\cup C$ ist; wegen der Unabhängigkeit von $X$ ist das wiederum äquivalent dazu, dass $(\overline{a},\overline{x})$ unabhängig ist über $B\cup C$.
 \end{proof}
-
+\newpage
 \begin{lemma}
 	Seien $A$ und $B$ unabhängig über $C$ sind und sei eine Teilmenge $X\subseteq B$. Dann sind $A\cup X$ und $B$ unabhängig über $C\cup X$.
 \end{lemma}
@@ -76,7 +79,7 @@ Im Folgenden werden einige Regeln für diese Art von Unabhängigkeit vorgestellt
 	Sei $(\overline{a},\overline{x})$ ein Tupel aus $A\cup X$, wobei $\overline{a}$ in $A$ ist und $\overline{x}$ in $X$. Dieses Tupel ist genau dann unabhängig über $C\cup X$ (bzw. $B\cup(C\cup X)$), wenn $\overline{a}$ unabhängig über $C\cup X$ (bzw. $B\cup(C\cup X)$) ist und $\abs{\overline{x}}=0$.\\
 	Wegen der Unabhängigkeit von $A$ und $B$ über $C$ gilt $$\dim(\overline{a}/C)=\dim(\overline{a}/B\cup C)=\dim(\overline{a}/B\cup(C\cup X))\leq\dim(\overline{a}/C\cup X)\leq\dim(\overline{a}/C),$$ also ist $\overline{a}$ genau dann unabhängig über $C\cup X$, wenn es unabhängig über $B\cup(C\cup X)$ ist und zusammen mit der oberen Äquivalenz ist die Unabhängigkeit gezeigt.
 \end{proof}
-\newpage
+
 \begin{lemma}
 	Wenn $A$ und $B$ unabhängig über $C$ sind, gilt die Inklusion $$A\cap B\subseteq\acl(C).$$
 \end{lemma}

@@ -6,12 +6,12 @@
 	Im Folgenden werden einige Aussagen über abzählbare und vollständige Theorien T in einer Sprache $\lingua$ aufgezählt, die die Grundlage für die Stabilitätstheorie bilden. Als Quelle soll dabei \cite{Marker} dienen. Diese Erkenntnisse werden wichtig werden, um die $\omega$-Stabilität der Paare algebraisch abgeschlossener Körper zu zeigen.
 	
 	\begin{definition}
-		Sei $\fM$ ein $\aleph_0$-saturiertes Modell von T und $X$ eine beliebige $\lingua_M$-definierbare Menge in $M^n$. Der \textbf{Morleyrang} $\RM^\fM(X)$ von $X$ in $\fM$ sei dann induktiv
+		Sei $\fM$ ein $\aleph_0$-saturiertes Modell von T und $X$ eine beliebige $\lingua_M$-definierbare Menge in $M^n$. Der \textbf{Morleyrang} $\RM^\fM(X)$ von $X$ in $\fM$ sei dann induktiv definiert
 		\begin{itemize}
-			\item Minus Eins genau dann, wenn $X$ leer ist
-			\item Null genau dann, wenn $X$ endlich und nichtleer ist
-			\item größer als oder gleich einer Nachfolgerordinalzahl $\alpha+1$ genau dann, wenn es unendlich viele paarweise disjunkte $\lingua_M$-definierbare Teilmengen von $X$ gibt, die jeweils Morleyrang größer als oder gleich $\alpha$ haben
-			\item größer als oder gleich einer Limesordinalzahl $\gamma$ genau dann, wenn er größer als jede Zahl kleiner $\gamma$ ist.
+			\item durch $-1$ genau dann, wenn $X$ leer ist
+			\item durch $0$ genau dann, wenn $X$ endlich und nichtleer ist
+			\item als $\RM^\fM(X)\geq\alpha+1$ für eine Ordinalzahl $\alpha$ genau dann, wenn es unendlich viele paarweise disjunkte $\lingua_M$-definierbare Teilmengen von $X$ gibt, die jeweils Morleyrang größer als oder gleich $\alpha$ haben
+			\item als $\RM^\fM(X)\geq\gamma$ für eine Limesordinalzahl $\gamma$ genau dann, wenn er größer als jede Zahl kleiner $\gamma$ ist.
 		\end{itemize}
 	    Ist $\RM^\fM(X)$ größer als oder gleich $\alpha$ für eine Ordinalzahl $\alpha$, aber nicht größer als oder gleich $\alpha+1$, so sei $\RM^\fM(X):=\alpha$, ist $\RM^\fM(X)$ größer als alle Ordinalzahlen, sei $\RM^\fM(X):=\infty$ (oder alternativ: der Rang ist nicht definiert).
 	\end{definition}
@@ -21,12 +21,12 @@
 	\end{definition}
 	\newpage
 	\begin{factdef}
-		Für allgemeine Modelle $\fM'$ und eine $\aleph_0$-saturierte Elementarerweiterung $\fM$ sowie eine $\lingua_{M'}$-Formel Menge $\varphi$ ist der Morleyrang von $\varphi$ in $\fM$ nicht von der konkreten Wahl der Erweiterung abhängig.\\
+		Für allgemeine Modelle $\fM'$ und eine $\aleph_0$-saturierte Elementarerweiterung $\fM$ sowie eine $\lingua_{M'}$-Formel $\varphi$ ist der Morleyrang von $\varphi$ in $\fM$ nicht von der konkreten Wahl der Erweiterung abhängig.\\
 		Definiere daher in einem Modell $\fM'$ den Morleyrang $\RM(\varphi)$ als den Morleyrang $\RM^\fM(\varphi)$ in einer beliebigen $\aleph_0$-saturierten Erweiterung $\fM$ und $\RM(X):=\RM(\varphi)$ für eine durch $\varphi$ definierbare Menge $X\subseteq(M')^n$.
 	\end{factdef}
 	
 	\begin{factdef}
-		In jedem Modell $\fM$ existiert für jede $\lingua_M$-Formel $\varphi$ mit $\RM(\varphi)\neq\infty$ ein $n$, sodass es in jeder Elementarerweiterung $\fM'$ maximal $n$ viele disjunkte Teilmengen von $\varphi(M')$ mit demselben Morleyrang gibt. Das kleinste solche $n$ nennt man den Morleygrad $\DM$.
+		In jedem Modell $\fM$ existiert für jede $\lingua_M$-Formel $\varphi$ mit $\RM(\varphi)\neq\infty$ eine natürliche Zahl $n$, sodass es in jeder Elementarerweiterung $\fM'$ maximal $n$ viele disjunkte Teilmengen von $\varphi(M')$ mit demselben Morleyrang gibt. Das kleinste solche $n$ nennt man den Morleygrad $\DM$.
 	\end{factdef}
 	
 	\begin{definition}
@@ -44,7 +44,7 @@
 	\end{fact}
 	
 	\begin{fact}
-		Sei $\fM$ ein Modell und $S\subseteq M$, außerdem $F$ eine konsistente und unter Disjunktion abgeschlossene Menge von $\lingua_S$-Formeln in $n$ freien Variablen, die eine Formel mit definiertem Morleyrang enthält. Dann gibt es für jede hinreichend große Obermenge $S'$ von $S$ genau $\DM(F)$ Fortsetzungen von $F$ zu einem Typen über $S'$ mit Morleyrang $\RM(F)$ (die Definition von Rang und Grad werde entsprechend von Typen verallgemeinert).\\
+		Sei $\fM$ ein Modell und $S\subseteq M$, außerdem $F$ eine konsistente und unter Konjunktion abgeschlossene Menge von $\lingua_S$-Formeln in $n$ freien Variablen, die eine Formel mit definiertem Morleyrang enthält. Dann gibt es für jede hinreichend große Obermenge $S'$ von $S$ genau $\DM(F)$ Fortsetzungen von $F$ zu einem Typen über $S'$ mit Morleyrang $\RM(F)$ (die Definition von Rang und Grad werde entsprechend von Typen verallgemeinert).\\
 		Wenn der Morleygrad Eins ist, nenne den partiellen Typen \textbf{stationär}. 
 	\end{fact}
 	
@@ -57,11 +57,11 @@
 	\end{fact}
 	
 	\begin{fact}
-		Sei $\fM$ ein Modell und $\overline{a},\overline{b}$ Tupel in $M$ sowie eine Teilmenge $S$ von $M$. Wenn $\overline{a}$ und $\overline{b}$ interalgebraisch über $S$ sind, folgt $$\RM(\overline{a}/S)=\RM(\overline{b}/S).$$
+		Sei $\fM$ ein Modell und seien $\overline{a},\overline{b}$ Tupel in $M$ sowie $S$ eine Teilmenge von $M$. Wenn $\overline{a}$ und $\overline{b}$ interalgebraisch über $S$ sind, folgt $$\RM(\overline{a}/S)=\RM(\overline{b}/S).$$
 	\end{fact}
 	
 	\section{Algebraische und lineare Disjunktheit von Körpern}
-	In diesem Teil richten wir uns im Aufbau teilweise nach \cite{Delon} und in manchen Beweisen nach \cite{SergeLang}. Ziel ist es, zwei algebraische Relationen zu verstehen, die Körper zueinander haben können.
+	In diesem Teil richten wir uns im Aufbau und der Lemma-übergreifenden Strategie im Großen und Ganzen nach \cite{Delon}, wohingegen die konkreten Beweise meist von \cite{SergeLang} inspiriert sind. Ziel ist es, zwei algebraische Relationen zu verstehen, die Körper zueinander haben können.
 	
     \begin{definition}
     	Gegeben Körperinklusionen $C\subseteq K,L\subseteq M$ in Rautenform, nenne $K$ und $L$ \textbf{linear disjunkt über} $C$, falls alle Basen von $K$ als $C$-Vektorraum auch über $L$ linear unabhängig bleiben. Nenne $K$ und $L$ \textbf{algebraisch disjunkt über} $C$, falls alle Transzendenzbasen von $K$ über $C$ auch algebraisch unabhängig über $L$ bleiben. Schreibe $K\ld_CL$ bzw. $K\ad_CL$.
@@ -70,16 +70,27 @@
     \begin{remark}
     	\ 
     	\begin{itemize}
-    		\item Algebraische Disjunktheit ist nichts anderes als die Einschränkung der Unabhängigkeit aus dem letzten Kapitel auf bestimmte Mengen (nämlich Körpern in Rautenanordnung). Denn Körper $K$ und $L$ sind linear disjunkt über $C$ genau dann, wenn sie unabhängig über $C$ sind im modelltheoretischen Sinn als Teilmengen eines algebraisch abgeschlossenen Körpers.\\
-    		Wir bezeichnen es dennoch anders, um nicht zu verwirren. Wenn nämlich alle betrachteten Mengen schon Körper sind und die beiden Mengen, zwischen denen Unabhängigkeit gilt, schon Obermengen der dritten sind, kann man etwas weitergehende Eigenschaften feststellen, die im Normalfall so nicht gelten.
+    		\item Algebraische Disjunktheit ist nichts anderes als die Einschränkung der Unabhängigkeit aus dem letzten Kapitel auf bestimmte Mengen (nämlich Körpern in Rautenanordnung). Denn Körper $K$ und $L$ sind algebraisch disjunkt über $C$ genau dann, wenn sie unabhängig über $C$ sind im modelltheoretischen Sinn als Teilmengen eines algebraisch abgeschlossenen Körpers.\\
+    		Wir bezeichnen es dennoch anders, um Verwirrung zu vermeiden. Wenn nämlich alle betrachteten Mengen schon Körper sind und die beiden Mengen, zwischen denen Unabhängigkeit gilt, schon Obermengen der dritten sind, kann man etwas weitergehende Eigenschaften feststellen, die im Normalfall so nicht gelten.
     		\item Es reicht, lineare Disjunktheit für eine Basis zu zeigen. Denn wenn man die lineare Unabhängigkeit über $L$ für eine Basis verliert, verliert man sie per $C$-Basiswechsel auch für alle anderen.
     		\item Es reicht, die Erhaltung der linearen/algebraischen Unabhängigkeit nur für beliebige endliche Mengen zu prüfen. Denn lineare/algebraische Unabhängigkeit einer Menge besteht genau dann, wenn sie für alle endlichen Teilmengen gilt.
     		\item Der Körper $M$ kommt in der Definition nur vor, damit die Rechenoperationen zwischen $K$ und $L$ wohldefiniert sind. Die genaue Wahl ist irrelevant und daher nicht in der Notation berücksichtigt. Wir nehmen für die Zukunft einfach an, dass die Multiplikation klar definiert ist. Es wird sich sowieso herausstellen, dass im Fall $K\ld_CL$ die Operationen eindeutig bestimmt sind.
     	\end{itemize}
     \end{remark}
     
+    \begin{example}
+    	Wir wollen Beispiele für die verschiedenen Konstellationen aus linearer und algebraischer Disjunktheit geben: 
+    	\begin{itemize}
+    		\item Trivialerweise gilt für alle Körper $C\subseteq K$, dass $C$ und $K$ sowohl linear als auch algebraisch disjunkt über $C$ sind.\\
+    		Ein weniger leichtes Beispiel wäre, dass $\setQ(\sqrt{2})$ und $\setQ(\sqrt{3})$ linear und algebraisch disjunkt über $\setQ$ sind. Die lineare Disjunktheit folgt, wenn man feststellt, dass $1$ und $\sqrt{2}$ nicht linear abhängig über $\setQ(\sqrt{3})$ sein können, da sonst $\sqrt{2}$ in $\setQ(\sqrt{3})$ wäre. Für algebraische Disjunktheit ist nichts zu zeigen, da $\dim(\setQ(\sqrt{2})/\setQ)$ ohnehin schon $0$ ist.
+    		\item Als Beispiel für algebraische und fehlende lineare Disjunktheit können die Körper $\setQ(\sqrt{2})$ und $\setQ(\sqrt{2})$ über $\setQ$ dienen. Algebraische Disjunktheit folgt dabei wie oben und lineare Disjunktheit gilt nicht, da $1$ und $\sqrt{2}$ nicht linear unabhängig über $\setQ(\sqrt{2})$ sind.
+    		\item Ausstehend ist noch der Fall, in dem keine Art von Disjunktheit gilt: Das ist zum Beispiel bei den Körpern $\setQ(\pi)$ und $\setC$ über $\setQ$ so, da $\setQ(\pi)$ Teilmenge von $\setC$ ist und daher lineare Dimension $1$ und algebraische Dimension $0$ über $\setC$ hat, aber lineare Dimension $\aleph_0$ und algebraische Dimension $1$ über $\setQ$ besitzt.
+    	\end{itemize}
+        Es fällt auf, dass die Kombinationsmöglichkeit \glqq{}lineare, aber keine algebraische Disjunktheit\grqq{} nicht behandelt wurde. Das liegt daran, dass sie nicht möglich ist, wie später erklärt werden wird.
+    \end{example}
+    \newpage
     \begin{lemma}\label{Fraktionskörper}
-    	Sei $C$ ein Körper und $C\subseteq R,S$ Ringerweiterungen des Körpers auf Integritätsbereiche. Dann sind $\operatorname{Frac}(R)$ und $\operatorname{Frac}(S)$ linear disjunkt über $C$ genau dann, wenn linear unabhängige Mengen in $R$ über $C$ auch linear unabhängig über $S$ bleiben.
+    	Sei $C$ ein Körper und seien $C\subseteq R,S$ Ringerweiterungen des Körpers auf Integritätsbereiche. Dann sind $\operatorname{Frac}(R)$ und $\operatorname{Frac}(S)$ linear disjunkt über $C$ genau dann, wenn linear unabhängige Mengen in $R$ über $C$ auch linear unabhängig über $S$ bleiben.
     \end{lemma}
     \begin{proof}
     	Die Hinrichtung folgt leicht aus $R\subseteq\operatorname{Frac}(R),S\subseteq\operatorname{Frac}(S)$. Für die Rückrichtung seien $r_1x_1^{-1},\dots,r_nx_n^{-1}$ in $\operatorname{Frac}(R)$ linear unabhängig über $C$, aber linear abhängig über $\operatorname{Frac}(S)$ mit nichttrivialer Linearkombination $$(s_1y_1^{-1})r_1x_1^{-1},\dots,(s_ny_n^{-1})r_nx_n^{-1}=0,$$ wobei alle $s_iy_i^{-1}$ aus $\operatorname{Frac}(S)$ seien.\\
@@ -87,26 +98,27 @@
     \end{proof}
     
     \begin{remark}
-    	Es reicht in obiger Aussage wieder, sich auf endliche Mengen zu beschränken. Alternativ kann man die Erhaltung der Unabhängigkeit auch wieder nur für eine $C$-Basis von $R$ zeigen.
+    	Es reicht in obiger Aussage wieder, sich auf endliche Mengen zu beschränken. Alternativ kann man die Erhaltung der linearen Unabhängigkeit auch wieder nur für eine $C$-Basis von $R$ zeigen.
     \end{remark}
     
     Das folgende Lemma sagt insbesondere aus, dass lineare Disjunktheit symmetrisch ist. Noch viel wichtiger ist aber die Aussage über die Struktur der zueinander als Ringe adjungierten Körper.
-    \newpage
+    
     \begin{lemma}\label{Tensoren}
     	Für Körper $C,K,L$ wie oben gilt $K\ld_CL$ genau dann, wenn $$K[L]=L[K]\cong K\otimes_CL$$ mit kanonischem Isomorphismus.
     \end{lemma}
     \begin{proof}
     	Der aufgespannte Ring erfüllt $$K[L]=\{\sum\limits_{(k,l)\in X}kl\mid X\subset K\times L\text{ endlich}\}=L[K].$$
-    	Wenn $(k_i)_I,(l_j)_J$ Basen von $K,L$ über $C$ sind, ist $(k_i\otimes l_j)_{i\in I,j\in J}$ eine Basis von $K\otimes_CL$. Der $C$-Homomorphismus $$\sum\limits_{i\in I_0,j\in J_0} c_{ij}k_i\otimes l_j\mapsto \sum\limits_{i\in I_0,j\in J_0} c_{ij}k_il_j$$ für endliche, beliebige Teilmengen $I_0\subseteq I,J_0\subseteq J$ ist immer surjektiv, da klarerweise $E:=(k_il_j)_{i\in I,j\in J}$ ein Erzeugendensystem von $K[L]$ ist.\\
+    	Wenn $(k_i)_I,(l_j)_J$ Basen von $K,L$ über $C$ sind, ist $(k_i\otimes l_j)_{i\in I,j\in J}$ eine Basis von $K\otimes_CL$.\newpage
+    	Der $C$-Homomorphismus $$\sum\limits_{i\in I_0,j\in J_0} c_{ij}k_i\otimes l_j\mapsto \sum\limits_{i\in I_0,j\in J_0} c_{ij}k_il_j$$ für endliche, beliebige Teilmengen $I_0\subseteq I,J_0\subseteq J$ ist immer surjektiv, da klarerweise $E:=(k_il_j)_{i\in I,j\in J}$ ein Erzeugendensystem von $K[L]$ ist.\\
     	Er ist injektiv genau dann, wenn $E$ auch linear unabhängig über $C$ ist, also keine Linearkombination $$0=\sum\limits_{i\in I_0,j\in J_0}c_{ij}k_il_j=\sum\limits_{i\in I_0}(\sum\limits_{j\in J_0}c_{ij}l_j)k_i$$ existiert mit $c_{ij}\neq0$ für mindestens ein Paar $(i,j)$. Aber das ist genau dann der Fall, wenn keine $\tilde{c}_i=\sum\limits_{j\in J_0}c_{ij}l_j$ in $L$ existieren mit $i$ in $I_0$ und so, dass $\tilde{c}_i\neq0$ für mindestens ein $i$ und $0=\sum\limits_{i\in I_0}\tilde{c}_ik_i$ gilt; also wenn die $(k_i)_I$ linear unabhängig über $L$ sind.
     \end{proof}
     
     \begin{corollary}\label{Isomorphismen linear disjunkt}
-    	Seien im Folgenden die Körper $C,K,L,C',K',L'$ gegeben, sodass $K$ und $L$ linear disjunkt über $C$ sind sowie $K'$ und $L'$ über $C'$. Es existiere ein Isomorphismus $C\cong C'$, der eine Fortsetzung auf $\varphi_1:K\cong K'$ und eine andere auf $\varphi_2:L\cong L'$ habe. Dann gibt es eine \glqq{}fusionierte\grqq{} Fortsetzung auf $K[L]\cong K'[L']$, denn die zwei Fortsetzungen induzieren einen Isomorphismus $$K\otimes_CL\cong K'\otimes_C'L',$$ durch die Abbildungsvorschrift $$k\otimes l\mapsto\varphi_1(k)\otimes\varphi_2(l).$$\newpage
+    	Seien im Folgenden die Körper $C,K,L,C',K',L'$ gegeben, sodass $K$ und $L$ linear disjunkt über $C$ sind sowie $K'$ und $L'$ über $C'$. Es existiere ein Isomorphismus $C\cong C'$, der eine Fortsetzung auf $\varphi_1:K\cong K'$ und eine andere auf $\varphi_2:L\cong L'$ habe. Dann gibt es eine \glqq{}fusionierte\grqq{} Fortsetzung auf $K[L]\cong K'[L']$, denn die zwei Fortsetzungen induzieren einen Isomorphismus $$K\otimes_CL\cong K'\otimes_C'L',$$ durch die Abbildungsvorschrift $$k\otimes l\mapsto\varphi_1(k)\otimes\varphi_2(l).$$
     	Dieser setzt die vorigen Abbildungen von den Teilkörpern $$K\cong K\otimes_C1,L\cong1\otimes_CL,C\cong C\otimes_C1=1\otimes_CC$$ fort.\\
-    	Insbesondere gibt es auch nur eine Möglichkeit, die Verknüpfung von Elementen aus linear Disjunkten Körpern zu definieren (was wir zu Beginn dieses Kapitels schon ohne Beweis erwähnt hatten).
+    	Insbesondere gibt es auch nur eine Möglichkeit, die Verknüpfung von Elementen aus linear disjunkten Körpern zu definieren (was wir zu Beginn dieses Kapitels schon ohne Beweis erwähnt hatten).
     \end{corollary}
-    
+    \newpage
     \begin{definition}
     	\ 
     	\begin{itemize}
@@ -115,13 +127,18 @@
     	\end{itemize}
     \end{definition}
     
+    \begin{example}
+    	Die simpelsten Möglichkeiten für eine reguläre Körpererweiterung $K\subseteq L$ wäre einerseits, wenn $K$ selbst schon algebraisch abgeschlossen ist; andererseits auch die Adjunktion eines transzendenten Elements $e$ zu einem Körper $K$.\\
+    	Im ersten Fall gilt die lineare Disjunktheit schon wegen Körpergleichheit, im zweiten Fall ist die $K$-Basis $\dots,e^{-1},1,e,e^2,\dots$ linear unabhängig über $\overline{K}$, sonst wäre $e$ nicht transzendent.
+    \end{example}
+    
     Wir können einige Folgerungen und \glqq{}Rechenregeln\grqq{} aus den definierten Eigenschaften ziehen, die insbesondere zeigen, unter welchen Bedingungen sich lineare und algebraische Disjunktheit gegenseitig implizieren und was für Regeln bei Inklusionsketten gelten.
     
     \begin{lemma}\label{Stapellemma}
     	Gegeben die Körperinklusionen $C\subseteq L\subseteq M$ und $C\subseteq K$. Dann gilt $K\ld_CM$ genau dann, wenn $K\ld_CL$ und $KL\ld_LM$ gilt.
     \end{lemma}
     \begin{proof}
-    	Sei $(k_h)_H$ eine Basis von $K$ über $C$, $(l_i)_I$ eine Basis von $L$ über $C$ und $(m_j)_J$ eine Basis von $M$ über $L$. Die Aussage $K\ld_CM$ bedeutet, dass die $C$-Basis von $K$ auch eine $M$-Basis von $K$ ist, aber dann ist sie natürlich auch eine $L$-Basis wegen den Inklusionen $C\subseteq L\subseteq M$. Dies folgt, da die Eigenschaft, Erzeugendensystem über dem Körper zu sein, sich nach oben vererbt, die für die lineare Unabhängigkeit sich dafür nach unten vererbt.\\
+    	Sei $(k_h)_H$ eine Basis von $K$ über $C$, $(l_i)_I$ eine Basis von $L$ über $C$ und $(m_j)_J$ eine Basis von $M$ über $L$. Die Aussage $K\ld_CM$ bedeutet, dass die $C$-Basis von $K$ auch eine $M$-Basis von $K$ ist, aber dann ist sie natürlich auch eine $L$-Basis wegen den Inklusionen $C\subseteq L\subseteq M$. Dies folgt, da die Eigenschaft, Erzeugendensystem über dem Körper zu sein, sich nach oben vererbt, die für die lineare Unabhängigkeit sich dafür nach unten vererbt. Also gilt $K\ld_CL$.\\
     	Außerdem ist $(l_im_j)_{I\times J}$ eine Basis von $M$ über $C$ und $(k_h)_H$ eine Basis von $L[K]$ als $L$-Vektorraum. Die erste Aussage ist aus dem Beweis der Multiplikativität von Körpererweiterungsgraden bekannt und bei der zweiten folgt aus der Definition von $\ld$ die Unabhängigkeit, die Eigenschaft als Erzeugendensystem ist klar.\\
     	Wenn $KL\ld_LM$ nicht gelten würde, müsste nach Lemma \ref{Fraktionskörper} und der anschließenden Bemerkung schon die $L$-Basis $(k_h)_H$ von $L[K]$ linear abhängig über $M$ sein, es gäbe also eine $M$-Linearkombination $$\sum\limits_{h\in H}\lambda_hk_h=0,\ \lambda_h=0\text{ für fast alle, aber nicht alle } h\text{ in }H.$$
     	Da $(k_h)_H$ aber die Basis von $K$ über $C$ ist, widerspricht das $K\ld_CM$.\newpage
