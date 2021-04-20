@@ -29,7 +29,7 @@ Es gibt besonders hilfreiche Zellen, nämlich die offenen. Glücklicherweise ist
 
 Zellen haben auch zwei andere wichtige topologische Eigenschaften:
 \begin{fact}
-	Zellen sind \textbf{lokal abgeschlossen}, das heißt, sie sind offen in der Spurtopologie ihres Abschlusses. Sie sind außerdem \textbf{definierbar zusammenhängend}, das heißt, sie enthalten keine definierbaren clopen Teilmengen.
+	Zellen sind \textbf{lokal abgeschlossen}, das heißt, sie sind offen in der Spurtopologie ihres Abschlusses. Sie sind außerdem \textbf{definierbar zusammenhängend}, das heißt, sie enthalten keine definierbaren und in der Spurtopologie zugleich offenen und abgeschlossenen Teilmengen.
 \end{fact}
 
 Wichtigste Grundlage der Arbeit mit o-minimalen Theorien sind die folgenden Aussagen zur \textbf{Zellzerlegung}. Sie stellen quasi eine Verallgemeinerung der Definition von o-Minimalität auf höhere Dimensionen dar und geben die Struktur definierbarer Funktionen an.
@@ -75,7 +75,7 @@ O-minimale Gruppen haben eine enorm wichtige Eigenschaft, aus der viele weitere 
 \section{Anforderungen an die hier betrachteten Theorien}
 
 Im Folgenden halten wir eine vollständige o-minimale Theorie T mit dichter Ordnung in der Sprache $\lingua$ fest und betrachten die Theorie $\tq$ in der Sprache $\lingua^P:=\lingua\cup\{P(x)\}$, sodass die Modelle von $\tq$ Modelle von T sind und in jedem Modell $\fM$ die Menge $P(M)$ ebenfalls Modell von T ist. Schreibe so ein Paar dann als $(B,A)$ mit $A=P(B)$.\\
-Die Theorie T erweitere RCF, insbesondere gilt Definable Choice. Dann sind Skolemfunktionen definierbar und ohne Einschränkungen ist $\lingua$ schon so eine definitorische Erweiterung, dass T Quantorenelimination hat und universell axiomatisierbar ist (wobei bei einzelnen Theorien die Frage interessant wäre, welche Skolemfunktionen man dafür hinzufügen muss).\\
+Die Theorie T erweitere RCF, insbesondere gilt Definable Choice. Dann sind Skolemfunktionen definierbar und ohne Einschränkungen sei $\lingua$ schon so eine definitorische Erweiterung, dass T Quantorenelimination hat und universell axiomatisierbar ist (wobei bei einzelnen Theorien die Frage interessant wäre, welche Skolemfunktionen man dafür hinzufügen muss).\\
 Weil T universell mit Quantorenelimination ist, folgt, dass Unterstrukturen von Modellen von T schon elementare Unterstrukturen sind. Also ist für jede Teilmenge $S$ eines Modells der definierbare Abschluss $\dcl(S)$ schon eine elementare Substruktur; zur Vereinfachung bezeichnen wir in Zukunft mit $AB$ den definierbaren Abschluss $\dcl(A\cup B)=\langle A\cup B\rangle_\lingua$ für zwei Teilmengen $A,B$ eines Modells.\\
 Das Prädikat $P$ beschreibt also eine elementare Unterstruktur, mit $\td$ wird nun die Theorie beschrieben, die ausdrückt, dass $P$ eine dichte echte Unterstruktur ist (diese zwei Aussagen oder deren Gegenteil müssen auf jeden Fall von der Theorie beschrieben werden, wenn sie vollständig sein soll). Klar ist dann, dass Unterstrukturen von $\td$ automatisch Modelle von $\tq$ sind.\\\\
 Der Arbeit \cite{VanDenDries} folgend, wird in den nächsten Abschnitten die Vollständigkeit und eine Art von Quantorenelimination für $\td$ gezeigt, die mittels eines Back\&Forth-Systems bewiesen wird. Danach werden einige Erkenntnisse aus dem B\&F-System gezogen, bevor die Hauptaussagen dieser Arbeit bewiesen werden. Zunächst ist aber eine genauere Betrachtung von sogenannten kleinen Mengen vonnöten.
@@ -87,11 +87,11 @@ In diesem Abschnitt wird ein Begriff der Kleinheit entwickelt und für Modelle v
 \end{definition}
 
 \begin{lemma}
-	Kleine Mengen in einem echten dichten Paar bilden ein Ideal in den\linebreak $\lingua^P$-definierbaren Mengen bzgl. $\glqq{}\subseteq\grqq{}$.
+	Kleine Mengen in einem echten dichten Paar bilden ein Ideal in den\linebreak $\lingua^P$-definierbaren Mengen bzgl. der Teilmengenrelation.
 \end{lemma}
 \begin{proof}
 	Es gibt kleine Mengen, zum Beispiel Punktmengen oder die Interpretation von $P$, außerdem sind Teilmengen von kleinen Mengen offensichtlich wieder klein.\\
-	Sei jetzt $(B,A)$ ein dichtes Paar und $X,Y$ kleine Mengen, seien $f,g:B^n\rightarrow B$ definierbar mit $$X\subseteq f(A^n),Y\subseteq g(A^n).$$ Ohne Einschränkungen bilden $f,g$ dabei schon von demselben $B^n$ ab, ansonsten muss man beide mit Dummyvariablen vergrößern. Definiere
+	Sei jetzt $(B,A)$ ein dichtes Paar und $X,Y$ kleine Mengen, außerdem seien $\lingua$-definierbare Funktionen $f,g:B^n\rightarrow B$ gegeben mit $$X\subseteq f(A^n),Y\subseteq g(A^n).$$ Ohne Einschränkungen bilden $f,g$ dabei schon von demselben $B^n$ ab, ansonsten muss man beide mit Dummyvariablen vergrößern. Definiere
 	\begin{align*}
 	h:B^{n+1}&\rightarrow B,\\
 	h(\overline{x},y):=&\left\{\begin{array}{ll}
@@ -106,7 +106,7 @@ In diesem Abschnitt wird ein Begriff der Kleinheit entwickelt und für Modelle v
 In dem folgenden Lemma meint $+,\cdot$ nicht unbedingt die Operationen aus $\lingua$, sondern neue, beliebige Operationen. Die Anordnung hingegen soll die gewöhnliche bleiben.
 
 \begin{lemma}\label{Hilfsaussage Kleinheit}
-	Seien $A\prec B\models\operatorname{T}$ hinreichend hoch saturiert, $f:B^{n+1}\rightarrow B$ eine $A$-definierbare Funktion, $b$ aus $B\setminus A$, $\beta,\gamma$ in $A\cup\{\pm\infty\}$ mit $\beta<b<\gamma$ und einer angeordneten $A$-definierbaren Körperstruktur $(\cdot,+)$ auf $(\beta,\gamma)=:I$. Dann existieren $a_0,\dots,a_n$ in $I_A$ mit $$a_nb^n+a_{n-1}b^{n-1}+\dots,a_0\in I\setminus f(A^n\times\{b\}).$$
+	Seien $A\precneqq B\models\operatorname{T}$ hinreichend hoch saturiert, $f:B^{n+1}\rightarrow B$ eine $A$-definierbare Funktion, $b$ aus $B\setminus A$, $\beta,\gamma$ in $A\cup\{\pm\infty\}$ mit $\beta<b<\gamma$ und einer angeordneten $A$-definierbaren Körperstruktur $(\cdot,+)$ auf $(\beta,\gamma)=:I$. Dann existieren $a_0,\dots,a_n$ in $I_A$ mit $$a_nb^n+a_{n-1}b^{n-1}+\dots,a_0\in I\setminus f(A^n\times\{b\}).$$
 \end{lemma}
 \newpage
 \begin{proof}
@@ -118,7 +118,7 @@ In dem folgenden Lemma meint $+,\cdot$ nicht unbedingt die Operationen aus $\lin
 \newpage
 
 \begin{corollary}
-	Es sei $(A,B)\models\td,\ f:B^{n+1}\rightarrow B$ $A$-definierbar in $B$ und $b$ in $B\setminus A$. Dann enthält $f(A^n\times\{b\})$ kein Intervall um $b$.
+	Es sei ein dichtes Paar $(A,B)\models\td$ gegeben und $\lingua_A$-definierbare Funktionen $f:B^{n+1}\rightarrow B$ sowie ein $b$ in $B\setminus A$. Dann enthält $f(A^n\times\{b\})$ kein Intervall um $b$.
 \end{corollary}
 \begin{proof}
 	Nimm an, dass das Gegenteil gelte für das Intervall $J$ (ohne Einschränkungen mit Randpunkten $c<d$ in $A$): Dann ist $$x\mapsto\frac{1}{c-x}+\frac{1}{d-x}$$ eine ordnungstreue $A$-definierbare Bijektion $(c,d)\rightarrow A$. Diese erzeugt in $A$ eine definierbare angeordnete Körperstruktur auf $(c,d)=J_A$, also auch auf $J$ eine $A$-definierbare angeordnete Körperstruktur. Mit dem vorigen Lemma existiert ein Element aus\linebreak$J\setminus f(A^n\times\{b\})$, denn es spielt für die Aussage keine Rolle, ob man zu einer genügend saturierten Elementarerweiterung von $(B,A)$ übergeht.
@@ -131,13 +131,13 @@ In dem folgenden Lemma meint $+,\cdot$ nicht unbedingt die Operationen aus $\lin
 	Sei $f:B^n\rightarrow B$ eine durch $\varphi(x,y,b)$ definierbare Abbildung mit $\varphi$ einer\linebreak$\lingua_A$-Formel und $b$ in $B^m$ für ein $m$ definiert. Für $\dim(b/A)=0$ ist $f(A^n)\subseteq A$ klar, deswegen sei ohne Einschränkungen $\dim(b/A)\geq1$. Definiere
 	\begin{align*}
 	g(x,z):=\left\{\begin{array}{ll}
-	y\in B &\text{mit }B\models\varphi(x,y,z),\text{sofern }\varphi(x',y',z)\\
+	y&\text{mit }B\models\varphi(x,y,z),\text{sofern }\varphi(x',y',z)\\
 	&\text{bei festem }z\text{ eine Funktion }x'\mapsto y'\text{ definiert}\\
 	\ &\ \\
 	0 &\text{sonst}
 	\end{array}\right..
 	\end{align*}
-	Dann ist $g$ in $B$ $A$-definierbar und $g(\cdot,b)=f$. Falls $\dim(b/A)>1$, füge genug Komponenten von $b$ zu $A$ hinzu, sodass $\dim(b/A)=1$. Das Hinzufügen einer Komponente $b_j$ zu $A$ führt zu einem neuen Gegenbeispiel zur Aussage in einem dichten Paar, denn $Ab_j$ ist nach den Eingangsbemerkungen Modell von T und $Ab_j$ ist erst recht dicht in, aber nicht gleich $B$ (sonst hätte man die Dimension mit diesem Schritt schon zu sehr verkleinert).\\
+	Dann ist $g$ $A$-definierbar in $B$ und $g(\cdot,b)=f$. Falls $\dim(b/A)>1$, füge genug Komponenten von $b$ zu $A$ hinzu, sodass $\dim(b/A)=1$. Das Hinzufügen einer Komponente $b_j$ zu $A$ führt zu einem neuen Gegenbeispiel zur Aussage in einem dichten Paar, denn $Ab_j$ ist nach den Eingangsbemerkungen Modell von T und $Ab_j$ ist erst recht dicht in, aber nicht gleich $B$ (sonst hätte man die Dimension mit diesem Schritt schon zu sehr verkleinert).\\
 	Finde also $b_i$, sodass $A$-definierbare $(h_j)$ existieren mit $b_j=h_j(b_i)$ für alle $j$. Wenn jetzt $J\subseteq f(A^n)=g(A^n,b)=g(A^n,h(b_i))$ für ein Intervall $J$, dann widerspricht das der Aussage des letzten Lemmas für die Funktion $(x,y)\mapsto g(x,h(y))$.
 \end{proof}
 
@@ -170,8 +170,8 @@ Zum Abschluss dieses Abschnittes sollen hier noch ein paar weitere Fakten über 
 \newpage
 
 \section{Formelreduzierung in $\td$}
-In diesem Abschnitt wird gezeigt, dass sich $\lingua^P$-Formeln modulo $\td$ sehr stark vereinfachen lassen und dass $\td$ vollständig ist. Indem dieses mit einem Back\&Forth-System gezeigt wird, erhält man zusätzlich eine sehr große Klasse von elementaren Abbildungen zwischen Modellen von $\td$.\\
-In diesem Kontext wird wieder die $\acl$-Unabhängigkeit in einem Modell von T relevant. Man kann sich dafür folgende Fakten überlegen. Dabei sind 1.-4. schon bekannt aus den Aussagen TODO
+In diesem Abschnitt wird gezeigt, dass sich $\lingua^P$-Formeln modulo $\td$ sehr stark vereinfachen lassen und dass $\td$ vollständig ist. Indem dieses mit einem Back\&Forth-System gezeigt wird, erhält man zusätzlich eine Klasse von elementaren Abbildungen zwischen Modellen von $\td$.\\
+In diesem Kontext wird wieder die $\acl$-Unabhängigkeit in einem Modell von T relevant. Man kann sich dafür folgende Fakten überlegen. Die 1.-4. sind schon bekannt aus den Lemmata \ref{Unabhängigkeit Teilmenge} bis \ref{Unabhängigkeit Schnitt}., zur Zusammenstellung wird hier noch einmal darauf verwiesen.
 
 \begin{lemma}\label{Unabhängigkeitsregeln}
 	Seien $A,B,C,D$ Mengen in irgendeinem Modell von T.
@@ -179,7 +179,7 @@ In diesem Kontext wird wieder die $\acl$-Unabhängigkeit in einem Modell von T r
 		\item Wenn $A$ und $B$ unabhängig über $C$ sind, sind $B$ und $A$ unabhängig über $C$ und $A\cap B\subseteq\acl(C)$ (in fast allen betrachteten Fällen wird sowieso $A,B\supseteq C$ und $C=\acl(C)$ gelten, sodass dann Gleichheit herrscht).
 		\item Wenn $A$ und $B$ unabhängig über $C$ sind und $S\subseteq B$, dann sind auch $A\cup S$ und $B$ unabhängig über $C\cup S$.
 		\item Wenn $A$ und $B$ unabhängig über $C$ sind, $$A\subseteq S\subseteq\acl(A),B\subseteq S'\subseteq\acl(B),C\subseteq S''\subseteq\acl(C),$$ dann sind $S$ und $S'$ unabhängig über $S''$.
-		\item Wenn $A$ und $B$ unabhängig über $C$ sind und $D$ (algebraisch) unabhängig über $AB$, dann sind $A\cup D$ und $B$ unabhängig über $C$.
+		\item Wenn $A$ und $B$ unabhängig über $C$ sind und $D$ (algebraisch) unabhängig über $ABC:=(AB)C$, dann sind $A\cup D$ und $B$ unabhängig über $C$.
 		\item Wenn $(D,C)\preceq(B,A)\models\tq$, dann sind $A$ und $D$ unabhängig über $C$.
 		\item Wenn $(D,C)\subseteq(B,A)\models\tq,\ S\subseteq A$ und $A$ und $D$ unabhängig über $C$ sind, dann sind $A$ und $DS$ unabhängig über $CS$, $\langle D\cup S\rangle_{\lingua^P}=(DS,CS)$ und $$(D,C)\subseteq(DS,CS)\subseteq(B,A).$$
 		\item Wenn $(D,C)\subseteq(B,A)\models\tq$ und $S\subseteq B$ unabhängig über $DA$ ist, dann sind $A$ und $DS$ unabhängig über $C$, $\langle D\cup S\rangle_{\lingua^P}=(DS,C)$ und $$(D,C)\subseteq(DS,C)\subseteq(B,A).$$
@@ -217,17 +217,20 @@ Für die Konstruktion des gewünschten Back\&Forth-Systems sei $\kappa>\abs{\ope
 \end{proof}
 
 Das eben aufgestellte B\&F-System beweist die Formelreduzierung in $\td$.
+\begin{definition}
+	Wir betrachten $\lingua^P$-Formeln der Gestalt
+	$$\exists\overline{y}\in P(\phi(\overline{x},\overline{y}))$$
+	für eine $\lingua$-Formel $phi$. Eine solche Formel nenne eine \textbf{gute Formel in Reinform} und eine boolesche Kombination davon eine \textbf{gute Formel}.
+\end{definition}
 
 \begin{theorem}\label{Formelreduzierung}
-	Jede $\lingua^P$-Formel ist modulo $\td$ äquivalent zu einer booleschen Kombination von Formeln der Gestalt
-	$$\exists\overline{y}\in P(\phi(\overline{x},\overline{y}))$$
-	für $\phi$ eine $\lingua$-Formel. Nenne eine solche Formel eine \textbf{gute Formel in Reinform} und eine boolesche Kombination davon eine \textbf{gute Formel}.
+	Jede $\lingua^P$-Formel ist modulo $\td$ äquivalent zu einer guten Formel.	
 \end{theorem}
 \begin{proof}
 	\underline{Hilfsaussage:}\\
 	Es reicht zu zeigen, dass für alle Modelle $(B,A),(D,C)\models\td$ und für alle $b$ in $B^n$, $d$ in $D^n$ gilt: Wenn $b$ und $d$ dieselben guten Formeln erfüllen, sind ihre Typen in $(B,A)$ und $(D,C)$ dieselben.\\
 	Dass dies ausreicht, erkennt man mit dem Trennungslemma:\linebreak
-	Sei $\psi$ aus $\fF_n(\lingua^P)$ und nicht äquivalent zu einer guten Formel und nenne die Menge aller guten Formeln in $n$ freien Koordinaten $K$. Dann ist $K$ abgeschlossen unter $\land,\lor$ und enthält $\top,\bot$. Wenn $\psi$ nicht äquivalent zu einer Formel aus $K$ ist, sind $\td\cup\{\psi\}$ und $\td\cup\{\neg\psi\}$ nicht durch $K$ trennbar, also existieren $(B,A),(D,C)\models\td,b$ in $B^n$, $d$ in $D^n$, sodass $(B,A)\models\psi(b)$ und $(D,C)\models\neg\psi(d)$, aber $(B,A)\models\chi(b)$ genau dann, wenn $(D,C)\models\chi(d)$, und das für alle $\chi$ aus $K$. Dann erfüllen $b$ und $d$ dieselben guten Formeln, aber haben nicht denselben Typ - ein Widerspruch!
+	Sei $\psi$ aus $\fF_n(\lingua^P)$ und nicht äquivalent zu einer guten Formel und nenne die Menge aller guten Formeln in $n$ freien Koordinaten $K$. Dann ist $K$ abgeschlossen unter Konjunktion und Disjunktion außerdem enthält die Menge die wahre und die falsche Aussage. Wenn $\psi$ nicht äquivalent zu einer Formel aus $K$ ist, sind $\td\cup\{\psi\}$ und $\td\cup\{\neg\psi\}$ nicht durch $K$ trennbar, also existieren $(B,A),(D,C)\models\td,b$ in $B^n$, $d$ in $D^n$, sodass $(B,A)\models\psi(b)$ und $(D,C)\models\neg\psi(d)$, aber $(B,A)\models\chi(b)$ genau dann, wenn $(D,C)\models\chi(d)$, und das für alle $\chi$ aus $K$. Dann erfüllen $b$ und $d$ dieselben guten Formeln, aber haben nicht denselben Typ - ein Widerspruch!
 	\newpage
 	\begin{proof2}[Beweis der Hilfsaussage]
 		Seien $b,d$ wie verlangt und $(B,A),(D,C)$ schon ohne Einschränkungen $\abs{\operatorname{T}}^+$-saturiert, denn das ändert nichts an Typen und dem Erfüllen von guten Formeln. Sei $a$ aus $A^m$ für ein hinreichend großes $m$, mit der Eigenschaft dass $$\dim(b/a)\leq\dim(b/A).$$ So etwas gibt es, wenn man endlich viele $\lingua_A$-Formeln betrachtet, sodass jede Interdefinierbarkeit in $b$ durch diese Formeln bezeugt wird; als $a$ kann man dann die vereinigte Parametermenge dieser ganzen Formeln nehmen. Es folgt dann Gleichheit der Dimensionen, da über einer kleineren Menge nicht mehr interdefinierbar werden kann. Für $$A':=\dcl(a),B':=\dcl(a,b)$$ gilt dann, dass $A$ und $B'$ unabhängig über $A'$ sind. Es sind nämlich per Definition von $a$ die Mengen $A$ und $b$ unabhängig über $a$ (eben wegen $\dim(b/a)=\dim(b/A)$), mit Lemma \ref{Unabhängigkeitsregeln} (2.) sind dann auch $A$ und $a\cup b$ unabhängig über $a$ und mit (3.) sind $A$ und $B'=\dcl(a,b)$ unabhängig über $A'=\dcl(a)$. Außerdem sind $A'$ und $B'$ maximal $\abs{\operatorname{T}}$ groß und $(B',A')\subseteq (B,A)$.\\

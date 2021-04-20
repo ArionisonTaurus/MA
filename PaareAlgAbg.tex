@@ -140,10 +140,10 @@
     \begin{proof}
     	Sei $(k_h)_H$ eine Basis von $K$ über $C$, $(l_i)_I$ eine Basis von $L$ über $C$ und $(m_j)_J$ eine Basis von $M$ über $L$. Die Aussage $K\ld_CM$ bedeutet, dass die $C$-Basis von $K$ auch eine $M$-Basis von $K$ ist, aber dann ist sie natürlich auch eine $L$-Basis wegen den Inklusionen $C\subseteq L\subseteq M$. Dies folgt, da die Eigenschaft, Erzeugendensystem über dem Körper zu sein, sich nach oben vererbt, die für die lineare Unabhängigkeit sich dafür nach unten vererbt. Also gilt $K\ld_CL$.\\
     	Außerdem ist $(l_im_j)_{I\times J}$ eine Basis von $M$ über $C$ und $(k_h)_H$ eine Basis von $L[K]$ als $L$-Vektorraum. Die erste Aussage ist aus dem Beweis der Multiplikativität von Körpererweiterungsgraden bekannt und bei der zweiten folgt aus der Definition von $\ld$ die Unabhängigkeit, die Eigenschaft als Erzeugendensystem ist klar.\\
-    	Wenn $KL\ld_LM$ nicht gelten würde, müsste nach Lemma \ref{Fraktionskörper} und der anschließenden Bemerkung schon die $L$-Basis $(k_h)_H$ von $L[K]$ linear abhängig über $M$ sein, es gäbe also eine $M$-Linearkombination $$\sum\limits_{h\in H}\lambda_hk_h=0,\ \lambda_h=0\text{ für fast alle, aber nicht alle } h\text{ in }H.$$
+    	Wenn $KL\ld_LM$ nicht gelten würde, müsste nach Lemma \ref{Fraktionskörper} und der anschließenden Bemerkung schon die $L$-Basis $(k_h)_H$ von $L[K]$ linear abhängig über $M$ sein, es gäbe also eine $M$-Linearkombination $$\sum\limits_{h\in H}\lambda_hk_h=0,\text{ wobei }\lambda_h=0\text{ für fast alle, aber nicht alle } h\text{ in }H.$$
     	Da $(k_h)_H$ aber die Basis von $K$ über $C$ ist, widerspricht das $K\ld_CM$.\newpage
     	Für die Rückrichtung ist zu zeigen, dass $(l_im_j)_{I\times J}$ linear unabhängig über $K$ bleibt. Wenn nicht, sei $$0=\sum\limits_{(i,j)\in I\times J}\lambda_{ij}l_im_j,\text{ wobei }\lambda_{ij}=0\text{ für fast alle, aber nicht alle } (i,j)\text{ in }I\times J$$ eine $K$-Linearkombination, die das bezeugt. Schreibe $$\lambda_{ij}=:\sum\limits_{h\in H}c_{hij}k_h$$ als $C$-Basisdarstellung für alle $(i,j)$ in $I\times J$.\\
-    	Einsetzen und Umklammern führt uns zur Linearkombination $$0=\sum\limits_{(i,j)\in I\times J}\lambda_{ij}l_im_j=\sum\limits_{(i,j)\in I\times J}\left(\sum\limits_{h\in H} c_{hij}k_h\right)l_im_j=\sum\limits_{i\in I}\left(\sum\limits_{(h,j)\in H\times J}c_{hij}k_hl_i\right)m_j,$$ $$c_{hij}=0\text{ für fast alle, aber nicht alle } (h,i,j)\text{ in }H\times I\times J.$$
+    	Einsetzen und Umklammern führt uns zur Linearkombination $$0=\sum\limits_{(i,j)\in I\times J}\lambda_{ij}l_im_j=\sum\limits_{(i,j)\in I\times J}\left(\sum\limits_{h\in H} c_{hij}k_h\right)l_im_j=\sum\limits_{i\in I}\left(\sum\limits_{(h,j)\in H\times J}c_{hij}k_hl_i\right)m_j,$$ $$\text{wobei }c_{hij}=0\text{ für fast alle, aber nicht alle } (h,i,j)\text{ in }H\times I\times J.$$
     	Da wir aber $KL\ld_CM$ annehmen, muss $$\sum\limits_{(h,j)\in H\times J}c_{hij}k_hl_i=0\text{ sein für alle }j\text{ in }J,$$ und da wir $K\ld_CL$ annehmen, folgt daraus $c_{hij}=0$ für alle $h,i,j$.
     \end{proof}
     
@@ -160,7 +160,7 @@
     		\item Wenn die Erweiterung $C\subseteq K$ algebraisch und die Erweiterung $C\subseteq L$ regulär ist, dann sind $K$ und $L$ linear disjunkt über $C$.
     		\item Wenn $K$ und $L$ linear disjunkt über $C$ sind, sind sie auch algebraisch disjunkt.
     		\item Wenn $K$ und $L$ algebraisch disjunkt über $C$ sind, dann sind es auch $\overline{K}$ und $\overline{L}$.
-    		\item Wenn $K$ und $L$ linear disjunkt über $C$ sind, $K\subseteq M$ und $X\subseteq M$ algebraisch unabhängig über $KL$, dann folgt $K(X)\ld_KKL$.
+    		\item Wenn $K$ und $L$ linear disjunkt über $C$ sind, $K\subseteq M$ gilt und $X\subseteq M$ algebraisch unabhängig über $KL$ ist, dann folgt $K(X)\ld_KKL$.
     		\item Wenn die Erweiterung $C\subseteq K$ regulär ist und $K$ und $L$ linear disjunkt über $C$ sind, folgt $K\ld_C\overline{L}$ und außerdem, dass die Erweiterung $L\subseteq KL$ regulär ist.
     	\end{enumerate}
     \end{lemma}
@@ -198,7 +198,7 @@
 
     \newpage
     \section{Paare algebraisch abgeschlossener Körper}
-    Wir wollen Paare $(K,E_K)$ von Körpern betrachten, wobei $E_K\subseteq K$ ist. In der richtigen Sprache lassen diese sich axiomatisieren, dort haben echte Paare (d.h. $K\neq E_K$) algebraisch abgeschlossener Körper mit fixierter Charakteristik sogar Quantoren\-elimination, sie sind vollständig und in einer kleineren Sprache modellvollständig. Diese Sprachen und einige der Folgerungen für ihre Strukturen wollen wir hier (angelehnt an \cite{Delon}) einführen.
+    Wir wollen Paare $(K,E_K)$ von Körpern betrachten, wobei $E_K\subseteq K$ ist. Diese lassen sich in einer Sprache $\lfc$ axiomatisieren, die die lineare Algebra der Körpererweiterung beschreibt, dort haben echte Paare (d.h. $K\neq E_K$) algebraisch abgeschlossener Körper mit fixierter Charakteristik sogar Quantoren\-elimination und sind vollständig. In einer kleineren Sprache $\lld$ ist diese Theorie immerhin noch modellvollständig. Diese Sprachen und einige der Folgerungen für ihre Strukturen wollen wir hier (angelehnt an \cite{Delon}) einführen. TODO: Keisler
     
     \begin{definition}
     	Wir definieren die Sprachen $\lld:=\{0,1,+,-,\cdot,(l_n)_{n\geq2}\},\lf:=\lld\cup\{f_{i,n}\mid n\geq2,1\leq i\leq n\}$ und $\lfc:=\lf\cup\{^{-1}\}$, wobei die $(l_n)_n$ $n$-stellige Relationen sein sollen und die $(f_{i,n})_{i,n}$ $n+1$-stellige Funktionen.
@@ -220,7 +220,7 @@
     \end{lemma}
     
     \begin{lemma}
-    	Mit diesen Vorarbeiten sind echte algebraisch abgeschlossene Paare von Körpern definierbar in allen drei Sprachen $\lld,\lf,\lfc$, nenne die Theorien $$\operatorname{ACP}^{\lld},\operatorname{ACP}^{\lf},\operatorname{ACP}^{\lfc}.$$ Besonders zu beachten hierbei ist, dass man in der Theorie sagen muss, dass $\neg l_2(1,x)$ einen Körper definiert.
+    	Mit diesen Vorarbeiten sind echte Paare algebraisch abgeschlossener Körper axiomatisierbar in allen drei Sprachen $\lld,\lf,\lfc$, nenne die Theorien $$\operatorname{ACP}^{\lld},\operatorname{ACP}^{\lf},\operatorname{ACP}^{\lfc}.$$ Besonders zu beachten hierbei ist, dass man in der Theorie sagen muss, dass $\neg l_2(1,x)$ einen Körper definiert.
     \end{lemma}
     \newpage
     Alle verwendeten Sprachen und ihre Interpretationen für Paare von Körpern sind interdefinierbar, aber für bestimmte Fragestellungen sind manche Sprachen passender als andere. Die intuitivste Sprache wäre dabei $\lingua^E:=\lingua\cup\{E(x)\}$ mit der obigen Bedeutung für $E$, aber diese hat leider nicht so starke Eigenschaften (zum Beispiel ist sie nicht modellvollständig, denn lineare Unabhängigkeit über $E$ überträgt sich nicht zwangsläufig auf Obermodelle). Das Ziel ist jetzt, zu beweisen, dass $\operatorname{ACP}^{\lf}$ und $\operatorname{ACP}^{\lfc}$ Quantoren\-eli\-mi\-na\-tion haben sowie dass $\operatorname{ACP}^{\lld}$ immerhin modellvollständig ist.\\
@@ -230,7 +230,7 @@
     	Betrachte ein Paar von Körpern $(K,E_K)$ und eine Teilmenge ${A\subseteq K}$ sowie eine $\lfc$-Struktur $$\fA:=(A,0,1,+,-,\cdot,^{-1},(l_n)_{n\geq2},(f_{i,n})_{n\geq2,1\leq i\leq n}).$$ Dann ist $\fA$ eine $\lfc$-Unterstruktur von $(K,E_K)$ genau dann, wenn $A$ ein Unterkörper von $K$ ist und außerdem $\fA=(A,E_A)$ für $E_A:=A\cap E_K$ gilt sowie $A$ und $E_K$ linear disjunkt über $E_A$ sind.
     \end{lemma}
     \begin{proof}
-    	Die Menge $A$ ist genau dann Unterkörper von $K$, wenn es $0,1$ enthält, unter $+,-,\cdot,^{-1}$ abgeschlossen ist und die entsprechenden Abbildungsvorschriften erbt.\\
+    	Die Menge $A$ ist genau dann Unterkörper von $K$, wenn sie $0,1$ enthält, unter $+,-,\cdot,^{-1}$ abgeschlossen ist und die entsprechenden Abbildungsvorschriften erbt.\\
     	Außerdem sind $A$ und $E_K$ linear disjunkt über $E_A$ genau dann, wenn für alle $\overline{a}$ in $A$ aus $\overline{a}$ linear abhängig über $E_K$ schon äquivalent zu linearer Abhängigkeit über $E_A$ ist; per kanonischer Definition also genau dann, wenn $$(A,E_A)\models l_{\abs{\overline{a}}}(\overline{a}) \Leftrightarrow (K,E_K)\models l_{\abs{\overline{a}}}(\overline{a}).$$
     	Wenn $\fA$ eine Unterstruktur von $(K,E_K)$ ist, gilt für alle $\overline{a}$ in $A$, dass
     	\begin{align*}
@@ -238,8 +238,8 @@
     	\Leftrightarrow&\ \overline{a}\text{ linear unabhängig über }E_K\Leftrightarrow\overline{a}\text{ linear unabhängig über }E_A,
     	\end{align*}
     	wobei die letzte Äquivalenz davon herrührt, dass in jeder die lineare Abhängigkeit bezeugenden Linearkombination von $\overline{a}$ die Koeffizienten, die nicht $0$ sind, durch Anwendung von Funktionen $f_{i,n}$ auf Teile von $\overline{a}$ extrahiert werden können. Projektionen von Elementen aus $A$ sind aber wegen der Unterstruktureigenschaft wieder in $A$.\newpage
-    	Also stimmen die Interpretationen der $l_n$ in $\fA$ mit denen in $(A,E_A)$ überein und es ist $A\ld_{E_A}E_K$. Da die definierende Formel der $(f_{i,n})$ bis auf die Angabe des Bildbereiches eine $\lingua_{\text{Ring}}$-Formel ist, und da $f_{i,n}(\overline{a})$ in $E_K\cap A$ für alle $\overline{a}$ in $A$ und für alle $n,i$, stimmen auch die Interpretationen der $f_{i,n}$ in $\fA$ und in $(A,E_A)$ überein. Damit ist $\fA=(A,E_A)$.\\
-    	Die Rückrichtung folgt mit den ersten Zeilen dieses Beweises und, weil die Projektionen $f_{i,n}$ Elemente aus $A$ nach $A$ abbilden. Das erkennt man dadurch, dass man die Koeffizienten einer Linearkombination in eine Abhängigkeitsbedingung umschreiben kann; wenn diese in $E_K$ erfüllt ist, muss sie wegen linearer Disjunktheit auch in $E_A$ erfüllt sein, also sind die Projektionen schon in $E_A$.
+    	Also stimmen die Interpretationen der $l_n$ in $\fA$ mit denen in $(A,E_A)$ überein und es sind $A$ und $E_K$ linear disjunkt über $E_A$. Die definierende Formel der $(f_{i,n})$ ist bis auf die Angabe des Bildbereiches eine $\lingua_{\text{Ring}}$-Formel und es ist $f_{i,n}(\overline{a})$ in $E_K\cap A$ für alle $\overline{a}$ in $A$ und für alle $n,i$. Also stimmen auch die Interpretationen der $f_{i,n}$ in $\fA$ und in $(A,E_A)$ überein. Damit sind die Strukturen $\fA$ und $(A,E_A)$ gleich.\\
+    	Die Rückrichtung folgt mit den ersten Zeilen dieses Beweises und, weil die Projektionen $f_{i,n}$ Elemente aus $A$ nach $A$ abbilden. Das erkennt man dadurch, dass man die Koeffizienten einer Linearkombination in eine Abhängigkeitsbedingung umschreiben kann; wenn diese in $E_K$ erfüllt ist, muss sie wegen linearer Disjunktheit auch in $E_A$ erfüllt sein, also sind die partiellen Projektionsabbildungen $f_{i,n}$ schon in $E_A$.
     \end{proof}
     
     \begin{lemma}\label{transz Erw}
@@ -368,7 +368,7 @@
     \end{remark}
     \newpage
     Im folgenden Lemma werden einige Polynomumformungen vorgenommen. Weil diese recht technisch sind, sollen sie zuerst an einem Beispiel vorgeführt werden: Seien $a,b,c$ drei über $\setQ$ algebraisch unabhängige Zahlen aus $\setC$, betrachte die ACP-Modelle $$(\overline{\setQ(a)},\overline{\setQ})\preceq(\setC,\overline{\setQ(b,c)})$$ Sei $d$ eine Nullstelle von $$f(X):=X^2-\frac{ac}{b^{-1}+\sqrt{c}}.$$ Man kann dann $f$ durch Multiplikation zu dem Polynom $$b^{-1}X^2+\sqrt{c}X^2-a\sqrt{c}^2$$ umformen, das die Eigenschaft hat, irreduzibel im Polynomring $\setQ(a)[b^{-1},\sqrt{c},X]$ zu sein und $d$ als Nullstelle zu haben. Eine weitere Umformung ergibt das Polynom $$(bc)^{-1}X^2+\sqrt{c}^{-1}X^2-a$$ aus $\setQ(a)[(bc)^{-1},\sqrt{c}^{-1},X]$, das das einzige Polynom von Grad 2 ist, sodass $\xi_1,\xi_2$ aus $\overline{\setQ(b,c)}$ existieren und das Polynom irreduzibel als Element von $\overline{\setQ(a)}[\xi_1,\xi_2,X]$ ist, einen konstanten Term von festgelegtem Wert $a$ ungleich Null hat sowie außerdem $d$ als Nullstelle hat.\\
-    Mit dieser Eigenschaft sind seine Koeffizienten als Polynom in $X$ in $\lfc$ definierbar über $\setQ(a)\cup\{d\}$, denn nach TODO ist Irreduzibilität eine elementare Eigenschaft des zugrundeliegenden Körpers. Aus den Koeffizienten sind aber die verwendeten Potenzen von $\xi_1,\xi_2$ über $\overline{\setQ(a)}$ definierbar wegen linearer Disjunktheit von $\overline{\setQ(a)}$ und $\overline{\setQ(b,c)}$, also sind $\xi_1$ und $\xi_2$ algebraisch über $\overline{\setQ(a)}\cup\{d\}$. Da natürlich auch andersherum $d$ algebraisch über $\overline{\setQ(a)}\cup\{\xi_1,\xi_2\}$ ist, gilt für den Morleyrang $$\RM(d/\overline{\setQ(a)})=\RM(\xi_1,\xi_2/\overline{\setQ(a)})=\dim(\xi_1,\xi_2/\overline{\setQ(a)})=\dim(b,c/\overline{\setQ(a)})=2.$$
+    Mit dieser Eigenschaft sind seine Koeffizienten als Polynom in $X$ in $\lfc$ definierbar über $\setQ(a)\cup\{d\}$, denn nach der Argumentation aus \cite{Chatzidakis} bzw. den Resultaten aus \cite{Schmidt} ist Irreduzibilität von Polynomen eine elementare Eigenschaft des zugrundeliegenden Körpers. Aus den Koeffizienten sind aber die verwendeten Potenzen von $\xi_1,\xi_2$ über $\overline{\setQ(a)}$ definierbar wegen linearer Disjunktheit von $\overline{\setQ(a)}$ und $\overline{\setQ(b,c)}$, also sind $\xi_1$ und $\xi_2$ algebraisch über $\overline{\setQ(a)}\cup\{d\}$. Da natürlich auch andersherum $d$ algebraisch über $\overline{\setQ(a)}\cup\{\xi_1,\xi_2\}$ ist, gilt für den Morleyrang $$\RM(d/\overline{\setQ(a)})=\RM(\xi_1,\xi_2/\overline{\setQ(a)})=\dim(\xi_1,\xi_2/\overline{\setQ(a)})=\dim(b,c/\overline{\setQ(a)})=2.$$
     Bei diesem Wert handelt es sich genau um die Mächtigkeit des kleinsten Tupels $\overline{e}$ aus $\overline{\setQ(b,c)}$, sodass $d$ algebraisch über $\overline{\setQ(a)},\overline{e}$ ist.\\\\
     Mit diesen Techniken ist es jetzt möglich, die Stabilität unserer Theorie zu beweisen.
     \newpage
@@ -379,7 +379,7 @@
     	Betrachte die Menge der Typen in einem Modell $(K,E_K)$ über einer vorgegebenen Menge $S\subseteq K$ und wähle als Sprache $\lfc$, zunächst sei $S$ keine Teilmenge von $E_K$. Ohne Einschränkungen sei das Modell schon $\abs{S}^+$-saturiert und $S$ sogar $\lfc$-algebraisch abgeschlossen. Insbesondere ist $S$ Träger einer elementaren Unterstruktur, denn $\operatorname{ACP}^{\lfc}$ ist modellvollständig und $S$ ist Modell, da es keine Teilmenge von $E_K$ ist. Aus dem B\&F-System in Satz \ref{QE} geht hervor, dass es die folgenden Typen über $S$ gibt:
     	\begin{itemize}
     		\item Den Typ eines Elementes in $S$
-    		\item Die Typen eines Elementes $a$ in $\overline{SE_K}\setminus S$ (bestimmt durch die Größe eines minimalen Tupels $\overline{e}$ aus $E_K$, sodass $a$ in $\overline{S\overline{e}}$ ist, sowie durch den Isomorphietyp des Minimalpoynoms von $a$ über $S\overline{e}$)
+    		\item Die Typen eines Elementes $a$ in $\overline{SE_K}\setminus S$ (bestimmt durch die minimale Größe eines Tupels $\overline{e}$ aus $E_K$, sodass $a$ in $\overline{S\overline{e}}$ ist, sowie durch den Isomorphietyp des Minimalpoynoms von $a$ über $S\overline{e}$); TODO
     		\item Den Typ eines Elementes in $K\setminus\overline{SE_K}$
     	\end{itemize}
         Der erste Typ hat klarerweise Morleyrang 0. Im Fall des zweiten Typs für ein Element $a$ erhalten wir mit einem analogen Vorgehen zu oben eine Umformung des Minimalpolynoms von $a$ über $SE_K$. Damit ergibt sich der Morleyrang als die Mächtigkeit eines minimalen Tupels aus $E_K$, sodass $a$ algebraisch über $SE_K$ ist.\\

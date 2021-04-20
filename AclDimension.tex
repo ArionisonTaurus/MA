@@ -46,7 +46,7 @@ Im Folgenden werden einige Regeln für diese Art von Unabhängigkeit vorgestellt
 	Also sind $\overline{b}$ und $\overline{a}$ unabhängig über $C$.
 \end{proof}
 \newpage
-\begin{lemma}
+\begin{lemma}\label{Unabhängigkeit Teilmenge}
 	Es seien $A$ und $B$ unabhängig über $C$ und Teilmengen $A',B',C'$ von $M$, die die Bedingungen
 	\begin{align*}
 	A'\subseteq A&,\\B'\subseteq B\cup C&\text{ und}\\C\subseteq C'\subseteq B\cup C&\\
@@ -62,7 +62,7 @@ Im Folgenden werden einige Regeln für diese Art von Unabhängigkeit vorgestellt
 	Wenn $A$ und $B$ unabhängig über $C$ sind, dann sind $\acl(A)$ und $\acl(B)$ unabhängig über $C$.
 \end{lemma}
 \begin{proof}
-	Das ist eine direkte Konsequenz der Gleichheit $$\dim(\cdot/X)=\dim(\cdot/\acl(X)),$$ die wegen der Symmetrie auf beiden Seiten den Übergang auf die größere Menge ermöglicht.
+	Das ist eine direkte Konsequenz der Gleichheit $$\dim(\cdot/X)=\dim(\cdot/\acl(X)),$$ die wegen der Symmetrie auf beiden Seiten den Übergang auf die größere Menge ermöglicht. Dabei ist zu beachten, dass $\acl(A)\cup C\subseteq\acl(A\cup C)$ und $\acl(B)\cup C\subseteq\acl(B\cup C)$ gilt.
 \end{proof}
 
 \begin{lemma}
@@ -80,11 +80,11 @@ Im Folgenden werden einige Regeln für diese Art von Unabhängigkeit vorgestellt
 	Wegen der Unabhängigkeit von $A$ und $B$ über $C$ gilt $$\dim(\overline{a}/C)=\dim(\overline{a}/B\cup C)=\dim(\overline{a}/B\cup(C\cup X))\leq\dim(\overline{a}/C\cup X)\leq\dim(\overline{a}/C),$$ also ist $\overline{a}$ genau dann unabhängig über $C\cup X$, wenn es unabhängig über $B\cup(C\cup X)$ ist und zusammen mit der oberen Äquivalenz ist die Unabhängigkeit gezeigt.
 \end{proof}
 
-\begin{lemma}
+\begin{lemma}\label{Unabhängigkeit Schnitt}
 	Wenn $A$ und $B$ unabhängig über $C$ sind, gilt die Inklusion $$A\cap B\subseteq\acl(C).$$
 \end{lemma}
 \begin{proof}
 	Es sei $a\in A\cap B$ beliebig. Offenkundig ist $a$ algebraisch über $B$ und daher gilt $$0=\dim(a/B\cup C)=\dim(a/C),$$ also ist $a$ in $\acl(C)$.
 \end{proof}
 
-Die hier entwickelte Unabhängigkeit wird in den folgenden zwei Kapiteln auf zwei Arten von $\acl$-Matroiden angewendet. Einerseits im ersten Kapitel auf die streng minimale Theorie ACF und andererseits im zweiten Kapitel auf gewisse o-minimale Theorien, die ebenso die Austauscheigenschaft erfüllen. Aber zunächst wird noch ein weiterer Begriff eingeführt werden, der sehr ähnlich aussieht, aber modelltheoretisch nicht so gut zu begreifen ist. Dies ist der Begriff der linearen Disjunktheit, der im Umgang viel lineare Algebra benutzt. Da in den Theorien der Vektorräume die Skalarmultiplikation jeweils Teil der Sprache ist, kann man modelltheoretisch nicht ganz so gut zwischen verschiedenen Dimensionsfunktionen hin- und herspringen. Darum kommt im Folgenden erst einmal ein großes Stück (lineare) Algebra.
+Die hier entwickelte Unabhängigkeit wird in den folgenden zwei Kapiteln auf zwei Arten von $\acl$-Matroiden angewendet. Einerseits im ersten Kapitel auf die streng minimale Theorie ACF und andererseits im zweiten Kapitel auf gewisse o-minimale Theorien, die ebenso die Austauscheigenschaft erfüllen. Aber zunächst wird noch ein weiterer Begriff eingeführt werden, der sehr ähnlich aussieht, aber modelltheoretisch nicht so gut zu begreifen ist. Dies ist der Begriff der linearen Disjunktheit, der im Umgang viel lineare Algebra benutzt. Da in den Theorien der Vektorräume die Skalarmultiplikation jeweils Teil der Sprache ist, kann man modelltheoretisch nicht ganz so gut zwischen verschiedenen Dimensionsfunktionen hin- und herspringen. Darum kommt im Folgenden nach einer Aufzählung der wichtigsten Erkenntnisse aus der Stabilitätstheorie erst einmal ein großes Stück (lineare) Algebra.
