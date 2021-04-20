@@ -242,7 +242,7 @@ Das eben aufgestellte B\&F-System beweist die Formelreduzierung in $\td$.
 \end{proof}
 
 \begin{corollary}\label{Definierbarkeit aus A}
-	Für ein dichtes Paar $(B,A)$ und $S\subseteq B^n$ eine $\lingua^P_{A_0}$-definierbare Menge (wobei $A_0\subseteq A$) ist $S\cap A^n$ eine $\lingua_{A_0}$-definierbare Teilmenge von $A$.
+	Für ein echtes dichtes Paar $(B,A)$ und $S\subseteq B^n$ eine $\lingua^P_{A_0}$-definierbare Menge (wobei $A_0\subseteq A$) ist $S\cap A^n$ eine $\lingua_{A_0}$-definierbare Teilmenge von $A$.
 \end{corollary}
 \begin{proof}
 	Nach der Formelreduzierung sei $S$ ohne Einschränkungen durch eine gute Formel definiert. Da Definierbarkeit abgeschlossen unter booleschen Kombinationen ist, reicht es, eine Formel in Reinform zu betrachten.\\
@@ -309,11 +309,11 @@ Wir interessieren uns für die Gestalt von $\lingua^P$-definierbaren Teilmengen 
 \end{proof}
 \newpage
 \begin{theorem}\label{Definierbare Mengen}
-	Für ein dichtes Paar $(B,A)$ und $Y\subseteq A^n$ ist folgendes äquivalent:
+	Für ein echtes dichtes Paar $(B,A)$ und eine Menge $Y\subseteq A^n$ ist folgendes äquivalent:
 	\begin{enumerate}
-		\item $Y$ ist $\lingua^P$-definierbar.
-		\item Es existiert ein $\lingua$-definierbares $Z\subseteq B^n$, sodass $Y=Z\cap A^n$.
-		\item $Y$ ist definierbar in $(A,(R_b)_{b\in B})$ mit der Interpretation $A\models R_b(a)$ genau dann, wenn $0<a<b$ in $B$.
+		\item Die Menge $Y$ ist $\lingua^P$-definierbar.
+		\item Es existiert eine $\lingua$-definierbare Teilmenge $Z\subseteq B^n$ so, dass $Y=Z\cap A^n$.
+		\item Die Menge $Y$ ist definierbar in $(A,(R_b)_{b\in B})$ mit der Interpretation $A\models R_b(a)$ genau dann, wenn $0<a<b$ in $B$.
 	\end{enumerate}
 \end{theorem}
 \begin{proof}
@@ -367,7 +367,7 @@ In diesem Abschnitt wird eine zur o-Minimalität ähnliche Charakterisierung von
 	Wir wollen jetzt herleiten, dass $\inn D$ leer sein muss. Seien dafür mit Definable Choice die $\lingua_S$-definierbaren Funktionen $f,g_1,g_2:D\rightarrow B$ gegeben mit $$f(y)\in(g_1(y),g_2(y))\subseteq U_y\cap\inn C.$$
 	Wenn $\inn D\neq\emptyset$, schränke $D$ ein, sodass es offen ist und $f,g_1,g_2$ stetig auf $D$ sind. Sei außerdem $d,e$ in $U_y\cap\inn C, (c,h)\subseteq U_y\cap\inn C$ (das ist offen), sodass $$c<g_1(y)<d<f(y)<e<g_2(y)<h.$$ Setze $$V:=g_1^{-1}((c,d))\cap f^{-1}((d,e))\cap g_2^{-1}((e,h)),$$ das ist dann eine offene Umgebung um $y$ in $B^n$. Für alle $z$ aus $V$ ist $$f(y)\in(d,e)\subseteq(g_1(z),g_2(z))\subseteq U_z,$$ also ist $z$ in $Y_{f(y)}$.\newpage
 	Das heißt, es gilt $V\subseteq Y_{f(y)}$; aber das ist unmöglich, weil $V$ offen in dem (eingeschränkten) Definitionsbereich, also auch in $B^n$ ist und $Y_{f(y)}$ nichtleeres Inneres hätte. Dann läge $f(y)$ nicht in $C$ im Widerspruch zur Definition von $f$.\\
-	$D$ hat als Menge ohne Inneres eine kleinere Dimension als $n$. Also ist induktiv auch $$\bigcup\limits_{y\in D\cap A^n}U_y$$ $S$-definierbar in $B$. Es ist außerdem
+	Die Menge $D$ hat als Menge ohne Inneres eine kleinere Dimension als $n$. Also ist induktiv auch $$\bigcup\limits_{y\in D\cap A^n}U_y$$ $S$-definierbar in $B$. Es ist außerdem
 	\begin{align}\label{align 1}
 	\bigcup\limits_{y\in (Y\setminus D)\cap A^n}U_y\cup((C\setminus\inn C)\cap\bigcup\limits_{y\in Y\setminus D}U_y)=\bigcup\limits_{y\in Y\setminus D}U_y.
 	\end{align}
@@ -383,7 +383,7 @@ In diesem Abschnitt wird eine zur o-Minimalität ähnliche Charakterisierung von
 	\begin{align*}
 	X&=\left(\exists y\in P(\psi(x,y))\right)(B,A)=\bigcup\limits_{y\in A^n}\psi(B,y)=\bigcup\limits_{y\in Y\cap A^n}\psi(B,y)\\&=\bigcup\limits_{y\in Y\cap A^n}(\psi(B,y)\cap \partial\psi(B,y))\cup\bigcup\limits_{y\in Y\cap A^n}\inn\psi(B,y)\\&=\bigcup\limits_{y\in Y'\cap A^n}\{g_1(y),\dots,g_k(y)\}\cup\bigcup\limits_{y\in Y\cap A^n}\inn\psi(B,y)\\&=\bigcup\limits_{i=1}^kg_i(Y'\cap A^n)\cup \bigcup\limits_{y\in Y\cap A^n}\inn\psi(B,y).
 	\end{align*}
-	Da $X':=\bigcup\limits_{i=1}^kg_i(Y'\cap A^n)$ klein ist und $S'':=\bigcup\limits_{y\in Y\cap A^n}\inn\psi(B,y)$ nach dem letzten Lemma $\lingua_S$-definierbar, stimmen $X$ und $X'$ bis auf die kleine $\lingua^P_S$-definierbare Menge $S''$ überein. Da Darstellungen $$\glqq{}(X\setminus  S')\cup S'',X\ \lingua_S\text{-definierbar, }S',S''\text{ klein, }\lingua^P_S\text{-definierbar}\grqq{}$$ unter booleschen Kombinationen erhalten bleiben (Zur Erinnerung: Kleine Mengen bilden ein Ideal), folgt die Aussage für gute Formeln und daher für alle Mengen. Dabei ist zu beachten, dass Satz \ref{Formelreduzierung} auch hergibt, dass $\lingua^P_S$-Formeln zu guten $\lingua^P_S$-Formeln äquivalent sind.
+	Da $X':=\bigcup\limits_{i=1}^kg_i(Y'\cap A^n)$ klein ist und $S'':=\bigcup\limits_{y\in Y\cap A^n}\inn\psi(B,y)$ nach dem letzten Lemma $\lingua_S$-definierbar, stimmen $X$ und $X'$ bis auf die kleine $\lingua^P_S$-definierbare Menge $S''$ überein. Da Darstellungen $$(X\setminus  S')\cup S''$$ für eine $\lingua_S$-definierbare Menge $X\subseteq B$, und kleine $\lingua^P_S$-definierbare $S',S''$ unter booleschen Kombinationen erhalten bleiben (Zur Erinnerung: Kleine Mengen bilden ein Ideal), folgt die Aussage für gute Formeln und daher für alle Mengen. Dabei ist zu beachten, dass Satz \ref{Formelreduzierung} auch hergibt, dass $\lingua^P_S$-Formeln zu guten $\lingua^P_S$-Formeln äquivalent sind.
 \end{proof}
 \newpage
 \begin{lemma}
@@ -402,9 +402,9 @@ In diesem Abschnitt wird eine zur o-Minimalität ähnliche Charakterisierung von
 \begin{theorem}\label{Satz 4}
 	Sei $X\subseteq B$ eine $\lingua^P_S$-definierbare Menge. Dann existiert eine endliche $\lingua_S$-definierbare Unterteilung von $B$, sodass für jedes dadurch erzeugte offene Intervall $I$ genau einer der folgenden Fälle gilt:
 	\begin{itemize}
-		\item $I$ ist disjunkt zu $X$.
-		\item $I$ ist Teilmenge von $X$.
-		\item $X\cap I$ ist dicht \& kodicht in $I$ und entweder ist $X\cap I$ klein oder $I\setminus X$.
+		\item Das Intervall $I$ ist disjunkt zu $X$.
+		\item Das Intervall $I$ ist Teilmenge von $X$.
+		\item Die Menge $X\cap I$ ist dicht \& kodicht in $I$ und entweder ist $X\cap I$ klein oder $I\setminus X$.
 	\end{itemize}
 	Für kleine $X$ entfallen die Fälle \glqq{}Teilmenge\grqq{} und \glqq{}koklein\grqq{}.
 \end{theorem}
@@ -417,7 +417,7 @@ In diesem Abschnitt wird eine zur o-Minimalität ähnliche Charakterisierung von
 		\item $Y\cup Z$ dicht in $I$, wenn $Y$ und $Z$ dicht in $I$
 		\item $Y\cup Z$ kodicht in $I$ als kleine Menge (s. Begr. oben)
 	\end{itemize}
-    Also gilt mit dem letzten Lemma die Aussage für kleine Mengen allgemein.\newpage
+    Daher gilt mit dem letzten Lemma die Aussage für kleine Mengen allgemein.\newpage
 	Sei jetzt $X$ nicht mehr klein, dann stimmt es aber bis auf eine kleine Menge mit einer $\lingua$-definierbaren Menge $X'$ überein. Schreibe also $X=(X'\cup Y)\setminus Z$ für $Y$ und $Z$ klein und disjunkt. $X'$ ist als $\lingua$-definierbare Menge eine endliche Vereinigung von Punkten und Intervallen; da $Y,Z$  als kleine Mengen die oben beschriebene Gestalt haben, entspricht $X'\cup Y$ der Darstellung ohne den Fall koklein. In der Darstellung der drei Fälle wird der erste durch Subtraktion von $Z$ nicht geändert, der zweite bleibt oder wird zum dritten (2. Teil) und der dritte bleibt auch, da er nur von $Y$ kommt, aber $Y$ und $Z$ disjunkt sind. Also hat $X$ auch so eine Darstellung.
 \end{proof}
 
