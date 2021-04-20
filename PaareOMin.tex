@@ -246,7 +246,7 @@ Das eben aufgestellte B\&F-System beweist die Formelreduzierung in $\td$.
 \end{corollary}
 \begin{proof}
 	Nach der Formelreduzierung sei $S$ ohne Einschränkungen durch eine gute Formel definiert. Da Definierbarkeit abgeschlossen unter booleschen Kombinationen ist, reicht es, eine Formel in Reinform zu betrachten.\\
-	Für jede $\lingua_{A_0}$-Formel $\varphi(x,y,a')$ und jedes $a$ in $A^n$ sind die Aussagen $$\glqq{}\text{Es existiert ein }y\text{ in }A^m\text{ mit }(B,A)\models\varphi(a,y,a')\grqq{},$$ $$\glqq{}\text{Es existiert ein }y\text{ in }A^m\text{ mit }B\models\varphi(a,y,a')\grqq{},$$ $$\glqq{}\text{Es existiert ein }y\text{ in }A^m\text{ mit }A\models\varphi(a,y,a')\grqq{}$$ äquivalent wegen $\varphi$ als $\lingua$-Formel und $A\prec B$. Es folgt, dass $$(\exists y\in P(\varphi(x,y,a')))(B)\cap A^n=(\exists y(\varphi(x,y,a')))(A).$$
+	Für jede $\lingua_{A_0}$-Formel $\varphi(x,y,a')$ und jedes $a$ in $A^n$ sind die Aussagen $$\glqq{}\text{Es existiert ein }y\text{ in }A^m\text{ mit }(B,A)\models\varphi(a,y,a')\grqq{},$$ $$\glqq{}\text{Es existiert ein }y\text{ in }A^m\text{ mit }B\models\varphi(a,y,a')\grqq{},$$ $$\glqq{}\text{Es existiert ein }y\text{ in }A^m\text{ mit }A\models\varphi(a,y,a')\grqq{}$$ äquivalent wegen $\varphi$ als $\lingua$-Formel und $A\preceq B$. Es folgt, dass $$(\exists y\in P(\varphi(x,y,a')))(B)\cap A^n=(\exists y(\varphi(x,y,a')))(A).$$
 \end{proof}
 \newpage
 \section{Folgen der Existenz des B\&F-Systems}
@@ -412,10 +412,10 @@ In diesem Abschnitt wird eine zur o-Minimalität ähnliche Charakterisierung von
 	Sei $X$ zunächst klein und gegeben als $X=f(A^n\cap E)$ für ein stetiges, $\lingua_S$-definierbares $f:E\rightarrow B$ und eine offene $\lingua_S$-definierbare Zelle $E\subseteq B^n$. Da definierbarer Zusammenhang unter definierbaren stetigen Funktionen erhalten bleibt, ist $I:=f(E)$ auch definierbar zusammenhängend, weil es $\lingua_S$-definierbar ist, ist es Vereinigung von Intervallen und Punkten, also muss es ein Intervall (ausnahmsweise seien hier auch nichtoffene Intervalle mitgemeint). Wenn $I$ endlich ist, ist auch $X$ endlich und es ist nichts zu zeigen. $X$ ist disjunkt zu $B\setminus I$, nun muss nur noch gezeigt werden, dass $X=X\cap I$ dicht und kodicht in $I$ ist. Der Satz verlangt eigentlich Dichte und Kodichte in einem offenen Intervall, allerdings ist Dichte und Kodichte in nichtoffenen unendlichen Intervallen äquivalent zu Dichte und Kodichte in deren Innerem. Aber dichte Teilmengen werden durch stetige Abbildungen auf dichte Teilmengen abgebildet; da $A^n$ dicht in $B^n$ ist, ist auch $A^n\cap E$ dicht in $E$ und folglich $X$ dicht in $I$. Andererseits muss auch das Komplement von $X$ dicht in $I$ sein, da es sonst ein Intervall ganz in $X$ gäbe, was der Kleinheit mit Satz \ref{Kleinheit} widerspricht.\\
 	Die gesuchte Eigenschaft für kleine Mengen bleibt unter Vereinigungen erhalten. Man muss nur eine Verfeinerung der Unterteilung durchführen und dann ausnutzen, dass endliche Vereinigungen von kleinen Mengen klein sind. Also gilt für $Y$ und $Z$ als kleine Teilmengen eines Intervalls $I$:
 	\begin{itemize}
-		\item $Y\cup Z$ klein
-		\item $Y\cup Z=Y$, wenn $Z=\emptyset$
-		\item $Y\cup Z$ dicht in $I$, wenn $Y$ und $Z$ dicht in $I$
-		\item $Y\cup Z$ kodicht in $I$ als kleine Menge (s. Begr. oben)
+		\item Die Vereinigung $Y\cup Z$ ist klein.
+		\item Es ist $Y\cup Z=Y$, sofern $Z$ leer ist.
+		\item Die Menge $Y\cup Z$ ist dicht in $I$, wenn $Y$ und $Z$ dicht in $I$ sind.
+		\item Die Vereinigung $Y\cup Z$ ist kodicht in $I$ als kleine Menge (s. Begr. oben).
 	\end{itemize}
     Daher gilt mit dem letzten Lemma die Aussage für kleine Mengen allgemein.\newpage
 	Sei jetzt $X$ nicht mehr klein, dann stimmt es aber bis auf eine kleine Menge mit einer $\lingua$-definierbaren Menge $X'$ überein. Schreibe also $X=(X'\cup Y)\setminus Z$ für $Y$ und $Z$ klein und disjunkt. $X'$ ist als $\lingua$-definierbare Menge eine endliche Vereinigung von Punkten und Intervallen; da $Y,Z$  als kleine Mengen die oben beschriebene Gestalt haben, entspricht $X'\cup Y$ der Darstellung ohne den Fall koklein. In der Darstellung der drei Fälle wird der erste durch Subtraktion von $Z$ nicht geändert, der zweite bleibt oder wird zum dritten (2. Teil) und der dritte bleibt auch, da er nur von $Y$ kommt, aber $Y$ und $Z$ disjunkt sind. Also hat $X$ auch so eine Darstellung.
@@ -429,7 +429,7 @@ In diesem Abschnitt wird eine zur o-Minimalität ähnliche Charakterisierung von
 	$\td$ eliminiert $\exists^\infty$: Wenn $S\subseteq B^{m+n}$ eine $\lingua^P$-definierbare Menge ist mit $S_x$ endlich für alle $x$ aus $B^m$, dann ist $(\abs{S_x})_{x\in B^m}$ beschränkt.
 \end{lemma}
 \begin{proof}
-	Für $n=1$ gilt das nach Bemerkung 5.33. aus \cite{Lukas}. Denn $S_x$ ist endlich, genau dann, wenn $S_x$ diskret in $B$ ist; und das ist uniform $\lingua^P$-ausdrückbar. Die Äquivalenz zur Diskretheit sieht man ein, indem man eine Aufteilung von $S_x$ wie im letzten Satz vornimmt. Dann ist $S_x$ genau dann endlich, wenn nur der Fall $\glqq{}S_x\cap I=\emptyset\grqq{}$ vorkommt; weil dichte Teilmengen und Intervalle nicht diskret sind, gilt das wiederum genau dann, wenn $S_x$ diskret ist.\\
+	Für $n=1$ gilt das nach Bemerkung 5.33. aus \cite{Lukas}. Denn $S_x$ ist genau dann endlich, wenn $S_x$ diskret in $B$ ist. Das ist uniform $\lingua^P$-ausdrückbar. Die Äquivalenz zur Diskretheit sieht man ein, indem man eine Aufteilung von $S_x$ wie im letzten Satz vornimmt. Dann ist $S_x$ genau dann endlich, wenn nur der Fall $\glqq{}S_x\cap I=\emptyset\grqq{}$ vorkommt; weil dichte Teilmengen und Intervalle nicht diskret sind, gilt das genau dann wiederum, wenn $S_x$ diskret ist.\\
 	Sei $n>1$. Dann sind für $\pi_{i_1,\dots,i_k}$ als Projektionsabbildung auf die Koordinaten $i_1,\dots,i_k$ jeweils auch $$Y_x:=(\pi_{1,\dots,m+1}(S))_x=\pi_{m+1}(S_x)$$ und $$Z_x:=(\pi_{1,\dots,m,m+2,\dots,m+n}(S))_x=\pi_{m+2,\dots,m+n}(S_x)$$ endlich und daher ist nach Induktionsvoraussetzung die Mächtigkeit jeweils uniform beschränkt durch irgendwelche natürlichen Zahlen $K,L$. Dann gilt aber $$\abs{S_x}\leq \abs{Y_x\times Z_x}=\abs{Y_x}\abs{Z_x},$$ was uniform durch $KL$ beschränkt ist.
 \end{proof}
 \newpage
@@ -437,7 +437,7 @@ In diesem Abschnitt wird eine zur o-Minimalität ähnliche Charakterisierung von
 Um definierbare Funktionen besser zu verstehen, ist es notwendig, sich mit dem definierbaren Abschluss in $\lingua^P$ zu beschäftigen. Damit kann man zeigen, dass definierbare Funktionen in einer Variablen \glqq{}fast überall\grqq{} $\lingua$-definierbar sind. Wir erinnern uns, dass ein dichtes Paar $(B,A)$ fixiert war und $S\subseteq B$ speziell. Mit \glqq{}definierbar abgeschlossen\grqq{} ist im Folgenden \glqq{}$\lingua^P$-definierbar abgeschlossen\grqq{} gemeint. Zuerst kommen zwei einfach zu beweisende Aussagen, um sie dann stark zu verallgemeinern und daraus Wissen über Funktionen zu erhalten.
 
 \begin{lemma}\label{A definierbar abgeschl}
-	$A$ ist definierbar abgeschlossen.
+	Die Menge $A$ ist definierbar abgeschlossen.
 \end{lemma}
 \begin{proof}
 	Sei $b$ in $B\setminus A$ und $(B,A)\preceq(D,C)$ eine genügend saturierte Elementarerweiterung. Dann wird der Ordnungstyp von $b$ über $A$ auch von einem Element $d\neq b$ in $D\setminus C$ realisiert wegen Dichtheit von $D\setminus C$ in $D$ und Saturation.\\
@@ -445,7 +445,7 @@ Um definierbare Funktionen besser zu verstehen, ist es notwendig, sich mit dem d
 \end{proof}
 
 \begin{corollary}
-	Sei $A_0\preceq A$. Dann ist $A_0$ definierbar abgeschlossen.
+	Sei $A_0\preceq A$ in der Sprache $\lingua$. Dann ist $A_0$ definierbar abgeschlossen.
 \end{corollary}
 \begin{proof}
 	Sei $b$ definierbar über $A_0$. Dann ist $b$ insbesondere definierbar über $A$, also in $A$. Nach Folgerung \ref{Definierbarkeit aus A} ist dann $\{b\}=\{b\}\cap A$ schon $\lingua$-definierbar in $A$ über $A_0$, also in $A_0$, da $A_0$ elementare Substruktur ist.
