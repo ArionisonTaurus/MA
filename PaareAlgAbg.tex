@@ -1,12 +1,13 @@
 %!TEX root = DieLoesungAllerMilleniumsprobleme.tex
 	\chapter{Paare algebraisch abgeschlossener Körper}
-	Der hier vorgestellte Beweis stammt ursprünglich aus einem Werk (\cite{Robinson}) von Robinson, dem es in erster Linie um die Vollständigkeit und Entscheidbarkeit dieser Theorie ging. In diesem Werk soll es aber vorwiegend um Stabilität und eine gewisse Form der Formelreduktion gehen.
+	Der hier vorgestellte Beweis stammt ursprünglich aus einem Werk (\cite{Robinson}) von Robinson, dem es in erster Linie um die von Tarski aufgeworfene Farge nach der Vollständigkeit und Entscheidbarkeit der Theorie der echten Paare algebraisch abgeschlossener Körper ging. Später beschäftigte sich auch Keisler in \cite{Keisler} mit solchen Paaren, wobei dort der kleinere Körper nicht unbedingt algebraisch abgeschlossen sein musste.\\
+	In diesem Werk soll es aber vorwiegend um Stabilität und eine gewisse Form der Formelreduktion gehen.
 	
-	\section{Modelltheoretische Grundlagen}
-	Im Folgenden werden einige Aussagen über abzählbare und vollständige Theorien T in einer Sprache $\lingua$ aufgezählt, die die Grundlage für die Stabilitätstheorie bilden. Als Quelle soll dabei \cite{Marker} dienen. Diese Erkenntnisse werden wichtig werden, um die $\omega$-Stabilität der Paare algebraisch abgeschlossener Körper zu zeigen.
+	\section{Grundlagen der Stabilitätstheorie}
+	Im Folgenden werden einige Aussagen über abzählbare und vollständige Theorien T in einer Sprache $\lingua$ aufgezählt, die die Grundlage für die Stabilitätstheorie bilden. Als Quelle soll dabei \cite{Marker} dienen. Diese Erkenntnisse werden wichtig werden, um die $\omega$-Stabilität der Theorie der echten Paare algebraisch abgeschlossener Körper zu zeigen.
 	
 	\begin{definition}
-		Sei $\fM$ ein $\aleph_0$-saturiertes Modell von T und $X$ eine beliebige $\lingua_M$-definierbare Menge in $M^n$. Der \textbf{Morleyrang} $\RM^\fM(X)$ von $X$ in $\fM$ sei dann induktiv definiert
+		Sei $\fM$ ein $\aleph_0$-saturiertes Modell von T und $X$ eine beliebige\linebreak $\lingua_M$-definierbare Menge in $M^n$. Der \textbf{Morleyrang} $\RM^\fM(X)$ von $X$ in $\fM$ sei dann induktiv definiert
 		\begin{itemize}
 			\item durch $-1$ genau dann, wenn $X$ leer ist
 			\item durch $0$ genau dann, wenn $X$ endlich und nichtleer ist
@@ -44,7 +45,7 @@
 	\end{fact}
 	
 	\begin{fact}
-		Sei $\fM$ ein Modell und $S\subseteq M$, außerdem $F$ eine konsistente und unter Konjunktion abgeschlossene Menge von $\lingua_S$-Formeln in $n$ freien Variablen, die eine Formel mit definiertem Morleyrang enthält. Dann gibt es für jede hinreichend große Obermenge $S'$ von $S$ genau $\DM(F)$ Fortsetzungen von $F$ zu einem Typen über $S'$ mit Morleyrang $\RM(F)$ (die Definition von Rang und Grad werde entsprechend von Typen verallgemeinert).\\
+		Sei $\fM$ ein Modell und eine Teilmenge $S\subseteq M$, außerdem $F$ eine konsistente und unter Konjunktion abgeschlossene Menge von $\lingua_S$-Formeln in $n$ freien Variablen, die eine Formel mit definiertem Morleyrang enthält. Dann gibt es für jede hinreichend große Obermenge $S'$ von $S$ genau $\DM(F)$ Fortsetzungen von $F$ zu einem Typen über $S'$ mit Morleyrang $\RM(F)$ (die Definition von Rang und Grad werde entsprechend von Typen verallgemeinert).\\
 		Wenn der Morleygrad Eins ist, nenne den partiellen Typen \textbf{stationär}. 
 	\end{fact}
 	
@@ -74,7 +75,7 @@
     		Wir bezeichnen es dennoch anders, um Verwirrung zu vermeiden. Wenn nämlich alle betrachteten Mengen schon Körper sind und die beiden Mengen, zwischen denen Unabhängigkeit gilt, schon Obermengen der dritten sind, kann man etwas weitergehende Eigenschaften feststellen, die im Normalfall so nicht gelten.
     		\item Es reicht, lineare Disjunktheit für eine Basis zu zeigen. Denn wenn man die lineare Unabhängigkeit über $L$ für eine Basis verliert, verliert man sie per $C$-Basiswechsel auch für alle anderen.
     		\item Es reicht, die Erhaltung der linearen/algebraischen Unabhängigkeit nur für beliebige endliche Mengen zu prüfen. Denn lineare/algebraische Unabhängigkeit einer Menge besteht genau dann, wenn sie für alle endlichen Teilmengen gilt.
-    		\item Der Körper $M$ kommt in der Definition nur vor, damit die Rechenoperationen zwischen $K$ und $L$ wohldefiniert sind. Die genaue Wahl ist irrelevant und daher nicht in der Notation berücksichtigt. Wir nehmen für die Zukunft einfach an, dass die Multiplikation klar definiert ist. Es wird sich sowieso herausstellen, dass im Fall $K\ld_CL$ die Operationen eindeutig bestimmt sind.
+    		\item Der Körper $M$ kommt in der Definition nur vor, damit die Rechenoperationen zwischen $K$ und $L$ wohldefiniert sind. Die genaue Wahl ist irrelevant und daher nicht in der Notation berücksichtigt. Wir nehmen für die Zukunft einfach an, dass die Multiplikation klar definiert ist. Es wird sich ohnehin herausstellen, dass im Fall $K\ld_CL$ die Operationen eindeutig bestimmt sind.
     	\end{itemize}
     \end{remark}
     
@@ -94,7 +95,7 @@
     \end{lemma}
     \begin{proof}
     	Die Hinrichtung folgt leicht aus $R\subseteq\operatorname{Frac}(R),S\subseteq\operatorname{Frac}(S)$. Für die Rückrichtung seien $r_1x_1^{-1},\dots,r_nx_n^{-1}$ in $\operatorname{Frac}(R)$ linear unabhängig über $C$, aber linear abhängig über $\operatorname{Frac}(S)$ mit nichttrivialer Linearkombination $$(s_1y_1^{-1})r_1x_1^{-1},\dots,(s_ny_n^{-1})r_nx_n^{-1}=0,$$ wobei alle $s_iy_i^{-1}$ aus $\operatorname{Frac}(S)$ seien.\\
-    	Durch Multiplikation mit $\prod\limits_{i=1}^nx_iy_i\neq0$ erhält man die Gleichung $$0=\sum\limits_{j=1}^n(\prod\limits_{i\neq j}x_i)r_j(\prod\limits_{i\neq j}y_i)s_j.$$ Diese bezeugt die lineare Abhängigkeit über $S$ der Elemente $((\prod\limits_{i\neq j}x_i)r_j)_{1,\dots,n}$ in $R$, die über $C$ unabhängig sind.
+    	Durch Multiplikation mit $\prod\limits_{i=1}^nx_iy_i\neq0$ erhält man die Gleichung $$0=\sum\limits_{j=1}^n(\prod\limits_{i\neq j}x_i)r_j(\prod\limits_{i\neq j}y_i)s_j.$$ Diese bezeugt die lineare Abhängigkeit über $S$ der Elemente $((\prod\limits_{i\neq j}x_i)r_j)_{1,\dots,n}$ in $R$, die über $C$ unabhängig sind, denn die lineare Unabhängigkeit eines Tupels bleibt bei Multiplikation mit einem Nichtnull-Element erhalten.
     \end{proof}
     
     \begin{remark}
@@ -104,7 +105,7 @@
     Das folgende Lemma sagt insbesondere aus, dass lineare Disjunktheit symmetrisch ist. Noch viel wichtiger ist aber die Aussage über die Struktur der zueinander als Ringe adjungierten Körper.
     
     \begin{lemma}\label{Tensoren}
-    	Für Körper $C,K,L$ wie oben gilt $K\ld_CL$ genau dann, wenn $$K[L]=L[K]\cong K\otimes_CL$$ mit kanonischem Isomorphismus.
+    	Für Körper $C,K,L$ wie oben gilt $K\ld_CL$ genau dann, wenn eine Isomorphie $$K[L]=L[K]\cong K\otimes_CL$$ mit dem kanonischem Isomorphismus besteht.
     \end{lemma}
     \begin{proof}
     	Der aufgespannte Ring erfüllt $$K[L]=\{\sum\limits_{(k,l)\in X}kl\mid X\subseteq K\times L\text{ endlich}\}=L[K].$$
@@ -115,7 +116,7 @@
     
     \begin{corollary}\label{Isomorphismen linear disjunkt}
     	Seien im Folgenden die Körper $C,K,L,C',K',L'$ gegeben, sodass $K$ und $L$ linear disjunkt über $C$ sind sowie $K'$ und $L'$ über $C'$. Es existiere ein Isomorphismus $C\cong C'$, der eine Fortsetzung auf $\varphi_1:K\cong K'$ und eine andere auf $\varphi_2:L\cong L'$ habe. Dann gibt es eine \glqq{}fusionierte\grqq{} Fortsetzung auf $K[L]\cong K'[L']$, denn die zwei Fortsetzungen induzieren einen Isomorphismus $$K\otimes_CL\cong K'\otimes_C'L',$$ durch die Abbildungsvorschrift $$k\otimes l\mapsto\varphi_1(k)\otimes\varphi_2(l).$$
-    	Dieser setzt die vorigen Abbildungen von den Teilkörpern $$K\cong K\otimes_C1,L\cong1\otimes_CL,C\cong C\otimes_C1=1\otimes_CC$$ fort.\\
+    	Dieser setzt die vorigen Abbildungen von den Teilkörpern $$K\cong K\otimes_C1,L\cong1\otimes_CL\text{ und }C\cong C\otimes_C1=1\otimes_CC$$ fort.\\
     	Insbesondere gibt es auch nur eine Möglichkeit, die Verknüpfung von Elementen aus linear disjunkten Körpern zu definieren (was wir zu Beginn dieses Kapitels schon ohne Beweis erwähnt hatten).
     \end{corollary}
     \newpage
@@ -197,8 +198,8 @@
     \end{remark}
 
     \newpage
-    \section{Paare algebraisch abgeschlossener Körper}
-    Wir wollen Paare $(K,E_K)$ von Körpern betrachten, wobei $E_K\subseteq K$ ist. Diese lassen sich in einer Sprache $\lfc$ axiomatisieren, die die lineare Algebra der Körpererweiterung beschreibt, dort haben echte Paare (d.h. $K\neq E_K$) algebraisch abgeschlossener Körper mit fixierter Charakteristik sogar Quantoren\-elimination und sind vollständig. In einer kleineren Sprache $\lld$ ist diese Theorie immerhin noch modellvollständig. Diese Sprachen und einige der Folgerungen für ihre Strukturen wollen wir hier (angelehnt an \cite{Delon}) einführen. TODO: Keisler
+    \section{Die Theorien ACP}
+    Wir wollen Paare $(K,E_K)$ von Körpern betrachten, wobei $E_K\subseteq K$ ist. Diese lassen sich in einer Sprache $\lfc$ axiomatisieren, die die lineare Algebra der Körpererweiterung beschreibt, dort haben echte Paare (d.h. $K\neq E_K$) algebraisch abgeschlossener Körper mit fixierter Charakteristik sogar Quantoren\-elimination und sind vollständig. In einer kleineren Sprache $\lld$ ist diese Theorie immerhin noch modellvollständig. Diese Sprachen und einige der Folgerungen für ihre Strukturen wollen wir hier (angelehnt an \cite{Delon}) einführen.
     
     \begin{definition}
     	Wir definieren die Sprachen $\lld:=\{0,1,+,-,\cdot,(l_n)_{n\geq2}\},\lf:=\lld\cup\{f_{i,n}\mid n\geq2,1\leq i\leq n\}$ und $\lfc:=\lf\cup\{^{-1}\}$, wobei die $(l_n)_n$ $n$-stellige Relationen sein sollen und die $(f_{i,n})_{i,n}$ $n+1$-stellige Funktionen.

@@ -178,7 +178,7 @@ In diesem Kontext wird wieder die $\acl$-Unabhängigkeit in einem Modell von T r
 	\begin{enumerate}
 		\item Wenn $A$ und $B$ unabhängig über $C$ sind, sind $B$ und $A$ unabhängig über $C$ und $A\cap B\subseteq\acl(C)$ (in fast allen betrachteten Fällen wird sowieso $A,B\supseteq C$ und $C=\acl(C)$ gelten, sodass dann Gleichheit herrscht).
 		\item Wenn $A$ und $B$ unabhängig über $C$ sind und $S\subseteq B$, dann sind auch $A\cup S$ und $B$ unabhängig über $C\cup S$.
-		\item Wenn $A$ und $B$ unabhängig über $C$ sind, $$A\subseteq S\subseteq\acl(A),B\subseteq S'\subseteq\acl(B),C\subseteq S''\subseteq\acl(C),$$ dann sind $S$ und $S'$ unabhängig über $S''$.
+		\item Wenn $A$ und $B$ unabhängig über $C$ sind, wobei außerdem $C\subseteq A,B$ gilt und $$A\subseteq S\subseteq\acl(A),B\subseteq S'\subseteq\acl(B),C\subseteq S''\subseteq\acl(C),$$ dann sind $S$ und $S'$ unabhängig über $S''$.
 		\item Wenn $A$ und $B$ unabhängig über $C$ sind und $D$ (algebraisch) unabhängig über $ABC:=(AB)C$, dann sind $A\cup D$ und $B$ unabhängig über $C$.
 		\item Wenn $(D,C)\preceq(B,A)\models\tq$, dann sind $A$ und $D$ unabhängig über $C$.
 		\item Wenn $(D,C)\subseteq(B,A)\models\tq,\ S\subseteq A$ und $A$ und $D$ unabhängig über $C$ sind, dann sind $A$ und $DS$ unabhängig über $CS$, $\langle D\cup S\rangle_{\lingua^P}=(DS,CS)$ und $$(D,C)\subseteq(DS,CS)\subseteq(B,A).$$
@@ -241,13 +241,6 @@ Das eben aufgestellte B\&F-System beweist die Formelreduzierung in $\td$.
 	\end{proof2}
 \end{proof}
 
-\begin{corollary}\label{Definierbarkeit aus A}
-	Für ein echtes dichtes Paar $(B,A)$ und $S\subseteq B^n$ eine $\lingua^P_{A_0}$-definierbare Menge (wobei $A_0\subseteq A$) ist $S\cap A^n$ eine $\lingua_{A_0}$-definierbare Teilmenge von $A$.
-\end{corollary}
-\begin{proof}
-	Nach der Formelreduzierung sei $S$ ohne Einschränkungen durch eine gute Formel definiert. Da Definierbarkeit abgeschlossen unter booleschen Kombinationen ist, reicht es, eine Formel in Reinform zu betrachten.\\
-	Für jede $\lingua_{A_0}$-Formel $\varphi(x,y,a')$ und jedes $a$ in $A^n$ sind die Aussagen $$\glqq{}\text{Es existiert ein }y\text{ in }A^m\text{ mit }(B,A)\models\varphi(a,y,a')\grqq{},$$ $$\glqq{}\text{Es existiert ein }y\text{ in }A^m\text{ mit }B\models\varphi(a,y,a')\grqq{},$$ $$\glqq{}\text{Es existiert ein }y\text{ in }A^m\text{ mit }A\models\varphi(a,y,a')\grqq{}$$ äquivalent wegen $\varphi$ als $\lingua$-Formel und $A\preceq B$. Es folgt, dass $$(\exists y\in P(\varphi(x,y,a')))(B)\cap A^n=(\exists y(\varphi(x,y,a')))(A).$$
-\end{proof}
 \newpage
 \section{Folgen der Existenz des B\&F-Systems}
 Im Folgenden werden einige Anordnungen von wechselseitigen Inklusionen von Modellen von T betrachtet, in denen Gleichheit von bestimmten Typen folgt.
@@ -442,13 +435,6 @@ Um definierbare Funktionen besser zu verstehen, ist es notwendig, sich mit dem d
 \begin{proof}
 	Sei $b$ in $B\setminus A$ und $(B,A)\preceq(D,C)$ eine genügend saturierte Elementarerweiterung. Dann wird der Ordnungstyp von $b$ über $A$ auch von einem Element $d\neq b$ in $D\setminus C$ realisiert wegen Dichtheit von $D\setminus C$ in $D$ und Saturation.\\
 	Nach Lemma \ref{selber Schnitt} haben $b$ und $d$ dann den selben $\lingua^P$-Typen über $A$, weswegen $b$ nicht definierbar über $A$ in $(D,C)$ sein kann, also auch nicht in $(B,A)$.
-\end{proof}
-
-\begin{corollary}
-	Sei $A_0\preceq A$ in der Sprache $\lingua$. Dann ist $A_0$ definierbar abgeschlossen.
-\end{corollary}
-\begin{proof}
-	Sei $b$ definierbar über $A_0$. Dann ist $b$ insbesondere definierbar über $A$, also in $A$. Nach Folgerung \ref{Definierbarkeit aus A} ist dann $\{b\}=\{b\}\cap A$ schon $\lingua$-definierbar in $A$ über $A_0$, also in $A_0$, da $A_0$ elementare Substruktur ist.
 \end{proof}
 
 \begin{lemma}\label{Freie Definierbarkeit}

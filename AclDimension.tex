@@ -1,6 +1,6 @@
 %!TEX root = DieLoesungAllerMilleniumsprobleme.tex
 \chapter{Die Unabhängigkeit bezüglich $\acl$}\label{Kapitel 0}
-Im Folgenden werden wir einen wichtigen Begriff einführen, der im Weiteren hilfreich sein wird. Zuerst sei allgemein T eine $\lingua$-Theorie, die für den algebraischen Abschluss $\acl$ die Austauscheigenschaft erfüllt, außerdem sei $\fM$ ein Modell von $T$. In diesem Fall induziert $\acl$ dann einen Dimensionsbegriff $\dim$ auf $M$ und einen Unabhängigkeitsbegriff für eine Menge (nicht zu verwechseln mit dem hier entwickelten für zwei Mengen).
+Im Folgenden werden wir einen wichtigen Begriff einführen, der im Weiteren hilfreich sein wird. Zuerst sei allgemein T eine $\lingua$-Theorie, die für den algebraischen Abschluss $\acl$ die Austauscheigenschaft erfüllt, außerdem sei $\fM$ ein Modell von $T$. In diesem Fall induziert $\acl$ dann einen Dimensionsbegriff $\dim$ auf $M$ und einen Unabhängigkeitsbegriff für eine Menge. Im Unterschied zu dieser Art der Unabhängigkeit einer Menge wird im Folgenden ein Begriff der Unabhängigkeit von zwei Mengen entwickelt.
 
 \begin{definition}
 	Zwei Teilmengen $A$ und $B$ von $M$ seien \textbf{unabhängig über} einer dritten Teilmenge $C\subseteq A,B$ genau dann, wenn für alle $\overline{a}$ in $A$ gilt, dass $$\dim(\overline{a}/B)=\dim(\overline{a}/C).$$
@@ -73,7 +73,7 @@ Im Folgenden werden einige Regeln für diese Art von Unabhängigkeit vorgestellt
 \end{proof}
 \newpage
 \begin{lemma}
-	Seien $A$ und $B$ unabhängig über $C$ sind und sei eine Teilmenge $X\subseteq B$. Dann sind $A\cup X$ und $B$ unabhängig über $C\cup X$.
+	Seien $A$ und $B$ unabhängig über $C$ und sei eine Teilmenge $X\subseteq B$. Dann sind $A\cup X$ und $B$ unabhängig über $C\cup X$.
 \end{lemma}
 \begin{proof}
 	Sei $(\overline{a},\overline{x})$ ein Tupel aus $A\cup X$, wobei $\overline{a}$ in $A$ ist und $\overline{x}$ in $X$. Dieses Tupel ist genau dann unabhängig über $C\cup X$ (bzw. $B\cup(C\cup X)$), wenn $\overline{a}$ unabhängig über $C\cup X$ (bzw. $B\cup(C\cup X)$) ist und $\abs{\overline{x}}=0$.\\

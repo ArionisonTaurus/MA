@@ -287,4 +287,19 @@ TODO: Eigentlich musste $\fB$ nicht o-minimal sein, dafür $\fA$. Fehler?
 	Ist reine Fallunterscheidung und Rechenarbeit.
 \end{proof}
 
+\begin{corollary}\label{Definierbarkeit aus A}
+	Für ein echtes dichtes Paar $(B,A)$ und $S\subseteq B^n$ eine $\lingua^P_{A_0}$-definierbare Menge (wobei $A_0\subseteq A$) ist $S\cap A^n$ eine $\lingua_{A_0}$-definierbare Teilmenge von $A$.
+\end{corollary}
+\begin{proof}
+	Nach der Formelreduzierung sei $S$ ohne Einschränkungen durch eine gute Formel definiert. Da Definierbarkeit abgeschlossen unter booleschen Kombinationen ist, reicht es, eine Formel in Reinform zu betrachten.\\
+	Für jede $\lingua_{A_0}$-Formel $\varphi(x,y,a')$ und jedes $a$ in $A^n$ sind die Aussagen $$\glqq{}\text{Es existiert ein }y\text{ in }A^m\text{ mit }(B,A)\models\varphi(a,y,a')\grqq{},$$ $$\glqq{}\text{Es existiert ein }y\text{ in }A^m\text{ mit }B\models\varphi(a,y,a')\grqq{},$$ $$\glqq{}\text{Es existiert ein }y\text{ in }A^m\text{ mit }A\models\varphi(a,y,a')\grqq{}$$ äquivalent wegen $\varphi$ als $\lingua$-Formel und $A\preceq B$. Es folgt, dass $$(\exists y\in P(\varphi(x,y,a')))(B)\cap A^n=(\exists y(\varphi(x,y,a')))(A).$$
+\end{proof}
+
+\begin{corollary}
+	Sei $A_0\preceq A$ in der Sprache $\lingua$. Dann ist $A_0$ definierbar abgeschlossen.
+\end{corollary}
+\begin{proof}
+	Sei $b$ definierbar über $A_0$. Dann ist $b$ insbesondere definierbar über $A$, also in $A$. Nach Folgerung \ref{Definierbarkeit aus A} ist dann $\{b\}=\{b\}\cap A$ schon $\lingua$-definierbar in $A$ über $A_0$, also in $A_0$, da $A_0$ elementare Substruktur ist.
+\end{proof}
+
 \end{document}
