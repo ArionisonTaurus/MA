@@ -44,7 +44,7 @@
 		Außerdem ist eine Formel $\varphi$ streng minimal genau dann, wenn ihr Rang und Grad beide Eins sind.
 	\end{fact}
 	
-	\begin{fact}
+	\begin{fact}\label{stationär}
 		Sei $\fM$ ein Modell und eine Teilmenge $S\subseteq M$, außerdem $F$ eine konsistente und unter Konjunktion abgeschlossene Menge von $\lingua_S$-Formeln in $n$ freien Variablen, die eine Formel mit definiertem Morleyrang enthält. Dann gibt es für jede hinreichend große Obermenge $S'$ von $S$ genau $\DM(F)$ Fortsetzungen von $F$ zu einem Typen über $S'$ mit Morleyrang $\RM(F)$ (die Definition von Rang und Grad werde entsprechend von Typen verallgemeinert).\\
 		Wenn der Morleygrad Eins ist, nenne den partiellen Typen \textbf{stationär}. 
 	\end{fact}
@@ -54,7 +54,7 @@
 	\end{fact}
 	
 	\begin{fact}\label{Anfangsstück}
-		In jedem Modell ist für alle natürlichen Zahlen $n$ die Menge der angenommenen Morleyränge von Formeln oder Typen in $n$ Variablen ein Anfangsstück von $\textbf{On}\cup\{\infty\}$.
+		In jedem Modell ist für alle natürlichen Zahlen $n$ die Menge der angenommenen Morleyränge von Formeln oder von Typen in $n$ Variablen über einem $\aleph_0$-saturiertem Modell ein Anfangsstück von $\textbf{On}\cup\{\infty\}$.
 	\end{fact}
 	
 	\begin{fact}
@@ -75,7 +75,7 @@
     		Wir bezeichnen es dennoch anders, um Verwirrung zu vermeiden. Wenn nämlich alle betrachteten Mengen schon Körper sind und die beiden Mengen, zwischen denen Unabhängigkeit gilt, schon Obermengen der dritten sind, kann man etwas weitergehende Eigenschaften feststellen, die im Normalfall so nicht gelten.
     		\item Es reicht, lineare Disjunktheit für eine Basis zu zeigen. Denn wenn man die lineare Unabhängigkeit über $L$ für eine Basis verliert, verliert man sie per $C$-Basiswechsel auch für alle anderen.
     		\item Es reicht, die Erhaltung der linearen/algebraischen Unabhängigkeit nur für beliebige endliche Mengen zu prüfen. Denn lineare/algebraische Unabhängigkeit einer Menge besteht genau dann, wenn sie für alle endlichen Teilmengen gilt.
-    		\item Der Körper $M$ kommt in der Definition nur vor, damit die Rechenoperationen zwischen $K$ und $L$ wohldefiniert sind. Die genaue Wahl ist irrelevant und daher nicht in der Notation berücksichtigt. Wir nehmen für die Zukunft einfach an, dass die Multiplikation klar definiert ist. Es wird sich ohnehin herausstellen, dass im Fall $K\ld_CL$ die Operationen eindeutig bestimmt sind.
+    		\item Der Körper $M$ kommt in der Definition nur vor, damit die Rechenoperationen zwischen $K$ und $L$ wohldefiniert sind. Die genaue Wahl ist meist aus dem Kontext ersichtlich und daher nicht in der Notation berücksichtigt. Wir nehmen für die Zukunft einfach an, dass die Multiplikation klar definiert ist. Es wird sich ohnehin herausstellen, dass im Fall $K\ld_CL$ die Operationen eindeutig bestimmt sind.
     	\end{itemize}
     \end{remark}
     
@@ -136,7 +136,7 @@
     Wir können einige Folgerungen und \glqq{}Rechenregeln\grqq{} aus den definierten Eigenschaften ziehen, die insbesondere zeigen, unter welchen Bedingungen sich lineare und algebraische Disjunktheit gegenseitig implizieren und was für Regeln bei Inklusionsketten gelten.
     
     \begin{lemma}\label{Stapellemma}
-    	Gegeben die Körperinklusionen $C\subseteq L\subseteq M$ und $C\subseteq K$. Dann gilt $K\ld_CM$ genau dann, wenn $K\ld_CL$ und $KL\ld_LM$ gilt.
+    	Für vorgegebene Körperinklusionen $C\subseteq L\subseteq M$ und $C\subseteq K$ gilt $K\ld_CM$ genau dann, wenn $K\ld_CL$ und $KL\ld_LM$ gelten.
     \end{lemma}
     \begin{proof}
     	Sei $(k_h)_H$ eine Basis von $K$ über $C$, $(l_i)_I$ eine Basis von $L$ über $C$ und $(m_j)_J$ eine Basis von $M$ über $L$. Die Aussage $K\ld_CM$ bedeutet, dass die $C$-Basis von $K$ auch eine $M$-Basis von $K$ ist, aber dann ist sie natürlich auch eine $L$-Basis wegen den Inklusionen $C\subseteq L\subseteq M$. Dies folgt, da die Eigenschaft, Erzeugendensystem über dem Körper zu sein, sich nach oben vererbt, die für die lineare Unabhängigkeit sich dafür nach unten vererbt. Also gilt $K\ld_CL$.\\
@@ -145,15 +145,15 @@
     	Da $(k_h)_H$ aber die Basis von $K$ über $C$ ist, widerspricht das $K\ld_CM$.\newpage
     	Für die Rückrichtung ist zu zeigen, dass $(l_im_j)_{I\times J}$ linear unabhängig über $K$ bleibt. Wenn nicht, sei $$0=\sum\limits_{(i,j)\in I\times J}\lambda_{ij}l_im_j,\text{ wobei }\lambda_{ij}=0\text{ für fast alle, aber nicht alle } (i,j)\text{ in }I\times J$$ eine $K$-Linearkombination, die das bezeugt. Schreibe $$\lambda_{ij}=:\sum\limits_{h\in H}c_{hij}k_h$$ als $C$-Basisdarstellung für alle $(i,j)$ in $I\times J$.\\
     	Einsetzen und Umklammern führt uns zur Linearkombination $$0=\sum\limits_{(i,j)\in I\times J}\lambda_{ij}l_im_j=\sum\limits_{(i,j)\in I\times J}\left(\sum\limits_{h\in H} c_{hij}k_h\right)l_im_j=\sum\limits_{i\in I}\left(\sum\limits_{(h,j)\in H\times J}c_{hij}k_hl_i\right)m_j,$$ $$\text{wobei }c_{hij}=0\text{ für fast alle, aber nicht alle } (h,i,j)\text{ in }H\times I\times J.$$
-    	Da wir aber $KL\ld_CM$ annehmen, muss $$\sum\limits_{(h,j)\in H\times J}c_{hij}k_hl_i=0\text{ sein für alle }j\text{ in }J,$$ und da wir $K\ld_CL$ annehmen, folgt daraus $c_{hij}=0$ für alle $h,i,j$.
+    	Da wir aber $KL\ld_CM$ annehmen, muss $$\sum\limits_{(h,j)\in H\times J}c_{hij}k_hl_i=0$$ sein für alle $j$ in $J$, und da wir $K\ld_CL$ annehmen, folgt daraus $c_{hij}=0$ für alle $h,i,j$.
     \end{proof}
     
     Für weitere Regeln brauchen wir einen eingeschobenen Fakt aus \cite{SergeLang} (Seite 57, Theorem 3), der mit Bewertungen bewiesen wird.
     \begin{fact}\label{Das komplizierte Lemma}
-    	Wenn $C\subseteq K$ regulär ist und $K\ad_CL$, folgt $K\ld_CL$.
+    	Wenn die Körpererweiterung $C\subseteq K$ regulär ist und $K\ad_CL$ gilt,\linebreak folgt $K\ld_CL$.
     \end{fact}
     
-    Damit lassen sich dann einige Regeln für das \glqq{}Herumschieben\grqq{} von linearer und algebraischer Disjunktheit beweisen.
+    Damit lassen sich dann einige Regeln für das \glqq{}Herumschieben\grqq{} von linearer und algebraischer Disjunktheit beweisen.\newpage
     \begin{lemma}\label{Rechenregeln}
     	Seien $C,K,L,M$ Körper.
     	\begin{enumerate}
@@ -170,13 +170,13 @@
     	\begin{enumerate}
     		\item Die eine Inklusion gilt, denn $C\subseteq K,L$. Für die Inklusion in Gegenrichtung sei $x$ in $(K\cap L)\setminus C$. Dann ist $(1,x)$ in $K$ linear abhängig über $L$ und somit auch über $C$. Aber dann ist $x$ schon in $C$, weil es als $C$-Vielfaches von $1$ geschrieben werden kann.
     		\item Wegen der Regularität gilt $L\ld_C\overline{C}$ und wegen $C\subseteq K\subseteq\overline{C}$ und dem Lemma \ref{Stapellemma} gilt $L\ld_C K$.
-    		\item Seien $k_1,\dots,k_n$ in $K$ algebraisch abhängig über $L$, das heißt, es gibt ein Polynom $$0\neq f(X)=\sum\limits_{\abs{\alpha}\leq m}l_\alpha X^\alpha\text{ in }L[X_1,\dots,X_n]$$ mit $f(k)=0$, also insbesondere $(k^\alpha)_{\abs{\alpha}\leq m}$ linear abhängig über $L$, per Annahme also auch über $C$. Dann existiert aber eine Linearkombination $\sum\limits_{\abs{\alpha}\leq m}c_\alpha k^\alpha=0$ mit $c_\alpha$ in $C$ nicht alle Null, und diese bezeugt die algebraische Abhängigkeit über $C$.
+    		\item Seien $k_1,\dots,k_n$ in $K$ algebraisch abhängig über $L$, das heißt, es gibt ein Polynom $$0\neq f(X)=\sum\limits_{\abs{\alpha}\leq m}l_\alpha X^\alpha\text{ in }L[X_1,\dots,X_n]$$ mit $f(k)=0$, also sind insbesondere $(k^\alpha)_{\abs{\alpha}\leq m}$ linear abhängig über $L$, per Annahme also auch über $C$. Dann existiert aber eine Linearkombination $\sum\limits_{\abs{\alpha}\leq m}c_\alpha k^\alpha=0$ mit $c_\alpha$ in $C$ nicht alle Null, und diese bezeugt die algebraische Abhängigkeit über $C$.
     		\item Diese Aussage ist exakt der Spezialfall von Lemma \ref{Unabhängigkeit acl} in unserem Setting von Körpern als Teilmengen eines algebraisch abgeschlossenen Körpers.
     		\item Wegen algebraischer Unabhängigkeit ist $$\abs{\overline{x}}=\dim(\overline{x}/KL)\leq\dim(\overline{x}/K)\leq\abs{\overline{x}}$$ für alle $\overline{x}$ in $X$, also sind $X$ und $KL$ im modelltheoretischen Sinne unabhängig über $K$. Das gilt dann nach den Regeln aus Kapitel \ref{Kapitel 0} auch für $K\cup X$ und $KL$, für $\acl(K\cup X)$ und $KL$ und auch für $K(X)$ und $KL$, also $K(X)\ad_KKL$.\\
-    		Die Erweiterung $K(X)\supseteq K$ ist außerdem regulär, denn $K[X]$ hat als $K$-Basis $$\left\{\prod\limits_{i=1}^kx_i^{n_i}\right\}_{\{x_1,\dots,x_k\}\subseteq X\text,\ n\in\setN^k},$$ wie man wegen algebraischer Unabhängigkeit sieht.\newpage
+    		Die Erweiterung $K(X)\supseteq K$ ist außerdem regulär, denn $K[X]$ hat als $K$-Basis $$\left\{\prod\limits_{i=1}^kx_i^{n_i}\right\}_{\{x_1,\dots,x_k\}\subseteq X\text,\ n\in\setN^k},$$ wie man wegen algebraischer Unabhängigkeit sieht.\\
     		Diese Basis bleibt aber linear unabhängig über $\overline{K}$, denn sonst wäre ein Polynom in $\overline{K}[X_1,X_2,\dots]$ gefunden, was ein $x$ aus $X$ über den anderen Elementen algebraisiert, also $$x\in\acl(X\setminus\{x\}\cup\overline{K})=\acl(X\setminus\{x\}\cup K),$$ demnach wäre $X$ nicht mehr algebraisch unabhängig über $K$. Lemma \ref{Fraktionskörper} besagt dann $$K(X)=\operatorname{Frac}(K[X])\ld_K\overline{K}.$$
-    		Also haben wir $K(X)\ad_KKL$ und $K(X)\supseteq K$ regulär, woraus nach Fakt \ref{Das komplizierte Lemma} $K(X)\ld_KKL$ folgt.
-    		\item Mit 3. folgt $K\ad_CL$, mit 4. $\overline{K}\ad_C\overline{L}$, mit Lemma \ref{Stapellemma} $K\ad_C\overline{L}$, mit Fakt \ref{Das komplizierte Lemma} $K\ld_C\overline{L}$ (benutze $C\subseteq K$ regulär) und mit noch einmal Lemma \ref{Stapellemma} gilt schließlich für die Einbettungskette $C\subseteq L\subseteq\overline{L}$ die Regularitätsbedingung $LK\ld_L\overline{L}$.
+    		Also haben wir $K(X)\ad_KKL$ und $K(X)\supseteq K$ ist regulär, woraus nach Fakt \ref{Das komplizierte Lemma} $K(X)\ld_KKL$ folgt.
+    		\item Mit 3. folgt $K\ad_CL$, mit 4. $\overline{K}\ad_C\overline{L}$, mit Lemma \ref{Unabhängigkeit Teilmenge} $K\ad_C\overline{L}$, mit Fakt \ref{Das komplizierte Lemma} $K\ld_C\overline{L}$ (benutze $C\subseteq K$ regulär) und mit noch einmal Lemma \ref{Stapellemma} gilt schließlich für die Einbettungskette $C\subseteq L\subseteq\overline{L}$ die Regularitätsbedingung $LK\ld_L\overline{L}$.
     	\end{enumerate}
     \end{proof}
     
@@ -186,30 +186,29 @@
     	Es sei eine Körpererweiterung $K\subseteq L$ gegeben und ein Tupel $a$ aus $L$. Dann ist $K\subseteq K(a)$ genau dann regulär, wenn $\tp(a/K)$ stationär im Modell $\overline{L}$ von ACF ist.
     \end{lemma}
     \begin{proof}
-    	Die minimale Formel dieses Typen ist eine, die beschreibt, welche Elemente algebraisch übereinander sind und wie sie es sind. Ohne Einschränkungen sei $a$ so angeordnet, dass die ersten $k$ Einträge algebraisch unabhängig über $K$ sind und alle späteren im algebraischen Abschluss davon. Die minimale Formel beschreibe dann ohne Einschränkungen Polynome von minimalem Grad derart, dass $a_{k+1}$ über $K[a_1,\dots,a_k]$ algebraisiert wird, $a_{k+2}$ über $K[a_1,\dots,a_{k+1}]$ und so weiter.\\
-    	Hierbei seien die auftretenden Potenzen der $a_i$ in den Koeffizienten schon maximal reduziert, also für alle $i$ größer als $k$ auf jeden Fall kleiner als der Grad des Minimalpolynoms von $a_i$ über $K(a_1,\dots,a_{i-1})$, dieser sei mit $n_i$ bezeichnet. Dann ist $\tp(a/K)$ stationär genau dann, wenn keines dieser Polynome über $K[a_1,\dots,a_i]$ beim Übergang zu einer größeren Parametermenge als $K$ reduzibel wird.\newpage
+    	Die minimale Formel dieses Typen ist eine, die beschreibt, welche Elemente algebraisch übereinander sind und wie sie es mit kleinstmöglichem Polynomgrad sind. Ohne Einschränkungen sei $a$ so angeordnet, dass die ersten $k$ Einträge algebraisch unabhängig über $K$ sind und alle späteren im algebraischen Abschluss davon.\newpage
+    	Die minimale Formel beschreibe dann ohne Einschränkungen Polynome von minimalem Grad derart, dass $a_{k+1}$ über $K[a_1,\dots,a_k]$ algebraisiert wird, $a_{k+2}$ über $K[a_1,\dots,a_{k+1}]$ und so weiter.\\
+    	Hierbei seien die auftretenden Potenzen der $a_i$ in den Koeffizienten schon maximal reduziert, also für alle $i$ größer als $k$ auf jeden Fall kleiner als der Grad des Minimalpolynoms von $a_i$ über $K(a_1,\dots,a_{i-1})$, dieser sei mit $n_i$ bezeichnet. Dann ist $\tp(a/K)$ genau dann stationär, wenn keines dieser Polynome über $K[a_1,\dots,a_i]$ beim Übergang zu einer größeren Parametermenge als $K$ reduzibel wird.\\
     	Da ACF modellvollständig ist, ist das äquivalent dazu, dass kein solches Polynom beim Übergang zu $\overline{K}$ reduzibel wird und das wiederum ist dasselbe wie die Aussage, dass die Erzeuger $$(a_1^{m_1}\cdot\dots\cdot a_\abs{a}^{m_\abs{a}})_{m_1,\dots,m_k\in\setN,0\leq m_i<n_i\text{ für }i>k}$$ von $K[a]$ über $\overline{K}$ linear unabhängig bleiben, also dass $K(a)$ und $\overline{K}$ linear disjunkt über $K$ sind.
     \end{proof}
     
     \begin{remark}
     	Damit ist die Folgerung \ref{Isomorphismen linear disjunkt} das algebraische Analogon zu folgender Aussage aus der Stabilitätstheorie: Sei $\fM,\fN$ zwei Modelle einer $\omega$-stabilen vollständigen, abzählbaren Theorie und Mengen $S\subseteq M,S'\subseteq N$, sodass es eine elementare Abbildung $$\varphi:S\cong S'$$ gibt, außerdem seien $a,b$ Tupel in $M$ und $a',b'$ Tupel in $N$, sodass gelte: $$\varphi(\tp(a/S))=\tp(a'/S'),\varphi(\tp(b/S))=\tp(b'/S).$$
     	Wenn $a$ und $b$ unabhängig über $S$ sind sowie $a'$ und $b'$ unabhängig über $S'$, außerdem $\tp(b'/S)$ stationär, dann kann der gemeinsame Typ von $a$ und $b$ ebenso durch $\varphi$ übertragen werden: $$\varphi(\tp(a,b/S))=\tp(a',b'/A).$$
-    	Dass die Aussagen einander fast entsprechen, sieht man daran, dass die Übertragung der Typen durch $\varphi$ Isomorphismen zwischen den erzeugten Körpern $\langle S,a\rangle$ und $\langle S',a'\rangle$ sowie zwischen $\langle S,b\rangle$ und $\langle S',b'\rangle$ entspricht, die sich auf einen Isomorphismus $$\langle S,a,b\rangle\cong\langle S',a',b'\rangle$$ fortsetzen lassen. Der einzige Unterschied besteht darin, dass in der modelltheoretischen Version die Unabhängigkeit von $a$ und $b$ über $S$ sowie von $a'$ und $b'$ über $S'$ eine algebraische Disjunktheit auf beiden Seiten erzeugt, die wegen Stationarität des Typen nur einseitig zur linearen Disjunktheit wird.
+    	Dass die Aussagen einander fast entsprechen, sieht man daran, dass die Übertragung der Typen durch $\varphi$ Isomorphismen zwischen den erzeugten Körpern $\langle S,a\rangle$ und $\langle S',a'\rangle$ sowie zwischen $\langle S,b\rangle$ und $\langle S',b'\rangle$ entspricht, die sich auf einen Isomorphismus $$\langle S,a,b\rangle\cong\langle S',a',b'\rangle$$ fortsetzen lassen.\newpage
+    	Der einzige Unterschied besteht darin, dass in der modelltheoretischen Version die Unabhängigkeit von $a$ und $b$ über $S$ sowie von $a'$ und $b'$ über $S'$ eine algebraische Disjunktheit auf beiden Seiten erzeugt, die wegen Stationarität des Typen nur einseitig zur linearen Disjunktheit wird.
     \end{remark}
 
-    \newpage
     \section{Die Theorien ACP}
     Wir wollen Paare $(K,E_K)$ von Körpern betrachten, wobei $E_K\subseteq K$ ist. Diese lassen sich in einer Sprache $\lfc$ axiomatisieren, die die lineare Algebra der Körpererweiterung beschreibt, dort haben echte Paare (d.h. $K\neq E_K$) algebraisch abgeschlossener Körper mit fixierter Charakteristik sogar Quantoren\-elimination und sind vollständig. In einer kleineren Sprache $\lld$ ist diese Theorie immerhin noch modellvollständig. Diese Sprachen und einige der Folgerungen für ihre Strukturen wollen wir hier (angelehnt an \cite{Delon}) einführen.
     
     \begin{definition}
-    	Wir definieren die Sprachen $\lld:=\{0,1,+,-,\cdot,(l_n)_{n\geq2}\},\lf:=\lld\cup\{f_{i,n}\mid n\geq2,1\leq i\leq n\}$ und $\lfc:=\lf\cup\{^{-1}\}$, wobei die $(l_n)_n$ $n$-stellige Relationen sein sollen und die $(f_{i,n})_{i,n}$ $n+1$-stellige Funktionen.
+    	Wir definieren die Sprachen $$\lld:=\{0,1,+,-,\cdot,(l_n)_{n\geq2}\},$$ $$\lf:=\lld\cup\{f_{i,n}\mid n\geq2,1\leq i\leq n\}$$ $$\text{und }\lfc:=\lf\cup\{^{-1}\},$$ wobei jedes $l_n$ eine $n$-stellige Relation sei und jedes $f_{i,n}$ eine $n+1$-stellige Funktion.
     \end{definition}
     
-    Es kommt im Folgenden zu einem kleineren Problem: Eigentlich benötigt man für $^{-1}$ und die $f_{i,n}$ eine Auffassung als partielle Funktionen und im Folgenden werden sie auch so behandelt. Da das aber grundsätzlich nicht in unseren Axiomen der Logik vorgesehen ist, muss man die Funktionen durch $0$ fortsetzen. Rein formal gesehen gibt es dann den Unterschied zwischen der Interpretation von $$\glqq{}f_{i,n}(\overline{x})=0\grqq{}$$ als logische Formel in der Sprache und als für uns relevante Aussage, der gerade in der Aussage $$\glqq{}\overline{x}\text{ liegt nicht im partiellen Definitionsbereich von }f_{i,n}\grqq{}$$ besteht.\\
+    Es kommt im Folgenden zu einem kleineren Problem: Eigentlich benötigt man für $^{-1}$ und die $f_{i,n}$ eine Auffassung als partielle Funktionen und im Folgenden werden sie auch so behandelt. Da das aber grundsätzlich nicht in unseren Axiomen der Logik vorgesehen ist, muss man die Funktionen durch $0$ fortsetzen. Rein formal gesehen gibt es dann den Unterschied zwischen der Interpretation von $$\glqq{}f_{i,n}(\overline{x})=0\grqq{}$$ als logische Formel in der Sprache und als für uns relevante Aussage, der gerade in der Aussage $$\glqq{}\overline{x}\text{ liegt nicht im partiellen Definitionsbereich von }f_{i,n}\grqq{}$$ besteht.\newpage
     Da aber sowohl der Definitionsbereich von $^{-1}$ als auch von jedem $f_{i,n}$ quantorenfrei\linebreak 0-definierbar ist, wird dieser Unterschied im Folgenden ignoriert werden, weil der Übergang zwischen diesen Interpretationen immer möglich ist, ohne in irgendeiner Form Bedingungen oder Aussagen von Sätzen zu verändern. Diese Tatsache ist stets im Hinterkopf zu behalten, insbesondere auch in Folgerung \ref{Formel-Vereinfachung}. Dort reicht quantorenfrei nämlich nicht aus, mehr dazu aber an der gegebenen Stelle.\\\\
     Nach der Klärung dieser Probleme ist es jetzt möglich, überhaupt zur Bedeutung dieser Sprache zu kommen. Es sei noch festgehalten, dass das weitere Vorgehen auch ohne Benutzung von \glqq{}$^{-1}$\grqq{} möglich wäre. Allerdings besteht das Problem mit den partiellen Funktionen ohnehin, und daher kann man die Behebung auch auf diese Funktion anwenden, wenn man so ein Vorgehen benutzen muss.
-    
-    \newpage
     
     \begin{lemma}\label{Symbolik}
     	Beliebige Paare $(K,E_K)$ von Körpern werden kanonisch zu $\lld$-Strukturen, indem man folgendes setzt:
@@ -223,7 +222,7 @@
     \begin{lemma}
     	Mit diesen Vorarbeiten sind echte Paare algebraisch abgeschlossener Körper axiomatisierbar in allen drei Sprachen $\lld,\lf,\lfc$, nenne die Theorien $$\operatorname{ACP}^{\lld},\operatorname{ACP}^{\lf},\operatorname{ACP}^{\lfc}.$$ Besonders zu beachten hierbei ist, dass man in der Theorie sagen muss, dass $\neg l_2(1,x)$ einen Körper definiert.
     \end{lemma}
-    \newpage
+    
     Alle verwendeten Sprachen und ihre Interpretationen für Paare von Körpern sind interdefinierbar, aber für bestimmte Fragestellungen sind manche Sprachen passender als andere. Die intuitivste Sprache wäre dabei $\lingua^E:=\lingua\cup\{E(x)\}$ mit der obigen Bedeutung für $E$, aber diese hat leider nicht so starke Eigenschaften (zum Beispiel ist sie nicht modellvollständig, denn lineare Unabhängigkeit über $E$ überträgt sich nicht zwangsläufig auf Obermodelle). Das Ziel ist jetzt, zu beweisen, dass $\operatorname{ACP}^{\lf}$ und $\operatorname{ACP}^{\lfc}$ Quantoren\-eli\-mi\-na\-tion haben sowie dass $\operatorname{ACP}^{\lld}$ immerhin modellvollständig ist.\\
     Dazu müssen wir erst einmal verstehen, wie $\lfc$-Unterstrukturen von $\operatorname{ACP}^{\lfc}$-Modellen aussehen.
     
@@ -232,14 +231,14 @@
     \end{lemma}
     \begin{proof}
     	Die Menge $A$ ist genau dann Unterkörper von $K$, wenn sie $0,1$ enthält, unter $+,-,\cdot,^{-1}$ abgeschlossen ist und die entsprechenden Abbildungsvorschriften erbt.\\
-    	Außerdem sind $A$ und $E_K$ linear disjunkt über $E_A$ genau dann, wenn für alle $\overline{a}$ in $A$ aus $\overline{a}$ linear abhängig über $E_K$ schon äquivalent zu linearer Abhängigkeit über $E_A$ ist; per kanonischer Definition also genau dann, wenn $$(A,E_A)\models l_{\abs{\overline{a}}}(\overline{a}) \Leftrightarrow (K,E_K)\models l_{\abs{\overline{a}}}(\overline{a}).$$
+    	Außerdem sind $A$ und $E_K$ genau dann linear disjunkt über $E_A$, wenn für alle $\overline{a}$ in $A$ aus $\overline{a}$ lineare Abhängigkeit über $E_K$ schon äquivalent zu linearer Abhängigkeit über $E_A$ ist; per kanonischer Definition also genau dann, wenn $$(A,E_A)\models l_{\abs{\overline{a}}}(\overline{a}) \Leftrightarrow (K,E_K)\models l_{\abs{\overline{a}}}(\overline{a}).$$\newpage
     	Wenn $\fA$ eine Unterstruktur von $(K,E_K)$ ist, gilt für alle $\overline{a}$ in $A$, dass
     	\begin{align*}
     	&\fA\models l_{\abs{\overline{a}}}(\overline{a})\Leftrightarrow(K,E_K)\models l_{\abs{\overline{a}}}(\overline{a})\\
     	\Leftrightarrow&\ \overline{a}\text{ linear unabhängig über }E_K\Leftrightarrow\overline{a}\text{ linear unabhängig über }E_A,
     	\end{align*}
-    	wobei die letzte Äquivalenz davon herrührt, dass in jeder die lineare Abhängigkeit bezeugenden Linearkombination von $\overline{a}$ die Koeffizienten, die nicht $0$ sind, durch Anwendung von Funktionen $f_{i,n}$ auf Teile von $\overline{a}$ extrahiert werden können. Projektionen von Elementen aus $A$ sind aber wegen der Unterstruktureigenschaft wieder in $A$.\newpage
-    	Also stimmen die Interpretationen der $l_n$ in $\fA$ mit denen in $(A,E_A)$ überein und es sind $A$ und $E_K$ linear disjunkt über $E_A$. Die definierende Formel der $(f_{i,n})$ ist bis auf die Angabe des Bildbereiches eine $\lingua_{\text{Ring}}$-Formel und es ist $f_{i,n}(\overline{a})$ in $E_K\cap A$ für alle $\overline{a}$ in $A$ und für alle $n,i$. Also stimmen auch die Interpretationen der $f_{i,n}$ in $\fA$ und in $(A,E_A)$ überein. Damit sind die Strukturen $\fA$ und $(A,E_A)$ gleich.\\
+    	wobei die letzte Äquivalenz davon herrührt, dass in jeder die lineare Abhängigkeit bezeugenden Linearkombination von $\overline{a}$ die Koeffizienten, die nicht $0$ sind, durch Anwendung von Funktionen $f_{i,n}$ auf Teile von $\overline{a}$ extrahiert werden können. Projektionen von Elementen aus $A$ sind aber wegen der Unterstruktureigenschaft wieder in $A$.\\
+    	Also stimmen die Interpretationen der $l_n$ in $\fA$ mit denen in $(A,E_A)$ überein und es sind $A$ und $E_K$ linear disjunkt über $E_A$. Die definierende Formel der $(f_{i,n})$ ist bis auf die Angabe des Bildbereiches eine quantorenfreie $\lingua_{\text{Ring}}$-Formel und es ist $f_{i,n}(\overline{a})$ in $E_K\cap A$ für alle $\overline{a}$ in $A$ und für alle $n,i$. Also stimmen auch die Interpretationen der $f_{i,n}$ in $\fA$ und in $(A,E_A)$ überein. Damit sind die Strukturen $\fA$ und $(A,E_A)$ gleich.\\
     	Die Rückrichtung folgt mit den ersten Zeilen dieses Beweises und, weil die Projektionen $f_{i,n}$ Elemente aus $A$ nach $A$ abbilden. Das erkennt man dadurch, dass man die Koeffizienten einer Linearkombination in eine Abhängigkeitsbedingung umschreiben kann; wenn diese in $E_K$ erfüllt ist, muss sie wegen linearer Disjunktheit auch in $E_A$ erfüllt sein, also sind die partiellen Projektionsabbildungen $f_{i,n}$ schon in $E_A$.
     \end{proof}
     
@@ -250,14 +249,14 @@
     	Nach dem vorigen Lemma sind $A$ und $E_K$ linear disjunkt über $E_A$, daher gilt mit Lemma \ref{Rechenregeln} (5.) $$A(X)\ld_{E_A}E_K.$$ Da $A(X)$ Unterkörper von $K$ ist, gilt mit der Rückrichtung des letzten Lemmas, dass $$(A(X),E_A)\subseteq_{\lfc}(K,E_K).$$
     	Die Struktur $(A,E_A)$ ist eine $\lfc$-Unterstruktur von $(A(X),E_A)$, weil die Bedingung $A\ld_{E_A} E_A$ immer erfüllt ist.
     \end{proof}
-    
+    \newpage
     \begin{lemma}\label{E-Erw}
-    	Sei $(A,E_A)\subseteq_{\lfc}(K,E_K)$ und $E_A\subseteq B\subseteq E_K$ ein Zwischenkörper. Dann ist $$(A,E_A)\subseteq_{\lfc}(AB,B)\subseteq_{\lfc}(K,E_K).$$
+    	Sei $(A,E_A)\subseteq_{\lfc}(K,E_K)$ und $E_A\subseteq B\subseteq E_K$ ein Zwischenkörper. Dann erzeugt $B$ eine $\lfc$-Zwischenstruktur $$(A,E_A)\subseteq_{\lfc}(AB,B)\subseteq_{\lfc}(K,E_K).$$
     \end{lemma}
     \begin{proof}
-    	Es sind nur die Bedingungen $$A\ld_{E_A}B\text{ und }AB\ld_BE_K$$ zu zeigen. Wegen $(A,E_A)\subseteq_{\lfc}(K,E_K)$ sind $A$ und $E_K$ linear disjunkt über $E_A$ und mit Lemma \ref{Stapellemma} gelten schon beide gesuchten Aussagen.
+    	Es sind nur die Bedingungen $$A\ld_{E_A}B\text{ und }AB\ld_BE_K$$ zu zeigen. Wegen der Inklusion $(A,E_A)\subseteq_{\lfc}(K,E_K)$ sind $A$ und $E_K$ linear disjunkt über $E_A$ und mit Lemma \ref{Stapellemma} gelten schon beide gesuchten Aussagen.
     \end{proof}
-    \newpage
+    
     \begin{lemma}\label{Fortsetzungslemma}
     	Im Falle, dass das vorige Lemma auf die Inklusionen $$(A,E_A)\subseteq_{\lfc}(K,E_K)\text{ und }(\tilde{A},E_{\tilde{A}})\subseteq_{\lfc}(\tilde{K},E_{\tilde{K}})$$ sowie die Zwischenkörper $$E_A\subseteq B\subseteq E_K\text{ und }E_{\tilde{A}}\subseteq \tilde{B}\subseteq E_{\tilde{K}}$$ angewendet wird und dass gilt $$A\cong \tilde{A},B\cong \tilde{B},E_A\cong E_{\tilde{A}}$$ \--- wobei die ersten beiden Isomorphismen den dritten fortsetzen sollen\---, sind $(AB,B)$ und $(\tilde{A}\tilde{B},\tilde{B})$ schon isomorph als $\lfc$-Strukturen.
     \end{lemma}
@@ -276,8 +275,8 @@
     	Unter denselben Bedingungen wie im vorigen Lemma ist $(\overline{A},\overline{E_A})$ Zwischenstruktur.
     \end{lemma}
     \begin{proof}
-    	Laut Lemma \ref{E-Erw} ist $(A\overline{E_A},\overline{E_A})$ Zwischenstruktur und damit insbesondere $$A\ld_{E_A}\overline{E_A},A\overline{E_A}\ld_{\overline{E_A}}E_K.$$ Klarerweise ist $$(A,E_A)\subseteq_{\lfc}(\overline{A\overline{E_A}},\overline{E_A})=(\overline{A},\overline{E_A}),$$ weil $A\overline{E_A}$ in der Bedingung $A\ld_{E_A}\overline{E_A}$ gar nicht vorkommt und die Erweiterung deshalb nichts ändert.\newpage
-    	Lemma \ref{Rechenregeln} (6.) ergibt wegen der Regularität der Erweiterung $\overline{E_A}\subseteq E_K$ (die gemäß Lemma \ref{Unterstruktur regulär} vorliegt) die Konstellation $$\overline{A}=\overline{A\overline{E_A}}\ld_{\overline{E_A}}E_K,$$ was $(\overline{A},\overline{E_A})\subseteq_{\lfc}(K,E_K)$ beweist.
+    	Laut Lemma \ref{E-Erw} ist $(A\overline{E_A},\overline{E_A})$ Zwischenstruktur und damit gilt insbesondere $$A\ld_{E_A}\overline{E_A}\text{ und }A\overline{E_A}\ld_{\overline{E_A}}E_K.$$ Klarerweise ist $$(A,E_A)\subseteq_{\lfc}(\overline{A\overline{E_A}},\overline{E_A})=(\overline{A},\overline{E_A}),$$ weil $A\overline{E_A}$ in der Bedingung $A\ld_{E_A}\overline{E_A}$ gar nicht vorkommt und die Erweiterung deshalb nichts ändert.\\
+    	Lemma \ref{Rechenregeln} (6.) ergibt wegen der Regularität der Erweiterung $\overline{E_A}\subseteq E_K$ die Konstellation $$\overline{A}=\overline{A\overline{E_A}}\ld_{\overline{E_A}}E_K,$$ was $(\overline{A},\overline{E_A})\subseteq_{\lfc}(K,E_K)$ beweist.
     \end{proof}
     
     \begin{theorem}\label{QE}
@@ -286,25 +285,22 @@
     \begin{proof}
     	Gegeben sei eine beliebige unendliche Kardinalzahl $\kappa$.
     	Zeige die Aussage mit dem Back\&Forth-System der Isomorphismen zwischen maximal $\kappa$ großen Unterstrukturen von $\kappa^+$-saturierten Modellen $(K,E_K),(L,E_L)$:
-    	Dieses ist nichtleer, denn wenn $\mathbb{P}$ der Primkörper der Charakteristik ist, ist $(\mathbb{P},\mathbb{P})$ Unterstruktur von allen Modellen (wegen Gleichheit des Paares ist lineare Disjunktheit klar), bilde das als Unterstruktur von $K$ auf sich selbst als Unterstruktur von $L$ ab.
-    	Sei $(M,E_M)\rightarrow(N,E_N)$ im B\&F-System. Die Erweiterungen $K\supseteq E_K$ und $L\supseteq E_L$ haben Transzendenzgrad $\infty$.\\
-    	Dies kann man zum Beispiel feststellen, indem die Erweiterung offenkundig transzendent ist, und man dann jeweils den partiellen Typ über $\emptyset$ betrachtet, der die algebraische Unabhängigkeit von $n$ Elementen über $E_K$ bzw. $E_L$ beschreibt. Dieser hat folgende Gestalt:
+    	Dieses ist nichtleer, denn wenn $\mathbb{P}$ der Primkörper der Charakteristik ist, ist $(\mathbb{P},\mathbb{P})$ Unterstruktur von allen Modellen (wegen Gleichheit des Paares ist lineare Disjunktheit klar), bilde das als Unterstruktur von $K$ auf sich selbst als Unterstruktur von $L$ ab.\\
+    	Sei $(M,E_M)\rightarrow(N,E_N)$ im B\&F-System. Die Erweiterungen $K\supseteq E_K$ und $L\supseteq E_L$ haben Transzendenzgrad $\infty$. Dies kann man zum Beispiel feststellen, indem die Erweiterung offenkundig transzendent ist, und man dann jeweils den partiellen Typ über $\emptyset$ betrachtet, der die algebraische Unabhängigkeit von $n$ Elementen über $E_K$ bzw. $E_L$ beschreibt. Dieser hat folgende Gestalt:
     	$$\{\forall \overline{e}\in E\setminus\{0\}(f(\overline{e},\overline{x})\neq0)\mid 0\neq f\in\mathbb{P}[T_1,T_2,\dots,\overline{x}]\}.$$
     	Er ist endlich erfüllbar, da für $m$ größer als der größte Polynomgrad im endlichen Teilfragment und $x$ transzendent über $E_K$ bzw. $E_L$ die Elemente $x,x^m,x^{m^2},\dots$ algebraisch unabhängig über Polynomen von Grad kleiner $m$ sind.\\
-    	Ohne Einschränkungen seien $(M,E_M)$ und $(N,E_N)$ jeweils algebraisch abgeschlossene Paare. Das kann man annehmen, denn die Lemmata \ref{E-Erw} und \ref{Fortsetzungslemma} besagen, dass es einen Isomorphismus zwischen den Zwischenstrukturen $$(M\overline{E_M},\overline{E_M})\text{ und }(N\overline{E_N},\overline{E_N}),$$ gibt der sich mit \ref{alg Abschl} auf einen Isomorphismus $$(\overline{M},\overline{E_M})\cong(\overline{N},\overline{E_N})$$ fortsetzt.\\
-    	Sei jetzt $a$ in $K$. Wenn $a$ in $M$ liegt, dann kann man die Abbildung auf triviale Weise auf $a$ fortsetzen.\newpage
-    	Wenn ansonsten $a$ algebraisch über $E_KM$ ist, ist $a$ in $\acl(E_KM)$, also existiert $X\subseteq E_K$ endlich mit $a$ in $\acl(MX)$. Ohne Einschränkungen sei $X$ jetzt schon ein Oberkörper von $E_M$, wichtig ist nur der endliche Transzendenzgrad über $E_M$. Wegen der Saturation hat die Erweiterung $E_N\subseteq E_L$ Transzendenzgrad $\infty$ und für einen beliebigen algebraisch abgeschlossenen Zwischenkörper $E_N\subseteq Y\subseteq E_L$ von gleichem Transzendenzgrad wie der von $X$ über $E_M$ kann $E_M\cong E_N$ fortgesetzt werden zu einem Isomorphismus $X\cong Y$. Diesen kann man wie oben mit Lemma \ref{Fortsetzungslemma} und Lemma \ref{alg Abschl} fortsetzen zu einem $\lfc$-Isomorphismus zwischen den Zwischenstrukturen $(\overline{MX},X)$ und $(\overline{NY},Y)$, wobei die erste $a$ enthält.\\
+    	Ohne Einschränkungen seien $(M,E_M)$ und $(N,E_N)$ jeweils algebraisch abgeschlossene Paare. Das kann man annehmen, denn die Lemmata \ref{E-Erw} und \ref{Fortsetzungslemma} besagen, dass es einen Isomorphismus zwischen den Zwischenstrukturen $$(M\overline{E_M},\overline{E_M})\text{ und }(N\overline{E_N},\overline{E_N}),$$ gibt der sich auf einen Isomorphismus der Zwischenstrukturen (vgl. Lemma \ref{alg Abschl}) $$(\overline{M},\overline{E_M})\cong(\overline{N},\overline{E_N})$$ fortsetzt.\\
+    	Sei jetzt $a$ in $K$. Wenn $a$ in $M$ liegt, dann kann man die Abbildung auf triviale Weise auf $a$ fortsetzen.\\
+    	Wenn ansonsten $a$ algebraisch über $E_KM$ ist, ist $a$ in $\acl(E_KM)$, also existiert eine endliche Menge $X\subseteq E_K$, sodass $a$ in $\acl(MX)$ ist. Ohne Einschränkungen sei $X$ jetzt schon ein Oberkörper von $E_M$, wichtig ist nur der endliche Transzendenzgrad über $E_M$. Wegen der Saturation hat die Erweiterung $E_N\subseteq E_L$ Transzendenzgrad $\infty$ und für einen beliebigen algebraisch abgeschlossenen Zwischenkörper $E_N\subseteq Y\subseteq E_L$ von gleichem Transzendenzgrad wie der von $X$ über $E_M$ kann $E_M\cong E_N$ fortgesetzt werden zu einem Isomorphismus $X\cong Y$. Diesen kann man wie oben mit Lemma \ref{Fortsetzungslemma} und Lemma \ref{alg Abschl} fortsetzen zu einem $\lfc$-Isomorphismus zwischen den Zwischenstrukturen $(\overline{MX},X)$ und $(\overline{NY},Y)$, wobei die erste $a$ enthält.\\
     	Wenn $a$ transzendent über $E_KM$ ist, gibt es ein über $E_LN$ transzendentes $b$ in $L$, denn der entsprechende Typ ist konsistent, wenn $\abs{L}$ größer ist als $\abs{E_L}$. So etwas lässt sich aber in einer elementaren Oberstruktur erreichen (für die endliche Konsistenz ist die genaue Kardinalität des Transzendenzgrads von $E_L\subseteq L$ egal) und wenn der Typ dort konsistent ist, dann auch unten.\\
-    	Die Elemente $a$ und $b$ erzeugen einen Isomorphismus $C:=\overline{M(a)}\overset{\phi}{\cong}\overline{N(b)}$. Setze $$E:=\overline{M(a)}\cap E_K\cap\phi^{-1}(E_L\cap\overline{N(b)}),$$ dann gilt $(C,E)\cong_{\lfc}(\phi(C),\phi(E))$ und $b$ ist in $\phi(C)$.\\
-    	Zu zeigen ist nun nur noch $$(M,E_M)\subseteq_{\lfc}(C,E)\subseteq_{\lfc}(K,E_K)\text{ und }(N,E_N)\subseteq_{\lfc}(\phi(C),\phi(E))\subseteq_{\lfc}(K,E_K).$$\\
-    	Aus $(M,E_M)\subseteq_{\lfc}(K,E_K)$ folgt mit Lemma \ref{transz Erw} $$(M,E_M)\subseteq_{\lfc}(M(a),E_M)\subseteq_{\lfc}(K,E_K),$$ daraus mit Lemma \ref{E-Erw} und $E_M\subseteq E\subseteq E_K$ $$(M,E_M)\subseteq_{\lfc}(M(a)E,E)\subseteq_{\lfc}(K,E_K),$$ daraus folgt mit Lemma \ref{alg Abschl} und $E\subseteq\overline{M(a)}=C$ schließlich $$(M,E_M)\subseteq_{\lfc}(C,E)\subseteq_{\lfc}(K,E_K).$$
-    	Der Beweis der Behauptung der Zwischenstruktureigenschaft für $(\phi(C),\phi(E))$ geht analog und weil $a$ aus $C$ kommt, haben wir die gesuchte Fortsetzung gefunden.
+    	Die Elemente $a$ und $b$ erzeugen einen fortgesetzten Isomorphismus $M(a)\cong N(b)$, der einen Isomorphismus $$(M(a),E_M)\cong_{\lfc}(N(b),E_N)$$ induziert. Zu zeigen ist nun nur noch $$(M,E_M)\subseteq_{\lfc}(M(a),E_M)\subseteq_{\lfc}(K,E_K)\text{ und }(N,E_N)\subseteq_{\lfc}(N(b),E_N)\subseteq_{\lfc}(K,E_K).$$
+    	Dies gilt aber mit Lemma \ref{transz Erw} und weil $a$ in $M(a)$ liegt, haben wir den erweiternden Isomorphismus gefunden.
     \end{proof}
     
     \newpage
     
     \begin{definition}
-    	Wenn es keine Rolle spielt, in welcher Sprache man gerade ist, schreibe einfach \textbf{ACP} für die Theorie.
+    	Wenn es keine Rolle spielt, in welcher Sprache man gerade ist, schreibe bloß \textbf{ACP} für die Theorie.
     \end{definition}
     
     Bis jetzt haben wir zwar die Quantorenelimination erreicht, allerdings kann man Formeln modulo ACP noch weiter reduzieren. Insbesondere wäre eine \glqq{}Schachtelung\grqq{} von mehreren $f_{i,n}$ ineinander im Weiteren nicht leicht zu behandeln. Nach weiterer Reduktion der Formeln braucht man das aber auch nicht, da die Funktionen in den kleineren Körper abbilden. Der folgende Fakt lässt sich durch einige Rechnungen und Fallunterscheidungen beweisen, aus Gründen des Leseflusses werden diese aber hier weggelassen.
@@ -358,7 +354,7 @@
         wobei $\mathbb{P}$ den Primkörper der entsprechenden Charakteristik bezeichne.
     \end{corollary}
     \begin{corollary}
-    	In jedem Modell $(K,E_K)$ ist jede definierbare Menge $X\subseteq E_K^n$ schon beschreibbar als $X=E_K^n\cap Z$, wobei $Z$ definierbar in der Ringsprache über denselben Parametern ist. Das liegt daran, dass die $(f_{i,n}),(l_n)$ trivial sind, wenn man Werte aus $E_K$ einsetzt.\\ Dementsprechend ist $E(x)$ eine streng minimale Formel und für $e_1,\dots,e_n$ in $E_K$ ist $\RM(\overline{e}/X)=\dim(\overline{e}/X)$ für alle $X\subseteq K$.
+    	Es sei $(K,E_K)$ ein echtes dichtes Paar und $S\subseteq K$ eine Menge, die abgeschlossen unter den $(f_{i,n})$ ist (im nächsten Abschnitt werden wir solche Mengen speziell nennen). Dann ist jede definierbare Menge $X\subseteq E_K^n$ schon beschreibbar als $X=E_K^n\cap Z$, wobei $Z$ definierbar in der Ringsprache über denselben Parametern ist. Das liegt daran, dass man Werte aus $E_K$ aus den $(f_{i,n})$ und $(l_n)$ herausziehen kann und sich danach jede Funktion $f_{i,n}$ als fester Wert schreiben lässt und jedes $l_n$ als entweder wahre oder falsche Aussage, wenn sie nur noch die Parameter enthalten und keine Variable mehr.\\ Dementsprechend ist $E(x)$ eine streng minimale Formel und für $e_1,\dots,e_n$ in $E_K$ ist $\RM(\overline{e}/X)=\dim(\overline{e}/X)$ für alle Mengen $X\subseteq K$ und $\dim$ als die $\acl$-Dimension in $K$.
     \end{corollary}
     \begin{corollary}
     	Die Theorie $\operatorname{ACP}^{\lf}$ hat für fixierte Charakteristik ebenfalls Quantorenelimination, da nach Folgerung \ref{Formel-Vereinfachung} die Operation \glqq{}$^{-1}$\grqq{} eliminiert werden kann. Da in Lemma \ref{Symbolik} gezeigt wurde, dass die $(f_{i,n})$ sowohl existenziell als auch universell definierbar sind, ist jede Formel modulo $\operatorname{ACP}^{\lld}$ immerhin universell und $\operatorname{ACP}^{\lld}$ ist modellvollständig.
@@ -377,13 +373,14 @@
     	Die Theorie ACP ist $\omega$-stabil.
     \end{theorem}
     \begin{proof}
-    	Betrachte die Menge der Typen in einem Modell $(K,E_K)$ über einer vorgegebenen Menge $S\subseteq K$ und wähle als Sprache $\lfc$, zunächst sei $S$ keine Teilmenge von $E_K$. Ohne Einschränkungen sei das Modell schon $\abs{S}^+$-saturiert und $S$ sogar $\lfc$-algebraisch abgeschlossen. Insbesondere ist $S$ Träger einer elementaren Unterstruktur, denn $\operatorname{ACP}^{\lfc}$ ist modellvollständig und $S$ ist Modell, da es keine Teilmenge von $E_K$ ist. Aus dem B\&F-System in Satz \ref{QE} geht hervor, dass es die folgenden Typen über $S$ gibt:
+    	Betrachte die Menge der Typen in einem Modell $(K,E_K)$ über einer vorgegebenen Menge $S\subseteq K$ und wähle als Sprache $\lfc$. Ohne Einschränkungen sei das Modell schon $\abs{S}^+$-saturiert und $S$ sogar $\lfc$-algebraisch abgeschlossen. Insbesondere ist $S$ Träger einer elementaren Unterstruktur, denn $\operatorname{ACP}^{\lfc}$ ist modellvollständig und $S$ ist Modell, da es keine Teilmenge von $E_K$ ist. Aus dem B\&F-System in Satz \ref{QE} geht hervor, dass maximal die folgenden Typen über $S$ gibt:
     	\begin{itemize}
     		\item Den Typ eines Elementes in $S$
-    		\item Die Typen eines Elementes $a$ in $\overline{SE_K}\setminus S$ (bestimmt durch die minimale Größe eines Tupels $\overline{e}$ aus $E_K$, sodass $a$ in $\overline{S\overline{e}}$ ist, sowie durch den Isomorphietyp des Minimalpoynoms von $a$ über $S\overline{e}$); TODO
+    		\item Die Typen eines Elementes $a$ in $\overline{SE_K}\setminus S$ (bestimmt durch die minimale Größe eines Tupels $\overline{e}$ aus $E_K$, sodass $a$ in $\overline{S\overline{e}}$ ist, sowie durch den Isomorphietyp des Minimalpoynoms von $a$ über $S\overline{e}$); die einzelnen Formelmengen, die diese Konstellationen beschreiben, müssen hierbei allerdings nicht unbedingt konsistent sein, z.B. wenn $S$ eine Teilmenge von $E_K$ ist \--- es könnte unter Umständen also auch sehr wenige Typen dieser Art geben
     		\item Den Typ eines Elementes in $K\setminus\overline{SE_K}$
     	\end{itemize}
-        Der erste Typ hat klarerweise Morleyrang 0. Im Fall des zweiten Typs für ein Element $a$ erhalten wir mit einem analogen Vorgehen zu oben eine Umformung des Minimalpolynoms von $a$ über $SE_K$. Damit ergibt sich der Morleyrang als die Mächtigkeit eines minimalen Tupels aus $E_K$, sodass $a$ algebraisch über $SE_K$ ist.\\
+        Im Folgenden nehmen wir an, dass $S$ Träger eines $\aleph_0$-saturierten Modells von ACP ist, denn das kann durch Vergrößerung immer erreicht werden und bei dieser Vergrößerung lassen sich nach Fakt \ref{stationär} die bisherigen Typen zu neuen Typen vom selben Rang fortsetzen. Für die Bestimmung des Morleyranges aller Typen ändert dies also nichts.\\
+        Der erste Typ hat klarerweise Morleyrang 0. Im Fall des zweiten Typs für ein Element $a$ erhalten wir mit einem analogen Vorgehen zu oben eine Umformung des Minimalpolynoms von $a$ über $SE_K$. Damit ergibt sich der Morleyrang als die minimale Mächtigkeit eines Tupels aus $E_K$, sodass $a$ algebraisch über $SE_K$ ist.\\
         Der dritte Typ kann keinen Morleyrang größer als $\omega$ haben, denn dann müsste es nach Fakt \ref{Anfangsstück} einen Typen mit Morleyrang $\omega$ geben, die anderen Arten von Typen haben aber endlichen Rang. Sei $(a_n)$ eine Folge von Elementen, sodass $$n=\RM(a_n)\text{ für alle }n\text{ in }\setN.$$ Man könnte zum Beispiel über $S$ algebraisch unabhängige $x_1,x_2,\dots$ aus $E_K\setminus S$ nehmen, die wegen Saturiertheit existieren müssen; ebenso kann man ein $z$ aus $S\setminus E_K$ wählen, das nach unseren Annahmen an $S$ existiert und das transzendent über $E_K$ ist. Die Elemente $1,z,z^2,\dots$ aus $S$ sind dann linear unabhängig über $E_K$ und wir setzen $a_n:=x_1+zx_2+\dots+z^nx_n$. Dann ist $a_n$ interdefinierbar mit $x_1,\dots,x_n$ über $z$, also hat es Morleyrang $n$ wegen der algebraischen Unabhängigkeit der $x_i$.\newpage
         Im Stoneraum gilt \--- bezüglich der in \cite{Lukas} beschriebenen Topologie \--- $$\lim\limits_{n\rightarrow\infty}\tp(a_n)=p$$ für den Typen $p$ der dritten Art: Denn $a_n$ ist transzendent über $SX$ für alle $E_S\subset X$ von Transzendenzgrad $\leq n-1$. Also sind für jede Umgebung, die das Nichterfüllen einer bestimmten Art von Polynom über $SE_K$ beschreibt, fast alle $a_n$ enthalten. Aber diese Umgebungen bestimmen den Typen $p$ eindeutig, also sind für jedes $\phi$ in $p$ fast alle $\tp(a_n)$ in der von $\phi$ erzeugten Umgebung $\fU_\phi$ im Stoneraum.\\
         Jedes $\phi$ in $\fF_1(\lingua_S)$ mit endlichem Rang ist dann nur in endlich vielen $\tp(a_n)$ enthalten (nämlich maximal $\operatorname{RM}(\phi)$ vielen), also ist $\RM(p)\geq\omega$, damit herrscht Gleichheit.\\
