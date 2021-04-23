@@ -5,17 +5,17 @@
 Viele Techniken und Gedanken aus dem vorigen Kapitel werden jetzt auf o-minimale Theorien übertragen. Einführend folgen hier zunächst die wichtigsten Erkenntnisse über diese Theorien, basierend auf \cite{vdDZellzerlegung}.
 
 \begin{definition}
-	Eine $\lingua$-Struktur $\fM$ heißt \textbf{o-minimal}, wenn $\lingua$ eine zweistellige Relation $<$ enthält, deren Interpretation die einer linearen Ordnung ist, und die definierbaren Teilmengen von $\fM$ endliche Vereinigungen von Intervallen und Punkten sind.
+	Eine $\lingua$-Struktur $\fM$ heiße \textbf{o-minimal}, wenn $\lingua$ eine zweistellige Relation $<$ enthält, deren Interpretation die einer linearen Ordnung ist, und die definierbaren Teilmengen von $\fM$ endliche Vereinigungen von Intervallen und Punkten sind.
 \end{definition}
 
 Induktiv kann man den Begriff einer Zelle in einer solchen Struktur definieren.
 \begin{definition}
 	Sei $\sigma$ eine $\{0,1\}$-wertige endliche Folge der Länge $n$. Eine $\sigma$-Zelle $Z$ in der o-minimalen Struktur $\fM$ ist eine (definierbare) Teilmenge von $M^n$, sodass genau eine der folgenden Möglichkeiten gilt:
 	\begin{itemize}
-		\item $\sigma$ ist die leere Folge, $n=0$ und $Z=M^0=\{0\}$.
-		\item $n=1$ und $Z$ ist entweder Intervall ($\sigma=(1)$) oder einelementig ($\sigma=(0)$).
-		\item Es existiert ein $\sigma'$, eine $\sigma'$-Zelle Z' und eine definierbare stetige Funktion\linebreak$f:Z'\rightarrow M$, sodass $Z=\operatorname{Graph}(f)$. Außerdem ist $\sigma=\sigma'\textasciicircum0$.
-		\item Es existiert ein $\sigma'$, eine $\sigma'$-Zelle Z' und zwei definierbare stetige Funktionen $f,g$ aus $M^{Z'}\cup\{\pm\infty\}$, sodass $f<g$ überall und $$Z=\{(x,y)\in Z'\times M\mid f(x)<y<g(x)\}.$$ Außerdem ist $\sigma=\sigma'\textasciicircum1$.
+		\item Die Folge $\sigma$ ist die leere Folge, $n=0$ und $Z=M^0=\{0\}$.
+		\item Es ist $n=1$ und $Z$ ist entweder Intervall ($\sigma=(1)$) oder einelementig ($\sigma=(0)$).
+		\item Es existieren ein $\sigma'$, eine $\sigma'$-Zelle Z' und eine definierbare stetige Funktion\linebreak$f:Z'\rightarrow M$, sodass $Z=\operatorname{Graph}(f)$. Außerdem ist $\sigma=\sigma'\textasciicircum0$.
+		\item Es existieren ein $\sigma'$, eine $\sigma'$-Zelle Z' und zwei definierbare stetige Funktionen $f,g$ aus $M^{Z'}\cup\{\pm\infty\}$, sodass überall $f<g$ gilt und die Gleichheit $$Z=\{(x,y)\in Z'\times M\mid f(x)<y<g(x)\}$$ gilt. Außerdem ist $\sigma=\sigma'\textasciicircum1$.
 	\end{itemize}
 \end{definition}
 \begin{definition}
@@ -39,7 +39,7 @@ Wichtigste Grundlage der Arbeit mit o-minimalen Theorien sind die folgenden Auss
 \begin{remark}
 	Wenn die Menge bzw. die Funktion über einer bestimmten Menge definierbar ist, kann man sich die Zerlegung ebenso über dieser Menge definierbar wählen. Außerdem kann man endlich viele Mengen simultan zerlegen und sie sogar partitionieren. Eine Partition einer Teilmenge $Z\subseteq M^n$ sei dabei
 	\begin{itemize}
-		\item eine beliebige Zellzerlegung im Fall $n=1$ oder ansonsten
+		\item eine beliebige Zellzerlegung von $Z$ im Fall $n=1$ und ansonsten
 		\item eine Zellzerlegung von $Z$, so dass die Projektion $\pi$ auf die ersten $n-1$ Koordinaten eine Partition von $\pi(Z)$ erzeugt.
 	\end{itemize}
 \end{remark}
@@ -58,11 +58,12 @@ Ab jetzt geben wir uns ein o-minimales Modell $\fM$ einer vollständigen $\lingu
 \end{factdef}
 
 Man kann die Dimension auch anders definieren:
-\begin{fact}
-	Es erfüllt $\acl=\dcl$ das Austauschprinzip und induziert also einen Dimensionsbegriff für Tupel. Wenn $\fM$ hinreichend saturiert ist und $X\subseteq M^n$ definierbar über $Y$, ist $\dim(X)=\max\{\dim(a/Y)\mid a\in X\}$.
-\end{fact}
+\begin{factdef}
+	Es erfüllt $\acl=\dcl$ das Austauschprinzip und induziert also einen Dimensionsbegriff für Tupel. Wenn $\fM$ hinreichend saturiert ist und $X\subseteq M^n$ definierbar über $Y$, ist $\dim(X)=\max\{\dim(a/Y)\mid a\in X\}$.\\
+	Ein Element $a$, was die obige Gleichheit bezeugt, heiße \textbf{generisch}.
+\end{factdef}
 
-O-minimale Gruppen haben eine enorm wichtige Eigenschaft, aus der viele weitere Eigenschaften folgen, die hier nicht von Bedeutung sind. In unserem Fall reicht die folgende Grundaussage aus.
+O-minimale Gruppen haben eine enorm wichtige Eigenschaft, aus der viele weitere Eigenschaften folgen. In unserem Fall reicht jedoch die folgende Grundaussage aus.
 \begin{fact}
 	Wenn $\fM$ eine 0-definierbare, durch $<$ angeordnete Gruppenoperation mit einem 0-definierbaren positiven Element (üblicherweise 1 genannt) besitzt, gilt \textbf{Definable Choice}: Aus jeder definierbaren Menge lässt sich kanonisch, uniform und definierbar ein Element auswählen. Insbesondere gibt es zu jeder Menge eine definierbare Skolemfunktion und jede definierbare Familie von uniform parametrisierten Mengen hat eine definierbare Auswahlfunktion. Die Auswahl ist dabei definierbar über derselben Menge wie die ursprüngliche(n) Menge(n).
 \end{fact}
@@ -76,22 +77,22 @@ O-minimale Gruppen haben eine enorm wichtige Eigenschaft, aus der viele weitere 
 
 Im Folgenden halten wir eine vollständige o-minimale Theorie T mit dichter Ordnung in der Sprache $\lingua$ fest und betrachten die Theorie $\tq$ in der Sprache $\lingua^P:=\lingua\cup\{P(x)\}$, sodass die Modelle von $\tq$ Modelle von T sind und in jedem Modell $\fM$ die Menge $P(M)$ ebenfalls Modell von T ist. Schreibe so ein Paar dann als $(B,A)$ mit $A=P(B)$.\\
 Die Theorie T erweitere RCF, insbesondere gilt Definable Choice. Dann sind Skolemfunktionen definierbar und ohne Einschränkungen sei $\lingua$ schon so eine definitorische Erweiterung, dass T Quantorenelimination hat und universell axiomatisierbar ist (wobei bei einzelnen Theorien die Frage interessant wäre, welche Skolemfunktionen man dafür hinzufügen muss).\\
-Weil T universell mit Quantorenelimination ist, folgt, dass Unterstrukturen von Modellen von T schon elementare Unterstrukturen sind. Also ist für jede Teilmenge $S$ eines Modells der definierbare Abschluss $\dcl(S)$ schon eine elementare Substruktur; zur Vereinfachung bezeichnen wir in Zukunft mit $AB$ den definierbaren Abschluss $\dcl(A\cup B)=\langle A\cup B\rangle_\lingua$ für zwei Teilmengen $A,B$ eines Modells.\\
+Weil T universell ist und Quantorenelimination hat, folgt, dass Unterstrukturen von Modellen von T schon elementare Unterstrukturen sind. Also ist für jede Teilmenge $S$ eines Modells der definierbare Abschluss $\dcl(S)$ schon eine elementare Substruktur; zur Vereinfachung bezeichnen wir in Zukunft mit $AB$ den definierbaren Abschluss $\dcl(A\cup B)=\langle A\cup B\rangle_\lingua$ für zwei Teilmengen $A,B$ eines Modells.\\
 Das Prädikat $P$ beschreibt also eine elementare Unterstruktur, mit $\td$ wird nun die Theorie beschrieben, die ausdrückt, dass $P$ eine dichte echte Unterstruktur ist (diese zwei Aussagen oder deren Gegenteil müssen auf jeden Fall von der Theorie beschrieben werden, wenn sie vollständig sein soll). Klar ist dann, dass Unterstrukturen von $\td$ automatisch Modelle von $\tq$ sind.\\\\
 Der Arbeit \cite{VanDenDries} folgend, wird in den nächsten Abschnitten die Vollständigkeit und eine Art von Quantorenelimination für $\td$ gezeigt, die mittels eines Back\&Forth-Systems bewiesen wird. Danach werden einige Erkenntnisse aus dem B\&F-System gezogen, bevor die Hauptaussagen dieser Arbeit bewiesen werden. Zunächst ist aber eine genauere Betrachtung von sogenannten kleinen Mengen vonnöten.
 \newpage
 \section{Kleine Mengen, Dichtheit und saturierte Modelle}
 In diesem Abschnitt wird ein Begriff der Kleinheit entwickelt und für Modelle von $\td$ gezeigt, dass kleine Mengen kein Intervall enthalten. Abschließend werden im Anschluss einige Eigenschaften von saturierten Modellen von $\td$ aufgeführt.
 \begin{definition}
-	Gegeben sei ein Modell $(B,A)\models\td$, dann ist eine $\lingua^P$-definierbare Menge $S\subseteq B$ \textbf{klein}, wenn eine $\lingua$-definierbare Funktion $f:B^n\rightarrow B$ existiert mit $S\subseteq f(A^n)$.
+	Gegeben sei ein Modell $(B,A)\models\td$, dann ist eine $\lingua^P$-definierbare Menge $S\subseteq B$ \textbf{klein}, wenn eine $\lingua$-definierbare Funktion $f:B^n\rightarrow B$ existiert, sodass $S$ eine Teilmenge von $f(A^n)$ ist.
 \end{definition}
 
 \begin{lemma}
 	Kleine Mengen in einem echten dichten Paar bilden ein Ideal in den\linebreak $\lingua^P$-definierbaren Mengen bzgl. der Teilmengenrelation.
 \end{lemma}
 \begin{proof}
-	Es gibt kleine Mengen, zum Beispiel Punktmengen oder die Interpretation von $P$, außerdem sind Teilmengen von kleinen Mengen offensichtlich wieder klein.\\
-	Sei jetzt $(B,A)$ ein dichtes Paar und $X,Y$ kleine Mengen, außerdem seien $\lingua$-definierbare Funktionen $f,g:B^n\rightarrow B$ gegeben mit $$X\subseteq f(A^n),Y\subseteq g(A^n).$$ Ohne Einschränkungen bilden $f,g$ dabei schon von demselben $B^n$ ab, ansonsten muss man beide mit Dummyvariablen vergrößern. Definiere
+	Es gibt kleine Mengen, zum Beispiel Punktmengen oder die Interpretation von $P$, außerdem sind definierbare Teilmengen von kleinen Mengen offensichtlich wieder klein.\\
+	Sei jetzt $(B,A)$ ein echtes dichtes Paar und $X,Y$ kleine Mengen, außerdem seien\linebreak $\lingua$-definierbare Funktionen $f,g:B^n\rightarrow B$ gegeben mit $$X\subseteq f(A^n),Y\subseteq g(A^n).$$ Ohne Einschränkungen bilden $f,g$ dabei schon von demselben $B^n$ ab, ansonsten muss man eine der Abbildungen mit Dummyvariablen vergrößern. Definiere
 	\begin{align*}
 	h:B^{n+1}&\rightarrow B,\\
 	h(\overline{x},y):=&\left\{\begin{array}{ll}
@@ -100,19 +101,19 @@ In diesem Abschnitt wird ein Begriff der Kleinheit entwickelt und für Modelle v
 	\end{array}\right.,
 	\end{align*}
 	das ist $\lingua$-definierbar und es gilt $X\cup Y\subseteq h(A^{n+1})$, also ist $X\cup Y$ auch klein.\\
-	Dass nicht jede Menge klein ist, wird im Folgenden noch bewiesen werden.
+	Dass nicht jede definierbare Menge klein ist, wird im Folgenden noch bewiesen werden.
 \end{proof}
 
 In dem folgenden Lemma meint $+,\cdot$ nicht unbedingt die Operationen aus $\lingua$, sondern neue, beliebige Operationen. Die Anordnung hingegen soll die gewöhnliche bleiben.
 
 \begin{lemma}\label{Hilfsaussage Kleinheit}
-	Seien $A\precneqq B\models\operatorname{T}$ hinreichend hoch saturiert, $f:B^{n+1}\rightarrow B$ eine $A$-definierbare Funktion, $b$ aus $B\setminus A$, $\beta,\gamma$ in $A\cup\{\pm\infty\}$ mit $\beta<b<\gamma$ und einer angeordneten $A$-definierbaren Körperstruktur $(\cdot,+)$ auf $(\beta,\gamma)=:I$. Dann existieren $a_0,\dots,a_n$ in $I_A$ mit $$a_nb^n+a_{n-1}b^{n-1}+\dots,a_0\in I\setminus f(A^n\times\{b\}).$$
+	Seien zwei hinreichend hoch saturierte Modelle $A\precneqq B$ von T, eine $\lingua_A$-definierbare Funktion $f:B^{n+1}\rightarrow B$ sowie Elemente $b$ aus $B\setminus A$ und $\beta,\gamma$ aus $A\cup\{\pm\infty\}$ mit $\beta<b<\gamma$ und einer angeordneten $\lingua_A$-definierbaren Körperstruktur $(\cdot,+)$ auf $I:=(\beta,\gamma)\subseteq B$. Dann existieren $a_0,\dots,a_n$ in $I_A$ mit $$a_nb^n+a_{n-1}b^{n-1}+\dots,a_0\in I\setminus f(A^n\times\{b\}).$$
 \end{lemma}
 \newpage
 \begin{proof}
-	Wenn die Aussage nicht gilt, dann gilt mit $$p(x,y):=x_ny^n+x_{n-1}y^{n-1}+\dots,x_0,$$ dass für jedes $a$ aus $(I_A)^{n+1}$ ein $\alpha$ in $A^n$ existiert mit $p(a,b)=f(\alpha,b)$. Es muss für festes $a$ aus $I_A$ ein Intervall um $b$ in $I_A$ mit dieser Eigenschaft geben, denn sonst wäre $b$ in $\dcl(A)=A$.\\
-	Sei jetzt $a$ nicht mehr fixiert, dann existiert mit Definable Choice in $I_A$ eine definierbare Zuordnung $a\mapsto\alpha(a)$, sodass $p(a,\cdot)=f(\alpha(a),\cdot)$ auf einem Intervall gilt. Da jedes $a$ die Länge $n+1$ hat und jedes $\alpha(a)$ aber Länge $n$, müssen unendlich viele $a$ in $(I_A)^{n+1}$ existieren, die durch $\alpha$ auf das selbe Element abgebildet werden. Denn wenn das nicht so wäre, wäre wegen Saturation ein generisches Element über all den vorigen zu Definitionen benutzten Parametern aus $(I_A)^{n+1}$ algebraisch über einem Element aus $A^n$, was der Generizität widerspricht. Da es unendlich viele Elemente gibt, sodass $\alpha$ auf ihnen konstant ist, gibt es schon eine Zelle von positiver Dimension mit der Eigenschaft und damit insbesondere eine Zelle $E$ von Dimension 1 (als Teilmenge einer Zelle lässt sich immer eine von kleinerer Dimension finden). Nenne den konstanten Wert dann $\alpha^*$.\\
-	Da also gilt, dass für alle $a$ aus $E$ ein Intervall $J$ existiert mit $p(a,\cdot)=f(\alpha^*,\cdot)$ auf $J$, existieren mit Definable Choice $\beta^*,\gamma^*:E\rightarrow I_A$, sodass $p(a,\cdot)=f(\alpha^*,\cdot)$ auf $(\beta^*(a),\gamma^*(a))$ gilt. Ohne Einschränkungen seien $\beta^*$ und $\gamma^*$ jetzt schon stetig auf $E$ und ein $e$ in $E$ beliebig· Dann existiert für $\varepsilon$ hinreichend klein eine $E$-Umgebung $U$ um $e$, sodass $$\beta^*<\frac{1}{2}(\beta^*(e)+\gamma^*(e))-\varepsilon,\ \frac{1}{2}(\beta^*(e)+\gamma^*(e))+\varepsilon<\gamma^*$$ auf $U$, also $$p(a,x)=f(\alpha^*,x)\text{ für alle }a\text{ in } U,x\text{ in }(\frac{1}{2}(\beta^*(e)+\gamma^*(e))-\varepsilon,\frac{1}{2}(\beta^*(e)+\gamma^*(e))+\varepsilon)$$ gilt. Es kann aber nicht $p(a-a',x)=p(a,x)-p(a',x)=f(\alpha^*,x)-f(\alpha^*,x)=0$ für $a,a'$ verschieden in $U$ und unendlich viele $x$ sein, weil ein Nichtnullpolynom nicht unendlich viele Nullstellen haben kann.
+	Wenn die Aussage nicht gelten würde, so gälte mit $$p(x,y):=x_ny^n+x_{n-1}y^{n-1}+\dots,x_0,$$ dass für jedes $a$ aus $(I_A)^{n+1}$ ein $\alpha$ in $A^n$ existiert mit $p(a,b)=f(\alpha,b)$. Es muss für festes $a$ aus $I_A$ ein Intervall um $b$ in $I_A$ mit dieser Eigenschaft geben, denn sonst wäre $b$ in $\dcl(A)=A$.\\
+	Sei jetzt $a$ nicht mehr fixiert, dann existiert mit Definable Choice in $I_A$ eine definierbare Zuordnung $a\mapsto\alpha(a)$, sodass $p(a,\cdot)=f(\alpha(a),\cdot)$ auf einem Intervall gilt. Da jedes $a$ die Länge $n+1$ hat und jedes $\alpha(a)$ aber Länge $n$, müssen unendlich viele $a$ in $(I_A)^{n+1}$ existieren, die durch $\alpha$ auf das selbe Element abgebildet werden. Denn wenn das nicht so wäre, gäbe es wegen Saturation ein generisches Element über all den vorigen zu Definitionen benutzten Parametern aus $(I_A)^{n+1}$ und es wäre algebraisch über einem Element aus $A^n$, was der Generizität widerspricht. Da es unendlich viele Elemente gibt, sodass $\alpha$ auf ihnen konstant ist, gibt es schon eine Zelle von positiver Dimension mit der Eigenschaft und damit insbesondere eine Zelle $E$ von Dimension 1 (als Teilmenge einer Zelle lässt sich immer eine von kleinerer Dimension finden, wie man sich z.B. durch fortgesetzte Mittelwertbildung von unterem und oberem Rand einer Zelle überlegen kann). Nenne den konstanten Wert dann $\alpha^*$.\\
+	Da also gilt, dass für alle $a$ aus $E$ ein Intervall $J$ existiert mit $p(a,\cdot)=f(\alpha^*,\cdot)$ auf $J$, existieren mit Definable Choice $\beta^*,\gamma^*:E\rightarrow I_A$, sodass $p(a,\cdot)=f(\alpha^*,\cdot)$ auf $(\beta^*(a),\gamma^*(a))$ gilt. Ohne Einschränkungen seien $\beta^*$ und $\gamma^*$ jetzt schon stetig auf $E$ und ein $e$ in $E$ beliebig. Dann existiert für ein hinreichend kleines positives $\varepsilon$ eine $E$-Umgebung $U$ um $e$, sodass $$\beta^*<\frac{1}{2}(\beta^*(e)+\gamma^*(e))-\varepsilon,\ \frac{1}{2}(\beta^*(e)+\gamma^*(e))+\varepsilon<\gamma^*$$ auf $U$ gilt, also $$p(a,x)=f(\alpha^*,x)\text{ für alle }a\text{ in } U\text{ und }x\text{ in }(\frac{1}{2}(\beta^*(e)+\gamma^*(e))-\varepsilon,\frac{1}{2}(\beta^*(e)+\gamma^*(e))+\varepsilon)$$ ist. Es kann aber nicht $p(a-a',x)=p(a,x)-p(a',x)=f(\alpha^*,x)-f(\alpha^*,x)=0$ für $a$ und $a'$ verschieden in $U$ und unendlich viele $x$ sein, weil ein Nichtnullpolynom nicht unendlich viele Nullstellen haben kann.
 \end{proof}
 
 \newpage
@@ -121,14 +122,14 @@ In dem folgenden Lemma meint $+,\cdot$ nicht unbedingt die Operationen aus $\lin
 	Es sei ein dichtes Paar $(A,B)\models\td$ gegeben und $\lingua_A$-definierbare Funktionen $f:B^{n+1}\rightarrow B$ sowie ein $b$ in $B\setminus A$. Dann enthält $f(A^n\times\{b\})$ kein Intervall um $b$.
 \end{corollary}
 \begin{proof}
-	Nimm an, dass das Gegenteil gelte für das Intervall $J$ (ohne Einschränkungen mit Randpunkten $c<d$ in $A$): Dann ist $$x\mapsto\frac{1}{c-x}+\frac{1}{d-x}$$ eine ordnungstreue $A$-definierbare Bijektion $(c,d)\rightarrow A$. Diese erzeugt in $A$ eine definierbare angeordnete Körperstruktur auf $(c,d)=J_A$, also auch auf $J$ eine $A$-definierbare angeordnete Körperstruktur. Mit dem vorigen Lemma existiert ein Element aus\linebreak$J\setminus f(A^n\times\{b\})$, denn es spielt für die Aussage keine Rolle, ob man zu einer genügend saturierten Elementarerweiterung von $(B,A)$ übergeht.
+	Nimm an, dass das Gegenteil gelte für das Intervall $J$ (ohne Einschränkungen mit Randpunkten $c<d$ in $A$): Dann ist $$x\mapsto\frac{1}{c-x}+\frac{1}{d-x}$$ eine ordnungstreue $\lingua_A$-definierbare Bijektion $(c,d)_A\rightarrow A$. Diese erzeugt in $A$ eine definierbare angeordnete Körperstruktur auf $(c,d)_A=J_A$, also auch auf $J$ eine\linebreak $\lingua_A$-definierbare angeordnete Körperstruktur. Mit dem vorigen Lemma existiert ein Element aus $J\setminus f(A^n\times\{b\})$, denn es spielt für die Aussage keine Rolle, ob man zu einer genügend saturierten Elementarerweiterung von $(B,A)$ übergeht.
 \end{proof}
 
 \begin{theorem}\label{Kleinheit}
-	Wenn $(B,A)\models\td$, dann ist kein Intervall eine kleine Teilmenge.
+	In einem beliebigen Modell $(B,A)\models\td$ ist kein Intervall eine kleine Teilmenge.
 \end{theorem}
 \begin{proof}
-	Sei $f:B^n\rightarrow B$ eine durch $\varphi(x,y,b)$ definierbare Abbildung mit $\varphi$ einer\linebreak$\lingua_A$-Formel und $b$ in $B^m$ für ein $m$ definiert. Für $\dim(b/A)=0$ ist $f(A^n)\subseteq A$ klar, deswegen sei ohne Einschränkungen $\dim(b/A)\geq1$. Definiere
+	Sei $f:B^n\rightarrow B$ eine durch $\varphi(x,y,b)$ definierbare Abbildung für eine\linebreak $\lingua_A$-Formel $\varphi$ und ein $b$ in $B^m$. Falls $\dim(b/A)=0$ ist, ist $f(A^n)\subseteq A$ klar, da $A$ eine elementare Unterstruktur von $B$ ist. Deswegen sei ohne Einschränkungen $\dim(b/A)\geq1$. Definiere
 	\begin{align*}
 	g(x,z):=\left\{\begin{array}{ll}
 	y&\text{mit }B\models\varphi(x,y,z),\text{sofern }\varphi(x',y',z)\\
@@ -137,15 +138,14 @@ In dem folgenden Lemma meint $+,\cdot$ nicht unbedingt die Operationen aus $\lin
 	0 &\text{sonst}
 	\end{array}\right..
 	\end{align*}
-	Dann ist $g$ $A$-definierbar in $B$ und $g(\cdot,b)=f$. Falls $\dim(b/A)>1$, füge genug Komponenten von $b$ zu $A$ hinzu, sodass $\dim(b/A)=1$. Das Hinzufügen einer Komponente $b_j$ zu $A$ führt zu einem neuen Gegenbeispiel zur Aussage in einem dichten Paar, denn $Ab_j$ ist nach den Eingangsbemerkungen Modell von T und $Ab_j$ ist erst recht dicht in, aber nicht gleich $B$ (sonst hätte man die Dimension mit diesem Schritt schon zu sehr verkleinert).\\
-	Finde also $b_i$, sodass $A$-definierbare $(h_j)$ existieren mit $b_j=h_j(b_i)$ für alle $j$. Wenn jetzt $J\subseteq f(A^n)=g(A^n,b)=g(A^n,h(b_i))$ für ein Intervall $J$, dann widerspricht das der Aussage des letzten Lemmas für die Funktion $(x,y)\mapsto g(x,h(y))$.
+	Dann ist $g$ eine $\lingua_A$-definierbare Funktion in $B$ und $g(\cdot,b)=f$. Falls $\dim(b/A)$ echt größer ist als $1$, füge genug Komponenten von $b$ zu $A$ hinzu, sodass $\dim(b/A)=1$ gilt. Das Hinzufügen einer Komponente $b_j$ zu $A$ führt zu einem neuen Gegenbeispiel zur Aussage in einem dichten Paar, denn $Ab_j$ ist nach den Eingangsbemerkungen Modell von T und $Ab_j$ ist erst recht dicht in, aber nicht gleich $B$ (sonst hätte man die Dimension mit diesem Schritt schon zu sehr verkleinert).\\
+	Wir wählen dann ein $b_i$, sodass $\lingua_A$-definierbare Funktionen $(h_j)$ existieren mit\linebreak $b_j=h_j(b_i)$ für alle $j$. Wenn jetzt $$J\subseteq f(A^n)=g(A^n,b)=g(A^n,h(b_i))$$\newpage
+	für ein Intervall $J$ gälte, dann widerspräche das der Aussage des letzten Lemmas für die Funktion $(x,y)\mapsto g(x,h(y))$.
 \end{proof}
 
 \begin{definition}
 	Schreibe ab jetzt $P(\overline{x}):=\bigwedge\limits_{i=1}^\abs{x}P(x_i)$.
 \end{definition}
-
-\newpage
 
 Zum Abschluss dieses Abschnittes sollen hier noch ein paar weitere Fakten über dichte Paare aufgeführt werden, die später eine Bedeutung bekommen.
 
@@ -153,7 +153,7 @@ Zum Abschluss dieses Abschnittes sollen hier noch ein paar weitere Fakten über 
 	Wenn $(B,A)$ für ein unendliches $\kappa>\abs{\operatorname{T}}$ ein $\kappa$-saturiertes Modell von $\td$ ist, ist $\dim(B/A)\geq\kappa$.
 \end{lemma}
 \begin{proof}
-	Sei $S$ eine Basis von $B/A$ mit $\abs{S}<\kappa$; zeige nun, dass es kein Erzeugendensystem sein kann. Das folgt aus der Saturation angewandt auf den partiellen Typen $$\{\forall\overline{y}\in P(x\neq t(\overline{y}))\mid t\ \lingua_S\text{-Term}\},$$ der endlich erfüllbar ist, weil die Negation jeder dieser Formeln \glqq{}$x$ ist in einer kleinen Menge\grqq{} impliziert. Wenn der Typ also nicht endlich erfüllbar wäre, würde eine endliche Vereinigung von kleinen Mengen ganz $B$ überdecken. Das kann aber nicht gelten, denn eine endliche Vereinigung von kleinen Mengen ist wieder klein.
+	Sei $S$ eine Teilmenge von $B$ mit $\abs{S}<\kappa$; zeige nun, dass es kein Erzeugendensystem von $B$ über $A$ sein kann. Das folgt aus der Saturation angewandt auf den partiellen Typen $$\{\forall\overline{y}\in P(x\neq g(\overline{y}))\mid g\text{ ist }\lingua_S\text{-definierbare Abbildung von einem }B^n\text{ nach }B\},$$ der endlich erfüllbar ist, weil die Negation jeder dieser Formeln \glqq{}$x$ ist in einer kleinen Menge\grqq{} impliziert. Wenn der Typ also nicht endlich erfüllbar wäre, würde eine endliche Vereinigung von kleinen Mengen ganz $B$ überdecken. Das kann aber nicht gelten, denn eine endliche Vereinigung von kleinen Mengen ist wieder klein.
 \end{proof}
 
 \begin{corollary}\label{Finden transz Elte}
@@ -161,10 +161,10 @@ Zum Abschluss dieses Abschnittes sollen hier noch ein paar weitere Fakten über 
 \end{corollary}
 
 \begin{lemma}\label{Kodichte von A}
-	Sei $(B,A)\models\td$. Dann ist $A$ auch kodicht in $B$.
+	Für ein Modell $(B,A)\models\td$ ist $A$ auch kodicht in $B$.
 \end{lemma}
 \begin{proof}
-	Zu zeigen ist, dass für alle $a,c$ in $B$ ein $b$ aus $B\setminus A$ existiert mit $a<b<c$. Durch Translation und additive Inversion kann man annehmen, dass $a=0$. Wähle jetzt ein beliebiges $d$ aus $B\setminus A$ und ein $e$ in $A$ mit $d-c<e<d$. Dann ist $d-e$ nicht in $A$ (denn sonst wäre es $d$) und $$0=e-e<d-e<d-(d-c)=c.$$
+	Zu zeigen ist, dass für alle $a$ und $c$ in $B$ ein $b$ aus $B\setminus A$ existiert mit $a<b<c$. Durch Translation und additive Inversion kann man annehmen, dass $a=0$. Wähle jetzt ein beliebiges $d$ aus $B\setminus A$ und ein $e$ in $A$ mit $d-c<e<d$. Dann ist $d-e$ nicht in $A$ (denn sonst wäre es $d$) und $$0=e-e<d-e<d-(d-c)=c.$$
 \end{proof}
 
 \newpage
