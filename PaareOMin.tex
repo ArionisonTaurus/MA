@@ -2,7 +2,7 @@
 \chapter{Dichte Paare o-minimaler Körper}
 \section{O-minimale Theorien und ihre Eigenschaften}
 
-Viele Techniken und Gedanken aus dem vorigen Kapitel werden jetzt auf o-minimale Theorien übertragen. Einführend folgen hier zunächst die wichtigsten Erkenntnisse über diese Theorien, basierend auf \cite{vdDZellzerlegung}.
+Viele Techniken und Gedanken aus dem vorigen Kapitel werden jetzt auf o-minimale Theorien übertragen. Einführend folgen hier zunächst die wichtigsten Erkenntnisse über diese Theorien, basierend auf \cite{vdDZellzerlegung}. Auf diesem Werk basieren auch die weiteren Abschnitte bis einschließlich \ref{Definierbare Teilmengen}.
 
 \begin{definition}
 	Eine $\lingua$-Struktur $\fM$ heiße \textbf{o-minimal}, wenn $\lingua$ eine zweistellige Relation $<$ enthält, deren Interpretation die einer linearen Ordnung ist, und die definierbaren Teilmengen von $\fM$ endliche Vereinigungen von Intervallen und Punkten sind.
@@ -272,17 +272,17 @@ Im Folgenden werden einige Anordnungen von wechselseitigen Inklusionen von Model
 \end{proof}
 
 \begin{lemma}\label{Speziell definierbare kleine Mengen}
-	Sei $(D,C)\subseteq(B,A)$ frei und $(B,A)\models\td$, sowie $X\subseteq B$ eine kleine $\lingua^P_D$-definierbare Menge. Dann gibt es sogar eine $\lingua_D$-definierbare Funktion $f:B^n\rightarrow B$, die die Kleinheit von $X$ bezeugt.
+	Es sei eine freie Inklusion $(D,C)\subseteq(B,A)$ gegeben, wobei $(B,A)$ ein Modell von $\td$ sei, außerdem sei $X\subseteq B$ eine kleine $\lingua^P_D$-definierbare Menge. Dann gibt es sogar eine $\lingua_D$-definierbare Funktion $f:B^n\rightarrow B$, die die Kleinheit von $X$ bezeugt.
 \end{lemma}
 \begin{proof}
-	Man kann für $(B,A)$ schon hinreichende Saturiertheit annehmen. Wenn es keine solche Funktion gäbe, wäre $$\{x\in X\}\cup\{x\notin f(A^n)\mid f:B^n\rightarrow B\ D\text{-definierbar}\}$$ eine konsistente Formelmenge über $D$; ihr Erfüller sei $b$ aus $B\setminus DA$. Da $X$ klein ist und als solches kein Intervall enthält, kann man den Ordnungstyp von $b$ über $D$ auch durch ein Element $$\tilde{b}\in B\setminus(X\cup DA)$$ erfüllen wie in Folgerung \ref{Finden transz Elte}. Nach Konstruktion des B\&F-Systems haben $b$ und $\tilde{b}$ dann den selben $\lingua^P_D$-Typ über $D$, was einen Widerspruch ergibt, da $b$ in $X$ ist, $\tilde{b}$ aber nicht.
+	Man kann für $(B,A)$ schon hinreichende Saturiertheit annehmen. Wenn es keine solche Funktion gäbe, wäre $$\{x\in X\}\cup\{x\notin f(A^n)\mid f:B^n\rightarrow B\text{ ist eine }\lingua_D\text{-definierbare Funktion}\}$$ eine konsistente Formelmenge über $D$; ihr Erfüller sei $b$ aus $B\setminus DA$. Da $X$ klein ist und als solches kein Intervall enthält, kann man den Ordnungstyp von $b$ über $D$ auch durch ein Element $$\tilde{b}\in B\setminus(X\cup DA)$$ erfüllen wie in Folgerung \ref{Finden transz Elte}. Nach Konstruktion des B\&F-Systems haben $b$ und $\tilde{b}$ dann den selben $\lingua^P_D$-Typ über $D$, was einen Widerspruch ergibt, da $b$ in $X$ ist, $\tilde{b}$ aber nicht.
 \end{proof}
-
-\section{Definierbare Teilmengen von $A^n$}
+\newpage
+\section{Definierbare Teilmengen von $A^n$}\label{Definierbare Teilmengen}
 Wir interessieren uns für die Gestalt von $\lingua^P$-definierbaren Teilmengen von $A^n$. Dafür braucht man zuerst eine Hilfsaussage für definierbare Mengen in o-minimalen Strukturen.
 
 \begin{lemma}
-	Sei $\fM$ eine o-minimale Struktur, die eine angeordnete 0-definierbare Gruppenoperation $+$ mit positivem Element 1 hat und $Y\subseteq M^n$ definierbar. Dann ist $Y$ eine endliche Vereinigung von Mengen der Form $$\{f(b,\cdot)=0,g(b,\cdot)>0\},$$ wobei $b$ in $M^m$ ist und $f,g$ stetige, 0-definierbare Abbildungen $M^{m+n}\rightarrow M$ sind.
+	Es sei $\fM$ eine o-minimale Struktur, die eine angeordnete 0-definierbare Gruppenoperation $+$ mit positivem Element 1 enthält und eine definierbare Menge $Y\subseteq M^n$. Dann ist $Y$ eine endliche Vereinigung von Mengen der Form $$\{f(b,\cdot)=0,g(b,\cdot)>0\},$$ wobei $b$ in $M^m$ ist und $f,g$ stetige, 0-definierbare Abbildungen $M^{m+n}\rightarrow M$ sind.
 \end{lemma}
 \begin{proof}
 	Schreibe $Y=\phi(b,\fM)$ für ein $b$ aus $M^m$ und definiere $Z:=\phi(\fM)$. Wenn man $Z$ in 0-definierbare Zellen $(Z_i)_i$ zerlegt, erhält man $Y$ als endliche Vereinigung der Fasern $((Z_i)_b)_i$.  Es sei also ohne Einschränkungen $Z$ schon eine 0-definierbare Zelle.\\
@@ -291,10 +291,10 @@ Wir interessieren uns für die Gestalt von $\lingua^P$-definierbaren Teilmengen 
 	1&\text{sonst}
 	\end{array}\right.,$$
 	$$g(x):=\left\{\begin{array}{ll}
-	\inf\{\abs{x-d}\mid d\in \overline{Z}\setminus Z\}&Z\text{ nichtleer}\\
+	\inf\{\abs{x-d}\mid d\in \overline{Z}\setminus Z\}&\overline{Z}\setminus Z\text{ nichtleer}\\
 	1&\text{sonst}
 	\end{array}\right.,$$ das sind lipschitzstetige Funktionen.\\
-	Klar ist, dass $\overline{Z}=\{f=0\}$; da Zellen lokal abgeschlossen sind, ist $$\overline{Z}\setminus Z=\overline{\overline{Z}\setminus Z}=\{g=0\}.$$ Also erhalten wir $$Z=\overline{Z}\setminus(\overline{Z}\setminus Z)=\{f=0\}\setminus\{g=0\}=\{f=0\}\cap\{g>0\}$$ und $$Y=Z_b=\{f(b,\cdot)=0\}\cap\{g(b,\cdot)>0\}.$$
+	Klar ist, dass die Gleichheit $\overline{Z}=\{f=0\}$ gilt; da Zellen lokal abgeschlossen sind, ist $$\overline{Z}\setminus Z=\overline{\overline{Z}\setminus Z}=\{g=0\}.$$ Also erhalten wir $$Z=\overline{Z}\setminus(\overline{Z}\setminus Z)=\{f=0\}\setminus\{g=0\}=\{f=0\}\cap\{g>0\}$$ und $$Y=Z_b=\{f(b,\cdot)=0\}\cap\{g(b,\cdot)>0\}.$$
 \end{proof}
 \newpage
 \begin{theorem}\label{Definierbare Mengen}
@@ -307,7 +307,7 @@ Wir interessieren uns für die Gestalt von $\lingua^P$-definierbaren Teilmengen 
 \end{theorem}
 \begin{proof}
 	$\glqq{}1.\Rightarrow 2.\grqq{}:$ Sei $\varphi$ eine $\lingua^P_B$-Formel mit $\varphi(B)=Y$. Zu zeigen ist, dass eine $\lingua_B$-Formel $\psi$ existiert mit $(B,A)\models P(x)\rightarrow(\varphi(x)\leftrightarrow\psi(x))$;
-	 das ist genau dann der Fall, wenn $$\mathfrak{Th}(B,A)_B\cup\{P(x)\}\cup\{\varphi(x)\}\text{ und }\mathfrak{Th}(B,A)_B\cup\{P(x)\}\cup\{\neg\varphi(x)\}$$ in $\lingua_B$ getrennt werden können. Nach dem Trennungslemma gilt das genau dann, wenn für alle $$(B,A)\preceq(D_1,C_1),(D_2,C_2)$$ und alle $c_i$ aus $C_i\ (i=1,2)$ mit $$(D_1,C_1)\models\varphi(c_1),(D_2,C_2)\models\neg\varphi(c_2)$$ eine $\lingua_B$-Formel $\chi$ existiert mit $$(D_1,C_1)\models\chi(c_1),(D_2,C_2)\models\neg\chi(c_2).$$
+	 das ist genau dann der Fall, wenn $$\mathfrak{Th}(B,A)_B\cup\{P(x)\}\cup\{\varphi(x)\}\text{ und }\mathfrak{Th}(B,A)_B\cup\{P(x)\}\cup\{\neg\varphi(x)\}$$ in $\lingua_B$ getrennt werden können. Nach dem Trennungslemma gilt das genau dann, wenn für alle Modelle $$(B,A)\preceq(D_1,C_1),(D_2,C_2)$$ und alle $c_i$ aus $C_i\ (i=1,2)$ mit $$(D_1,C_1)\models\varphi(c_1)\text{ und }(D_2,C_2)\models\neg\varphi(c_2)$$ eine $\lingua_B$-Formel $\chi$ existiert mit $$(D_1,C_1)\models\chi(c_1),\text{ aber }(D_2,C_2)\models\neg\chi(c_2).$$
 	Seien solche $(D_i,C_i)$ und $c_i$, die die Voraussetzungen von oben erfüllen. Dann ist das die Situation aus Lemma \ref{Gemeinsame Unterstruktur}, denn elementare Erweiterungen sind frei. Also muss ein trennendes $\chi$ wie verlangt existieren, denn ansonsten würden $c_1$ und $c_2$ denselben $\lingua$-Typ erfüllen, aber nicht denselben $\lingua^P$-Typ.\\
 	$\glqq{}2.\Rightarrow 3.\grqq{}:$ Sei $Y=Z\cap A^n$. Nach dem letzten Lemma ist $Z$ eine boolesche Kombination aus Mengen der Form $\{f(b,\cdot)=0\}$ und $\{g(b,\cdot)>0\}$ für stetige 0-$\lingua$-definierbare Funktionen $f,g$ und passende $b$ aus $B^m$. Es reicht also die Aussage für Mengen in diesen Formen zu zeigen.\\
 	Wegen der Stetigkeit der Funktionen und $A$ dicht in $B$, gilt aber in $B$
@@ -320,7 +320,7 @@ Wir interessieren uns für die Gestalt von $\lingua^P$-definierbaren Teilmengen 
 \end{proof}
 
 \begin{definition}
-	Sei $(B,A)\models\tq$. Dann heißt $S\subseteq B$ speziell, wenn $S$ und $A$ frei über $A\cap S$ sind.
+	Es sei ein Modell $(B,A)\models\tq$. Dann heißt $S\subseteq B$ speziell, wenn $S$ und $A$ frei über $A\cap S$ sind.
 \end{definition}
 
 \begin{lemma}\label{Spezialität dcl}
