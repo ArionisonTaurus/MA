@@ -425,57 +425,49 @@ In diesem Abschnitt wird eine zur o-Minimalität ähnliche Charakterisierung von
 \end{proof}
 \newpage
 \section{Definierbare Funktionen und definierbarer Abschluss}
-Um definierbare Funktionen besser zu verstehen, ist es notwendig, sich mit dem definierbaren Abschluss in $\lingua^P$ zu beschäftigen. Damit kann man zeigen, dass definierbare Funktionen in einer Variablen \glqq{}fast überall\grqq{} $\lingua$-definierbar sind. Wir erinnern uns, dass ein dichtes Paar $(B,A)$ fixiert war und $S\subseteq B$ speziell. Mit \glqq{}definierbar abgeschlossen\grqq{} ist im Folgenden \glqq{}$\lingua^P$-definierbar abgeschlossen\grqq{} gemeint. Zuerst kommen zwei einfach zu beweisende Aussagen, um sie dann stark zu verallgemeinern und daraus Wissen über Funktionen zu erhalten.
-
-\begin{lemma}\label{A definierbar abgeschl}
-	Die Menge $A$ ist definierbar abgeschlossen.
-\end{lemma}
-\begin{proof}
-	Sei $b$ in $B\setminus A$ und $(B,A)\preceq(D,C)$ eine genügend saturierte Elementarerweiterung. Dann wird der Ordnungstyp von $b$ über $A$ auch von einem Element $d\neq b$ in $D\setminus C$ realisiert wegen Dichtheit von $D\setminus C$ in $D$ und Saturation.\\
-	Nach Lemma \ref{selber Schnitt} haben $b$ und $d$ dann den selben $\lingua^P$-Typen über $A$, weswegen $b$ nicht definierbar über $A$ in $(D,C)$ sein kann, also auch nicht in $(B,A)$.
-\end{proof}
+Um definierbare Funktionen besser zu verstehen, ist es notwendig, sich mit dem definierbaren Abschluss in $\lingua^P$ zu beschäftigen. Damit kann man zeigen, dass in einer Variablen definierbare Funktionen \glqq{}fast überall\grqq{} $\lingua$-definierbar sind. Wir erinnern uns, dass ein dichtes Paar $(B,A)$ fixiert war und eine spezielle Menge $S\subseteq B$. Mit \glqq{}definierbar abgeschlossen\grqq{} ist im Folgenden \glqq{}$\lingua^P$-definierbar abgeschlossen\grqq{} gemeint. Aus dem bekannten Back\&Forth-System erhält man eine einfache Möglichkeit, definierbar abgeschlossene Mengen zu finden.
 
 \begin{lemma}\label{Freie Definierbarkeit}
 	Sei $(D,C)\subseteq(B,A)$ frei, dann ist $D$ definierbar abgeschlossen in $(B,A)$.
 \end{lemma}
 \begin{proof}
-	Für eine beliebige Struktur $(B',A')\succeq (B,A)$ gelten die Voraussetzungen ebenso, da $\acl$-Abhängigkeit über $A$ als Teil vom Typen äquivalent ist zu $\acl$-Abhängigkeit über $A'$. Ebenso ist $D$ in $(B,A)$ definierbar abgeschlossen genau dann, wenn es in $(B',A')$ definierbar abgeschlossen ist. Also sei $(B,A)$ jetzt schon ohne Einschränkungen hinreichend saturiert und $b$ in $B\setminus D$.\\
-	Nach dem Beweis zur Existenz des B\&F-Systems kann der partielle Isomorphismus $$(B,A)\supseteq(D,C)\cong(D,C)\subseteq(B,A)$$ insbesondere auf mehrere Weisen auf $b$ fortgesetzt werden: Wenn $b$ in $A$ oder in $B\setminus AD$ liegt, ging es nur um die Erfüllung von transzendenten Ordnungstypen, dort hat man also mehrere Optionen. Wenn $b$ in $AD\setminus(A\cup D)$ ist und $a$ in $A^n$ unabhängig über $D$, sodass $b$ in $Da$ liegt, dann finde in $A$ Elemente $a'_1$ transzendent über $Da$ von passendem Ordnungstyp über $D$, $a'_2$ transzendent über $Daa'_1$ von passendem Ordnungstyp über $Da'_1$, usw.\newpage
-	So kann man den Isomorphismus auf $Da$ fortsetzen mit Bild $Da'$; da aber $a$ und $a'$ per Konstruktion unabhängig über $D$ waren, sind auch $Da$ und $Da'$ unabhängig über $D$, also $Da\cap Da'=D$ und das Bild von $b$ kann nicht $b$ selbst sein. Also gibt es auch in diesem Fall mehrere Möglichkeiten für eine Fortsetzung, also mehrere elementare Abbildungen, daher kann $b$ nicht definierbar über $D$ sein.
+	Für eine beliebige Struktur $(B',A')\succeq (B,A)$ gelten die Voraussetzungen ebenso, da $\acl$-Abhängigkeit von Elementen aus $D$ über $A$ als Teil von Typen äquivalent ist zu $\acl$-Abhängigkeit über $A'$. Ebenso ist $D$ genau dann definierbar abgeschlossen in $(B,A)$, wenn es in $(B',A')$ definierbar abgeschlossen ist. Also sei $(B,A)$ jetzt schon ohne Einschränkungen hinreichend saturiert und $b$ in $B\setminus D$.\\
+	Nach dem Beweis zur Existenz des B\&F-Systems kann der partielle Isomorphismus $$(B,A)\supseteq(D,C)\cong(D,C)\subseteq(B,A)$$ insbesondere auf mehrere Weisen auf $b$ fortgesetzt werden: Wenn $b$ in $A$ oder in $B\setminus AD$ liegt, ging es nur um die Erfüllung von transzendenten Ordnungstypen, dort hat man also mehrere Optionen. Wenn $b$ in $AD\setminus(A\cup D)$ ist und $a$ in $A^n$ unabhängig über $D$, sodass $b$ in $Da$ liegt, dann finde in $A$ Elemente $a'_1$ transzendent über $Da$ von passendem Ordnungstyp über $D$, $a'_2$ transzendent über $Daa'_1$ von passendem Ordnungstyp über $Da'_1$, usw.\\
+	So kann man den Isomorphismus auf $Da$ fortsetzen mit Bild $Da'$; da aber $a$ und $a'$ per Konstruktion unabhängig über $D$ waren, sind auch $Da$ und $Da'$ unabhängig über $D$, also gilt $Da\cap Da'=D$ und das Bild von $b$ kann nicht $b$ selbst sein. Also gibt es auch in diesem Fall mehrere Möglichkeiten für eine Fortsetzung, daher kann $b$ nicht definierbar über $D$ sein.
 \end{proof}
 
 Das vorige Lemma kann man unter bestimmten Bedingungen umkehren, so zum Beispiel für $\operatorname{RCF^d}$.
 \begin{definition}
-	$\td$ sei \textbf{zahm für Paare}, wenn jede definierbar abgeschlossene Menge in jedem Modell $(B,A)\models\td$ speziell ist.
+	Die Theorie $\td$ sei \textbf{zahm für Paare}, wenn jede definierbar abgeschlossene Menge in jedem Modell $(B,A)\models\td$ speziell ist.
 \end{definition}
-
+\newpage
 \begin{lemma}\label{RCF zahm}
-	$\operatorname{RCF^d}$ ist zahm für Paare.
+	Die Theorie $\operatorname{RCF^d}$ ist zahm für Paare.
 \end{lemma}
 \begin{proof}
-	Sei $(B,A)$ ein Modell und $S$ definierbar abgeschlossen. Dann ist $S$ Träger einer $\lingua$-Unterstruktur von $B$, also auch Modell von RCF. Sei $\overline{B}$ ein algebraischer Abschluss von $B$, dann stimmt der RCF-$\acl$ auf $B$ mit dem auf $B$ eingeschränkten ACF-$\acl$ auf $\overline{B}$ überein, wir brauchen sie also nicht zu unterscheiden. Zu zeigen ist dann $$S\ad_{S\cap A}A.$$
+	Sei $(B,A)$ ein Modell und $S$ definierbar abgeschlossen. Dann ist $S$ Träger einer $\lingua$-Unterstruktur von $B$, also auch Modell von RCF. Sei $\overline{B}$ ein algebraischer Abschluss von $B$, dann stimmt der modelltheoretische algebraische Abschluss bzgl. RCF auf $B$ mit dem auf $B$ eingeschränkten algebraischen Abschluss bzgl. ACF auf $\overline{B}$ überein, wir brauchen sie also nicht zu unterscheiden. Zu zeigen ist dann $$S\ad_{S\cap A}A.$$
 	Es gilt aber $$S\ld_{S\cap A}A,$$ denn wenn $\overline{x}$ aus $S$ linear abhängig über $A$ ist und ohne Einschränkungen $x_1,\dots,x_k$ eine Basis des Tupels über $A$ sind, dann kann jedes $x_i$ eindeutig als $A$-Linearkombination der Basis geschrieben werden. Also ist diese Linearkombination $\lingua^P_S$-definierbar, ergo in $S\cap A$; somit ist $\overline{x}$ linear abhängig über $S\cap A$. Mit Lemma \ref{Rechenregeln} folgt $S\ad_{S\cap A}A$.
 \end{proof}
 
 Nun aber zu den definierbaren Funktionen. Es gibt mehrere Möglichkeiten, $\lingua^P$-definierbare Funktionen mit $\lingua$-definierbaren Funktionen in Verbindung zu setzen.
 
 \begin{lemma}
-	Sei $F:A^n\rightarrow A$ eine $\lingua^P_S$-definierbare Funktion. Dann gibt es $S\cap A$-definierbare $f_1,\dots,f_k:A^n\rightarrow A$ in $A$, sodass für alle $a$ in $A^n$ ein $f_i$ existiert mit $F(a)=f_i(a)$.
+	Gegeben sei eine $\lingua^P_S$-definierbare Funktion $F:A^n\rightarrow A$. Dann gibt es $S\cap A$-definierbare $f_1,\dots,f_k:A^n\rightarrow A$ in $A$, sodass für alle $a$ in $A^n$ ein $f_i$ existiert mit $F(a)=f_i(a)$.
 \end{lemma}
 \begin{proof}
-	Man kann annehmen, dass $S$ schon Modell von T ist, ansonsten geht man zu $\dcl(S)$ über. Nach Lemma \ref{Spezialität dcl} ist $\dcl(S)\cap A=\dcl(S\cap A)$, also ändert das die Aussage nicht.\newpage
-	Wenn das Lemma nicht gälte, gilt für alle $k$ und alle in $A$ über $S\cap A$ definierbaren $f_1,\dots,f_k:A^n\rightarrow A$, dass ein $a$ aus $A$ existiert mit $f_i(a)\neq F(a)$ für alle $i$. Also ist der partielle Typ $$\{P(x)\}\cup\{F(x)\neq f(x)\mid f:A^n\rightarrow A\ \lingua_{S\cap A}\text{-definierbar}\}$$ konsistent und es existiert $(B,A)\preceq(B',A')$ und $a'$ in $A'^n$ mit $F(a')\neq f(a')$ für alle $\lingua_{S\cap A}$-definierbaren $f:A'^n\rightarrow A'$.\\
-	Allerdings ist die Inklusion $$(S,S\cap A)\subseteq (B,A)$$ frei, wegen Elementarität auch $$(S,S\cap A)\subseteq (B',A').$$ Nach Lemma \ref{Unabhängigkeitsregeln} (6.) ist, weil $a'$ in $A'^n$ liegt, die Inklusion $$(Sa',(S\cap A)a')\subseteq(B',A')$$ frei. Nach Lemma \ref{Freie Definierbarkeit} ist $Sa'$ also $\lingua^P$-definierbar abgeschlossen. Da $F(a')$ $\lingua^P$-definierbar über $Sa'$ ist, liegt es in $Sa'$, außerdem bildet $F$ nach $A'$ ab. Wegen Unabhängigkeit liegt also $$F(a')\in Sa'\cap A'=(S\cap A)a'$$ und es gibt eine $\lingua_{S\cap A}$-definierbare Abbildung $f:A'^n\rightarrow A'$ mit $f(a')=F(a')$ - ein Widerspruch!
+	Man kann annehmen, dass $S$ schon Modell von T ist, ansonsten geht man zu $\dcl(S)$ über. Nach Lemma \ref{Spezialität dcl} ist $\dcl(S)\cap A=\dcl(S\cap A)$, also ändert das die Aussage nicht.\\
+	Wenn das Lemma nicht gälte, gilt für alle $k$ und alle in $A$ über $S\cap A$ definierbaren $f_1,\dots,f_k:A^n\rightarrow A$, dass ein $a$ aus $A$ existiert mit $f_i(a)\neq F(a)$ für alle $i$. Also ist der partielle Typ $$\{P(x)\}\cup\{F(x)\neq f(x)\mid f:A^n\rightarrow A\text{ definierbar in }\lingua_{S\cap A}\}$$ konsistent und es existiert eine Oberstruktur $(B,A)\preceq(B',A')$ und ein Tupel $a'$ in $A'^n$ mit $F(a')\neq f(a')$ für alle $\lingua_{S\cap A}$-definierbaren $f:A'^n\rightarrow A'$.\newpage
+	Allerdings ist die Inklusion $$(S,S\cap A)\subseteq (B,A)$$ frei, wegen Elementarität der Erweiterung auch $$(S,S\cap A)\subseteq (B',A').$$ Nach Lemma \ref{Unabhängigkeitsregeln} (6.) ist, weil $a'$ in $A'^n$ liegt, die Inklusion $$(Sa',(S\cap A)a')\subseteq(B',A')$$ frei und nach Lemma \ref{Freie Definierbarkeit} ist $Sa'$ also $\lingua^P$-definierbar abgeschlossen. Da $F(a')$ aber $\lingua^P$-definierbar über $Sa'$ ist, liegt es in $Sa'$, außerdem bildet $F$ nach $A'$ ab. Wegen Unabhängigkeit gilt also $$F(a')\in Sa'\cap A'=(S\cap A)a'$$ und es gibt eine $\lingua_{S\cap A}$-definierbare Abbildung $f:A'^n\rightarrow A'$ mit $f(a')=F(a')$ - ein Widerspruch!
 \end{proof}
 
 \begin{lemma}
-	Sei $F:B\rightarrow B$ eine $\lingua^P_S$-definierbare Funktion. Dann gibt es $\lingua_S$-definierbare $f_1,\dots,f_k:B\rightarrow B$ und eine kleine $\lingua^P_S$-definierbare Menge $X\subseteq B$, sodass für alle $b$ aus $B\setminus X$ ein $f_i$ existiert mit $F(b)=f_i(b)$.
+	Es sei $F:B\rightarrow B$ eine $\lingua^P_S$-definierbare Funktion. Dann gibt es\linebreak $\lingua_S$-definierbare $f_1,\dots,f_k:B\rightarrow B$ und eine kleine $\lingua^P_S$-definierbare Menge $X\subseteq B$, sodass für alle $b$ aus $B\setminus X$ ein $f_i$ existiert mit $F(b)=f_i(b)$.
 \end{lemma}
 \begin{proof}
 	Ohne Einschränkungen ist wieder $S$ ein Modell.\\
-	Wenn die Aussage nicht gilt, gilt für alle $k$, alle kleinen $\lingua^P_S$-definierbaren Mengen ${X\subseteq B}$ und alle $\lingua_S$-definierbaren $f_1,\dots,f_k:B\rightarrow B$, dass ein $b$ aus $B\setminus X$ existiert mit $f_i(b)\neq F(b)$ für alle $i$.\newpage
-	Also ist der partielle Typ $$\{x\notin X\mid X\text{ klein, }\lingua^P_S\text{-definierbar}\}\cup\{F(x)\neq f(x)\mid f:B\rightarrow B\ \lingua_S\text{-definierbar}\}$$ (endlich) konsistent und es existiert $(B,A)\preceq(B',A')$ und $$b'\text{ in }B'\setminus\bigcup\limits_{f:B'^n\rightarrow B'\ \lingua_S\text{-definierbar}}f(A'^n)=B'\setminus A'S$$ mit $F(b')\neq f(b')$ für alle $\lingua_S$-definierbaren $f:B'\rightarrow B'$.\\
-	Allerdings ist $$(S,S\cap A)\subseteq(B',A')$$ frei und nach Lemma \ref{Unabhängigkeitsregeln} (7.), weil $b'$ nicht in $A'S$ liegt, die Inklusion $$(Sb',S\cap A)\subseteq(B',A')$$ ebenso. Nach Lemma \ref{Freie Definierbarkeit} ist $Sb'$ also $\lingua^P$-definierbar abgeschlossen. Da $F(b')$ $\lingua^P$-definierbar über $Sb'$ ist, ist es in $Sb'$, also existiert eine $\lingua_S$-definierbare Abbildung $f:B'\rightarrow B'$ mit $f(b')=F(b')$ - ein Widerspruch!
+	Wenn die Aussage nicht gälte, gilt für alle $k$, alle kleinen $\lingua^P_S$-definierbaren Mengen ${X\subseteq B}$ und alle $\lingua_S$-definierbaren $f_1,\dots,f_k:B\rightarrow B$, dass ein $b$ aus $B\setminus X$ existiert mit $f_i(b)\neq F(b)$ für alle $i$.\\
+	Also ist der partielle Typ $$\{x\notin X\mid X\text{ klein, }\lingua^P_S\text{-definierbar}\}\cup\{F(x)\neq f(x)\mid f:B\rightarrow B\text{ definierbar in }\lingua_S\}$$ (endlich) konsistent und es existiert eine Oberstruktur $(B,A)\preceq(B',A')$ und ein $b$ in $$B'\setminus\bigcup\limits_{f:B'^n\rightarrow B'\text{ definierbar in }\lingua_S}f(A'^n)=B'\setminus A'S$$ mit $F(b')\neq f(b')$ für alle $\lingua_S$-definierbaren $f:B'\rightarrow B'$.\newpage
+	Allerdings ist die Inklusion $$(S,S\cap A)\subseteq(B',A')$$ frei und nach Lemma \ref{Unabhängigkeitsregeln} (7.) \--- weil $b'$ nicht in $A'S$ liegt \--- die Inklusion $$(Sb',S\cap A)\subseteq(B',A')$$ ebenso. Nach Lemma \ref{Freie Definierbarkeit} ist $Sb'$ also $\lingua^P$-definierbar abgeschlossen. Da $F(b')$ definierbar in $\lingua^P_{Sb'}$ ist, ist es in $Sb'$. Also existiert eine $\lingua_S$-definierbare Abbildung $f:B'\rightarrow B'$ mit $f(b')=F(b')$ \--- ein Widerspruch!
 \end{proof}
 
 \begin{theorem}\label{Satz 3}
