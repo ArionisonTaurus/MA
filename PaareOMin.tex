@@ -320,18 +320,18 @@ Wir interessieren uns für die Gestalt von $\lingua^P$-definierbaren Teilmengen 
 \end{proof}
 
 \begin{definition}
-	Es sei ein Modell $(B,A)\models\tq$. Dann heißt $S\subseteq B$ speziell, wenn $S$ und $A$ frei über $A\cap S$ sind.
+	Es sei ein Modell $(B,A)\models\tq$. Dann heißt eine Menge $S\subseteq B$ \textbf{speziell}, wenn $S$ und $A$ frei über $A\cap S$ sind.
 \end{definition}
 
 \begin{lemma}\label{Spezialität dcl}
-	Wenn $S$ in $(B,A)$ speziell ist, ist auch $\dcl(S)$ speziell und $\dcl(S)\cap A=\dcl(S\cap A)$.
+	Wenn $S$ in einem Paar $(B,A)$ speziell ist, ist auch $\dcl(S)$ speziell und $\dcl(S)\cap A=\dcl(S\cap A)$.
 \end{lemma}
 \begin{proof}
-	Sei $a$ aus $\dcl(S)\cap A$, also ist $a$ in $A$ und abhängig (als einelementiges Tupel) über $S$. Wegen Unabhängigkeit von $A$ und $S$ ist $a$ abhängig über $S\cap A$, also in $\dcl(S\cap A)$. Andererseits gilt $$\dcl(S\cap A)\subseteq\dcl(S)\cap\dcl(A)=\dcl(S)\cap A$$ sowieso und es folgt die zweite Behauptung. Mit Lemma \ref{Unabhängigkeitsregeln} (3.) folgt, dass $\dcl(S)$ und $A$ unabhängig über $\dcl(S\cap A)$ sind.
+	Sei $a$ aus $\dcl(S)\cap A$, also ist $a$ in $A$ und abhängig (als einelementiges Tupel) über $S$. Wegen Unabhängigkeit von $A$ und $S$ ist $a$ abhängig über $S\cap A$, also in $\dcl(S\cap A)$. Andererseits gilt $$\dcl(S\cap A)\subseteq\dcl(S)\cap\dcl(A)=\dcl(S)\cap A$$ ohnehin und es folgt die zweite Behauptung. Mit Lemma \ref{Unabhängigkeitsregeln} (3.) gilt, dass $\dcl(S)$ und $A$ unabhängig über $\dcl(S\cap A)$ sind.
 \end{proof}
 
 \begin{lemma}\label{Definierbare Mengen Spezialität}
-	Der Fall 2. aus dem Satz \ref{Definierbare Mengen} lässt sich wie folgt verallgemeinern: Wenn $Y\subseteq A^n$ eine $\lingua^P_D$-definierbare Menge ist für ein spezielles $D\subseteq B$, dann existiert ein $\lingua_D$-definierbares $Z\subseteq B^n$ mit $Y=Z\cap A^n$.
+	Der 2. Fall aus dem Satz \ref{Definierbare Mengen} lässt sich wie folgt verallgemeinern: Wenn $Y\subseteq A^n$ eine $\lingua^P_D$-definierbare Menge ist für ein spezielles $D\subseteq B$, dann existiert ein $\lingua_D$-definierbares $Z\subseteq B^n$ mit $Y=Z\cap A^n$.
 \end{lemma}
 \begin{proof}
 	Da eine Ersetzung $D\rightarrowtail\dcl(D)$ nichts ändert, können wir gleich davon ausgehen, dass $D$ schon ein Modell von T ist.\\
@@ -340,56 +340,57 @@ Wir interessieren uns für die Gestalt von $\lingua^P$-definierbaren Teilmengen 
 \end{proof}
 
 \section{Definierbare Mengen in einer Variablen}
-In diesem Abschnitt wird eine zur o-Minimalität ähnliche Charakterisierung von Mengen in einer Variable in Modellen von $\td$ hergeleitet. Ab jetzt sei $(B,A)$ ein beliebiges dichtes Paar und $S\subseteq B$ eine spezielle Menge. Da $B$ selbst eine spezielle Menge ist, gelten die folgenden Aussagen insbesondere alle auch für Definierbarkeit unabhängig von irgendwelchen Parametermengen. Angelehnt ist die folgende Vorgehensweise (auch im nächsten Abschnitt) an die Modifikation in \cite{Piz} von \cite{VanDenDries}, Teile konnten noch präziser für spezielle Mengen gemacht werden.
+In diesem Abschnitt wird eine zur o-Minimalität ähnliche Charakterisierung von Mengen in einer Variable in Modellen von $\td$ hergeleitet. Ab jetzt sei $(B,A)$ ein beliebiges echtes dichtes Paar und $S\subseteq B$ eine spezielle Menge. Da $B$ selbst eine spezielle Menge ist, gelten die folgenden Aussagen insbesondere alle auch für Definierbarkeit unabhängig von irgendwelchen Parametermengen. Angelehnt ist die folgende Vorgehensweise (auch im nächsten Abschnitt) an die Modifikation in \cite{Piz} von \cite{VanDenDries}, Teile konnten noch präziser für spezielle Mengen gemacht werden.
 
 \begin{lemma}
-	Sei $Y\subseteq B^n$ $\lingua_S$-definierbar und $(U_y)_{y\in Y}\subseteq B$ eine Familie von offenen, uniform $\lingua_S$-definierbaren Mengen. Dann ist $$X:=\bigcup\limits_{y\in Y\cap A^n}U_y$$ auch $\lingua_S$-definierbar.
+	Sei $Y\subseteq B^n$ eine $\lingua_S$-definierbare Menge und $(U_y)_{y\in Y}\subseteq B$ eine Familie von offenen, uniform $\lingua_S$-definierbaren Mengen. Dann ist $$X:=\bigcup\limits_{y\in Y\cap A^n}U_y$$ auch $\lingua_S$-definierbar.
 \end{lemma}
 \begin{proof}
 	Wir führen eine Induktion über $\dim Y$, man kann schon annehmen, dass alle $U_y$ nichtleer sind, sonst muss man entsprechend aus $Y$ aussondern. Wenn $\dim Y=0$ ist, ist $Y$ endlich und es ist schon $Y\cap A^n$ definierbar mit Parametern aus $S$ (zähle z.B. auf, das wievielte Element aus $Y$ man nimmt), also auch $X$.\\
 	Zerlege $Y$ in Zellen, das ändert nichts an irgendwelchen Definierbarkeiten, also kann man annehmen, dass $Y$ selbst schon Zelle ist. Wenn $Y$ keine offene Zelle ist und ${\pi:Y\rightarrow Z}$ die kanonische homöomorphe Projektion zu einer offenen Zelle von Dimension $m<\dim Y$, existiert nach Satz \ref{Definierbare Mengen Spezialität} ein $\lingua_S$-definierbares $Z'\subseteq B^m$ mit $$\pi(Y\cap A^n)=Z'\cap A^m,$$ da $\pi(Y\cap A^n)\subseteq A^m$ eine $\lingua^P_S$-definierbare Menge ist.\\
 	Definiere dann $Y':=Z\cap Z'$, sodass immer noch $\pi(Y\cap A^n)=Y'\cap A^m$ gilt und man die Menge umparametrisieren kann:
 	$$\bigcup\limits_{y'\in Y'\cap A^m}U_{\pi^{-1}(y')}=\bigcup\limits_{y\in\pi^{-1}(Y'\cap A^m)}U_y=\bigcup\limits_{y\in Y\cap A^n}U_y=S$$
-	Da $(U_{\pi^{-1}(y')})_{y'\in Y'}$ die gleichen Bedingungen erfüllt wie $(U_y)_{y\in Y}$ und $\dim Y'\leq\dim Z<\dim Y$, gilt die Aussage per Induktion.\\
+	Da $(U_{\pi^{-1}(y')})_{y'\in Y'}$ die gleichen Bedingungen erfüllt wie $(U_y)_{y\in Y}$ und wird die\linebreak Ungleichung $$\dim Y'\leq\dim Z<\dim Y$$ erhalten, gilt die Aussage per Induktion.\\
 	Für den Beweis für offene Zellen definiere die vier $\lingua_S$-definierbaren Mengen $$U:=\bigcup\limits_{y\in Y}U_y,$$ $$Y_x:=\{y\in Y\mid x\in U_y\},$$ $$C:=\{x\in U\mid\inn(Y_x)=\emptyset\},$$ $$D:=\bigcup\limits_{x\in\inn C}Y_x.$$
 	Es gilt $$D=\bigcup\limits_{x\in U}\{y\in Y\mid x\in U_y\cap\inn C\}=\{y\in Y\mid U_y\cap\inn C\neq\emptyset\}.$$
 	Wir wollen jetzt herleiten, dass $\inn D$ leer sein muss. Seien dafür mit Definable Choice die $\lingua_S$-definierbaren Funktionen $f,g_1,g_2:D\rightarrow B$ gegeben mit $$f(y)\in(g_1(y),g_2(y))\subseteq U_y\cap\inn C.$$
-	Wenn $\inn D\neq\emptyset$, schränke $D$ ein, sodass es offen ist und $f,g_1,g_2$ stetig auf $D$ sind. Sei außerdem $d,e$ in $U_y\cap\inn C, (c,h)\subseteq U_y\cap\inn C$ (das ist offen), sodass $$c<g_1(y)<d<f(y)<e<g_2(y)<h.$$ Setze $$V:=g_1^{-1}((c,d))\cap f^{-1}((d,e))\cap g_2^{-1}((e,h)),$$ das ist dann eine offene Umgebung um $y$ in $B^n$. Für alle $z$ aus $V$ ist $$f(y)\in(d,e)\subseteq(g_1(z),g_2(z))\subseteq U_z,$$ also ist $z$ in $Y_{f(y)}$.\newpage
-	Das heißt, es gilt $V\subseteq Y_{f(y)}$; aber das ist unmöglich, weil $V$ offen in dem (eingeschränkten) Definitionsbereich, also auch in $B^n$ ist und $Y_{f(y)}$ nichtleeres Inneres hätte. Dann läge $f(y)$ nicht in $C$ im Widerspruch zur Definition von $f$.\\
+	Wenn $\inn D$ nichtleer ist, schränke $D$ ein, sodass es offen ist und $f,g_1,g_2$ stetig auf $D$ sind. Seien außerdem $d,e$ in $U_y\cap\inn C$ und $(c,h)\subseteq U_y\cap\inn C$ (das ist offen), sodass $$c<g_1(y)<d<f(y)<e<g_2(y)<h.$$ Setze $$V:=g_1^{-1}((c,d))\cap f^{-1}((d,e))\cap g_2^{-1}((e,h)),$$ das ist dann eine offene Umgebung um $y$ in $B^n$.\newpage
+	Für alle $z$ aus $V$ gilt $$f(y)\in(d,e)\subseteq(g_1(z),g_2(z))\subseteq U_z,$$ also ist $z$ in $Y_{f(y)}$.\\
+	Das heißt, es gilt $V\subseteq Y_{f(y)}$; aber das ist unmöglich, weil $V$ offen ist in dem (eingeschränkten) Definitionsbereich, also auch in $B^n$ ist und $Y_{f(y)}$ nichtleeres Inneres hätte. Dann läge $f(y)$ nicht in $C$ \--- im Widerspruch zur Definition von $f$.\\
 	Die Menge $D$ hat als Menge ohne Inneres eine kleinere Dimension als $n$. Also ist induktiv auch $$\bigcup\limits_{y\in D\cap A^n}U_y$$ $S$-definierbar in $B$. Es ist außerdem
 	\begin{align}\label{align 1}
 	\bigcup\limits_{y\in (Y\setminus D)\cap A^n}U_y\cup((C\setminus\inn C)\cap\bigcup\limits_{y\in Y\setminus D}U_y)=\bigcup\limits_{y\in Y\setminus D}U_y.
 	\end{align}
-	Dass die linke Seite Teilmenge der Rechten ist, ist sowieso klar per Definition; sei nun $$x\text{ in }\bigcup\limits_{y\in Y\setminus D}U_y\setminus (C\setminus\inn C)$$ und $y$ ein Element aus $Y\setminus D$ mit $x$ in $U_y$. Weil $x$ nicht in $C\setminus\inn C$ liegt, hat $Y_x$ nichtleeres Inneres (wenn $x$ außerhalb von $C$ liegt) oder $x$ ist in $\inn C$ und daher $y$ in $D$ (denn $x$ bezeugt, dass $U_y\cap\inn C$ nichtleer ist). Da das zweite ausgeschlossen wurde, hat $Y_x$ nichtleeres Inneres, also auch $Y_x\setminus D$ (denn $D$ war niedrigdimensional) und enthält damit ein Element $z$ aus $A^n\cap(Y_x\setminus D)$ wegen Dichtheit. $z$ bezeugt, dass $x$ in $\bigcup\limits_{y\in (Y\setminus D)\cap A^n}U_y$ liegt.\\
+	Dass die linke Seite Teilmenge der Rechten ist, ist sowieso klar per Definition; sei nun $x$ in $$\bigcup\limits_{y\in Y\setminus D}U_y\setminus (C\setminus\inn C)$$ und $y$ ein Element aus $Y\setminus D$, sodass $x$ in $U_y$ ist. Weil $x$ nicht in $C\setminus\inn C$ liegt, hat $Y_x$ nichtleeres Inneres (wenn $x$ außerhalb von $C$ liegt) oder $x$ ist in $\inn C$ und daher $y$ in $D$ (denn $x$ bezeugt, dass $U_y\cap\inn C$ nichtleer ist). Da das zweite ausgeschlossen wurde, hat $Y_x$ nichtleeres Inneres, also auch $Y_x\setminus D$ (denn $D$ war niedrigdimensional) und enthält damit ein Element $z$ aus $A^n\cap(Y_x\setminus D)$ wegen der Dichtheit von $A$. Das Element $z$ bezeugt, dass $x$ in $\bigcup\limits_{y\in (Y\setminus D)\cap A^n}U_y$ liegt.\\
 	Aus \ref{align 1} folgt, dass $$\bigcup\limits_{y\in (Y\setminus D)\cap A^n}U_y=\left(\bigcup\limits_{y\in Y\setminus D}U_y\setminus(C\setminus\inn C)\right)\cup\left((C\setminus\inn C)\cap\bigcup\limits_{y\in (Y\setminus D)\cap A^n}U_y\right)$$ $\lingua_S$-definierbar ist (der letzte Teil ist es wegen Endlichkeit von $C\setminus\inn C$). Also ist auch $$X=\bigcup\limits_{y\in Y\cap A^n}U_y=\bigcup\limits_{y\in (Y\setminus D)\cap A^n}U_y\cup\bigcup\limits_{y\in D\cap A^n}U_y$$ $\lingua_S$-definierbar in $B$.
 \end{proof}
 \newpage
 \begin{theorem}
-	Sei eine $\lingua^P_S$-definierbare Menge $X\subseteq B$. Dann stimmt $X$ bis auf eine kleine $\lingua^P_S$-definierbare Menge mit einer $\lingua_S$-definierbaren Menge $X'$ überein.
+	Gegeben sei eine $\lingua^P_S$-definierbare Menge $X\subseteq B$. Dann stimmt $X$ bis auf eine kleine $\lingua^P_S$-definierbare Menge mit einer $\lingua_S$-definierbaren Menge $X'$ überein.
 \end{theorem}
 \begin{proof}
 	Sei zunächst $X$ gegeben durch $\exists y\in P(\psi(x,y))$ für eine Formel $\psi$ aus $\fF_{1+n}(\lingua_S)$. Die Mengen $$F_y:=\psi(B,y)\cap\partial\psi(B,y)$$ sind endlich für jedes $y$ aus $M^n$ und weil o-minimale Theorien $\exists^\infty$ eliminieren, ist deren Mächtigkeit uniform beschränkt, sagen wir durch $k$. Sei $$Y:=(\exists x\psi(x,y))(B),Y':=\{y\in Y\mid F_y\neq\emptyset\}$$ und $\lingua_S$-definierbare Funktionen $g_1,\dots,g_k:Y'\rightarrow F_y$, sodass $F_y=\{g_1(y),\dots,g_k(y)\}$ für alle $y$ aus $Y'$. Als diese Funktionen kann man zum Beispiel die angeordnete Aufzählung der Elemente in $F_y$ nehmen. Dann gilt
 	\begin{align*}
 	X&=\left(\exists y\in P(\psi(x,y))\right)(B,A)=\bigcup\limits_{y\in A^n}\psi(B,y)=\bigcup\limits_{y\in Y\cap A^n}\psi(B,y)\\&=\bigcup\limits_{y\in Y\cap A^n}(\psi(B,y)\cap \partial\psi(B,y))\cup\bigcup\limits_{y\in Y\cap A^n}\inn\psi(B,y)\\&=\bigcup\limits_{y\in Y'\cap A^n}\{g_1(y),\dots,g_k(y)\}\cup\bigcup\limits_{y\in Y\cap A^n}\inn\psi(B,y)\\&=\bigcup\limits_{i=1}^kg_i(Y'\cap A^n)\cup \bigcup\limits_{y\in Y\cap A^n}\inn\psi(B,y).
 	\end{align*}
-	Da $X':=\bigcup\limits_{i=1}^kg_i(Y'\cap A^n)$ klein ist und $S'':=\bigcup\limits_{y\in Y\cap A^n}\inn\psi(B,y)$ nach dem letzten Lemma $\lingua_S$-definierbar, stimmen $X$ und $X'$ bis auf die kleine $\lingua^P_S$-definierbare Menge $S''$ überein. Da Darstellungen $$(X\setminus  S')\cup S''$$ für eine $\lingua_S$-definierbare Menge $X\subseteq B$, und kleine $\lingua^P_S$-definierbare $S',S''$ unter booleschen Kombinationen erhalten bleiben (Zur Erinnerung: Kleine Mengen bilden ein Ideal), folgt die Aussage für gute Formeln und daher für alle Mengen. Dabei ist zu beachten, dass Satz \ref{Formelreduzierung} auch hergibt, dass $\lingua^P_S$-Formeln zu guten $\lingua^P_S$-Formeln äquivalent sind.
+	Da $S'':=\bigcup\limits_{i=1}^kg_i(Y'\cap A^n)$ klein ist und $X':=\bigcup\limits_{y\in Y\cap A^n}\inn\psi(B,y)$ nach dem letzten Lemma $\lingua_S$-definierbar, stimmen $X$ und $X'$ bis auf die kleine $\lingua^P_S$-definierbare Menge $S''$ überein. Da Darstellungen $$(X\setminus  S')\cup S''$$ für eine $\lingua_S$-definierbare Menge $X\subseteq B$, und kleine $\lingua^P_S$-definierbare $S',S''$ unter booleschen Kombinationen erhalten bleiben (Zur Erinnerung: Kleine Mengen bilden ein Ideal), folgt die Aussage für gute Formeln und daher für alle Mengen. Dabei ist zu beachten, dass Satz \ref{Formelreduzierung} auch hergibt, dass $\lingua^P_S$-Formeln zu guten $\lingua^P_S$-Formeln äquivalent sind.
 \end{proof}
 \newpage
 \begin{lemma}
-	Sei $X\subseteq B$ eine kleine $\lingua^P_S$-definierbare Teilmenge. Dann ist $X$ eine endliche Vereinigung von Mengen der Form $f(A^n\cap E)$ für $E$ eine offene $\lingua_S$-definierbare Zelle und $f:E\rightarrow B$ eine stetige $\lingua_S$-definierbare Funktion.
+	Sei $X\subseteq B$ eine kleine $\lingua^P_S$-definierbare Teilmenge. Dann ist $X$ eine endliche Vereinigung von Mengen der Form $f(A^n\cap E)$ für eine offene $\lingua_S$-definierbare Zelle $E$ und eine stetige $\lingua_S$-definierbare Funktion $f:E\rightarrow B$.
 \end{lemma}
 \begin{proof}
-	Wenn $X$ klein ist, existiert ein $\lingua$-definierbares $g:B^m\rightarrow B$, sodass $X\subseteq g(A^m)$, nach Lemma \ref{Speziell definierbare kleine Mengen} kann man schon annehmen, dass $g$ über $\dcl(S)$ definierbar ist (denn $(\dcl(S),\dcl(S)\cap A)\subseteq (B,A)$ ist frei nach Lemma \ref{Spezialität dcl}), also auch über $S$. Setze $$X':=g^{-1}(X)\cap A^m=(g\upharpoonright A^m)^{-1}(X),$$ das ist $\lingua^P_S$-definierbar und es gilt $g(X')=X$ wegen $X\subseteq\operatorname{im}(g\upharpoonright A^m)$.\\
+	Wenn $X$ klein ist, existiert ein $\lingua$-definierbares $g:B^m\rightarrow B$, sodass $X$ eine Teilmenge von $g(A^m)$ ist, nach Lemma \ref{Speziell definierbare kleine Mengen} kann man schon annehmen, dass $g$ über $\dcl(S)$ definierbar ist (denn $(\dcl(S),\dcl(S)\cap A)\subseteq (B,A)$ ist frei nach Lemma \ref{Spezialität dcl}), also auch über $S$. Setze $$X':=g^{-1}(X)\cap A^m=(g\upharpoonright A^m)^{-1}(X),$$ das ist $\lingua^P_S$-definierbar und es gilt $g(X')=X$ wegen $X\subseteq\operatorname{im}(g\upharpoonright A^m)$.\\
 	Beweise die Aussage jetzt induktiv über $m$: Wenn $m=0$ ist, ist $X$ endlich und eine Vereinigung der Mengen $f(\{0\})$ für konstante Funktionen $f$. Wegen Endlichkeit gilt $X\subseteq\dcl(S)$, also sind die Funktionen $f$ über $S$ definierbar.\\
-	Wenn $m>0$ ist, schreibe $X'$ als Teilmenge von $A^m$ wegen Lemma \ref{Definierbare Mengen Spezialität} in der Form $Y\cap A^m$ für ein $\lingua_S$-definierbares $Y$. Sei eine Zerlegung $\mathfrak{Z}$ von $Y$ in $\lingua_S$-definierbare Zellen gegeben, auf denen $g$ jeweils stetig ist, dann ist $$X=g(Y\cap A^m)=\bigcup\limits_{Z\in\mathfrak{Z}}g(Z\cap A^m).$$
-	Für offene Zellen $Z$ ist so eine Darstellung also schon gefunden. Sei $Z$ nun eine Zelle der Dimension $d<m$ und $\pi:B^d\rightarrow B^m$ eine $\lingua_S$-definierbare Fortsetzung des kanonischen Homöomorphismus der entsprechenden offenen Zelle $Z'$ nach $Z$. Mit Lemma \ref{Definierbare Mengen Spezialität} kann man ein $\lingua_S$-definierbares $E\subseteq B^d$ findet mit $$Z'\cap\pi^{-1}(A^m)=A^d\cap E,$$ denn es gilt $$A^d\supseteq Z'\cap\pi^{-1}(A^m),$$ weil $\pi|_{Z'}$ die Umkehrabbildung einer Projektion ist.\\
+	Wenn $m$ positiv ist, schreibe $X'$ als Teilmenge von $A^m$ wegen Lemma \ref{Definierbare Mengen Spezialität} in der Form $Y\cap A^m$ für ein $\lingua_S$-definierbares $Y$. Sei eine Zerlegung $\mathfrak{Z}$ von $Y$ in $\lingua_S$-definierbare Zellen gegeben, auf denen $g$ jeweils stetig ist, dann ist $$X=g(Y\cap A^m)=\bigcup\limits_{Z\in\mathfrak{Z}}g(Z\cap A^m).$$
+	Für offene Zellen $Z$ ist so eine Darstellung also schon gefunden. Sei $Z$ nun eine Zelle der Dimension $d<m$ und $\pi:B^d\rightarrow B^m$ eine $\lingua_S$-definierbare Fortsetzung des kanonischen Homöomorphismus der entsprechenden offenen Zelle $Z'$ nach $Z$. Mit Lemma \ref{Definierbare Mengen Spezialität} kann man ein $\lingua_S$-definierbares $E\subseteq B^d$ finden mit $$Z'\cap\pi^{-1}(A^m)=A^d\cap E,$$ denn es gilt $$A^d\supseteq Z'\cap\pi^{-1}(A^m),$$ weil $\pi|_{Z'}$ die Umkehrabbildung einer Projektion ist.\\
 	Es ergibt sich dann
 	$$g(Z\cap A^m)=(g\circ\pi)(Z'\cap\pi^{-1}(A^m))=(g\circ\pi)(A^d\cap E)$$
-	Die Gleichung ist aber schon der Fall eines kleineren $m$ und mit Induktion folgt die Aussage.
+	Dies ist dann schon der Fall einer natürlichen Zahl kleiner $m$ und mit Induktion folgt die Aussage.
 \end{proof}
 \newpage
 \begin{theorem}\label{Satz 4}
-	Sei $X\subseteq B$ eine $\lingua^P_S$-definierbare Menge. Dann existiert eine endliche $\lingua_S$-definierbare Unterteilung von $B$, sodass für jedes dadurch erzeugte offene Intervall $I$ genau einer der folgenden Fälle gilt:
+	Es sei eine $\lingua^P_S$-definierbare Menge $X\subseteq B$ gegeben. Dann existiert eine endliche $\lingua_S$-definierbare Unterteilung von $B$, sodass für jedes dadurch erzeugte offene Intervall $I$ genau einer der folgenden Fälle gilt:
 	\begin{itemize}
 		\item Das Intervall $I$ ist disjunkt zu $X$.
 		\item Das Intervall $I$ ist Teilmenge von $X$.
@@ -398,16 +399,17 @@ In diesem Abschnitt wird eine zur o-Minimalität ähnliche Charakterisierung von
 	Für kleine $X$ entfallen die Fälle \glqq{}Teilmenge\grqq{} und \glqq{}koklein\grqq{}.
 \end{theorem}
 \begin{proof}
-	Sei $X$ zunächst klein und gegeben als $X=f(A^n\cap E)$ für ein stetiges, $\lingua_S$-definierbares $f:E\rightarrow B$ und eine offene $\lingua_S$-definierbare Zelle $E\subseteq B^n$. Da definierbarer Zusammenhang unter definierbaren stetigen Funktionen erhalten bleibt, ist $I:=f(E)$ auch definierbar zusammenhängend, weil es $\lingua_S$-definierbar ist, ist es Vereinigung von Intervallen und Punkten, also muss es ein Intervall (ausnahmsweise seien hier auch nichtoffene Intervalle mitgemeint). Wenn $I$ endlich ist, ist auch $X$ endlich und es ist nichts zu zeigen. $X$ ist disjunkt zu $B\setminus I$, nun muss nur noch gezeigt werden, dass $X=X\cap I$ dicht und kodicht in $I$ ist. Der Satz verlangt eigentlich Dichte und Kodichte in einem offenen Intervall, allerdings ist Dichte und Kodichte in nichtoffenen unendlichen Intervallen äquivalent zu Dichte und Kodichte in deren Innerem. Aber dichte Teilmengen werden durch stetige Abbildungen auf dichte Teilmengen abgebildet; da $A^n$ dicht in $B^n$ ist, ist auch $A^n\cap E$ dicht in $E$ und folglich $X$ dicht in $I$. Andererseits muss auch das Komplement von $X$ dicht in $I$ sein, da es sonst ein Intervall ganz in $X$ gäbe, was der Kleinheit mit Satz \ref{Kleinheit} widerspricht.\\
-	Die gesuchte Eigenschaft für kleine Mengen bleibt unter Vereinigungen erhalten. Man muss nur eine Verfeinerung der Unterteilung durchführen und dann ausnutzen, dass endliche Vereinigungen von kleinen Mengen klein sind. Also gilt für $Y$ und $Z$ als kleine Teilmengen eines Intervalls $I$:
+	Sei $X$ zunächst klein und gegeben als $X=f(A^n\cap E)$ für eine stetige,\linebreak $\lingua_S$-definierbare Funktion $f:E\rightarrow B$ und eine offene $\lingua_S$-definierbare Zelle $E\subseteq B^n$. Da definierbarer Zusammenhang unter definierbaren stetigen Funktionen erhalten bleibt, ist $I:=f(E)$ auch definierbar zusammenhängend. Weil es $\lingua_S$-definierbar ist, ist es Vereinigung von Intervallen und Punkten, also muss es ein Intervall sein (ausnahmsweise seien hier auch nichtoffene Intervalle mitgemeint). Wenn $I$ endlich ist, ist auch $X$ endlich und es ist nichts zu zeigen, also sei $I$ ab jetzt unendlich.\\
+	Die Menge $X$ ist disjunkt zu $B\setminus I$, nun muss nur noch gezeigt werden, dass $X=X\cap I$ dicht und kodicht in $I$ ist. Der Satz verlangt eigentlich Dichte und Kodichte in einem offenen Intervall, allerdings ist Dichte und Kodichte in nichtoffenen unendlichen Intervallen äquivalent zu Dichte und Kodichte in deren Innerem. Aber dichte Teilmengen werden durch stetige Abbildungen auf dichte Teilmengen abgebildet; da $A^n$ dicht in $B^n$ ist, ist auch $A^n\cap E$ dicht in $E$ (denn das war offen) und folglich $X$ dicht in $I$. Andererseits muss auch das Komplement von $X$ dicht in $I$ sein, da es sonst ein Intervall ganz in $X$ gäbe, was der Kleinheit mit Satz \ref{Kleinheit} widerspricht.\\
+	Die gesuchte Eigenschaft für kleine Mengen bleibt unter Vereinigungen erhalten. Man muss nur eine gemeinsame Verfeinerung der Unterteilungen durchführen und dann ausnutzen, dass endliche Vereinigungen von kleinen Mengen klein sind. Also gilt für $Y$ und $Z$ als kleine Teilmengen eines Intervalls $I$:
 	\begin{itemize}
 		\item Die Vereinigung $Y\cup Z$ ist klein.
-		\item Es ist $Y\cup Z=Y$, sofern $Z$ leer ist.
-		\item Die Menge $Y\cup Z$ ist dicht in $I$, wenn $Y$ und $Z$ dicht in $I$ sind.
+		\item Es ist $Y\cup Z=\emptyset$ genau dann, wenn $Y$ und $Z$ leer sind.
+		\item Die Menge $Y\cup Z$ ist dicht in $I$, wenn $Y$ oder $Z$ dicht in $I$ sind.
 		\item Die Vereinigung $Y\cup Z$ ist kodicht in $I$ als kleine Menge (s. Begr. oben).
 	\end{itemize}
     Daher gilt mit dem letzten Lemma die Aussage für kleine Mengen allgemein.\newpage
-	Sei jetzt $X$ nicht mehr klein, dann stimmt es aber bis auf eine kleine Menge mit einer $\lingua$-definierbaren Menge $X'$ überein. Schreibe also $X=(X'\cup Y)\setminus Z$ für $Y$ und $Z$ klein und disjunkt. $X'$ ist als $\lingua$-definierbare Menge eine endliche Vereinigung von Punkten und Intervallen; da $Y,Z$  als kleine Mengen die oben beschriebene Gestalt haben, entspricht $X'\cup Y$ der Darstellung ohne den Fall koklein. In der Darstellung der drei Fälle wird der erste durch Subtraktion von $Z$ nicht geändert, der zweite bleibt oder wird zum dritten (2. Teil) und der dritte bleibt auch, da er nur von $Y$ kommt, aber $Y$ und $Z$ disjunkt sind. Also hat $X$ auch so eine Darstellung.
+	Sei jetzt $X$ nicht mehr klein, dann stimmt es aber bis auf eine kleine Menge mit einer $\lingua$-definierbaren Menge $X'$ überein. Schreibe also $X=(X'\cup Y)\setminus Z$, wobei $Y$ und $Z$ klein und disjunkt seien. Als $\lingua$-definierbare Menge ist $X'$ eine endliche Vereinigung von Punkten und Intervallen; da $Y$ und $Z$ als kleine Mengen die oben beschriebene Gestalt haben, entspricht $X'\cup Y$ der Darstellung ohne den Fall koklein. In der Darstellung der drei Fälle wird der erste durch Subtraktion von $Z$ nicht geändert, der zweite bleibt oder wird zum dritten (2. Teil) und der dritte bleibt auch, da er nur von $Y$ kommt, aber $Y$ und $Z$ disjunkt sind. Also hat $X$ auch so eine Darstellung.
 \end{proof}
 
 \begin{corollary}
@@ -415,7 +417,7 @@ In diesem Abschnitt wird eine zur o-Minimalität ähnliche Charakterisierung von
 \end{corollary}
 
 \begin{lemma}
-	$\td$ eliminiert $\exists^\infty$: Wenn $S\subseteq B^{m+n}$ eine $\lingua^P$-definierbare Menge ist mit $S_x$ endlich für alle $x$ aus $B^m$, dann ist $(\abs{S_x})_{x\in B^m}$ beschränkt.
+	Die Theorie $\td$ eliminiert $\exists^\infty$: Wenn eine $\lingua^P$-definierbare Menge\linebreak $S\subseteq B^{m+n}$ gegeben ist und $S_x$ endlich für alle $x$ aus $B^m$, dann ist $(\abs{S_x})_{x\in B^m}$ beschränkt.
 \end{lemma}
 \begin{proof}
 	Für $n=1$ gilt das nach Bemerkung 5.33. aus \cite{Lukas}. Denn $S_x$ ist genau dann endlich, wenn $S_x$ diskret in $B$ ist. Das ist uniform $\lingua^P$-ausdrückbar. Die Äquivalenz zur Diskretheit sieht man ein, indem man eine Aufteilung von $S_x$ wie im letzten Satz vornimmt. Dann ist $S_x$ genau dann endlich, wenn nur der Fall $\glqq{}S_x\cap I=\emptyset\grqq{}$ vorkommt; weil dichte Teilmengen und Intervalle nicht diskret sind, gilt das genau dann wiederum, wenn $S_x$ diskret ist.\\
