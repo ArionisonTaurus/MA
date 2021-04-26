@@ -471,53 +471,54 @@ Nun aber zu den definierbaren Funktionen. Es gibt mehrere Möglichkeiten, $\ling
 \end{proof}
 
 \begin{theorem}\label{Satz 3}
-	Sei $F:B\rightarrow B$ eine $\lingua^P_S$-definierbare Funktion. Dann stimmt $F$ auf bis auf eine $\lingua^P_S$-definierbare kleine Menge mit einer $\lingua_S$-definierbaren Funktion überein.
+	Gegeben sei eine $\lingua^P_S$-definierbare Funktion $F:B\rightarrow B$. Dann stimmt $F$ auf bis auf eine $\lingua^P_S$-definierbare kleine Menge mit einer $\lingua_S$-definierbaren Funktion überein.
 \end{theorem}
 \begin{proof}
-	Nach dem vorigen Lemma existieren $\lingua_S$-definierbare $f_1,\dots,f_k:B\rightarrow B$ und ein kleines $\lingua^P_S$-definierbares $X$, sodass für alle $b$ außerhalb von $X$ ein $i$ existiert mit $F(b)=f_i(b)$. Wenn $k=1$ ist, ist das die gewünschte Aussage, wenn nicht, zeige dass man $k$ weiter reduzieren kann. Dafür partitioniere $B$ mit Satz \ref{Satz 4} in $\lingua_S$-definierbare ${E,T,D,K,C\subseteq B}$, sodass $E$ endlich ist, alle anderen Mengen dafür offen, 
-	$$T\subseteq\{F=f_1\}, D\cap\{F=f_1\}=\emptyset,K':=K\cap\{F=f_1\}\text{ klein, dicht und kodicht in }K$$ $$\text{sowie }C':=C\cap\{F=f_1\}\text{ koklein, dicht und kodicht in }C.$$
+	Nach dem vorigen Lemma existieren $\lingua_S$-definierbare $f_1,\dots,f_k:B\rightarrow B$ und ein kleines $\lingua^P_S$-definierbares $X$, sodass für alle $b$ außerhalb von $X$ ein $i$ existiert mit $F(b)=f_i(b)$. Wenn $k=1$ ist, ist das die gewünschte Aussage, wenn nicht, zeige dass man $k$ weiter reduzieren kann. Dafür partitionieren wir $B$ mit Satz \ref{Satz 4} in\linebreak $\lingua_S$-definierbare ${E,T,D,K,C\subseteq B}$, sodass $E$ endlich ist, alle anderen Mengen dafür offen, sowie
+	$$T\subseteq\{F=f_1\}\text{ und }D\cap\{F=f_1\}=\emptyset\text{ gilt,}$$ $$K':=K\cap\{F=f_1\}\text{ klein, dicht und kodicht in }K\text{ ist}$$ $$\text{sowie }C':=C\cap\{F=f_1\}\text{ koklein, dicht und kodicht in }C\text{ ist}.$$
 	Definiere dann $$f:x\mapsto\left\{\begin{array}{ll}
 	f_1(x)&x\in T\cup C\\
 	f_2(x)&\text{sonst}
-	\end{array}\right.$$\newpage
+	\end{array}\right..$$
 	Die Menge $X':=X\cup E\cup K'\cup (C\setminus C')$ ist klein als Vereinigung von kleinen Mengen, außerdem $\lingua^P_S$-definierbar. Wenn $x$ nicht in $X'$ liegt und $F(x)\neq f_i(x)$ ist für $i=3,\dots,k$, dann gibt es folgende Möglichkeiten:
 	\begin{itemize}
 		\item Liegt $x$ in $T\cup C'\subseteq\{F=f_1\}$, so ist $F(x)=f_1(x)=f(x)$.
 		\item Liegt $x$ in $D\cup(K\setminus K')$, also insbesondere nicht in $\{F=f_1\}$, so ist $f(x)=f_2(x)$ und wegen $F(x)\neq f_1(x)$ ist $F(x)=f(x)$.
 	\end{itemize}
-    Also nimmt $F$ auf $B\setminus X'$ immer die Werte von $f,f_3,\dots,f_k$ an und induktiv ist die Aussage gezeigt.
+    Also nimmt $F$ auf $B\setminus X'$ immer die Werte von $f,f_3,\dots,f_k$ an und mit einer Induktion ist die Aussage gezeigt.
 \end{proof}
-
+\newpage
 \begin{lemma}\label{Stückweise stetige Abbildungen}
-	Sei $f:B\rightarrow B$ stückweise stetig und $\lingua^P_S$-definierbar. Dann ist $f$ schon $\lingua_S$-definierbar.
+	Sei $f:B\rightarrow B$ eine stückweise stetige und $\lingua^P_S$-definierbare Funktion. Dann ist $f$ schon $\lingua_S$-definierbar.
 \end{lemma}
 \begin{proof}
-	Nach Satz $\ref{Satz 3}$ stimmt $f$ bis auf eine kleine $\lingua^P_S$-definierbare Menge $X$ mit einer $\lingua_S$-definierbaren Funktion $f'$ überein. Wegen o-Minimalität von T ist $f'$ auch stückweise stetig. Unterteile $X$ wie in Satz \ref{Satz 4} und verfeinere die Unterteilung, so dass $f,f'$ auf jedem Intervall stetig sind. Für jedes Intervall $I$ dieser Unterteilung gilt dann entweder, dass $X\cap I$ dicht und kodicht in $I$ ist oder, dass $X\cap I=\emptyset$. Der erste Fall kann nie eintreten, da zwei stetige Funktionen, die auf der dichten Teilmenge $I\setminus X$ übereinstimmen, schon auf ganz $I$ übereinstimmen. Also ist $X$ endlich und $f$ kann mit $\lingua$ definiert werden (nämlich durch $f'$ außerhalb von $X$ und ansonsten manuell). Da diese Unterteilung $\lingua_S$-definierbar ist, ist auch $f$ schon $\lingua_S$-definierbar.
+	Nach dem vorigen Satz stimmt $f$ bis auf eine kleine $\lingua^P_S$-definierbare Menge $X$ mit einer $\lingua_S$-definierbaren Funktion $f'$ überein. Wegen der o-Minimalität von T ist $f'$ auch stückweise stetig. Unterteile $X$ wie in Satz \ref{Satz 4} und verfeinere die Unterteilung so, dass $f$ und $f'$ auf jedem daraus resultierenden Intervall stetig sind. Für jedes Intervall $I$ dieser Unterteilung gilt dann entweder, dass $X\cap I$ dicht und kodicht in $I$ ist oder, dass $X\cap I=\emptyset$. Der erste Fall kann nie eintreten, da zwei stetige Funktionen, die auf der dichten Teilmenge $I\setminus X$ übereinstimmen, schon auf ganz $I$ übereinstimmen. Also ist $X$ endlich und $f$ kann mit $\lingua$ definiert werden (nämlich durch $f'$ außerhalb von $X$ und ansonsten manuell). Da diese Unterteilung $\lingua_S$-definierbar ist, ist auch $f$ schon $\lingua_S$-definierbar.
 \end{proof}
 
 \section{Offene und abgeschlossene $\lingua^P$-definierbare Mengen}
-Nach der Beschreibung der Struktur von $\lingua^P$-definierbaren Teilmengen von $B$ liegt die Vermutung nahe, dass offene und abgeschlossene $\lingua^P$-definierbare Mengen schon $\lingua$-definierbar sind.\\
-Dies lässt sich in vielen Situationen auch beweisen. Im Folgenden werden mehrere Möglichkeiten dafür angegeben. Hierbei sei $(B,A)$ wieder ein dichtes Paar und $S$ speziell.\\
+Nach der Beschreibung der Struktur von $\lingua^P$-definierbaren Teilmengen von $B$ liegt die Vermutung nahe, dass offene und abgeschlossene $\lingua^P$-definierbare Mengen schon\linebreak $\lingua$-definierbar sind.\\
+Dies lässt sich in vielen Situationen auch beweisen. Im Folgenden werden mehrere Möglichkeiten dafür angegeben. Hierbei sei $(B,A)$ wieder ein echtes dichtes Paar und $S$ speziell.\\
 Als erstes ist festzuhalten, dass die Aussage für Mengen in einer Variable leicht zu sehen ist und man sie nur für offene Mengen zeigen muss.
-\newpage
+
 \begin{lemma}\label{Offenheit einfache Fälle}\ 
 	\begin{itemize}
-		\item Sei $Z\subseteq B$ offen und $\lingua^P_S$-definierbar. Dann ist $Z$ schon $\lingua_S$-definierbar.
+		\item Sei eine Menge $Z\subseteq B$ gegeben, die offen und $\lingua^P_S$-definierbar ist. Dann ist $Z$ schon $\lingua_S$-definierbar.
 		\item Wenn alle offenen $\lingua^P_S$-definierbaren Teilmengen von $B^n$ auch $\lingua_S$-definierbar sind, sind es alle abgeschlossenen solchen Mengen auch.
 	\end{itemize}
 \end{lemma}
 \begin{proof}\ 
 	\begin{itemize}
-		\item In der Darstellung von Satz \ref{Satz 4} kann der Fall $Z\cap I$ dicht und kodicht nicht auftreten. Die Menge $Z\cap I$ ist nämlich offen und kann daher nicht kodicht in $I$ sein (denn sonst würde sie ein Element ihres eigenen Komplements enthalten). Also sind die $\lingua^P_S$-definierbaren offenen Teilmengen von $B$ gerade die endlichen Vereinigungen von Intervallen mit Rand aus $\dcl(S)\cup\{\pm\infty\}$ und Punkten aus $\dcl(S)$ und das ist $\lingua_S$-definierbar.
-		\item Wenn $Z\subseteq B^n$ abgeschlossen und $\lingua^P_S$-definierbar ist, ist $Z^c$ offen und $\lingua^P_S$-definierbar, also $\lingua_S$-definierbar per Voraussetzung. Damit ist $Z$ dann selbst $\lingua_S$-definierbar.
+		\item In der Darstellung von Satz \ref{Satz 4} kann der Fall $Z\cap I$ dicht und kodicht nicht auftreten. Die Menge $Z\cap I$ ist nämlich offen und kann daher nicht kodicht in $I$ sein (denn sonst würde sie ein Element ihres eigenen Komplements enthalten).\newpage
+		Also sind die $\lingua^P_S$-definierbaren offenen Teilmengen von $B$ gerade die endlichen Vereinigungen von Intervallen mit Rand aus $\dcl(S)\cup\{\pm\infty\}$ und Punkten aus $\dcl(S)$. Das ist $\lingua_S$-definierbar (und Punkte benutzt man dabei auch nur, wenn man ein Intervall \glqq{}unnötig\grqq{} unterteilen will).
+		\item Wenn $Z\subseteq B^n$ abgeschlossen und $\lingua^P_S$-definierbar ist, ist $Z^c$ offen und\linebreak $\lingua^P_S$-definierbar. Also ist $Z^c$ $\lingua_S$-definierbar per Voraussetzung, damit ist $Z$ dann ebenso $\lingua_S$-definierbar.
 	\end{itemize}
 \end{proof}
 
 
-Für mehrstellige Mengen kann man folgenden Satz aus \cite{Piz} benutzen, die Voraussetzungen dafür sind allerdings nicht zwangsläufig erfüllt. Für einige Theorien wie z.B. $\operatorname{RCF^d}$ ist das aber ein gangbarer Weg (siehe auch Lemma \ref{RCF zahm}).
-\begin{theorem}\label{Kurven}
-	Sei $F:B^n\rightarrow B$ eine $\lingua^P_S$-definierbare Funktion und $\td$ sei zahm für Paare. Dann ist $F$ definierbar in $\lingua_S$ genau dann, wenn für alle speziellen $X\supseteq S$ und alle $\lingua_X$-definierbaren partiellen Funktionen $\alpha: Y\rightarrow B^n$ mit $Y$ offen in $B$ auch $F\circ\alpha$ schon $\lingua_X$-definierbar ist.
-\end{theorem}
+Für mehrstellige Mengen kann man folgenden Fakt aus \cite{Piz} benutzen, die Voraussetzungen dafür sind allerdings nicht zwangsläufig erfüllt. Für einige Theorien wie z.B. $\operatorname{RCF^d}$ ist das aber ein gangbarer Weg (siehe auch Lemma \ref{RCF zahm}).
+\begin{fact}\label{Kurven}
+	Es sei $F:B^n\rightarrow B$ eine $\lingua^P_S$-definierbare Funktion und $\td$ sei zahm für Paare. Dann ist $F$ genau dann definierbar in $\lingua_S$, wenn für alle speziellen Obermengen $X\supseteq S$ und alle $\lingua_X$-definierbaren partiellen Funktionen $\alpha: Y\rightarrow B^n$ für eine offene Teilmenge $Y$ von $B$ auch die Verkettung $F\circ\alpha$ schon $\lingua_X$-definierbar ist.
+\end{fact}
 
 Mit diesem Satz kann man dann die gewünschte Eigenschaft beweisen.
 
@@ -525,8 +526,9 @@ Mit diesem Satz kann man dann die gewünschte Eigenschaft beweisen.
 	Offene und abgeschlossene $\lingua^P_S$-definierbare Mengen sind $\lingua_S$-definierbar, sofern $\td$ zahm für Paare ist.
 \end{theorem}
 \begin{proof}
-	Es reicht, das für offene Mengen zu zeigen; genauer reicht es schon, die Definierbarkeit für charakteristische Funktionen solcher Mengen zu zeigen. Sei $Z\subseteq B^n$ eine offene $\lingua^P_S$-definierbare Menge und $X\supseteq S$ speziell, $\alpha:Y\rightarrow B^n$ eine $\lingua_X$-definierbare, partielle Funktion und $Y\subseteq B$ offen. Zu zeigen ist für die Anwendung von Satz \ref{Kurven}, dass $\chi_Z\circ\alpha$ definierbar in $\lingua_X$ ist.\newpage
-	Man kann annehmen, dass $\alpha$ stetig ist, sonst zerlege $Y$ in Intervalle, auf denen $\alpha$ stetig ist, und Punkte; das ändert nichts an irgendwelchen Definierbarkeiten. Es ist festzustellen, dass $$1=\chi_Z\circ\alpha(x)\Leftrightarrow\alpha(x)\in Z\Leftrightarrow x\in\alpha^{-1}(Z).$$ Da aber $\alpha^{-1}(Z)$ eine $\lingua^P_X$-definierbare Teilmenge von $B$ ist, offen wegen Stetigkeit von $\alpha$ und Offenheit von $Z$ und zusätzlich $X$ speziell ist, ist $\alpha^{-1}(Z)$ nach Lemma \ref{Offenheit einfache Fälle} $\lingua_X$-definierbar. Also ist $\chi_Z\circ\alpha$ definierbar in $\lingua_X$ durch $$\chi_Z\circ\alpha(x)=\left\{\begin{array}{ll}
+	Es reicht, das für offene Mengen zu zeigen; genauer reicht es schon, die Definierbarkeit für charakteristische Funktionen solcher Mengen zu zeigen. Sei $Z\subseteq B^n$ eine offene $\lingua^P_S$-definierbare Menge und $X\supseteq S$ speziell, $\alpha:Y\rightarrow B^n$ eine $\lingua_X$-definierbare, partielle Funktion und $Y\subseteq B$ offen. Zu zeigen ist für die Anwendung von Fakt \ref{Kurven}, dass $\chi_Z\circ\alpha$ definierbar in $\lingua_X$ ist.\\
+	Man kann annehmen, dass $\alpha$ stetig und $Y$ ein Intervall ist, sonst zerlege $Y$ in Intervalle, auf denen $\alpha$ stetig ist, und Punkte. Das ändert nämlich nichts an irgendwelchen Definierbarkeiten und im Fall, dass $Y$ eine einelementige Menge ist, ist $\chi_Z\circ\alpha$ entweder konstant $0$ oder konstant $1$. Es ist festzustellen, dass $$1=\chi_Z\circ\alpha(x)\Leftrightarrow\alpha(x)\in Z\Leftrightarrow x\in\alpha^{-1}(Z)$$ gilt.\newpage
+	Da aber $\alpha^{-1}(Z)$ eine $\lingua^P_X$-definierbare Teilmenge von $B$ ist, offen in $B$ wegen der Stetigkeit von $\alpha$ und der Offenheit von $Z$ sowie $Y$ und zusätzlich $X$ speziell ist, ist $\alpha^{-1}(Z)$ nach Lemma \ref{Offenheit einfache Fälle} $\lingua_X$-definierbar. Also ist $\chi_Z\circ\alpha$ definierbar in $\lingua_X$ durch $$\chi_Z\circ\alpha(x)=\left\{\begin{array}{ll}
 	1&x\in\alpha^{-1}(Z)\\
 	0&\text{sonst}
 	\end{array}\right..$$

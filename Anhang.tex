@@ -4,15 +4,15 @@
 \section{Ein Alternativbeweis zur $\omega$-Stabilität von ACP}
 
 \begin{proof}
-	Sei $(K,E_K)$ ein Modell von ACP und $X\subseteq K$ unendlich. Nach Folgerung \ref{Formel-Vereinfachung} kann man jede Formel mit Parametern aus $X$ modulo ACP schreiben als boolesche Kombination aus $$\glqq{}l_n(\text{Monome mit Koeffizienten von Produkten aus }X)\grqq{}$$ und
+	Es sei $(K,E_K)$ ein Modell von ACP und eine Menge $X\subseteq K$ unendlich. Nach Folgerung \ref{Formel-Vereinfachung} kann man jede Formel mit Parametern aus $X$ modulo ACP schreiben als boolesche Kombination aus $$\glqq{}l_n(\text{Monome mit Koeffizienten von Produkten aus }X)\grqq{}$$ und
 	\begin{align*}
 	\text{\glqq{}}(\text{Polynom in }\mathbb{P}[X])(&f_{i_1,n_1}(\text{Monome in Produkten aus }X),\\\dots,&f_{i_m,n_m}(\text{Monome in Produkten aus }X))=0\grqq{}.
 	\end{align*}
 	Diese beiden Arten von Formeln lassen sich verallgemeinern
-    zu Formeln der Art $${\exists\overline{e}\in E(f(\overline{e},\overline{x})=0)}$$ für  $f(\overline{T},\overline{x})$ aus $(\mathbb{P}(X))(\overline{T})[\overline{x}]$ und der Art
+    zu Formeln der Art $${\exists\overline{e}\in E(f(\overline{e},\overline{x})=0)}$$ für  ein Polynom $f(\overline{T},\overline{x})$ aus $(\mathbb{P}(X))(\overline{T})[\overline{x}]$ und der Art
 	\begin{align*}
-	&\exists z_{1,2},\dots,z_{1,n_1+1},z_{2,2},\dots,z_{2,n_2+1},\dots\in E(p(z_{1,1},\dots,z_{k,1})=0\\
-	&\bigwedge\limits_{i=1}^km_{i,1}(\overline{x})=z_{i,2}m_{i,2}(\overline{x})+\dots+z_{i,n_i}m_{i,n_i}(\overline{x}))
+	&\exists z_{1,1},\dots,z_{1,n_1},z_{2,2},\dots,z_{2,n_2},\dots\in E(p(z_{1,i_1},\dots,z_{k,i_k})=0\\
+	&\bigwedge\limits_{i=1}^km_{i,0}(\overline{x})=z_{i,1}m_{i,1}(\overline{x})+\dots+z_{i,n_i}m_{i,n_i}(\overline{x}))
 	\end{align*}
 	für Monome $(m_{i,j})$ in $\mathbb{P}(X)[\overline{x}]$ und ein Polynom $p$ aus $\mathbb{P}(X)[\overline{x}]$. Nenne die Menge aller Formeln der ersten Art $A$ und die aller Formeln der zweiten Art $B$. Insbesondere wurde die Menge der \glqq{}interessanten\grqq{} Formeln nur vergrößert, das heißt, dass ein Typ $p$ eindeutig durch $$(p\cap A)\cup(p\cap B)\cup(p\cap\neg A)\cup(p\cap\neg B)$$ festgelegt wird.\\
 	Das bedeutet, $S_n(X)$ zerfällt in folgende Teilmengen:
@@ -28,6 +28,6 @@
 	\begin{align*}&g\in\in p:\Leftrightarrow\text{ es existiert ein }f(\overline{T},\overline{x})\text{ aus }(\mathbb{P}(X))(\overline{T})[\overline{x}],\text{ es existieren }a_1,\dots,a_n\\
 	&\text{in }E_K\text{ mit }f(\overline{a},\overline{x})=g(\overline{x})\text{ und }\left(\exists\overline{e}\in E(f(\overline{e},\overline{x})=0)\right)\in p.
 	\end{align*}
-	$I:=\{g\in E_K(X)[\overline{x}]\mid g\in\in p\}$ ist offenbar ein Ideal im Noetherschen Ring $E_K(X)[\overline{x}]$ (es ist nichtleer im Fall 1./2.) und daher endlich erzeugt durch gewisse $h_1,\dots,h_m$. Da jedes Element $g$ aus $I$ mit einem Element $$\left(\exists\overline{e}\in E(\overline{g}(\overline{e},\overline{x})=0)\right)\in p$$ korrespondiert, ist $p\cap(A\cup\neg A)$ isoliert durch die übertragenen Erzeuger $$\exists\overline{e}\in E(\overline{h_1}(\overline{e},\overline{x})=0),\dots,\exists\overline{e}\in E(\overline{h_m}(\overline{e},\overline{x})=0),$$ also gibt es nur $\abs{X}$ viele Möglichkeiten für $p\cap(A\cup\neg A)$.\\
-	Formeln der zweiten Art kann man in Konjunktionen von Formeln der ersten Art umwandeln, indem man $(z_{l,1})_{l=1\dots k}$ zu freien Variablen macht. Auf diese Weise kann man partielle Typen in $B$ zu partiellen Typen in $A$ in mehr Variablen umformen (am schnellsten geht es wahrscheinlich, wenn man annimmt, dass $\fM$ schon hinreichend saturiert ist und einen Erfüller $\overline{a}$ von einem $p$ der Art 1./3. betrachtet, eine Belegung $(b_{i,j})$ für die $(z_{i,j})$ in einer der Formeln findet und dann $$\operatorname{tp}(\overline{a},(b_{l,1})_{l=1\dots k}/X)\cap(A\cup\neg A)$$ betrachtet). Egal welchen Weg man letztlich anwendet, es können nur mehr Typen werden, dafür erhält man wieder den Fall 1./2., wo wir wissen, dass es nur $\abs{X}$ viele Möglichkeiten gibt. Also ist ACP $\kappa$-stabil für alle unendlichen $\kappa$.
+	Die Menge $I:=\{g\in E_K(X)[\overline{x}]\mid g\in\in p\}$ ist offenkundig ein Ideal im Noetherschen Ring $E_K(X)[\overline{x}]$ (es ist nichtleer im Fall 1./2.) und daher endlich erzeugt durch gewisse $h_1,\dots,h_m$. Da jedes Element $g$ aus $I$ mit einem Element $$\left(\exists\overline{e}\in E(\overline{g}(\overline{e},\overline{x})=0)\right)\in p$$ korrespondiert, ist $p\cap(A\cup\neg A)$ isoliert durch die übertragenen Erzeuger $$\exists\overline{e}\in E(\overline{h_1}(\overline{e},\overline{x})=0),\dots,\exists\overline{e}\in E(\overline{h_m}(\overline{e},\overline{x})=0),$$ also gibt es nur $\abs{X}$ viele Möglichkeiten für $p\cap(A\cup\neg A)$.\\
+	Formeln der zweiten Art kann man in Konjunktionen von Formeln der ersten Art umwandeln, indem man die $z_{i,j}$ zu freien Variablen macht. Auf diese Weise kann man partielle Typen in $B$ zu partiellen Typen in $A$ in mehr Variablen umformen (am schnellsten geht es wahrscheinlich, wenn man annimmt, dass $\fM$ schon hinreichend saturiert ist und einen Erfüller $\overline{a}$ von einem $p$ der Art 1./3. betrachtet, eine Belegung $(b_{i,j})$ für die $(z_{i,j})$ in einer der Formeln findet und dann $$\operatorname{tp}(\overline{a},(b_{l,1})_{l=1\dots k}/X)\cap(A\cup\neg A)$$ betrachtet). Egal welchen Weg man letztlich anwendet, es können nur mehr Typen werden, dafür erhält man wieder den Fall 1./2., wo wir wissen, dass es nur $\abs{X}$ viele Möglichkeiten gibt. Die Theorien ACP sind demnach $\kappa$-stabil für alle unendlichen $\kappa$.
 \end{proof}
