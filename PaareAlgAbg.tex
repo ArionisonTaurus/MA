@@ -306,42 +306,37 @@
     Bis jetzt haben wir zwar die Quantorenelimination erreicht, allerdings kann man Formeln modulo ACP noch weiter reduzieren. Insbesondere wäre eine \glqq{}Schachtelung\grqq{} von mehreren $f_{i,n}$ ineinander im Weiteren nicht leicht zu behandeln. Nach weiterer Reduktion der Formeln braucht man das aber auch nicht, da die Funktionen in den kleineren Körper abbilden. Der folgende Fakt lässt sich durch einige Rechnungen und Fallunterscheidungen beweisen, aus Gründen des Leseflusses werden diese aber hier weggelassen.
     
     \begin{fact}\label{Eliminierungsregeln}
-    	In jedem Modell $(K,E_K)$ von ACP gelten die nachfolgenden Äquivalenzen für alle $i,n$. Hierbei seien die Variablen aus $K$ beliebig, ausgenommen die $e,e_1,\dots,e_n$, diese seien in $E_K$ beliebig. Im Falle der partiellen Funktionen seien nur Situationen betrachtet, in denen die betrachteten Argumente im partiellen Definitionsbereich liegen.\\
+    	In jedem Modell $(K,E_K)$ von ACP gelten die nachfolgenden Äquivalenzen für alle $i,n$. Hierbei seien die Variablen aus $K$ beliebig, ausgenommen die $e,e_1,\dots,e_n$, diese seien in $E_K$ beliebig. Im Falle der partiellen Funktionen seien nur Situationen betrachtet, in denen die betrachteten Argumente der zu vereinfachenden Funktion im partiellen Definitionsbereich liegen.\\
     	Es ist möglich, \glqq{}$^{-1}$\grqq{} in gewissen Situationen zu eliminieren:
-    	$$l_n(x_1y_1^{-1},\dots,x_ny_n^{-1})\text{ gilt genau dann, wenn }l_n\left(x_1\prod\limits_{i=1\dots n,i\neq 1}y_i,\dots,x_n\prod\limits_{i=1\dots n,i\neq n}y_i\right)$$
-    	$$\text{und }f_{i,n}(x_0y_0^{-1},x_1y_1^{-1},\dots,x_ny_n^{-1})= f_{i,n}\left(x_0\prod\limits_{i=0\dots n,i\neq 0}y_i,\dots,x_n\prod\limits_{i=0\dots n,i\neq n}y_i\right)$$
-    	Auch lassen sich Vorfaktoren aus $E_K$ nach außen bringen/eliminieren:
-    	$$l_n(e_1x_1,\dots,e_nx_n)\text{ gilt genau dann, wenn }l_n(x_1,\dots,x_n)$$
-    	$$\text{und }f_{i,n}(ey,e_1x_1,\dots,e_nx_n)=e{e_i}^{-1}f_{i,n}(y,x_1,\dots,x_n)$$
-    	Beim \glqq{}$+$\grqq{} ist die Situation schon komplexer. In der ersten Koordinate ist das noch recht leicht:
-    	\begin{align*}
-    	&\neg l_n(a+b,x_2,\dots,x_n)\text{ gilt genau dann, wenn }\\&\neg l_{n-1}(x_2,\dots,x_n)\text{ oder }(l_{n-1}(x_2,\dots,x_n)\text{ und }\\&(((l_n(b,x_2,\dots,x_n)\text{ und }\neg l_{n+1}(a,b,x_2,\dots,x_n))\text{ oder }\\&(\neg l_n(b,x_2,\dots,x_n)\text{ und }l_n(a,x_2,\dots,x_n))))),
-    	\end{align*}
-    	$$\text{außerdem ist }f_{i,n}(a+b,x_1,\dots,x_n)=f_{i,n}(a,x_1,\dots,x_n)+f_{i,n}(b,x_1,\dots,x_n)$$\newpage
-    	Bei $l_n$ funktioniert diese Äquivalenz analog auch in den anderen Koordinaten, um \glqq{}$+$\grqq{} aus einem $f_{i,n}$ herauszuziehen, bedarf es aber einer größeren Fallunterscheidung:
-    	\begin{align*}
-    	&f_{i,n}(z,x_1,\dots,x_{i-1},a+b,x_{i+1},\dots,x_n)=\\
-    	&\left\{\begin{array}{ll}
-    	f_{i,n+1}(z,x_1,\dots,x_{i-1},a,b,x_{i+1},\dots,x_n)& a,b,\overline{x}\text{ unabhängig}\\
-    	f_{i,n}(z,x_1,\dots,x_{i-1},a,x_{i+1},\dots,x_n)&\text{wenn nicht und }b\in\langle\overline{x}\rangle_{E_K}\\
-    	f_{i,n-1}(z,x_1,\dots,x_{i-1},x_{i+1},\dots,x_n)&\text{wenn nicht und }z\in\langle\overline{x}\rangle_{E_K}\\
-    	\frac{f_{i,n}(z,x_1,\dots,x_{i-1},b,x_{i+1},\dots,x_n)}{1+f_{i,n}(a,x_1,\dots,x_{i-1},b,x_{i+1},\dots,x_n)}&\text{ansonsten}
-    	\end{array}\right.,
-    	\end{align*}\begin{align*}
-    	&f_{j,n}(z,x_1,\dots,x_{i-1},a+b,x_{i+1},\dots,x_n)=\\
-    	&\left\{\begin{array}{ll}
-    	f_{j+1_{j>i},n+1}(z,x_1,\dots,x_{i-1},a,b,x_{i+1},\dots,x_n)&a,b,\overline{x}\text{ unabhängig}\\\\
-    	f_{j,n}(z,x_1,\dots,x_{i-1},a,x_{i+1},\dots,x_n)\\
-    	-f_{i,n}(z,x_1,\dots,x_{i-1},a,x_{i+1},\dots,x_n)&\text{wenn nicht und }b\in\langle\overline{x}\rangle_{E_K}\\\cdot f_{j-1_{j>i},n-1}(b,x_1,\dots,x_{i-1},x_{i+1},\dots,x_n)\\\\
-    	f_{j,n}(z,x_1,\dots,x_{i-1},b,x_{i+1},\dots,x_n)\\
-    	-f_{i,n}(z,x_1,\dots,x_{i-1},a+b,x_{i+1},\dots,x_n)&\text{ansonsten}\\\cdot f_{j,n}(a,x_1,\dots,x_{i-1},b,x_{i+1},\dots,x_n)
-    	\end{array}\right.\\
-    	&(\text{hierbei sei }j\neq i)
-    	\end{align*}
+    	Die Elemente $$x_1y_1^{-1},\dots,x_ny_n^{-1}$$ sind genau dann linear unabhängig über $E_K$, wenn $$x_1\prod\limits_{i=1\dots n,i\neq 1}y_i,\dots,x_n\prod\limits_{i=1\dots n,i\neq n}y_i$$ es sind, außerdem erfüllen die $f_{i,n}$ die Gleichheit
+    	$$f_{i,n}(x_0y_0^{-1},x_1y_1^{-1},\dots,x_ny_n^{-1})= f_{i,n}\left(x_0\prod\limits_{i=0\dots n,i\neq 0}y_i,\dots,x_n\prod\limits_{i=0\dots n,i\neq n}y_i\right).$$
+    	Auch lassen sich Vorfaktoren aus $E_K$ nach außen bringen/eliminieren: Die Elemente $$e_1x_1,\dots,e_nx_n$$ sind genau dann linear unabhängig über $E_K$, wenn $x_1,\dots,x_n$ es sind und die $f_{i,n}$ erfüllen die Gleichheit
+    	$$f_{i,n}(ey,e_1x_1,\dots,e_nx_n)=e{e_i}^{-1}f_{i,n}(y,x_1,\dots,x_n).$$\newpage
+    	Beim \glqq{}$+$\grqq{} ist die Situation schon komplexer. Die Elemente $a+b,x_2,\dots,x_n$ sind genau dann linear abhängig über $E_K$, wenn $x_2,\dots,x_n$ abhängig sind, oder wenn sie es nicht sind und entweder:
+    	\begin{itemize}
+    		\item $a,x_2,\dots,x_n$ abhängig sind und $b,x_2,\dots,x_n$ abhängig sind oder
+    		\item $a,x_2,\dots,x_n$ unabhängig sind und $b,x_2,\dots,x_n$ unabhängig sind und zusätzlich $f_{1,n}(a,b,x_2,\dots,x_n)=-1$ gilt.
+    	\end{itemize}
+        In den anderen Koordinaten kann die Addition auf die selbe Art aus den $l_n$ herausgezogen werden. Bei den $f_{i,n}$ muss man dagegen eine große Fallunterscheidung durchführen. Wenn $a$ und $b$ in $\langle x_1,\dots,x_n\rangle_{E_K}$ liegen, so gilt
+    	$$f_{i,n}(a+b,x_1,\dots,x_n)=f_{i,n}(a,x_1,\dots,x_n)+f_{i,n}(b,x_1,\dots,x_n).$$
+    	Ansonsten gilt die folgende Gleichheit:
+    	$$f_{i,n}(a+b,x_1,\dots,x_n)=f_{i+1,n+1}(a,b,x_1,\dots,x_n)$$
+    	In den anderen Koordinaten werden die Formeln noch komplizierter, wir betrachten zuerst den Term $$f_{i,n}(z,x_1,\dots,x_{i-1},a+b,x_{i+1},\dots,x_n).$$ Wenn $a,b,\overline{x}$ linear unabhängig über $E_K$ sind, erhält man eine Gleichheit zu
+    	$$f_{i,n+1}(z,x_1,\dots,x_{i-1},a,b,x_{i+1},\dots,x_n).$$
+    	Wenn dem nicht so ist, aber $\overline{x}$ linear unabhängig ist und $b$ in seinem Erzeugnis, so erhalten wir $$f_{i,n}(z,x_1,\dots,x_{i-1},a,x_{i+1},\dots,x_n)$$ als Ergebnis. Wenn aber auch diese Voraussetzung nicht gilt und wenn $\overline{x}$ unabhängig ist und $z$ in seinem Erzeugnis, ergibt sich
+    	$$f_{i,n-1}(z,x_1,\dots,x_{i-1},x_{i+1},\dots,x_n).$$
+    	Falls alle diese Annahmen nicht gelten, erhält man als Ergebnis
+    	$$\frac{f_{i,n}(z,x_1,\dots,x_{i-1},b,x_{i+1},\dots,x_n)}{1+f_{i,n}(a,x_1,\dots,x_{i-1},b,x_{i+1},\dots,x_n)}.$$\newpage
+    	Nun zu dem Fall, dass die $j$-te Koordinate gesucht wird und die Addition in dem $i$-ten Basiselement stattfindet für $i$ verschieden von $j$. Wir wollen also $$f_{j,n}(z,x_1,\dots,x_{i-1},a+b,x_{i+1},\dots,x_n)$$ vereinfachen. Wenn jetzt $a,b,\overline{x}$ linear unabhängig sind, ergibt sich als Ergebnis
+    	$$f_{j+1_{j>i},n+1}(z,x_1,\dots,x_{i-1},a,b,x_{i+1},\dots,x_n).$$
+    	Wenn diese Voraussetzung nicht erfüllt ist, aber $\overline{x}$ unabhängig ist und $b$ in seinem Erzeugnis, dann erhält man
+    	$$f_{j,n}(z,x_1,\dots,x_{i-1},a,x_{i+1},\dots,x_n)$$ $$-f_{i,n}(z,x_1,\dots,x_{i-1},a,x_{i+1},\dots,x_n)\cdot f_{j-1_{j>i},n-1}(b,x_1,\dots,x_{i-1},x_{i+1},\dots,x_n).$$
+    	Falls auch diese Voraussetzung nicht gilt, ist das Ergebnis
+    	$$f_{j,n}(z,x_1,\dots,x_{i-1},b,x_{i+1},\dots,x_n)$$ $$-f_{i,n}(z,x_1,\dots,x_{i-1},a+b,x_{i+1},\dots,x_n)\cdot f_{j,n}(a,x_1,\dots,x_{i-1},b,x_{i+1},\dots,x_n).$$
     \end{fact}
     
     Es steht noch eine Erklärung der genauen Verwendung dieses Faktes aus:\\
-    Anschaulich betrachtet, kann man damit Formeln, die im Inneren eines $l_n$ oder eines $f_{i,n}$ ein $+,-,^{-1}$ oder ein weiteres $f_{i',n'}$ enthalten, in boolesche Kombinationen von Formeln umwandeln, die diese Art der Schachtelung nicht enthalten.\\
+    Anschaulich betrachtet, kann man mit diesem Fakt Formeln, die im Inneren eines $l_n$ oder eines $f_{i,n}$ ein $+,-,^{-1}$ oder ein weiteres $f_{i',n'}$ enthalten, in boolesche Kombinationen von Formeln umwandeln, die diese Art der Schachtelung nicht enthalten.\\
     Also erhält man quantorenfreie Formeln, in denen $+,-,^{-1}$ und alle $f_{i,n}$ wenn überhaupt, dann nur außerhalb aller $l_n$ und $f_{i,n}$ vorkommen. Da man aber quantorenfreie\linebreak$\lingua_\text{Ring}\cup\{^{-1}\}$-Formeln in quantorenfreie $\lingua_\text{Ring}$-Formeln umwandeln kann, ist es möglich, das \glqq{}$^{-1}$\grqq{} vollständig zu eliminieren; man erhält eine leicht handhabbare Form der Formeln.\\
     An dieser Stelle sei darauf hingewiesen, dass hier nicht mehr ausreicht, dass die Definitionsbereiche der $f_{i,n}$ quantorenfrei definierbar sind. Vielmehr wird benötigt, dass sie selbst in einer Form wie in der Folgerung definierbar sind. Das ist aber der Fall, wie man sich weiter vorne versichern kann.
     \newpage
